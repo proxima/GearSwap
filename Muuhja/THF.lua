@@ -343,7 +343,7 @@ function init_gear_sets()
       legs="Malignance Tights",
       feet="Malignance Boots",
       neck="Anu Torque",
-      waist="Grunfeld rope",
+      waist="Grunfeld Rope",
       left_ear="Eabani Earring",
       right_ear="Suppanomimi",
       right_ring="Chirich Ring +1",
