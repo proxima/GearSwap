@@ -369,7 +369,6 @@ function init_gear_sets()
       sub="Enki Strap",
       body="Theo. Briault +2",
       hands="Kaykaus Cuffs +1",
-      -- neck="Nuna Gorget +1",
       back="Twilight Cape",
       ring1="Stikini Ring +1",
       ring2="Stikini Ring +1",
@@ -593,15 +592,20 @@ function init_gear_sets()
     sets.midcast.Dispelga = set_combine(sets.midcast.IntEnfeebles, {main="Daybreak", sub="Ammurapi Shield"})
 
     sets.midcast.Impact = {
-      main="Maxentius",
+      main="Yagrush",
       sub="Ammurapi Shield",
-      head=empty,
+      ammo="Pemphredo Tathlum",
       body="Twilight Cloak",
-      hands="Raetic Bangles +1",
+      hands="Theophany Mitts +2",
       legs="Th. Pant. +3",
       feet="Theo. Duckbills +2",
-      ring1="Freke Ring",
-      ring2="Archon Ring",
+      neck="Erra Pendant",
+      waist={ name="Acuity Belt +1", augments={'Path: A',}},
+      left_ear="Regal Earring",
+      right_ear="Malignance Earring",
+      left_ring="Stikini Ring +1",
+      right_ring={ name="Metamor. Ring +1", augments={'Path: A',}},
+      back={ name="Alaunus's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','MND+10','"Fast Cast"+10','Phys. dmg. taken-10%',}},
     }
 
     -- Initializes trusts at iLvl 119
@@ -630,38 +634,24 @@ function init_gear_sets()
       ring1="Stikini ring +1",
       ring2="Stikini ring +1",
       waist="Carrier's Sash",
-      back={ name="Alaunus's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','MND+10','"Fast Cast"+10','Phys. dmg. taken-10%',}},
+      back={ name="Alaunus's Cape", augments={'MND+20','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Haste+10','Mag. Evasion+15',}},
       legs="Inyanga Shalwar +2",
       feet="Inyan. Crackows +2",
     }
 
     sets.idle.DT = set_combine(sets.idle, {
-      main="Daybreak",
-      sub="Genmei shield",
-      head="Aya. Zucchetto +2",
-      body="Ayanmo Corazza +2",
-      hands="Aya. Manopolas +2",
-      legs="Aya. Cosciales +2",
-      feet="Aya. Gambieras +2",
+      main="Malignance Pole",
+      sub="Enki Strap",
       neck="Loricate Torque +1",
-      ring1="Defending Ring",
-      ring2="Gelatinous Ring +1",
+      left_ring="Defending Ring",
+      right_ring="Gelatinous Ring +1",
     })
 
-    sets.idle.MEva = set_combine(sets.idle.DT, {
+    sets.idle.MEva = set_combine(sets.idle, {
       main="Daybreak",
       sub="Ammurapi Shield",
-      head="Inyanga Tiara +2",
-      body="Inyanga Jubbah +2",
-      ring2="Inyanga ring",
       hands="Pinga mittens +1",
-      legs="Inyanga Shalwar +2",
-      feet="Inyan. Crackows +2",
-      neck="Warder's charm +1",
-      waist="Carrier's Sash",
-      left_ring="Defending ring",
-      right_ring="Inyanga ring",
-      back={ name="Alaunus's Cape", augments={'MND+20','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Haste+10','Mag. Evasion+15',}},
+      right_ring="Inyagna Ring",
     })
 
     sets.idle.Town = set_combine(sets.idle, {
