@@ -569,7 +569,7 @@ function init_gear_sets()
       ring1="Chirich ring +1",
       ring2="Chirich ring +1",
       back={ name="Intarabus's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+4','"Store TP"+10','Damage taken-5%',}},
-      waist="Grunfeld Rope"
+      waist="Reiki Yotai"
     }
 
     sets.engaged.DW.MaxHaste.Acc = set_combine(sets.engaged.DW, {

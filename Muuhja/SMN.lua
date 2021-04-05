@@ -68,7 +68,7 @@ function get_sets()
       feet="Inyan. Crackows +2",
       neck={ name="Smn. Collar +2", augments={'Path: A',}},
       waist="Carrier's Sash",
-      left_ear="Genmei Earring",
+      left_ear="Odnowa Earring +1",
       right_ear="Lugalbanda Earring",
       left_ring="Gelatinous Ring",
       right_ring="Defending Ring",
