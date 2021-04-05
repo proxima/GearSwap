@@ -153,20 +153,20 @@ function get_sets()
    -- Your idle set when you DON'T have a luopan out
    sets.me.idle.normal = {
      main="Idris",
-     sub="Genmei shield",
+     sub="Genmei Shield",
      ammo="Staunch Tathlum +1",
-     head="Azimuth Hood +1",
-     ammo="Staunch Tathlum +1",
-     left_ear="Odnowa Earring +1",
+     head={ name="Bagua Galero +3", augments={'Enhances "Primeval Zeal" effect',}},
+     body="Mallquis Saio +2",
+     hands="Bagua Mitaines +3",
+     legs={ name="Merlinic Shalwar", augments={'DEX+5','INT+4','"Refresh"+2','Accuracy+1 Attack+1',}},
+     feet="Geo. Sandals +3",
+     neck="Loricate Torque +1",
+     waist="Slipor Sash",
+     left_ear={ name="Odnowa Earring +1", augments={'Path: A',}},
      right_ear="Etiolation Earring",
-     body="Mallquis saio +2",
-     hands={ name="Bagua Mitaines +3", augments={'Enhances "Curative Recantation" effect',}},
      left_ring="Defending Ring",
      right_ring="Vocane Ring +1",
      back={ name="Nantosuelta's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Pet: "Regen"+10','Damage taken-5%',}},
-     waist="Carrier's Sash",     
-     legs={ name="Telchine Braconi", augments={'Pet: "Regen"+3','Pet: Damage taken -4%',}},
-     feet="Geomancy sandals +3",
    }
 
    -- This or herald gaiters or +1 +2 +3... 
@@ -174,24 +174,13 @@ function get_sets()
 
    -- Your idle MasterDT set (Notice the sets.me, means no Luopan is out)
    sets.me.idle.dt = set_combine(sets.me.idle.normal, {
-     main="Idris",
-     sub="Genmei shield",
-     ammo="Staunch Tathlum +1",
-     head="Azimuth Hood +1",
-     neck="Loricate torque +1",
-     left_ear="Odnowa Earring +1",
-     right_ear="Etiolation Earring",
-     body="Mallquis saio +2",
-     hands="Geo. Mitaines +3",
-     left_ring="Defending Ring",
-     right_ring="Vocane Ring +1",
-     back={ name="Nantosuelta's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Pet: "Regen"+10','Damage taken-5%',}},
-     waist="Carrier's Sash",
-     legs={ name="Telchine Braconi", augments={'Pet: "Regen"+3','Pet: Damage taken -4%',}},
+     legs="Baguo Pants +3",
      feet="Bagua Sandals +3",
    })
 
    sets.me.idle.mdt = set_combine(sets.me.idle.normal, {
+     legs="Baguo Pants +3",
+     feet="Bagua Sandals +3",   
    })
 
    -- Your MP Recovered Whilst Resting Set
@@ -229,11 +218,11 @@ function get_sets()
    sets.pan.idle.dt = set_combine(sets.pan.idle.normal, {
      head="Bagua Galero +3",
      body="Mallquis saio +2",
-     waist="Carrier's Sash",
+	 legs="Geomancy Pants +3",
+     waist="Slipor Sash",
    })
 
-   sets.pan.idle.mdt = set_combine(sets.pan.idle.normal, {
-   })   
+   sets.pan.idle.mdt = sets.pan.idle.dt
 
    -- Combat Related Sets
       
@@ -278,16 +267,17 @@ function get_sets()
    sets.precast.casting = {
      main="Idris",
      range={ name="Dunna", augments={'MP+20','Mag. Acc.+10','"Fast Cast"+3',}},                   --  3
-     head="Merlinic hood",                                                                        -- 14, 6
+     head="Merlinic hood",                                                                        -- 14
      right_ear="Malignance earring",                                                              --  4
-     left_ear="Barkarole earring",                                                                --  3
-     body="Mallquis saio +2",                                                                     --  8, 3
-     hands="Bagua mitaines +3",                                                                   -- 14, 3
-     left_ring="Lebeche Ring",                                                                    --      , 2
-     ring_ring="Prolix ring",                                                                     --  2
+     left_ear="Etiolation earring",                                                               --  1
+     body="Merlinic jubbah",                                                                      --  6
+     hands="Bagua mitaines +3",                                                                   -- 14 (elemental only.)
+     left_ring="Kishar Ring",                                                                     --  4
+     right_ring="Prolix ring",                                                                    --  2
+	 back="Lifestream Cape",                                                                      --  7
      waist="Embla sash",                                                                          --  5
-     legs="Geo. Pants +3",                                                                        -- 15, 5
-     feet="Merlinic crackows"                                                                     -- 11, 3
+     legs="Geo. Pants +3",                                                                        -- 15
+     feet="Merlinic crackows"                                                                     -- 11
    }
 
    sets.precast.geomancy = set_combine(sets.precast.casting, {
@@ -356,15 +346,18 @@ function get_sets()
    sets.midcast.geo = set_combine(sets.midcast.casting, {
      main="Idris",
      range={ name="Dunna", augments={'MP+20','Mag. Acc.+10','"Fast Cast"+3',}},
-     head="Azimuth Hood +1",
-     body={ name="Bagua Tunic +1", augments={'Enhances "Bolster" effect',}},
-     hands="Geo. Mitaines +3",
-     legs={ name="Bagua Pants +3", augments={'Enhances "Mending Halation" effect',}},
-     feet="Azimuth Gaiters +1",
+     head="Azimuth Hood +1", -- Vanya Hood, Path C
      neck={ name="Bagua Charm +2", augments={'Path: A',}},
-     waist="Luminary Sash",
-     left_ear="Gna Earring",
-	 back="Lifestream Cape"
+	 left_ear="Mendi. Earring",
+	 right_ear="Gna Earring",
+     body="Vedic Coat",
+	 hands="Azimuth Gloves +1",
+	 left_ring="Mephitas's Ring +1",
+	 right_ring="Stikini Ring +1",
+     back="Lifestream Cape",
+     waist="Luminary Sash", -- Shinjutsu-no-Obi +1
+     legs={ name="Bagua Pants +3", augments={'Enhances "Mending Halation" effect',}}, -- Vayna Slops, Path C
+     feet="Azimuth Gaiters +1",
    })
     
    -- For Indi Spells
@@ -372,14 +365,17 @@ function get_sets()
      main="Idris",
      range={ name="Dunna", augments={'MP+20','Mag. Acc.+10','"Fast Cast"+3',}},
      head="Azimuth Hood +1",
-     body={ name="Bagua Tunic +1", augments={'Enhances "Bolster" effect',}},
-     hands="Geo. Mitaines +3",
-     legs={ name="Bagua Pants +3", augments={'Enhances "Mending Halation" effect',}},
+     neck={ name="Bagua Charm +2", augments={'Path: A',}}, -- Reti Pendant
+	 left_ear="Mendi. Earring",
+	 right_ear="Gna Earring",
+     body="Vedic Coat",
+	 hands="Azimuth Gloves +1",
+	 left_ring="Mephitas's Ring +1",
+	 right_ring="Stikini Ring +1",
+     back="Lifestream Cape",
+     waist="Luminary Sash", -- Shinjutsu-no-Obi +1
+     legs={ name="Bagua Pants +3", augments={'Enhances "Mending Halation" effect',}}, -- Vanya Slops, Path C
      feet="Azimuth Gaiters +1",
-     neck={ name="Bagua Charm +2", augments={'Path: A',}},
-     waist="Luminary Sash",
-     left_ear="Gna Earring",
-     back="Lifestream Cape"
    })
 
    sets.midcast.Obi = {
@@ -437,7 +433,7 @@ function get_sets()
 
    -- could use MND cape, stikinis, ammurapi, regal ear
    sets.midcast.MndEnfeebling = set_combine(sets.midcast.casting, {
-     main="Idris",
+     main="Daybreak",
      sub="Genmei Shield",
      range={ name="Dunna", augments={'MP+20','Mag. Acc.+10','"Fast Cast"+3',}},
      head="Geo. Galero +2",
@@ -449,8 +445,8 @@ function get_sets()
      waist="Luminary Sash",
      left_ear="Barkaro. Earring",
      right_ear="Malignance Earring",
-     left_ring="Freke Ring",
-     right_ring="Mallquis Ring",
+     left_ring="Stikini Ring +1",
+     right_ring="Kishar Ring",
      back={ name="Nantosuelta's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Phys. dmg. taken-10%',}},
    })
 
@@ -458,9 +454,11 @@ function get_sets()
    sets.midcast.enhancing = set_combine(sets.midcast.casting, {
       main="Gada",
       right_ear="Mimir Earring",
+	  right_ring="Stikini Ring +1",
       head={ name="Telchine Cap", augments={'Enh. Mag. eff. dur. +10',}},
       body={ name="Telchine Chas.", augments={'Enh. Mag. eff. dur. +10',}},
       hands={ name="Telchine Gloves", augments={'Enh. Mag. eff. dur. +10',}},
+	  waist="Embla sash",
       legs={ name="Telchine Braconi", augments={'Enh. Mag. eff. dur. +10',}},
       feet={ name="Telchine Pigaches", augments={'Enh. Mag. eff. dur. +10',}},
    })
@@ -500,7 +498,7 @@ function get_sets()
      feet={ name="Vanya Clogs", augments={'"Cure" potency +5%','"Cure" spellcasting time -15%','"Conserve MP"+6',}},
      waist="Luminary Sash",
      left_ear="Mendi. Earring",
-     right_ear="Earthcry Earring",
+     right_ear="Meili Earring",
      left_ring="Janniston Ring",
      right_ring="Lebeche Ring",   
    })

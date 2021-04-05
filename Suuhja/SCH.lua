@@ -108,20 +108,22 @@ hud_font = 'Impact'
     windower.send_command('bind !f10 gs c toggle nukemode')		-- Alt-F10 to change Nuking Mode
     windower.send_command('bind ^F10 gs c toggle matchsc')      -- CTRL-F10 to change Match SC Mode      	
     windower.send_command('bind !end gs c hud lite')            -- Alt-End to toggle light hud version   
-    
-    windower.send_command('bind @a send zuuhja input /ma "Indi-Wilt" <me>')
-    windower.send_command('bind @s sat youcommand Zuuhja Geo-Frailty')
+
+    -- windower.send_command('bind @a send zuuhja input /ma "Indi-Wilt" <me>')
+    -- windower.send_command('bind @s sat youcommand Zuuhja Geo-Frailty')
+    windower.send_command('bind @a sat youcommand Muuhja "Wind Threnody II"')
+    windower.send_command('bind @s sat youcommand Zuuhja Silence')
     windower.send_command('bind @d send zuuhja /ma "Cure" Aller')
     windower.send_command('bind @z send zuuhja input /ja "Full Circle" <me>')
     windower.send_command('bind @x send zuuhja input /ja "Radial Arcana" <me>')
-     
+
     windower.send_command('bind @b sat youcommand Muuhja "Magic Finale"')
     windower.send_command('bind @n sat youcommand Muuhja "Carnage Elegy"')
     windower.send_command('bind @m sat youcommand Muuhja "Pining Nocturne"')
     windower.send_command('bind @o sat youcommand Muuhja "Horde Lullaby"')
     windower.send_command('bind @p send muuhja input /pet "Release" <me>')
     windower.send_command('bind @= send muuhja input /ja "Apogee" <me>')
-        
+
     -- windower.send_command('bind @b send muuhja input /ma "Ramuh" <me>')
     -- windower.send_command('bind @n send Muuhja /input /ja "Mana Cede" <me>')
     -- windower.send_command('bind @v sat youcommand Muuhja "Volt Strike"')

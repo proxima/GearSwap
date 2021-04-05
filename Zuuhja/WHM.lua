@@ -422,6 +422,7 @@ function init_gear_sets()
     })
 
     sets.midcast.Stoneskin = set_combine(sets.midcast.EnhancingDuration, {
+	  left_ear="Earthcry Earring",
       neck="Nodens Gorget",
       waist="Siegel Sash",
     })
@@ -516,21 +517,20 @@ function init_gear_sets()
       waist="Luminary Sash",
     }
 
-     -- Custom spell classes
     sets.midcast.MndEnfeebles = {
       main="Daybreak",
       sub="Ammurapi Shield",
-      ammo="Pemphredo Tathlum",
+      ammo="Hydrocera",
       head="Theophany Cap +2",
       body="Theo. Briault +2",
       hands="Theophany Mitts +2",
-      legs={ name="Chironic Hose", augments={'Mag. Acc.+21 "Mag.Atk.Bns."+21','"Fast Cast"+5','MND+11','Mag. Acc.+13','"Mag.Atk.Bns."+6',}},
+      legs="Th. Pant. +3",
       feet="Theo. Duckbills +2",
       neck="Erra Pendant",
       ear1="Malignance Earring",
       ear2="Regal Earring",
       ring1="Stikini Ring +1",
-      ring2="Stikini Ring +1",
+      ring2="Kishar Ring",
       back={ name="Alaunus's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','MND+10','"Fast Cast"+10','Phys. dmg. taken-10%',}},
       waist="Luminary Sash",
     }
