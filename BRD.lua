@@ -587,7 +587,7 @@ function init_gear_sets()
 
     sets.engaged.Hybrid = {
         neck="Loricate Torque +1", --6/6
-        ring1="Moonlight Ring", --5/5
+        ring1="Gelatinous Ring",
         ring2="Defending Ring", --10/10
     }
 

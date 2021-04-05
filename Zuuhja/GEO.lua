@@ -406,6 +406,7 @@ function get_sets()
    })
 
    sets.midcast.MB.normal = set_combine(sets.midcast.nuking.normal, {
+     head="Ea hat +1",
      feet="Jhakri pigaches +2",
    })
 
@@ -434,7 +435,7 @@ function get_sets()
      back={ name="Nantosuelta's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Phys. dmg. taken-10%',}},
    })
 
-   -- could use MND cape, stikinis, ammurapi
+   -- could use MND cape, stikinis, ammurapi, regal ear
    sets.midcast.MndEnfeebling = set_combine(sets.midcast.casting, {
      main="Idris",
      sub="Genmei Shield",
@@ -455,11 +456,18 @@ function get_sets()
 
    -- Enhancing
    sets.midcast.enhancing = set_combine(sets.midcast.casting, {
+      main="Gada",
+      right_ear="Mimir Earring",
+      head={ name="Telchine Cap", augments={'Enh. Mag. eff. dur. +10',}},
+      body={ name="Telchine Chas.", augments={'Enh. Mag. eff. dur. +10',}},
+      hands={ name="Telchine Gloves", augments={'Enh. Mag. eff. dur. +10',}},
+      legs={ name="Telchine Braconi", augments={'Enh. Mag. eff. dur. +10',}},
+      feet={ name="Telchine Pigaches", augments={'Enh. Mag. eff. dur. +10',}},
    })
 
    -- Stoneskin
    sets.midcast.stoneskin = set_combine(sets.midcast.enhancing, {
-     right_ear="Earthcry Earring",   
+     left_ear="Earthcry Earring",   
    })
 
    sets.midcast.refresh = set_combine(sets.midcast.enhancing, {
@@ -498,6 +506,8 @@ function get_sets()
    })
 
    sets.midcast.cure.weather = set_combine(sets.midcast.cure.normal, {
+     main="Chatoyant Staff",
+	 sub="Enki Strap",
    })    
 
    sets.midcast.regen = set_combine(sets.midcast.enhancing, {

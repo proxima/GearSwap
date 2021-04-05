@@ -686,8 +686,8 @@ function init_gear_sets()
 
     -- No Magic Haste (74% DW to cap)
     sets.engaged.Hybrid = {
-      left_ring="Moonlight ring",
-      right_ring="Moonlight ring",
+      left_ring="Chirich Ring +1",
+      right_ring="Chirich Ring +1",
       head="Malignance chapeau",
       body="Malignance tabard",
       hands="Malignance gloves",
