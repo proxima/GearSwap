@@ -155,17 +155,23 @@ function user_setup()
     send_command('bind ^numpad+ input /ja "Climactic Flourish" <me>')
     send_command('bind ^numpadenter input /ja "Building Flourish" <me>')
 
-    send_command('bind ^numpad7 input /ws "Exenterator" <t>')
-    send_command('bind ^numpad4 input /ws "Evisceration" <t>')
-    send_command('bind ^numpad5 input /ws "Rudra\'s Storm" <t>')
-    send_command('bind ^numpad6 input /ws "Pyrrhic Kleos" <t>')
-    send_command('bind ^numpad2 send zuuhja /ma "Cure IV" Suuhja')
-    send_command('bind ^numpad3 send zuuhja /ma "Curaga III" Suuhja')
-    send_command('bind ^numpad1 input /ws "Aeolian Edge" <t>')
+--    send_command('bind ^numpad7 input /ws "Exenterator" <t>')
+--    send_command('bind ^numpad4 input /ws "Evisceration" <t>')
+--    send_command('bind ^numpad5 input /ws "Rudra\'s Storm" <t>')
+--    send_command('bind ^numpad6 input /ws "Pyrrhic Kleos" <t>')
+
+    send_command('bind ^numpad4 send zuuhja /ma "Cure IV" Aptfury')
+    send_command('bind ^numpad5 send zuuhja /ma "Cure IV" Muuhja')
+    send_command('bind ^numpad2 send zuuhja /ma "Cure IV" Aller')
+    send_command('bind ^numpad3 send zuuhja /ma "Curaga III" Aller')
+    send_command('bind ^numpad1 send zuuhja /ma "Cure IV" Suuhja')
 
 	send_command('bind @a sat youcommand Muuhja "Wind Threnody II"')
-    send_command('bind @s sat youcommand Zuuhja Silence')
-    send_command('bind @o sat youcommand Muuhja "Horde Lullaby"')
+	send_command('bind @s send zuuhja /ja "Elemental Seal" <me>')
+    send_command('bind @d sat youcommand Zuuhja Silence')
+	send_command('bind @f sat youcommand Zuuhja "Dia II"')
+    send_command('bind @o sat youcommand Zuuhja "Sleep II"')
+    send_command('bind @p sat youcommand Zuuhja "Sleep"')
     send_command('bind @n sat youcommand Muuhja "Carnage Elegy"')
 	send_command('bind @m sat youcommand Muuhja "Magic Finale"')
     
@@ -257,7 +263,8 @@ function init_gear_sets()
 	  body="Maxixi casaque +3",        -- 19
 	  left_ear="Handler's earring +1",
       neck="Etoile gorget +2",         -- 10
-      legs="Dashing subligar"          -- 10
+      legs="Dashing subligar",         -- 10
+	  feet="Malignance boots",
     } -- Waltz Potency/CHR
 
     sets.precast.WaltzSelf = set_combine(sets.precast.Waltz, {

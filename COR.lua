@@ -201,14 +201,15 @@ function init_gear_sets()
     -- Idle sets
     sets.idle = {    
       main="Tokko Sword",
-      head="Mummu Bonnet +1",
+      head="Malignance Chapeau",
       body="Mummu Jacket +1",
-      hands="Mummu Wrists +1",
+      hands="Malignance Gloves",
       legs="Mummu Kecks +1",
       feet="Mummu Gamash. +1",
       neck="Loricate torque +1",
-      ring1="Defending Ring",
-      ring2="Vocane Ring +1",
+	  left_ear="Odnowa Earring +1",
+      left_ring="Defending Ring",
+      right_ring="Vocane Ring +1",
     }
 
     sets.idle.Town = sets.idle

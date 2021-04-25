@@ -345,37 +345,39 @@ function get_sets()
    -- For Geo spells /
    sets.midcast.geo = set_combine(sets.midcast.casting, {
      main="Idris",
+     sub="Genmei Shield",
      range={ name="Dunna", augments={'MP+20','Mag. Acc.+10','"Fast Cast"+3',}},
-     head="Azimuth Hood +1", -- Vanya Hood, Path C
-     neck={ name="Bagua Charm +2", augments={'Path: A',}},
-	 left_ear="Mendi. Earring",
-	 right_ear="Gna Earring",
+     head={ name="Vanya Hood", augments={'MND+10','Spell interruption rate down +15%','"Conserve MP"+6',}},
      body="Vedic Coat",
-	 hands="Azimuth Gloves +1",
-	 left_ring="Mephitas's Ring +1",
-	 right_ring="Stikini Ring +1",
-     back="Lifestream Cape",
-     waist="Luminary Sash", -- Shinjutsu-no-Obi +1
-     legs={ name="Bagua Pants +3", augments={'Enhances "Mending Halation" effect',}}, -- Vayna Slops, Path C
+     hands="Azimuth Gloves +1",
+     legs={ name="Vanya Slops", augments={'MND+10','Spell interruption rate down +15%','"Conserve MP"+6',}},
      feet="Azimuth Gaiters +1",
+     neck={ name="Bagua Charm +2", augments={'Path: A',}},
+     waist={ name="Shinjutsu-no-Obi +1", augments={'Path: A',}},
+     left_ear="Mendi. Earring",
+     right_ear="Gna Earring",
+     left_ring={ name="Mephitas's Ring +1", augments={'Path: A',}},
+     right_ring="Stikini Ring +1",
+     back={ name="Lifestream Cape", augments={'Geomancy Skill +10','Indi. eff. dur. +19',}},
    })
     
    -- For Indi Spells
    sets.midcast.indi = set_combine(sets.midcast.geo, {
      main="Idris",
-     range={ name="Dunna", augments={'MP+20','Mag. Acc.+10','"Fast Cast"+3',}},
+     sub="Genmei Shield",
+     range={ name="Dunna", augments={'MP+20','Mag. Acc.+10','"Fast Cast"+3',}}, 
      head="Azimuth Hood +1",
-     neck={ name="Bagua Charm +2", augments={'Path: A',}}, -- Reti Pendant
-	 left_ear="Mendi. Earring",
-	 right_ear="Gna Earring",
      body="Vedic Coat",
-	 hands="Azimuth Gloves +1",
-	 left_ring="Mephitas's Ring +1",
-	 right_ring="Stikini Ring +1",
-     back="Lifestream Cape",
-     waist="Luminary Sash", -- Shinjutsu-no-Obi +1
-     legs={ name="Bagua Pants +3", augments={'Enhances "Mending Halation" effect',}}, -- Vanya Slops, Path C
+     hands="Azimuth Gloves +1",
+     legs={ name="Vanya Slops", augments={'MND+10','Spell interruption rate down +15%','"Conserve MP"+6',}},
      feet="Azimuth Gaiters +1",
+     neck="Reti Pendant",
+     waist={ name="Shinjutsu-no-Obi +1", augments={'Path: A',}},
+     left_ear="Mendi. Earring",
+     right_ear="Gna Earring",
+     left_ring={ name="Mephitas's Ring +1", augments={'Path: A',}},
+     right_ring="Stikini Ring +1",
+     back={ name="Lifestream Cape", augments={'Geomancy Skill +10','Indi. eff. dur. +19',}},
    })
 
    sets.midcast.Obi = {
@@ -386,13 +388,13 @@ function get_sets()
    sets.midcast.nuking.normal = set_combine(sets.midcast.casting, {
      main="Idris",
      sub="Ammurapi shield",
-     range={ name="Dunna", augments={'MP+20','Mag. Acc.+10','"Fast Cast"+3',}},
+	 ammo="Ghastly Tathlum +1",
      head={ name="Bagua Galero +3", augments={'Enhances "Primeval Zeal" effect',}},
      body={ name="Amalric Doublet +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
-     hands="Amalric gages +1",
+     hands={ name="Amalric Gages +1", augments={'INT+12','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
      legs={ name="Bagua Pants +3", augments={'Enhances "Mending Halation" effect',}},
-     feet={ name="Bagua Sandals +3", augments={'Enhances "Radial Arcana" effect',}},
-     neck="Sanctity Necklace",
+     feet={ name="Amalric Nails +1", augments={'Mag. Acc.+20','"Mag.Atk.Bns."+20','"Conserve MP"+7',}},
+     neck="Saevus Pendant +1",
      waist="Sacro Cord",
      left_ear="Malignance Earring",
      right_ear="Barkaro. Earring",
@@ -402,8 +404,10 @@ function get_sets()
    })
 
    sets.midcast.MB.normal = set_combine(sets.midcast.nuking.normal, {
-     head="Ea hat +1",
-     feet="Jhakri pigaches +2",
+     head="Ea Hat +1",
+     body="Ea Houppe. +1",
+     legs="Ea Slops +1",
+     left_ring="Mujin Band",
    })
 
    sets.midcast.nuking.acc = set_combine(sets.midcast.nuking.normal, {
@@ -452,15 +456,15 @@ function get_sets()
 
    -- Enhancing
    sets.midcast.enhancing = set_combine(sets.midcast.casting, {
-      main="Gada",
-      right_ear="Mimir Earring",
-	  right_ring="Stikini Ring +1",
-      head={ name="Telchine Cap", augments={'Enh. Mag. eff. dur. +10',}},
-      body={ name="Telchine Chas.", augments={'Enh. Mag. eff. dur. +10',}},
-      hands={ name="Telchine Gloves", augments={'Enh. Mag. eff. dur. +10',}},
-	  waist="Embla sash",
-      legs={ name="Telchine Braconi", augments={'Enh. Mag. eff. dur. +10',}},
-      feet={ name="Telchine Pigaches", augments={'Enh. Mag. eff. dur. +10',}},
+     main="Gada",
+     right_ear="Mimir Earring",
+	 right_ring="Stikini Ring +1",
+     head={ name="Telchine Cap", augments={'Enh. Mag. eff. dur. +10',}},
+     body={ name="Telchine Chas.", augments={'Enh. Mag. eff. dur. +10',}},
+     hands={ name="Telchine Gloves", augments={'Enh. Mag. eff. dur. +10',}},
+	 waist="Embla sash",
+     legs={ name="Telchine Braconi", augments={'Enh. Mag. eff. dur. +10',}},
+     feet={ name="Telchine Pigaches", augments={'Enh. Mag. eff. dur. +10',}},
    })
 
    -- Stoneskin
@@ -476,9 +480,9 @@ function get_sets()
    sets.midcast["Drain"] = set_combine(sets.midcast.IntEnfeebling, {
      main="Rubicundity",
      left_ring="Evanescence ring",
-     legs = "Azimuth tights +1",
-     head = "Bagua Galero +3",
-     feet = "Merlinic crackows",
+     legs="Azimuth tights +1",
+     head="Bagua Galero +3",
+     feet="Merlinic crackows",
    })
 
    sets.midcast["Aspir"] = sets.midcast["Drain"]

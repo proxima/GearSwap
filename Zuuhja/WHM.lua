@@ -130,11 +130,14 @@ function user_setup()
     send_command('bind @x send zuuhja input /ja "Radial Arcana" <me>')
     
     send_command('bind @b send muuhja input /ma "Ramuh" <me>')
-    send_command('bind @n sat youcommand Muuhja "Thunderstorm"')
-    send_command('bind @m sat youcommand Muuhja "Shock Squall"')
-    send_command('bind @o sat youcommand Muuhja Assault')
+    -- send_command('bind @n sat youcommand Muuhja "Thunderstorm"')
+    -- send_command('bind @m sat youcommand Muuhja "Shock Squall"')
+    -- send_command('bind @o sat youcommand Muuhja Assault')
     send_command('bind @p send muuhja input /pet "Release" <me>')
     send_command('bind @= send muuhja input /ja "Apogee" <me>')
+    send_command('bind @n sat youcommand Muuhja "Carnage Elegy"')
+    send_command('bind @m sat youcommand Muuhja "Pining Nocturne"')
+    send_command('bind @o sat youcommand Muuhja "Horde Lullaby"')
         
     send_command('bind ^numpad7 input /ws "Black Halo" <t>')
     send_command('bind ^numpad8 input /ws "Hexa Strike" <t>')
@@ -574,7 +577,8 @@ function init_gear_sets()
       hands={ name="Chironic Gloves", augments={'"Blood Boon"+10','"Dual Wield"+3','"Refresh"+2','Accuracy+7 Attack+7','Mag. Acc.+15 "Mag.Atk.Bns."+15',}},
       legs={ name="Chironic Hose", augments={'Enmity-3','Rng.Acc.+11 Rng.Atk.+11','"Refresh"+2','Mag. Acc.+7 "Mag.Atk.Bns."+7',}},
       feet={ name="Chironic Slippers", augments={'Pet: STR+6','Enmity+3','"Refresh"+2','Accuracy+8 Attack+8',}},
-      neck="Warder's Charm +1",
+      -- neck="Warder's Charm +1",
+      neck="Cleric's torque +1",
       waist="Carrier's Sash",
       back={ name="Alaunus's Cape", augments={'MND+20','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Haste+10','Mag. Evasion+15',}},
       left_ear={ name="Odnowa Earring +1", augments={'Path: A',}},
@@ -586,7 +590,8 @@ function init_gear_sets()
     sets.idle.DT = set_combine(sets.idle, {
       main="Malignance pole",
       sub="Enki Strap",
-      neck="Loricate Torque +1",
+      -- neck="Loricate Torque +1",
+      neck="Cleric's torque +1",
       ammo="Staunch Tathlum +1",
       hands="Inyanga Dastanas +2",
 	  legs="Inyanga Shalwar +2",

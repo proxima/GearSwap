@@ -118,17 +118,18 @@ hud_font = 'Impact'
     windower.send_command('bind @x send zuuhja input /ja "Radial Arcana" <me>')
 
     windower.send_command('bind @b sat youcommand Muuhja "Magic Finale"')
-    windower.send_command('bind @n sat youcommand Muuhja "Carnage Elegy"')
+    -- windower.send_command('bind @n sat youcommand Muuhja "Carnage Elegy"')
     windower.send_command('bind @m sat youcommand Muuhja "Pining Nocturne"')
-    windower.send_command('bind @o sat youcommand Muuhja "Horde Lullaby"')
+	-- windower.send_command('bind @o sat youcommand Muuhja "Horde Lullaby"')
     windower.send_command('bind @p send muuhja input /pet "Release" <me>')
     windower.send_command('bind @= send muuhja input /ja "Apogee" <me>')
+	windower.send_command('bind @n sat youcommand Muuhja "Level ? Holy"')
 
     -- windower.send_command('bind @b send muuhja input /ma "Ramuh" <me>')
     -- windower.send_command('bind @n send Muuhja /input /ja "Mana Cede" <me>')
     -- windower.send_command('bind @v sat youcommand Muuhja "Volt Strike"')
     -- windower.send_command('bind @m sat youcommand Muuhja "Shock Squall"')
-    -- windower.send_command('bind @o sat youcommand Muuhja Assault')
+    windower.send_command('bind @o sat youcommand Muuhja Assault')
     -- windower.send_command('bind @p send muuhja input /pet "Release" <me>')
     -- windower.send_command('bind @= send muuhja input /ja "Apogee" <me>')
     
