@@ -209,7 +209,7 @@ function init_gear_sets()
 	  right_ear="Odnowa Earring +1",
       left_ring="Gelatinous Ring",
       right_ring="Kishar Ring",                                                                            --  4
-      back={ name="Intarabus's Cape", augments={'CHR+20','Mag. Acc+20 /Mag. Dmg.+20','"Fast Cast"+10',}},  -- 10
+      back={ name="Intarabus's Cape", augments={'CHR+20','Mag. Acc+20 /Mag. Dmg.+20','CHR+10','"Fast Cast"+10',}},  -- 10
     }
 
     sets.precast.FC.SongPlaceholder = set_combine(sets.precast.FC.BardSong, {range=info.ExtraSongInstrument})
@@ -291,8 +291,10 @@ function init_gear_sets()
     sets.midcast.HonorMarch = {range="Marsyas", hands="Fili Manchettes +1"}
     sets.midcast.Lullaby = {
       body="Fili Hongreline +1",
-      hands="Brioso Cuffs +3",
-      legs="Inyanga Shalwar +2"
+      --hands="Brioso Cuffs +3",
+      legs="Inyanga Shalwar +2",
+	  hands={ name="Chironic Gloves", augments={'Crit. hit damage +3%','MND+13','"Treasure Hunter"+2','Mag. Acc.+10 "Mag.Atk.Bns."+10',}},
+      feet={ name="Chironic Slippers", augments={'"Fast Cast"+2','MND+5','"Treasure Hunter"+2',}}
     }
     sets.midcast.Madrigal = {head="Fili Calot +1"}
     sets.midcast.Mambo = {feet="Mousai Crackows +1"}
@@ -310,6 +312,7 @@ function init_gear_sets()
     -- For song buffs (duration and AF3 set bonus)
     sets.midcast.SongEnhancing = {
       main="Carnwenhan",
+	  sub="Genmei Shield",
       range="Gjallarhorn",
       head="Fili Calot +1",
       body="Fili Hongreline +1",
@@ -319,9 +322,10 @@ function init_gear_sets()
       neck="Mnbw. Whistle +1",
       waist="Flume Belt +1",
       left_ear="Odnowa Earring +1",
-      left_ring="Stikini Ring +1",
+	  right_ear="Etiolation Earring",
+      left_ring="Defending Ring",
       right_ring="Gelatinous Ring",
-      back={ name="Intarabus's Cape", augments={'CHR+20','Mag. Acc+20 /Mag. Dmg.+20','"Fast Cast"+10',}},
+      back={ name="Intarabus's Cape", augments={'CHR+20','Mag. Acc+20 /Mag. Dmg.+20','CHR+10','"Fast Cast"+10',}},
     }
 
     -- For song defbuffs (duration primary, accuracy secondary)
@@ -331,8 +335,8 @@ function init_gear_sets()
       range="Gjallarhorn",
       head="Brioso Roundlet +2",
       body="Brioso Justau. +3",
-      hands="Brioso Cuffs +3",
-      legs="Inyanga Shalwar +2",
+	  hands="Inyanga Dastanas +2",
+      legs="Brioso Cannions +3",
       feet="Brioso Slippers +3",
       neck="Mnbw. Whistle +1",
       ear1="Digni. Earring",
@@ -340,7 +344,7 @@ function init_gear_sets()
       ring1="Stikini Ring +1",
       ring2="Metamor. Ring +1",
       waist="Acuity Belt +1",
-      back={ name="Intarabus's Cape", augments={'CHR+20','Mag. Acc+20 /Mag. Dmg.+20','"Fast Cast"+10',}},
+      back={ name="Intarabus's Cape", augments={'CHR+20','Mag. Acc+20 /Mag. Dmg.+20','CHR+10','"Fast Cast"+10',}},
     }
 
     -- For song defbuffs (accuracy primary, duration secondary)
@@ -348,6 +352,7 @@ function init_gear_sets()
 
     -- For Horde Lullaby maxiumum AOE range.
     sets.midcast.SongStringSkill = {
+      hands="Brioso Cuffs +3",
       ring1="Stikini Ring +1",
       ring2="Stikini Ring +1"
     }
@@ -366,7 +371,7 @@ function init_gear_sets()
       left_ear="Odnowa Earring +1",
       left_ring="Stikini Ring +1",
       right_ring="Gelatinous Ring",
-      back={ name="Intarabus's Cape", augments={'CHR+20','Mag. Acc+20 /Mag. Dmg.+20','"Fast Cast"+10',}},
+      back={ name="Intarabus's Cape", augments={'CHR+20','Mag. Acc+20 /Mag. Dmg.+20','CHR+10','"Fast Cast"+10',}},
     })
 
     -- Other general spells and classes.
@@ -410,7 +415,7 @@ function init_gear_sets()
       ring1="Stikini Ring +1",
       ring2="Metamor. Ring +1",
       waist="Acuity Belt +1",
-      back={ name="Intarabus's Cape", augments={'CHR+20','Mag. Acc+20 /Mag. Dmg.+20','"Fast Cast"+10',}},
+      back={ name="Intarabus's Cape", augments={'CHR+20','Mag. Acc+20 /Mag. Dmg.+20','CHR+10','"Fast Cast"+10',}},
     }
 
     sets.midcast.Dispelga = set_combine(sets.midcast['Enfeebling Magic'], {main="Daybreak", sub="Ammurapi Shield"})
@@ -429,10 +434,9 @@ function init_gear_sets()
       hands="Inyan. Dastanas +2",
       legs="Brioso Cannions +3",
       feet="Inyan. Crackows +2",
-      -- neck="Loricate Torque +1",
-      neck="Bard's Charm +2",
+      neck="Loricate Torque +1",
       waist="Flume Belt +1",
-      left_ear="Odnorwa Earring +1",
+      left_ear="Odnowa Earring +1",
       right_ear={ name="Moonshade Earring", augments={'HP+25','Latent effect: "Refresh"+1',}},
       left_ring="Inyanga Ring",
       right_ring="Defending ring",
@@ -448,11 +452,10 @@ function init_gear_sets()
       hands="Aya. Manopolas +2",
       legs="Brioso Cannions +3",
       feet="Aya. Gambieras +2",
-      -- neck="Loricate Torque +1",
-      neck="Bard's Charm +2",
+      neck="Loricate Torque +1",
       waist="Carrier's Sash",
       left_ear="Genmei Earring",
-	  right_ear="Odnorwa Earring +1",
+	  right_ear="Odnowa Earring +1",
       left_ring="Defending ring",
       right_ring="Gelatinous Ring",
       back={ name="Intarabus's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Phys. dmg. taken-10%',}},
@@ -467,8 +470,7 @@ function init_gear_sets()
       hands="Inyan. Dastanas +2",
       legs="Inyanga Shalwar +2",
       feet="Inyan. Crackows +2",
-      -- neck="Loricate Torque +1",
-      neck="Bard's Charm +2",
+      neck="Loricate Torque +1",
       waist="Flume Belt +1",
       left_ear="Genmei Earring",
 	  right_ear="Odnowa Earring +1",
@@ -513,7 +515,7 @@ function init_gear_sets()
       ear2="Dignitary's Earring",
       ring1="Chirich ring +1",
       ring2="Chirich ring +1",
-      back={ name="Intarabus's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+4','"Store TP"+10','Damage taken-5%',}},
+      back={ name="Intarabus's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10','Damage taken-5%',}},
       waist="Grunfeld Rope"
     }
 
@@ -536,8 +538,8 @@ function init_gear_sets()
       ear2="Suppanomimi",
       ring1="Chirich ring +1",
       ring2="Chirich ring +1",
-      back={ name="Intarabus's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+4','"Store TP"+10','Damage taken-5%',}},
-      waist="Grunfeld Rope"
+      back={ name="Intarabus's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10','Damage taken-5%',}},
+      waist="Reiki Yotai"
     }
 
     sets.engaged.DW.Acc = set_combine(sets.engaged.DW, {
@@ -568,7 +570,7 @@ function init_gear_sets()
       ear2="Suppanomimi",
       ring1="Chirich ring +1",
       ring2="Chirich ring +1",
-      back={ name="Intarabus's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+4','"Store TP"+10','Damage taken-5%',}},
+      back={ name="Intarabus's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10','Damage taken-5%',}},
       waist="Reiki Yotai"
     }
 
@@ -814,12 +816,6 @@ end
 
 -- Modify the default idle set after it was constructed.
 function customize_idle_set(idleSet)
-    if state.CP.current == 'on' then
-        equip(sets.CP)
-        disable('back')
-    else
-        enable('back')
-    end
     if player.mpp < 51 then
         idleSet = set_combine(idleSet, sets.latent_refresh)
     end

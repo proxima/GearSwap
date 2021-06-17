@@ -174,12 +174,12 @@ function get_sets()
 
    -- Your idle MasterDT set (Notice the sets.me, means no Luopan is out)
    sets.me.idle.dt = set_combine(sets.me.idle.normal, {
-     legs="Baguo Pants +3",
+     legs="Bagua Pants +3",
      feet="Bagua Sandals +3",
    })
 
    sets.me.idle.mdt = set_combine(sets.me.idle.normal, {
-     legs="Baguo Pants +3",
+     legs="Bagua Pants +3",
      feet="Bagua Sandals +3",   
    })
 
@@ -276,7 +276,7 @@ function get_sets()
      right_ring="Prolix ring",                                                                    --  2
 	 back="Lifestream Cape",                                                                      --  7
      waist="Embla sash",                                                                          --  5
-     legs="Geo. Pants +3",                                                                        -- 15
+     legs="Geomancy Pants +3",                                                                    -- 15
      feet="Merlinic crackows"                                                                     -- 11
    }
 
@@ -423,7 +423,7 @@ function get_sets()
      range={ name="Dunna", augments={'MP+20','Mag. Acc.+10','"Fast Cast"+3',}},
      head="Geo. Galero +2",
      body="Geomancy Tunic +2",
-     legs="Geo. Pants +3",
+     legs="Geomancy Pants +3",
      hands="Geo. Mitaines +3",
      feet="Geo. Sandals +3",
      neck={ name="Bagua Charm +2", augments={'Path: A',}},
@@ -442,7 +442,7 @@ function get_sets()
      range={ name="Dunna", augments={'MP+20','Mag. Acc.+10','"Fast Cast"+3',}},
      head="Geo. Galero +2",
      body="Geomancy Tunic +2",
-     legs="Geo. Pants +3",
+     legs="Geomancy Pants +3",
      hands="Geo. Mitaines +3",
      feet="Geo. Sandals +3",
      neck={ name="Bagua Charm +2", augments={'Path: A',}},
@@ -486,6 +486,11 @@ function get_sets()
    })
 
    sets.midcast["Aspir"] = sets.midcast["Drain"]
+   
+   	sets.midcast['Sleepga'] = set_combine(sets.midcast.IntEnfeebling, {
+      legs={ name="Merlinic Shalwar", augments={'INT+10','VIT+1','"Treasure Hunter"+2',}},
+      feet={ name="Merlinic Crackows", augments={'Mag. Acc.+17','Weapon skill damage +1%','"Treasure Hunter"+2','Accuracy+8 Attack+8',}},
+	})
      
    sets.midcast.cure = {} -- Leave This Empty
 

@@ -30,6 +30,11 @@ function get_sets()
     send_command('bind f10 gs c MeleeMode')
     send_command('bind ^f10 gs c ForceIlvl')
     send_command('bind f12 input /ws "Garland of Bliss" <t>')
+	
+	send_command('bind @n input /pet "Thunderspark" <t>')
+	send_command('bind @m input /pet "Volt Strike" <t>')
+    send_command('bind @o input /pet "Shock Squall" <t>')
+	send_command('bind @p input /pet "Thunderstorm" <t>')
  
     -- Set your merits here. This is used in deciding between Enticer's Pants or Apogee Slacks +1.
     -- To change in-game, "/console gs c MeteorStrike3" will change Meteor Strike to 3/5 merits.
@@ -79,11 +84,13 @@ function get_sets()
  
     -- Fast Cast
     sets.precast.FC = {
-      head="C. Palug Crown",
-      body="Inyanga Jubbah +2",
-      left_ear="Malignance Earring",
+      head="C. Palug Crown", -- 8
+      body="Inyanga Jubbah +2", -- 14
+      hands={ name="Merlinic Dastanas", augments={'MND+5','Pet: DEX+3','"Fast Cast"+8','Mag. Acc.+6 "Mag.Atk.Bns."+6',}}, -- 8
+      left_ear="Malignance Earring", -- 4
+	  right_ear="Etiolation Earring", -- 1
       left_ring="Lebeche Ring",
-      right_ring="Kishar Ring",
+      right_ring="Kishar Ring", -- 4
       back="Pahtli Cape",
     }
  

@@ -260,7 +260,8 @@ function get_sets()
       right_ear="Odnowa Earring +1",
       left_ring="Stikini Ring +1",
       right_ring="Stikini Ring +1",
-      back={ name="Mecisto. Mantle", augments={'Cap. Point+50%','STR+2','DEF+5',}},    
+	  back=RDMCape.MACC
+      --back={ name="Mecisto. Mantle", augments={'Cap. Point+50%','STR+2','DEF+5',}},    
     }
 
     -- Your idle DT set
@@ -280,7 +281,8 @@ function get_sets()
       right_ear="Odnowa Earring +1",
       left_ring="Stikini Ring +1",
       right_ring="Defending Ring",
-      back={ name="Mecisto. Mantle", augments={'Cap. Point+50%','STR+2','DEF+5',}},
+	  back=RDMCape.MACC
+      --back={ name="Mecisto. Mantle", augments={'Cap. Point+50%','STR+2','DEF+5',}},
     })
     
     sets.me.idle.mdt = set_combine(sets.me.idle.refresh, {
@@ -299,7 +301,8 @@ function get_sets()
       right_ear="Odnowa Earring +1",
       left_ring="Stikini Ring +1",
       right_ring="Defending Ring",
-      back={ name="Mecisto. Mantle", augments={'Cap. Point+50%','STR+2','DEF+5',}},    
+	  back=RDMCape.MACC
+      --back={ name="Mecisto. Mantle", augments={'Cap. Point+50%','STR+2','DEF+5',}},    
     })
     
     -- Your MP Recovered Whilst Resting Set
@@ -490,8 +493,8 @@ function get_sets()
       head={ name="Merlinic Hood", augments={'Mag. Acc.+24 "Mag.Atk.Bns."+24','Magic burst dmg.+10%','INT+5','Mag. Acc.+3','"Mag.Atk.Bns."+9',}},
       body={ name="Merlinic Jubbah", augments={'Mag. Acc.+24 "Mag.Atk.Bns."+24','Magic burst dmg.+10%','INT+1','Mag. Acc.+1','"Mag.Atk.Bns."+11',}},
       hands={ name="Amalric Gages +1", augments={'INT+12','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
-      legs={ name="Merlinic Shalwar", augments={'Mag. Acc.+25 "Mag.Atk.Bns."+25','Magic burst dmg.+10%','INT+8','Mag. Acc.+8',}},
       right_ring="Mujin Band",
+      legs={ name="Merlinic Shalwar", augments={'Mag. Acc.+25 "Mag.Atk.Bns."+25','Magic burst dmg.+10%','INT+8','Mag. Acc.+8',}},
     })
 
     sets.midcast.nuking.acc = {
@@ -512,12 +515,12 @@ function get_sets()
     sets.midcast.Enfeebling.macc = {
       main="Daybreak",
       sub="Ammurapi Shield",
-      ammo="Pemphredo Tathlum",
-      head="Befouled Crown",
+      ammo="Regal gem",
+      head="Vitiation Chapeau +3",
       body="Atrophy Tabard +2",
       hands="Regal Cuffs",
       legs={ name="Chironic Hose", augments={'Mag. Acc.+21 "Mag.Atk.Bns."+21','"Fast Cast"+5','MND+11','Mag. Acc.+13','"Mag.Atk.Bns."+6',}},
-      feet="Malignance Boots",
+      feet="Vitiation Boots +3",
       neck="Dls. Torque +2",
       waist="Luminary Sash",
       left_ear="Snotra Earring",

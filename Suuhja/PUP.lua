@@ -280,7 +280,7 @@ function init_gear_sets()
         name = "Visucius's Mantle",
         augments = {
             'Pet: M.Acc.+20 Pet: M.Dmg.+20',
-            'Pet: Magic Damage+3',
+            'Pet: Magic Damage+10',
             'Pet: "Regen"+10',
             'Pet: "Regen"+5'
         }
@@ -808,7 +808,7 @@ function init_gear_sets()
       neck="Shulmanu Collar",
       waist="Incarnation Sash",
       left_ear="Burana earring",
-      ring_ear="Domesticator's earring",
+      right_ear="Domesticator's earring",
       left_ring="Thurandaut Ring +1",
       right_ring="C. Palug Ring",
       back=Visucius.PetDT

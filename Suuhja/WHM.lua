@@ -321,7 +321,7 @@ function init_gear_sets()
 
     -- Cure sets
     sets.midcast.CureSolace = {
-      main="Daybreak",                                      -- 30   
+      main="Asclepius",                                 
       sub="Ammurapi shield",
       ammo="Leisure Musk +1",                               --     4
       head="Kaykaus Mitra +1",                              -- 11    6
@@ -412,7 +412,7 @@ function init_gear_sets()
       back={ name="Alaunus's Cape", augments={'MND+20','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Haste+10','Mag. Evasion+15',}},
     })
 
-    sets.midcast.Erase = set_combine(sets.midcast.StatusRemoval, {neck="Cleric's Torque"})
+    sets.midcast.Erase = set_combine(sets.midcast.StatusRemoval, {neck="Cleric's Torque +1"})
 
     -- 110 total Enhancing Magic Skill; caps even without Light Arts
     sets.midcast['Enhancing Magic'] = {
@@ -623,7 +623,7 @@ function init_gear_sets()
 
     -- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
     sets.idle = {
-      main="Daybreak",
+      main="Asclepius",
       sub="Genmei shield",
       ammo="Staunch Tathlum +1",
       head="Inyanga Tiara +2",
@@ -641,18 +641,27 @@ function init_gear_sets()
     }
 
     sets.idle.DT = set_combine(sets.idle, {
-      main="Malignance Pole",
-      sub="Enki Strap",
-      neck="Loricate Torque +1",
-      left_ring="Defending Ring",
-      right_ring="Gelatinous Ring +1",
+      main="Asclepius",
+      sub="Ammurapi Shield",
+      ammo="Staunch Tathlum +1",
+      head="Nyame Helm",
+      body="Nyame Mail",
+      hands="Nyame Gauntlets",
+      legs="Nyame Flanchard",
+      feet="Nyame Sollerets",
+      neck="Warder's Charm +1",
+      waist="Carrier's Sash",
+      left_ear="Etiolation Earring",
+      right_ear={ name="Odnowa Earring +1", augments={'Path: A',}},
+      left_ring="Stikini Ring +1",
+      right_ring="Inyanga Ring",
     })
 
     sets.idle.MEva = set_combine(sets.idle, {
-      main="Daybreak",
+	  main="Asclepius",
       sub="Ammurapi Shield",
       hands="Pinga mittens +1",
-      right_ring="Inyagna Ring",
+      right_ring="Inyanga Ring",
     })
 
     sets.idle.Town = set_combine(sets.idle, {
@@ -690,7 +699,7 @@ function init_gear_sets()
       right_ear="Brutal Earring",
       left_ring="Hetairoi Ring",
       right_ring="Petrov Ring",
-      back={ name="Alaunus's Cape", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10','Phys. dmg. taken-10%',}},
+      back={ name="Alaunus's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}},
     }
 
     -- Buff sets: Gear that needs to be worn to actively enhance a current player buff.

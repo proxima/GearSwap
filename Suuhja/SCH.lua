@@ -206,8 +206,10 @@ function get_sets()
 
     -- Your idle set
     sets.me.idle.refresh = {
-      main="Tupsimati",
-      sub="Khonsu",
+      -- main="Tupsimati",
+      -- sub="Khonsu",
+	  main="Daybreak",
+	  sub="Ammurapi Shield",
       ammo="Homiliary",
       head="Befouled crown",
       ear1="Etiolation earring",
@@ -232,8 +234,10 @@ function get_sets()
 
     -- Your idle DT set
     sets.me.idle.dt = set_combine(sets.me.idle[refreshType], {
-      main="Tupsimati",
-      sub="Khonsu",               -- 6 DT
+      main="Daybreak",
+	  sub="Ammurapi Shield",
+      -- main="Tupsimati",
+      -- sub="Khonsu",               -- 6 DT
       ammo="Staunch tathlum +1",  -- 3 DT
       head="Pinga crown +1",
       ear2="Lugalbanda earring",
@@ -285,7 +289,7 @@ function get_sets()
     sets.me["Retribution"] = sets.me["Heavy Swing"]
     sets.me["Shattersoul"] = set_combine(sets.me["Heavy Swing"], {
       neck="Fotia Gorget",
-      belt="Fotia Belt",
+      waist="Fotia Belt",
       right_ear="Brutal earring",
       left_ear="Regal earring"
     })
@@ -339,7 +343,7 @@ function get_sets()
       feet={ name="Amalric Nails +1", augments={'Mag. Acc.+20','"Mag.Atk.Bns."+20','"Conserve MP"+7',}},
       neck="Saevus Pendant +1",
       waist="Hachirin-no-Obi",
-      left_ear="Regal Rarring",
+      left_ear="Regal Earring",
       right_ear="Malignance Earring",
       left_ring="Archon Ring",
       right_ring="Freke Ring",
@@ -598,7 +602,7 @@ function get_sets()
      feet={ name="Merlinic Crackows", augments={'"Mag.Atk.Bns."+8','"Occult Acumen"+9','INT+8','Mag. Acc.+10',}},
      waist="Oneiros Rope",
      left_ear="Dedition Earring",
-     ring_ear="Telos Earring",
+     right_ear="Telos Earring",
      left_ring="Chirich Ring +1",
      right_ring="Chirich Ring +1",
    })
@@ -749,7 +753,7 @@ function get_sets()
       left_ring="Lebeche ring",          --  3  5
       right_ring="Stikini ring +1",
       waist="Witful belt",               --        3
-      back={name="Lugh's Cape", augments={'MND+20','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity-10','Magic dmg. taken-10%',}},                 --  0 10  0
+      back={ name="Lugh's Cape", augments={'MND+20','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity-10','Phys. dmg. taken-10%',}}, --  0 10  0
       -- merits                                 5
       -- totals:                             51 48 23 (ignoring Daybreak potency incase we are weapon locked)
     })
@@ -785,7 +789,7 @@ function get_sets()
     
     -- Focus on Regen Duration
     sets.midcast.regen.duration = set_combine(sets.midcast.regen.hybrid,{
-      back={name="Lugh's Cape", augments={'MND+20','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity-10','Magic dmg. taken-10%',}},
+      back={ name="Lugh's Cape", augments={'MND+20','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity-10','Phys. dmg. taken-10%',}},	
     }) 
     
     -- Focus on Regen Potency

@@ -686,7 +686,7 @@ function init_gear_sets()
       neck="Shulmanu Collar",
       waist="Incarnation Sash",
       left_ear="Enmerkar earring",
-      ring_ear="Domesticator's earring",
+      right_ear="Domesticator's earring",
       left_ring="Thurandaut Ring +1",
       right_ring="C. Palug Ring",
       back=Visucius.PetDT
