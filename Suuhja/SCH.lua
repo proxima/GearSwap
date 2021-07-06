@@ -120,16 +120,16 @@ hud_font = 'Impact'
     windower.send_command('bind @b sat youcommand Muuhja "Magic Finale"')
     -- windower.send_command('bind @n sat youcommand Muuhja "Carnage Elegy"')
     windower.send_command('bind @m sat youcommand Muuhja "Pining Nocturne"')
-	-- windower.send_command('bind @o sat youcommand Muuhja "Horde Lullaby"')
+    windower.send_command('bind @o sat youcommand Muuhja "Horde Lullaby"')
     windower.send_command('bind @p send muuhja input /pet "Release" <me>')
     windower.send_command('bind @= send muuhja input /ja "Apogee" <me>')
-	windower.send_command('bind @n sat youcommand Muuhja "Level ? Holy"')
+    windower.send_command('bind @n sat youcommand Muuhja "Level ? Holy"')
 
     -- windower.send_command('bind @b send muuhja input /ma "Ramuh" <me>')
     -- windower.send_command('bind @n send Muuhja /input /ja "Mana Cede" <me>')
     -- windower.send_command('bind @v sat youcommand Muuhja "Volt Strike"')
     -- windower.send_command('bind @m sat youcommand Muuhja "Shock Squall"')
-    windower.send_command('bind @o sat youcommand Muuhja Assault')
+    -- windower.send_command('bind @o sat youcommand Muuhja Assault')
     -- windower.send_command('bind @p send muuhja input /pet "Release" <me>')
     -- windower.send_command('bind @= send muuhja input /ja "Apogee" <me>')
     
@@ -235,7 +235,7 @@ function get_sets()
     -- Your idle DT set
     sets.me.idle.dt = set_combine(sets.me.idle[refreshType], {
       main="Daybreak",
-	  sub="Ammurapi Shield",
+      sub="Ammurapi Shield",
       -- main="Tupsimati",
       -- sub="Khonsu",               -- 6 DT
       ammo="Staunch tathlum +1",  -- 3 DT
@@ -298,18 +298,17 @@ function get_sets()
     sets.me["Spirit Taker"] = sets.me["Heavy Swing"]
 
     sets.me["Earth Crusher"] = {
-      ammo="Pemphredo Tathlum",
+      ammo="Ghastly Tathlum +1",
       head="Pedagogy mortarboard +3",
       body={ name="Amalric Doublet +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
       hands="Jhakri Cuffs +2",
-      legs={ name="Peda. Pants +3", augments={'Enhances "Tabula Rasa" effect',}},
+      legs={ name="Amalric Slops +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
       feet={ name="Amalric Nails +1", augments={'Mag. Acc.+20','"Mag.Atk.Bns."+20','"Conserve MP"+7',}},
       neck="Saevus Pendant +1",
-      waist="Hachirin-no-Obi",
+      waist="Orpheus's Sash",
       left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
       right_ear="Malignance Earring",
       right_ring="Metamorph Ring +1",
-      right_ring="Freke Ring",
       back={ name="Lugh's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Damage taken-5%',}},
     }
     
@@ -319,34 +318,36 @@ function get_sets()
     }
     
     sets.me["Cataclysm"] = {
-      ammo="Pemphredo Tathlum",
+      ammo="Ghastly Tathlum +1",
       head="Pixie hairpin +1",
       body={ name="Amalric Doublet +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
       hands="Jhakri Cuffs +2",
-      legs={ name="Peda. Pants +3", augments={'Enhances "Tabula Rasa" effect',}},
+      legs={ name="Amalric Slops +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
       feet={ name="Amalric Nails +1", augments={'Mag. Acc.+20','"Mag.Atk.Bns."+20','"Conserve MP"+7',}},
       neck="Saevus Pendant +1",
-      waist="Hachirin-no-Obi",
+      waist="Orpheus's Sash",
       left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
       right_ear="Malignance Earring",
       left_ring="Archon Ring",
-      right_ring="Epaminondas's Ring",
+      right_ring="Metamorph Ring +1",
       back={ name="Lugh's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Damage taken-5%',}},
     }
 
+    -- current set vs ceizak bee, voidstorm ii: 21810
+    -- agwu inferior to amalric for now
     sets.me["Omniscience"] = {
-      ammo="Pemphredo Tathlum",
+      ammo="Ghastly Tathlum +1",
       head="Pixie hairpin +1",
       body={ name="Amalric Doublet +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
       hands="Jhakri Cuffs +2",
-      legs={ name="Peda. Pants +3", augments={'Enhances "Tabula Rasa" effect',}},
+      legs={ name="Amalric Slops +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
       feet={ name="Amalric Nails +1", augments={'Mag. Acc.+20','"Mag.Atk.Bns."+20','"Conserve MP"+7',}},
       neck="Saevus Pendant +1",
-      waist="Hachirin-no-Obi",
+      waist="Orpheus's Sash",
       left_ear="Regal Earring",
       right_ear="Malignance Earring",
       left_ring="Archon Ring",
-      right_ring="Freke Ring",
+      right_ring="Metamorph Ring +1",
       back={ name="Lugh's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','MND+10','Weapon skill damage +10%',}},
     }
     
@@ -366,7 +367,7 @@ function get_sets()
     sets.buff['Parsimony'] = {}
     sets.buff['Celerity'] = {feet="Pedagogy loafers +3"}
     sets.buff['Alacrity'] = {feet="Pedagogy loafers +3"}
-    -- sets.buff['Klimaform'] = {feet="Arbatel Loafers +1"}	
+    -- sets.buff['Klimaform'] = {feet="Arbatel Loafers +1"}
     sets.buff['Ebullience'] = {head="Arbatel bonnet +1"}
    	
     ---------------
@@ -402,8 +403,8 @@ function get_sets()
      sub="Ammurapi Shield"
    })
     
-	sets.precast["Stun"] = {
-	}
+    sets.precast["Stun"] = {
+    }
 
     -- When spell school is aligned with grimoire, swap relevent pieces -- Can also use Arbatel +1 set here if you value 1% quickcast procs per piece. (2+ pieces)  
     -- Dont set_combine here, as this is the last step of the precast, it will have sorted all the needed pieces already based on type of spell.
@@ -593,18 +594,19 @@ function get_sets()
    
    -- need cape
    sets.midcast.nuking.occult = set_combine(sets.midcast.nuking.normal, { 
-     main="Khatvanga",
      ammo="Seraphic Ampulla",
      head="Mall. Chapeau +2",
      body={ name="Merlinic Jubbah", augments={'Mag. Acc.+22','"Occult Acumen"+11','INT+9',}},
-     hands={ name="Merlinic Dastanas", augments={'Mag. Acc.+20','"Occult Acumen"+9','"Mag.Atk.Bns."+10',}},
+     hands={ name="Merlinic Dastanas", augments={'"Occult Acumen"+11','INT+10','Mag. Acc.+6',}},
      legs="Perdition Slops",
-     feet={ name="Merlinic Crackows", augments={'"Mag.Atk.Bns."+8','"Occult Acumen"+9','INT+8','Mag. Acc.+10',}},
+     feet={ name="Merlinic Crackows", augments={'"Mag.Atk.Bns."+2','"Occult Acumen"+11','MND+9','Mag. Acc.+15',}},
+     neck="Lissome Necklace",
      waist="Oneiros Rope",
      left_ear="Dedition Earring",
      right_ear="Telos Earring",
      left_ring="Chirich Ring +1",
      right_ring="Chirich Ring +1",
+     back={ name="Lugh's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Store TP"+10','Phys. dmg. taken-10%',}},
    })
 
    sets.midcast.MB.occult = set_combine(sets.midcast.MB.normal, {

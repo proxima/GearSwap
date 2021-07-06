@@ -206,7 +206,7 @@ function init_gear_sets()
       neck="Mnbw. Whistle +1",
       waist="Flume Belt +1",
       left_ear="Genmei Earring",
-	  right_ear="Odnowa Earring +1",
+      right_ear="Odnowa Earring +1",
       left_ring="Gelatinous Ring",
       right_ring="Kishar Ring",                                                                            --  4
       back={ name="Intarabus's Cape", augments={'CHR+20','Mag. Acc+20 /Mag. Dmg.+20','CHR+10','"Fast Cast"+10',}},  -- 10
@@ -293,7 +293,7 @@ function init_gear_sets()
       body="Fili Hongreline +1",
       --hands="Brioso Cuffs +3",
       legs="Inyanga Shalwar +2",
-	  hands={ name="Chironic Gloves", augments={'Crit. hit damage +3%','MND+13','"Treasure Hunter"+2','Mag. Acc.+10 "Mag.Atk.Bns."+10',}},
+      hands={ name="Chironic Gloves", augments={'Crit. hit damage +3%','MND+13','"Treasure Hunter"+2','Mag. Acc.+10 "Mag.Atk.Bns."+10',}},
       feet={ name="Chironic Slippers", augments={'"Fast Cast"+2','MND+5','"Treasure Hunter"+2',}}
     }
     sets.midcast.Madrigal = {head="Fili Calot +1"}
@@ -312,7 +312,7 @@ function init_gear_sets()
     -- For song buffs (duration and AF3 set bonus)
     sets.midcast.SongEnhancing = {
       main="Carnwenhan",
-	  sub="Genmei Shield",
+      sub="Genmei Shield",
       range="Gjallarhorn",
       head="Fili Calot +1",
       body="Fili Hongreline +1",
@@ -322,7 +322,7 @@ function init_gear_sets()
       neck="Mnbw. Whistle +1",
       waist="Flume Belt +1",
       left_ear="Odnowa Earring +1",
-	  right_ear="Etiolation Earring",
+      right_ear="Etiolation Earring",
       left_ring="Defending Ring",
       right_ring="Gelatinous Ring",
       back={ name="Intarabus's Cape", augments={'CHR+20','Mag. Acc+20 /Mag. Dmg.+20','CHR+10','"Fast Cast"+10',}},

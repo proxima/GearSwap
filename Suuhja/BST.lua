@@ -40,10 +40,13 @@ function user_setup()
         send_command('bind ^f8 gs c cycle CorrelationMode')
         select_default_macro_book()
 
-		send_command('bind @o sat youcommand Muuhja "Horde Lullaby"')
-		    send_command('bind @n sat youcommand Muuhja "Carnage Elegy"')
- 
-       
+        send_command('bind @o sat youcommand Muuhja "Horde Lullaby"')
+        send_command('bind @p sat youcommand Zuuhja "Sleepga"')
+        send_command('bind @n sat youcommand Muuhja "Carnage Elegy"')
+	send_command('bind @1 send Zuuhja input /ma "Cure IV" Aller')
+	send_command('bind @2 send Zuuhja input /ma "Curaga III" Aller')
+	send_command('bind !1 send Zuuhja input /ma "Cure IV" Slibby')
+	send_command('bind !2 send Zuuhja input /ma "Curaga III" Slibby')
  end
      
  
@@ -95,6 +98,15 @@ function file_unload()
     send_command('unbind ^f8')
     send_command('unbind @f8')
     send_command('unbind ^f11')
+    
+    send_command('unbond @o')
+    send_command('unbond @p')
+    send_command('unbond @n')
+    
+    send_command('unbond @1')
+    send_command('unbond @2')
+    send_command('unbond !1')
+    send_command('unbond !2')    
 end
  
 -- Select default macro book on initial load or subjob change.
@@ -149,8 +161,6 @@ function init_gear_sets()
     }
     
     sets.precast.WS['Decimation'] = {
-      -- main="Kaja Axe",
-      -- sub="Adapa Shield",
       ammo="Demonry Core",
       head="Skormoth Mask",
       body="Tali'ah Manteel +2",
@@ -179,61 +189,44 @@ function init_gear_sets()
   
     -- This is your base Ready move set, activating for physical Ready moves. Merlin/D.Tassets are accounted for already.
     sets.midcast.Pet.WS = {
-      -- main={ name="Kumbhakarna", augments={'Pet: Accuracy+13 Pet: Rng. Acc.+13','Pet: TP Bonus+200',}},
-      -- sub="Adapa Shield",
-      ammo="Demonry Core",
+      main="Agwu's Axe",
+      sub={ name="Kumbhakarna", augments={'Pet: Accuracy+13 Pet: Rng. Acc.+13','Pet: TP Bonus+200',}},
+      ammo="Voluspa Tathlum",
       head={ name="Emicho Coronet +1", augments={'Pet: Accuracy+20','Pet: Attack+20','Pet: "Dbl. Atk."+4',}},
       body={ name="Taeon Tabard", augments={'Pet: Accuracy+21 Pet: Rng. Acc.+21','Pet: "Dbl. Atk."+5','Pet: Damage taken -4%',}},
       hands="Nukumi Manoplas +1",
       legs={ name="Taeon Tights", augments={'Pet: Accuracy+23 Pet: Rng. Acc.+23','Pet: "Dbl. Atk."+5','Pet: Damage taken -4%',}},
-      feet={ name="Emi. Gambieras +1", augments={'Pet: Accuracy+20','Pet: Attack+20','Pet: "Dbl. Atk."+4',}},
+      feet={ name="Taeon Boots", augments={'Pet: Accuracy+21 Pet: Rng. Acc.+21','Pet: "Dbl. Atk."+5','Pet: Damage taken -4%',}},
       neck="Shulmanu Collar",
       waist="Incarnation Sash",
-      left_ear="Enmerkar Earring",
-      right_ear="Domesticator's earring",
-      left_ring="Thurandaut Ring +1",
+      left_ear="Domes. Earring",
+      right_ear="Enmerkar Earring",
+      left_ring="Thur. Ring +1",
       right_ring="C. Palug Ring",
-      back={ name="Pastoralist's Mantle", augments={'STR+1 DEX+1','Accuracy+4','Pet: Accuracy+18 Pet: Rng. Acc.+18',}},
+      back={ name="Artio's Mantle", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Eva.+20 /Mag. Eva.+20','Pet: Attack+10 Pet: Rng.Atk.+10','Pet: "Regen"+10','Pet: Damage taken -5%',}},
     }
 	   
     sets.midcast.Pet.Neutral = set_combine(sets.midcast.Pet.WS, {})           
     sets.midcast.Pet.HighAcc =  set_combine(sets.midcast.Pet.WS, {})
-    
-    sets.midcast.Pet.MaxAcc =  set_combine(sets.midcast.Pet.WS, {
-      main={ name="Arktoi", augments={'Accuracy+50','Pet: Accuracy+50','Pet: Attack+30',}},
-      sub="Adapa Shield",
-      ammo="Demonry Core",
-      head="Tali'ah Turban +2",
-      body="Tali'ah Manteel +2",
-      hands="He. Mittens +1",
-      legs="Heyoka Subligar +1",
-      feet="He. Leggings +1",
-      neck="Shulmanu Collar",
-      waist="Klouskap Sash +1",
-      left_ear="Enmerkar Earring",
-      right_ear="Domes. Earring",
-      left_ring="Thurandaut Ring +1",
-      right_ring="C. Palug Ring",
-      back={ name="Pastoralist's Mantle", augments={'STR+1 DEX+1','Accuracy+4','Pet: Accuracy+18 Pet: Rng. Acc.+18',}},
-    })
+    sets.midcast.Pet.MaxAcc =  set_combine(sets.midcast.Pet.WS, {})
  
     -- This will equip for Magical Ready moves like Fireball
     sets.midcast.Pet.MabReady = set_combine(sets.midcast.Pet.WS, {
-      main={ name="Kumbhakarna", augments={'Pet: Accuracy+13 Pet: Rng. Acc.+13','Pet: TP Bonus+200',}},
-      sub="Adapa Shield",
-      ammo="Demonry Core",
-      head={ name="Emicho Coronet +1", augments={'Pet: Accuracy+20','Pet: Attack+20','Pet: "Dbl. Atk."+4',}},
+      main={ name="Kumbhakarna", augments={'Pet: "Mag.Atk.Bns."+16','Pet: TP Bonus+160',}},
+      sub={ name="Kumbhakarna", augments={'Pet: "Mag.Atk.Bns."+12','Pet: TP Bonus+160',}},
+      ammo="Voluspa Tathlum",
+      head={ name="Valorous Mask", augments={'Pet: "Mag.Atk.Bns."+27','Pet: INT+14','Pet: Accuracy+12 Pet: Rng. Acc.+12','Pet: Attack+7 Pet: Rng.Atk.+7',}},
       body="Udug Jacket",
       hands="Nukumi Manoplas +1",
-      legs={ name="Taeon Tights", augments={'Pet: Accuracy+23 Pet: Rng. Acc.+23','Pet: "Dbl. Atk."+5','Pet: Damage taken -4%',}},
-      feet={ name="Emi. Gambieras +1", augments={'Pet: Accuracy+20','Pet: Attack+20','Pet: "Dbl. Atk."+4',}},
+      legs={ name="Valorous Hose", augments={'Pet: "Mag.Atk.Bns."+28','Pet: Haste+3','Pet: INT+12','Pet: Accuracy+14 Pet: Rng. Acc.+14','Pet: Attack+13 Pet: Rng.Atk.+13',}},
+      feet={ name="Valorous Greaves", augments={'Pet: "Mag.Atk.Bns."+29','Pet: INT+13','Pet: Accuracy+4 Pet: Rng. Acc.+4','Pet: Attack+10 Pet: Rng.Atk.+10',}},
       neck="Adad Amulet",
       waist="Incarnation Sash",
-      left_ear="Enmerkar Earring",
-      right_ear="Domesticator's earring",
-      left_ring="Tali'ah ring",
+      left_ear={ name="Odnowa Earring +1", augments={'Path: A',}},
+      right_ear="Enmerkar Earring",
+      left_ring="Tali'ah Ring",
       right_ring="C. Palug Ring",
-      back={ name="Pastoralist's Mantle", augments={'STR+1 DEX+1','Accuracy+4','Pet: Accuracy+18 Pet: Rng. Acc.+18',}},
+      back="Argocham. Mantle",
     })
    
     sets.midcast.Pet.TPBonus = {hands="Nukumi Manoplas +1",}
@@ -243,67 +236,52 @@ function init_gear_sets()
    
     -- Base Idle Set (when you do NOT have a pet out)
     sets.idle = {
-      -- main={ name="Kumbhakarna", augments={'Pet: Accuracy+13 Pet: Rng. Acc.+13','Pet: TP Bonus+200',}},
-      -- sub="Adapa Shield",
-      ammo="Demonry Core",
+      main="Agwu's Axe",
+      sub="Sacro Bulwark",
+      ammo="Staunch Tathlum +1",
       head="Malignance Chapeau",
-      body="Tali'ah Manteel +2",
-      hands="He. Mittens +1",
-      legs="Heyoka Subligar +1",
-      feet="He. Leggings +1",
-      neck="Shulmanu Collar",
-      waist="Windbuffet belt +1",
-      left_ear="Enmerkar Earring",
-      right_ear="Sherida Earring",
-      left_ring="Gere Ring",
-      right_ring="Epona's Ring",
-      back={ name="Pastoralist's Mantle", augments={'STR+1 DEX+1','Accuracy+4','Pet: Accuracy+18 Pet: Rng. Acc.+18',}},
+      body="Sacro Breastplate",
+      hands="Malignance Gloves",
+      legs="Malignance Tights",
+      feet="Malignance Boots",
+      neck="Warder's Charm +1",
+      waist="Carrier's Sash",
+      left_ear={ name="Odnowa Earring +1", augments={'Path: A',}},
+      right_ear="Etiolation Earring",
+      left_ring="Defending Ring",
+      right_ring="C. Palug Ring",
+      back={ name="Artio's Mantle", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Eva.+20 /Mag. Eva.+20','Pet: Attack+10 Pet: Rng.Atk.+10','Pet: "Regen"+10','Pet: Damage taken -5%',}},
     } 
            
     sets.idle.Reraise = set_combine(sets.idle, {head="Twilight Helm",body="Twilight Mail"})
 
     -- Idle Set that equips when you have a pet out and not fighting an enemy.
     sets.idle.Pet = set_combine(sets.idle, {
-      -- main="Kaja Axe",
-      -- sub="Adapa Shield",
-      ammo="Staunch Tathlum +1",
-      head="Malignance Chapeau",
-      body="Tali'ah Manteel +2",
-      hands="Malignance Gloves",
-      legs="Malignance Tights",
-      feet="Malignance Boots",
-      neck="Anu Torque",
-      waist="Windbuffet Belt +1",
-      left_ear="Brutal Earring",
-      right_ear="Sherida Earring",
-      left_ring="Chirich Ring +1",
-      right_ring="Chirich Ring +1",
-      back={ name="Artio's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+5','"Store TP"+10','Phys. dmg. taken-10%',}},
     })
        
     -- Idle set that equips when you have a pet out and ARE fighting an enemy.
     sets.idle.Pet.Engaged = set_combine(sets.idle, {
-      -- main="Kaja Axe",
-      -- sub="Adapa Shield",
+      main="Agwu's Axe",
+      sub="Sacro Bulwark",
       ammo="Staunch Tathlum +1",
-      head="Malignance Chapeau",
-      body="Tali'ah Manteel +2",
-      hands="Malignance Gloves",
-      legs="Malignance Tights",
-      feet="Malignance Boots",
-      neck="Anu Torque",
-      waist="Windbuffet Belt +1",
-      left_ear="Brutal Earring",
-      right_ear="Sherida Earring",
-      left_ring="Chirich Ring +1",
-      right_ring="Chirich Ring +1",
-      back={ name="Artio's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+5','"Store TP"+10','Phys. dmg. taken-10%',}},
+      head={ name="Anwig Salade", augments={'Attack+3','Pet: Damage taken -10%','Attack+3','Pet: "Regen"+1',}},
+      body={ name="Taeon Tabard", augments={'Pet: Mag. Evasion+22','Pet: "Regen"+3','Pet: Damage taken -4%',}},
+      hands={ name="Taeon Gloves", augments={'Pet: Mag. Evasion+24','Pet: "Regen"+3','Pet: Damage taken -4%',}},
+      legs={ name="Taeon Tights", augments={'Pet: Mag. Evasion+23','Pet: "Regen"+3','Pet: Damage taken -4%',}},
+      feet={ name="Taeon Boots", augments={'Pet: Mag. Evasion+24','Pet: "Regen"+3','Pet: Damage taken -4%',}},
+      neck="Shulmanu Collar",
+      waist="Isa Belt",
+      left_ear="Handler's Earring +1",
+      right_ear="Enmerkar Earring",
+      left_ring="Thur. Ring +1",
+      right_ring="Defending Ring",
+      back={ name="Artio's Mantle", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Eva.+20 /Mag. Eva.+20','Pet: Attack+10 Pet: Rng.Atk.+10','Pet: "Regen"+10','Pet: Damage taken -5%',}},
     })
     
     -- MELEE (SINGLE-WIELD) SETS   
     sets.engaged = {
-      -- main="Kaja Axe",
-      -- sub="Adapa Shield",
+      main="Kaja Axe",
+      sub="Sacro Bulwark",
       ammo="Staunch Tathlum +1",
       head="Malignance Chapeau",
       body="Tali'ah Manteel +2",
@@ -320,25 +298,27 @@ function init_gear_sets()
     }
     
     sets.engaged.PetDT = {
-      ammo="Demonry Core",
+      main="Agwu's Axe",
+      sub="Sacro Bulwark",
+      ammo="Staunch Tathlum +1",
       head={ name="Anwig Salade", augments={'Attack+3','Pet: Damage taken -10%','Attack+3','Pet: "Regen"+1',}},
       body={ name="Taeon Tabard", augments={'Pet: Mag. Evasion+22','Pet: "Regen"+3','Pet: Damage taken -4%',}},
       hands={ name="Taeon Gloves", augments={'Pet: Mag. Evasion+24','Pet: "Regen"+3','Pet: Damage taken -4%',}},
       legs={ name="Taeon Tights", augments={'Pet: Mag. Evasion+23','Pet: "Regen"+3','Pet: Damage taken -4%',}},
       feet={ name="Taeon Boots", augments={'Pet: Mag. Evasion+24','Pet: "Regen"+3','Pet: Damage taken -4%',}},
-      neck="Empath Necklace",
+      neck="Shulmanu Collar",
       waist="Isa Belt",
-      left_ear="Enmerkar Earring",
-      right_ear="Handler's Earring +1",
-      left_ring="Thurandaut Ring +1",
+      left_ear="Handler's Earring +1",
+      right_ear="Enmerkar Earring",
+      left_ring="Thur. Ring +1",
       right_ring="Defending Ring",
-      back={ name="Pastoralist's Mantle", augments={'STR+1 DEX+1','Accuracy+4','Pet: Accuracy+18 Pet: Rng. Acc.+18',}},
+      back={ name="Artio's Mantle", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Eva.+20 /Mag. Eva.+20','Pet: Attack+10 Pet: Rng.Atk.+10','Pet: "Regen"+10','Pet: Damage taken -5%',}},
     }
                
     -- MELEE (DUAL-WIELD) SETS FOR DNC AND NIN SUBJOB   
     sets.engaged.DW = {
-      -- main="Kaja Axe",
-      -- sub="Tauret",
+      main="Kaja Axe",
+      sub="Agwu's Axe",
       ammo="Staunch Tathlum +1",
       head="Malignance Chapeau",
       body="Malignance Tabard",

@@ -41,11 +41,11 @@ function user_setup()
     windower.send_command('bind @a sat youcommand Muuhja "Thunderspark"')
     windower.send_command('bind @s sat youcommand Zuuhja "Thundara III"')
     windower.send_command('bind @d sat youcommand Suuhja "Thundaja"')
-	windower.send_command('bind @f sat youcommand Muuhja "Shock Squall"')
+    windower.send_command('bind @f sat youcommand Muuhja "Shock Squall"')
 		
-	windower.send_command('bind @o sat youcommand Muuhja "Horde Lullaby"')
-	windower.send_command('bind @p sat youcommand Zuuhja "Sleepga"')
-	-- windower.send_command('bind @n input /ma "Breakga" <t>')
+    windower.send_command('bind @o sat youcommand Muuhja "Horde Lullaby"')
+    windower.send_command('bind @p sat youcommand Zuuhja "Sleepga"')
+    -- windower.send_command('bind @n input /ma "Breakga" <t>')
     windower.send_command('bind @n sat youcommand Zuuhja "Dia II"')
 	
     select_default_macro_book()
@@ -56,14 +56,14 @@ function user_unload()
     send_command('unbind ^`')
     send_command('unbind @`')
 	
-	send_command('unbind @a')
-	send_command('unbind @s')
-	send_command('unbind @d')
-	send_command('unbind @f')
+    send_command('unbind @a')
+    send_command('unbind @s')
+    send_command('unbind @d')
+    send_command('unbind @f')
 	
     send_command('unbind @o')
-	send_command('unbind @p')
-	send_command('unbind @n')
+    send_command('unbind @p')
+    send_command('unbind @n')
 end
 
 
@@ -116,22 +116,22 @@ function init_gear_sets()
     sets.precast.WS = {}
 
     -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
-	sets.precast.WS['Cataclysm'] = {
+    sets.precast.WS['Cataclysm'] = {
       ammo="Pemphredo Tathlum",
       head="Pixie hairpin +1",
       body={ name="Amalric Doublet +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
       hands="Jhakri Cuffs +2",
       legs={ name="Amalric Slops +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
-      feet="Archmage's sabots +3", 
+      feet={ name="Amalric Nails +1", augments={'Mag. Acc.+20','"Mag.Atk.Bns."+20','"Conserve MP"+7',}},
       neck="Sorcerer's Stole +2",
-      waist="Hachirin-no-Obi",
+      waist="Orpheus's Sash",
       left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
       right_ear="Malignance Earring",
       left_ring="Archon Ring",
       right_ring="Epaminondas's Ring",
-	}
+    }
 
-	sets.precast.WS['Shattersoul'] = {
+    sets.precast.WS['Shattersoul'] = {
       ammo="Floestone",
       head="Jhakri Coronal +2",
       body="Jhakri Robe +2",
@@ -146,7 +146,7 @@ function init_gear_sets()
       waist="Fotia Belt",
       right_ear="Brutal earring",
       left_ear="Regal earring"
-	}
+    }
 	
     sets.precast.WS['Vidohunir'] = {}
     
@@ -155,22 +155,22 @@ function init_gear_sets()
     sets.midcast.FastRecast = {}
 
     sets.midcast.Cure = {
-	  main="Daybreak",
-	  sub="Ammurapi Shield",
-	  ammo="Leisure musk +1",
+      main="Daybreak",
+      sub="Ammurapi Shield",
+      ammo="Leisure musk +1",
       head={ name="Vanya Hood", augments={'Healing magic skill +20','"Cure" spellcasting time -7%','Magic dmg. taken -3',}},
-	  neck="Debilis medallion",
-	  left_ear="Regal earring",
-	  right_ear="Meili earring",
-	  body="Amalric doublet +1",
+      neck="Debilis medallion",
+      left_ear="Regal earring",
+      right_ear="Meili earring",
+      body="Amalric doublet +1",
       hands="Regal cuffs",
-	  left_ring="Stikini ring +1",
-	  right_ring="Stikini ring +1",
-	  back="Oretania's cape +1",
-	  waist="Bishop's sash",
+      left_ring="Stikini ring +1",
+      right_ring="Stikini ring +1",
+      back="Oretania's cape +1",
+      waist="Bishop's sash",
       legs="Amalric slops +1",
       feet={ name="Vanya Clogs", augments={'Healing magic skill +20','"Cure" spellcasting time -7%','Magic dmg. taken -3',}},
-	}
+    }
 
     sets.midcast.Curaga = sets.midcast.Cure
 
@@ -187,9 +187,9 @@ function init_gear_sets()
       right_ring="Stikini Ring +1",
       right_ear="Mimir Earring",
       left_ear="Regal Earring",	
-	}
+    }
 	
-	sets.midcast.Haste = sets.midcast['Enhancing Magic']
+    sets.midcast.Haste = sets.midcast['Enhancing Magic']
     
     sets.midcast.Stoneskin = set_combine(sets.midcast['Enhancing Magic'], {waist="Siegel Sash"})
 
@@ -209,20 +209,20 @@ function init_gear_sets()
       left_ring="Mallquis Ring",
       right_ring="Freke Ring",
       back={ name="Taranus's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Phys. dmg. taken-10%',}},	
-	}
+    }
 	
-	sets.midcast.Impact = set_combine(sets.midcast['Enfeebling Magic'], {
-	  head=empty, body="Twilight Cloak"}
-	)
+    sets.midcast.Impact = set_combine(sets.midcast['Enfeebling Magic'], {
+      head=empty, body="Twilight Cloak"
+    })
 	
-	sets.midcast['Sleepga'] = set_combine(sets.midcast['Enfeebling Magic'], {
-	
-	})
+    sets.midcast['Sleepga'] = set_combine(sets.midcast['Enfeebling Magic'], {
+    })
 
         
     sets.midcast.ElementalEnfeeble = set_combine(sets.midcast['Enfeebling Magic'], {
-	  feet="Archmage's sabots +3",
-	})
+      legs="Archmage's tonban +3",
+      feet="Archmage's sabots +3",
+    })
 
     sets.midcast['Dark Magic'] = {}
 
@@ -252,16 +252,16 @@ function init_gear_sets()
       main="Marin Staff +1",
       sub="Enki Strap",
       ammo="Ghastly Tathlum +1",
-	  head="Ea hat +1",
+      head="Archmage's Petasos +3",
       body="Spaekona's Coat +2",
-	  hands="Archmage's Gloves +3",
-      legs={ name="Merlinic Shalwar", augments={'Mag. Acc.+25 "Mag.Atk.Bns."+25','Magic burst dmg.+10%','INT+8','Mag. Acc.+8',}},
+      -- body="Archmage's coat +3",
+      hands="Archmage's Gloves +3",
+      legs="Archmage's Tonban +3",
       feet="Archmage's Sabots +3",
-	  neck="Sorcerer's Stole +2",
-      -- waist="Sacro Cord",
+      neck="Sorcerer's Stole +2",
       waist="Orpheus's Sash",
-	  -- waist="Hachirin-no-Obi",
-	  left_ear="Regal Earring",
+      -- waist="Sacro Cord", -- waist="Hachirin-no-Obi",
+      left_ear="Regal Earring",
       right_ear="Malignance Earring",
       left_ring="Metamorph Ring +1",
       right_ring="Freke Ring",
@@ -288,8 +288,8 @@ function init_gear_sets()
       right_ear="Telos Earring",
       left_ring="Chirich Ring +1",
       right_ring="Chirich Ring +1",
-	}
-
+    }
+    
     -- Sets to return to when not performing an action.
     
     -- Resting sets
@@ -307,7 +307,7 @@ function init_gear_sets()
       hands="Nyame Gauntlets",
       legs="Nyame Flanchard",
       feet="Nyame Sollerets",
-	  neck="Sorcerer's Stole +2",
+      neck="Sorcerer's Stole +2",
       -- neck="Warder's Charm +1",
       waist="Carrier's Sash",
       left_ear="Etiolation Earring",
@@ -315,7 +315,7 @@ function init_gear_sets()
       left_ring="Stikini Ring +1",
       right_ring="Stikini Ring +1",
       back={ name="Taranus's Cape", augments={'MND+20','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','"Fast Cast"+10','Mag. Evasion+15',}},	
-	}
+    }
 
     -- Idle mode that keeps PDT gear on, but doesn't prevent normal gear swaps for precast/etc.
     sets.idle.PDT = set_combine(sets.idle, {
@@ -341,7 +341,7 @@ function init_gear_sets()
     -- Buff sets: Gear that needs to be worn to actively enhance a current player buff.
     sets.buff['Mana Wall'] = {
       feet="Wicce Sabots +1",
-	  left_ring="Defending ring"
+      left_ring="Defending ring"
     }
  
     sets.magic_burst = {
@@ -351,7 +351,7 @@ function init_gear_sets()
       ammo="Ghastly Tathlum +1",
       -- waist="Orpheus's Sash",
       -- waist="Hachirin-no-Obi",
-	  waist="Sacro Cord",
+      waist="Sacro Cord",
       left_ear="Regal Earring",
       right_ear="Malignance Earring",
       left_ring="Mujin Band",
@@ -359,10 +359,10 @@ function init_gear_sets()
       hands={ name="Amalric Gages +1", augments={'INT+12','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
       back={ name="Taranus's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Phys. dmg. taken-10%',}},    
       head="Ea Hat +1",
-      -- body="Ea Houppe. +1",
-      body="Spaekona's Coat +2",
+      body="Ea Houppe. +1",
+      -- body="Spaekona's Coat +2",
       legs="Ea Slops +1",
-	  feet="Amalric Nails +1",
+      feet="Amalric Nails +1",
     }
 
     -- Engaged sets

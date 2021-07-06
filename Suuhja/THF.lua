@@ -235,18 +235,19 @@ function init_gear_sets()
     sets.precast.WS['Mandalic Stab'].SATA = set_combine(sets.precast.WS['Mandalic Stab'].Mod, {})
 
     sets.precast.WS['Aeolian Edge'] = {
-      ammo="Ghastly Tathlum +1",
-      head="Malignance chapeau",
-      body="Samnuha Coat",
-      hands="Malignance gloves",
-      legs="Malignance tights",
+      ammo={ name="Ghastly Tathlum +1", augments={'Path: A',}},
+      head={ name="Herculean Helm", augments={'"Mag.Atk.Bns."+25','Magic burst dmg.+3%','INT+9',}},
+      body={ name="Samnuha Coat", augments={'Mag. Acc.+15','"Mag.Atk.Bns."+15','"Fast Cast"+5','"Dual Wield"+5',}},
+      hands={ name="Herculean Gloves", augments={'Mag. Acc.+20 "Mag.Atk.Bns."+20','Crit. hit damage +5%','INT+9',}},
+      legs={ name="Herculean Trousers", augments={'"Mag.Atk.Bns."+25','Phys. dmg. taken -4%','INT+7',}},
       feet={ name="Herculean Boots", augments={'Weapon skill damage +4%','"Mag.Atk.Bns."+28','Mag. Acc.+19 "Mag.Atk.Bns."+19',}},
-      back="Argochampsa mantle",
+      neck="Sanctity Necklace",
       waist="Orpheus's Sash",
       left_ear="Odr Earring",
       right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
-      left_ring="Metamorph ring +1",
+      left_ring={ name="Metamor. Ring +1", augments={'Path: A',}},
       right_ring="Epaminondas's Ring",
+      back="Argocham. Mantle",
     }
     
     sets.precast.WS['Cyclone'] = sets.precast.WS['Aeolian Edge']
