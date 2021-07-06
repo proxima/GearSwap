@@ -206,7 +206,7 @@ function init_gear_sets()
       legs={ name="Lustr. Subligar +1", augments={'Accuracy+20','DEX+8','Crit. hit rate+3%',}},
       feet={ name="Herculean Boots", augments={'Weapon Skill Acc.+1','DEX+5','Weapon skill damage +8%','Accuracy+1 Attack+1',}},
       neck="Fotia Gorget",
-      waist="Grunfeld Rope",
+      waist="Kentarch Belt +1",
       left_ear="Sherida Earring",
       right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
       left_ring="Regal Ring",

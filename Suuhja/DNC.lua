@@ -278,19 +278,19 @@ function init_gear_sets()
     sets.precast.Jig = {legs="Horos Tights +3", feet="Maxixi Toeshoes +3"}
 
     sets.precast.Step = {
-	  ammo="Yamarang",
-	  head="Maxixi Tiara +3",
+      ammo="Yamarang",
+      head="Maxixi Tiara +3",
       neck="Etoile gorget +2",
-	  left_ear="Mache Earring +1",
-	  right_ear="Telos Earring",
-	  body="Malignance Tabard",
-	  hands="Maxixi Bangles +3",
-	  left_ring="Chirich Ring +1",
-	  right_ring="Regal Ring",
+      left_ear="Mache Earring +1",
+      right_ear="Telos Earring",
+      body="Malignance Tabard",
+      hands="Maxixi Bangles +3",
+      left_ring="Chirich Ring +1",
+      right_ring="Regal Ring",
       back={ name="Senuna's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}},
-      waist="Grunfeld Rope",
-	  legs="Malignance Tights",
-	  feet="Horos T. Shoes +3"
+      waist="Kentarch Belt +1",
+      legs="Malignance Tights",
+      feet="Horos T. Shoes +3"
     }
 
     sets.precast.Step['Feather Step'] = set_combine(sets.precast.Step, {feet="Macu. Toeshoes +1"})
@@ -302,15 +302,14 @@ function init_gear_sets()
 
     sets.precast.Flourish1['Violent Flourish'] = {
       ammo="Yamarang",
-	  neck="Etoile Gorget +2",
+      neck="Etoile Gorget +2",
       head="Malignance chapeau",
       body="Malignance tabard",
       hands="Malignance gloves",
       legs="Malignance tights",
       feet="Malignance boots",
-	  left_ring="Stikini Ring +1",
-	  right_ring="Stikini Ring +1",
-
+      left_ring="Stikini Ring +1",
+      right_ring="Stikini Ring +1",
     } -- Magic Accuracy
 
     sets.precast.Flourish1['Desperate Flourish'] = {
@@ -386,7 +385,7 @@ function init_gear_sets()
       legs={ name="Horos Tights +3", augments={'Enhances "Saber Dance" effect',}},
       feet={ name="Herculean Boots", augments={'Weapon Skill Acc.+1','DEX+5','Weapon skill damage +8%','Accuracy+1 Attack+1',}}, 
       neck="Etoile gorget +2",
-      waist="Grunfeld Rope",
+      waist="Kentarch Belt +1",
       left_ear="Sherida Earring",
       right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
       left_ring="Regal Ring",
@@ -398,17 +397,17 @@ function init_gear_sets()
     sets.precast.WS['Shark Bite'] = sets.precast.WS['Rudra\'s Storm']
 
     sets.precast.WS['Aeolian Edge'] = {
-      ammo="Pemphredo Tathlum",
-      head="Malignance Chapeau",
+      ammo={ name="Ghastly Tathlum +1", augments={'Path: A',}},
+      head={ name="Herculean Helm", augments={'"Mag.Atk.Bns."+25','Magic burst dmg.+3%','INT+9',}},
       body="Samnuha Coat",
       hands="Maxixi Bangles +3",
       legs="Horos Tights +3",
       feet={ name="Herculean Boots", augments={'Weapon skill damage +4%','"Mag.Atk.Bns."+28','Mag. Acc.+19 "Mag.Atk.Bns."+19',}},
-      neck="Baetyl Pendant",
+      neck="Sanctity Necklace",
       ear1="Moonshade Earring",
-      ear2="Friomisi Earring",
-      ring1="Metamorph ring +1",
-      ring2="Regal ring",
+      ear2="Odr Earring",
+      left_ring="Metamorph ring +1",
+      right_ring="Epaminondas's Ring",
       back="Argocham. Mantle",
       waist="Orpheus's Sash",
     }
@@ -418,7 +417,6 @@ function init_gear_sets()
     sets.precast.Skillchain = {
         hands="Macu. Bangles +1",
     }
-
 
     ------------------------------------------------------------------------------------------------
     ---------------------------------------- Midcast Sets ------------------------------------------
@@ -456,6 +454,21 @@ function init_gear_sets()
     })
 
     sets.idle.Town = set_combine(sets.idle, {
+      main={ name="Terpsichore", augments={'Path: A',}},
+      sub="Twashtar",
+      ammo="Yamarang",
+      head="Malignance Chapeau",
+      body="Malignance Tabard",
+      hands="Malignance Gloves",
+      legs="Malignance Tights",
+      feet="Malignance Boots",
+      neck={ name="Etoile Gorget +2", augments={'Path: A',}},
+      waist="Reiki Yotai",
+      left_ear="Eabani Earring",
+      right_ear="Sherida Earring",
+      left_ring="Chirich Ring +1",
+      right_ring="Chirich Ring +1",
+      back={ name="Senuna's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dual Wield"+10','Phys. dmg. taken-10%',}},    
     })
 
     sets.idle.Weak = sets.idle.DT
