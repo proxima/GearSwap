@@ -15,7 +15,7 @@
         these are to set fewer macros (2 cycle, 5 cast) to save macro space when playing lazily with controler
         
         gs c nuke cycle              	Cycles element type for nuking & SC
-		gs c nuke cycledown				Cycles element type for nuking & SC	in reverse order
+        gs c nuke cycledown		Cycles element type for nuking & SC	in reverse order
         gs c nuke t1                    Cast tier 1 nuke of saved element 
         gs c nuke t2                    Cast tier 2 nuke of saved element 
         gs c nuke t3                    Cast tier 3 nuke of saved element 
@@ -25,12 +25,12 @@
         gs c nuke ra2                   Cast tier 2 -ra nuke of saved element 
         gs c nuke ra3                   Cast tier 3 -ra nuke of saved element 	
 		
-		gs c geo geocycle				Cycles Geomancy Spell
-		gs c geo geocycledown			Cycles Geomancy Spell in reverse order
-		gs c geo indicycle				Cycles IndiColure Spell
-		gs c geo indicycledown			Cycles IndiColure Spell in reverse order
-		gs c geo geo					Cast saved Geo Spell
-		gs c geo indi					Cast saved Indi Spell
+        gs c geo geocycle		Cycles Geomancy Spell
+        gs c geo geocycledown		Cycles Geomancy Spell in reverse order
+        gs c geo indicycle		Cycles IndiColure Spell
+        gs c geo indicycledown		Cycles IndiColure Spell in reverse order
+        gs c geo geo			Cast saved Geo Spell
+        gs c geo indi			Cast saved Indi Spell
 
         HUD Functions:
         gs c hud hide                   Toggles the Hud entirely on or off
@@ -82,16 +82,16 @@ hud_font = 'Impact'
 -- Setup your Key Bindings here:  
     windower.send_command('bind insert gs c nuke cycle')            -- insert Cycles Nuke element
     windower.send_command('bind delete gs c nuke cycledown')        -- delete Cycles Nuke element in reverse order   
-    windower.send_command('bind home gs c geo geocycle') 			-- home Cycles Geomancy Spell
-    windower.send_command('bind PAGEUP gs c geo geocycledown') 		-- end Cycles Geomancy Spell in reverse order	
-    windower.send_command('bind PAGEDOWN gs c geo indicycle') 		-- PgUP Cycles IndiColure Spell
+    windower.send_command('bind home gs c geo geocycle') 	    -- home Cycles Geomancy Spell
+    windower.send_command('bind PAGEUP gs c geo geocycledown')      -- end Cycles Geomancy Spell in reverse order	
+    windower.send_command('bind PAGEDOWN gs c geo indicycle') 	    -- PgUP Cycles IndiColure Spell
     windower.send_command('bind end gs c geo indicycledown') 	    -- PgDown Cycles IndiColure Spell in reverse order	
-    windower.send_command('bind !f9 gs c toggle runspeed') 			-- Alt-F9 toggles locking on / off Herald's Gaiters
-	windower.send_command('bind f10 gs c toggle mb')				-- F10 toggles Magic Burst Mode on / off.
+    windower.send_command('bind !f9 gs c toggle runspeed') 	    -- Alt-F9 toggles locking on / off Herald's Gaiters
+    windower.send_command('bind f10 gs c toggle mb')		    -- F10 toggles Magic Burst Mode on / off.
     windower.send_command('bind !f10 gs c toggle nukemode')         -- Alt-F10 to change Nuking Mode
     windower.send_command('bind ^F10 gs c toggle matchsc')          -- CTRL-F10 to change Match SC Mode         
-    windower.send_command('bind f12 gs c toggle melee')				-- F12 Toggle Melee mode on / off and locking of weapons
-	windower.send_command('bind f9 gs c toggle idlemode')			-- F9 Toggles between MasterRefresh or MasterDT when no luopan is out
+    windower.send_command('bind f12 gs c toggle melee')	            -- F12 Toggle Melee mode on / off and locking of weapons
+    windower.send_command('bind f9 gs c toggle idlemode')           -- F9 Toggles between MasterRefresh or MasterDT when no luopan is out
 --[[
     This gets passed in when the Keybinds is turned on.
     Each one matches to a given variable within the text object
@@ -218,7 +218,7 @@ function get_sets()
    sets.pan.idle.dt = set_combine(sets.pan.idle.normal, {
      head="Bagua Galero +3",
      body="Mallquis saio +2",
-	 legs="Geomancy Pants +3",
+     legs="Geomancy Pants +3",
      waist="Slipor Sash",
    })
 
@@ -274,7 +274,7 @@ function get_sets()
      hands="Bagua mitaines +3",                                                                   -- 14 (elemental only.)
      left_ring="Kishar Ring",                                                                     --  4
      right_ring="Prolix ring",                                                                    --  2
-	 back="Lifestream Cape",                                                                      --  7
+     back="Lifestream Cape",                                                                      --  7
      waist="Embla sash",                                                                          --  5
      legs="Geomancy Pants +3",                                                                    -- 15
      feet="Merlinic crackows"                                                                     -- 11
@@ -381,14 +381,14 @@ function get_sets()
    })
 
    sets.midcast.Obi = {
-      waist="Hachirin-no-Obi",
+     waist="Hachirin-no-Obi",
    }
 
    -- Nuking
    sets.midcast.nuking.normal = set_combine(sets.midcast.casting, {
      main="Idris",
      sub="Ammurapi shield",
-	 ammo="Ghastly Tathlum +1",
+     ammo="Ghastly Tathlum +1",
      head={ name="Bagua Galero +3", augments={'Enhances "Primeval Zeal" effect',}},
      body={ name="Amalric Doublet +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
      hands={ name="Amalric Gages +1", augments={'INT+12','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
@@ -458,11 +458,11 @@ function get_sets()
    sets.midcast.enhancing = set_combine(sets.midcast.casting, {
      main="Gada",
      right_ear="Mimir Earring",
-	 right_ring="Stikini Ring +1",
+     right_ring="Stikini Ring +1",
      head={ name="Telchine Cap", augments={'Enh. Mag. eff. dur. +10',}},
      body={ name="Telchine Chas.", augments={'Enh. Mag. eff. dur. +10',}},
      hands={ name="Telchine Gloves", augments={'Enh. Mag. eff. dur. +10',}},
-	 waist="Embla sash",
+     waist="Embla sash",
      legs={ name="Telchine Braconi", augments={'Enh. Mag. eff. dur. +10',}},
      feet={ name="Telchine Pigaches", augments={'Enh. Mag. eff. dur. +10',}},
    })
@@ -487,10 +487,10 @@ function get_sets()
 
    sets.midcast["Aspir"] = sets.midcast["Drain"]
    
-   	sets.midcast['Sleepga'] = set_combine(sets.midcast.IntEnfeebling, {
-      legs={ name="Merlinic Shalwar", augments={'INT+10','VIT+1','"Treasure Hunter"+2',}},
-      feet={ name="Merlinic Crackows", augments={'Mag. Acc.+17','Weapon skill damage +1%','"Treasure Hunter"+2','Accuracy+8 Attack+8',}},
-	})
+   sets.midcast['Sleepga'] = set_combine(sets.midcast.IntEnfeebling, {
+     legs={ name="Merlinic Shalwar", augments={'INT+10','VIT+1','"Treasure Hunter"+2',}},
+     feet={ name="Merlinic Crackows", augments={'Mag. Acc.+17','Weapon skill damage +1%','"Treasure Hunter"+2','Accuracy+8 Attack+8',}},
+  })
      
    sets.midcast.cure = {} -- Leave This Empty
 
@@ -514,7 +514,7 @@ function get_sets()
 
    sets.midcast.cure.weather = set_combine(sets.midcast.cure.normal, {
      main="Chatoyant Staff",
-	 sub="Enki Strap",
+     sub="Enki Strap",
    })    
 
    sets.midcast.regen = set_combine(sets.midcast.enhancing, {

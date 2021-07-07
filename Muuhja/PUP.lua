@@ -530,6 +530,7 @@ function init_gear_sets()
     ]]
     sets.pet.EmergencyDT = {
         main="Midnights",                                                                                         --  3
+	--head="Anwig Salade",                                                                                      -- 10
         head={ name="Rao Kabuto +1", augments={'Pet: HP+125','Pet: Accuracy+20','Pet: Damage taken -4%',}},       --  4
         body={ name="Rao Togi +1", augments={'Pet: HP+125','Pet: Accuracy+20','Pet: Damage taken -4%',}},         --  4
         hands={ name="Rao Kote +1", augments={'Pet: HP+125','Pet: Accuracy+20','Pet: Damage taken -4%',}},        --  4
@@ -541,6 +542,7 @@ function init_gear_sets()
         right_ear="Rimeice Earring",                                                                              --  1
         left_ring="Thurandaut Ring +1",                                                                           --  4
         right_ring="C. Palug Ring",
+        --back={ name="Visucius's Mantle", augments={'Pet: "Regen"+10','System: 1 ID: 1247 Val: 4',}},              -- 10 MDT
         back=Visucius.PetDT                                                                                       --  5
     }
 

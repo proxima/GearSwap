@@ -405,7 +405,7 @@ function init_gear_sets()
       feet={ name="Herculean Boots", augments={'Weapon skill damage +4%','"Mag.Atk.Bns."+28','Mag. Acc.+19 "Mag.Atk.Bns."+19',}},
       neck="Sanctity Necklace",
       ear1="Moonshade Earring",
-      ear2="Odr Earring",
+      ear2="Ishvara Earring",
       left_ring="Metamorph ring +1",
       right_ring="Epaminondas's Ring",
       back="Argocham. Mantle",

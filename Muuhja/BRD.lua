@@ -264,7 +264,7 @@ function init_gear_sets()
       neck={ name="Bard's Charm +2", augments={'Path: A',}},
       waist="Grunfeld Rope",
       left_ear="Regal Earring",
-      right_ear="Rimeice Earring",
+      right_ear="Ishvara Earring",
       left_ring="Metamorph Ring +1",
       right_ring="Overbearing Ring",
       back={ name="Intarabus's Cape", augments={'CHR+20','Accuracy+20 Attack+20','CHR+10','Weapon skill damage +10%','Damage taken-5%',}},

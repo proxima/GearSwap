@@ -201,15 +201,15 @@ function get_sets()
     -- All sets that are equipped to faciliate my avatar's behaviour or abilities are under 'avatar', eg, Perpetuation, Blood Pacts, etc
       
     sets.me = {}        		-- leave this empty
-    sets.buff = {} 				-- leave this empty
+    sets.buff = {} 			-- leave this empty
     sets.me.idle = {}			-- leave this empty
 
     -- Your idle set
     sets.me.idle.refresh = {
       -- main="Tupsimati",
       -- sub="Khonsu",
-	  main="Daybreak",
-	  sub="Ammurapi Shield",
+      main="Daybreak",
+      sub="Ammurapi Shield",
       ammo="Homiliary",
       head="Befouled crown",
       ear1="Etiolation earring",
@@ -290,10 +290,23 @@ function get_sets()
     sets.me["Shattersoul"] = set_combine(sets.me["Heavy Swing"], {
       neck="Fotia Gorget",
       waist="Fotia Belt",
+      left_ring={ name="Metamor. Ring +1", augments={'Path: A',}},
+      right_ring="Freke Ring",
       right_ear="Brutal earring",
-      left_ear="Regal earring"
+      left_ear="Regal earring",
+      back={ name="Lugh's Cape", augments={'INT+20','Accuracy+20 Attack+20','INT+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}},
     })
-    sets.me["Shell Crusher"] = sets.me["Heavy Swing"]
+    
+    sets.me["Shell Crusher"] = set_combine(sets.me["Heavy Swing"], {
+      neck="Fotia Gorget",
+      waist="Fotia Belt",
+      left_ear="Moonshade Earring",
+      right_ear="Telos Earring",
+      left_ring="Chirich Ring +1",
+      right_ring="Chirich Ring +1",
+      back={ name="Lugh's Cape", augments={'INT+20','Accuracy+20 Attack+20','INT+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}},
+    })
+    
     sets.me["Full Swing"] = sets.me["Heavy Swing"]
     sets.me["Spirit Taker"] = sets.me["Heavy Swing"]
 
@@ -373,11 +386,11 @@ function get_sets()
     ---------------
     -- Casting Sets
     ---------------
-    sets.precast = {}   		-- Leave this empty  
-    sets.midcast = {}    		-- Leave this empty  
-    sets.aftercast = {}  		-- Leave this empty  
-	 sets.midcast.nuking = {}	-- leave this empty
-	 sets.midcast.MB	= {}		-- leave this empty      
+    sets.precast = {}   	-- Leave this empty  
+    sets.midcast = {}    	-- Leave this empty  
+    sets.aftercast = {}  	-- Leave this empty  
+    sets.midcast.nuking = {}	-- leave this empty
+    sets.midcast.MB	= {}	-- leave this empty      
     ----------
     -- Precast
     ----------
@@ -444,12 +457,12 @@ function get_sets()
       waist="Hachirin-no-Obi",
     }
 	
-	-----------------------------------------------------------------------------------------------
-	-- Helix sets automatically derives from casting sets. SO DONT PUT ANYTHING IN THEM other than:
-	-- Pixie in DarkHelix
-	-- Boots that aren't arbatel +1 (15% of small numbers meh, amalric+1 does more)
-	-- Belt that isn't Obi.
-	-----------------------------------------------------------------------------------------------
+    -----------------------------------------------------------------------------------------------
+    -- Helix sets automatically derives from casting sets. SO DONT PUT ANYTHING IN THEM other than:
+    -- Pixie in DarkHelix
+    -- Boots that aren't arbatel +1 (15% of small numbers meh, amalric+1 does more)
+    -- Belt that isn't Obi.
+    -----------------------------------------------------------------------------------------------
     -- Make sure you have a non weather obi in this set. Helix get bonus naturally no need Obi.	
     sets.midcast.Kaustra = {
       main="Tupsimati",
