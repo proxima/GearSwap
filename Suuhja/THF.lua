@@ -50,11 +50,6 @@ function user_setup()
     state.WeaponskillMode:options('Normal', 'Acc', 'Mod')
     state.PhysicalDefenseMode:options('Evasion', 'PDT')
 
-
-    gear.default.weaponskill_neck = "Asperity Necklace"
-    gear.default.weaponskill_waist = "Caudata Belt"
-    gear.AugQuiahuiz = {name="Quiahuiz Trousers", augments={'Haste+2','"Snapshot"+2','STR+8'}}
-
     -- Additional local binds
     send_command('bind ^` input /ja "Flee" <me>')
     send_command('bind ^= gs c cycle treasuremode')
@@ -157,7 +152,7 @@ function init_gear_sets()
       left_ear="Sherida Earring",
       right_ear="Odr Earring",
       left_ring="Gere Ring",
-      right_ring="Begrudging Ring",
+      right_ring="Ilabrat Ring",
       back={ name="Senuna's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Crit.hit rate+10',}},
     }
     sets.precast.WS.Acc = set_combine(sets.precast.WS, {})
@@ -189,7 +184,7 @@ function init_gear_sets()
       left_ear="Sherida Earring",
       right_ear="Odr Earring",
       left_ring="Regal Ring",
-      right_ring="Begrudging Ring",
+      right_ring="Ilabrat Ring",
       back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Crit.hit rate+10',}},
     })
     sets.precast.WS['Evisceration'].Acc = set_combine(sets.precast.WS['Evisceration'], {})
@@ -210,7 +205,7 @@ function init_gear_sets()
       left_ear="Sherida Earring",
       right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
       left_ring="Regal Ring",
-      right_ring="Epaminondas's Ring",
+      right_ring="Ilabrat Ring",
       back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Crit.hit rate+10',}},
     })
     
@@ -302,7 +297,7 @@ function init_gear_sets()
       left_ring="Gelatinous Ring",
       back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10','Phys. dmg. taken-10%',}},
       -- feet="Jute boots +1"
-	  feet="Malignance Boots"
+      feet="Malignance Boots"
     }
 
     sets.idle.Town = {feet="Jute boots +1"}
@@ -341,12 +336,16 @@ function init_gear_sets()
     }
 
     sets.engaged.Acc = {}
-            -- Mod set for trivial mobs (Skadi+1)
+    -- Mod set for trivial mobs (Skadi+1)
     sets.engaged.Mod = {}
+    
     -- Mod set for trivial mobs (Thaumas)
     sets.engaged.Mod2 = {}
+    
     sets.engaged.Evasion = {}
+    
     sets.engaged.Acc.Evasion = {}
+    
     sets.engaged.PDT = {
       ammo="Yamarang",
       head="Malignance Chapeau",
@@ -362,6 +361,7 @@ function init_gear_sets()
       left_ring="Gere Ring",
       back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10','Phys. dmg. taken-10%',}},
     }
+    
     sets.engaged.Acc.PDT = {}
 
 end

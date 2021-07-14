@@ -85,8 +85,6 @@ function init_gear_sets()
 
     -- Fast cast sets for spells
     sets.precast.FC = {
-      main="Malevolence", -- 5
-      sub="Genmei Shield",
       ammo="Impatiens",
       head={ name="Merlinic Hood", augments={'"Fast Cast"+7','"Mag.Atk.Bns."+14',}}, -- 15
       body="Mallquis Saio +2", -- 9
@@ -155,8 +153,6 @@ function init_gear_sets()
     sets.midcast.FastRecast = {}
 
     sets.midcast.Cure = {
-      main="Daybreak",
-      sub="Ammurapi Shield",
       ammo="Leisure musk +1",
       head={ name="Vanya Hood", augments={'Healing magic skill +20','"Cure" spellcasting time -7%','Magic dmg. taken -3',}},
       neck="Debilis medallion",
@@ -175,8 +171,6 @@ function init_gear_sets()
     sets.midcast.Curaga = sets.midcast.Cure
 
     sets.midcast['Enhancing Magic'] = {
-      main="Daybreak",
-      sub="Ammurapi Shield",
       body="Telchine chasuble",
       head="Telchine Cap",
       hands="Telchine Gloves",
@@ -194,14 +188,12 @@ function init_gear_sets()
     sets.midcast.Stoneskin = set_combine(sets.midcast['Enhancing Magic'], {waist="Siegel Sash"})
 
     sets.midcast['Enfeebling Magic'] = {
-      main="Marin Staff +1",
-      sub="Khonsu",
       ammo="Pemphredo tathlum",
       head="Mallquis Chapeau +2",
       body="Spaekona's Coat +2",
-      hands={ name="Amalric Gages +1", augments={'INT+12','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
-      legs="Amalric Slops +1",
-      feet={ name="Amalric Nails +1", augments={'Mag. Acc.+20','"Mag.Atk.Bns."+20','"Conserve MP"+7',}},
+      hands="Archmage's Gloves +3",
+      legs="Archmage's Tonban +3",
+      feet="Archmage's Sabots +3",
       neck="Sorcerer's Stole +2",
       waist="Sacro Cord",
       left_ear="Regal Earring",
@@ -249,8 +241,6 @@ function init_gear_sets()
     -- Elemental Magic sets
     
     sets.midcast['Elemental Magic'] = {
-      main="Marin Staff +1",
-      sub="Enki Strap",
       ammo="Ghastly Tathlum +1",
       head="Archmage's Petasos +3",
       body="Spaekona's Coat +2",
@@ -275,19 +265,37 @@ function init_gear_sets()
 	
     sets.midcast['Elemental Magic'].HighTierNuke.Resistant = set_combine(sets.midcast['Elemental Magic'], {})
 
+    sets.midcast['Death'] = {
+      ammo="Pemphredo tathlum",
+      head="Pixie hairpin +1",
+      neck="Sorcerer's Stole +2",
+      body="Archmage's coat +3",
+      hands="Archmage's Gloves +3",
+      legs="Archmage's Tonban +3",
+      feet="Archmage's Sabots +3",
+      left_ear="Regal Earring",
+      right_ear="Malignance Earring",
+      left_ring="Archon ring",
+      right_ring="Freke ring",
+      waist="Hachirin-no-Obi",
+      back={ name="Taranus's Cape", augments={'MP+60','Mag. Acc+20 /Mag. Dmg.+20','MP+10','"Fast Cast"+10','Mag. Evasion+15',}},   
+    }
+    
     -- Minimal damage gear for procs.
     sets.midcast['Elemental Magic'].Proc = {
       ammo="Seraphic Ampulla",
       head="Mall. Chapeau +2",
       body={ name="Merlinic Jubbah", augments={'Mag. Acc.+22','"Occult Acumen"+11','INT+9',}},
-      hands={ name="Merlinic Dastanas", augments={'Mag. Acc.+20','"Occult Acumen"+9','"Mag.Atk.Bns."+10',}},
+      hands={ name="Merlinic Dastanas", augments={'"Occult Acumen"+11','INT+10','Mag. Acc.+6',}},
       legs="Perdition Slops",
-      feet={ name="Merlinic Crackows", augments={'"Mag.Atk.Bns."+8','"Occult Acumen"+9','INT+8','Mag. Acc.+10',}},
+      feet={ name="Merlinic Crackows", augments={'"Mag.Atk.Bns."+2','"Occult Acumen"+11','MND+9','Mag. Acc.+15',}},
+      neck="Lissome Necklace",
       waist="Oneiros Rope",
       left_ear="Dedition Earring",
       right_ear="Telos Earring",
       left_ring="Chirich Ring +1",
       right_ring="Chirich Ring +1",
+      back={ name="Taranus's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+5','"Store TP"+10','Phys. dmg. taken-10%',}},
     }
     
     -- Sets to return to when not performing an action.
@@ -299,16 +307,13 @@ function init_gear_sets()
    
     -- Normal refresh idle set
     sets.idle = {
-      main="Daybreak",
-      sub="Ammurapi Shield",
       ammo="Staunch Tathlum +1",
       head="Nyame Helm",
       body="Nyame Mail",
       hands="Nyame Gauntlets",
       legs="Nyame Flanchard",
       feet="Nyame Sollerets",
-      neck="Sorcerer's Stole +2",
-      -- neck="Warder's Charm +1",
+      neck="Warder's Charm +1",
       waist="Carrier's Sash",
       left_ear="Etiolation Earring",
       right_ear={ name="Odnowa Earring +1", augments={'Path: A',}},
@@ -323,7 +328,7 @@ function init_gear_sets()
 
     -- Idle mode scopes:
     -- Idle mode when weak.
-    sets.idle.Weak = {}
+    sets.idle.Weak = sets.idle.PDT
     
     -- Town gear.
     sets.idle.Town = {feet="Herald's Gaiters"}
@@ -345,8 +350,6 @@ function init_gear_sets()
     }
  
     sets.magic_burst = {
-      main="Marin Staff +1",
-      sub="Enki Strap",
       neck="Sorcerer's Stole +2",
       ammo="Ghastly Tathlum +1",
       -- waist="Orpheus's Sash",

@@ -27,26 +27,24 @@ function get_sets()
 end
  
 function job_setup()
- 
-    get_combat_form()
- 
+    get_combat_form() 
 end
  
  
 function user_setup()
-        state.IdleMode:options('Normal', 'Reraise')
-        state.OffenseMode:options('Normal', 'PetDT')
-        state.CorrelationMode = M{['description']='Correlation Mode', 'Neutral', 'HighAcc', 'MaxAcc',}
-        send_command('bind ^f8 gs c cycle CorrelationMode')
-        select_default_macro_book()
-
-        send_command('bind @o sat youcommand Muuhja "Horde Lullaby"')
-        send_command('bind @p sat youcommand Zuuhja "Sleepga"')
-        send_command('bind @n sat youcommand Muuhja "Carnage Elegy"')
-	send_command('bind @1 send Zuuhja input /ma "Cure IV" Aller')
-	send_command('bind @2 send Zuuhja input /ma "Curaga III" Aller')
-	send_command('bind !1 send Zuuhja input /ma "Cure IV" Slibby')
-	send_command('bind !2 send Zuuhja input /ma "Curaga III" Slibby')
+    state.IdleMode:options('Normal', 'Reraise')
+    state.OffenseMode:options('Normal', 'PetDT')
+    state.CorrelationMode = M{['description']='Correlation Mode', 'Neutral', 'HighAcc', 'MaxAcc',}
+    send_command('bind ^f8 gs c cycle CorrelationMode')
+    select_default_macro_book()
+    
+    send_command('bind @o sat youcommand Muuhja "Horde Lullaby"')
+    send_command('bind @p sat youcommand Zuuhja "Sleepga"')
+    send_command('bind @n sat youcommand Muuhja "Carnage Elegy"')
+    send_command('bind @1 send Zuuhja input /ma "Cure IV" Aller')
+    send_command('bind @2 send Zuuhja input /ma "Curaga III" Aller')
+    send_command('bind !1 send Zuuhja input /ma "Cure IV" Slibby')
+    send_command('bind !2 send Zuuhja input /ma "Curaga III" Slibby')
  end
      
  
@@ -65,7 +63,7 @@ ready_moves_to_check = S{'Sic','Whirl Claws','Dust Cloud','Foot Kick','Sheep Son
     'Fantod','Charged Whisker','Purulent Ooze','Corrosive Ooze','Tortoise Stomp','Harden Shell','Aqua Breath',
     'Sensilla Blades','Tegmina Buffet','Molting Plumage','Swooping Frenzy','Pentapeck','Sweeping Gouge',
     'Zealous Snort','Somersault ','Tickling Tendrils','Stink Bomb','Nectarous Deluge','Nepenthic Plunge',
-        'Pecking Flurry','Pestilent Plume','Foul Waters','Spider Web','Sickle Slash','Frogkick','Ripper Fang','Scythe Tail','Chomp Rush'}
+    'Pecking Flurry','Pestilent Plume','Foul Waters','Spider Web','Sickle Slash','Frogkick','Ripper Fang','Scythe Tail','Chomp Rush'}
  
        
 mab_ready_moves = S{
@@ -78,15 +76,15 @@ mab_ready_moves = S{
      'Soporific','Geist Wall','Numbing Noise','Spoil','Hi-Freq Field',
      'Sandpit','Sandblast','Filamented Hold',
      'Spore','Infrasonics','Chaotic Eye',
-     'Blaster','Intimidate','Noisome Powder','TP Drainkiss','Jettatura','Spider Web',
+     'Blaster','Intimidate','Noisome Powder','Jettatura','Spider Web',
      'Corrosive Ooze','Molting Plumage','Swooping Frenzy',
      'Pestilent Plume',}
+     
+ macc_ready_moves = S{
+  'TP Drainkiss'
+ }
  
- 
--- List of abilities to reference for applying Treasure Hunter +1 via Chaac Belt.
- 
- 
-function file_unload()
+ function file_unload()
     if binds_on_unload then
         binds_on_unload()
     end
@@ -114,17 +112,16 @@ function select_default_macro_book()
   set_macro_page(6, 5)
 end 
 
-        -- HERE IS THE BEGINNING OF THE GEARSWAP AS FAR AS YOU SHOULD BE CONCERNED FOR EDITING GEAR --
-        -- HERE IS THE BEGINNING OF THE GEARSWAP AS FAR AS YOU SHOULD BE CONCERNED FOR EDITING GEAR --
-        -- HERE IS THE BEGINNING OF THE GEARSWAP AS FAR AS YOU SHOULD BE CONCERNED FOR EDITING GEAR --
-        -- HERE IS THE BEGINNING OF THE GEARSWAP AS FAR AS YOU SHOULD BE CONCERNED FOR EDITING GEAR --
-        -- HERE IS THE BEGINNING OF THE GEARSWAP AS FAR AS YOU SHOULD BE CONCERNED FOR EDITING GEAR --
-        -- HERE IS THE BEGINNING OF THE GEARSWAP AS FAR AS YOU SHOULD BE CONCERNED FOR EDITING GEAR --
-        -- HERE IS THE BEGINNING OF THE GEARSWAP AS FAR AS YOU SHOULD BE CONCERNED FOR EDITING GEAR --
-        -- HERE IS THE BEGINNING OF THE GEARSWAP AS FAR AS YOU SHOULD BE CONCERNED FOR EDITING GEAR --
-        -- HERE IS THE BEGINNING OF THE GEARSWAP AS FAR AS YOU SHOULD BE CONCERNED FOR EDITING GEAR --
-        -- HERE IS THE BEGINNING OF THE GEARSWAP AS FAR AS YOU SHOULD BE CONCERNED FOR EDITING GEAR --
-       
+-- HERE IS THE BEGINNING OF THE GEARSWAP AS FAR AS YOU SHOULD BE CONCERNED FOR EDITING GEAR --
+-- HERE IS THE BEGINNING OF THE GEARSWAP AS FAR AS YOU SHOULD BE CONCERNED FOR EDITING GEAR --
+-- HERE IS THE BEGINNING OF THE GEARSWAP AS FAR AS YOU SHOULD BE CONCERNED FOR EDITING GEAR --
+-- HERE IS THE BEGINNING OF THE GEARSWAP AS FAR AS YOU SHOULD BE CONCERNED FOR EDITING GEAR --
+-- HERE IS THE BEGINNING OF THE GEARSWAP AS FAR AS YOU SHOULD BE CONCERNED FOR EDITING GEAR --
+-- HERE IS THE BEGINNING OF THE GEARSWAP AS FAR AS YOU SHOULD BE CONCERNED FOR EDITING GEAR --
+-- HERE IS THE BEGINNING OF THE GEARSWAP AS FAR AS YOU SHOULD BE CONCERNED FOR EDITING GEAR --
+-- HERE IS THE BEGINNING OF THE GEARSWAP AS FAR AS YOU SHOULD BE CONCERNED FOR EDITING GEAR --
+-- HERE IS THE BEGINNING OF THE GEARSWAP AS FAR AS YOU SHOULD BE CONCERNED FOR EDITING GEAR --
+-- HERE IS THE BEGINNING OF THE GEARSWAP AS FAR AS YOU SHOULD BE CONCERNED FOR EDITING GEAR --       
  
 -- BST gearsets
 function init_gear_sets()
@@ -212,8 +209,8 @@ function init_gear_sets()
  
     -- This will equip for Magical Ready moves like Fireball
     sets.midcast.Pet.MabReady = set_combine(sets.midcast.Pet.WS, {
-      main={ name="Kumbhakarna", augments={'Pet: "Mag.Atk.Bns."+16','Pet: TP Bonus+160',}},
-      sub={ name="Kumbhakarna", augments={'Pet: "Mag.Atk.Bns."+12','Pet: TP Bonus+160',}},
+      main={ name="Kumbhakarna", augments={'Pet: "Mag.Atk.Bns."+16','Pet: TP Bonus+200',}},
+      sub={ name="Kumbhakarna", augments={'Pet: "Mag.Atk.Bns."+12','Pet: TP Bonus+200',}},
       ammo="Voluspa Tathlum",
       head={ name="Valorous Mask", augments={'Pet: "Mag.Atk.Bns."+27','Pet: INT+14','Pet: Accuracy+12 Pet: Rng. Acc.+12','Pet: Attack+7 Pet: Rng.Atk.+7',}},
       body="Udug Jacket",
@@ -226,6 +223,26 @@ function init_gear_sets()
       right_ear="Enmerkar Earring",
       left_ring="Tali'ah Ring",
       right_ring="C. Palug Ring",
+      back="Argocham. Mantle",
+    })
+    
+        -- This will equip for Magical Ready moves like Fireball
+    sets.midcast.Pet.MaccReady = set_combine(sets.midcast.Pet.WS, {
+      main="Agwu's Axe",
+      sub="Sacro Bulwark",
+      ammo="Voluspa Tathlum",
+      head="Nyame Helm",
+      body="Nyame Mail",
+      hands="Nukumi Manoplas +1",
+      legs="Nyame Flanchard",
+      feet="Nyame Sollerets",
+      right_ear="Enmerkar Earring",
+      left_ring="Tali'ah Ring",
+      right_ring="C. Palug Ring",
+      waist="Incarnation Sash",
+      -- need improvement
+      neck="Adad Amulet",
+      left_ear={ name="Odnowa Earring +1", augments={'Path: A',}},
       back="Argocham. Mantle",
     })
    
@@ -337,19 +354,8 @@ function init_gear_sets()
     sets.engaged.DW.PetDT = {
     }
    
-           
-            -- THIS IS THE END OF THE GEARSWAP AS FAR AS YOU SHOULD BE CONCERNED --
-            -- THIS IS THE END OF THE GEARSWAP AS FAR AS YOU SHOULD BE CONCERNED --
-            -- THIS IS THE END OF THE GEARSWAP AS FAR AS YOU SHOULD BE CONCERNED --
-            -- THIS IS THE END OF THE GEARSWAP AS FAR AS YOU SHOULD BE CONCERNED --
-            -- THIS IS THE END OF THE GEARSWAP AS FAR AS YOU SHOULD BE CONCERNED --
-            -- THIS IS THE END OF THE GEARSWAP AS FAR AS YOU SHOULD BE CONCERNED --
-            -- THIS IS THE END OF THE GEARSWAP AS FAR AS YOU SHOULD BE CONCERNED --
-            -- THIS IS THE END OF THE GEARSWAP AS FAR AS YOU SHOULD BE CONCERNED --
-            -- THIS IS THE END OF THE GEARSWAP AS FAR AS YOU SHOULD BE CONCERNED --
-            -- THIS IS THE END OF THE GEARSWAP AS FAR AS YOU SHOULD BE CONCERNED --
- 
- 
+
+  -- THIS IS THE END OF THE GEARSWAP AS FAR AS YOU SHOULD BE CONCERNED --
 end
  
 -------------------------------------------------------------------------------------------------------------------
@@ -359,14 +365,11 @@ end
 function job_precast(spell, action, spellMap, eventArgs)
     cancel_conflicting_buffs(spell, action, spellMap, eventArgs)
  
-     
-   
- 
--- Define class for Sic and Ready moves.
-        if ready_moves_to_check:contains(spell.name) and pet.status == 'Engaged' then
-                classes.CustomClass = "WS"
+    -- Define class for Sic and Ready moves.
+    if ready_moves_to_check:contains(spell.name) and pet.status == 'Engaged' then
+        classes.CustomClass = "WS"
         equip(sets.midcast.Pet.ReadyRecast)
-        end
+    end
 end
  
  
@@ -382,11 +385,13 @@ function job_aftercast(spell, action, spellMap, eventArgs)
  
     if mab_ready_moves:contains(spell.english) and pet.status == 'Engaged' then
       equip(sets.midcast.Pet.MabReady)
+    elseif macc_ready_moves:contains(spell.english) and pet.status == 'Engaged' then
+      equip(sets.midcast.Pet.MaccReady)      
     end
  
     if buffactive['Unleash'] then
-      main="Arktoi"
-      hands={ name="Taeon Gloves", augments={'Pet: Accuracy+23 Pet: Rng. Acc.+23','Pet: "Dbl. Atk."+5','Pet: Damage taken -4%',}}
+      -- main="Arktoi"
+      -- hands={ name="Taeon Gloves", augments={'Pet: Accuracy+23 Pet: Rng. Acc.+23','Pet: "Dbl. Atk."+5','Pet: Damage taken -4%',}}
     end
     
     eventArgs.handled = true
@@ -404,6 +409,5 @@ function get_combat_form()
         state.CombatForm:set('DW')
     else
          state.CombatForm:reset()
-         end
- 
+    end
 end

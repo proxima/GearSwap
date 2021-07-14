@@ -347,7 +347,7 @@ function init_gear_sets()
       ammo="Staunch Tathlum +1",
       head={ name="Vanya Hood", augments={'MP+50','"Fast Cast"+10','Haste+2%',}},
       body="Inyanga Jubbah +2",
-	  hands="Fanatic Gloves",
+      hands="Fanatic Gloves",
       legs="Aya. Cosciales +2",
       feet={ name="Vanya Clogs", augments={'"Cure" potency +5%','"Cure" spellcasting time -15%','"Conserve MP"+6',}},
       neck="Deviant Necklace",
@@ -425,7 +425,7 @@ function init_gear_sets()
     })
 
     sets.midcast.Stoneskin = set_combine(sets.midcast.EnhancingDuration, {
-	  left_ear="Earthcry Earring",
+      left_ear="Earthcry Earring",
       neck="Nodens Gorget",
       waist="Siegel Sash",
     })
@@ -594,7 +594,7 @@ function init_gear_sets()
       neck="Cleric's torque +1",
       ammo="Staunch Tathlum +1",
       hands="Inyanga Dastanas +2",
-	  legs="Inyanga Shalwar +2",
+      legs="Inyanga Shalwar +2",
       feet="Inyanga Crackows +2",
       right_ear="Etiolation earring",
       left_ring="Defending Ring",
@@ -603,10 +603,10 @@ function init_gear_sets()
 
     sets.idle.MEva = set_combine(sets.idle, {
       main="Daybreak",
-      sub="Genmei shield",
+      sub="Ammurapi Shield",
       ammo="Staunch Tathlum +1",
       hands="Inyanga Dastanas +2",
-	  legs="Inyanga Shalwar +2",
+      legs="Inyanga Shalwar +2",
       feet="Inyanga Crackows +2",
       right_ring="Inyanga ring",
       right_ear="Etiolation earring",      

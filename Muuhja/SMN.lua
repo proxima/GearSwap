@@ -53,7 +53,7 @@ function get_sets()
     ImpactDebuff = false
     MeleeMode = false
     ForceIlvl = false
-    LagMode = false -- Default LagMode. If you have a lot of lag issues, change to "true".
+    LagMode = true -- Default LagMode. If you have a lot of lag issues, change to "true".
     AutoRemedy = false -- Auto Remedy when using an ability while Paralyzed.
     AutoEcho = false -- Auto Echo Drop when using an ability while Silenced.
     
@@ -321,11 +321,11 @@ function get_sets()
       main="Nirvana",
       sub="Elan Strap +1",
       ammo="Sancus Sachet +1",
-      head={ name="Helios Band", augments={'Pet: Accuracy+29 Pet: Rng. Acc.+29','Pet: "Dbl. Atk."+8','Blood Pact Dmg.+6',}},
+      head={ name="Helios Band", augments={'Pet: Accuracy+29 Pet: Rng. Acc.+29','Pet: "Dbl. Atk."+8','Blood Pact Dmg.+7',}},
       body="Con. Doublet +3", -- Replace with Glyphic
       hands={ name="Merlinic Dastanas", augments={'Pet: Attack+22 Pet: Rng.Atk.+22','Blood Pact Dmg.+9','Pet: VIT+2','Pet: Mag. Acc.+5',}},
       legs={ name="Apogee Slacks +1", augments={'Pet: STR+20','Blood Pact Dmg.+14','Pet: "Dbl. Atk."+4',}},
-      feet={ name="Helios Boots", augments={'Pet: Accuracy+28 Pet: Rng. Acc.+28','Pet: "Dbl. Atk."+8','Blood Pact Dmg.+6',}},
+      feet={ name="Helios Boots", augments={'Pet: Accuracy+28 Pet: Rng. Acc.+28','Pet: "Dbl. Atk."+8','Blood Pact Dmg.+7',}},
       neck={ name="Smn. Collar +2", augments={'Path: A',}},
       waist="Incarnation Sash",
       left_ear="Kyrene's Earring",

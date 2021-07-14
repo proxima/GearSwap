@@ -92,16 +92,17 @@ function user_setup()
         'Fire Carol', 'Fire Carol II', 'Ice Carol', 'Ice Carol II', 'Wind Carol', 'Wind Carol II',
         'Earth Carol', 'Earth Carol II', 'Lightning Carol', 'Lightning Carol II', 'Water Carol', 'Water Carol II',
         'Light Carol', 'Light Carol II', 'Dark Carol', 'Dark Carol II',
-        }
+    }
 
     state.Threnody = M{['description']='Threnody',
         'Fire Threnody II', 'Ice Threnody II', 'Wind Threnody II', 'Earth Threnody II',
         'Ltng. Threnody II', 'Water Threnody II', 'Light Threnody II', 'Dark Threnody II',
-        }
+    }
 
     state.Etude = M{['description']='Etude', 'Sinewy Etude', 'Herculean Etude', 'Learned Etude', 'Sage Etude',
         'Quick Etude', 'Swift Etude', 'Vivacious Etude', 'Vital Etude', 'Dextrous Etude', 'Uncanny Etude',
-        'Spirited Etude', 'Logical Etude', 'Enchanting Etude', 'Bewitching Etude'}
+        'Spirited Etude', 'Logical Etude', 'Enchanting Etude', 'Bewitching Etude'
+    }
 
     state.WeaponSet = M{['description']='Weapon Set', 'Carnwenhan', 'Twashtar', 'Naegling', 'Tauret', 'Free'}
     state.WeaponLock = M(false, 'Weapon Lock')
@@ -197,7 +198,7 @@ function init_gear_sets()
     })
 
     sets.precast.FC.BardSong = {
-      main={ name="Kali", augments={'MP+60','Mag. Acc.+20','"Refresh"+1',}},                               --  7
+      main="Kali",                                                                                         --  7
       head="Fili Calot +1",                                                                                -- 14
       body="Inyanga Jubbah +2",                                                                            -- 14
       hands="Gendewitha gages +1",                                                                         -- 12
@@ -255,7 +256,7 @@ function init_gear_sets()
     })
 
     sets.precast.WS['Mordant Rime'] = set_combine(sets.precast.WS, {
-      range="Linos",
+      range={ name="Linos", augments={'Accuracy+12 Attack+12','Weapon skill damage +3%','STR+6 CHR+6',}},
       head={ name="Bihu Roundlet +3", augments={'Enhances "Con Anima" effect',}},
       body={ name="Bihu Jstcorps. +3", augments={'Enhances "Troubadour" effect',}},
       hands={ name="Bihu Cuffs +3", augments={'Enhances "Con Brio" effect',}},
@@ -266,7 +267,7 @@ function init_gear_sets()
       left_ear="Regal Earring",
       right_ear="Ishvara Earring",
       left_ring="Metamorph Ring +1",
-      right_ring="Overbearing Ring",
+      right_ring="Epaminondas's Ring",
       back={ name="Intarabus's Cape", augments={'CHR+20','Accuracy+20 Attack+20','CHR+10','Weapon skill damage +10%','Damage taken-5%',}},
     })
 
@@ -274,6 +275,19 @@ function init_gear_sets()
     })
 
     sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS, {
+      range={ name="Linos", augments={'Accuracy+12 Attack+12','Weapon skill damage +3%','STR+6 CHR+6',}},
+      head={ name="Bihu Roundlet +3", augments={'Enhances "Con Anima" effect',}},
+      body={ name="Bihu Jstcorps. +3", augments={'Enhances "Troubadour" effect',}},
+      hands={ name="Bihu Cuffs +3", augments={'Enhances "Con Brio" effect',}},
+      legs={ name="Bihu Cannions +3", augments={'Enhances "Soul Voice" effect',}},
+      feet={ name="Bihu Slippers +3", augments={'Enhances "Nightingale" effect',}},
+      neck={ name="Bard's Charm +2", augments={'Path: A',}},
+      waist="Grunfeld Rope",
+      left_ear="Moonshade Earring",
+      right_ear="Ishvara Earring",
+      left_ring="Metamorph Ring +1",
+      right_ring="Epaminondas's Ring",
+      back={ name="Intarabus's Cape", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}},
     })
 
 
@@ -335,7 +349,7 @@ function init_gear_sets()
       range="Gjallarhorn",
       head="Brioso Roundlet +2",
       body="Brioso Justau. +3",
-	  hands="Inyanga Dastanas +2",
+      hands="Inyanga Dastanas +2",
       legs="Brioso Cannions +3",
       feet="Brioso Slippers +3",
       neck="Mnbw. Whistle +1",
@@ -437,7 +451,7 @@ function init_gear_sets()
       neck="Loricate Torque +1",
       waist="Flume Belt +1",
       left_ear="Odnowa Earring +1",
-      right_ear={ name="Moonshade Earring", augments={'HP+25','Latent effect: "Refresh"+1',}},
+      right_ear="Etiolation Earring",
       left_ring="Inyanga Ring",
       right_ring="Defending ring",
       back={ name="Intarabus's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Phys. dmg. taken-10%',}},
@@ -454,8 +468,8 @@ function init_gear_sets()
       feet="Aya. Gambieras +2",
       neck="Loricate Torque +1",
       waist="Carrier's Sash",
-      left_ear="Genmei Earring",
-	  right_ear="Odnowa Earring +1",
+      left_ear="Odnowa Earring +1",
+      right_ear="Etiolation Earring",
       left_ring="Defending ring",
       right_ring="Gelatinous Ring",
       back={ name="Intarabus's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Phys. dmg. taken-10%',}},
@@ -472,8 +486,8 @@ function init_gear_sets()
       feet="Inyan. Crackows +2",
       neck="Loricate Torque +1",
       waist="Flume Belt +1",
-      left_ear="Genmei Earring",
-	  right_ear="Odnowa Earring +1",
+      left_ear="Odnowa Earring +1",
+      right_ear="Etiolation Earring",
       left_ring="Defending ring",
       right_ring="Inyanga Ring",
       back={ name="Intarabus's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Phys. dmg. taken-10%',}},
@@ -504,7 +518,7 @@ function init_gear_sets()
     -- EG: sets.engaged.Dagger.Accuracy.Evasion
 
     sets.engaged = {
-      range="Linos",
+      range={ name="Linos", augments={'Accuracy+17','"Store TP"+3','Quadruple Attack +2',}},
       head="Aya. Zucchetto +2",
       body="Ayanmo Corazza +2",
       hands="Aya. Manopolas +2",
@@ -527,7 +541,7 @@ function init_gear_sets()
 
     -- No Magic Haste (74% DW to cap)
     sets.engaged.DW = {
-      range="Linos",
+      range={ name="Linos", augments={'Accuracy+17','"Store TP"+3','Quadruple Attack +2',}},
       head="Aya. Zucchetto +2",
       body="Ayanmo Corazza +2",
       hands="Aya. Manopolas +2",
@@ -559,7 +573,7 @@ function init_gear_sets()
 
     -- 45% Magic Haste (36% DW to cap)
     sets.engaged.DW.MaxHaste = {
-      range="Linos",
+      range={ name="Linos", augments={'Accuracy+17','"Store TP"+3','Quadruple Attack +2',}},
       head="Aya. Zucchetto +2",
       body="Ayanmo Corazza +2",
       hands="Aya. Manopolas +2",
@@ -792,11 +806,11 @@ function customize_melee_set(meleeSet)
     if state.WeaponSet.value == "Carnwenhan" then
         equip({main="Carnwenhan",sub="Taming Sari"})
     elseif state.WeaponSet.value == "Twashtar" then
-        equip({main="Twashtar",sub="Centovente"})
+        equip({main="Twashtar",sub="Fusetto +2"})
     elseif state.WeaponSet.value == "Naegling" then
-        equip({main="Naegling",sub="Centovente"})
+        equip({main="Naegling",sub="Fusetto +2"})
     elseif state.WeaponSet.value == "Tauret" then
-        equip({main="Tauret",sub="Taming Sari"})
+        equip({main="Tauret",sub="Twashtar"})
     end
     if buffactive['Aftermath: Lv.3'] and player.equipment.main == "Carnwenhan" then
         meleeSet = set_combine(meleeSet, sets.engaged.Aftermath)

@@ -131,14 +131,14 @@ function user_setup()
     send_command('bind @z send zuuhja input /ja "Full Circle" <me>')
     send_command('bind @x send zuuhja input /ja "Radial Arcana" <me>')
     
-    send_command('bind @b sat youcommand Muuhja "Magic Finale"')
-    send_command('bind @n sat youcommand Muuhja "Carnage Elegy"')
-    send_command('bind @m sat youcommand Muuhja "Pining Nocturne"')
+    -- send_command('bind @b sat youcommand Muuhja "Magic Finale"')
+    -- send_command('bind @n sat youcommand Muuhja "Carnage Elegy"')
+    -- send_command('bind @m sat youcommand Muuhja "Pining Nocturne"')
     -- send_command('bind @o sat youcommand Muuhja "Horde Lullaby"')
     -- send_command('bind @o sat youcommand Muuhja "Sleepga"')
     
-    send_command('bind @b send muuhja input /ma "Garuda" <me>')
-    send_command('bind @n sat youcommand Muuhja "Predator Claws"')
+    send_command('bind @b send muuhja input /ma "Siren" <me>')
+    send_command('bind @n sat youcommand Muuhja "Hysteric Assault"')
     -- send_command('bind @m sat youcommand Muuhja "Bitter Elegy"')
     send_command('bind @o sat youcommand Muuhja Assault')
     -- send_command('bind @p send muuhja input /pet "Release" <me>')
@@ -395,9 +395,8 @@ function init_gear_sets()
     }
 
     sets.midcast.Cursna = set_combine(sets.midcast.StatusRemoval, {
-      -- main="Yagrush",
-      main="Gambanteinn",
-      sub="Ammurapi Shield",
+      main="Yagrush",
+      sub="Gambanteinn",
       head={ name="Vanya Hood", augments={'Healing magic skill +20','"Cure" spellcasting time -7%','Magic dmg. taken -3',}},
       body="Ebers Bliaud +1",
       hands={ name="Fanatic Gloves", augments={'MP+20','Healing magic skill +6','"Conserve MP"+2',}},
@@ -612,7 +611,6 @@ function init_gear_sets()
     -- Initializes trusts at iLvl 119
     sets.midcast.Trust = sets.precast.FC
 
-
     -- Sets to return to when not performing an action.
 
     -- Resting sets
@@ -688,6 +686,9 @@ function init_gear_sets()
 
     -- Basic set for if no TP weapon is defined.
     sets.engaged = {
+      -- main="Asclepius",
+      main="Yagrush",
+	  sub="Magesmasher +1",
       ammo="Staunch Tathlum +1",
       head="Aya. Zucchetto +2",
       body="Ayanmo Corazza +2",

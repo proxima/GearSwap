@@ -263,7 +263,7 @@ function get_sets()
    -- Precast
    ----------
       
-    -- Generic Casting Set that all others take off of. Here you should add all your fast cast  
+   -- Generic Casting Set that all others take off of. Here you should add all your fast cast  
    sets.precast.casting = {
      main="Idris",
      range={ name="Dunna", augments={'MP+20','Mag. Acc.+10','"Fast Cast"+3',}},                   --  3
@@ -342,7 +342,7 @@ function get_sets()
    sets.midcast.casting = {
    }
 
-   -- For Geo spells /
+   -- For Geo spells
    sets.midcast.geo = set_combine(sets.midcast.casting, {
      main="Idris",
      sub="Genmei Shield",
@@ -419,7 +419,7 @@ function get_sets()
    -- Enfeebling
    sets.midcast.IntEnfeebling = set_combine(sets.midcast.casting, {
      main="Idris",
-     sub="Genmei Shield",
+     sub="Ammurapi Shield",
      range={ name="Dunna", augments={'MP+20','Mag. Acc.+10','"Fast Cast"+3',}},
      head="Geo. Galero +2",
      body="Geomancy Tunic +2",
@@ -438,7 +438,7 @@ function get_sets()
    -- could use MND cape, stikinis, ammurapi, regal ear
    sets.midcast.MndEnfeebling = set_combine(sets.midcast.casting, {
      main="Daybreak",
-     sub="Genmei Shield",
+     sub="Ammurapi Shield",
      range={ name="Dunna", augments={'MP+20','Mag. Acc.+10','"Fast Cast"+3',}},
      head="Geo. Galero +2",
      body="Geomancy Tunic +2",
@@ -479,6 +479,7 @@ function get_sets()
    
    sets.midcast["Drain"] = set_combine(sets.midcast.IntEnfeebling, {
      main="Rubicundity",
+     sub="Ammurapi Shield",
      left_ring="Evanescence ring",
      legs="Azimuth tights +1",
      head="Bagua Galero +3",

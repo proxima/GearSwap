@@ -98,7 +98,7 @@ function job_setup()
 
     state.CP = M(false, "Capacity Points Mode")
 
-    lockstyleset = 1
+    lockstyleset = 5
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -127,7 +127,7 @@ function user_setup()
     send_command('bind ^` input /ja "Saber Dance" <me>')
     send_command('bind !` input /ja "Chocobo Jig II" <me>')
     send_command('bind @f gs c toggle ClosedPosition')
-	send_command('bind @v input /ja "Violent Flourish" <t>')
+    send_command('bind @v input /ja "Violent Flourish" <t>')
     send_command('bind ^numlock input /ja "Reverse Flourish" <me>')
     
     send_command('bind @b send muuhja input /ma "Siren" <me>')
@@ -166,14 +166,14 @@ function user_setup()
     send_command('bind ^numpad3 send zuuhja /ma "Curaga III" Aller')
     send_command('bind ^numpad1 send zuuhja /ma "Cure IV" Suuhja')
 
-	send_command('bind @a sat youcommand Muuhja "Wind Threnody II"')
-	send_command('bind @s send zuuhja /ja "Elemental Seal" <me>')
+    send_command('bind @a sat youcommand Muuhja "Wind Threnody II"')
+    send_command('bind @s send zuuhja /ja "Elemental Seal" <me>')
     send_command('bind @d sat youcommand Zuuhja Silence')
-	send_command('bind @f sat youcommand Zuuhja "Dia II"')
+    send_command('bind @f sat youcommand Zuuhja "Dia II"')
     send_command('bind @o sat youcommand Zuuhja "Sleep II"')
     send_command('bind @p sat youcommand Zuuhja "Sleep"')
     send_command('bind @n sat youcommand Muuhja "Carnage Elegy"')
-	send_command('bind @m sat youcommand Muuhja "Magic Finale"')
+    send_command('bind @m sat youcommand Muuhja "Magic Finale"')
     
     send_command('bind numpad0 gs c step t')
 
@@ -187,7 +187,6 @@ function user_setup()
     update_combat_form()
     determine_haste_group()
 end
-
 
 -- Called when this job file is unloaded (eg: job change)
 function user_unload()
@@ -204,7 +203,7 @@ function user_unload()
     send_command('unbind ^,')
     send_command('unbind @f')
     send_command('unbind @c')
-	send_command('unbind @v')
+    send_command('unbind @v')
     send_command('unbind ^numlock')
     send_command('unbind ^numpad/')
     send_command('unbind ^numpad*')
@@ -260,11 +259,11 @@ function init_gear_sets()
 
     sets.precast.Waltz = {
       ammo="Yamarang",                 --  5
-	  body="Maxixi casaque +3",        -- 19
-	  left_ear="Handler's earring +1",
+      body="Maxixi casaque +3",        -- 19
+      left_ear="Handler's earring +1",
       neck="Etoile gorget +2",         -- 10
       legs="Dashing subligar",         -- 10
-	  feet="Malignance boots",
+      feet="Malignance boots",
     } -- Waltz Potency/CHR
 
     sets.precast.WaltzSelf = set_combine(sets.precast.Waltz, {
@@ -272,7 +271,7 @@ function init_gear_sets()
 
     sets.precast.Waltz['Healing Waltz'] = {}
     sets.precast.Samba = {
-	  head="Maxixi Tiara +3",
+      head="Maxixi Tiara +3",
       back={ name="Senuna's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}},
     }
     sets.precast.Jig = {legs="Horos Tights +3", feet="Maxixi Toeshoes +3"}
@@ -339,7 +338,7 @@ function init_gear_sets()
     sets.precast.WS.Acc = set_combine(sets.precast.WS, {
     })
 
-    sets.precast.WS.Critical = {head="Maculele Tiara +1", body="Meg. Cuirie +2"}
+    sets.precast.WS.Critical = {head="Maculele Tiara +1", body="Meg. Cuirie +2", left_ring="Epaminondas's Ring", left_ear="Ishvara Earring"}
 
 
     sets.precast.WS['Pyrrhic Kleos'] = set_combine(sets.precast.WS, {
@@ -373,7 +372,7 @@ function init_gear_sets()
       left_ear="Sherida Earring",
       right_ear="Odr Earring",
       left_ring="Regal Ring",
-      right_ring="Begrudging Ring",
+      right_ring="Ilabrat Ring",
       back={ name="Senuna's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Crit.hit rate+10',}},
     })
 
@@ -389,8 +388,8 @@ function init_gear_sets()
       left_ear="Sherida Earring",
       right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
       left_ring="Regal Ring",
-      right_ring="Epaminondas's Ring",
-      back={ name="Senuna's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+5','Weapon skill damage +10%',}},
+      right_ring="Ilabrat Ring",
+      back={ name="Senuna's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%',}},
     })
     
     sets.precast.WS['Dancing Edge'] = sets.precast.WS['Rudra\'s Storm']
@@ -527,16 +526,16 @@ function init_gear_sets()
     -- No Magic Haste (74% DW to cap)
     sets.engaged.DW = {
       ammo="Yamarang",
-	  head="Maxixi Tiara +3",     -- 8
-	  neck="Etoile Gorget +2",
-	  left_ear="Suppanomimi",     -- 5
-	  right_ear="Sherida Earring",
-	  body="Adhemar Jacket +1",   -- 6
+      head="Maxixi Tiara +3",     -- 8
+      neck="Etoile Gorget +2",
+      left_ear="Suppanomimi",     -- 5
+      right_ear="Sherida Earring",
+      body="Adhemar Jacket +1",   -- 6
       hands={ name="Adhemar Wrist. +1", augments={'STR+12','DEX+12','Attack+20',}},
       left_ring="Epona's Ring",
       right_ring="Gere Ring",
       back={ name="Senuna's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dual Wield"+10','Phys. dmg. taken-10%',}}, -- 10
-	  waist="Reiki Yotai",        -- 7
+      waist="Reiki Yotai",        -- 7
       legs="Samnuha Tights",
       feet={ name="Herculean Boots", augments={'"Triple Atk."+3','Rng.Atk.+13','Quadruple Attack +3','Accuracy+13 Attack+13','Mag. Acc.+4 "Mag.Atk.Bns."+4',}},
     }
@@ -563,16 +562,16 @@ function init_gear_sets()
     -- 15% Magic Haste (67% DW to cap)
     sets.engaged.DW.LowHaste = {
       ammo="Yamarang",
-	  head="Adhemar Bonnet +1",
-	  neck="Etoile Gorget +2",
-	  left_ear="Suppanomimi",     -- 5
-	  right_ear="Eabani earring", -- 4
-	  body="Adhemar Jacket +1",   -- 6
+      head="Adhemar Bonnet +1",
+      neck="Etoile Gorget +2",
+      left_ear="Suppanomimi",     -- 5
+      right_ear="Eabani earring", -- 4
+      body="Adhemar Jacket +1",   -- 6
       hands={ name="Adhemar Wrist. +1", augments={'STR+12','DEX+12','Attack+20',}},
       left_ring="Epona's Ring",
       right_ring="Gere Ring",
       back={ name="Senuna's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dual Wield"+10','Phys. dmg. taken-10%',}}, -- 10
-	  waist="Reiki Yotai",        -- 7
+      waist="Reiki Yotai",        -- 7
       legs="Samnuha Tights",
       feet={ name="Herculean Boots", augments={'"Triple Atk."+3','Rng.Atk.+13','Quadruple Attack +3','Accuracy+13 Attack+13','Mag. Acc.+4 "Mag.Atk.Bns."+4',}},
     } -- 32%
@@ -599,16 +598,16 @@ function init_gear_sets()
     -- 30% Magic Haste (56% DW to cap)
     sets.engaged.DW.MidHaste = {
       ammo="Yamarang",
-	  head="Maxixi Tiara +3",     -- 8
-	  neck="Etoile Gorget +2",
-	  left_ear="Eabani Earring",  -- 4
-	  right_ear="Sherida Earring",
-	  body="Horos Casaque +3",
+      head="Maxixi Tiara +3",     -- 8
+      neck="Etoile Gorget +2",
+      left_ear="Eabani Earring",  -- 4
+      right_ear="Sherida Earring",
+      body="Horos Casaque +3",
       hands={ name="Adhemar Wrist. +1", augments={'STR+12','DEX+12','Attack+20',}},
       left_ring="Epona's Ring",
       right_ring="Gere Ring",
       back={ name="Senuna's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dual Wield"+10','Phys. dmg. taken-10%',}}, -- 10
-	  waist="Windbuffet Belt +1",
+      waist="Windbuffet Belt +1",
       legs="Samnuha Tights",
       feet={ name="Herculean Boots", augments={'"Triple Atk."+3','Rng.Atk.+13','Quadruple Attack +3','Accuracy+13 Attack+13','Mag. Acc.+4 "Mag.Atk.Bns."+4',}},
     } -- 22%
@@ -766,11 +765,11 @@ function init_gear_sets()
     sets.buff['Closed Position'] = {feet="Horos T. Shoes +3"}
 
     sets.buff.Doom = {
-        neck="Nicander's Necklace", --20
-        ring1={name="Eshmun's Ring", bag="wardrobe3"}, --20
-        ring2={name="Eshmun's Ring", bag="wardrobe4"}, --20
-        waist="Gishdubar Sash", --10
-        }
+      neck="Nicander's Necklace", --20
+      ring1={name="Eshmun's Ring", bag="wardrobe3"}, --20
+      ring2={name="Eshmun's Ring", bag="wardrobe4"}, --20
+      waist="Gishdubar Sash", --10
+    }
 
     sets.CP = {back="Mecisto. Mantle"}
     --sets.Reive = {neck="Ygnas's Resolve +1"}
@@ -785,7 +784,6 @@ end
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 -- Set eventArgs.useMidcastGear to true if we want midcast gear equipped on precast.
 function job_precast(spell, action, spellMap, eventArgs)
-    --auto_presto(spell)
     if spellMap == 'Utsusemi' then
         if buffactive['Copy Image (3)'] or buffactive['Copy Image (4+)'] then
             cancel_spell()
@@ -1050,16 +1048,16 @@ end
 
 -- Automatically use Presto for steps when it's available and we have less than 3 finishing moves
 function job_pretarget(spell, action, spellMap, eventArgs)
-    if spell.type == 'Step' then
-        local allRecasts = windower.ffxi.get_ability_recasts()
-        local prestoCooldown = allRecasts[236]
-        local under3FMs = not buffactive['Finishing Move 3'] and not buffactive['Finishing Move 4'] and not buffactive['Finishing Move 5']
+    -- if spell.type == 'Step' then
+    --    local allRecasts = windower.ffxi.get_ability_recasts()
+    --    local prestoCooldown = allRecasts[236]
+    --    local under3FMs = not buffactive['Finishing Move 3'] and not buffactive['Finishing Move 4'] and not buffactive['Finishing Move 5']
 
-        if player.main_job_level >= 77 and prestoCooldown < 1 and under3FMs then
-            cast_delay(1.1)
-            send_command('input /ja "Presto" <me>')
-        end
-    end
+    --    if player.main_job_level >= 77 and prestoCooldown < 1 and under3FMs then
+    --        cast_delay(1.1)
+    --        send_command('input /ja "Presto" <me>')
+    --    end
+    -- end
 end
 
 windower.register_event('zone change', 
