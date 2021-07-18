@@ -56,7 +56,7 @@ function user_setup()
     send_command('bind !- gs c cycle targetmode')
 
     send_command('bind @a sat youcommand Muuhja "Thunderspark"')
-    send_command('bind @v sat youcommand Muuhja "Volt Strike"')
+    send_command('bind @v sat youcommand Muuhja "Thunderstorm"')
     send_command('bind @b sat youcommand Muuhja "Magic Finale"')
     send_command('bind @n sat youcommand Muuhja "Carnage Elegy"')
     send_command('bind @m sat youcommand Muuhja "Pining Nocturne"')

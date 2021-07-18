@@ -324,6 +324,7 @@ function init_gear_sets()
 
     -- Idle mode that keeps PDT gear on, but doesn't prevent normal gear swaps for precast/etc.
     sets.idle.PDT = set_combine(sets.idle, {
+      back={ name="Taranus's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Phys. dmg. taken-10%',}},    
     })
 
     -- Idle mode scopes:

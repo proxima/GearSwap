@@ -787,6 +787,7 @@ function init_gear_sets()
     sets.midcast.Pet.WSFTP = set_combine(sets.midcast.Pet.WSNoFTP, {
         head=Empy_Karagoz.Head_PTPBonus,
         back="Dispersal Mantle",
+        waist="Klouskap sash +1",
     })
 
     --[[
