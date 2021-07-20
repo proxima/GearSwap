@@ -267,7 +267,7 @@ function init_gear_sets()
     sets.precast.WS = {
       ammo="Floestone",
       head="Piety Cap +3",
-      body="Piety Bliault +3",
+      body="Piety Bliaut +3",
       hands="Piety Mitts +3",
       legs="Piety Pantaln. +3",
       feet="Piety Duckbills +3",
@@ -299,7 +299,7 @@ function init_gear_sets()
     sets.precast.WS['Cataclysm'] = set_combine(sets.precast.WS, {
       ammo="Pemphredo Tathlum",
       head="Pixie Hairpin +1",
-      body="Piety Bliault +3",
+      body="Piety Bliaut +3",
       hands="Piety Mitts +3",
       legs={ name="Chironic Hose", augments={'Mag. Acc.+21 "Mag.Atk.Bns."+21','"Fast Cast"+5','MND+11','Mag. Acc.+13','"Mag.Atk.Bns."+6',}},
       feet="Piety Duckbills +3",
@@ -325,7 +325,7 @@ function init_gear_sets()
       sub="Ammurapi shield",
       ammo="Leisure Musk +1",                               --     4
       head="Kaykaus Mitra +1",                              -- 11    6
-      body="Ebers Bliaud +1",                               --       3
+      body="Ebers Bliaut +1",                               --       3
       hands="Theophany Mitts +2",                           --     6 3
       legs="Ebers Pant. +1",                                --       5
       feet="Kaykaus Boots +1",                              -- 17  6 3
@@ -345,7 +345,7 @@ function init_gear_sets()
     })
 
     sets.midcast.CureNormal = set_combine(sets.midcast.CureSolace, {
-      body="Theo. Bliault +2",
+      body="Theo. Bliaut +2",
     })
 
     sets.midcast.CureWeather = set_combine(sets.midcast.CureNormal, {
@@ -358,7 +358,7 @@ function init_gear_sets()
     })
 
     sets.midcast.CuragaNormal = set_combine(sets.midcast.CureNormal, {
-      body="Theo. Bliault +2",
+      body="Theo. Bliaut +2",
       -- neck="Nuna Gorget +1",
       ring1="Stikini Ring +1",
       ring2="Stikini Ring +1",
@@ -368,7 +368,7 @@ function init_gear_sets()
     sets.midcast.CuragaWeather = set_combine(sets.midcast.CuragaNormal, {
       main="Chatoyant Staff",
       sub="Enki Strap",
-      body="Theo. Bliault +2",
+      body="Theo. Bliaut +2",
       hands="Kaykaus Cuffs +1",
       back="Twilight Cape",
       ring1="Stikini Ring +1",
@@ -398,7 +398,7 @@ function init_gear_sets()
       main="Yagrush",
       sub="Gambanteinn",
       head={ name="Vanya Hood", augments={'Healing magic skill +20','"Cure" spellcasting time -7%','Magic dmg. taken -3',}},
-      body="Ebers Bliaud +1",
+      body="Ebers Bliaut +1",
       hands={ name="Fanatic Gloves", augments={'MP+20','Healing magic skill +6','"Conserve MP"+2',}},
       legs="Th. Pant. +3",
       feet={ name="Vanya Clogs", augments={'Healing magic skill +20','"Cure" spellcasting time -7%','Magic dmg. taken -3',}},
@@ -448,7 +448,7 @@ function init_gear_sets()
     sets.midcast.Regen = set_combine(sets.midcast.EnhancingDuration, {
       main="Bolelabunga",
       sub="Ammurapi Shield",      
-      body="Piety Bliault +3",
+      body="Piety Bliaut +3",
       head="Inyanga Tiara +2",
       hands="Ebers Mitts +1",
       legs="Th. Pant. +3",
@@ -458,7 +458,7 @@ function init_gear_sets()
     sets.midcast.RegenDuration = set_combine(sets.midcast.EnhancingDuration, {
       main="Bolelabunga",
       sub="Ammurapi Shield",
-      body="Piety Bliault +3",
+      body="Piety Bliaut +3",
       head="Inyanga Tiara +2",
       hands="Ebers Mitts +1",
       legs="Th. Pant. +3",
@@ -495,7 +495,7 @@ function init_gear_sets()
       main="Beneficus",
       sub="Ammurapi Shield",
       head="Ebers Cap +1",
-      body="Ebers Bliaud +1",
+      body="Ebers Bliaut +1",
       hands="Ebers Mitts +1",
       legs="Piety Pantaln. +3",
       feet="Ebers Duckbills +1",
@@ -517,7 +517,7 @@ function init_gear_sets()
       sub="Ammurapi Shield",
       ammo="Pemphredo Tathlum",
       head="Theophany Cap +2",
-      body="Theo. Bliault +2",
+      body="Theo. Bliaut +2",
       hands="Piety Mitts +3",
       legs={ name="Chironic Hose", augments={'Mag. Acc.+21 "Mag.Atk.Bns."+21','"Fast Cast"+5','MND+11','Mag. Acc.+13','"Mag.Atk.Bns."+6',}},
       feet="Theo. Duckbills +2",
@@ -554,7 +554,7 @@ function init_gear_sets()
       sub="Ammurapi Shield",
       ammo="Pemphredo Tathlum",
       head="Pixie Hairpin +1",
-      body="Theo. Bliault +2",
+      body="Theo. Bliaut +2",
       hands="Theophany Mitts +2",
       legs={ name="Chironic Hose", augments={'Mag. Acc.+21 "Mag.Atk.Bns."+21','"Fast Cast"+5','MND+11','Mag. Acc.+13','"Mag.Atk.Bns."+6',}},
       feet="Theo. Duckbills +2",
@@ -573,7 +573,7 @@ function init_gear_sets()
       sub="Ammurapi Shield",
       ammo="Pemphredo Tathlum",
       head="Theophany Cap +2",
-      body="Theo. Bliault +2",
+      body="Theo. Bliaut +2",
       hands="Theophany Mitts +2",
       legs={ name="Chironic Hose", augments={'Mag. Acc.+21 "Mag.Atk.Bns."+21','"Fast Cast"+5','MND+11','Mag. Acc.+13','"Mag.Atk.Bns."+6',}},
       feet="Theo. Duckbills +2",

@@ -559,11 +559,11 @@ function get_sets()
      feet="Jhakri Pigaches +2",
    })
 
-   -- int/macc/mab/mbd
-   -- Hood: 5/27/33/10 (unlikely to use)
-   -- Body: 1/25/35/10
-   -- Legs: 8/33/25/10
-   -- Feet: 0/32/34/11
+   --       int macc mab mbd
+   -- Hood:   5   27  33  10 (unlikely to use)
+   -- Body:   1   25  35  10
+   -- Legs:   8   33  25  10
+   -- Feet:   0   32  34  11
    
    -- No Klima!
    -- Chim BiS: 39677
@@ -581,7 +581,7 @@ function get_sets()
    -- Pieces to swap from free nuke to Magic Burst    
    sets.midcast.MB.normal = set_combine(sets.midcast.nuking.normal, {
      main="Tupsimati",
-     sub="Khonsu",
+     sub="Enki Strap",
      ammo="Ghastly Tathlum +1",
      head="Pedagogy mortarboard +3",
      body={ name="Merlinic Jubbah", augments={'Mag. Acc.+24 "Mag.Atk.Bns."+24','Magic burst dmg.+10%','INT+1','Mag. Acc.+1','"Mag.Atk.Bns."+11',}},

@@ -115,18 +115,20 @@ function init_gear_sets()
 
     -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
     sets.precast.WS['Cataclysm'] = {
-      ammo="Pemphredo Tathlum",
+      ammo="Ghastly Tathlum +1",
       head="Pixie hairpin +1",
       body={ name="Amalric Doublet +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
       hands="Jhakri Cuffs +2",
       legs={ name="Amalric Slops +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
       feet={ name="Amalric Nails +1", augments={'Mag. Acc.+20','"Mag.Atk.Bns."+20','"Conserve MP"+7',}},
       neck="Sorcerer's Stole +2",
-      waist="Orpheus's Sash",
+      waist="Hachirin-no-Obi",
+      -- waist="Orpheus's Sash",
       left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
       right_ear="Malignance Earring",
       left_ring="Archon Ring",
       right_ring="Epaminondas's Ring",
+      back={ name="Taranus's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Phys. dmg. taken-10%',}},	  
     }
 
     sets.precast.WS['Shattersoul'] = {
@@ -190,7 +192,7 @@ function init_gear_sets()
     sets.midcast['Enfeebling Magic'] = {
       ammo="Pemphredo tathlum",
       head="Mallquis Chapeau +2",
-      body="Spaekona's Coat +2",
+      body="Spaekona's Coat +3",
       hands="Archmage's Gloves +3",
       legs="Archmage's Tonban +3",
       feet="Archmage's Sabots +3",
@@ -243,7 +245,7 @@ function init_gear_sets()
     sets.midcast['Elemental Magic'] = {
       ammo="Ghastly Tathlum +1",
       head="Archmage's Petasos +3",
-      body="Spaekona's Coat +2",
+      body="Spaekona's Coat +3",
       -- body="Archmage's coat +3",
       hands="Archmage's Gloves +3",
       legs="Archmage's Tonban +3",
@@ -285,7 +287,8 @@ function init_gear_sets()
     sets.midcast['Elemental Magic'].Proc = {
       ammo="Seraphic Ampulla",
       head="Mall. Chapeau +2",
-      body={ name="Merlinic Jubbah", augments={'Mag. Acc.+22','"Occult Acumen"+11','INT+9',}},
+	  body="Spaekona's Coat +3",
+      --body={ name="Merlinic Jubbah", augments={'Mag. Acc.+22','"Occult Acumen"+11','INT+9',}},
       hands={ name="Merlinic Dastanas", augments={'"Occult Acumen"+11','INT+10','Mag. Acc.+6',}},
       legs="Perdition Slops",
       feet={ name="Merlinic Crackows", augments={'"Mag.Atk.Bns."+2','"Occult Acumen"+11','MND+9','Mag. Acc.+15',}},
@@ -364,7 +367,7 @@ function init_gear_sets()
       back={ name="Taranus's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Phys. dmg. taken-10%',}},    
       head="Ea Hat +1",
       body="Ea Houppe. +1",
-      -- body="Spaekona's Coat +2",
+      -- body="Spaekona's Coat +3",
       legs="Ea Slops +1",
       feet="Amalric Nails +1",
     }

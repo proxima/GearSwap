@@ -366,7 +366,7 @@ function init_gear_sets()
       body="Meg. Cuirie +2",
       hands="Mummu Wrists +2",
       legs={ name="Lustr. Subligar +1", augments={'Accuracy+20','DEX+8','Crit. hit rate+3%',}},
-      feet="Mummu Gamash. +2",
+      feet={ name="Herculean Boots", augments={'Accuracy+20 Attack+20','Crit. hit damage +4%','STR+8',}},
       neck="Fotia Gorget",
       waist="Fotia Belt",
       left_ear="Sherida Earring",

@@ -141,12 +141,12 @@ function init_gear_sets()
 
     -- Default set for any weaponskill that isn't any more specifically defined
     sets.precast.WS = {  
-      ammo="Qirmiz tathlum",
+      ammo="Yetshila +1",
       head={ name="Adhemar Bonnet +1", augments={'STR+12','DEX+12','Attack+20',}},
       body={ name="Adhemar Jacket +1", augments={'STR+12','DEX+12','Attack+20',}},
       hands="Mummu Wrists +2",
       legs={ name="Lustr. Subligar +1", augments={'Accuracy+20','DEX+8','Crit. hit rate+3%',}},
-      feet="Mummu Gamash. +2",
+      feet={ name="Herculean Boots", augments={'Accuracy+20 Attack+20','Crit. hit damage +4%','STR+8',}},
       neck="Fotia Gorget",
       waist="Fotia Belt",
       left_ear="Sherida Earring",
@@ -173,12 +173,12 @@ function init_gear_sets()
     sets.precast.WS['Dancing Edge'].SATA = set_combine(sets.precast.WS['Dancing Edge'].Mod, {})
 
     sets.precast.WS['Evisceration'] = set_combine(sets.precast.WS, {
-      ammo="Qirmiz tathlum",
+      ammo="Yetshila +1",
       head={ name="Adhemar Bonnet +1", augments={'STR+12','DEX+12','Attack+20',}},
       body="Meg. Cuirie +2",
       hands="Mummu Wrists +2",
       legs={ name="Lustr. Subligar +1", augments={'Accuracy+20','DEX+8','Crit. hit rate+3%',}},
-      feet="Mummu Gamash. +2",
+      feet={ name="Herculean Boots", augments={'Accuracy+20 Attack+20','Crit. hit damage +4%','STR+8',}},
       neck="Fotia Gorget",
       waist="Fotia Belt",
       left_ear="Sherida Earring",
@@ -187,6 +187,7 @@ function init_gear_sets()
       right_ring="Ilabrat Ring",
       back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Crit.hit rate+10',}},
     })
+	
     sets.precast.WS['Evisceration'].Acc = set_combine(sets.precast.WS['Evisceration'], {})
     sets.precast.WS['Evisceration'].Mod = set_combine(sets.precast.WS['Evisceration'], {})
     sets.precast.WS['Evisceration'].SA = set_combine(sets.precast.WS['Evisceration'].Mod, {})
