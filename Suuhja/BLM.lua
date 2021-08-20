@@ -43,7 +43,7 @@ function user_setup()
     windower.send_command('bind @d sat youcommand Suuhja "Thundaja"')
     windower.send_command('bind @f sat youcommand Muuhja "Shock Squall"')
 		
-    windower.send_command('bind @o sat youcommand Muuhja "Horde Lullaby"')
+    windower.send_command('bind @o sat youcommand Muuhja "Horde Lullaby II"')
     windower.send_command('bind @p sat youcommand Zuuhja "Sleepga"')
     -- windower.send_command('bind @n input /ma "Breakga" <t>')
     windower.send_command('bind @n sat youcommand Zuuhja "Dia II"')
@@ -111,8 +111,22 @@ function init_gear_sets()
 
     -- Weaponskill sets
     -- Default set for any weaponskill that isn't any more specifically defined
-    sets.precast.WS = {}
-
+    sets.precast.WS = {
+      ammo="Floestone",
+      head="Jhakri Coronal +2",
+      body="Jhakri Robe +2",
+      hands="Jhakri Cuffs +2",
+      legs="Jhakri Slops +2",
+      feet="Jhakri Pigaches +2",
+      neck="Fotia Gorget",
+      waist="Fotai Belt",
+      left_ear="Regal Earring",
+      right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
+      left_ring={ name="Metamor. Ring +1", augments={'Path: A',}},
+      right_ring="Epaminondas's Ring",
+      back={ name="Lugh's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','MND+10','Weapon skill damage +10%',}},    
+	}
+	
     -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
     sets.precast.WS['Cataclysm'] = {
       ammo="Ghastly Tathlum +1",
@@ -120,7 +134,7 @@ function init_gear_sets()
       body={ name="Amalric Doublet +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
       hands="Jhakri Cuffs +2",
       legs={ name="Amalric Slops +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
-      feet={ name="Amalric Nails +1", augments={'Mag. Acc.+20','"Mag.Atk.Bns."+20','"Conserve MP"+7',}},
+      feet={ name="Amalric Nails +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
       neck="Sorcerer's Stole +2",
       waist="Hachirin-no-Obi",
       -- waist="Orpheus's Sash",
@@ -149,6 +163,22 @@ function init_gear_sets()
     }
 	
     sets.precast.WS['Vidohunir'] = {}
+	
+	sets.precast.WS['Myrkr'] = {
+      ammo="Ghastly Tathlum +1",
+      head="Kaykaus Mitra +1",
+      neck="Saevus pendant +1",
+      left_ear="Moonshade Earring",
+      right_ear="Etiolation Earring",
+      body={ name="Amalric Doublet +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
+      hands="Pinga mittens +1",
+      left_ring="Lebeche ring",
+      right_ring="Metamorph ring +1",
+      back={ name="Taranus's Cape", augments={'MP+60','Mag. Acc+20 /Mag. Dmg.+20','MP+10','"Fast Cast"+10','Mag. Evasion+15',}},   
+      waist="Luminary sash",	  
+      legs={ name="Amalric Slops +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
+      feet={ name="Amalric Nails +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
+	}
     
     ---- Midcast Sets ----
 
@@ -245,8 +275,8 @@ function init_gear_sets()
     sets.midcast['Elemental Magic'] = {
       ammo="Ghastly Tathlum +1",
       head="Archmage's Petasos +3",
-      body="Spaekona's Coat +3",
-      -- body="Archmage's coat +3",
+      -- body="Spaekona's Coat +3",
+      body="Archmage's coat +3",
       hands="Archmage's Gloves +3",
       legs="Archmage's Tonban +3",
       feet="Archmage's Sabots +3",
@@ -259,6 +289,18 @@ function init_gear_sets()
       right_ring="Freke Ring",
       back={ name="Taranus's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Phys. dmg. taken-10%',}},
     }
+	
+    sets.midcast['Luminohelix'] = set_combine(sets.midcast['Elemental Magic'], {
+      main="Daybreak",
+      sub="Culminus",
+      body={ name="Amalric Doublet +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
+      hands={ name="Amalric Gages +1", augments={'INT+12','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
+      legs={ name="Amalric Slops +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
+      feet={ name="Amalric Nails +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
+      left_ear="Crematio Earring",
+      left_ring="Mallquis Ring",
+      waist="Skrymir Cord +1",
+    })
 
     sets.midcast['Elemental Magic'].Resistant = {}
 
@@ -335,7 +377,7 @@ function init_gear_sets()
     sets.idle.Weak = sets.idle.PDT
     
     -- Town gear.
-    sets.idle.Town = {feet="Herald's Gaiters"}
+    sets.idle.Town = sets.idle
         
     -- Defense sets
 
@@ -349,8 +391,7 @@ function init_gear_sets()
 
     -- Buff sets: Gear that needs to be worn to actively enhance a current player buff.
     sets.buff['Mana Wall'] = {
-      feet="Wicce Sabots +1",
-      left_ring="Defending ring"
+      main="Kaumodaki",
     }
  
     sets.magic_burst = {
@@ -369,7 +410,7 @@ function init_gear_sets()
       body="Ea Houppe. +1",
       -- body="Spaekona's Coat +3",
       legs="Ea Slops +1",
-      feet="Amalric Nails +1",
+      feet={ name="Amalric Nails +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
     }
 
     -- Engaged sets
@@ -380,7 +421,21 @@ function init_gear_sets()
     -- EG: sets.engaged.Dagger.Accuracy.Evasion
     
     -- Normal melee group
-    sets.engaged = {}
+    sets.engaged = {
+      ammo="Staunch Tathlum +1",
+      head={ name="Blistering Sallet +1", augments={'Path: A',}},
+      body="Jhakri Robe +2",
+      hands={ name="Gazu Bracelet +1", augments={'Path: A',}},
+      legs="Jhakri Slops +2",
+      feet="Jhakri Pigaches +2",
+      neck="Lissome Necklace",
+      waist="Grunfeld Rope",
+      left_ear="Cessance Earring",
+      right_ear="Telos Earring",
+      left_ring="Chirich Ring +1",
+      right_ring="Chirich Ring +1",
+      back={ name="Taranus's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+5','"Store TP"+10','Phys. dmg. taken-10%',}},
+	}
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -416,9 +471,9 @@ function job_aftercast(spell, action, spellMap, eventArgs)
     -- Lock feet after using Mana Wall.
     if not spell.interrupted then
         if spell.english == 'Mana Wall' then
-            enable('feet')
+            -- enable('feet')
             equip(sets.buff['Mana Wall'])
-            disable('feet')
+            -- disable('feet')
         elseif spell.skill == 'Elemental Magic' then
             -- state.MagicBurst:reset()
         end
@@ -435,7 +490,7 @@ end
 function job_buff_change(buff, gain)
     -- Unlock feet when Mana Wall buff is lost.
     if buff == "Mana Wall" and not gain then
-        enable('feet')
+        -- enable('feet')
         handle_equipping_gear(player.status)
     end
 end

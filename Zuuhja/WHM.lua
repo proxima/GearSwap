@@ -137,7 +137,7 @@ function user_setup()
     send_command('bind @= send muuhja input /ja "Apogee" <me>')
     send_command('bind @n sat youcommand Muuhja "Carnage Elegy"')
     send_command('bind @m sat youcommand Muuhja "Pining Nocturne"')
-    send_command('bind @o sat youcommand Muuhja "Horde Lullaby"')
+    send_command('bind @o sat youcommand Muuhja "Horde Lullaby II"')
         
     send_command('bind ^numpad7 input /ws "Black Halo" <t>')
     send_command('bind ^numpad8 input /ws "Hexa Strike" <t>')
@@ -292,7 +292,7 @@ function init_gear_sets()
       hands="Theophany Mitts +2",                           --     6 3
       legs="Ebers Pant. +1",                                --       5
       feet={ name="Vanya Clogs", augments={'"Cure" potency +5%','"Cure" spellcasting time -15%','"Conserve MP"+6',}},
-      neck="Deviant Necklace",
+      neck="Cleric's Torque +1",
       waist="Luminary Sash",
       left_ear="Glorious Earring",
       right_ear="Mendi. Earring",
@@ -350,7 +350,7 @@ function init_gear_sets()
       hands="Fanatic Gloves",
       legs="Aya. Cosciales +2",
       feet={ name="Vanya Clogs", augments={'"Cure" potency +5%','"Cure" spellcasting time -15%','"Conserve MP"+6',}},
-      neck="Deviant Necklace",
+      neck="Cleric's Torque +1",
       waist="Luminary Sash",
       left_ear="Glorious Earring",
       right_ear="Mendi. Earring",

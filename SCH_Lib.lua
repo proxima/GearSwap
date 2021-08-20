@@ -648,7 +648,6 @@ function midcast(spell)
         else
             equip(sets.midcast.nuking[nukeModes.current])
         end
-    -- casting is basically enfeeble set.
     else
         equip(sets.midcast.casting)
     end
@@ -691,6 +690,10 @@ function midcast(spell)
     if spellMap == 'Helix' then
         equip(sets.midcast.Helix)
     end
+	
+    -- if spell.target.distance < (8 + spell.target.model_size) then
+    --     equip({waist="Orpheus's Sash"})
+    -- end
 end
  
 function aftercast(spell) 
@@ -705,7 +708,11 @@ function idle()
     -- We check if we're meleeing because we don't want to idle in melee gear when we're only engaged for trusts
     if (meleeing.current and player.status=='Engaged') then   
         -- We're engaged and meleeing
-        equip(sets.me.melee)               
+        if player.sub_job == 'NIN' then
+		  equip(sets.me.melee_dw)
+		else
+          equip(sets.me.melee)               
+		end
     else
         -- If we are building sublimation, then we swap refresh to sublimation style idle.
         if buffactive['Sublimation: Activated'] then

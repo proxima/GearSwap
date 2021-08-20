@@ -329,7 +329,8 @@ function init_gear_sets()
     }
 
     sets.engaged.Acc = {}
-            -- Mod set for trivial mobs (Skadi+1)
+    -- Mod set for trivial mobs (Skadi+1)
+	
     sets.engaged.Mod = {}
     -- Mod set for trivial mobs (Thaumas)
     sets.engaged.Mod2 = {}

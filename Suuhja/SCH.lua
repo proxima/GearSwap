@@ -113,17 +113,21 @@ hud_font = 'Impact'
     -- windower.send_command('bind @s sat youcommand Zuuhja Geo-Frailty')
     windower.send_command('bind @a sat youcommand Muuhja "Wind Threnody II"')
     windower.send_command('bind @s sat youcommand Zuuhja Silence')
-    windower.send_command('bind @d send zuuhja /ma "Cure" Aller')
+    -- windower.send_command('bind @d send zuuhja /ma "Cure" Aller')
     windower.send_command('bind @z send zuuhja input /ja "Full Circle" <me>')
     windower.send_command('bind @x send zuuhja input /ja "Radial Arcana" <me>')
 
     windower.send_command('bind @b sat youcommand Muuhja "Magic Finale"')
-    -- windower.send_command('bind @n sat youcommand Muuhja "Carnage Elegy"')
-    windower.send_command('bind @m sat youcommand Muuhja "Pining Nocturne"')
-    windower.send_command('bind @o sat youcommand Muuhja "Horde Lullaby"')
-    windower.send_command('bind @p send muuhja input /pet "Release" <me>')
+	-- windower.send_command('bind @b sat youcommand Zuuhja "Dispel"')
+    windower.send_command('bind @n sat youcommand Muuhja "Carnage Elegy"')
+    windower.send_command('bind @m sat youcommand Muuhja "Ltng. Threnody II"')
+    windower.send_command('bind @o sat youcommand Muuhja "Horde Lullaby II"')
+    windower.send_command('bind @p sat youcommand Muuhja "Foe Lullaby II"')
+	-- windower.send_command('bind @p send muuhja input /pet "Release" <me>')
     windower.send_command('bind @= send muuhja input /ja "Apogee" <me>')
-    windower.send_command('bind @n sat youcommand Muuhja "Level ? Holy"')
+    -- windower.send_command('bind @n sat youcommand Muuhja "Level ? Holy"')
+    windower.send_command('bind @d sat youcommand Muuhja Deploy')
+
 
     -- windower.send_command('bind @b send muuhja input /ma "Ramuh" <me>')
     -- windower.send_command('bind @n send Muuhja /input /ja "Mana Cede" <me>')
@@ -240,7 +244,7 @@ function get_sets()
       -- sub="Khonsu",               -- 6 DT
       ammo="Staunch tathlum +1",  -- 3 DT
       head="Pinga crown +1",
-      ear2="Lugalbanda earring",
+      ear1="Lugalbanda earring",
       ear2="Odnowa earring +1",   -- 3 DT, 2 MDT
       neck="Warder's charm +1",
       body="Mallquis Saio +2",    -- 8 DT
@@ -266,8 +270,27 @@ function get_sets()
     }
     
     -- Combat Related Sets
-    sets.me.melee = set_combine(sets.me.idle[idleModes.current], {
-    })
+    sets.me.melee = {
+      ammo="Staunch Tathlum +1",
+      head={ name="Blistering Sallet +1", augments={'Path: A',}},
+      body="Jhakri Robe +2",
+      hands={ name="Gazu Bracelet +1", augments={'Path: A',}},
+      legs="Jhakri Slops +2",
+      feet="Jhakri Pigaches +2",
+      neck="Lissome Necklace",
+      waist="Grunfeld Rope",
+      left_ear="Cessance Earring",
+      right_ear="Telos Earring",
+      left_ring="Chirich Ring +1",
+      right_ring="Chirich Ring +1",
+      back={ name="Lugh's Cape", augments={'INT+20','Accuracy+20 Attack+20','INT+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}},	-- Make dex version	  
+    }
+	
+	sets.me.melee_dw = set_combine(sets.me.melee, {
+	  left_ear="Eabani Earring",
+	  right_ear="Suppanomimi",
+      back={ name="Lugh's Cape", augments={'INT+20','Accuracy+20 Attack+20','INT+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}},	-- Make dual wield + dex version	
+	})
       
     -- Weapon Skills sets just add them by name.
     sets.me["Heavy Swing"] = {
@@ -316,7 +339,7 @@ function get_sets()
       body={ name="Amalric Doublet +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
       hands="Jhakri Cuffs +2",
       legs={ name="Amalric Slops +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
-      feet={ name="Amalric Nails +1", augments={'Mag. Acc.+20','"Mag.Atk.Bns."+20','"Conserve MP"+7',}},
+      feet={ name="Amalric Nails +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
       neck="Saevus Pendant +1",
       waist="Orpheus's Sash",
       left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
@@ -336,7 +359,7 @@ function get_sets()
       body={ name="Amalric Doublet +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
       hands="Jhakri Cuffs +2",
       legs={ name="Amalric Slops +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
-      feet={ name="Amalric Nails +1", augments={'Mag. Acc.+20','"Mag.Atk.Bns."+20','"Conserve MP"+7',}},
+      feet={ name="Amalric Nails +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
       neck="Saevus Pendant +1",
       waist="Orpheus's Sash",
       left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
@@ -354,7 +377,7 @@ function get_sets()
       body={ name="Amalric Doublet +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
       hands="Jhakri Cuffs +2",
       legs={ name="Amalric Slops +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
-      feet={ name="Amalric Nails +1", augments={'Mag. Acc.+20','"Mag.Atk.Bns."+20','"Conserve MP"+7',}},
+      feet={ name="Amalric Nails +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
       neck="Saevus Pendant +1",
       waist="Orpheus's Sash",
       left_ear="Regal Earring",
@@ -365,7 +388,35 @@ function get_sets()
     }
     
     sets.me["Myrkr"] = {
-      ear1="Moonshade earring",
+      ammo="Ghastly Tathlum +1",
+      head="Kaykaus Mitra +1",
+      neck="Saevus pendant +1",
+      left_ear="Moonshade Earring",
+      right_ear="Etiolation Earring",
+      body={ name="Amalric Doublet +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
+      hands="Pinga mittens +1",
+      left_ring="Lebeche ring",
+      right_ring="Metamorph ring +1",
+      back={ name="Lugh's Cape", augments={'MND+20','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity-10','Phys. dmg. taken-10%',}},
+      waist="Luminary sash",	  
+      legs={ name="Amalric Slops +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
+      feet={ name="Amalric Nails +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
+    }
+	
+	sets.me["Black Halo"] = {
+      ammo="Floestone",
+      head="Jhakri Coronal +2",
+      body="Jhakri Robe +2",
+      hands="Jhakri Cuffs +2",
+      legs="Jhakri Slops +2",
+      feet="Jhakri Pigaches +2",
+      neck={ name="Argute Stole +2", augments={'Path: A',}},
+      waist="Luminary Sash",
+      left_ear="Regal Earring",
+      right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
+      left_ring={ name="Metamor. Ring +1", augments={'Path: A',}},
+      right_ring="Epaminondas's Ring",
+      back={ name="Lugh's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','MND+10','Weapon skill damage +10%',}},    
     }
         
     ------------
@@ -465,7 +516,7 @@ function get_sets()
     -----------------------------------------------------------------------------------------------
     -- Make sure you have a non weather obi in this set. Helix get bonus naturally no need Obi.	
     sets.midcast.Kaustra = {
-      main="Tupsimati",
+      main="Marin Staff +1",
       sub="Enki strap",
       ammo="Ghastly Tathlum +1",
       head="Pixie hairpin +1",
@@ -484,68 +535,68 @@ function get_sets()
     
     -- Make sure you have a non weather obi in this set. Helix get bonus naturally no need Obi.	
     sets.midcast.Helix = {
-      ammo="Ghastly Tathlum +1",
-      -- waist="Orpheus's Sash",
-      waist="Sacro Cord",
+      left_ear="Crematio Earring",
+      waist="Skrymir Cord +1",
+      left_ring="Mallquis Ring",
       back={ name="Bookworm's Cape", augments={'INT+1','MND+2','Helix eff. dur. +20','"Regen" potency+10',}},
-      feet={ name="Amalric Nails +1", augments={'Mag. Acc.+20','"Mag.Atk.Bns."+20','"Conserve MP"+7',}},
     }
     
     sets.midcast.WindHelix = {
       main="Marin staff +1",
-      sub="Khonsu",
-      ammo="Ghastly Tathlum +1",
-      waist="Orpheus's Sash",
+      sub="Enki Strap",
+      waist="Skrymir Cord +1",
+      left_ring="Mallquis Ring",
+      left_ear="Crematio Earring",
       back={ name="Bookworm's Cape", augments={'INT+1','MND+2','Helix eff. dur. +20','"Regen" potency+10',}},
-      feet={ name="Amalric Nails +1", augments={'Mag. Acc.+20','"Mag.Atk.Bns."+20','"Conserve MP"+7',}},
     }
     
     sets.midcast.LightHelix = {
       main="Daybreak",
-      sub="Ammurapi Shield",
-      ammo="Ghastly Tathlum +1",
-      waist="Orpheus's Sash",
-      back={ name="Bookworm's Cape", augments={'INT+1','MND+2','Helix eff. dur. +20','"Regen" potency+10',}},
-      feet={ name="Amalric Nails +1", augments={'Mag. Acc.+20','"Mag.Atk.Bns."+20','"Conserve MP"+7',}},      
+      sub="Culminus",
+      left_ear="Crematio Earring",
+      left_ring="Mallquis Ring",
+      waist="Skrymir Cord +1",
+      back={ name="Bookworm's Cape", augments={'INT+1','MND+2','Helix eff. dur. +20','"Regen" potency+10',}},      
     }
 
     sets.midcast.DarkHelix = {
       head="Pixie hairpin +1",
+      left_ear="Crematio Earring",
       left_ring="Archon ring",
-      waist="Orpheus's Sash",
+      right_ring="Mallquis Ring",
+      waist="Skrymir Cord +1",
       back={ name="Bookworm's Cape", augments={'INT+1','MND+2','Helix eff. dur. +20','"Regen" potency+10',}},
-      feet={ name="Amalric Nails +1", augments={'Mag. Acc.+20','"Mag.Atk.Bns."+20','"Conserve MP"+7',}},
     }
-      
+
     -- Whatever you want to equip mid-cast as a catch all for all spells, and we'll overwrite later for individual spells
    sets.midcast.casting = {
-      head={ name="Merlinic Hood", augments={'"Fast Cast"+7','"Mag.Atk.Bns."+14',}}, -- 15 fc, 6 haste
-      neck="Voltsurge Torque",   -- 4
-      ammo="Pemphredo tathlum",
-      ear1="Etiolation earring", -- 1
-      ear2="Malignance earring", -- 4
-      body="Pinga tunic +1",     -- 15
-      hands="Acad. Bracers +3",  -- 9 fc, 3 haste
-      ring1="Defending ring",
-      ring2="Kishar ring",       -- 4
-      back={ name="Lugh's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','Haste+10','Spell interruption rate down-10%',}},
-      waist="Witful belt",       -- 3 fc, 3 haste
-      legs="Pinga pants +1",     -- 13
-      feet={ name="Merlinic Crackows", augments={'Attack+22','"Fast Cast"+7',}}, -- 12 fc, 3 haste
+     head={ name="Merlinic Hood", augments={'"Fast Cast"+7','"Mag.Atk.Bns."+14',}}, -- 15 fc, 6 haste
+     neck="Voltsurge Torque",   -- 4
+     ammo="Pemphredo tathlum",
+     ear1="Etiolation earring", -- 1
+     ear2="Malignance earring", -- 4
+     body="Pinga tunic +1",     -- 15
+     hands="Acad. Bracers +3",  -- 9 fc, 3 haste
+     ring1="Defending ring",
+     ring2="Kishar ring",       -- 4
+     back={ name="Lugh's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','Haste+10','Spell interruption rate down-10%',}},
+     waist="Witful belt",       -- 3 fc, 3 haste
+     legs="Pinga pants +1",     -- 13
+     feet={ name="Merlinic Crackows", augments={'Attack+22','"Fast Cast"+7',}}, -- 12 fc, 3 haste
    }
     
    sets.midcast["Sublimation"] = {
    }    
    
    sets.midcast.nuking.normal = { 
-     main="Tupsimati",
-     sub="Khonsu",
+     main="Marin Staff +1",
+     sub="Enki Strap",
      ammo="Ghastly Tathlum +1",
      head={ name="Peda. M.Board +3", augments={'Enh. "Altruism" and "Focalization"',}},
      body={ name="Amalric Doublet +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
      hands={ name="Amalric Gages +1", augments={'INT+12','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
      legs={ name="Amalric Slops +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
-     feet={ name="Amalric Nails +1", augments={'Mag. Acc.+20','"Mag.Atk.Bns."+20','"Conserve MP"+7',}},
+     feet={ name="Amalric Nails +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
      neck={ name="Argute Stole +2", augments={'Path: A',}},
      waist="Sacro Cord",
      left_ear="Regal Earring",
@@ -556,6 +607,7 @@ function get_sets()
    }
 
    sets.midcast.nuking.acc = set_combine(sets.midcast.nuking.normal, {
+     sub="Khonsu",
      feet="Jhakri Pigaches +2",
    })
 
@@ -580,32 +632,36 @@ function get_sets()
    -- used with toggle, default: F10
    -- Pieces to swap from free nuke to Magic Burst    
    sets.midcast.MB.normal = set_combine(sets.midcast.nuking.normal, {
-     main="Tupsimati",
+     main="Marin Staff +1",
      sub="Enki Strap",
      ammo="Ghastly Tathlum +1",
      head="Pedagogy mortarboard +3",
      body={ name="Merlinic Jubbah", augments={'Mag. Acc.+24 "Mag.Atk.Bns."+24','Magic burst dmg.+10%','INT+1','Mag. Acc.+1','"Mag.Atk.Bns."+11',}},
      hands={ name="Amalric Gages +1", augments={'INT+12','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
      legs={ name="Merlinic Shalwar", augments={'Mag. Acc.+25 "Mag.Atk.Bns."+25','Magic burst dmg.+10%','INT+8','Mag. Acc.+8',}},
-     feet={ name="Amalric Nails +1", augments={'Mag. Acc.+20','"Mag.Atk.Bns."+20','"Conserve MP"+7',}},
+     feet={ name="Amalric Nails +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
      neck={ name="Argute Stole +2", augments={'Path: A',}},
      waist="Sacro Cord",
-     left_ear="Regal Earring",
+     left_ear="Static Earring",
      right_ear="Malignance Earring",
      left_ring="Mujin Band",
-     right_ring="Freke Ring",
+     right_ring="Locus Ring",
      back={ name="Lugh's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Damage taken-5%',}},
    })
 
    -- used with toggle, default: F10
-    -- Pieces to swap from free nuke to Magic Burst
+   -- Pieces to swap from free nuke to Magic Burst
    sets.midcast.MB.acc = set_combine(sets.midcast.MB.normal, {
-     main="Tupsimati",
-     sub="Khonsu",
+     main="Marin Staff +1",
+     sub="Khonsu",   
+     left_ear="Regal Earring",
+     left_ring="Metamorph Ring +1",
+     right_ring="Freke Ring",
+     hands="Regal Cuffs",
      feet="Jhakri Pigaches +2",
+     waist="Acuity Belt +1",
    })
    
-   -- need cape
    sets.midcast.nuking.occult = set_combine(sets.midcast.nuking.normal, { 
      ammo="Seraphic Ampulla",
      head="Mall. Chapeau +2",
@@ -637,7 +693,7 @@ function get_sets()
      legs="Acad. Pants +3",    -- 5
      feet="Acad. Loafers +2",  -- 3
      neck={ name="Argute Stole +2", augments={'Path: A',}},
-     waist="Luminary sash",
+     waist="Acuity Belt +1",
      left_ear="Regal Earring",
      right_ear="Malignance Earring",
      left_ring="Stikini Ring +1",
@@ -774,8 +830,8 @@ function get_sets()
     })
     
     sets.midcast.cure.weather = set_combine(sets.midcast.cure.normal, {
---      main="Chatoyant staff",             -- 10
---      sub="Khonsu",
+      main="Chatoyant staff",             -- 10
+      sub="Enki Strap",
       waist="Hachirin-no-Obi",
     })
 

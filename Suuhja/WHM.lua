@@ -131,16 +131,16 @@ function user_setup()
     send_command('bind @z send zuuhja input /ja "Full Circle" <me>')
     send_command('bind @x send zuuhja input /ja "Radial Arcana" <me>')
     
-    -- send_command('bind @b sat youcommand Muuhja "Magic Finale"')
-    -- send_command('bind @n sat youcommand Muuhja "Carnage Elegy"')
-    -- send_command('bind @m sat youcommand Muuhja "Pining Nocturne"')
-    -- send_command('bind @o sat youcommand Muuhja "Horde Lullaby"')
-    -- send_command('bind @o sat youcommand Muuhja "Sleepga"')
+    send_command('bind @b sat youcommand Muuhja "Magic Finale"')
+    send_command('bind @n sat youcommand Muuhja "Carnage Elegy"')
+    send_command('bind @m sat youcommand Muuhja "Pining Nocturne"')
+    send_command('bind @o sat youcommand Muuhja "Horde Lullaby II"')
+    send_command('bind @o sat youcommand Muuhja "Sleepga"')
     
-    send_command('bind @b send muuhja input /ma "Siren" <me>')
-    send_command('bind @n sat youcommand Muuhja "Hysteric Assault"')
+    -- send_command('bind @b send muuhja input /ma "Siren" <me>')
+    -- send_command('bind @n sat youcommand Muuhja "Hysteric Assault"')
     -- send_command('bind @m sat youcommand Muuhja "Bitter Elegy"')
-    send_command('bind @o sat youcommand Muuhja Assault')
+    -- send_command('bind @o sat youcommand Muuhja Assault')
     -- send_command('bind @p send muuhja input /pet "Release" <me>')
     send_command('bind @= send muuhja input /ja "Apogee" <me>')
         
@@ -642,11 +642,16 @@ function init_gear_sets()
       main="Asclepius",
       sub="Ammurapi Shield",
       ammo="Staunch Tathlum +1",
-      head="Nyame Helm",
-      body="Nyame Mail",
-      hands="Nyame Gauntlets",
-      legs="Nyame Flanchard",
-      feet="Nyame Sollerets",
+      head="Aya. Zucchetto +2",
+      body="Ayanmo Corazza +2",
+      hands="Aya. Manopolas +2",
+      legs="Aya. Cosciales +2",
+      feet="Aya. Gambieras +2",
+      -- head="Nyame Helm",
+      -- body="Nyame Mail",
+      -- hands="Nyame Gauntlets",
+      -- legs="Nyame Flanchard",
+      -- feet="Nyame Sollerets",
       neck="Warder's Charm +1",
       waist="Carrier's Sash",
       left_ear="Etiolation Earring",
@@ -686,9 +691,8 @@ function init_gear_sets()
 
     -- Basic set for if no TP weapon is defined.
     sets.engaged = {
-      -- main="Asclepius",
-      main="Yagrush",
-	  sub="Magesmasher +1",
+      main="Asclepius",
+      sub="Magesmasher +1",
       ammo="Staunch Tathlum +1",
       head="Aya. Zucchetto +2",
       body="Ayanmo Corazza +2",

@@ -347,7 +347,7 @@ function get_sets()
      main="Idris",
      sub="Genmei Shield",
      range={ name="Dunna", augments={'MP+20','Mag. Acc.+10','"Fast Cast"+3',}},
-     head={ name="Vanya Hood", augments={'MND+10','Spell interruption rate down +15%','"Conserve MP"+6',}},
+     head="Azimuth Hood +1",
      body="Vedic Coat",
      hands="Azimuth Gloves +1",
      legs={ name="Vanya Slops", augments={'MND+10','Spell interruption rate down +15%','"Conserve MP"+6',}},
@@ -366,10 +366,10 @@ function get_sets()
      main="Idris",
      sub="Genmei Shield",
      range={ name="Dunna", augments={'MP+20','Mag. Acc.+10','"Fast Cast"+3',}}, 
-     head="Azimuth Hood +1",
+     head={ name="Vanya Hood", augments={'MND+10','Spell interruption rate down +15%','"Conserve MP"+6',}},
      body="Vedic Coat",
      hands="Azimuth Gloves +1",
-     legs={ name="Vanya Slops", augments={'MND+10','Spell interruption rate down +15%','"Conserve MP"+6',}},
+     legs={ name="Bagua Pants +3", augments={'Enhances "Mending Halation" effect',}},
      feet="Azimuth Gaiters +1",
      neck="Reti Pendant",
      waist={ name="Shinjutsu-no-Obi +1", augments={'Path: A',}},
@@ -404,10 +404,12 @@ function get_sets()
    })
 
    sets.midcast.MB.normal = set_combine(sets.midcast.nuking.normal, {
-     head="Ea Hat +1",
-     body="Ea Houppe. +1",
-     legs="Ea Slops +1",
-     left_ring="Mujin Band",
+    head="Ea Hat +1",
+    body="Ea Houppe. +1",
+    legs="Ea Slops +1",
+    feet="Jhakri Pigaches +2",
+    neck="Mizu. Kubikazari",
+    left_ring="Mujin Band",
    })
 
    sets.midcast.nuking.acc = set_combine(sets.midcast.nuking.normal, {

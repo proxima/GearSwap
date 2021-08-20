@@ -38,7 +38,7 @@ function user_setup()
     send_command('bind ^f8 gs c cycle CorrelationMode')
     select_default_macro_book()
     
-    send_command('bind @o sat youcommand Muuhja "Horde Lullaby"')
+    send_command('bind @o sat youcommand Muuhja "Horde Lullaby II"')
     send_command('bind @p sat youcommand Zuuhja "Sleepga"')
     send_command('bind @n sat youcommand Muuhja "Carnage Elegy"')
     send_command('bind @1 send Zuuhja input /ma "Cure IV" Aller')
@@ -63,7 +63,8 @@ ready_moves_to_check = S{'Sic','Whirl Claws','Dust Cloud','Foot Kick','Sheep Son
     'Fantod','Charged Whisker','Purulent Ooze','Corrosive Ooze','Tortoise Stomp','Harden Shell','Aqua Breath',
     'Sensilla Blades','Tegmina Buffet','Molting Plumage','Swooping Frenzy','Pentapeck','Sweeping Gouge',
     'Zealous Snort','Somersault ','Tickling Tendrils','Stink Bomb','Nectarous Deluge','Nepenthic Plunge',
-    'Pecking Flurry','Pestilent Plume','Foul Waters','Spider Web','Sickle Slash','Frogkick','Ripper Fang','Scythe Tail','Chomp Rush'}
+    'Pecking Flurry','Pestilent Plume','Foul Waters','Spider Web','Sickle Slash','Frogkick','Ripper Fang',
+	'Scythe Tail','Chomp Rush','Fluid Toss','Fluid Spread','Digest'}
  
        
 mab_ready_moves = S{
@@ -126,7 +127,7 @@ end
 -- BST gearsets
 function init_gear_sets()
     -- PRECAST SETS
-    sets.precast.JA['Killer Instinct'] = {head="Ankusa Helm +1"}       
+    sets.precast.JA['Killer Instinct'] = {head="Ankusa Helm +2"}
     sets.precast.JA['Bestial Loyalty'] = {hands="Ankusa Gloves"}
     sets.precast.JA['Call Beast'] = sets.precast.JA['Bestial Loyalty']
     sets.precast.JA.Familiar = {legs="Ankusa Trousers"}     
@@ -158,7 +159,7 @@ function init_gear_sets()
     }
     
     sets.precast.WS['Decimation'] = {
-      ammo="Demonry Core",
+      ammo="Floestone",
       head="Skormoth Mask",
       body="Tali'ah Manteel +2",
       hands={ name="Argosy Mufflers +1", augments={'STR+12','DEX+12','Attack+20',}},
@@ -187,7 +188,7 @@ function init_gear_sets()
     -- This is your base Ready move set, activating for physical Ready moves. Merlin/D.Tassets are accounted for already.
     sets.midcast.Pet.WS = {
       main="Agwu's Axe",
-      sub={ name="Kumbhakarna", augments={'Pet: Accuracy+13 Pet: Rng. Acc.+13','Pet: TP Bonus+200',}},
+      sub={ name="Kumbhakarna", augments={'Pet: Attack+19 Pet: Rng.Atk.+19','Pet: TP Bonus+200',}},
       ammo="Voluspa Tathlum",
       head={ name="Emicho Coronet +1", augments={'Pet: Accuracy+20','Pet: Attack+20','Pet: "Dbl. Atk."+4',}},
       body={ name="Taeon Tabard", augments={'Pet: Accuracy+21 Pet: Rng. Acc.+21','Pet: "Dbl. Atk."+5','Pet: Damage taken -4%',}},
@@ -209,8 +210,8 @@ function init_gear_sets()
  
     -- This will equip for Magical Ready moves like Fireball
     sets.midcast.Pet.MabReady = set_combine(sets.midcast.Pet.WS, {
-      main={ name="Kumbhakarna", augments={'Pet: "Mag.Atk.Bns."+16','Pet: TP Bonus+200',}},
-      sub={ name="Kumbhakarna", augments={'Pet: "Mag.Atk.Bns."+12','Pet: TP Bonus+200',}},
+      main={ name="Kumbhakarna", augments={'Pet: "Mag.Atk.Bns."+19','Pet: TP Bonus+200',}},
+      sub={ name="Kumbhakarna", augments={'Pet: "Mag.Atk.Bns."+19','Pet: TP Bonus+200',}},
       ammo="Voluspa Tathlum",
       head={ name="Valorous Mask", augments={'Pet: "Mag.Atk.Bns."+27','Pet: INT+14','Pet: Accuracy+12 Pet: Rng. Acc.+12','Pet: Attack+7 Pet: Rng.Atk.+7',}},
       body="Udug Jacket",
@@ -226,7 +227,6 @@ function init_gear_sets()
       back="Argocham. Mantle",
     })
     
-        -- This will equip for Magical Ready moves like Fireball
     sets.midcast.Pet.MaccReady = set_combine(sets.midcast.Pet.WS, {
       main="Agwu's Axe",
       sub="Sacro Bulwark",
@@ -236,14 +236,13 @@ function init_gear_sets()
       hands="Nukumi Manoplas +1",
       legs="Nyame Flanchard",
       feet="Nyame Sollerets",
+      left_ear="Handler's Earring +1",
       right_ear="Enmerkar Earring",
       left_ring="Tali'ah Ring",
       right_ring="C. Palug Ring",
       waist="Incarnation Sash",
-      -- need improvement
       neck="Adad Amulet",
-      left_ear={ name="Odnowa Earring +1", augments={'Path: A',}},
-      back="Argocham. Mantle",
+      back="Argocham. Mantle", -- make ambu cape
     })
    
     sets.midcast.Pet.TPBonus = {hands="Nukumi Manoplas +1",}
@@ -311,7 +310,7 @@ function init_gear_sets()
       right_ear="Sherida Earring",
       left_ring="Chirich Ring +1",
       right_ring="Chirich Ring +1",
-      back={ name="Artio's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+5','"Store TP"+10','Phys. dmg. taken-10%',}},
+      back={ name="Artio's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+5','"Dual Wield"+10','Phys. dmg. taken-10%',}},
     }
     
     sets.engaged.PetDT = {
@@ -348,7 +347,7 @@ function init_gear_sets()
       right_ear="Suppanomimi",
       left_ring="Chirich Ring +1",
       right_ring="Chirich Ring +1",
-      back={ name="Artio's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+5','"Store TP"+10','Phys. dmg. taken-10%',}},    
+      back={ name="Artio's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+5','"Dual Wield"+10','Phys. dmg. taken-10%',}},    
     }
            
     sets.engaged.DW.PetDT = {

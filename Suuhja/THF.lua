@@ -60,7 +60,7 @@ function user_setup()
     send_command('bind @b sat youcommand Muuhja "Magic Finale"')
     send_command('bind @n sat youcommand Muuhja "Carnage Elegy"')
     send_command('bind @m sat youcommand Muuhja "Pining Nocturne"')
-    send_command('bind @o sat youcommand Muuhja "Horde Lullaby"')
+    send_command('bind @o sat youcommand Muuhja "Horde Lullaby II"')
     send_command('bind @p sat youcommand Zuuhja "Sleepga"')
 
 	
@@ -153,7 +153,7 @@ function init_gear_sets()
       right_ear="Odr Earring",
       left_ring="Gere Ring",
       right_ring="Ilabrat Ring",
-      back={ name="Senuna's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Crit.hit rate+10',}},
+      back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}},
     }
     sets.precast.WS.Acc = set_combine(sets.precast.WS, {})
 
@@ -198,23 +198,40 @@ function init_gear_sets()
       ammo="Cath Palug Stone",
       head={ name="Herculean Helm", augments={'Accuracy+29','Weapon skill damage +4%',}},
       body={ name="Herculean Vest", augments={'Accuracy+21','Weapon skill damage +4%','Attack+5',}},
-      hands="Mummu Wrists +2",
+      hands="Meg. Gloves +2",
       legs={ name="Lustr. Subligar +1", augments={'Accuracy+20','DEX+8','Crit. hit rate+3%',}},
-      feet={ name="Herculean Boots", augments={'Weapon Skill Acc.+1','DEX+5','Weapon skill damage +8%','Accuracy+1 Attack+1',}},
+      feet={ name="Lustra. Leggings +1", augments={'HP+65','STR+15','DEX+15',}},
       neck="Fotia Gorget",
       waist="Kentarch Belt +1",
       left_ear="Sherida Earring",
       right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
       left_ring="Regal Ring",
       right_ring="Ilabrat Ring",
-      back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Crit.hit rate+10',}},
+      back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}},
     })
     
     sets.precast.WS["Rudra's Storm"].Acc = set_combine(sets.precast.WS["Rudra's Storm"], {})
     sets.precast.WS["Rudra's Storm"].Mod = set_combine(sets.precast.WS["Rudra's Storm"], {})
-    sets.precast.WS["Rudra's Storm"].SA = set_combine(sets.precast.WS["Rudra's Storm"].Mod, {})
-    sets.precast.WS["Rudra's Storm"].TA = set_combine(sets.precast.WS["Rudra's Storm"].Mod, {})
-    sets.precast.WS["Rudra's Storm"].SATA = set_combine(sets.precast.WS["Rudra's Storm"].Mod, {})
+    sets.precast.WS["Rudra's Storm"].SA = set_combine(sets.precast.WS["Rudra's Storm"].Mod, {
+      left_ring="Epaminondas's ring",
+      left_ear="Odr Earring",
+      ammo="Yetshila +1",
+	  feet={ name="Herculean Boots", augments={'Weapon Skill Acc.+1','DEX+5','Weapon skill damage +8%','Accuracy+1 Attack+1',}},	  
+	})
+
+    sets.precast.WS["Rudra's Storm"].TA = set_combine(sets.precast.WS["Rudra's Storm"].Mod, {
+      left_ring="Epaminondas's ring",
+      left_ear="Odr Earring",
+      ammo="Yetshila +1",
+	  feet={ name="Herculean Boots", augments={'Weapon Skill Acc.+1','DEX+5','Weapon skill damage +8%','Accuracy+1 Attack+1',}},
+	})
+
+    sets.precast.WS["Rudra's Storm"].SATA = set_combine(sets.precast.WS["Rudra's Storm"].Mod, {
+      left_ring="Epaminondas's ring",
+      left_ear="Odr Earring",
+      ammo="Yetshila +1",
+	  feet={ name="Herculean Boots", augments={'Weapon Skill Acc.+1','DEX+5','Weapon skill damage +8%','Accuracy+1 Attack+1',}},
+	})
 
     sets.precast.WS["Shark Bite"] = set_combine(sets.precast.WS, {})
     sets.precast.WS['Shark Bite'].Acc = set_combine(sets.precast.WS['Shark Bite'], {})
@@ -267,11 +284,18 @@ function init_gear_sets()
     sets.midcast.RA.Acc = {}
     
     sets.midcast["Sleepga"] = {
+      ammo="Pemphredo Tathlum",
       head="Malignance Chapeau",
       body="Malignance Tabard",
-      hands={ name="Herculean Gloves", augments={'"Conserve MP"+1','Accuracy+21','"Treasure Hunter"+2',}}, 
+      hands={ name="Herculean Gloves", augments={'"Conserve MP"+1','Accuracy+21','"Treasure Hunter"+2',}},
       legs="Malignance Tights",
-      feet="Skulker's poulaines +1"   
+      feet="Skulk. Poulaines +1",
+      neck="Sanctity Necklace",
+      waist="Skrymir Cord +1",
+      left_ear="Sherida Earring",
+      right_ear="Telos Earring",
+      left_ring={ name="Metamor. Ring +1", augments={'Path: A',}},
+      right_ring="Stikini Ring +1",
     }
 
     --------------------------------------
@@ -291,17 +315,18 @@ function init_gear_sets()
       hands="Malignance Gloves",
       legs="Malignance Tights",
       neck="Loricate Torque +1",
-      waist="Windbuffet Belt +1",
-      left_ear="Sherida Earring",
+      waist="Reiki Yotai",
+	  left_ear="Etiolation Earring",
       right_ear="Odnowa Earring +1",
       right_ring="Defending ring",
-      left_ring="Gelatinous Ring",
+      left_ring="Gelatinous Ring +1",
       back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10','Phys. dmg. taken-10%',}},
-      -- feet="Jute boots +1"
       feet="Malignance Boots"
     }
 
-    sets.idle.Town = {feet="Jute boots +1"}
+    sets.idle.Town = set_combine(sets.idle, {
+	  feet="Jute boots +1"
+	})
 
     sets.idle.Weak = {feet="Jute boots +1"}
 

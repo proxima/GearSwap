@@ -282,7 +282,7 @@ function init_gear_sets()
       neck="Etoile gorget +2",
       left_ear="Mache Earring +1",
       right_ear="Telos Earring",
-      body="Malignance Tabard",
+      body="Maxixi Casaque +3",
       hands="Maxixi Bangles +3",
       left_ring="Chirich Ring +1",
       right_ring="Regal Ring",

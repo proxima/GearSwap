@@ -522,6 +522,9 @@ function midcast(spell)
         equip(sets.midcast.geo)
     elseif spell.name:match('Indi') then
         equip(sets.midcast.indi)
+		if buffactive['Entrust'] then
+		  equip({main="Solstice"})
+		end
     else
         equip(sets.midcast.casting)
     end

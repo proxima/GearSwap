@@ -349,26 +349,28 @@ function init_gear_sets()
       range="Gjallarhorn",
       head="Brioso Roundlet +2",
       body="Brioso Justau. +3",
-      hands="Inyanga Dastanas +2",
+      hands="Brioso Cuffs +3",
       legs="Brioso Cannions +3",
       feet="Brioso Slippers +3",
       neck="Mnbw. Whistle +1",
       ear1="Digni. Earring",
       ear2="Regal Earring",
       ring1="Stikini Ring +1",
-      ring2="Metamor. Ring +1",
+      ring2="Stikini Ring +1",
       waist="Acuity Belt +1",
       back={ name="Intarabus's Cape", augments={'CHR+20','Mag. Acc+20 /Mag. Dmg.+20','CHR+10','"Fast Cast"+10',}},
+	  --hands={ name="Chironic Gloves", augments={'Crit. hit damage +3%','MND+13','"Treasure Hunter"+2','Mag. Acc.+10 "Mag.Atk.Bns."+10',}},
+      --feet={ name="Chironic Slippers", augments={'"Fast Cast"+2','MND+5','"Treasure Hunter"+2',}}
     }
 
     -- For song defbuffs (accuracy primary, duration secondary)
-    sets.midcast.SongEnfeebleAcc = set_combine(sets.midcast.SongEnfeeble, {legs="Brioso Cannions +3"})
+    sets.midcast.SongEnfeebleAcc = set_combine(sets.midcast.SongEnfeeble, {
+	})
 
     -- For Horde Lullaby maxiumum AOE range.
     sets.midcast.SongStringSkill = {
-      hands="Brioso Cuffs +3",
-      ring1="Stikini Ring +1",
-      ring2="Stikini Ring +1"
+      ear1="Darkside Earring",
+      ear2="Gersemi Earring"
     }
 
     -- Placeholder song; minimize duration to make it easy to overwrite.
@@ -440,7 +442,6 @@ function init_gear_sets()
 
     sets.idle = {
       main="Carnwenhan",
-      -- sub="Taming Sari",
       sub="Genmei Shield",
       range={ name="Linos", augments={'Mag. Evasion+14','Phys. dmg. taken -4%','HP+17',}},
       head="Inyanga Tiara +2",
@@ -671,10 +672,10 @@ function job_precast(spell, action, spellMap, eventArgs)
             equip({range="Marsyas"})
         end
         if string.find(spell.name,'Lullaby') then
-            if buffactive.Troubadour then
-                equip({range="Marsyas"})
-            elseif state.LullabyMode.value == 'Harp' and spell.english:contains('Horde') then
+            if state.LullabyMode.value == 'Harp' and spell.english:contains('Horde') then
                 equip({range="Daurdabla"})
+            elseif buffactive.Troubadour then
+                equip({range="Marsyas"})
             else
                 equip({range="Gjallarhorn"})
             end
@@ -704,13 +705,13 @@ function job_midcast(spell, action, spellMap, eventArgs)
             equip({range="Marsyas"})
         end
         if string.find(spell.name,'Lullaby') then
-            if buffactive.Troubadour then
-                equip({range="Marsyas"})
-            elseif state.LullabyMode.value == 'Harp' and spell.english:contains('Horde') then
+            if state.LullabyMode.value == 'Harp' and spell.english:contains('Horde') then
                 equip({range="Daurdabla"})
                 equip(sets.midcast.SongStringSkill)
+            elseif buffactive.Troubadour then
+                equip({range="Marsyas"})
             else
-                equip({range="Gjallarhorn"})
+			    equip({range="Gjallarhorn"})
             end
         end
     end
@@ -935,7 +936,7 @@ function get_lullaby_duration(spell)
     if player.equipment.feet == "Brioso Slippers +2" then mult = mult + 0.13 end
     if player.equipment.feet == "Brioso Slippers +3" then mult = mult + 0.15 end
     if player.equipment.hands == 'Brioso Cuffs +1' then mult = mult + 0.1 end
-    if player.equipment.hands == 'Brioso Cuffs +3' then mult = mult + 0.1 end
+    if player.equipment.hands == 'Brioso Cuffs +2' then mult = mult + 0.1 end
     if player.equipment.hands == 'Brioso Cuffs +3' then mult = mult + 0.2 end
 
     --JP Duration Gift

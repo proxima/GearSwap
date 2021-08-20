@@ -77,8 +77,13 @@ function init_gear_sets()
     sets.precast.JA['Wild Card'] = {feet="Comm. Bottes +2"}
     sets.precast.JA['Random Deal'] = {body="Comm. Frac +2"}
 
-    
-    sets.precast.CorsairRoll = {head="Comm. Tricorne +2",neck="Regal necklace",hands="Navarch's Gants +2",left_ring="Barataria Ring",back="Camulus's Mantle"}
+    sets.precast.CorsairRoll = {
+	  head="Comm. Tricorne +2",
+	  neck="Regal necklace",
+	  hands="Navarch's Gants +2",
+	  right_ring="Luzaf's Ring",
+	  back="Camulus's Mantle"
+	}
     
     sets.precast.CorsairRoll["Caster's Roll"] = set_combine(sets.precast.CorsairRoll, {legs="Navarch's Culottes +2"})
     sets.precast.CorsairRoll["Courser's Roll"] = set_combine(sets.precast.CorsairRoll, {feet="Navarch's Bottes +2"})
