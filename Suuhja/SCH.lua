@@ -210,8 +210,6 @@ function get_sets()
 
     -- Your idle set
     sets.me.idle.refresh = {
-      -- main="Tupsimati",
-      -- sub="Khonsu",
       main="Daybreak",
       sub="Ammurapi Shield",
       ammo="Homiliary",
@@ -238,16 +236,32 @@ function get_sets()
 
     -- Your idle DT set
     sets.me.idle.dt = set_combine(sets.me.idle[refreshType], {
+      main="Khatvanga",
+      sub="Enki Strap",
+      ammo="Staunch Tathlum +1",
+      head="Nyame Helm",
+      body="Nyame Mail",
+      hands="Nyame Gauntlets",
+      legs="Nyame Flanchard",
+      feet="Nyame Sollerets",
+	  neck="Loricate Torque +1",
+      waist="Carrier's Sash",
+      left_ear="Eabani Earring",
+      right_ear={ name="Odnowa Earring +1", augments={'Path: A',}},
+      left_ring="Defending Ring",
+      right_ring="Gelatinous Ring +1",
+      back={ name="Lugh's Cape", augments={'MND+20','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity-10','Phys. dmg. taken-10%',}},
+    })
+
+    sets.me.idle.mdt = set_combine(sets.me.idle.dt, {
       main="Daybreak",
       sub="Ammurapi Shield",
-      -- main="Tupsimati",
-      -- sub="Khonsu",               -- 6 DT
       ammo="Staunch tathlum +1",  -- 3 DT
       head="Pinga crown +1",
       ear1="Lugalbanda earring",
       ear2="Odnowa earring +1",   -- 3 DT, 2 MDT
       neck="Warder's charm +1",
-      body="Mallquis Saio +2",    -- 8 DT
+      body="Pinga Tunic +1",      
       hands="Pinga mittens +1",
       legs="Pinga pants +1",
       ring1="Defending ring",     -- 10 DT
@@ -255,10 +269,6 @@ function get_sets()
       feet="Pinga pumps +1",
       waist="Carrier's Sash",
       back={ name="Lugh's Cape", augments={'MND+20','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity-10','Phys. dmg. taken-10%',}},
-    })
-
-    sets.me.idle.mdt = set_combine(sets.me.idle.dt, {
-      body="Pinga tunic +1",
     })
 
     -- Your MP Recovered Whilst Resting Set
@@ -283,7 +293,7 @@ function get_sets()
       right_ear="Telos Earring",
       left_ring="Chirich Ring +1",
       right_ring="Chirich Ring +1",
-      back={ name="Lugh's Cape", augments={'INT+20','Accuracy+20 Attack+20','INT+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}},	-- Make dex version	  
+      back={ name="Lugh's Cape", augments={'INT+20','Accuracy+20 Attack+20','INT+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}},	-- Make stp + dex version	  
     }
 	
 	sets.me.melee_dw = set_combine(sets.me.melee, {
@@ -466,9 +476,15 @@ function get_sets()
      main="Daybreak",
      sub="Ammurapi Shield"
    })
+   
+   sets.precast["Impact"] = set_combine(sets.precast.casting, {
+     head=empty, body="Twilight Cloak"
+   })
     
-    sets.precast["Stun"] = {
-    }
+   sets.precast["Stun"] = set_combine(sets.precast.casting, {
+     main="Hvergelmir",
+     sub="Khonsu",             -- 4
+   })
 
     -- When spell school is aligned with grimoire, swap relevent pieces -- Can also use Arbatel +1 set here if you value 1% quickcast procs per piece. (2+ pieces)  
     -- Dont set_combine here, as this is the last step of the precast, it will have sorted all the needed pieces already based on type of spell.
@@ -657,7 +673,7 @@ function get_sets()
      left_ear="Regal Earring",
      left_ring="Metamorph Ring +1",
      right_ring="Freke Ring",
-     hands="Regal Cuffs",
+     -- hands="Regal Cuffs",
      feet="Jhakri Pigaches +2",
      waist="Acuity Belt +1",
    })
@@ -684,7 +700,7 @@ function get_sets()
 
     -- Enfeebling
    sets.midcast["Stun"] = {
-     main="Tupsimati",
+     main="Hvergelmir",
      sub="Khonsu",             -- 4
      ammo="Pemphredo tathlum",
      head="Acad. Mortar. +2",  -- 6
@@ -718,10 +734,16 @@ function get_sets()
      right_ring="Metamorph ring +1",
      back={ name="Lugh's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Damage taken-5%',}},
    }
+   
 
    sets.midcast.Dispelga = set_combine(sets.midcast.IntEnfeebling, {
      main="Daybreak",
      sub="Ammurapi Shield"
+   })
+   
+   sets.midcast.Impact = set_combine(sets.midcast.IntEnfeebling, {
+     head=empty, 
+	 body="Twilight Cloak"
    })
    
    sets.midcast.MndEnfeebling = {
@@ -774,7 +796,6 @@ function get_sets()
       hands="Regal cuffs",
     })
 
-    -- lets do legs
     sets.midcast["Drain"] = set_combine(sets.midcast.nuking.normal, {
       main="Tupsimati",
       sub="Khonsu",

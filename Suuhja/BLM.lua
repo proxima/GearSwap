@@ -23,7 +23,7 @@ end
 -- Setup vars that are user-dependent.  Can override this function in a sidecar file.
 function user_setup()
     state.OffenseMode:options('None', 'Normal')
-    state.CastingMode:options('Normal', 'Resistant', 'Proc')
+    state.CastingMode:options('Normal', 'Resistant', 'Occult', 'Death')
     state.IdleMode:options('Normal', 'PDT')
     
     state.MagicBurst = M(false, 'Magic Burst')
@@ -108,7 +108,7 @@ function init_gear_sets()
     sets.precast.FC.Cure = set_combine(sets.precast.FC, {})
 
     sets.precast.FC.Curaga = sets.precast.FC.Cure
-
+	
     -- Weaponskill sets
     -- Default set for any weaponskill that isn't any more specifically defined
     sets.precast.WS = {
@@ -162,19 +162,34 @@ function init_gear_sets()
       left_ear="Regal earring"
     }
 	
-    sets.precast.WS['Vidohunir'] = {}
+    sets.precast.WS['Vidohunir'] = {
+      ammo="Ghastly Tathlum +1",
+      head="Pixie hairpin +1",
+      body={ name="Amalric Doublet +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
+      hands="Jhakri Cuffs +2",
+      legs={ name="Amalric Slops +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
+      feet={ name="Amalric Nails +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
+      neck="Sorcerer's Stole +2",
+      waist="Hachirin-no-Obi",
+      -- waist="Orpheus's Sash",
+      left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
+      right_ear="Malignance Earring",
+      left_ring="Archon Ring",
+      right_ring="Epaminondas's Ring",
+      back={ name="Taranus's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Phys. dmg. taken-10%',}},	  
+    }
 	
 	sets.precast.WS['Myrkr'] = {
       ammo="Ghastly Tathlum +1",
-      head="Kaykaus Mitra +1",
+	  head="Pixie Hairpin +1",
       neck="Saevus pendant +1",
       left_ear="Moonshade Earring",
       right_ear="Etiolation Earring",
       body={ name="Amalric Doublet +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
-      hands="Pinga mittens +1",
-      left_ring="Lebeche ring",
+      hands="Regal Cuffs",
+	  left_ring="Mephitas's Ring",
       right_ring="Metamorph ring +1",
-      back={ name="Taranus's Cape", augments={'MP+60','Mag. Acc+20 /Mag. Dmg.+20','MP+10','"Fast Cast"+10','Mag. Evasion+15',}},   
+      back={ name="Taranus's Cape", augments={'MP+60','Mag. Acc+20 /Mag. Dmg.+20','MP+20','"Fast Cast"+10','Mag. Evasion+15',}},   
       waist="Luminary sash",	  
       legs={ name="Amalric Slops +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
       feet={ name="Amalric Nails +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
@@ -275,8 +290,8 @@ function init_gear_sets()
     sets.midcast['Elemental Magic'] = {
       ammo="Ghastly Tathlum +1",
       head="Archmage's Petasos +3",
-      -- body="Spaekona's Coat +3",
-      body="Archmage's coat +3",
+      body="Spaekona's Coat +3",
+      -- body="Archmage's coat +3",
       hands="Archmage's Gloves +3",
       legs="Archmage's Tonban +3",
       feet="Archmage's Sabots +3",
@@ -310,27 +325,29 @@ function init_gear_sets()
     sets.midcast['Elemental Magic'].HighTierNuke.Resistant = set_combine(sets.midcast['Elemental Magic'], {})
 
     sets.midcast['Death'] = {
-      ammo="Pemphredo tathlum",
-      head="Pixie hairpin +1",
-      neck="Sorcerer's Stole +2",
-      body="Archmage's coat +3",
-      hands="Archmage's Gloves +3",
-      legs="Archmage's Tonban +3",
-      feet="Archmage's Sabots +3",
-      left_ear="Regal Earring",
-      right_ear="Malignance Earring",
-      left_ring="Archon ring",
-      right_ring="Freke ring",
+      ammo={ name="Ghastly Tathlum +1", augments={'Path: A',}},
+      head="Pixie Hairpin +1",
+      body={ name="Amalric Doublet +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
+      hands={ name="Amalric Gages +1", augments={'INT+12','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
+      legs={ name="Amalric Slops +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
+      feet={ name="Amalric Nails +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
+      neck={ name="Src. Stole +2", augments={'Path: A',}},
       waist="Hachirin-no-Obi",
-      back={ name="Taranus's Cape", augments={'MP+60','Mag. Acc+20 /Mag. Dmg.+20','MP+10','"Fast Cast"+10','Mag. Evasion+15',}},   
+      left_ear="Barkaro. Earring",
+      right_ear="Malignance Earring",
+      left_ring="Freke Ring",
+      right_ring="Archon Ring",
+      back={ name="Taranus's Cape", augments={'MP+60','Mag. Acc+20 /Mag. Dmg.+20','MP+20','"Fast Cast"+10','Mag. Evasion+15',}},
     }
+
+    sets.precast.FC.Death = sets.midcast.Death
+	sets.midcast.Drain.Death = sets.midcast.Death
+	sets.midcast.Aspir.Death = sets.midcast.Death
     
-    -- Minimal damage gear for procs.
-    sets.midcast['Elemental Magic'].Proc = {
+    sets.midcast['Elemental Magic'].Occult = {
       ammo="Seraphic Ampulla",
       head="Mall. Chapeau +2",
 	  body="Spaekona's Coat +3",
-      --body={ name="Merlinic Jubbah", augments={'Mag. Acc.+22','"Occult Acumen"+11','INT+9',}},
       hands={ name="Merlinic Dastanas", augments={'"Occult Acumen"+11','INT+10','Mag. Acc.+6',}},
       legs="Perdition Slops",
       feet={ name="Merlinic Crackows", augments={'"Mag.Atk.Bns."+2','"Occult Acumen"+11','MND+9','Mag. Acc.+15',}},
@@ -367,6 +384,8 @@ function init_gear_sets()
       back={ name="Taranus's Cape", augments={'MND+20','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','"Fast Cast"+10','Mag. Evasion+15',}},	
     }
 
+	sets.idle.Death = sets.midcast['Death']
+	
     -- Idle mode that keeps PDT gear on, but doesn't prevent normal gear swaps for precast/etc.
     sets.idle.PDT = set_combine(sets.idle, {
       back={ name="Taranus's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Phys. dmg. taken-10%',}},    
@@ -395,22 +414,25 @@ function init_gear_sets()
     }
  
     sets.magic_burst = {
-      neck="Sorcerer's Stole +2",
       ammo="Ghastly Tathlum +1",
-      -- waist="Orpheus's Sash",
-      -- waist="Hachirin-no-Obi",
-      waist="Sacro Cord",
+      head="Ea Hat +1",
+      neck="Sorcerer's Stole +2",
       left_ear="Regal Earring",
       right_ear="Malignance Earring",
+      body="Spaekona's Coat +3",
+      -- body="Ea Houppe. +1",
+      hands="Archmage's gloves +3",
+      -- hands={ name="Amalric Gages +1", augments={'INT+12','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
       left_ring="Mujin Band",
       right_ring="Freke Ring",
-      hands={ name="Amalric Gages +1", augments={'INT+12','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
-      back={ name="Taranus's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Phys. dmg. taken-10%',}},    
-      head="Ea Hat +1",
-      body="Ea Houppe. +1",
-      -- body="Spaekona's Coat +3",
+	  back={ name="Taranus's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Phys. dmg. taken-10%',}},    
+      waist="Hachirin-no-Obi",
+      --waist="Acuity Belt +1",
+	  --waist="Sacro Cord",
+	  --waist="Skrymir Cord +1",
       legs="Ea Slops +1",
-      feet={ name="Amalric Nails +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
+	  feet="Arch. Sabots +3",
+      -- feet={ name="Amalric Nails +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
     }
 
     -- Engaged sets
@@ -448,11 +470,15 @@ function job_precast(spell, action, spellMap, eventArgs)
     if spellMap == 'Cure' or spellMap == 'Curaga' then
         gear.default.obi_waist = "Goading Belt"
     elseif spell.skill == 'Elemental Magic' then
-        gear.default.obi_waist = "Sekhmet Corset"
-        if state.CastingMode.value == 'Proc' then
-            classes.CustomClass = 'Proc'
-        end
-    end
+      gear.default.obi_waist = "Sekhmet Corset"
+      if state.CastingMode.value == 'Proc' then
+        classes.CustomClass = 'Proc'
+      end
+    elseif spell.skill == 'Dark Magic' then
+	  if state.CastingMode.value == 'Death' then
+        classes.CustomClass = 'Death'
+	  end
+	end
 end
 
 
@@ -476,7 +502,9 @@ function job_aftercast(spell, action, spellMap, eventArgs)
             -- disable('feet')
         elseif spell.skill == 'Elemental Magic' then
             -- state.MagicBurst:reset()
-        end
+        elseif spell.english == 'Death' then
+          eventArgs.handled = true
+		end
     end
 end
 
@@ -528,6 +556,10 @@ function customize_idle_set(idleSet)
         idleSet = set_combine(idleSet, sets.latent_refresh)
     end
     
+    if state.CastingMode.value == 'Death' then
+      return sets.idle.Death
+    end
+	
     return idleSet
 end
 

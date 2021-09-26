@@ -527,13 +527,14 @@ function get_sets()
         ear1="Cath Palug Earring",
         ear2="Evans earring",
         body="Apo. Dalmatica +1",
-        hands={ name="Merlinic Dastanas", augments={'STR+3','Magic dmg. taken -2%','"Refresh"+2','Accuracy+2 Attack+2',}},
+        hands={ name="Merlinic Dastanas", augments={'Weapon skill damage +1%','"Avatar perpetuation cost" -1','"Refresh"+2','Accuracy+9 Attack+9','Mag. Acc.+14 "Mag.Atk.Bns."+14',}},
         ring1="Stikini Ring +1",
         ring2="Evoker's Ring",
         legs={ name="Merlinic Shalwar", augments={'Mag. Acc.+15','Attack+2','"Refresh"+2','Accuracy+10 Attack+10',}},
         feet="Baayami Sabots +1",
         waist="Lucidity Sash",
-    }
+        back={ name="Campestres's Cape", augments={'Pet: M.Acc.+20 Pet: M.Dmg.+20','Pet: Magic Damage+10','Damage taken-5%',}},
+	}
  
     -- Avatar Melee set. Equipped when IdleMode is "DD" and MeleeMode is OFF.
     -- You really don't need this set. It's only here because I can't bring myself to throw it away.
@@ -626,7 +627,7 @@ function get_sets()
         hands="Baayami Cuffs +1",
         ring1="Stikini Ring +1",
         ring2="Evoker's Ring",
-        back={ name="Conveyance Cape", augments={'Summoning magic skill +2','Blood Pact Dmg.+3','Blood Pact ab. del. II -3',}},        
+        back={ name="Conveyance Cape", augments={'Summoning magic skill +5','Blood Pact Dmg.+1','Blood Pact ab. del. II -3',}},
         waist="Lucidity Sash",
         legs="Glyphic Spats +3",
         feet="Baayami Sabots +1"

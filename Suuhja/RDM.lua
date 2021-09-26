@@ -206,13 +206,13 @@ function get_sets()
     AF.Head  = "Atro.Chapeau +1"
     AF.Body  = "Atrophy Tabard +3"
     AF.Hands = "Atrophy Gloves +3"
-    AF.Legs  = "Atrophy Tights +2"
+    AF.Legs  = "Atrophy Tights +3"
     AF.Feet  = "Atrophy Boots +1"
 
     -- Vitiation
     RELIC.Head  = "Viti. Chapeau +3"
     RELIC.Body  = "Viti. Tabard +3"
-    RELIC.Hands = "Viti. Gloves +1"
+    RELIC.Hands = "Viti. Gloves +3"
     RELIC.Legs  = "Viti. Tights +3"
     RELIC.Feet  = "Vitiation Boots +3"
 
@@ -440,6 +440,7 @@ function get_sets()
     -- Generic Casting Set that all others take off of. Here you should add all your fast cast RDM need 50 pre JP 42 at master
     sets.precast.casting = {
       head={ name="Merlinic Hood", augments={'"Fast Cast"+7','"Mag.Atk.Bns."+14',}},
+	  body="Viti. Tabard +3",
       hands={ name="Chironic Gloves", augments={'"Fast Cast"+7','MND+9','Mag. Acc.+4','"Mag.Atk.Bns."+13',}},
       legs="Aya. Cosciales +2",
       feet={ name="Merlinic Crackows", augments={'Attack+22','"Fast Cast"+7',}},
@@ -514,7 +515,7 @@ function get_sets()
     sets.midcast.nuking.normal = {
       main="Marin staff +1",
       sub="Enki strap",
-      ammo="Pemphredo Tathlum",
+      ammo="Ghastly Tathlum +1",
       head={ name="Merlinic Hood", augments={'Mag. Acc.+24 "Mag.Atk.Bns."+24','Magic burst dmg.+10%','INT+5','Mag. Acc.+3','"Mag.Atk.Bns."+9',}},
       body={ name="Amalric Doublet +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
       hands={ name="Amalric Gages +1", augments={'INT+12','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
@@ -532,21 +533,26 @@ function get_sets()
 
     -- used with toggle, default: F10
     -- Pieces to swap from freen nuke to Magic Burst
-    sets.midcast.MB.normal = set_combine(sets.midcast.nuking.normal, {   
-      head={ name="Merlinic Hood", augments={'Mag. Acc.+24 "Mag.Atk.Bns."+24','Magic burst dmg.+10%','INT+5','Mag. Acc.+3','"Mag.Atk.Bns."+9',}},
-      body={ name="Merlinic Jubbah", augments={'Mag. Acc.+24 "Mag.Atk.Bns."+24','Magic burst dmg.+10%','INT+1','Mag. Acc.+1','"Mag.Atk.Bns."+11',}},
+    sets.midcast.MB.normal = set_combine(sets.midcast.nuking.normal, {
+      head="Ea Hat +1",
+      body="Ea Houppe. +1",
+      legs="Ea Slops +1",
       hands={ name="Amalric Gages +1", augments={'INT+12','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
       right_ring="Mujin Band",
       legs={ name="Merlinic Shalwar", augments={'Mag. Acc.+25 "Mag.Atk.Bns."+25','Magic burst dmg.+10%','INT+8','Mag. Acc.+8',}},
     })
 
     sets.midcast.nuking.acc = {
+      waist="Acuity Belt +1",
+      right_ring={ name="Metamor. Ring +1", augments={'Path: A',}},
       feet="Jhakri Pigaches +2",    
     }
 
     -- used with toggle, default: F10
     -- Pieces to swap from freen nuke to Magic Burst
     sets.midcast.MB.acc = set_combine(sets.midcast.nuking.acc, {
+      waist="Acuity Belt +1",
+      right_ring={ name="Metamor. Ring +1", augments={'Path: A',}},	
       feet="Jhakri Pigaches +2",     
     })
 
@@ -623,7 +629,9 @@ function get_sets()
     -- For Potency spells like Temper and Enspells
     sets.midcast.enhancing.potency = set_combine(sets.midcast.enhancing.duration, {
       head="Befouled crown",
-      legs="Atrophy Tights +2",
+	  body="Viti. Tabard +3",
+	  hands="Viti. Gloves +3",
+      legs="Atrophy Tights +3",
     }) 
 
     -- This is used when casting under Composure but enhancing someone else other than yourself. 
@@ -650,7 +658,7 @@ function get_sets()
     })
 
     sets.midcast.aquaveil = set_combine(sets.midcast.refresh, {
-      head="Amalric Coif +1",
+	  body="Viti. Tabard +3",
       hands="Regal Cuffs",
     })
 
@@ -668,6 +676,21 @@ function get_sets()
       left_ring="Archon ring",
       right_ring="Evanescence ring",
     })
+	
+    sets.midcast["Cursna"] = {
+      head={ name="Vanya Hood", augments={'Healing magic skill +20','"Cure" spellcasting time -7%','Magic dmg. taken -3',}},
+      body="Vitiation Tabard +3",
+      hands="Malignance Gloves",
+      legs="Atrophy Tights +3",
+      feet={ name="Vanya Clogs", augments={'Healing magic skill +20','"Cure" spellcasting time -7%','Magic dmg. taken -3',}},
+      neck="Debilis Medallion",
+      waist="Bishop's Sash",
+      left_ear="Beatific Earring",
+      right_ear="Meili Earring",
+      left_ring="Menelaus's Ring",
+      right_ring="Haoma's Ring",
+      back="Oretania's Cape +1",
+    }
 
     sets.midcast["Aspir"] = sets.midcast["Drain"]
  	
@@ -682,7 +705,7 @@ function get_sets()
       neck="Debilis medallion",          --     3
       body="Malignance tabard",          --        4
       hands="Chironic gloves",           --     4  3
-      legs="Atrophy Tights +2",          -- 11     5
+      legs="Atrophy Tights +3",          -- 11     5
       feet="Kaykaus boots +1",           -- 17  6  3
       left_ear="Domesticator's earring", --     5
       right_ear="Mendi. Earring",        --  5

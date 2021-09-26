@@ -46,7 +46,6 @@ function user_setup()
     send_command('bind !1 send Zuuhja input /ma "Cure IV" Slibby')
     send_command('bind !2 send Zuuhja input /ma "Curaga III" Slibby')
  end
-     
  
 -- Complete list of Ready moves to use with Sic & Ready Recast -5 Desultor Tassets.
 ready_moves_to_check = S{'Sic','Whirl Claws','Dust Cloud','Foot Kick','Sheep Song','Sheep Charge','Lamb Chop',
@@ -98,14 +97,14 @@ mab_ready_moves = S{
     send_command('unbind @f8')
     send_command('unbind ^f11')
     
-    send_command('unbond @o')
-    send_command('unbond @p')
-    send_command('unbond @n')
+    send_command('unbind @o')
+    send_command('unbind @p')
+    send_command('unbind @n')
     
-    send_command('unbond @1')
-    send_command('unbond @2')
-    send_command('unbond !1')
-    send_command('unbond !2')    
+    send_command('unbind @1')
+    send_command('unbind @2')
+    send_command('unbind !1')
+    send_command('unbind !2')    
 end
  
 -- Select default macro book on initial load or subjob change.
@@ -160,11 +159,11 @@ function init_gear_sets()
     
     sets.precast.WS['Decimation'] = {
       ammo="Floestone",
-      head="Skormoth Mask",
-      body="Tali'ah Manteel +2",
-      hands={ name="Argosy Mufflers +1", augments={'STR+12','DEX+12','Attack+20',}},
-      legs="Meg. Chausses +2",
-      feet={ name="Argosy Sollerets +1", augments={'STR+12','DEX+12','Attack+20',}},
+      head="Gleti's Mask",
+      body="Gleti's Cuirass",
+      hands="Gleti's Gauntlets",
+      legs="Gleti's Breeches",
+      feet="Gleti's Boots",
       neck="Fotia Gorget",
       waist="Fotia Belt",
       left_ear="Brutal Earring",
@@ -246,7 +245,7 @@ function init_gear_sets()
     })
    
     sets.midcast.Pet.TPBonus = {hands="Nukumi Manoplas +1",}
-    sets.midcast.Pet.ReadyRecast = {legs="Desultor Tassets",}
+    sets.midcast.Pet.ReadyRecast = {legs="Gleti's Breeches"}
         
     -- IDLE SETS (TOGGLE between RERAISE and NORMAL with CTRL+F12)
    
@@ -257,7 +256,7 @@ function init_gear_sets()
       ammo="Staunch Tathlum +1",
       head="Malignance Chapeau",
       body="Sacro Breastplate",
-      hands="Malignance Gloves",
+      hands="Gleti's Gauntlets",
       legs="Malignance Tights",
       feet="Malignance Boots",
       neck="Warder's Charm +1",
@@ -319,7 +318,7 @@ function init_gear_sets()
       ammo="Staunch Tathlum +1",
       head={ name="Anwig Salade", augments={'Attack+3','Pet: Damage taken -10%','Attack+3','Pet: "Regen"+1',}},
       body={ name="Taeon Tabard", augments={'Pet: Mag. Evasion+22','Pet: "Regen"+3','Pet: Damage taken -4%',}},
-      hands={ name="Taeon Gloves", augments={'Pet: Mag. Evasion+24','Pet: "Regen"+3','Pet: Damage taken -4%',}},
+      hands="Gleti's Gauntlets",
       legs={ name="Taeon Tights", augments={'Pet: Mag. Evasion+23','Pet: "Regen"+3','Pet: Damage taken -4%',}},
       feet={ name="Taeon Boots", augments={'Pet: Mag. Evasion+24','Pet: "Regen"+3','Pet: Damage taken -4%',}},
       neck="Shulmanu Collar",
@@ -344,9 +343,9 @@ function init_gear_sets()
       neck="Anu Torque",
       waist="Reiki Yotai",
       left_ear="Eabani Earring",
-      right_ear="Suppanomimi",
-      left_ring="Chirich Ring +1",
-      right_ring="Chirich Ring +1",
+      right_ear="Sherida Earring",
+	  left_ring="Epona's Ring",
+	  right_ring="Gere Ring",
       back={ name="Artio's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+5','"Dual Wield"+10','Phys. dmg. taken-10%',}},    
     }
            

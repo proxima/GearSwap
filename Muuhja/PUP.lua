@@ -261,10 +261,10 @@ function init_gear_sets()
             'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20',
             'Accuracy+20 Attack+20',
             'Pet: Attack+10 Pet: Rng.Atk.+10','Pet: Haste+10',
-            'Pet: Damage taken -5%'
+            'System: 1 ID: 1247 Val: 4'
         }
     }
-
+	
     --------------------------------------------------------------------------------
     --  __  __           _               ____        _          _____      _
     -- |  \/  |         | |             / __ \      | |        / ____|    | |
@@ -510,7 +510,7 @@ function init_gear_sets()
     ]]
     sets.idle.Pet.MasterDT = sets.idle.MasterDT
 
-    -------------------------------------Enmity
+    -------------------------------------
     sets.pet = {} -- Not Used
 
     --Equipped automatically
@@ -601,19 +601,33 @@ function init_gear_sets()
         Hybrid Mode = TP
     ]]
     sets.idle.Pet.Engaged.TP = {
-        main={ name="Xiucoatl", augments={'Path: C',}},
-        head={ name="Taeon Chapeau", augments={'Pet: Accuracy+24 Pet: Rng. Acc.+24','Pet: "Dbl. Atk."+5','Pet: Damage taken -4%',}},
-        body={ name="Pitre Tobe +3", augments={'Enhances "Overdrive" effect',}},
-        hands={ name="Taeon Gloves", augments={'Pet: Accuracy+23 Pet: Rng. Acc.+23','Pet: "Dbl. Atk."+5','Pet: Damage taken -4%',}},
-        legs={ name="Taeon Tights", augments={'Pet: Accuracy+23 Pet: Rng. Acc.+23','Pet: "Dbl. Atk."+5','Pet: Damage taken -4%',}},
-        feet={ name="Taeon Boots", augments={'Pet: Accuracy+24 Pet: Rng. Acc.+24','Pet: "Dbl. Atk."+5','Pet: Damage taken -4%',}},
-        neck="Shulmanu Collar",
-        waist="Klouskap Sash +1",
-        left_ear="Enmerkar Earring",
-        right_ear="Rimeice Earring",
-        left_ring="Thurandaut Ring +1",
-        right_ring="C. Palug Ring",
-        back=Visucius.PetDT
+      -- main={ name="Xiucoatl", augments={'Path: C',}},
+      -- head={ name="Taeon Chapeau", augments={'Pet: Accuracy+24 Pet: Rng. Acc.+24','Pet: "Dbl. Atk."+5','Pet: Damage taken -4%',}},
+      -- body={ name="Pitre Tobe +3", augments={'Enhances "Overdrive" effect',}},
+      -- hands={ name="Taeon Gloves", augments={'Pet: Accuracy+23 Pet: Rng. Acc.+23','Pet: "Dbl. Atk."+5','Pet: Damage taken -4%',}},
+      -- legs={ name="Taeon Tights", augments={'Pet: Accuracy+23 Pet: Rng. Acc.+23','Pet: "Dbl. Atk."+5','Pet: Damage taken -4%',}},
+      -- feet={ name="Taeon Boots", augments={'Pet: Accuracy+24 Pet: Rng. Acc.+24','Pet: "Dbl. Atk."+5','Pet: Damage taken -4%',}},
+      -- neck="Shulmanu Collar",
+      -- waist="Klouskap Sash +1",
+      -- left_ear="Enmerkar Earring",
+      -- right_ear="Rimeice Earring",
+      -- left_ring="Thurandaut Ring +1",
+      -- right_ring="C. Palug Ring",
+      -- back=Visucius.PetDT
+      main={ name="Xiucoatl", augments={'Path: C',}},
+      range="Animator P +1",
+      head={ name="Taeon Chapeau", augments={'Pet: Accuracy+24 Pet: Rng. Acc.+24','Pet: "Dbl. Atk."+5','Pet: Damage taken -4%',}},
+      body={ name="Rao Togi +1", augments={'Pet: HP+125','Pet: Accuracy+20','Pet: Damage taken -4%',}},
+      hands={ name="Taeon Gloves", augments={'Pet: Accuracy+23 Pet: Rng. Acc.+23','Pet: "Dbl. Atk."+5','Pet: Damage taken -4%',}},
+      legs={ name="Taeon Tights", augments={'Pet: Accuracy+23 Pet: Rng. Acc.+23','Pet: "Dbl. Atk."+5','Pet: Damage taken -4%',}},
+      feet={ name="Taeon Boots", augments={'Pet: Accuracy+24 Pet: Rng. Acc.+24','Pet: "Dbl. Atk."+5','Pet: Damage taken -4%',}},
+      neck="Shulmanu Collar",
+      waist="Klouskap Sash +1",
+      left_ear="Enmerkar Earring",
+      right_ear="Domes. Earring",
+      left_ring="Thur. Ring +1",
+      right_ring="C. Palug Ring",
+	  back=Visucius.PetDT
     }
 
     --[[

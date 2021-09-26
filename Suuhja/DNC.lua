@@ -132,7 +132,7 @@ function user_setup()
     
     send_command('bind @b send muuhja input /ma "Siren" <me>')
     send_command('bind @n sat youcommand Muuhja "Carnage Elegy"')
-    send_command('bind @m sat youcommand Muuhja "Bitter Elegy"')
+    send_command('bind @m sat youcommand Muuhja "Mewing Lullaby"')
     send_command('bind @o sat youcommand Muuhja Assault')
     send_command('bind @p send muuhja input /pet "Release" <me>')
     send_command('bind @= send muuhja input /ja "Apogee" <me>')
@@ -166,14 +166,13 @@ function user_setup()
     send_command('bind ^numpad3 send zuuhja /ma "Curaga III" Aller')
     send_command('bind ^numpad1 send zuuhja /ma "Cure IV" Suuhja')
 
-    send_command('bind @a sat youcommand Muuhja "Wind Threnody II"')
-    send_command('bind @s send zuuhja /ja "Elemental Seal" <me>')
-    send_command('bind @d sat youcommand Zuuhja Silence')
-    send_command('bind @f sat youcommand Zuuhja "Dia II"')
-    send_command('bind @o sat youcommand Zuuhja "Sleep II"')
-    send_command('bind @p sat youcommand Zuuhja "Sleep"')
+    send_command('bind @a sat youcommand Muuhja "Thunderspark"')
+    send_command('bind @v sat youcommand Muuhja "Thunderstorm"')
+    send_command('bind @b sat youcommand Muuhja "Magic Finale"')
     send_command('bind @n sat youcommand Muuhja "Carnage Elegy"')
-    send_command('bind @m sat youcommand Muuhja "Magic Finale"')
+    -- send_command('bind @m sat youcommand Muuhja "Pining Nocturne"')
+    send_command('bind @o sat youcommand Muuhja "Horde Lullaby II"')
+    send_command('bind @p sat youcommand Zuuhja "Sleepga"')
     
     send_command('bind numpad0 gs c step t')
 
@@ -231,11 +230,11 @@ function user_unload()
     send_command('unbind #9')
     send_command('unbind #0')
 	
-    send_command('unbind @a')
-    send_command('unbind @s')
-    send_command('unbind @o')
-    send_command('unbind @m')
+    send_command('unbind @b')
     send_command('unbind @n')
+    send_command('unbind @m')
+    send_command('unbind @o')
+    send_command('unbind @p')
 	
     send_command('lua u gearinfo')
 
@@ -303,12 +302,14 @@ function init_gear_sets()
       ammo="Yamarang",
       neck="Etoile Gorget +2",
       head="Malignance chapeau",
-      body="Malignance tabard",
+      body="Horos Casaque +3",
       hands="Malignance gloves",
       legs="Malignance tights",
       feet="Malignance boots",
+	  left_ear="Digni. Earring",
       left_ring="Stikini Ring +1",
       right_ring="Stikini Ring +1",
+	  waist="Skrymir Cord +1",
     } -- Magic Accuracy
 
     sets.precast.Flourish1['Desperate Flourish'] = {
@@ -343,17 +344,22 @@ function init_gear_sets()
 
     sets.precast.WS['Pyrrhic Kleos'] = set_combine(sets.precast.WS, {
       ammo="C. Palug Stone",
-      head={ name="Adhemar Bonnet +1", augments={'STR+12','DEX+12','Attack+20',}},
-      body={ name="Adhemar Jacket +1", augments={'STR+12','DEX+12','Attack+20',}},
-      hands={ name="Adhemar Wrist. +1", augments={'STR+12','DEX+12','Attack+20',}},
-      legs={ name="Samnuha Tights", augments={'STR+9','DEX+8','"Dbl.Atk."+2','"Triple Atk."+2',}},
-      feet={ name="Herculean Boots", augments={'"Triple Atk."+3','Rng.Atk.+13','Quadruple Attack +3','Accuracy+13 Attack+13','Mag. Acc.+4 "Mag.Atk.Bns."+4',}},
+      head="Gleti's Mask",
+      body="Gleti's Cuirass",
+      hands="Gleti's Gauntlets",
+      legs="Gleti's Breeches",
+      feet="Gleti's Boots",
+      -- head={ name="Adhemar Bonnet +1", augments={'STR+12','DEX+12','Attack+20',}},
+      -- body={ name="Adhemar Jacket +1", augments={'STR+12','DEX+12','Attack+20',}},
+      -- hands={ name="Adhemar Wrist. +1", augments={'STR+12','DEX+12','Attack+20',}},
+      -- legs={ name="Samnuha Tights", augments={'STR+9','DEX+8','"Dbl.Atk."+2','"Triple Atk."+2',}},
+      -- feet={ name="Herculean Boots", augments={'"Triple Atk."+3','Rng.Atk.+13','Quadruple Attack +3','Accuracy+13 Attack+13','Mag. Acc.+4 "Mag.Atk.Bns."+4',}},
       neck={ name="Etoile Gorget +2", augments={'Path: A',}},
       waist="Fotia Belt",
       left_ear="Sherida Earring",
       right_ear="Mache Earring +1",
       left_ring="Gere Ring",
-      right_ring="Epona's Ring",
+      right_ring="Regal Ring",
       back={ name="Senuna's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}},
     })
 
@@ -379,7 +385,7 @@ function init_gear_sets()
     sets.precast.WS['Rudra\'s Storm'] = set_combine(sets.precast.WS, {
       ammo="Charis Feather",
       head={ name="Herculean Helm", augments={'Accuracy+29','Weapon skill damage +4%',}},
-      body={ name="Herculean Vest", augments={'Accuracy+21','Weapon skill damage +4%','Attack+5',}},
+	  body="Gleti's Cuirass",
       hands="Maxixi bangles +3",
       legs={ name="Horos Tights +3", augments={'Enhances "Saber Dance" effect',}},
       feet={ name="Herculean Boots", augments={'Weapon Skill Acc.+1','DEX+5','Weapon skill damage +8%','Accuracy+1 Attack+1',}}, 
@@ -397,9 +403,9 @@ function init_gear_sets()
 
     sets.precast.WS['Aeolian Edge'] = {
       ammo={ name="Ghastly Tathlum +1", augments={'Path: A',}},
-      head={ name="Herculean Helm", augments={'"Mag.Atk.Bns."+25','Magic burst dmg.+3%','INT+9',}},
+	  head="Nyame Helm",
       body="Samnuha Coat",
-      hands="Maxixi Bangles +3",
+      hands={ name="Herculean Gloves", augments={'AGI+9','"Mag.Atk.Bns."+25','Accuracy+18 Attack+18','Mag. Acc.+19 "Mag.Atk.Bns."+19',}},
       legs="Horos Tights +3",
       feet={ name="Herculean Boots", augments={'Weapon skill damage +4%','"Mag.Atk.Bns."+28','Mag. Acc.+19 "Mag.Atk.Bns."+19',}},
       neck="Sanctity Necklace",
@@ -759,8 +765,8 @@ function init_gear_sets()
     ---------------------------------------- Special Sets ------------------------------------------
     ------------------------------------------------------------------------------------------------
 
-    sets.buff['Saber Dance'] = {legs="Horos Tights +3"}
-    sets.buff['Fan Dance'] = {body="Horos Bangles +3"}
+    sets.buff['Saber Dance'] = {}
+    sets.buff['Fan Dance'] = {}
     sets.buff['Climactic Flourish'] = {head="Maculele Tiara +1", body="Meg. Cuirie +2"}
     sets.buff['Closed Position'] = {feet="Horos T. Shoes +3"}
 
@@ -892,12 +898,12 @@ function get_custom_wsmode(spell, spellMap, defaut_wsmode)
 end
 
 function customize_idle_set(idleSet)
-    if state.CP.current == 'on' then
-        equip(sets.CP)
-        disable('back')
-    else
-        enable('back')
-    end
+    -- if state.CP.current == 'on' then
+    --     equip(sets.CP)
+    --     disable('back')
+    -- else
+    --     enable('back')
+    -- end
 
     return idleSet
 end

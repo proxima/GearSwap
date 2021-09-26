@@ -474,32 +474,18 @@ function init_gear_sets()
       head="Theophany Cap +2",
       body="Theo. Bliaut +2",
       hands="Piety Mitts +3",
-      legs={ name="Chironic Hose", augments={'Mag. Acc.+21 "Mag.Atk.Bns."+21','"Fast Cast"+5','MND+11','Mag. Acc.+13','"Mag.Atk.Bns."+6',}},
+      legs="Th. Pant. +3",
       feet="Theo. Duckbills +2",
       neck="Erra Pendant",
-      ear1="Digni. Earring",
-      ear2="Regal Earring",
+      left_ear="Malignance Earring",
+      right_ear="Regal Earring",
       ring1="Stikini Ring +1",
       ring2="Stikini Ring +1",
       back={ name="Alaunus's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','MND+10','"Fast Cast"+10','Phys. dmg. taken-10%',}},
       waist="Luminary Sash",
     }
 
-    sets.midcast.Banish = set_combine(sets.midcast['Divine Magic'], {
-      main="Daybreak",
-      sub="Ammurapi Shield",
-      head="Theophany Cap +2",
-      body="Vedic Coat",
-      hands="Fanatic Gloves",
-      legs="Kaykaus Tights +1",
-      neck="Sanctity Necklace",
-      ear1="Malignance Earring",
-      ear2="Regal Earring",
-      ring1="Freke Ring",
-      ring2="Weather. Ring +1",
-      waist="Refoccilation Stone",
-    })
-
+    sets.midcast.Banish = sets.midcast['Divine Magic']
     sets.midcast.Holy = sets.midcast.Banish
 
     sets.midcast['Dark Magic'] = {

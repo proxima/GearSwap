@@ -266,18 +266,18 @@ function get_sets()
    -- Generic Casting Set that all others take off of. Here you should add all your fast cast  
    sets.precast.casting = {
      main="Idris",
-     range={ name="Dunna", augments={'MP+20','Mag. Acc.+10','"Fast Cast"+3',}},                   --  3
-     head="Merlinic hood",                                                                        -- 14
-     right_ear="Malignance earring",                                                              --  4
-     left_ear="Etiolation earring",                                                               --  1
-     body="Merlinic jubbah",                                                                      --  6
-     hands="Bagua mitaines +3",                                                                   -- 14 (elemental only.)
-     left_ring="Kishar Ring",                                                                     --  4
-     right_ring="Prolix ring",                                                                    --  2
-     back="Lifestream Cape",                                                                      --  7
-     waist="Embla sash",                                                                          --  5
-     legs="Geomancy Pants +3",                                                                    -- 15
-     feet="Merlinic crackows"                                                                     -- 11
+     range={ name="Dunna", augments={'MP+20','Mag. Acc.+10','"Fast Cast"+3',}},                           --  3
+     head={ name="Merlinic Hood", augments={'"Mag.Atk.Bns."+11','"Fast Cast"+6','INT+5','Mag. Acc.+9',}}, -- 14
+     right_ear="Malignance earring",                                                                      --  4
+     left_ear="Etiolation earring",                                                                       --  1
+     body="Merlinic jubbah",                                                                              --  6
+     hands="Bagua mitaines +3",                                                                           -- 14 (elemental only.)
+     left_ring="Kishar Ring",                                                                             --  4
+     right_ring="Prolix ring",                                                                            --  2
+     back="Lifestream Cape",                                                                              --  7
+     waist="Embla sash",                                                                                  --  5
+     legs="Geomancy Pants +3",                                                                            -- 15
+     feet="Merlinic crackows"                                                                             -- 11
    }
 
    sets.precast.geomancy = set_combine(sets.precast.casting, {
@@ -390,8 +390,9 @@ function get_sets()
      sub="Ammurapi shield",
      ammo="Ghastly Tathlum +1",
      head={ name="Bagua Galero +3", augments={'Enhances "Primeval Zeal" effect',}},
-     body={ name="Amalric Doublet +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
-     hands={ name="Amalric Gages +1", augments={'INT+12','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
+     -- body={ name="Amalric Doublet +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
+     body="Seidr Cotehardie",
+	 hands={ name="Amalric Gages +1", augments={'INT+12','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
      legs={ name="Bagua Pants +3", augments={'Enhances "Mending Halation" effect',}},
      feet={ name="Amalric Nails +1", augments={'Mag. Acc.+20','"Mag.Atk.Bns."+20','"Conserve MP"+7',}},
      neck="Saevus Pendant +1",

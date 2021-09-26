@@ -126,7 +126,7 @@ function user_setup()
     -- send_command('bind @a send zuuhja input /ma "Indi-Malaise" <me>')
     -- send_command('bind @s sat youcommand Zuuhja Geo-Frailty')
 	send_command('bind @a sat youcommand Muuhja "Wind Threnody II"')
-    send_command('bind @s sat youcommand Zuuhja Silence')
+    send_command('bind @s send Zuuhja input /ma "Cure" Bippin')
     send_command('bind @d send zuuhja input /ma "Cure" Aller')
     send_command('bind @z send zuuhja input /ja "Full Circle" <me>')
     send_command('bind @x send zuuhja input /ja "Radial Arcana" <me>')
@@ -135,7 +135,7 @@ function user_setup()
     send_command('bind @n sat youcommand Muuhja "Carnage Elegy"')
     send_command('bind @m sat youcommand Muuhja "Pining Nocturne"')
     send_command('bind @o sat youcommand Muuhja "Horde Lullaby II"')
-    send_command('bind @o sat youcommand Muuhja "Sleepga"')
+    send_command('bind @p sat youcommand Muuhja "Horde Lullaby"')
     
     -- send_command('bind @b send muuhja input /ma "Siren" <me>')
     -- send_command('bind @n sat youcommand Muuhja "Hysteric Assault"')
@@ -395,7 +395,7 @@ function init_gear_sets()
     }
 
     sets.midcast.Cursna = set_combine(sets.midcast.StatusRemoval, {
-      main="Yagrush",
+	  main="Yagrush",
       sub="Gambanteinn",
       head={ name="Vanya Hood", augments={'Healing magic skill +20','"Cure" spellcasting time -7%','Magic dmg. taken -3',}},
       body="Ebers Bliaut +1",
@@ -519,11 +519,11 @@ function init_gear_sets()
       head="Theophany Cap +2",
       body="Theo. Bliaut +2",
       hands="Piety Mitts +3",
-      legs={ name="Chironic Hose", augments={'Mag. Acc.+21 "Mag.Atk.Bns."+21','"Fast Cast"+5','MND+11','Mag. Acc.+13','"Mag.Atk.Bns."+6',}},
+      legs="Th. Pant. +3",
       feet="Theo. Duckbills +2",
       neck="Erra Pendant",
-      ear1="Digni. Earring",
-      ear2="Regal Earring",
+      left_ear="Malignance Earring",
+      right_ear="Regal Earring",
       ring1="Stikini Ring +1",
       ring2="Stikini Ring +1",
       back={ name="Alaunus's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','MND+10','"Fast Cast"+10','Phys. dmg. taken-10%',}},
@@ -532,21 +532,7 @@ function init_gear_sets()
     
     sets.midcast['Elemental Magic'] = sets.midcast['Divine Magic']
 
-    sets.midcast.Banish = set_combine(sets.midcast['Divine Magic'], {
-      main="Daybreak",
-      sub="Ammurapi Shield",
-      head="Theophany Cap +2",
-      body="Vedic Coat",
-      hands="Fanatic Gloves",
-      legs="Kaykaus Tights +1",
-      neck="Sanctity Necklace",
-      ear1="Malignance Earring",
-      ear2="Regal Earring",
-      ring1="Freke Ring",
-      ring2="Weather. Ring +1",
-      waist="Refoccilation Stone",
-    })
-
+    sets.midcast.Banish = sets.midcast['Divine Magic']
     sets.midcast.Holy = sets.midcast.Banish
 
     sets.midcast['Dark Magic'] = {
@@ -642,22 +628,17 @@ function init_gear_sets()
       main="Asclepius",
       sub="Ammurapi Shield",
       ammo="Staunch Tathlum +1",
-      head="Aya. Zucchetto +2",
-      body="Ayanmo Corazza +2",
-      hands="Aya. Manopolas +2",
-      legs="Aya. Cosciales +2",
-      feet="Aya. Gambieras +2",
-      -- head="Nyame Helm",
-      -- body="Nyame Mail",
-      -- hands="Nyame Gauntlets",
-      -- legs="Nyame Flanchard",
-      -- feet="Nyame Sollerets",
-      neck="Warder's Charm +1",
+      head="Nyame Helm",
+      body="Nyame Mail",
+      hands="Nyame Gauntlets",
+      legs="Nyame Flanchard",
+      feet="Nyame Sollerets",
+      neck="Loricate Torque +1",
       waist="Carrier's Sash",
       left_ear="Etiolation Earring",
       right_ear={ name="Odnowa Earring +1", augments={'Path: A',}},
       left_ring="Stikini Ring +1",
-      right_ring="Inyanga Ring",
+      right_ring="Stikini Ring +1",
     })
 
     sets.idle.MEva = set_combine(sets.idle, {
