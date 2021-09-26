@@ -42,12 +42,12 @@ function user_setup()
     windower.send_command('bind @s sat youcommand Zuuhja "Thundara III"')
     windower.send_command('bind @d sat youcommand Suuhja "Thundaja"')
     windower.send_command('bind @f sat youcommand Muuhja "Shock Squall"')
-		
+        
     windower.send_command('bind @o sat youcommand Muuhja "Horde Lullaby II"')
     windower.send_command('bind @p sat youcommand Zuuhja "Sleepga"')
     -- windower.send_command('bind @n input /ma "Breakga" <t>')
     windower.send_command('bind @n sat youcommand Zuuhja "Dia II"')
-	
+    
     select_default_macro_book()
 end
 
@@ -55,12 +55,12 @@ end
 function user_unload()
     send_command('unbind ^`')
     send_command('unbind @`')
-	
+    
     send_command('unbind @a')
     send_command('unbind @s')
     send_command('unbind @d')
     send_command('unbind @f')
-	
+    
     send_command('unbind @o')
     send_command('unbind @p')
     send_command('unbind @n')
@@ -96,9 +96,9 @@ function init_gear_sets()
       left_ear="Malignance Earring", -- 4
       left_ring="Mallquis Ring", -- 3
       right_ring="Kishar Ring", -- 4
-      back={ name="Taranus's Cape", augments={'MND+20','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','"Fast Cast"+10','Mag. Evasion+15',}},	
+      back={ name="Taranus's Cape", augments={'MND+20','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','"Fast Cast"+10','Mag. Evasion+15',}},    
     }
-	
+    
     sets.precast.FC.Impact = set_combine(sets.precast.FC, {head=empty, body="Twilight Cloak"})
 
     sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, {waist="Siegel Sash"})
@@ -108,7 +108,7 @@ function init_gear_sets()
     sets.precast.FC.Cure = set_combine(sets.precast.FC, {})
 
     sets.precast.FC.Curaga = sets.precast.FC.Cure
-	
+    
     -- Weaponskill sets
     -- Default set for any weaponskill that isn't any more specifically defined
     sets.precast.WS = {
@@ -125,8 +125,8 @@ function init_gear_sets()
       left_ring={ name="Metamor. Ring +1", augments={'Path: A',}},
       right_ring="Epaminondas's Ring",
       back={ name="Lugh's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','MND+10','Weapon skill damage +10%',}},    
-	}
-	
+    }
+    
     -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
     sets.precast.WS['Cataclysm'] = {
       ammo="Ghastly Tathlum +1",
@@ -142,7 +142,7 @@ function init_gear_sets()
       right_ear="Malignance Earring",
       left_ring="Archon Ring",
       right_ring="Epaminondas's Ring",
-      back={ name="Taranus's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Phys. dmg. taken-10%',}},	  
+      back={ name="Taranus's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Phys. dmg. taken-10%',}},      
     }
 
     sets.precast.WS['Shattersoul'] = {
@@ -161,7 +161,7 @@ function init_gear_sets()
       right_ear="Brutal earring",
       left_ear="Regal earring"
     }
-	
+    
     sets.precast.WS['Vidohunir'] = {
       ammo="Ghastly Tathlum +1",
       head="Pixie hairpin +1",
@@ -176,24 +176,24 @@ function init_gear_sets()
       right_ear="Malignance Earring",
       left_ring="Archon Ring",
       right_ring="Epaminondas's Ring",
-      back={ name="Taranus's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Phys. dmg. taken-10%',}},	  
+      back={ name="Taranus's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Phys. dmg. taken-10%',}},      
     }
-	
-	sets.precast.WS['Myrkr'] = {
+    
+    sets.precast.WS['Myrkr'] = {
       ammo="Ghastly Tathlum +1",
-	  head="Pixie Hairpin +1",
+      head="Pixie Hairpin +1",
       neck="Saevus pendant +1",
       left_ear="Moonshade Earring",
       right_ear="Etiolation Earring",
       body={ name="Amalric Doublet +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
       hands="Regal Cuffs",
-	  left_ring="Mephitas's Ring",
+      left_ring="Mephitas's Ring",
       right_ring="Metamorph ring +1",
       back={ name="Taranus's Cape", augments={'MP+60','Mag. Acc+20 /Mag. Dmg.+20','MP+20','"Fast Cast"+10','Mag. Evasion+15',}},   
-      waist="Luminary sash",	  
+      waist="Luminary sash",      
       legs={ name="Amalric Slops +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
       feet={ name="Amalric Nails +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
-	}
+    }
     
     ---- Midcast Sets ----
 
@@ -227,9 +227,9 @@ function init_gear_sets()
       left_ring="Stikini Ring +1",
       right_ring="Stikini Ring +1",
       right_ear="Mimir Earring",
-      left_ear="Regal Earring",	
+      left_ear="Regal Earring",    
     }
-	
+    
     sets.midcast.Haste = sets.midcast['Enhancing Magic']
     
     sets.midcast.Stoneskin = set_combine(sets.midcast['Enhancing Magic'], {waist="Siegel Sash"})
@@ -247,13 +247,13 @@ function init_gear_sets()
       right_ear="Malignance Earring",
       left_ring="Mallquis Ring",
       right_ring="Freke Ring",
-      back={ name="Taranus's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Phys. dmg. taken-10%',}},	
+      back={ name="Taranus's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Phys. dmg. taken-10%',}},    
     }
-	
+    
     sets.midcast.Impact = set_combine(sets.midcast['Enfeebling Magic'], {
       head=empty, body="Twilight Cloak"
     })
-	
+    
     sets.midcast['Sleepga'] = set_combine(sets.midcast['Enfeebling Magic'], {
     })
 
@@ -284,7 +284,7 @@ function init_gear_sets()
     sets.midcast.Stun = sets.midcast['Enfeebling Magic']
 
     sets.midcast.BardSong = {}
-	
+    
     -- Elemental Magic sets
     
     sets.midcast['Elemental Magic'] = {
@@ -304,7 +304,7 @@ function init_gear_sets()
       right_ring="Freke Ring",
       back={ name="Taranus's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Phys. dmg. taken-10%',}},
     }
-	
+    
     sets.midcast['Luminohelix'] = set_combine(sets.midcast['Elemental Magic'], {
       main="Daybreak",
       sub="Culminus",
@@ -321,7 +321,7 @@ function init_gear_sets()
 
     sets.midcast['Elemental Magic'].HighTierNuke = set_combine(sets.midcast['Elemental Magic'], {   
     })
-	
+    
     sets.midcast['Elemental Magic'].HighTierNuke.Resistant = set_combine(sets.midcast['Elemental Magic'], {})
 
     sets.midcast['Death'] = {
@@ -341,13 +341,13 @@ function init_gear_sets()
     }
 
     sets.precast.FC.Death = sets.midcast.Death
-	sets.midcast.Drain.Death = sets.midcast.Death
-	sets.midcast.Aspir.Death = sets.midcast.Death
+    sets.midcast.Drain.Death = sets.midcast.Death
+    sets.midcast.Aspir.Death = sets.midcast.Death
     
     sets.midcast['Elemental Magic'].Occult = {
       ammo="Seraphic Ampulla",
       head="Mall. Chapeau +2",
-	  body="Spaekona's Coat +3",
+      body="Spaekona's Coat +3",
       hands={ name="Merlinic Dastanas", augments={'"Occult Acumen"+11','INT+10','Mag. Acc.+6',}},
       legs="Perdition Slops",
       feet={ name="Merlinic Crackows", augments={'"Mag.Atk.Bns."+2','"Occult Acumen"+11','MND+9','Mag. Acc.+15',}},
@@ -381,11 +381,11 @@ function init_gear_sets()
       right_ear={ name="Odnowa Earring +1", augments={'Path: A',}},
       left_ring="Stikini Ring +1",
       right_ring="Stikini Ring +1",
-      back={ name="Taranus's Cape", augments={'MND+20','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','"Fast Cast"+10','Mag. Evasion+15',}},	
+      back={ name="Taranus's Cape", augments={'MND+20','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','"Fast Cast"+10','Mag. Evasion+15',}},    
     }
 
-	sets.idle.Death = sets.midcast['Death']
-	
+    sets.idle.Death = sets.midcast['Death']
+    
     -- Idle mode that keeps PDT gear on, but doesn't prevent normal gear swaps for precast/etc.
     sets.idle.PDT = set_combine(sets.idle, {
       back={ name="Taranus's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Phys. dmg. taken-10%',}},    
@@ -425,13 +425,13 @@ function init_gear_sets()
       -- hands={ name="Amalric Gages +1", augments={'INT+12','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
       left_ring="Mujin Band",
       right_ring="Freke Ring",
-	  back={ name="Taranus's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Phys. dmg. taken-10%',}},    
+      back={ name="Taranus's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Phys. dmg. taken-10%',}},    
       waist="Hachirin-no-Obi",
       --waist="Acuity Belt +1",
-	  --waist="Sacro Cord",
-	  --waist="Skrymir Cord +1",
+      --waist="Sacro Cord",
+      --waist="Skrymir Cord +1",
       legs="Ea Slops +1",
-	  feet="Arch. Sabots +3",
+      feet="Arch. Sabots +3",
       -- feet={ name="Amalric Nails +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
     }
 
@@ -457,7 +457,7 @@ function init_gear_sets()
       left_ring="Chirich Ring +1",
       right_ring="Chirich Ring +1",
       back={ name="Taranus's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+5','"Store TP"+10','Phys. dmg. taken-10%',}},
-	}
+    }
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -475,10 +475,10 @@ function job_precast(spell, action, spellMap, eventArgs)
         classes.CustomClass = 'Proc'
       end
     elseif spell.skill == 'Dark Magic' then
-	  if state.CastingMode.value == 'Death' then
+      if state.CastingMode.value == 'Death' then
         classes.CustomClass = 'Death'
-	  end
-	end
+      end
+    end
 end
 
 
@@ -504,7 +504,7 @@ function job_aftercast(spell, action, spellMap, eventArgs)
             -- state.MagicBurst:reset()
         elseif spell.english == 'Death' then
           eventArgs.handled = true
-		end
+        end
     end
 end
 
@@ -559,7 +559,7 @@ function customize_idle_set(idleSet)
     if state.CastingMode.value == 'Death' then
       return sets.idle.Death
     end
-	
+    
     return idleSet
 end
 
