@@ -254,8 +254,8 @@ function get_sets()
       waist="Carrier's Sash",
       left_ear="Etiolation Earring",
       right_ear="Odnowa Earring +1",
-      left_ring="Stikini Ring +1",
-      right_ring="Stikini Ring +1",
+      left_ring={name="Stikini Ring +1",bag="wardrobe 2"},
+      right_ring={name="Stikini Ring +1",bag="wardrobe 3"},
       back=RDMCape.MACC
     }
 
@@ -571,8 +571,8 @@ function get_sets()
       right_ear="Regal Earring",
       body="Atrophy Tabard +3",
       hands="Regal Cuffs",
-      left_ring="Stikini Ring +1",
-      right_ring="Stikini Ring +1",
+      left_ring={name="Stikini Ring +1",bag="wardrobe 2"},
+      right_ring={name="Stikini Ring +1",bag="wardrobe 3"},
       back=RDMCape.MACC,
       waist="Acuity Belt +1",
       legs={ name="Chironic Hose", augments={'Mag. Acc.+21 "Mag.Atk.Bns."+21','"Fast Cast"+5','MND+11','Mag. Acc.+13','"Mag.Atk.Bns."+6',}},
@@ -621,8 +621,8 @@ function get_sets()
       feet="Lethargy Houseaux +1",
       back="Ghostfyre cape",
       waist="Embla Sash",
-      left_ring="Stikini Ring +1",
-      right_ring="Stikini Ring +1",
+      left_ring={name="Stikini Ring +1",bag="wardrobe 2"},
+      right_ring={name="Stikini Ring +1",bag="wardrobe 3"},
       right_ear="Mimir Earring",
     }
     

@@ -42,11 +42,15 @@ function user_setup()
     windower.send_command('bind @s sat youcommand Zuuhja "Thundara III"')
     windower.send_command('bind @d sat youcommand Suuhja "Thundaja"')
     windower.send_command('bind @f sat youcommand Muuhja "Shock Squall"')
+
+    windower.send_command('bind @b sat youcommand Muuhja "Earth Threnody II"')
+    windower.send_command('bind @n sat youcommand Muuhja "Carnage Elegy"')
+    windower.send_command('bind @m sat youcommand Muuhja "Pining Nocturne"')
         
     windower.send_command('bind @o sat youcommand Muuhja "Horde Lullaby II"')
     windower.send_command('bind @p sat youcommand Zuuhja "Sleepga"')
     -- windower.send_command('bind @n input /ma "Breakga" <t>')
-    windower.send_command('bind @n sat youcommand Zuuhja "Dia II"')
+    -- windower.send_command('bind @n sat youcommand Zuuhja "Dia II"')
     
     select_default_macro_book()
 end
@@ -63,6 +67,8 @@ function user_unload()
     
     send_command('unbind @o')
     send_command('unbind @p')
+    send_command('unbind @b')
+    send_command('unbind @m')
     send_command('unbind @n')
 end
 
@@ -119,7 +125,7 @@ function init_gear_sets()
       legs="Jhakri Slops +2",
       feet="Jhakri Pigaches +2",
       neck="Fotia Gorget",
-      waist="Fotai Belt",
+      waist="Fotia Belt",
       left_ear="Regal Earring",
       right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
       left_ring={ name="Metamor. Ring +1", augments={'Path: A',}},
@@ -207,8 +213,8 @@ function init_gear_sets()
       right_ear="Meili earring",
       body="Amalric doublet +1",
       hands="Regal cuffs",
-      left_ring="Stikini ring +1",
-      right_ring="Stikini ring +1",
+      left_ring={name="Stikini Ring +1",bag="wardrobe 2"},
+      right_ring={name="Stikini Ring +1",bag="wardrobe 3"},
       back="Oretania's cape +1",
       waist="Bishop's sash",
       legs="Amalric slops +1",
@@ -224,8 +230,8 @@ function init_gear_sets()
       legs="Telchine Braconi",
       feet="Telchine Pigaches",
       waist="Embla Sash",
-      left_ring="Stikini Ring +1",
-      right_ring="Stikini Ring +1",
+      left_ring={name="Stikini Ring +1",bag="wardrobe 2"},
+      right_ring={name="Stikini Ring +1",bag="wardrobe 3"},
       right_ear="Mimir Earring",
       left_ear="Regal Earring",    
     }
@@ -236,17 +242,17 @@ function init_gear_sets()
 
     sets.midcast['Enfeebling Magic'] = {
       ammo="Pemphredo tathlum",
-      head="Mallquis Chapeau +2",
+      head="Befouled Crown",
       body="Spaekona's Coat +3",
-      hands="Archmage's Gloves +3",
+      hands="Regal Cuffs",
       legs="Archmage's Tonban +3",
       feet="Archmage's Sabots +3",
       neck="Sorcerer's Stole +2",
-      waist="Sacro Cord",
+      waist="Acuity Belt +1",
       left_ear="Regal Earring",
       right_ear="Malignance Earring",
-      left_ring="Mallquis Ring",
-      right_ring="Freke Ring",
+      left_ring="Kishar Ring",
+      right_ring="Metamorph Ring +1",
       back={ name="Taranus's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Phys. dmg. taken-10%',}},    
     }
     
@@ -379,8 +385,8 @@ function init_gear_sets()
       waist="Carrier's Sash",
       left_ear="Etiolation Earring",
       right_ear={ name="Odnowa Earring +1", augments={'Path: A',}},
-      left_ring="Stikini Ring +1",
-      right_ring="Stikini Ring +1",
+      left_ring={name="Stikini Ring +1",bag="wardrobe 2"},
+      right_ring={name="Stikini Ring +1",bag="wardrobe 3"},
       back={ name="Taranus's Cape", augments={'MND+20','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','"Fast Cast"+10','Mag. Evasion+15',}},    
     }
 
@@ -388,6 +394,7 @@ function init_gear_sets()
     
     -- Idle mode that keeps PDT gear on, but doesn't prevent normal gear swaps for precast/etc.
     sets.idle.PDT = set_combine(sets.idle, {
+      feet="Hippo. Socks +1",
       back={ name="Taranus's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Phys. dmg. taken-10%',}},    
     })
 
@@ -423,7 +430,8 @@ function init_gear_sets()
       -- body="Ea Houppe. +1",
       hands="Archmage's gloves +3",
       -- hands={ name="Amalric Gages +1", augments={'INT+12','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
-      left_ring="Mujin Band",
+      -- left_ring="Mujin Band",
+      left_ring="Metamorph Ring +1",
       right_ring="Freke Ring",
       back={ name="Taranus's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Phys. dmg. taken-10%',}},    
       waist="Hachirin-no-Obi",
@@ -473,6 +481,8 @@ function job_precast(spell, action, spellMap, eventArgs)
       gear.default.obi_waist = "Sekhmet Corset"
       if state.CastingMode.value == 'Proc' then
         classes.CustomClass = 'Proc'
+      elseif state.CastingMode.value == 'Occult' then
+        classes.CustomClass = 'Occult'
       end
     elseif spell.skill == 'Dark Magic' then
       if state.CastingMode.value == 'Death' then

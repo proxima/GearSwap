@@ -519,7 +519,7 @@ function init_gear_sets()
     -- EG: sets.engaged.Dagger.Accuracy.Evasion
 
     sets.engaged = {
-      range={ name="Linos", augments={'Accuracy+17','"Store TP"+3','Quadruple Attack +2',}},
+      range={ name="Linos", augments={'Accuracy+17','"Store TP"+3','Quadruple Attack +3',}},
       head="Aya. Zucchetto +2",
       body="Ayanmo Corazza +2",
       hands="Aya. Manopolas +2",
@@ -542,7 +542,7 @@ function init_gear_sets()
 
     -- No Magic Haste (74% DW to cap)
     sets.engaged.DW = {
-      range={ name="Linos", augments={'Accuracy+17','"Store TP"+3','Quadruple Attack +2',}},
+      range={ name="Linos", augments={'Accuracy+17','"Store TP"+3','Quadruple Attack +3',}},
       head="Aya. Zucchetto +2",
       body="Ayanmo Corazza +2",
       hands="Aya. Manopolas +2",
@@ -574,7 +574,7 @@ function init_gear_sets()
 
     -- 45% Magic Haste (36% DW to cap)
     sets.engaged.DW.MaxHaste = {
-      range={ name="Linos", augments={'Accuracy+17','"Store TP"+3','Quadruple Attack +2',}},
+      range={ name="Linos", augments={'Accuracy+17','"Store TP"+3','Quadruple Attack +3',}},
       head="Aya. Zucchetto +2",
       body="Ayanmo Corazza +2",
       hands="Aya. Manopolas +2",

@@ -167,7 +167,7 @@ function user_setup()
     send_command('bind ^numpad1 send zuuhja /ma "Cure IV" Suuhja')
 
     send_command('bind @a sat youcommand Muuhja "Thunderspark"')
-    send_command('bind @v sat youcommand Muuhja "Thunderstorm"')
+    send_command('bind @v sat youcommand Muuhja "Hysteric Assault"')
     send_command('bind @b sat youcommand Muuhja "Magic Finale"')
     send_command('bind @n sat youcommand Muuhja "Carnage Elegy"')
     -- send_command('bind @m sat youcommand Muuhja "Pining Nocturne"')
@@ -281,8 +281,8 @@ function init_gear_sets()
       neck="Etoile gorget +2",
       left_ear="Mache Earring +1",
       right_ear="Telos Earring",
-      body="Maxixi Casaque +3",
-      hands="Maxixi Bangles +3",
+      body="Malignance tabard",
+      hands="Malignance gloves",
       left_ring="Chirich Ring +1",
       right_ring="Regal Ring",
       back={ name="Senuna's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}},
@@ -294,8 +294,8 @@ function init_gear_sets()
     sets.precast.Step['Feather Step'] = set_combine(sets.precast.Step, {feet="Macu. Toeshoes +1"})
     sets.precast.Flourish1 = {}
     sets.precast.Flourish1['Animated Flourish'] = set_combine(sets.Enmity, {
-      head={ name="Herculean Helm", augments={'"Store TP"+1','Magic Damage +1','"Treasure Hunter"+2','Accuracy+7 Attack+7',}},
-      hands={ name="Herculean Gloves", augments={'"Conserve MP"+1','Accuracy+21','"Treasure Hunter"+2',}},    
+      -- head={ name="Herculean Helm", augments={'"Store TP"+1','Magic Damage +1','"Treasure Hunter"+2','Accuracy+7 Attack+7',}},
+      -- hands={ name="Herculean Gloves", augments={'"Conserve MP"+1','Accuracy+21','"Treasure Hunter"+2',}},    
     })
 
     sets.precast.Flourish1['Violent Flourish'] = {
@@ -306,10 +306,10 @@ function init_gear_sets()
       hands="Malignance gloves",
       legs="Malignance tights",
       feet="Malignance boots",
-	  left_ear="Digni. Earring",
-      left_ring="Stikini Ring +1",
-      right_ring="Stikini Ring +1",
-	  waist="Skrymir Cord +1",
+      left_ear="Digni. Earring",
+      left_ring={name="Stikini Ring +1",bag="wardrobe 2"},
+      right_ring={name="Stikini Ring +1",bag="wardrobe 3"},
+      waist="Skrymir Cord +1",
     } -- Magic Accuracy
 
     sets.precast.Flourish1['Desperate Flourish'] = {
@@ -368,24 +368,29 @@ function init_gear_sets()
 
     sets.precast.WS['Evisceration'] = set_combine(sets.precast.WS, {
       ammo="Charis Feather",
-      head={ name="Adhemar Bonnet +1", augments={'STR+12','DEX+12','Attack+20',}},
-      body="Meg. Cuirie +2",
-      hands="Mummu Wrists +2",
-      legs={ name="Lustr. Subligar +1", augments={'Accuracy+20','DEX+8','Crit. hit rate+3%',}},
-      feet={ name="Herculean Boots", augments={'Accuracy+20 Attack+20','Crit. hit damage +4%','STR+8',}},
+      head="Gleti's Mask",
+      body="Gleti's Cuirass",
+      hands="Gleti's Gauntlets",
+      legs="Gleti's Breeches",
+      feet="Gleti's Boots",
+      -- head={ name="Adhemar Bonnet +1", augments={'STR+12','DEX+12','Attack+20',}},
+      -- body="Meg. Cuirie +2",
+      -- hands="Mummu Wrists +2",
+      -- legs={ name="Lustr. Subligar +1", augments={'Accuracy+20','DEX+8','Crit. hit rate+3%',}},
+      -- feet={ name="Herculean Boots", augments={'Accuracy+20 Attack+20','Crit. hit damage +4%','STR+8',}},
       neck="Fotia Gorget",
       waist="Fotia Belt",
       left_ear="Sherida Earring",
       right_ear="Odr Earring",
       left_ring="Regal Ring",
       right_ring="Ilabrat Ring",
-      back={ name="Senuna's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Crit.hit rate+10',}},
+      back={ name="Senuna's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Crit.hit rate+10','Phys. dmg. taken-10%',}},
     })
 
     sets.precast.WS['Rudra\'s Storm'] = set_combine(sets.precast.WS, {
       ammo="Charis Feather",
       head={ name="Herculean Helm", augments={'Accuracy+29','Weapon skill damage +4%',}},
-	  body="Gleti's Cuirass",
+      body="Gleti's Cuirass",
       hands="Maxixi bangles +3",
       legs={ name="Horos Tights +3", augments={'Enhances "Saber Dance" effect',}},
       feet={ name="Herculean Boots", augments={'Weapon Skill Acc.+1','DEX+5','Weapon skill damage +8%','Accuracy+1 Attack+1',}}, 
@@ -670,7 +675,7 @@ function init_gear_sets()
       head="Malignance chapeau",
       hands="Malignance gloves",
       legs="Malignance tights",
-      feet="Malignance boots"	
+      feet="Malignance boots"
     })
 
     -- 45% Magic Haste (36% DW to cap)
@@ -715,13 +720,19 @@ function init_gear_sets()
 
     -- No Magic Haste (74% DW to cap)
     sets.engaged.Hybrid = {
+      ammo="Staunch Tathlum +1",
       left_ring="Chirich Ring +1",
       right_ring="Chirich Ring +1",
-      head="Malignance chapeau",
-      body="Malignance tabard",
-      hands="Malignance gloves",
-      legs="Malignance tights",
-      feet="Malignance boots",
+      head="Gleti's Mask",
+      body="Gleti's Cuirass",
+      hands="Gleti's Gauntlets",
+      legs="Gleti's Breeches",
+      feet="Gleti's Boots",
+      -- head="Malignance chapeau",
+      -- body="Malignance tabard",
+      -- hands="Malignance gloves",
+      -- legs="Malignance tights",
+      -- feet="Malignance boots",
     }
 
     sets.engaged.DT = set_combine(sets.engaged, sets.engaged.Hybrid)

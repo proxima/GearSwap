@@ -117,10 +117,10 @@ hud_font = 'Impact'
     windower.send_command('bind @z send zuuhja input /ja "Full Circle" <me>')
     windower.send_command('bind @x send zuuhja input /ja "Radial Arcana" <me>')
 
-    windower.send_command('bind @b sat youcommand Muuhja "Magic Finale"')
 	-- windower.send_command('bind @b sat youcommand Zuuhja "Dispel"')
+    windower.send_command('bind @b sat youcommand Muuhja "Earth Threnody II"')
     windower.send_command('bind @n sat youcommand Muuhja "Carnage Elegy"')
-    windower.send_command('bind @m sat youcommand Muuhja "Ltng. Threnody II"')
+    windower.send_command('bind @m sat youcommand Muuhja "Pining Nocture"')
     windower.send_command('bind @o sat youcommand Muuhja "Horde Lullaby II"')
     windower.send_command('bind @p sat youcommand Muuhja "Foe Lullaby II"')
 	-- windower.send_command('bind @p send muuhja input /pet "Release" <me>')
@@ -204,9 +204,9 @@ function get_sets()
     -- My formatting is very easy to follow. All sets that pertain to my character doing things are under 'me'.
     -- All sets that are equipped to faciliate my avatar's behaviour or abilities are under 'avatar', eg, Perpetuation, Blood Pacts, etc
       
-    sets.me = {}        		-- leave this empty
-    sets.buff = {} 			-- leave this empty
-    sets.me.idle = {}			-- leave this empty
+    sets.me = {}       -- leave this empty
+    sets.buff = {}     -- leave this empty
+    sets.me.idle = {}  -- leave this empty
 
     -- Your idle set
     sets.me.idle.refresh = {
@@ -220,8 +220,8 @@ function get_sets()
       body="Jhakri robe +2",     -- 4
       hands="Pinga mittens +1",
       legs="Pinga pants +1",
-      ring1="Stikini ring +1",   -- 1
-      ring2="Stikini ring +1",   -- 1
+      left_ring={name="Stikini Ring +1",bag="wardrobe 2"},
+      right_ring={name="Stikini Ring +1",bag="wardrobe 3"},
       feet="Pinga pumps +1",
       waist="Carrier's Sash",
       back={ name="Lugh's Cape", augments={'MND+20','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity-10','Phys. dmg. taken-10%',}},
@@ -236,15 +236,13 @@ function get_sets()
 
     -- Your idle DT set
     sets.me.idle.dt = set_combine(sets.me.idle[refreshType], {
-      main="Khatvanga",
-      sub="Enki Strap",
       ammo="Staunch Tathlum +1",
       head="Nyame Helm",
       body="Nyame Mail",
       hands="Nyame Gauntlets",
       legs="Nyame Flanchard",
       feet="Nyame Sollerets",
-	  neck="Loricate Torque +1",
+      neck="Loricate Torque +1",
       waist="Carrier's Sash",
       left_ear="Eabani Earring",
       right_ear={ name="Odnowa Earring +1", augments={'Path: A',}},
@@ -293,14 +291,14 @@ function get_sets()
       right_ear="Telos Earring",
       left_ring="Chirich Ring +1",
       right_ring="Chirich Ring +1",
-      back={ name="Lugh's Cape", augments={'INT+20','Accuracy+20 Attack+20','INT+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}},	-- Make stp + dex version	  
+      back={ name="Lugh's Cape", augments={'INT+20','Accuracy+20 Attack+20','INT+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}}, -- Make stp + dex version
     }
-	
-	sets.me.melee_dw = set_combine(sets.me.melee, {
-	  left_ear="Eabani Earring",
-	  right_ear="Suppanomimi",
-      back={ name="Lugh's Cape", augments={'INT+20','Accuracy+20 Attack+20','INT+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}},	-- Make dual wield + dex version	
-	})
+
+    sets.me.melee_dw = set_combine(sets.me.melee, {
+      left_ear="Eabani Earring",
+      right_ear="Suppanomimi",
+      back={ name="Lugh's Cape", augments={'INT+20','Accuracy+20 Attack+20','INT+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}}, -- Make dual wield + dex version
+    })
       
     -- Weapon Skills sets just add them by name.
     sets.me["Heavy Swing"] = {
@@ -321,8 +319,11 @@ function get_sets()
     
     sets.me["Retribution"] = sets.me["Heavy Swing"]
     sets.me["Shattersoul"] = set_combine(sets.me["Heavy Swing"], {
+      ammo="Ghastly Tathlum +1",
       neck="Fotia Gorget",
       waist="Fotia Belt",
+      head={ name="Blistering Sallet +1", augments={'Path: A',}},
+      hands={ name="Gazu Bracelet +1", augments={'Path: A',}},
       left_ring={ name="Metamor. Ring +1", augments={'Path: A',}},
       right_ring="Freke Ring",
       right_ear="Brutal earring",
@@ -407,13 +408,13 @@ function get_sets()
       hands="Pinga mittens +1",
       left_ring="Lebeche ring",
       right_ring="Metamorph ring +1",
-      back={ name="Lugh's Cape", augments={'MND+20','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity-10','Phys. dmg. taken-10%',}},
-      waist="Luminary sash",	  
+      back={ name="Lugh's Cape", augments={'MP+60','MP+20','"Fast Cast"+10','Phys. dmg. taken-10%',}},
+      waist="Luminary sash",
       legs={ name="Amalric Slops +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
       feet={ name="Amalric Nails +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
     }
-	
-	sets.me["Black Halo"] = {
+
+    sets.me["Black Halo"] = {
       ammo="Floestone",
       head="Jhakri Coronal +2",
       body="Jhakri Robe +2",
@@ -436,7 +437,25 @@ function get_sets()
     -- Fill up following with your avaible pieces.
     sets.buff['Rapture'] = {head="Arbatel bonnet +1"}
     sets.buff['Perpetuance'] = {hands="Arbatel Bracers +1"}
-    sets.buff['Immanence'] = {hands="Arbatel Bracers +1"}
+
+    sets.buff['Immanence'] = {
+      main="Ranine Staff", -- main="Malignance Pole",
+      sub="Khonsu",
+      ammo="Staunch Tathlum +1",
+      head={ name="Vanya Hood", augments={'MP+50','"Fast Cast"+10','Haste+2%',}},
+      neck="Voltsurge Torque",
+      left_ear="Etiolation Earring",
+      right_ear={ name="Odnowa Earring +1", augments={'Path: A',}},
+      body="Pinga Tunic +1",
+      hands="Acad. Bracers +3",
+      left_ring="Defending Ring",
+      right_ring="Kishar Ring",      
+      back={ name="Lugh's Cape", augments={'MP+60','MP+20','"Fast Cast"+10','Phys. dmg. taken-10%',}},
+      waist="Witful Belt",
+      legs="Pinga Pants +1",
+      feet="Acad. Loafers +3",
+    }
+
     sets.buff['Penury'] = {}
     sets.buff['Parsimony'] = {}
     sets.buff['Celerity'] = {feet="Pedagogy loafers +3"}
@@ -447,27 +466,27 @@ function get_sets()
     ---------------
     -- Casting Sets
     ---------------
-    sets.precast = {}   	-- Leave this empty  
-    sets.midcast = {}    	-- Leave this empty  
-    sets.aftercast = {}  	-- Leave this empty  
-    sets.midcast.nuking = {}	-- leave this empty
-    sets.midcast.MB	= {}	-- leave this empty      
+    sets.precast = {}        -- Leave this empty  
+    sets.midcast = {}        -- Leave this empty  
+    sets.aftercast = {}      -- Leave this empty  
+    sets.midcast.nuking = {} -- leave this empty
+    sets.midcast.MB	= {}     -- leave this empty      
     ----------
     -- Precast
     ----------
       
     sets.precast.casting = {
       ammo="Impatiens",
-      head={ name="Merlinic Hood", augments={'"Fast Cast"+7','"Mag.Atk.Bns."+14',}}, -- 15 fc, 6 haste
+      head={ name="Merlinic Hood", augments={'"Fast Cast"+7','"Mag.Atk.Bns."+14',}}, -- 15 fc
       neck="Voltsurge Torque",   -- 4 fc
       ear1="Etiolation earring", -- 1 fc
       ear2="Malignance earring", -- 4 fc
       body="Pinga tunic +1",     -- 15 fc
-      hands="Acad. Bracers +3",  -- 9 fc, 3 haste
+      hands="Acad. Bracers +3",  -- 9 fc
       ring1="Lebeche ring",      -- 
       ring2="Kishar ring",       -- 4 fc
-      back={ name="Lugh's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','Haste+10','Spell interruption rate down-10%',}},
-      waist="Embla sash",        -- 5 fc, 3 haste
+      back={ name="Lugh's Cape", augments={'MP+60','MP+20','"Fast Cast"+10',}}, -- 10
+      waist="Embla sash",        -- 5 fc
       legs="Pinga pants +1",     -- 13 fc
       feet={ name="Merlinic Crackows", augments={'Attack+22','"Fast Cast"+7',}}, -- 12 fc, 3 haste
     }
@@ -478,28 +497,31 @@ function get_sets()
    })
    
    sets.precast["Impact"] = set_combine(sets.precast.casting, {
-     head=empty, body="Twilight Cloak"
+     main="Hvergelmir",
+     sub="Khonsu",
+     head=empty, 
+     body="Twilight Cloak"
    })
     
    sets.precast["Stun"] = set_combine(sets.precast.casting, {
      main="Hvergelmir",
-     sub="Khonsu",             -- 4
+     sub="Khonsu",
    })
 
-    -- When spell school is aligned with grimoire, swap relevent pieces -- Can also use Arbatel +1 set here if you value 1% quickcast procs per piece. (2+ pieces)  
-    -- Dont set_combine here, as this is the last step of the precast, it will have sorted all the needed pieces already based on type of spell.
-    -- Then only swap in what under this set after everything else. 
-    sets.precast.grimoire = {
-      head="Pedagogy mortarboard +3", -- 13 grimoire, 6 haste
-    }
+   -- When spell school is aligned with grimoire, swap relevent pieces -- Can also use Arbatel +1 set here if you value 1% quickcast procs per piece. (2+ pieces)  
+   -- Dont set_combine here, as this is the last step of the precast, it will have sorted all the needed pieces already based on type of spell.
+   -- Then only swap in what under this set after everything else. 
+   sets.precast.grimoire = {
+     feet="Academic's loafers +3", -- 12 Grimoire
+   }
 
-	
+
     -- Enhancing Magic, eg. Siegal Sash, etc
-    sets.precast.enhancing = set_combine(sets.precast.casting,{
+    sets.precast.enhancing = set_combine(sets.precast.casting, {
     })
     
     -- Stoneskin casting time -, works off of enhancing -
-    sets.precast.stoneskin = set_combine(sets.precast.enhancing,{
+    sets.precast.stoneskin = set_combine(sets.precast.enhancing, {
 
     })
       
@@ -515,15 +537,15 @@ function get_sets()
     sets.precast["Enlightenment"] = {body="Pedagogy Gown +3"} 
     sets.precast["Sublimation"] = {}
 
-	----------
+    ----------
     -- Midcast
     ----------
-	
+
     -- Just go make it, inventory will thank you and making rules for each is meh.
     sets.midcast.Obi = {
       waist="Hachirin-no-Obi",
     }
-	
+
     -----------------------------------------------------------------------------------------------
     -- Helix sets automatically derives from casting sets. SO DONT PUT ANYTHING IN THEM other than:
     -- Pixie in DarkHelix
@@ -551,10 +573,25 @@ function get_sets()
     
     -- Make sure you have a non weather obi in this set. Helix get bonus naturally no need Obi.	
     sets.midcast.Helix = {
-      left_ear="Crematio Earring",
+      -- left_ear="Crematio Earring",
+      -- waist="Skrymir Cord +1",
+      -- left_ring="Mallquis Ring",
+      -- back={ name="Bookworm's Cape", augments={'INT+1','MND+2','Helix eff. dur. +20','"Regen" potency+10',}},     
+      main="Bunzi's Rod",
+      sub="Ammurapi Shield",
+      ammo="Ghastly Tathlum +1",
+      head="Pedagogy mortarboard +3",
+      body={ name="Merlinic Jubbah", augments={'Mag. Acc.+24 "Mag.Atk.Bns."+24','Magic burst dmg.+10%','INT+1','Mag. Acc.+1','"Mag.Atk.Bns."+11',}},
+      hands={ name="Amalric Gages +1", augments={'INT+12','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
+      legs={ name="Merlinic Shalwar", augments={'Mag. Acc.+25 "Mag.Atk.Bns."+25','Magic burst dmg.+10%','INT+8','Mag. Acc.+8',}},
+      feet={ name="Amalric Nails +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
+      neck={ name="Argute Stole +2", augments={'Path: A',}},
       waist="Skrymir Cord +1",
+      left_ear="Regal Earring",
+      right_ear="Malignance Earring",
       left_ring="Mallquis Ring",
-      back={ name="Bookworm's Cape", augments={'INT+1','MND+2','Helix eff. dur. +20','"Regen" potency+10',}},
+      right_ring="Freke Ring",
+      back={ name="Bookworm's Cape", augments={'INT+1','MND+2','Helix eff. dur. +20','"Regen" potency+10',}},     
     }
     
     sets.midcast.WindHelix = {
@@ -572,7 +609,7 @@ function get_sets()
       left_ear="Crematio Earring",
       left_ring="Mallquis Ring",
       waist="Skrymir Cord +1",
-      back={ name="Bookworm's Cape", augments={'INT+1','MND+2','Helix eff. dur. +20','"Regen" potency+10',}},      
+      -- back={ name="Bookworm's Cape", augments={'INT+1','MND+2','Helix eff. dur. +20','"Regen" potency+10',}},      
     }
 
     sets.midcast.DarkHelix = {
@@ -600,13 +637,11 @@ function get_sets()
      legs="Pinga pants +1",     -- 13
      feet={ name="Merlinic Crackows", augments={'Attack+22','"Fast Cast"+7',}}, -- 12 fc, 3 haste
    }
-    
+
    sets.midcast["Sublimation"] = {
    }    
    
-   sets.midcast.nuking.normal = { 
-     main="Marin Staff +1",
-     sub="Enki Strap",
+   sets.midcast.nuking.normal = {
      ammo="Ghastly Tathlum +1",
      head={ name="Peda. M.Board +3", augments={'Enh. "Altruism" and "Focalization"',}},
      body={ name="Amalric Doublet +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
@@ -648,8 +683,6 @@ function get_sets()
    -- used with toggle, default: F10
    -- Pieces to swap from free nuke to Magic Burst    
    sets.midcast.MB.normal = set_combine(sets.midcast.nuking.normal, {
-     main="Marin Staff +1",
-     sub="Enki Strap",
      ammo="Ghastly Tathlum +1",
      head="Pedagogy mortarboard +3",
      body={ name="Merlinic Jubbah", augments={'Mag. Acc.+24 "Mag.Atk.Bns."+24','Magic burst dmg.+10%','INT+1','Mag. Acc.+1','"Mag.Atk.Bns."+11',}},
@@ -658,22 +691,17 @@ function get_sets()
      feet={ name="Amalric Nails +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
      neck={ name="Argute Stole +2", augments={'Path: A',}},
      waist="Sacro Cord",
-     left_ear="Static Earring",
+     left_ear="Regal Earring",
      right_ear="Malignance Earring",
-     left_ring="Mujin Band",
-     right_ring="Locus Ring",
+     left_ring="Metamorph Ring +1",
+     right_ring="Freke Ring",
      back={ name="Lugh's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Damage taken-5%',}},
    })
 
    -- used with toggle, default: F10
    -- Pieces to swap from free nuke to Magic Burst
    sets.midcast.MB.acc = set_combine(sets.midcast.MB.normal, {
-     main="Marin Staff +1",
-     sub="Khonsu",   
-     left_ear="Regal Earring",
-     left_ring="Metamorph Ring +1",
-     right_ring="Freke Ring",
-     -- hands="Regal Cuffs",
+     hands="Agwu's Gages",
      feet="Jhakri Pigaches +2",
      waist="Acuity Belt +1",
    })
@@ -707,13 +735,13 @@ function get_sets()
      body="Acad. Gown +3",     -- 3
      hands="Acad. Bracers +3", -- 3
      legs="Acad. Pants +3",    -- 5
-     feet="Acad. Loafers +2",  -- 3
+     feet="Acad. Loafers +3",  -- 3
      neck={ name="Argute Stole +2", augments={'Path: A',}},
      waist="Acuity Belt +1",
      left_ear="Regal Earring",
      right_ear="Malignance Earring",
-     left_ring="Stikini Ring +1",
-     right_ring="Stikini Ring +1",
+     left_ring={name="Stikini Ring +1",bag="wardrobe 2"},
+     right_ring={name="Stikini Ring +1",bag="wardrobe 3"},
      back={ name="Lugh's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','Haste+10','Spell interruption rate down-10%',}}, 
    }
 
@@ -725,25 +753,26 @@ function get_sets()
      body="Acad. Gown +3",
      hands="Acad. Bracers +3",
      legs="Acad. Pants +3",
-     feet="Acad. Loafers +2",
+     feet="Acad. Loafers +3",
      neck={ name="Argute Stole +2", augments={'Path: A',}},
      waist="Acuity Belt +1",
      left_ear="Regal Earring",
      right_ear="Malignance Earring",
-     left_ring="Stikini Ring +1",
-     right_ring="Metamorph ring +1",
+     left_ring={name="Stikini Ring +1",bag="wardrobe 2"},
+     right_ring={name="Stikini Ring +1",bag="wardrobe 3"},
      back={ name="Lugh's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Damage taken-5%',}},
    }
    
-
    sets.midcast.Dispelga = set_combine(sets.midcast.IntEnfeebling, {
      main="Daybreak",
      sub="Ammurapi Shield"
    })
    
    sets.midcast.Impact = set_combine(sets.midcast.IntEnfeebling, {
+     main="Hvergelmir",
+     sub="Khonsu",
      head=empty, 
-	 body="Twilight Cloak"
+     body="Twilight Cloak"
    })
    
    sets.midcast.MndEnfeebling = {
@@ -754,13 +783,13 @@ function get_sets()
      body="Acad. Gown +3",
      hands="Acad. Bracers +3",
      legs={ name="Chironic Hose", augments={'Mag. Acc.+21 "Mag.Atk.Bns."+21','"Fast Cast"+5','MND+11','Mag. Acc.+13','"Mag.Atk.Bns."+6',}},
-     feet="Acad. Loafers +2",
+     feet="Acad. Loafers +3",
      neck={ name="Argute Stole +2", augments={'Path: A',}},
      waist="Luminary Sash",
      right_ear="Malignance Earring",
      left_ear="Regal Earring",
-     left_ring="Stikini Ring +1",
-     right_ring="Metamorph ring +1",
+     left_ring={name="Stikini Ring +1",bag="wardrobe 2"},
+     right_ring={name="Stikini Ring +1",bag="wardrobe 3"},
      back={ name="Lugh's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','Haste+10','Spell interruption rate down-10%',}}, 
    }
 
@@ -775,8 +804,8 @@ function get_sets()
       feet="Telchine Pigaches",
       neck={ name="Argute Stole +2", augments={'Path: A',}},
       waist="Embla Sash",
-      left_ring="Stikini Ring +1",
-      right_ring="Stikini Ring +1",
+      left_ring={name="Stikini Ring +1",bag="wardrobe 2"},
+      right_ring={name="Stikini Ring +1",bag="wardrobe 3"},
       right_ear="Mimir Earring",
       left_ear="Regal Earring",
       back={ name="Bookworm's Cape", augments={'INT+1','MND+2','Helix eff. dur. +20','"Regen" potency+10',}},
@@ -871,21 +900,22 @@ function get_sets()
       left_ear="Regal Earring",
       body="Pedagogy gown +3",
       hands="Telchine Gloves",
-      left_ring="Stikini Ring +1",
-      right_ring="Stikini Ring +1",
+      left_ring={name="Stikini Ring +1",bag="wardrobe 2"},
+      right_ring={name="Stikini Ring +1",bag="wardrobe 3"},
       waist="Embla Sash",
-      back={ name="Bookworm's Cape", augments={'INT+1','MND+2','Helix eff. dur. +20','"Regen" potency+10',}},
+      back={ name="Lugh's Cape", augments={'MND+20','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity-10','Phys. dmg. taken-10%',}},
       legs="Telchine Braconi",
       feet="Telchine Pigaches",
     }
     
     -- Focus on Regen Duration
     sets.midcast.regen.duration = set_combine(sets.midcast.regen.hybrid,{
-      back={ name="Lugh's Cape", augments={'MND+20','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity-10','Phys. dmg. taken-10%',}},	
+      back={ name="Lugh's Cape", augments={'MND+20','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity-10','Phys. dmg. taken-10%',}},
     }) 
     
     -- Focus on Regen Potency
     sets.midcast.regen.potency = set_combine(sets.midcast.regen.hybrid,{
+      back={ name="Bookworm's Cape", augments={'INT+1','MND+2','Helix eff. dur. +20','"Regen" potency+10',}},
     }) 
 
     ------------

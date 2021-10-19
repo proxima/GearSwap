@@ -193,7 +193,7 @@ function init_gear_sets()
       body={ name="Taeon Tabard", augments={'Pet: Accuracy+21 Pet: Rng. Acc.+21','Pet: "Dbl. Atk."+5','Pet: Damage taken -4%',}},
       hands="Nukumi Manoplas +1",
       legs={ name="Taeon Tights", augments={'Pet: Accuracy+23 Pet: Rng. Acc.+23','Pet: "Dbl. Atk."+5','Pet: Damage taken -4%',}},
-      feet={ name="Taeon Boots", augments={'Pet: Accuracy+21 Pet: Rng. Acc.+21','Pet: "Dbl. Atk."+5','Pet: Damage taken -4%',}},
+      feet="Gleti's Boots",
       neck="Shulmanu Collar",
       waist="Incarnation Sash",
       left_ear="Domes. Earring",
@@ -344,8 +344,8 @@ function init_gear_sets()
       waist="Reiki Yotai",
       left_ear="Eabani Earring",
       right_ear="Sherida Earring",
-	  left_ring="Epona's Ring",
-	  right_ring="Gere Ring",
+      left_ring="Epona's Ring",
+      right_ring="Gere Ring",
       back={ name="Artio's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+5','"Dual Wield"+10','Phys. dmg. taken-10%',}},    
     }
            

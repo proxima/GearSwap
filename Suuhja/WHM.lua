@@ -125,7 +125,7 @@ function user_setup()
     
     -- send_command('bind @a send zuuhja input /ma "Indi-Malaise" <me>')
     -- send_command('bind @s sat youcommand Zuuhja Geo-Frailty')
-	send_command('bind @a sat youcommand Muuhja "Wind Threnody II"')
+    send_command('bind @a sat youcommand Muuhja "Wind Threnody II"')
     send_command('bind @s send Zuuhja input /ma "Cure" Bippin')
     send_command('bind @d send zuuhja input /ma "Cure" Aller')
     send_command('bind @z send zuuhja input /ja "Full Circle" <me>')
@@ -137,9 +137,9 @@ function user_setup()
     send_command('bind @o sat youcommand Muuhja "Horde Lullaby II"')
     send_command('bind @p sat youcommand Muuhja "Horde Lullaby"')
     
-    -- send_command('bind @b send muuhja input /ma "Siren" <me>')
-    -- send_command('bind @n sat youcommand Muuhja "Hysteric Assault"')
-    -- send_command('bind @m sat youcommand Muuhja "Bitter Elegy"')
+    -- send_command('bind @b send muuhja input /ma "Cait Sith" <me>')
+    -- send_command('bind @n sat youcommand Muuhja "Predator Claws"')
+    -- send_command('bind @m sat youcommand Muuhja "Mewing Lullaby"')
     -- send_command('bind @o sat youcommand Muuhja Assault')
     -- send_command('bind @p send muuhja input /pet "Release" <me>')
     send_command('bind @= send muuhja input /ja "Apogee" <me>')
@@ -360,8 +360,8 @@ function init_gear_sets()
     sets.midcast.CuragaNormal = set_combine(sets.midcast.CureNormal, {
       body="Theo. Bliaut +2",
       -- neck="Nuna Gorget +1",
-      ring1="Stikini Ring +1",
-      ring2="Stikini Ring +1",
+      left_ring={name="Stikini Ring +1",bag="wardrobe 2"},
+      right_ring={name="Stikini Ring +1",bag="wardrobe 3"},
       waist="Luminary Sash",
     })
 
@@ -371,8 +371,8 @@ function init_gear_sets()
       body="Theo. Bliaut +2",
       hands="Kaykaus Cuffs +1",
       back="Twilight Cape",
-      ring1="Stikini Ring +1",
-      ring2="Stikini Ring +1",
+      left_ring={name="Stikini Ring +1",bag="wardrobe 2"},
+      right_ring={name="Stikini Ring +1",bag="wardrobe 3"},
       waist="Hachirin-no-Obi",
     })
 
@@ -422,8 +422,8 @@ function init_gear_sets()
       hands="Inyanga dastanas +2",
       legs="Piety pantaloons +3",
       feet="Ebers duckbills +1",
-      ring1="Stikini Ring +1",
-      ring2="Stikini Ring +1",
+      left_ring={name="Stikini Ring +1",bag="wardrobe 2"},
+      right_ring={name="Stikini Ring +1",bag="wardrobe 3"},
       left_ear="Beatific Earring",
       right_ear="Mimir Earring",
       back="Mending cape",
@@ -438,8 +438,8 @@ function init_gear_sets()
       legs="Telchine Braconi",
       feet="Telchine Pigaches",
       waist="Embla Sash",
-      ring1="Stikini Ring +1",
-      ring2="Stikini Ring +1",
+      left_ring={name="Stikini Ring +1",bag="wardrobe 2"},
+      right_ring={name="Stikini Ring +1",bag="wardrobe 3"},
       left_ear="Beatific Earring",
       right_ear="Mimir Earring",
       back="Mending cape",
@@ -524,8 +524,8 @@ function init_gear_sets()
       neck="Erra Pendant",
       left_ear="Malignance Earring",
       right_ear="Regal Earring",
-      ring1="Stikini Ring +1",
-      ring2="Stikini Ring +1",
+      left_ring={name="Stikini Ring +1",bag="wardrobe 2"},
+      right_ring={name="Stikini Ring +1",bag="wardrobe 3"},
       back={ name="Alaunus's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','MND+10','"Fast Cast"+10','Phys. dmg. taken-10%',}},
       waist="Luminary Sash",
     }
@@ -566,8 +566,8 @@ function init_gear_sets()
       neck="Erra Pendant",
       ear1="Malignance Earring",
       ear2="Regal Earring",
-      ring1="Stikini Ring +1",
-      ring2="Stikini Ring +1",
+      left_ring={name="Stikini Ring +1",bag="wardrobe 2"},
+      right_ring={name="Stikini Ring +1",bag="wardrobe 3"},
       back={ name="Alaunus's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','MND+10','"Fast Cast"+10','Phys. dmg. taken-10%',}},
       waist="Luminary Sash",
     }
@@ -616,8 +616,8 @@ function init_gear_sets()
       ear2="Odnowa earring +1",
       body="Inyanga Jubbah +2",
       hands="Inyanga Dastanas +2",
-      ring1="Stikini ring +1",
-      ring2="Stikini ring +1",
+      left_ring={name="Stikini Ring +1",bag="wardrobe 2"},
+      right_ring={name="Stikini Ring +1",bag="wardrobe 3"},
       waist="Carrier's Sash",
       back={ name="Alaunus's Cape", augments={'MND+20','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Haste+10','Mag. Evasion+15',}},
       legs="Inyanga Shalwar +2",
@@ -637,8 +637,8 @@ function init_gear_sets()
       waist="Carrier's Sash",
       left_ear="Etiolation Earring",
       right_ear={ name="Odnowa Earring +1", augments={'Path: A',}},
-      left_ring="Stikini Ring +1",
-      right_ring="Stikini Ring +1",
+      left_ring={name="Stikini Ring +1",bag="wardrobe 2"},
+      right_ring={name="Stikini Ring +1",bag="wardrobe 3"},
     })
 
     sets.idle.MEva = set_combine(sets.idle, {

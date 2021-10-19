@@ -222,7 +222,11 @@ function get_sets()
      waist="Slipor Sash",
    })
 
-   sets.pan.idle.mdt = sets.pan.idle.dt
+   sets.pan.idle.mdt = set_combine(sets.pan.idle.normal, {
+     head="Ea Hat +1",
+     body="Ea Houppe. +1",
+     legs="Ea Slops +1",
+   })
 
    -- Combat Related Sets
       
@@ -263,11 +267,11 @@ function get_sets()
    -- Precast
    ----------
       
-   -- Generic Casting Set that all others take off of. Here you should add all your fast cast  
    sets.precast.casting = {
      main="Idris",
      range={ name="Dunna", augments={'MP+20','Mag. Acc.+10','"Fast Cast"+3',}},                           --  3
      head={ name="Merlinic Hood", augments={'"Mag.Atk.Bns."+11','"Fast Cast"+6','INT+5','Mag. Acc.+9',}}, -- 14
+     neck="Voltsurge Torque",                                                                             --  4
      right_ear="Malignance earring",                                                                      --  4
      left_ear="Etiolation earring",                                                                       --  1
      body="Merlinic jubbah",                                                                              --  6
@@ -392,8 +396,8 @@ function get_sets()
      head={ name="Bagua Galero +3", augments={'Enhances "Primeval Zeal" effect',}},
      -- body={ name="Amalric Doublet +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
      body="Seidr Cotehardie",
-	 hands={ name="Amalric Gages +1", augments={'INT+12','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
-     legs={ name="Bagua Pants +3", augments={'Enhances "Mending Halation" effect',}},
+     hands={ name="Amalric Gages +1", augments={'INT+12','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
+     legs={ name="Amalric Slops +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
      feet={ name="Amalric Nails +1", augments={'Mag. Acc.+20','"Mag.Atk.Bns."+20','"Conserve MP"+7',}},
      neck="Saevus Pendant +1",
      waist="Sacro Cord",
@@ -405,12 +409,12 @@ function get_sets()
    })
 
    sets.midcast.MB.normal = set_combine(sets.midcast.nuking.normal, {
-    head="Ea Hat +1",
-    body="Ea Houppe. +1",
-    legs="Ea Slops +1",
-    feet="Jhakri Pigaches +2",
-    neck="Mizu. Kubikazari",
-    left_ring="Mujin Band",
+     head="Ea Hat +1",
+     body="Ea Houppe. +1",
+     legs="Ea Slops +1",
+     feet="Jhakri Pigaches +2",
+     neck="Mizu. Kubikazari",
+     left_ring="Mujin Band",
    })
 
    sets.midcast.nuking.acc = set_combine(sets.midcast.nuking.normal, {

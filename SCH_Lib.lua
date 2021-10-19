@@ -575,22 +575,19 @@ function precast(spell)
      
         -- Stoneskin Precast
         if spell.name == 'Stoneskin' then
-         
-            windower.ffxi.cancel_buff(37)--[[Cancels stoneskin, not delayed incase you get a Quick Cast]]
+            windower.ffxi.cancel_buff(37) --[[Cancels stoneskin, not delayed incase you get a Quick Cast]]
             equip(sets.precast.stoneskin)
              
         -- Cure Precast
         elseif spell.name:match('Cure') or spell.name:match('Cura') then
-         
             equip(sets.precast.cure)         
         -- Enhancing Magic
         elseif spell.skill == 'Magic' then
-         
             equip(sets.precast.enhancing)            
             if spell.name == 'Sneak' then
                 windower.ffxi.cancel_buff(71)--[[Cancels Sneak]]
             end
-        else       
+        else
             -- For everything else we go with max fastcast
             equip(sets.precast.casting)                   
         end
@@ -662,33 +659,39 @@ function midcast(spell)
         equip(sets.me[spell.name])
     end
     
-    -- Put the JSE in place.
-    if spell.action_type == 'Magic' then
-        apply_grimoire_bonuses(spell, action, spellMap)
-    end
-
     -- Obi up for matching weather / day
     if spell.element == world.weather_element and spellMap ~= 'Helix' then
         equip(sets.midcast.Obi)
     end
+
     if spell.element == world.day_element and spellMap ~= 'Helix' then
         equip(sets.midcast.Obi)
     end
+
     if spell.name:match('Stoneskin') then
         equip(sets.midcast.stoneskin)
     end
+
     -- Dark based Helix gets "pixie hairpin +1"
     if spellMap == 'DarkHelix' then
         equip(sets.midcast.DarkHelix)
     end
+
     if spellMap == 'LightHelix' then
         equip(sets.midcast.LightHelix)
     end
+
     if spellMap == 'WindHelix' then
         equip(sets.midcast.WindHelix)
     end    
+
     if spellMap == 'Helix' then
         equip(sets.midcast.Helix)
+    end
+
+    -- Put the JSE in place.
+    if spell.action_type == 'Magic' then
+        apply_grimoire_bonuses(spell, action, spellMap)
     end
 	
     -- if spell.target.distance < (8 + spell.target.model_size) then

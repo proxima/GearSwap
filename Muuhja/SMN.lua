@@ -30,7 +30,7 @@ function get_sets()
     send_command('bind f10 gs c MeleeMode')
     send_command('bind ^f10 gs c ForceIlvl')
     send_command('bind f12 input /ws "Garland of Bliss" <t>')
-	
+
     send_command('bind @n input /pet "Thunderspark" <t>')
     send_command('bind @m input /pet "Volt Strike" <t>')
     send_command('bind @o input /pet "Shock Squall" <t>')
@@ -323,7 +323,7 @@ function get_sets()
       ammo="Sancus Sachet +1",
       head={ name="Helios Band", augments={'Pet: Accuracy+29 Pet: Rng. Acc.+29','Pet: "Dbl. Atk."+8','Blood Pact Dmg.+7',}},
       body="Glyphic Doublet +3",
-	  hands={ name="Merlinic Dastanas", augments={'Pet: Attack+22 Pet: Rng.Atk.+22','Blood Pact Dmg.+9','Pet: VIT+2','Pet: Mag. Acc.+5',}},
+      hands={ name="Merlinic Dastanas", augments={'Pet: Attack+22 Pet: Rng.Atk.+22','Blood Pact Dmg.+9','Pet: VIT+2','Pet: Mag. Acc.+5',}},
       legs={ name="Apogee Slacks +1", augments={'Pet: STR+20','Blood Pact Dmg.+14','Pet: "Dbl. Atk."+4',}},
       feet={ name="Helios Boots", augments={'Pet: Accuracy+28 Pet: Rng. Acc.+28','Pet: "Dbl. Atk."+8','Blood Pact Dmg.+7',}},
       neck={ name="Smn. Collar +2", augments={'Path: A',}},
@@ -338,7 +338,7 @@ function get_sets()
     -- Physical Pact AM3 set, less emphasis on Pet:DA
     sets.pet_midcast.Physical_BP_AM3 = set_combine(sets.pet_midcast.Physical_BP, {
       left_ear="Gelos Earring",
-	  body="Glyphic Doublet +3",
+      body="Glyphic Doublet +3",
       right_ring="Varar Ring +1",
       feet={ name="Apogee Pumps +1", augments={'MP+80','Pet: Attack+35','Blood Pact Dmg.+8',}}
     })
