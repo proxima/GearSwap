@@ -404,9 +404,9 @@ function get_sets()
       neck="Saevus pendant +1",
       left_ear="Moonshade Earring",
       right_ear="Etiolation Earring",
-      body={ name="Amalric Doublet +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
+      body="Acad. Gown +3",
       hands="Pinga mittens +1",
-      left_ring="Lebeche ring",
+      left_ring="Mephitas's Ring",
       right_ring="Metamorph ring +1",
       back={ name="Lugh's Cape", augments={'MP+60','MP+20','"Fast Cast"+10','Phys. dmg. taken-10%',}},
       waist="Luminary sash",
@@ -432,7 +432,7 @@ function get_sets()
         
     ------------
     -- Buff Sets
-    ------------	
+    ------------
     -- Gear that needs to be worn to **actively** enhance a current player buff.
     -- Fill up following with your avaible pieces.
     sets.buff['Rapture'] = {head="Arbatel bonnet +1"}
@@ -578,7 +578,7 @@ function get_sets()
       -- left_ring="Mallquis Ring",
       -- back={ name="Bookworm's Cape", augments={'INT+1','MND+2','Helix eff. dur. +20','"Regen" potency+10',}},     
       main="Bunzi's Rod",
-      sub="Ammurapi Shield",
+      sub="Ammurapi Shield", -- sub="Culminus",
       ammo="Ghastly Tathlum +1",
       head="Pedagogy mortarboard +3",
       body={ name="Merlinic Jubbah", augments={'Mag. Acc.+24 "Mag.Atk.Bns."+24','Magic burst dmg.+10%','INT+1','Mag. Acc.+1','"Mag.Atk.Bns."+11',}},
@@ -661,24 +661,6 @@ function get_sets()
      sub="Khonsu",
      feet="Jhakri Pigaches +2",
    })
-
-   --       int macc mab mbd
-   -- Hood:   5   27  33  10 (unlikely to use)
-   -- Body:   1   25  35  10
-   -- Legs:   8   33  25  10
-   -- Feet:   0   32  34  11
-   
-   -- No Klima!
-   -- Chim BiS: 39677
-   -- Akademos, Peda, Merl, Amal, Merl, Amal: 40453
-   -- Marin,    Peda, Merl, Amal, Merl, Merl: 38838
-   -- Marin,    Merl, Amal, Amal, Merl, Merl: 38579
-   -- Marin,    Peda, Merl, Amal, Merl, Amal: 38541
-   
-   -- Klima
-   -- Chim BiS: 39269
-   -- Akademos, Peda, Merl, Amal, Merl, N/A: 40015
-   -- Marin,    Merl, Merl, Amal, Merl, N/A: 
    
    -- used with toggle, default: F10
    -- Pieces to swap from free nuke to Magic Burst    
@@ -779,8 +761,8 @@ function get_sets()
      main="Tupsimati",
      sub="Khonsu",
      ammo="Pemphredo tathlum",
-     head="Acad. Mortar. +2",
-     body="Acad. Gown +3",
+     head=none,
+     body="Cohort Cloak +1",
      hands="Acad. Bracers +3",
      legs={ name="Chironic Hose", augments={'Mag. Acc.+21 "Mag.Atk.Bns."+21','"Fast Cast"+5','MND+11','Mag. Acc.+13','"Mag.Atk.Bns."+6',}},
      feet="Acad. Loafers +3",

@@ -291,7 +291,7 @@ function init_gear_sets()
       feet="Horos T. Shoes +3"
     }
 
-    sets.precast.Step['Feather Step'] = set_combine(sets.precast.Step, {feet="Macu. Toeshoes +1"})
+    sets.precast.Step['Feather Step'] = set_combine(sets.precast.Step, {feet="Macu. Toe shoes +1",})
     sets.precast.Flourish1 = {}
     sets.precast.Flourish1['Animated Flourish'] = set_combine(sets.Enmity, {
       -- head={ name="Herculean Helm", augments={'"Store TP"+1','Magic Damage +1','"Treasure Hunter"+2','Accuracy+7 Attack+7',}},
@@ -316,7 +316,7 @@ function init_gear_sets()
     } -- Accuracy
 
     sets.precast.Flourish2 = {}
-    sets.precast.Flourish2['Reverse Flourish'] = {hands="Charis Bangles +1", back="Toetapper Mantle"}
+    sets.precast.Flourish2['Reverse Flourish'] = {hands="Maculele Bangles +1", back="Toetapper Mantle"}
     sets.precast.Flourish3 = {}
     sets.precast.Flourish3['Striking Flourish'] = {body="Macu. Casaque +1"}
     sets.precast.Flourish3['Climactic Flourish'] = {head="Maculele Tiara +1",}
@@ -408,7 +408,7 @@ function init_gear_sets()
 
     sets.precast.WS['Aeolian Edge'] = {
       ammo={ name="Ghastly Tathlum +1", augments={'Path: A',}},
-	  head="Nyame Helm",
+      head="Nyame Helm",
       body="Samnuha Coat",
       hands={ name="Herculean Gloves", augments={'AGI+9','"Mag.Atk.Bns."+25','Accuracy+18 Attack+18','Mag. Acc.+19 "Mag.Atk.Bns."+19',}},
       legs="Horos Tights +3",
@@ -425,7 +425,7 @@ function init_gear_sets()
     sets.precast.WS['Exenterator'] = sets.precast.WS['Aeolian Edge']
 
     sets.precast.Skillchain = {
-        hands="Macu. Bangles +1",
+        -- hands="Macu. Bangles",
     }
 
     ------------------------------------------------------------------------------------------------
@@ -562,7 +562,7 @@ function init_gear_sets()
 
     sets.engaged.DW.STP = set_combine(sets.engaged.DW, {
       left_ring="Chirich Ring +1",
-      right_ring="Chirich Ring +1",
+      right_ring="Defending ring",
       body="Malignance tabard",
       head="Malignance chapeau",
       hands="Malignance gloves",
@@ -598,7 +598,7 @@ function init_gear_sets()
 
     sets.engaged.DW.STP.LowHaste = set_combine(sets.engaged.DW.LowHaste, {
       left_ring="Chirich Ring +1",
-      right_ring="Chirich Ring +1",
+      right_ring="Defending ring",
       body="Malignance tabard",
       head="Malignance chapeau",
       hands="Malignance gloves",
@@ -634,12 +634,12 @@ function init_gear_sets()
 
     sets.engaged.DW.STP.MidHaste = set_combine(sets.engaged.DW.MidHaste, {
       left_ring="Chirich Ring +1",
-      right_ring="Chirich Ring +1",
+      right_ring="Defending ring",
       body="Malignance tabard",
       head="Malignance chapeau",
       hands="Malignance gloves",
       legs="Malignance tights",
-      feet="Malignance boots"	
+      feet="Malignance boots"
     })
 
     -- 35% Magic Haste (51% DW to cap)
@@ -670,7 +670,7 @@ function init_gear_sets()
 
     sets.engaged.DW.STP.HighHaste = set_combine(sets.engaged.DW.HighHaste, {
       left_ring="Chirich Ring +1",
-      right_ring="Chirich Ring +1",
+      right_ring="Defending ring",
       body="Malignance tabard",
       head="Malignance chapeau",
       hands="Malignance gloves",
@@ -706,7 +706,7 @@ function init_gear_sets()
 
     sets.engaged.DW.STP.MaxHaste = set_combine(sets.engaged.DW.MaxHaste, {
       left_ring="Chirich Ring +1",
-      right_ring="Chirich Ring +1",
+      right_ring="Defending ring",
       body="Malignance tabard",
       head="Malignance chapeau",
       hands="Malignance gloves",
@@ -720,6 +720,8 @@ function init_gear_sets()
 
     -- No Magic Haste (74% DW to cap)
     sets.engaged.Hybrid = {
+      main="Tauret",
+      sub="Twashtar",
       ammo="Staunch Tathlum +1",
       left_ring="Chirich Ring +1",
       right_ring="Chirich Ring +1",
@@ -728,11 +730,6 @@ function init_gear_sets()
       hands="Gleti's Gauntlets",
       legs="Gleti's Breeches",
       feet="Gleti's Boots",
-      -- head="Malignance chapeau",
-      -- body="Malignance tabard",
-      -- hands="Malignance gloves",
-      -- legs="Malignance tights",
-      -- feet="Malignance boots",
     }
 
     sets.engaged.DT = set_combine(sets.engaged, sets.engaged.Hybrid)

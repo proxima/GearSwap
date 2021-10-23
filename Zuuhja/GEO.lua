@@ -403,7 +403,7 @@ function get_sets()
      waist="Sacro Cord",
      left_ear="Malignance Earring",
      right_ear="Barkaro. Earring",
-     left_ring="Mallquis Ring",
+     left_ring="Metamorph Ring +1",
      right_ring="Freke Ring",
      back={ name="Nantosuelta's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Phys. dmg. taken-10%',}},
    })
