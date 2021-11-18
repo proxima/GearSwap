@@ -172,7 +172,7 @@ function user_setup()
     send_command('bind @n sat youcommand Muuhja "Carnage Elegy"')
     -- send_command('bind @m sat youcommand Muuhja "Pining Nocturne"')
     send_command('bind @o sat youcommand Muuhja "Horde Lullaby II"')
-    send_command('bind @p sat youcommand Zuuhja "Sleepga"')
+    send_command('bind @p sat youcommand Zuuhja "Fire"')
     
     send_command('bind numpad0 gs c step t')
 

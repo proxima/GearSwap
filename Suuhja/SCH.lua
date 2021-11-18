@@ -355,6 +355,7 @@ function get_sets()
       waist="Orpheus's Sash",
       left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
       right_ear="Malignance Earring",
+      left_ring="Epaminondas's Ring",
       right_ring="Metamorph Ring +1",
       back={ name="Lugh's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Damage taken-5%',}},
     }
@@ -439,21 +440,6 @@ function get_sets()
     sets.buff['Perpetuance'] = {hands="Arbatel Bracers +1"}
 
     sets.buff['Immanence'] = {
-      main="Ranine Staff", -- main="Malignance Pole",
-      sub="Khonsu",
-      ammo="Staunch Tathlum +1",
-      head={ name="Vanya Hood", augments={'MP+50','"Fast Cast"+10','Haste+2%',}},
-      neck="Voltsurge Torque",
-      left_ear="Etiolation Earring",
-      right_ear={ name="Odnowa Earring +1", augments={'Path: A',}},
-      body="Pinga Tunic +1",
-      hands="Acad. Bracers +3",
-      left_ring="Defending Ring",
-      right_ring="Kishar Ring",      
-      back={ name="Lugh's Cape", augments={'MP+60','MP+20','"Fast Cast"+10','Phys. dmg. taken-10%',}},
-      waist="Witful Belt",
-      legs="Pinga Pants +1",
-      feet="Acad. Loafers +3",
     }
 
     sets.buff['Penury'] = {}
@@ -485,7 +471,7 @@ function get_sets()
       hands="Acad. Bracers +3",  -- 9 fc
       ring1="Lebeche ring",      -- 
       ring2="Kishar ring",       -- 4 fc
-      back={ name="Lugh's Cape", augments={'MP+60','MP+20','"Fast Cast"+10',}}, -- 10
+      back={ name="Lugh's Cape", augments={'MP+60','MP+20','"Fast Cast"+10','Phys. dmg. taken-10%',}},
       waist="Embla sash",        -- 5 fc
       legs="Pinga pants +1",     -- 13 fc
       feet={ name="Merlinic Crackows", augments={'Attack+22','"Fast Cast"+7',}}, -- 12 fc, 3 haste
@@ -589,7 +575,7 @@ function get_sets()
       waist="Skrymir Cord +1",
       left_ear="Regal Earring",
       right_ear="Malignance Earring",
-      left_ring="Mallquis Ring",
+      left_ring="Metamorph ring +1",
       right_ring="Freke Ring",
       back={ name="Bookworm's Cape", augments={'INT+1','MND+2','Helix eff. dur. +20','"Regen" potency+10',}},     
     }
@@ -665,6 +651,8 @@ function get_sets()
    -- used with toggle, default: F10
    -- Pieces to swap from free nuke to Magic Burst    
    sets.midcast.MB.normal = set_combine(sets.midcast.nuking.normal, {
+     main="Bunzi's Rod",
+     sub="Ammurapi Shield",
      ammo="Ghastly Tathlum +1",
      head="Pedagogy mortarboard +3",
      body={ name="Merlinic Jubbah", augments={'Mag. Acc.+24 "Mag.Atk.Bns."+24','Magic burst dmg.+10%','INT+1','Mag. Acc.+1','"Mag.Atk.Bns."+11',}},
@@ -683,7 +671,6 @@ function get_sets()
    -- used with toggle, default: F10
    -- Pieces to swap from free nuke to Magic Burst
    sets.midcast.MB.acc = set_combine(sets.midcast.MB.normal, {
-     hands="Agwu's Gages",
      feet="Jhakri Pigaches +2",
      waist="Acuity Belt +1",
    })
@@ -756,6 +743,33 @@ function get_sets()
      head=empty, 
      body="Twilight Cloak"
    })
+   
+   sets.midcast.SC_Open = {
+      -- main="Malignance Pole",
+      main="Hvergelmir",
+      sub="Khonsu",                                                                                       --         4 haste
+      ammo="Staunch Tathlum +1",
+      head={ name="Vanya Hood", augments={'MP+50','"Fast Cast"+10','Haste+2%',}},                         -- 10 fc,  8 haste
+      neck="Voltsurge Torque",                                                                            --  4 fc
+      left_ear="Etiolation Earring",                                                                      --  1 fc
+      right_ear={ name="Odnowa Earring +1", augments={'Path: A',}},
+      body="Pinga Tunic +1",                                                                              -- 15 fc
+      hands="Acad. Bracers +3",                                                                           --  9 fc,  3 haste
+      left_ring="Defending Ring",
+      right_ring="Kishar Ring",                                                                           --  4 fc
+      back={ name="Lugh's Cape", augments={'MP+60','MP+20','"Fast Cast"+10','Phys. dmg. taken-10%',}},    -- 10 fc
+      waist="Witful Belt",                                                                                --  3 fc,  3 haste
+      legs="Psycloth Lappas",                                                                             --  7 fc,  5 haste
+      feet="Acad. Loafers +3",                                                                            --         3 haste
+   }                                                                                                      -- 63 fc, 26 haste
+   
+   sets.midcast["Aero"] = sets.midcast.SC_Open
+   sets.midcast["Blizzard"] = sets.midcast.SC_Open
+   sets.midcast["Fire"] = sets.midcast.SC_Open
+   sets.midcast["Stone"] = sets.midcast.SC_Open
+   sets.midcast["Hydrohelix"] = sets.midcast.SC_Open
+   sets.midcast["Ionohelix"] = sets.midcast.SC_Open
+   sets.midcast["Noctohelix"] = sets.midcast.SC_Open
    
    sets.midcast.MndEnfeebling = {
      main="Tupsimati",

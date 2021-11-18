@@ -648,6 +648,7 @@ function midcast(spell)
     else
         equip(sets.midcast.casting)
     end
+
     -- And our catch all, if a set exists for this spell name, use it
     if sets.midcast[spell.name] then
         equip(sets.midcast[spell.name])
@@ -693,10 +694,14 @@ function midcast(spell)
     if spell.action_type == 'Magic' then
         apply_grimoire_bonuses(spell, action, spellMap)
     end
-	
+
     -- if spell.target.distance < (8 + spell.target.model_size) then
     --     equip({waist="Orpheus's Sash"})
     -- end
+
+    if sets.midcast[spell.name] then
+        equip(sets.midcast[spell.name])
+    end
 end
  
 function aftercast(spell) 

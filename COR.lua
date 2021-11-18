@@ -78,12 +78,12 @@ function init_gear_sets()
     sets.precast.JA['Random Deal'] = {body="Comm. Frac +2"}
 
     sets.precast.CorsairRoll = {
-	  head="Comm. Tricorne +2",
-	  neck="Regal necklace",
-	  hands="Navarch's Gants +2",
-	  right_ring="Luzaf's Ring",
-	  back="Camulus's Mantle"
-	}
+      head="Comm. Tricorne +2",
+      neck="Regal necklace",
+      hands="Navarch's Gants +2",
+      right_ring="Luzaf's Ring",
+      back="Camulus's Mantle"
+    }
     
     sets.precast.CorsairRoll["Caster's Roll"] = set_combine(sets.precast.CorsairRoll, {legs="Navarch's Culottes +2"})
     sets.precast.CorsairRoll["Courser's Roll"] = set_combine(sets.precast.CorsairRoll, {feet="Navarch's Bottes +2"})
@@ -206,13 +206,15 @@ function init_gear_sets()
     -- Idle sets
     sets.idle = {    
       main="Tokko Sword",
+      sub="Nusku Shield",
+      ammo="Staunch Tathlum +1",
       head="Malignance Chapeau",
-      body="Mummu Jacket +1",
+      body="Malignance Tabard",
       hands="Malignance Gloves",
-      legs="Mummu Kecks +1",
-      feet="Mummu Gamash. +1",
+      legs="Malignance Tights",
+      feet="Malignance Boots",
       neck="Loricate torque +1",
-	  left_ear="Odnowa Earring +1",
+      left_ear="Odnowa Earring +1",
       left_ring="Defending Ring",
       right_ring="Vocane Ring +1",
     }

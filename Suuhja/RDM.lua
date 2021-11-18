@@ -80,8 +80,8 @@ nukeModes = M('normal', 'acc')
 -- Defaults are the first in each list
 
 
-mainWeapon = M('Crocea Mors', 'Daybreak', 'Naegling', 'Kaja Rod', 'Tauret')
-subWeapon = M('Ammurapi Shield', 'Daybreak', 'Malevolence', 'Sacro Bulwark')
+mainWeapon = M('Crocea Mors', 'Daybreak', 'Naegling', 'Kaja Rod', 'Tauret', 'Wind Knife')
+subWeapon = M('Ammurapi Shield', 'Daybreak', 'Malevolence', 'Sacro Bulwark', 'Firetongue')
 
 ------------------------------------------------------------------------------------------------------
 
@@ -314,7 +314,7 @@ function get_sets()
       right_ear="Eabani Earring",
       left_ring="Ilabrat Ring",
       right_ring="Chirich Ring +1",
-	  back=RDMCape.TP
+      back=RDMCape.TP
     })
 
     sets.me.melee.accdw = set_combine(sets.me.melee.normaldw, {
@@ -345,6 +345,19 @@ function get_sets()
     -- Weapon Skills sets just add them by name.
     ------------------------------------------------------------------------------------------------------
     sets.me["Savage Blade"] = {
+      ammo="Regal Gem",
+      head={ name="Viti. Chapeau +3", augments={'Enfeebling Magic duration','Magic Accuracy',}},
+      body="Jhakri Robe +2",
+      hands="Atrophy Gloves +3",
+      legs="Jhakri Slops +2",
+      feet="Jhakri Pigaches +2",
+      neck={ name="Dls. Torque +2", augments={'Path: A',}},
+      waist="Grunfeld Rope",
+      left_ear="Moonshade Earring",
+      right_ear="Sherida Earring",
+      left_ring={ name="Metamor. Ring +1", augments={'Path: A',}},
+      right_ring="Epaminondas's Ring",
+      back=RDMCape.BlackHalo
     }
     
     sets.me["Black Halo"] = {
@@ -401,12 +414,12 @@ function get_sets()
       back=RDMCape.MACC
     }
 
-	sets.me["Burning Blade"] = sets.me["Red Lotus Blade"]
-	sets.me["Shining Blade"] = sets.me["Red Lotus Blade"]
-	sets.me["Seraph Blade"] = sets.me["Red Lotus Blade"]
-	sets.me["Seraph Strike"] = sets.me["Red Lotus Blade"]
-	
-	sets.me["Aeolian Edge"] = {
+    sets.me["Burning Blade"] = sets.me["Red Lotus Blade"]
+    sets.me["Shining Blade"] = sets.me["Red Lotus Blade"]
+    sets.me["Seraph Blade"] = sets.me["Red Lotus Blade"]
+    sets.me["Seraph Strike"] = sets.me["Red Lotus Blade"]
+    
+    sets.me["Aeolian Edge"] = {
       ammo={ name="Ghastly Tathlum +1", augments={'Path: A',}},
       head={ name="Merlinic Hood", augments={'Mag. Acc.+24 "Mag.Atk.Bns."+24','Magic burst dmg.+10%','INT+5','Mag. Acc.+3','"Mag.Atk.Bns."+9',}}, -- Replace with Cait Sith head
       body={ name="Amalric Doublet +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
@@ -420,7 +433,7 @@ function get_sets()
       left_ring="Freke Ring",
       right_ring="Epaminondas's Ring",
       back=RDMCape.MACC
-	}
+    }
 
     -- Feel free to add new weapon skills, make sure you spell it the same as in game. These are the only two I ever use though 
 
@@ -676,7 +689,7 @@ function get_sets()
       left_ring="Archon ring",
       right_ring="Evanescence ring",
     })
-	
+
     sets.midcast["Cursna"] = {
       head={ name="Vanya Hood", augments={'Healing magic skill +20','"Cure" spellcasting time -7%','Magic dmg. taken -3',}},
       body="Vitiation Tabard +3",

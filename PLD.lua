@@ -58,12 +58,12 @@ function init_gear_sets()
     --------------------------------------
     
     -- Precast sets to enhance JAs
-    sets.precast.JA['Invincible'] = {legs="Caballarius Breeches"}
+    sets.precast.JA['Invincible'] = {legs="Caballarius Breeches +1"}
     sets.precast.JA['Holy Circle'] = {feet="Reverence Leggings +1"}
-    sets.precast.JA['Shield Bash'] = {hands="Caballarius Gauntlets"}
+    sets.precast.JA['Shield Bash'] = {hands="Caballarius Gauntlets +1"}
     sets.precast.JA['Sentinel'] = {feet="Caballarius Leggings"}
-    sets.precast.JA['Rampart'] = {head="Caballarius Coronet"}
-    sets.precast.JA['Fealty'] = {body="Caballarius Surcoat"}
+    sets.precast.JA['Rampart'] = {head="Caballarius Coronet +1"}
+    sets.precast.JA['Fealty'] = {body="Caballarius Surcoat +1"}
     sets.precast.JA['Divine Emblem'] = {feet="Creed Sabatons +2"}
     sets.precast.JA['Cover'] = {head="Reverence Coronet +1"}
 
@@ -400,10 +400,6 @@ end
 -------------------------------------------------------------------------------------------------------------------
 
 function update_defense_mode()
-    if player.equipment.main == 'Kheshig Blade' and not classes.CustomDefenseGroups:contains('Kheshig Blade') then
-        classes.CustomDefenseGroups:append('Kheshig Blade')
-    end
-    
     if player.sub_job == 'NIN' or player.sub_job == 'DNC' then
         if player.equipment.sub and not player.equipment.sub:contains('Shield') and
            player.equipment.sub ~= 'Aegis' and player.equipment.sub ~= 'Ochain' then

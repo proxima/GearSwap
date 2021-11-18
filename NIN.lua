@@ -147,9 +147,20 @@ function init_gear_sets()
     
     -- Idle sets
     sets.idle = {
-        head="Whirlpool Mask",neck="Wiglen Gorget",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
-        body="Hachiya Chainmail +1",hands="Otronif Gloves",ring1="Sheltered Ring",ring2="Paguroidea Ring",
-        back="Shadow Mantle",waist="Flume Belt",legs="Hachiya Hakama",feet=gear.MovementFeet}
+      ammo="Staunch Tathlum +1",
+      head="Malignance Chapeau",
+      body="Malignance Tabard",
+      hands="Malignance Gloves",
+      legs="Malignance Tights",
+      feet="Malignance Boots",
+      neck="Iskur Gorget",
+      waist={ name="Sailfi Belt +1", augments={'Path: A',}},
+      left_ear="Suppanomimi",
+      right_ear="Eabani Earring",
+      left_ring="Defending Ring",
+      right_ring="Petrov Ring",
+      back={ name="Mecisto. Mantle", augments={'Cap. Point+41%','HP+25','Rng.Atk.+3','DEF+10',}},
+    }
 
     sets.idle.Town = {main="Raimitsukane",sub="Kaitsuburi",ammo="Qirmiz Tathlum",
         head="Whirlpool Mask",neck="Wiglen Gorget",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
@@ -191,10 +202,21 @@ function init_gear_sets()
     -- EG: sets.engaged.Dagger.Accuracy.Evasion
     
     -- Normal melee group
-    sets.engaged = {ammo="Qirmiz Tathlum",
-        head="Iga Zukin +2",neck="Asperity Necklace",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
-        body="Hachiya Chainmail +1",hands="Otronif Gloves",ring1="Rajas Ring",ring2="Epona's Ring",
-        back="Atheling Mantle",waist="Patentia Sash",legs="Mochizuki Hakama",feet="Otronif Boots +1"}
+    sets.engaged = {
+      ammo="Staunch Tathlum +1",
+      head="Malignance Chapeau",
+      body="Malignance Tabard",
+      hands="Malignance Gloves",
+      legs="Malignance Tights",
+      feet="Mummu Gamash. +1",
+      neck="Iskur Gorget",
+      waist={ name="Sailfi Belt +1", augments={'Path: A',}},
+      left_ear="Suppanomimi",
+      right_ear="Eabani Earring",
+      left_ring="Defending Ring",
+      right_ring="Petrov Ring",
+      back={ name="Mecisto. Mantle", augments={'Cap. Point+41%','HP+25','Rng.Atk.+3','DEF+10',}},
+    }
     sets.engaged.Acc = {ammo="Qirmiz Tathlum",
         head="Whirlpool Mask",neck="Asperity Necklace",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
         body="Mochizuki Chainmail",hands="Otronif Gloves",ring1="Rajas Ring",ring2="Epona's Ring",

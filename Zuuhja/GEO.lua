@@ -402,7 +402,7 @@ function get_sets()
      neck="Saevus Pendant +1",
      waist="Sacro Cord",
      left_ear="Malignance Earring",
-     right_ear="Barkaro. Earring",
+     right_ear="Regal Earring",
      left_ring="Metamorph Ring +1",
      right_ring="Freke Ring",
      back={ name="Nantosuelta's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Phys. dmg. taken-10%',}},
@@ -412,12 +412,13 @@ function get_sets()
      head="Ea Hat +1",
      body="Ea Houppe. +1",
      legs="Ea Slops +1",
-     feet="Jhakri Pigaches +2",
      neck="Mizu. Kubikazari",
      left_ring="Mujin Band",
    })
 
    sets.midcast.nuking.acc = set_combine(sets.midcast.nuking.normal, {
+     feet="Jhakri Pigaches +2",
+     left_ring="Metamorph Ring +1",
    })
 
    sets.midcast.MB.acc = set_combine(sets.midcast.MB.normal, {
@@ -435,7 +436,7 @@ function get_sets()
      feet="Geo. Sandals +3",
      neck={ name="Bagua Charm +2", augments={'Path: A',}},
      waist="Luminary Sash",
-     left_ear="Barkaro. Earring",
+     left_ear="Regal Earring",
      right_ear="Malignance Earring",
      left_ring="Freke Ring",
      right_ring="Mallquis Ring",
@@ -454,7 +455,7 @@ function get_sets()
      feet="Geo. Sandals +3",
      neck={ name="Bagua Charm +2", augments={'Path: A',}},
      waist="Luminary Sash",
-     left_ear="Barkaro. Earring",
+     left_ear="Regal Earring",
      right_ear="Malignance Earring",
      left_ring="Stikini Ring +1",
      right_ring="Kishar Ring",
@@ -494,6 +495,8 @@ function get_sets()
    })
 
    sets.midcast["Aspir"] = sets.midcast["Drain"]
+   sets.midcast["Aspir II"] = sets.midcast["Drain"]
+   sets.midcast["Aspir III"] = sets.midcast["Drain"]
    
    sets.midcast['Sleepga'] = set_combine(sets.midcast.IntEnfeebling, {
      legs={ name="Merlinic Shalwar", augments={'INT+10','VIT+1','"Treasure Hunter"+2',}},

@@ -382,7 +382,7 @@ function init_gear_sets()
       main="Yagrush",
       head={ name="Vanya Hood", augments={'Healing magic skill +20','"Cure" spellcasting time -7%','Magic dmg. taken -3',}},
       body="Inyanga Jubbah +2",
-      hands={ name="Fanatic Gloves", augments={'MP+20','Healing magic skill +6','"Conserve MP"+2',}},
+      hands="Fanatic Gloves",
       legs="Aya. Cosciales +2",
       feet={ name="Vanya Clogs", augments={'Healing magic skill +20','"Cure" spellcasting time -7%','Magic dmg. taken -3',}},
       neck="Debilis Medallion",
@@ -395,11 +395,11 @@ function init_gear_sets()
     }
 
     sets.midcast.Cursna = set_combine(sets.midcast.StatusRemoval, {
-	  main="Yagrush",
+      main="Yagrush",
       sub="Gambanteinn",
       head={ name="Vanya Hood", augments={'Healing magic skill +20','"Cure" spellcasting time -7%','Magic dmg. taken -3',}},
       body="Ebers Bliaut +1",
-      hands={ name="Fanatic Gloves", augments={'MP+20','Healing magic skill +6','"Conserve MP"+2',}},
+      hands="Fanatic Gloves",
       legs="Th. Pant. +3",
       feet={ name="Vanya Clogs", augments={'Healing magic skill +20','"Cure" spellcasting time -7%','Magic dmg. taken -3',}},
       neck="Debilis Medallion",

@@ -415,7 +415,7 @@ function get_sets()
       sub="Elan Strap +1",
       ammo="Sancus Sachet +1",
       head="C. Palug Crown",
-      body="Convoker's Doublet +3",
+      body={ name="Apo. Dalmatica +1", augments={'MP+80','Pet: "Mag.Atk.Bns."+35','Blood Pact Dmg.+8',}},
       hands={ name="Merlinic Dastanas", augments={'Pet: Mag. Acc.+20 Pet: "Mag.Atk.Bns."+20','Blood Pact Dmg.+10','Pet: Mag. Acc.+2',}},
       legs={ name="Apogee Slacks +1", augments={'MP+80','Pet: "Mag.Atk.Bns."+35','Blood Pact Dmg.+8',}},
       feet={ name="Apogee Pumps +1", augments={'MP+80','Pet: "Mag.Atk.Bns."+35','Blood Pact Dmg.+8',}},
@@ -429,8 +429,8 @@ function get_sets()
     }
  
     sets.pet_midcast.FlamingCrush_Acc = set_combine(sets.pet_midcast.FlamingCrush, {
-        ear2="Kyrene's Earring",
-        body="Convoker's Doublet +3",
+      ear2="Kyrene's Earring",
+      body="Convoker's Doublet +3",
     })
  
     -- Pet: Magic Acc set - Mainly used for debuff pacts like Shock Squall
@@ -462,9 +462,9 @@ function get_sets()
       sub="Vox Grip",
       ammo="Sancus Sachet +1",
       head="Beckoner's Horn +1",
-      body="Baayami Robe",
-      hands="Baayami Cuffs",
-      legs="Baayami Slops",
+      body="Baayami Robe", -- + 1 if you're rich
+      hands="Baayami Cuffs", -- + 1 if you're rich
+      legs="Baayami Slops", -- + 1 if you're rich
       feet="Baaya. Sabots +1",
       neck="Caller's Pendant",
       waist="Lucidity Sash",

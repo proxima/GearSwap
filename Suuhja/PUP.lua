@@ -407,7 +407,7 @@ function init_gear_sets()
 
     sets.precast.WS["Shijin Spiral"] = set_combine(sets.precast.WS, {
       body="Tali'ah Manteel +2",
-      hands={ name="Herculean Gloves", augments={'Pet: Attack+12 Pet: Rng.Atk.+12','INT+5','Quadruple Attack +2','Accuracy+3 Attack+3',}},
+      hands="Mpaca's Gloves",
       legs="Samnuha Tights",     
       right_ring="Regal Ring", 
       left_ear="Mache Earring +1",      
@@ -415,7 +415,7 @@ function init_gear_sets()
 
     sets.precast.WS["Howling Fist"] = set_combine(sets.precast.WS, {
       body="Tali'ah Manteel +2",
-      hands={ name="Herculean Gloves", augments={'Pet: Attack+12 Pet: Rng.Atk.+12','INT+5','Quadruple Attack +2','Accuracy+3 Attack+3',}},
+      hands="Mpaca's Gloves",
       legs="Samnuha Tights",
       waist="Moonbow Belt +1",
       neck={ name="Pup. Collar +2", augments={'Path: A',}},
@@ -450,7 +450,7 @@ function init_gear_sets()
     sets.engaged.Master = {
         head={ name="Ryuo Somen +1", augments={'HP+65','"Store TP"+5','"Subtle Blow"+8',}},
         body="Tali'ah Manteel +2",
-        hands={ name="Herculean Gloves", augments={'Pet: Attack+12 Pet: Rng.Atk.+12','INT+5','Quadruple Attack +2','Accuracy+3 Attack+3',}},
+        hands="Mpaca's Gloves",
         legs={ name="Ryuo Hakama +1", augments={'Accuracy+25','"Store TP"+5','Phys. dmg. taken -4',}},
         feet={ name="Herculean Boots", augments={'"Triple Atk."+3','Rng.Atk.+13','Quadruple Attack +3','Accuracy+13 Attack+13','Mag. Acc.+4 "Mag.Atk.Bns."+4',}},
         neck="Shulmanu Collar",
@@ -516,7 +516,7 @@ function init_gear_sets()
       main={ name="Xiucoatl", augments={'Path: C',}},
       head="Heyoka Cap +1",
       body="Tali'ah Manteel +2",
-      hands={ name="Herculean Gloves", augments={'Pet: Attack+12 Pet: Rng.Atk.+12','INT+5','Quadruple Attack +2','Accuracy+3 Attack+3',}},
+      hands="Mpaca's Gloves",
       legs="Heyoka Subligar +1",
       feet={ name="Herculean Boots", augments={'"Triple Atk."+3','Rng.Atk.+13','Quadruple Attack +3','Accuracy+13 Attack+13','Mag. Acc.+4 "Mag.Atk.Bns."+4',}},
       neck="Shulmanu Collar",
