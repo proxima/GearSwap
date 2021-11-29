@@ -29,6 +29,8 @@ function user_setup()
   update_defense_mode()
  
   send_command('bind @f sat youcommand Suuhja "Fire II";input /ma "Flash" <t>')
+  send_command('bind @o sat youcommand Muuhja "Horde Lullaby"')
+
   send_command('bind @f12 gs c cycle CastingMode') -- Turns Spell Interruption Rate set on
   send_command('bind ^f11 gs c cycle MagicalDefenseMode')
   send_command('bind !f11 gs c cycle ExtraDefenseMode')
@@ -38,6 +40,7 @@ end
 
 function user_unload()
   send_command('unbind @f')
+  send_command('unbind @o')  
   send_command('unbind ^f11')
   send_command('unbind !f11')
   send_command('unbind @f10')
@@ -61,8 +64,7 @@ function init_gear_sets()
   Rud.BLOCK =  { name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity+10','Chance of successful block +5',} }
   Rud.ENMITY = { name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity+10','Phys. dmg. taken-10%',} }
   Rud.FC =     { name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','"Fast Cast"+10','Phys. dmg. taken-10%',} }
-  -- Rud.STP =    { name="Rudianos's Mantle", augments={'HP+60','Accuracy+20 Attack+20','Accuracy+10','"Store TP"+10','Occ. inc. resist. to stat. ailments+10',} }
-  Rud.STP =    { name="Rudianos's Mantle", augments={'HP+60','Accuracy+20 Attack+20','Accuracy+10','"Dual Wield"+10','Occ. inc. resist. to stat. ailments+10',} }
+  Rud.STP =    { name="Rudianos's Mantle", augments={'HP+60','Accuracy+20 Attack+20','Accuracy+10','"Store TP"+10','Occ. inc. resist. to stat. ailments+10',} }
   Rud.MEVA =   { name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Occ. inc. resist. to stat. ailments+10',} }
   Rud.CURE =   { name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','"Cure" potency +10%','Phys. dmg. taken-10%',} }
   
@@ -97,9 +99,9 @@ function init_gear_sets()
 
   -- Precast sets to enhance JAs
   sets.precast.JA['Invincible'] = set_combine(sets.precast.Enmity, {legs="Caballarius Breeches +1"})
-  sets.precast.JA['Holy Circle'] = set_combine(sets.precast.Enmity, {feet="Reverence Leggings +1"})
-  sets.precast.JA['Shield Bash'] = set_combine(sets.precast.Enmity, {hands="Caballarius Gauntlets +1", ear2="Knightly Earring"})
-  sets.precast.JA['Sentinel'] = set_combine(sets.precast.Enmity, {feet="Caballarius Leggings +1"})
+  sets.precast.JA['Holy Circle'] = set_combine(sets.precast.Enmity, {feet="Reverence Leggings +2"})
+  sets.precast.JA['Shield Bash'] = set_combine(sets.precast.Enmity, {hands="Caballarius Gauntlets +2"})
+  sets.precast.JA['Sentinel'] = set_combine(sets.precast.Enmity, {feet="Caballarius Leggings +2"})
   sets.precast.JA['Rampart'] = set_combine(sets.precast.Enmity, {head="Caballarius Coronet +1"})
   sets.precast.JA['Fealty'] = set_combine(sets.precast.Enmity, {body="Caballarius Surcoat +1"})
   sets.precast.JA['Divine Emblem'] = set_combine(sets.precast.Enmity, {feet="Chevalier's Sabatons +1"})
@@ -122,7 +124,6 @@ function init_gear_sets()
   -- Fast cast sets for spells
     
   sets.precast.FC = {
-    main="Sakpata's Sword",         -- 10
     ammo="Egoist's Tathlum",
     head="Carmine Mask +1",         -- 14
     body="Reverence Surcoat +3",    -- 10
@@ -142,7 +143,22 @@ function init_gear_sets()
        
   -- Weaponskill sets
   -- Default set for any weaponskill that isn't any more specifically defined
-  sets.precast.WS = {}
+  sets.precast.WS = {
+    ammo="Egoist's Tathlum",
+    head="Sakpata's Helm",
+    body="Sakpata's Plate",
+    hands="Sakpata's Gauntlets",
+    legs="Sakpata's Cuisses",
+    feet="Sakpata's Leggings",
+    neck={ name="Unmoving Collar +1", augments={'Path: A',}},
+    waist={ name="Sailfi Belt +1", augments={'Path: A',}},
+    left_ear="Cryptic Earring",
+    right_ear="Tuisto Earring",
+    left_ring="Eihwaz Ring",
+    right_ring="Vexer Ring +1",
+    back={ name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity+10','Phys. dmg. taken-10%',}},
+  }
+
   sets.precast.WS.Acc = {}
 
   sets.precast.WS['Requiescat'] = {}
@@ -253,8 +269,8 @@ function init_gear_sets()
     main="Sakpata's Sword",
     sub={ name="Priwen", augments={'HP+50','Mag. Evasion+50','Damage Taken -3%',}},
     ammo="Staunch Tathlum +1",
-    head={ name="Souv. Schaller +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
-    body={ name="Souv. Cuirass +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
+    head="Yorium Barbuta",
+    body="Yorium Cuirass",
     hands={ name="Souv. Handsch. +1", augments={'HP+65','Shield skill +15','Phys. dmg. taken -4',}},
     legs="Sakpata's Cuisses",
     feet={ name="Souveran Schuhs +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
@@ -272,34 +288,18 @@ function init_gear_sets()
   sets.midcast.Protect = {sub= "Srivatsa", ring1="Sheltered Ring"}
   sets.midcast.Shell = {ring1="Sheltered Ring"}
 
-  ---------- BLU Spell--------------
-  sets.midcast['Geist Wall'] ={
-    ammo="Staunch Tathlum +1",
-    head="Loess Barbuta +1",
-    body="Souveran Cuirass +1",
-    hands="Regal Gauntlets",
-    legs="Founder's Hose",
-    feet="Eschite Greaves",
-    neck="Moonlight Necklace",
-    waist="Audumbla Sash",
-    ear1="Odnowa Earring +1",
-    ear2="Tuisto Earring",
-    ring1="Eihwaz Ring",
-    ring2="Gelatinous Ring +1",
-    back=Rud.SIRD
-  }
- 
-  sets.midcast['Refueling'] = set_combine(sets.midcast['Geist Wall'])
-  sets.midcast.Soporific = set_combine(sets.midcast['Geist Wall'])
-  sets.midcast['Banishga'] = set_combine(sets.midcast['Geist Wall'])
-  sets.midcast['Bomb Toss'] = set_combine(sets.midcast['Geist Wall'])
-  sets.midcast['Blank Gaze'] = set_combine(sets.midcast['Geist Wall'])
-  sets.midcast['Sheep Song'] = set_combine(sets.midcast['Geist Wall'])
-  sets.midcast['Healing Breeze'] = set_combine(sets.midcast['Geist Wall'])    
-  sets.midcast['Wild Carrot'] = set_combine(sets.midcast['Geist Wall'])
-  sets.midcast['Chaotic Eye'] = set_combine(sets.midcast['Geist Wall'])
-  sets.midcast['Cocoon'] = set_combine(sets.midcast['Geist Wall'])
-  sets.midcast['Jettatura'] = sets.midcast.Flash
+  sets.midcast['Geist Wall']     = set_combine(sets.midcast.Enmity, sets.midcast.SIRD)  
+  sets.midcast.Refueling         = set_combine(sets.midcast.Enmity, sets.midcast.SIRD)
+  sets.midcast.Soporific         = set_combine(sets.midcast.Enmity, sets.midcast.SIRD)
+  sets.midcast.Banishga          = set_combine(sets.midcast.Enmity, sets.midcast.SIRD)
+  sets.midcast['Bomb Toss']      = set_combine(sets.midcast.Enmity, sets.midcast.SIRD)
+  sets.midcast['Blank Gaze']     = set_combine(sets.midcast.Enmity, sets.midcast.SIRD)
+  sets.midcast['Sheep Song']     = set_combine(sets.midcast.Enmity, sets.midcast.SIRD)
+  sets.midcast['Healing Breeze'] = set_combine(sets.midcast.Enmity, sets.midcast.SIRD)
+  sets.midcast['Wild Carrot']    = set_combine(sets.midcast.Enmity, sets.midcast.SIRD)
+  sets.midcast['Chaotic Eye']    = set_combine(sets.midcast.Enmity, sets.midcast.SIRD)
+  sets.midcast.Cocoon            = set_combine(sets.midcast.Enmity, sets.midcast.SIRD)
+  sets.midcast.Jettatura         = set_combine(sets.midcast.Enmity, sets.midcast.SIRD)
 
   --------------------------------------
   -- Idle/resting/defense/etc sets
@@ -312,6 +312,8 @@ function init_gear_sets()
     
   -- Idle sets
   sets.idle = {
+    main="Burtgang",
+    sub="Ochain",  
     ammo="Staunch Tathlum +1",
     head="Sakpata's Helm",
     body="Sakpata's Breastplate",
@@ -328,6 +330,8 @@ function init_gear_sets()
   }
 
   sets.idle.Meva = {
+    main="Burtgang",
+    sub="Aegis",
     ammo="Staunch Tathlum +1",
     head="Sakpata's Helm",
     body="Sakpata's Breastplate",
@@ -355,13 +359,13 @@ function init_gear_sets()
     
   -- Extra defense sets.  Apply these on top of melee or defense sets.
   sets.Knockback    = { left_ring="Vocane Ring +1" }
-  sets.MP           = {}
+  sets.MP           = { waist="Flume Belt +1" }
   sets.MP_Knockback = {}
     
   -- If EquipShield toggle is on (Win+F10 or Win+F11), equip the weapon/shield combos here
   -- when activating or changing defense mode:
-  sets.PhysicalShield = {main="Burtgang", sub="Priwen"}
-  sets.MagicalShield  = {main="Malignance Sword", sub="Aegis"}
+  sets.PhysicalShield = {main="Burtgang", sub="Ochain"}
+  sets.MagicalShield  = {main="Burtgang", sub="Aegis"}
 
   -- Basic defense sets.      
   sets.defense.PDT = {}
@@ -370,7 +374,7 @@ function init_gear_sets()
   sets.defense.Charm = {}
 
   sets.defense.MDT = {
-    main="Malignance Sword",
+    main="Burtgang",
     sub="Aegis",
     ammo="Staunch Tathlum +1",
     head="Sakpata's Helm",
@@ -391,10 +395,6 @@ function init_gear_sets()
   -- Engaged sets
   --------------------------------------
   sets.engaged = {
-    main="Burtgang",
-    sub="Firmament",
-    -- sub="Priwen",
-    -- sub="Sakpata's Sword",
     ammo="Staunch Tathlum +1",
     head="Sakpata's Helm",
     body="Sakpata's Breastplate",
@@ -403,10 +403,8 @@ function init_gear_sets()
     feet="Sakpata's Leggings",
     neck="Unmoving collar +1",
     waist="Sailfi belt +1",
-    -- ear1="Odnowa Earring +1",
-    -- ear2="Tuisto Earring",
-    left_ear="Suppanomimi",
-    right_ear="Eabani Earring",
+    ear1="Odnowa Earring +1",
+    ear2="Tuisto Earring",
     ring1=MR.One,
     ring2=MR.Two,
     back=Rud.STP
@@ -416,7 +414,7 @@ function init_gear_sets()
   -- Custom buff sets
   --------------------------------------
   
-  sets.buff.Doom = {}
+  sets.buff.Doom = {neck="Nicander Necklace",}
   sets.buff.Cover = {head="Reverence Coronet +1", body="Caballarius Surcoat +1"}
 end
 

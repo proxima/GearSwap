@@ -501,7 +501,7 @@ function get_sets()
    sets.midcast['Sleepga'] = set_combine(sets.midcast.IntEnfeebling, {
      legs={ name="Merlinic Shalwar", augments={'INT+10','VIT+1','"Treasure Hunter"+2',}},
      feet={ name="Merlinic Crackows", augments={'Mag. Acc.+17','Weapon skill damage +1%','"Treasure Hunter"+2','Accuracy+8 Attack+8',}},
-  })
+   })
      
    sets.midcast.cure = {} -- Leave This Empty
 

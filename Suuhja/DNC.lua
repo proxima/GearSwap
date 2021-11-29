@@ -339,8 +339,7 @@ function init_gear_sets()
     sets.precast.WS.Acc = set_combine(sets.precast.WS, {
     })
 
-    sets.precast.WS.Critical = {head="Maculele Tiara +1", body="Meg. Cuirie +2", left_ring="Epaminondas's Ring", left_ear="Ishvara Earring"}
-
+    sets.precast.WS.Critical = {head="Maculele Tiara +1", left_ring="Epaminondas's Ring", left_ear="Ishvara Earring"}
 
     sets.precast.WS['Pyrrhic Kleos'] = set_combine(sets.precast.WS, {
       ammo="C. Palug Stone",
@@ -349,11 +348,6 @@ function init_gear_sets()
       hands="Gleti's Gauntlets",
       legs="Gleti's Breeches",
       feet="Gleti's Boots",
-      -- head={ name="Adhemar Bonnet +1", augments={'STR+12','DEX+12','Attack+20',}},
-      -- body={ name="Adhemar Jacket +1", augments={'STR+12','DEX+12','Attack+20',}},
-      -- hands={ name="Adhemar Wrist. +1", augments={'STR+12','DEX+12','Attack+20',}},
-      -- legs={ name="Samnuha Tights", augments={'STR+9','DEX+8','"Dbl.Atk."+2','"Triple Atk."+2',}},
-      -- feet={ name="Herculean Boots", augments={'"Triple Atk."+3','Rng.Atk.+13','Quadruple Attack +3','Accuracy+13 Attack+13','Mag. Acc.+4 "Mag.Atk.Bns."+4',}},
       neck={ name="Etoile Gorget +2", augments={'Path: A',}},
       waist="Fotia Belt",
       left_ear="Sherida Earring",
@@ -373,11 +367,6 @@ function init_gear_sets()
       hands="Gleti's Gauntlets",
       legs="Gleti's Breeches",
       feet="Gleti's Boots",
-      -- head={ name="Adhemar Bonnet +1", augments={'STR+12','DEX+12','Attack+20',}},
-      -- body="Meg. Cuirie +2",
-      -- hands="Mummu Wrists +2",
-      -- legs={ name="Lustr. Subligar +1", augments={'Accuracy+20','DEX+8','Crit. hit rate+3%',}},
-      -- feet={ name="Herculean Boots", augments={'Accuracy+20 Attack+20','Crit. hit damage +4%','STR+8',}},
       neck="Fotia Gorget",
       waist="Fotia Belt",
       left_ear="Sherida Earring",
@@ -389,11 +378,12 @@ function init_gear_sets()
 
     sets.precast.WS['Rudra\'s Storm'] = set_combine(sets.precast.WS, {
       ammo="Charis Feather",
-      head={ name="Herculean Helm", augments={'Accuracy+29','Weapon skill damage +4%',}},
-      body="Gleti's Cuirass",
+      head="Nyame Helm",
+      body="Nyame Mail",
+      -- body="Gleti's Cuirass",
       hands="Maxixi bangles +3",
       legs={ name="Horos Tights +3", augments={'Enhances "Saber Dance" effect',}},
-      feet={ name="Herculean Boots", augments={'Weapon Skill Acc.+1','DEX+5','Weapon skill damage +8%','Accuracy+1 Attack+1',}}, 
+      feet="Nyame Sollerets",
       neck="Etoile gorget +2",
       waist="Kentarch Belt +1",
       left_ear="Sherida Earring",
@@ -409,13 +399,13 @@ function init_gear_sets()
     sets.precast.WS['Aeolian Edge'] = {
       ammo={ name="Ghastly Tathlum +1", augments={'Path: A',}},
       head="Nyame Helm",
-      body="Samnuha Coat",
-      hands={ name="Herculean Gloves", augments={'AGI+9','"Mag.Atk.Bns."+25','Accuracy+18 Attack+18','Mag. Acc.+19 "Mag.Atk.Bns."+19',}},
-      legs="Horos Tights +3",
+      body="Nyame Mail",
+      hands="Nyame gauntlets",
+      legs="Nyame Flanchard",
       feet={ name="Herculean Boots", augments={'Weapon skill damage +4%','"Mag.Atk.Bns."+28','Mag. Acc.+19 "Mag.Atk.Bns."+19',}},
       neck="Sanctity Necklace",
-      ear1="Moonshade Earring",
-      ear2="Ishvara Earring",
+      left_ear="Moonshade Earring",
+      right_ear="Friomisi Earring",
       left_ring="Metamorph ring +1",
       right_ring="Epaminondas's Ring",
       back="Argocham. Mantle",
@@ -775,7 +765,7 @@ function init_gear_sets()
 
     sets.buff['Saber Dance'] = {}
     sets.buff['Fan Dance'] = {}
-    sets.buff['Climactic Flourish'] = {head="Maculele Tiara +1", body="Meg. Cuirie +2"}
+    sets.buff['Climactic Flourish'] = {head="Maculele Tiara +1"}
     sets.buff['Closed Position'] = {feet="Horos T. Shoes +3"}
 
     sets.buff.Doom = {

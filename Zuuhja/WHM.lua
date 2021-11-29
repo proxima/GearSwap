@@ -378,7 +378,7 @@ function init_gear_sets()
       waist="Bishop's Sash",
     })
 
-    sets.midcast.Erase = set_combine(sets.midcast.StatusRemoval, {neck="Cleric's Torque"})
+    sets.midcast.Erase = set_combine(sets.midcast.StatusRemoval, {neck="Cleric's Torque +1"})
 
     -- 110 total Enhancing Magic Skill; caps even without Light Arts
     sets.midcast['Enhancing Magic'] = {
@@ -407,6 +407,8 @@ function init_gear_sets()
       ring2="Stikini Ring +1",
       back="Mending cape",
     }
+
+    sets.midcast.Haste = sets.midcast.EnhancingDuration
 
     sets.midcast.Regen = set_combine(sets.midcast.EnhancingDuration, {
       main="Bolelabunga",
@@ -673,6 +675,9 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
             if spellMap == 'Refresh' then
                 equip(sets.midcast.Refresh)
             end
+        end
+        if spell.name:match('storm') then
+            equip(sets.midcast.EnhancingDuration)
         end
         if spellMap == "Regen" and state.RegenMode.value == 'Duration' then
             equip(sets.midcast.RegenDuration)

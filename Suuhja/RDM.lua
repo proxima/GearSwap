@@ -346,11 +346,11 @@ function get_sets()
     ------------------------------------------------------------------------------------------------------
     sets.me["Savage Blade"] = {
       ammo="Regal Gem",
-      head={ name="Viti. Chapeau +3", augments={'Enfeebling Magic duration','Magic Accuracy',}},
-      body="Jhakri Robe +2",
-      hands="Atrophy Gloves +3",
-      legs="Jhakri Slops +2",
-      feet="Jhakri Pigaches +2",
+      head="Nyame Helm",
+      body="Nyame Mail",
+      hands="Nyame Gauntlets",
+      legs="Nyame Flanchard",
+      feet="Nyame Sollerets",
       neck={ name="Dls. Torque +2", augments={'Path: A',}},
       waist="Grunfeld Rope",
       left_ear="Moonshade Earring",
@@ -362,11 +362,11 @@ function get_sets()
     
     sets.me["Black Halo"] = {
       ammo="Regal Gem",
-      head={ name="Viti. Chapeau +3", augments={'Enfeebling Magic duration','Magic Accuracy',}},
-      body="Jhakri Robe +2",
-      hands="Atrophy Gloves +3",
-      legs="Jhakri Slops +2",
-      feet="Jhakri Pigaches +2",
+      head="Nyame Helm",
+      body="Nyame Mail",
+      hands="Nyame Gauntlets",
+      legs="Nyame Flanchard",
+      feet="Nyame Sollerets",
       neck={ name="Dls. Torque +2", augments={'Path: A',}},
       waist="Grunfeld Rope",
       left_ear="Regal Earring",
@@ -385,16 +385,16 @@ function get_sets()
     sets.me["Sanguine Blade"] = {
       ammo="Pemphredo Tathlum",
       head="Pixie Hairpin +1",
-      body={ name="Amalric Doublet +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
+      body="Nyame Mail",
       hands="Jhakri Cuffs +2",
-      legs={ name="Amalric Slops +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
-      feet={ name="Amalric Nails +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
+      legs="Nyame Flanchard",
+      feet="Nyame Sollerets",
       neck="Sanctity Necklace",
       waist="Orpheus's Sash",
       left_ear="Regal Earring",
       right_ear="Malignance Earring",
       left_ring="Archon Ring",
-      right_ring="Epaminondas's Ring",
+      right_ring={ name="Metamor. Ring +1", augments={'Path: A',}},
       back=RDMCape.MACC
     }
 

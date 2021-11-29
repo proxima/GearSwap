@@ -281,10 +281,10 @@ function get_sets()
     sets.me.melee = {
       ammo="Staunch Tathlum +1",
       head={ name="Blistering Sallet +1", augments={'Path: A',}},
-      body="Jhakri Robe +2",
+      body="Nyame Mail",
       hands={ name="Gazu Bracelet +1", augments={'Path: A',}},
-      legs="Jhakri Slops +2",
-      feet="Jhakri Pigaches +2",
+      legs="Nyame Flanchard",
+      feet="Nyame Sollerets",
       neck="Lissome Necklace",
       waist="Grunfeld Rope",
       left_ear="Cessance Earring",
@@ -303,11 +303,11 @@ function get_sets()
     -- Weapon Skills sets just add them by name.
     sets.me["Heavy Swing"] = {
       ammo="Floestone",
-      head="Jhakri Coronal +2",
-      body="Jhakri Robe +2",
-      hands="Jhakri Cuffs +2",
-      legs="Jhakri Slops +2",
-      feet="Jhakri Pigaches +2",
+      head="Nyame Helm",
+      body="Nyame Mail",
+      hands="Nyame Gauntlets",
+      legs="Nyame Flanchard",
+      feet="Nyame Sollerets",
       neck={ name="Argute Stole +2", augments={'Path: A',}},
       waist="Luminary Sash",
       left_ear="Regal Earring",
@@ -346,11 +346,11 @@ function get_sets()
 
     sets.me["Earth Crusher"] = {
       ammo="Ghastly Tathlum +1",
-      head="Pedagogy mortarboard +3",
+      head="Nyame Helm",
       body={ name="Amalric Doublet +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
       hands="Jhakri Cuffs +2",
       legs={ name="Amalric Slops +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
-      feet={ name="Amalric Nails +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
+      feet="Nyame Sollerets",
       neck="Saevus Pendant +1",
       waist="Orpheus's Sash",
       left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
@@ -579,6 +579,13 @@ function get_sets()
       right_ring="Freke Ring",
       back={ name="Bookworm's Cape", augments={'INT+1','MND+2','Helix eff. dur. +20','"Regen" potency+10',}},     
     }
+
+   -- mb helix compared to agwus
+   -- head  @ r20: -6int, -11macc,  +5mab, +30mdmg,
+   -- body  @ r20: +6int,                  +20mdmg
+   -- hands @ r20: -3int, +11macc,  +2mab, +20mdmg
+   -- legs  @ r20: -2int,  -8macc, +15mab,  +7mdmg
+   -- feet  @ r20: +9int, +25macc,  -7mab
     
     sets.midcast.WindHelix = {
       main="Marin staff +1",
@@ -642,6 +649,13 @@ function get_sets()
      right_ring="Freke Ring",
      back={ name="Lugh's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Damage taken-5%',}},
    }
+   
+   -- nuking compared to agwus
+   -- head  @ r20: -6int, -11macc,  +5mab, +30mdmg
+   -- body  @ r20: +9int,  -8macc,  -8mab, +20mdmg
+   -- hands @ r20: -3int, +11macc,  -8mab, +20mdmg
+   -- legs  @ r20: +9int, +25macc, -15mab, +20mdmg
+   -- feet  @ r20: +9int, +25macc,  -7mab      
 
    sets.midcast.nuking.acc = set_combine(sets.midcast.nuking.normal, {
      sub="Khonsu",
@@ -655,7 +669,7 @@ function get_sets()
      sub="Ammurapi Shield",
      ammo="Ghastly Tathlum +1",
      head="Pedagogy mortarboard +3",
-     body={ name="Merlinic Jubbah", augments={'Mag. Acc.+24 "Mag.Atk.Bns."+24','Magic burst dmg.+10%','INT+1','Mag. Acc.+1','"Mag.Atk.Bns."+11',}},
+     body={ name="Merlinic Jubbah", augments={'Mag. Acc.+24 "Mag.Atk.Bns."+24','Magic burst dmg.+10%','INT+1','Mag. Acc.+1','"Mag.Atk.Bns."+11',}}, 
      hands={ name="Amalric Gages +1", augments={'INT+12','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
      legs={ name="Merlinic Shalwar", augments={'Mag. Acc.+25 "Mag.Atk.Bns."+25','Magic burst dmg.+10%','INT+8','Mag. Acc.+8',}},
      feet={ name="Amalric Nails +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
@@ -667,6 +681,13 @@ function get_sets()
      right_ring="Freke Ring",
      back={ name="Lugh's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Damage taken-5%',}},
    })
+   
+   -- mb normal compared to agwus
+   -- head  @ r20: -6int, -26macc,  +5mab, +30mdmg,        -4mbd2
+   -- body  @ r20: +6int,                  +20mdmg
+   -- hands @ r20: -3int, +11macc,  -8mab, +20mdmg, +8mbd, -2mbd2
+   -- legs  @ r20: -2int,  -8macc, +15mab,  +7mdmg, -1mbd
+   -- feet  @ r20: +9int, +25macc,  -7mab,          +6mbd
 
    -- used with toggle, default: F10
    -- Pieces to swap from free nuke to Magic Burst
@@ -674,6 +695,13 @@ function get_sets()
      feet="Jhakri Pigaches +2",
      waist="Acuity Belt +1",
    })
+
+   -- mb acc compared to agwus
+   -- head  @ r20: -6int, -26macc,  +5mab, +30mdmg,        -4mbd2
+   -- body  @ r20: +6int,                  +20mdmg
+   -- hands @ r20: -3int, +11macc,  +2mab, +20mdmg, +8mbd, -2mbd2
+   -- legs  @ r20: -2int,  -8macc, +15mab,  +7mdmg, -1mbd
+   -- feet  @ r20: -3int,  +3macc, +16mab, +20mdmg, -1mbd
    
    sets.midcast.nuking.occult = set_combine(sets.midcast.nuking.normal, { 
      ammo="Seraphic Ampulla",

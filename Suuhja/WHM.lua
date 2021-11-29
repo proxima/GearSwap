@@ -266,11 +266,11 @@ function init_gear_sets()
     -- Default set for any weaponskill that isn't any more specifically defined
     sets.precast.WS = {
       ammo="Floestone",
-      head="Piety Cap +3",
-      body="Piety Bliaut +3",
-      hands="Piety Mitts +3",
-      legs="Piety Pantaln. +3",
-      feet="Piety Duckbills +3",
+      head="Nyame Helm",
+      body="Nyame Mail",
+      hands="Nyame Gauntlets",
+      legs="Nyame Flanchard",
+      feet="Nyame Sollerets",
       neck={ name="Clr. Torque +1", augments={'Path: A',}},
       waist="Grunfeld Rope",
       left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
@@ -299,10 +299,10 @@ function init_gear_sets()
     sets.precast.WS['Cataclysm'] = set_combine(sets.precast.WS, {
       ammo="Pemphredo Tathlum",
       head="Pixie Hairpin +1",
-      body="Piety Bliaut +3",
-      hands="Piety Mitts +3",
-      legs={ name="Chironic Hose", augments={'Mag. Acc.+21 "Mag.Atk.Bns."+21','"Fast Cast"+5','MND+11','Mag. Acc.+13','"Mag.Atk.Bns."+6',}},
-      feet="Piety Duckbills +3",
+      body="Nyame Mail",
+      hands="Nyame Gauntlets",
+      legs="Nyame Flanchard",
+      feet="Nyame Sollerets",
       neck="Saevus Pendant +1",
       ear1="Malignance Earring",
       ear2="Regal Earring",
@@ -444,6 +444,8 @@ function init_gear_sets()
       right_ear="Mimir Earring",
       back="Mending cape",
     }
+
+    sets.midcast['Haste'] = sets.midcast.EnhancingDuration
 
     sets.midcast.Regen = set_combine(sets.midcast.EnhancingDuration, {
       main="Bolelabunga",
@@ -675,11 +677,11 @@ function init_gear_sets()
       main="Asclepius",
       sub="Magesmasher +1",
       ammo="Staunch Tathlum +1",
-      head="Aya. Zucchetto +2",
-      body="Ayanmo Corazza +2",
-      hands="Aya. Manopolas +2",
-      legs="Aya. Cosciales +2",
-      feet="Aya. Gambieras +2",
+      head={ name="Blistering Sallet +1", augments={'Path: A',}},
+      body="Nyame Mail",
+      hands={ name="Gazu Bracelet +1", augments={'Path: A',}},
+      legs="Nyame Flanchard",
+      feet="Nyame Sollerets",
       neck="Lissome necklace",
       waist="Windbuffet Belt +1",
       left_ear="Cessance Earring",
@@ -740,6 +742,9 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
             if spellMap == 'Refresh' then
                 equip(sets.midcast.Refresh)
             end
+        end
+        if spell.name:match('storm') then
+            equip(sets.midcast.EnhancingDuration)
         end
         if spellMap == "Regen" and state.RegenMode.value == 'Duration' then
             equip(sets.midcast.RegenDuration)
