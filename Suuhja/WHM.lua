@@ -303,7 +303,7 @@ function init_gear_sets()
       hands="Nyame Gauntlets",
       legs="Nyame Flanchard",
       feet="Nyame Sollerets",
-      neck="Saevus Pendant +1",
+      neck="Cleric's Torque +1",
       ear1="Malignance Earring",
       ear2="Regal Earring",
       ring1="Metamorph ring +1",
@@ -674,7 +674,7 @@ function init_gear_sets()
 
     -- Basic set for if no TP weapon is defined.
     sets.engaged = {
-      main="Asclepius",
+      main="Yagrush",
       sub="Magesmasher +1",
       ammo="Staunch Tathlum +1",
       head={ name="Blistering Sallet +1", augments={'Path: A',}},

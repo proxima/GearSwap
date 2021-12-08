@@ -137,7 +137,7 @@ function init_gear_sets()
     sets.precast.WS['Cataclysm'] = {
       ammo="Ghastly Tathlum +1",
       head="Pixie hairpin +1",
-      body={ name="Amalric Doublet +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
+      body="Agwu's Robe",
       hands="Jhakri Cuffs +2",
       legs={ name="Amalric Slops +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
       feet={ name="Amalric Nails +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
@@ -171,13 +171,12 @@ function init_gear_sets()
     sets.precast.WS['Vidohunir'] = {
       ammo="Ghastly Tathlum +1",
       head="Pixie hairpin +1",
-      body={ name="Amalric Doublet +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
+      body="Agwu's Robe",
       hands="Jhakri Cuffs +2",
       legs={ name="Amalric Slops +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
       feet={ name="Amalric Nails +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
       neck="Sorcerer's Stole +2",
-      waist="Hachirin-no-Obi",
-      -- waist="Orpheus's Sash",
+      waist="Orpheus's Sash",
       left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
       right_ear="Malignance Earring",
       left_ring="Archon Ring",
@@ -188,7 +187,7 @@ function init_gear_sets()
     sets.precast.WS['Myrkr'] = {
       ammo="Ghastly Tathlum +1",
       head="Pixie Hairpin +1",
-      neck="Saevus pendant +1",
+      neck="Voltsurge Torque",
       left_ear="Moonshade Earring",
       right_ear="Etiolation Earring",
       body={ name="Amalric Doublet +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
@@ -314,7 +313,7 @@ function init_gear_sets()
     sets.midcast['Luminohelix'] = set_combine(sets.midcast['Elemental Magic'], {
       main="Daybreak",
       sub="Culminus",
-      body={ name="Amalric Doublet +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
+      body="Agwu's Robe",
       hands={ name="Amalric Gages +1", augments={'INT+12','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
       legs={ name="Amalric Slops +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
       feet={ name="Amalric Nails +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},

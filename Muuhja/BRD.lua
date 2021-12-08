@@ -359,13 +359,13 @@ function init_gear_sets()
       ring2="Stikini Ring +1",
       waist="Acuity Belt +1",
       back={ name="Intarabus's Cape", augments={'CHR+20','Mag. Acc+20 /Mag. Dmg.+20','CHR+10','"Fast Cast"+10',}},
-	  -- hands={ name="Chironic Gloves", augments={'Crit. hit damage +3%','MND+13','"Treasure Hunter"+2','Mag. Acc.+10 "Mag.Atk.Bns."+10',}},
+      -- hands={ name="Chironic Gloves", augments={'Crit. hit damage +3%','MND+13','"Treasure Hunter"+2','Mag. Acc.+10 "Mag.Atk.Bns."+10',}},
       -- feet={ name="Chironic Slippers", augments={'"Fast Cast"+2','MND+5','"Treasure Hunter"+2',}}
     }
 
     -- For song defbuffs (accuracy primary, duration secondary)
     sets.midcast.SongEnfeebleAcc = set_combine(sets.midcast.SongEnfeeble, {
-	})
+    })
 
     -- For Horde Lullaby maxiumum AOE range.
     sets.midcast.SongStringSkill = {
@@ -528,8 +528,8 @@ function init_gear_sets()
       neck="Bard's Charm +2",
       ear1="Brutal Earring",
       ear2="Dignitary's Earring",
-      ring1="Chirich ring +1",
-      ring2="Chirich ring +1",
+      left_ring={name="Chirich Ring +1",bag="wardrobe 2"},
+      right_ring={name="Chirich Ring +1",bag="wardrobe 3"},
       back={ name="Intarabus's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10','Damage taken-5%',}},
       waist="Grunfeld Rope"
     }
@@ -551,8 +551,8 @@ function init_gear_sets()
       neck="Bard's Charm +2",
       ear1="Eabani Earring",
       ear2="Suppanomimi",
-      ring1="Chirich ring +1",
-      ring2="Chirich ring +1",
+      left_ring={name="Chirich Ring +1",bag="wardrobe 2"},
+      right_ring={name="Chirich Ring +1",bag="wardrobe 3"},
       back={ name="Intarabus's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10','Damage taken-5%',}},
       waist="Reiki Yotai"
     }
@@ -583,8 +583,8 @@ function init_gear_sets()
       neck="Bard's Charm +2",
       ear1="Eabani Earring",
       ear2="Suppanomimi",
-      ring1="Chirich ring +1",
-      ring2="Chirich ring +1",
+      left_ring={name="Chirich Ring +1",bag="wardrobe 2"},
+      right_ring={name="Chirich Ring +1",bag="wardrobe 3"},
       back={ name="Intarabus's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10','Damage taken-5%',}},
       waist="Reiki Yotai"
     }

@@ -160,10 +160,10 @@ function user_setup()
 --    send_command('bind ^numpad5 input /ws "Rudra\'s Storm" <t>')
 --    send_command('bind ^numpad6 input /ws "Pyrrhic Kleos" <t>')
 
-    send_command('bind ^numpad4 send zuuhja /ma "Cure IV" Aptfury')
-    send_command('bind ^numpad5 send zuuhja /ma "Cure IV" Muuhja')
-    send_command('bind ^numpad2 send zuuhja /ma "Cure IV" Aller')
-    send_command('bind ^numpad3 send zuuhja /ma "Curaga III" Aller')
+    send_command('bind ^numpad4 send zuuhja /ma "Curaga III" Suuhja')
+    send_command('bind ^numpad5 send zuuhja /ma "Curaga IV" Suuhja')
+    send_command('bind ^numpad2 send zuuhja /ma "Cursna" Suuhja')
+    send_command('bind ^numpad3 send zuuhja /ma "Esuna" Zuuhja')
     send_command('bind ^numpad1 send zuuhja /ma "Cure IV" Suuhja')
 
     send_command('bind @a sat youcommand Muuhja "Thunderspark"')
@@ -294,8 +294,8 @@ function init_gear_sets()
     sets.precast.Step['Feather Step'] = set_combine(sets.precast.Step, {feet="Macu. Toe shoes +1",})
     sets.precast.Flourish1 = {}
     sets.precast.Flourish1['Animated Flourish'] = set_combine(sets.Enmity, {
-      -- head={ name="Herculean Helm", augments={'"Store TP"+1','Magic Damage +1','"Treasure Hunter"+2','Accuracy+7 Attack+7',}},
-      -- hands={ name="Herculean Gloves", augments={'"Conserve MP"+1','Accuracy+21','"Treasure Hunter"+2',}},    
+      head={ name="Herculean Helm", augments={'"Store TP"+1','Magic Damage +1','"Treasure Hunter"+2','Accuracy+7 Attack+7',}},
+      hands={ name="Herculean Gloves", augments={'"Conserve MP"+1','Accuracy+21','"Treasure Hunter"+2',}},    
     })
 
     sets.precast.Flourish1['Violent Flourish'] = {

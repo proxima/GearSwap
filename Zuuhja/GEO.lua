@@ -399,7 +399,7 @@ function get_sets()
      hands={ name="Amalric Gages +1", augments={'INT+12','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
      legs={ name="Amalric Slops +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
      feet={ name="Amalric Nails +1", augments={'Mag. Acc.+20','"Mag.Atk.Bns."+20','"Conserve MP"+7',}},
-     neck="Saevus Pendant +1",
+     neck="Mizu. Kubikazari",
      waist="Sacro Cord",
      left_ear="Malignance Earring",
      right_ear="Regal Earring",
@@ -412,7 +412,6 @@ function get_sets()
      head="Ea Hat +1",
      body="Ea Houppe. +1",
      legs="Ea Slops +1",
-     neck="Mizu. Kubikazari",
      left_ring="Mujin Band",
    })
 

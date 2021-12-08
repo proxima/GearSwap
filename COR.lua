@@ -80,6 +80,7 @@ function init_gear_sets()
     sets.precast.CorsairRoll = {
       head="Comm. Tricorne +2",
       neck="Regal necklace",
+      range="Compensator",
       hands="Navarch's Gants +2",
       right_ring="Luzaf's Ring",
       back="Camulus's Mantle"

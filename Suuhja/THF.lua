@@ -63,6 +63,12 @@ function user_setup()
     send_command('bind @o sat youcommand Muuhja "Horde Lullaby"')
     send_command('bind @p sat youcommand Zuuhja "Sleepga"')
 
+    send_command('bind ^numpad4 send zuuhja /ma "Curaga III" Suuhja')
+    send_command('bind ^numpad5 send zuuhja /ma "Curaga IV" Suuhja')
+    send_command('bind ^numpad2 send zuuhja /ma "Cursna" Suuhja')
+    send_command('bind ^numpad3 send zuuhja /ma "Esuna" Zuuhja')
+    send_command('bind ^numpad1 send zuuhja /ma "Cure IV" Suuhja')
+
     select_default_macro_book()
 end
 
@@ -76,6 +82,12 @@ function user_unload()
     send_command('unbind @m')
     send_command('unbind @o')
     send_command('unbind @p')
+
+    send_command('unbind ^numpad4')
+    send_command('unbind ^numpad5')
+    send_command('unbind ^numpad2')
+    send_command('unbind ^numpad3')
+    send_command('unbind ^numpad1')	
 end
 
 -- Define sets and vars used by this job file.
@@ -257,6 +269,7 @@ function init_gear_sets()
     sets.precast.WS["Savage Blade"].Acc = set_combine(sets.precast.WS["Savage Blade"], {})
     sets.precast.WS["Savage Blade"].Mod = set_combine(sets.precast.WS["Savage Blade"], {
       head="Pillager's bonnet +3",
+      body="Gleti's Cuirass",
       ammo="Yetshila +1",
     })
 
@@ -376,7 +389,7 @@ function init_gear_sets()
 
     -- Normal melee group
     sets.engaged = {
-      ammo="Yamarang",
+      ammo="Coiste Bodhar",
       head="Adhemar Bonnet +1",
       body="Pillager's Vest +3",
       hands="Adhemar Wrist. +1",
@@ -409,7 +422,7 @@ function init_gear_sets()
       hands="Malignance Gloves",
       legs="Malignance Tights",
       feet="Malignance Boots",
-	  neck="Assassin's Gorget +2",
+      neck="Assassin's Gorget +2",
       waist="Reiki yotai",
       left_ear="Sherida Earring",
       right_ear="Telos Earring",

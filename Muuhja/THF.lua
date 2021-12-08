@@ -347,8 +347,8 @@ function init_gear_sets()
       waist="Reiki Yotai",
       left_ear="Eabani Earring",
       right_ear="Suppanomimi",
-      right_ring="Chirich Ring +1",
-      left_ring="Chirich Ring +1",
+      left_ring={name="Chirich Ring +1",bag="wardrobe 2"},
+      right_ring={name="Chirich Ring +1",bag="wardrobe 3"},
       back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10','Phys. dmg. taken-10%',}},
     }
 
