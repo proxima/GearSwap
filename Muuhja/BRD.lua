@@ -305,10 +305,10 @@ function init_gear_sets()
     sets.midcast.HonorMarch = {range="Marsyas", hands="Fili Manchettes +1"}
     sets.midcast.Lullaby = {
       body="Fili Hongreline +1",
-      hands="Brioso Cuffs +3",
+      --hands="Brioso Cuffs +3",
       legs="Inyanga Shalwar +2",
-      --hands={ name="Chironic Gloves", augments={'Crit. hit damage +3%','MND+13','"Treasure Hunter"+2','Mag. Acc.+10 "Mag.Atk.Bns."+10',}},
-      --feet={ name="Chironic Slippers", augments={'"Fast Cast"+2','MND+5','"Treasure Hunter"+2',}}
+      hands={ name="Chironic Gloves", augments={'Crit. hit damage +3%','MND+13','"Treasure Hunter"+2','Mag. Acc.+10 "Mag.Atk.Bns."+10',}},
+      feet={ name="Chironic Slippers", augments={'"Fast Cast"+2','MND+5','"Treasure Hunter"+2',}}
     }
     sets.midcast.Madrigal = {head="Fili Calot +1"}
     sets.midcast.Mambo = {feet="Mousai Crackows +1"}

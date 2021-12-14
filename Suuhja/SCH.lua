@@ -289,8 +289,8 @@ function get_sets()
       waist="Grunfeld Rope",
       left_ear="Cessance Earring",
       right_ear="Telos Earring",
-      left_ring="Chirich Ring +1",
-      right_ring="Chirich Ring +1",
+      left_ring={name="Chirich Ring +1",bag="wardrobe 2"},
+      right_ring={name="Chirich Ring +1",bag="wardrobe 4"},
       back={ name="Lugh's Cape", augments={'INT+20','Accuracy+20 Attack+20','INT+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}}, -- Make stp + dex version
     }
 
@@ -336,8 +336,8 @@ function get_sets()
       waist="Fotia Belt",
       left_ear="Moonshade Earring",
       right_ear="Telos Earring",
-      left_ring="Chirich Ring +1",
-      right_ring="Chirich Ring +1",
+      left_ring={name="Chirich Ring +1",bag="wardrobe 2"},
+      right_ring={name="Chirich Ring +1",bag="wardrobe 4"},
       back={ name="Lugh's Cape", augments={'INT+20','Accuracy+20 Attack+20','INT+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}},
     })
     
@@ -492,6 +492,24 @@ function get_sets()
      main="Hvergelmir",
      sub="Khonsu",
    })
+   
+   sets.precast["Modus Veritas"] = {
+     main="Tupsimati",
+     sub="Khonsu",
+     ammo="Pemphredo tathlum",
+     head="Acad. Mortar. +2",
+     body="Acad. Gown +3",
+     hands="Acad. Bracers +3",
+     legs="Acad. Pants +3",
+     feet="Acad. Loafers +3",
+     neck={ name="Argute Stole +2", augments={'Path: A',}},
+     waist="Acuity Belt +1",
+     left_ear="Regal Earring",
+     right_ear="Malignance Earring",
+     left_ring={name="Stikini Ring +1",bag="wardrobe 2"},
+     right_ring={name="Stikini Ring +1",bag="wardrobe 3"},
+     back={ name="Lugh's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Damage taken-5%',}},
+   }
 
    -- When spell school is aligned with grimoire, swap relevent pieces -- Can also use Arbatel +1 set here if you value 1% quickcast procs per piece. (2+ pieces)  
    -- Dont set_combine here, as this is the last step of the precast, it will have sorted all the needed pieces already based on type of spell.
@@ -539,21 +557,25 @@ function get_sets()
     -----------------------------------------------------------------------------------------------
     -- Make sure you have a non weather obi in this set. Helix get bonus naturally no need Obi.	
     sets.midcast.Kaustra = {
-      main="Marin Staff +1",
-      sub="Enki strap",
-      ammo="Ghastly Tathlum +1",
-      head="Pixie hairpin +1",
+      -- Set prioritizing intelligence, mb acc, macc, dark magic skill for Ongo fun.
+      main={ name="Bunzi's Rod", augments={'Path: A',}},
+      sub="Ammurapi Shield",
+      ammo={ name="Ghastly Tathlum +1", augments={'Path: A',}},
+      head={ name="Peda. M.Board +3", augments={'Enh. "Altruism" and "Focalization"',}},
+      body={ name="Agwu's Robe", augments={'Path: A',}},
+      hands="Regal Cuffs",
+      legs={ name="Peda. Pants +3", augments={'Enhances "Tabula Rasa" effect',}},
+      feet="Jhakri Pigaches +2",
       neck={ name="Argute Stole +2", augments={'Path: A',}},
-      body="Agwu's Robe",
-      hands={ name="Amalric Gages +1", augments={'INT+12','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
-      legs={ name="Merlinic Shalwar", augments={'Mag. Acc.+25 "Mag.Atk.Bns."+25','Magic burst dmg.+10%','INT+8','Mag. Acc.+8',}},
-      feet={ name="Merlinic Crackows", augments={'Mag. Acc.+21 "Mag.Atk.Bns."+21','Magic burst dmg.+11%','Mag. Acc.+11','"Mag.Atk.Bns."+13',}},
-      waist="Acuity Belt +1",
+      waist={ name="Acuity Belt +1", augments={'Path: A',}},
       left_ear="Regal Earring",
       right_ear="Malignance Earring",
-      left_ring="Archon ring",
-      right_ring="Metamorph Ring +1",
+      left_ring="Freke Ring",
+      right_ring={ name="Metamor. Ring +1", augments={'Path: A',}},
       back={ name="Lugh's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Damage taken-5%',}},
+      -- When not doing Ongo swap to this stuff, maybe change hands.
+      -- head="Pixie hairpin +1",
+      -- left_ring="Archon ring",
     }
     
     -- Make sure you have a non weather obi in this set. Helix get bonus naturally no need Obi.
@@ -713,8 +735,8 @@ function get_sets()
      waist="Oneiros Rope",
      left_ear="Dedition Earring",
      right_ear="Telos Earring",
-     left_ring="Chirich Ring +1",
-     right_ring="Chirich Ring +1",
+     left_ring={name="Chirich Ring +1",bag="wardrobe 2"},
+     right_ring={name="Chirich Ring +1",bag="wardrobe 4"},
      back={ name="Lugh's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Store TP"+10','Phys. dmg. taken-10%',}},
    })
 

@@ -232,7 +232,7 @@ function init_gear_sets()
       ammo="Voluspa Tathlum",
       head="Nyame Helm",
       body="Nyame Mail",
-      hands="Nukumi Manoplas +1",
+      hands="Nukumi Manoplas +1", -- if tp matters, otherwise more nyame
       legs="Nyame Flanchard",
       feet="Nyame Sollerets",
       left_ear="Handler's Earring +1",
@@ -240,7 +240,7 @@ function init_gear_sets()
       left_ring="Tali'ah Ring",
       right_ring="C. Palug Ring",
       waist="Incarnation Sash",
-      neck="Adad Amulet",
+      neck="Adad Amulet", -- jse neck is 5 macc better
       back="Argocham. Mantle", -- make ambu cape
     })
    
@@ -292,7 +292,7 @@ function init_gear_sets()
       right_ring="Defending Ring",
       back={ name="Artio's Mantle", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Eva.+20 /Mag. Eva.+20','Pet: Attack+10 Pet: Rng.Atk.+10','Pet: "Regen"+10','Pet: Damage taken -5%',}},
     })
-    
+   
     -- MELEE (SINGLE-WIELD) SETS   
     sets.engaged = {
       main="Kaja Axe",
@@ -307,8 +307,8 @@ function init_gear_sets()
       waist="Windbuffet Belt +1",
       left_ear="Brutal Earring",
       right_ear="Sherida Earring",
-      left_ring="Chirich Ring +1",
-      right_ring="Chirich Ring +1",
+      left_ring={name="Chirich Ring +1",bag="wardrobe 2"},
+      right_ring={name="Chirich Ring +1",bag="wardrobe 4"},
       back={ name="Artio's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+5','"Dual Wield"+10','Phys. dmg. taken-10%',}},
     }
     

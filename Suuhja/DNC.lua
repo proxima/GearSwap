@@ -171,7 +171,7 @@ function user_setup()
     send_command('bind @b sat youcommand Muuhja "Magic Finale"')
     send_command('bind @n sat youcommand Muuhja "Carnage Elegy"')
     -- send_command('bind @m sat youcommand Muuhja "Pining Nocturne"')
-    send_command('bind @o sat youcommand Muuhja "Horde Lullaby II"')
+    send_command('bind @o sat youcommand Muuhja "Horde Lullaby"')
     send_command('bind @p sat youcommand Zuuhja "Fire"')
     
     send_command('bind numpad0 gs c step t')
@@ -408,7 +408,7 @@ function init_gear_sets()
       right_ear="Friomisi Earring",
       left_ring="Metamorph ring +1",
       right_ring="Epaminondas's Ring",
-      back="Argocham. Mantle",
+      back={ name="Senuna's Mantle", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}},
       waist="Orpheus's Sash",
     }
     
@@ -466,8 +466,8 @@ function init_gear_sets()
       waist="Reiki Yotai",
       left_ear="Eabani Earring",
       right_ear="Sherida Earring",
-      left_ring="Chirich Ring +1",
-      right_ring="Chirich Ring +1",
+      left_ring={name="Chirich Ring +1",bag="wardrobe 2"},
+      right_ring={name="Chirich Ring +1",bag="wardrobe 4"},
       back={ name="Senuna's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dual Wield"+10','Phys. dmg. taken-10%',}},    
     })
 
@@ -713,8 +713,8 @@ function init_gear_sets()
       main="Tauret",
       sub="Twashtar",
       ammo="Staunch Tathlum +1",
-      left_ring="Chirich Ring +1",
-      right_ring="Chirich Ring +1",
+      left_ring={name="Chirich Ring +1",bag="wardrobe 2"},
+      right_ring={name="Chirich Ring +1",bag="wardrobe 4"},
       head="Gleti's Mask",
       body="Gleti's Cuirass",
       hands="Gleti's Gauntlets",

@@ -360,8 +360,8 @@ function init_gear_sets()
       waist="Oneiros Rope",
       left_ear="Dedition Earring",
       right_ear="Telos Earring",
-      left_ring="Chirich Ring +1",
-      right_ring="Chirich Ring +1",
+      left_ring={name="Chirich Ring +1",bag="wardrobe 2"},
+      right_ring={name="Chirich Ring +1",bag="wardrobe 4"},
       back={ name="Taranus's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+5','"Store TP"+10','Phys. dmg. taken-10%',}},
     }
     
@@ -461,8 +461,8 @@ function init_gear_sets()
       waist="Grunfeld Rope",
       left_ear="Cessance Earring",
       right_ear="Telos Earring",
-      left_ring="Chirich Ring +1",
-      right_ring="Chirich Ring +1",
+      left_ring={name="Chirich Ring +1",bag="wardrobe 2"},
+      right_ring={name="Chirich Ring +1",bag="wardrobe 4"},
       back={ name="Taranus's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+5','"Store TP"+10','Phys. dmg. taken-10%',}},
     }
 end

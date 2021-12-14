@@ -407,6 +407,11 @@ function get_sets()
      right_ring="Freke Ring",
      back={ name="Nantosuelta's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Phys. dmg. taken-10%',}},
    })
+   
+   sets.midcast['Bio'] = set_combine(sets.midcast.IntEnfeebling, {
+     legs={ name="Merlinic Shalwar", augments={'INT+10','VIT+1','"Treasure Hunter"+2',}},
+     feet={ name="Merlinic Crackows", augments={'Mag. Acc.+17','Weapon skill damage +1%','"Treasure Hunter"+2','Accuracy+8 Attack+8',}},
+   })
 
    sets.midcast.MB.normal = set_combine(sets.midcast.nuking.normal, {
      head="Ea Hat +1",
@@ -501,7 +506,12 @@ function get_sets()
      legs={ name="Merlinic Shalwar", augments={'INT+10','VIT+1','"Treasure Hunter"+2',}},
      feet={ name="Merlinic Crackows", augments={'Mag. Acc.+17','Weapon skill damage +1%','"Treasure Hunter"+2','Accuracy+8 Attack+8',}},
    })
-     
+
+   sets.midcast['Phalanx'] = set_combine(sets.midcast.enhancing, {
+     body={ name="Merlinic Jubbah", augments={'Pet: DEX+5','Crit. hit damage +3%','Phalanx +4','Mag. Acc.+19 "Mag.Atk.Bns."+19',}},
+     hands={ name="Merlinic Dastanas", augments={'"Blood Pact" ability delay -3','Weapon skill damage +1%','Phalanx +5',}},
+   })
+   
    sets.midcast.cure = {} -- Leave This Empty
 
    -- Cure Potency
