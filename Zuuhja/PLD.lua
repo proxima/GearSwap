@@ -28,7 +28,6 @@ function user_setup()
   state.EquipShield = M(false, 'Equip Shield w/Defense')
   update_defense_mode()
  
-  send_command('bind @f sat youcommand Suuhja "Fire II";input /ma "Flash" <t>')
   send_command('bind @o sat youcommand Muuhja "Horde Lullaby"')
 
   send_command('bind @f12 gs c cycle CastingMode') -- Turns Spell Interruption Rate set on
@@ -67,7 +66,8 @@ function init_gear_sets()
   Rud.STP =    { name="Rudianos's Mantle", augments={'HP+60','Accuracy+20 Attack+20','Accuracy+10','"Store TP"+10','Occ. inc. resist. to stat. ailments+10',} }
   Rud.MEVA =   { name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Occ. inc. resist. to stat. ailments+10',} }
   Rud.CURE =   { name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','"Cure" potency +10%','Phys. dmg. taken-10%',} }
-  
+  Rud.SB =     {}
+
   Ody = {}
   Ody.FC_LEGS = { name="Odyssean Cuisses", augments={'"Mag.Atk.Bns."+11','"Fast Cast"+6','INT+7',}}
   Ody.FC_FEET = { name="Odyssean Greaves", augments={'"Fast Cast"+6','AGI+2','Mag. Acc.+14',} }
@@ -168,6 +168,15 @@ function init_gear_sets()
   sets.precast.WS['Chant du Cygne'].Acc = {}
   sets.precast.WS['Sanguine Blade'] = {}
     
+  sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS, {
+    ammo="Crepuscular Pebble",
+    ring1=MR.One,
+    ring2=MR.Two,
+    left_ear="Moonshade Earring",
+    right_ear="Thrud Earring",
+    back=Rud.SB
+  })
+
   sets.precast.WS['Atonement'] = {
     ammo="Sapience Orb",
     head="Loess Barbuta +1",
@@ -313,7 +322,7 @@ function init_gear_sets()
   -- Idle sets
   sets.idle = {
     main="Burtgang",
-    sub="Ochain",  
+    sub="Srivatsa",  
     ammo="Staunch Tathlum +1",
     head="Sakpata's Helm",
     body="Sakpata's Breastplate",
@@ -358,7 +367,7 @@ function init_gear_sets()
   --------------------------------------
     
   -- Extra defense sets.  Apply these on top of melee or defense sets.
-  sets.Knockback    = { left_ring="Vocane Ring +1" }
+  sets.Knockback    = { left_ring="Vocane Ring +1", back="Philidor mantle" }
   sets.MP           = { waist="Flume Belt +1" }
   sets.MP_Knockback = {}
     
@@ -395,6 +404,8 @@ function init_gear_sets()
   -- Engaged sets
   --------------------------------------
   sets.engaged = {
+    main="Naegling",
+    sub="Blurred Shield +1",
     ammo="Staunch Tathlum +1",
     head="Sakpata's Helm",
     body="Sakpata's Breastplate",

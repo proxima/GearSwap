@@ -133,8 +133,9 @@ function user_setup()
     send_command('bind @b send muuhja input /ma "Siren" <me>')
     send_command('bind @n sat youcommand Muuhja "Carnage Elegy"')
     send_command('bind @m sat youcommand Muuhja "Mewing Lullaby"')
-    send_command('bind @o sat youcommand Muuhja Assault')
-    send_command('bind @p send muuhja input /pet "Release" <me>')
+    send_command('bind @o sat youcommand Muuhja "Horde Lullaby"')
+    send_command('bind @p sat youcommand Zuuhja "Sleepga"')
+    -- send_command('bind @p send muuhja input /pet "Release" <me>')
     send_command('bind @= send muuhja input /ja "Apogee" <me>')
 
     send_command('bind @c gs c toggle CP')
@@ -172,7 +173,7 @@ function user_setup()
     send_command('bind @n sat youcommand Muuhja "Carnage Elegy"')
     -- send_command('bind @m sat youcommand Muuhja "Pining Nocturne"')
     send_command('bind @o sat youcommand Muuhja "Horde Lullaby"')
-    send_command('bind @p sat youcommand Zuuhja "Fire"')
+    -- send_command('bind @p sat youcommand Zuuhja "Fire"')
     
     send_command('bind numpad0 gs c step t')
 
@@ -379,10 +380,12 @@ function init_gear_sets()
     sets.precast.WS['Rudra\'s Storm'] = set_combine(sets.precast.WS, {
       ammo="Charis Feather",
       head="Nyame Helm",
-      body="Nyame Mail",
-      -- body="Gleti's Cuirass",
+      -- body="Nyame Mail",
+      body="Gleti's Cuirass",
       hands="Maxixi bangles +3",
       legs={ name="Horos Tights +3", augments={'Enhances "Saber Dance" effect',}},
+      -- hands="Nyame Gauntlets",
+      -- legs="Nyame Flanchard",
       feet="Nyame Sollerets",
       neck="Etoile gorget +2",
       waist="Kentarch Belt +1",
@@ -441,16 +444,27 @@ function init_gear_sets()
     sets.resting = {}
 
     sets.idle = {
-      right_ring="Defending ring",
       ammo="Yamarang",
-      head="Malignance chapeau",
-      body="Malignance tabard",
-      hands="Malignance gloves",
-      legs="Malignance tights",
-      feet="Malignance boots",
+      head="Malignance Chapeau",
+      body="Malignance Tabard",
+      hands="Malignance Gloves",
+      legs="Malignance Tights",
+      feet="Malignance Boots",
+      neck={ name="Loricate Torque +1", augments={'Path: A',}},
+      waist="Carrier's Sash",
+      left_ear="Eabani Earring",
+      right_ear={ name="Odnowa Earring +1", augments={'Path: A',}},
+      left_ring="Defending Ring",
+      right_ring="Ilabrat Ring",
+      back={ name="Senuna's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dual Wield"+10','Phys. dmg. taken-10%',}},
     }
 
     sets.idle.DT = set_combine(sets.idle, {
+      head="Nyame Helm",
+      body="Nyame Mail",
+      hands="Nyame gauntlets",
+      legs="Nyame Flanchard",
+      feet="Nyame Sollerets",
     })
 
     sets.idle.Town = set_combine(sets.idle, {

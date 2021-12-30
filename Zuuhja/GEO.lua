@@ -408,11 +408,6 @@ function get_sets()
      back={ name="Nantosuelta's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Phys. dmg. taken-10%',}},
    })
    
-   sets.midcast['Bio'] = set_combine(sets.midcast.IntEnfeebling, {
-     legs={ name="Merlinic Shalwar", augments={'INT+10','VIT+1','"Treasure Hunter"+2',}},
-     feet={ name="Merlinic Crackows", augments={'Mag. Acc.+17','Weapon skill damage +1%','"Treasure Hunter"+2','Accuracy+8 Attack+8',}},
-   })
-
    sets.midcast.MB.normal = set_combine(sets.midcast.nuking.normal, {
      head="Ea Hat +1",
      body="Ea Houppe. +1",
@@ -421,7 +416,11 @@ function get_sets()
    })
 
    sets.midcast.nuking.acc = set_combine(sets.midcast.nuking.normal, {
+     main="Cath Palug hammer",
+     neck="Sanctity necklace",
+     hands="Bagua mitaines +3",
      feet="Jhakri Pigaches +2",
+     waist="Acuity belt +1",
      left_ring="Metamorph Ring +1",
    })
 
@@ -466,6 +465,11 @@ function get_sets()
      back={ name="Nantosuelta's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Phys. dmg. taken-10%',}},
    })
 
+   sets.midcast['Bio'] = set_combine(sets.midcast.IntEnfeebling, {
+     legs={ name="Merlinic Shalwar", augments={'INT+10','VIT+1','"Treasure Hunter"+2',}},
+     feet={ name="Merlinic Crackows", augments={'Mag. Acc.+17','Weapon skill damage +1%','"Treasure Hunter"+2','Accuracy+8 Attack+8',}},
+   })
+   
    -- Enhancing
    sets.midcast.enhancing = set_combine(sets.midcast.casting, {
      main="Gada",

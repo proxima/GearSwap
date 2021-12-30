@@ -79,29 +79,29 @@ function init_gear_sets()
 
     -- Precast sets to enhance JAs
     
-    sets.precast.JA['Triple Shot'] = {body="Navarch's Frac +2"}
-    sets.precast.JA['Snake Eye'] = {legs="Comm. Culottes +2"}
+    sets.precast.JA['Triple Shot'] = {body="Chasseur's Frac +1"}
+    sets.precast.JA['Snake Eye'] = {legs="Comm. Trews +2"}
     sets.precast.JA['Wild Card'] = {feet="Comm. Bottes +2"}
     sets.precast.JA['Random Deal'] = {body="Comm. Frac +2"}
 
     sets.precast.CorsairRoll = {
       main={ name="Rostam", bag="wardrobe 4", priority=1},
-      head="Comm. Tricorne +2",
+      head="Lanun Tricorne +2",
       neck="Regal necklace",
       range="Compensator",
-      hands="Navarch's Gants +2",
+      hands="Chasseur's gants +1",
       right_ring="Luzaf's Ring",
       back=Cape.ROLL
     }
     
-    sets.precast.CorsairRoll["Caster's Roll"] = set_combine(sets.precast.CorsairRoll, {legs="Navarch's Culottes +2"})
-    sets.precast.CorsairRoll["Courser's Roll"] = set_combine(sets.precast.CorsairRoll, {feet="Navarch's Bottes +2"})
-    sets.precast.CorsairRoll["Blitzer's Roll"] = set_combine(sets.precast.CorsairRoll, {head="Navarch's Tricorne +2"})
-    sets.precast.CorsairRoll["Tactician's Roll"] = set_combine(sets.precast.CorsairRoll, {body="Navarch's Frac +2"})
-    sets.precast.CorsairRoll["Allies' Roll"] = set_combine(sets.precast.CorsairRoll, {hands="Navarch's Gants +2"})
+    sets.precast.CorsairRoll["Caster's Roll"] = set_combine(sets.precast.CorsairRoll, {legs="Chasseur's culottes +1"})
+    sets.precast.CorsairRoll["Courser's Roll"] = set_combine(sets.precast.CorsairRoll, {feet="Chasseur's bottes +1"})
+    sets.precast.CorsairRoll["Blitzer's Roll"] = set_combine(sets.precast.CorsairRoll, {head="Chasseur's tricorne +1"})
+    sets.precast.CorsairRoll["Tactician's Roll"] = set_combine(sets.precast.CorsairRoll, {body="Chasseur's frac +1"})
+    sets.precast.CorsairRoll["Allies' Roll"] = set_combine(sets.precast.CorsairRoll, {hands="Chasseur's gants +1"})
     
     sets.precast.LuzafRing = {ring2="Luzaf's Ring"}
-    sets.precast.FoldDoubleBust = {hands="Lanun Gants"}
+    sets.precast.FoldDoubleBust = {hands="Lanun Gants +2"}
     sets.precast.CorsairShot = {}    
 
     -- Waltz set (chr and vit)
@@ -117,8 +117,10 @@ function init_gear_sets()
 
 
     sets.precast.RA = {ammo=gear.RAbullet,
+      head="Chasseur's tricorne +1",
       neck="Commodore's Charm +2",
-      body="Laksa. Frac"}
+      body="Laksa. Frac"
+    }
 
    -- Weaponskill sets
     -- Default set for any weaponskill that isn't any more specifically defined
@@ -196,14 +198,18 @@ function init_gear_sets()
     sets.resting = {}
     
     -- Idle sets
-    sets.idle = {    
+    sets.idle = {
+      main={ name="Rostam", bag="wardrobe 4", priority=1},
+      sub={ name="Rostam", bag="wardrobe 2", priority=2},
       head="Malignance Chapeau",
       body="Malignance Tabard",
       hands="Malignance Gloves",
       legs="Malignance Tights",
       feet="Malignance Boots",
       neck="Commodore Charm +2",
+      waist="Flume belt +1",
       left_ear="Odnowa Earring +1",
+      right_ear="Tuisto Earring +1",
       left_ring="Defending Ring",
       right_ring="Vocane Ring +1",
       back=Cape.ROLL
@@ -236,7 +242,7 @@ function init_gear_sets()
       neck="Iskur Gorget",
       waist={ name="Sailfi Belt +1", augments={'Path: A',}},
       left_ear="Telos Earring",
-      right_ear="Enervating Earring",
+      right_ear="Suppanomimi",
       left_ring="Crepuscular Ring",
       right_ring="Rajas Ring",
       back=Cape.TP

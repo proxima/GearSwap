@@ -111,8 +111,12 @@ hud_font = 'Impact'
 
     -- windower.send_command('bind @a send zuuhja input /ma "Indi-Wilt" <me>')
     -- windower.send_command('bind @s sat youcommand Zuuhja Geo-Frailty')
-    windower.send_command('bind @a sat youcommand Muuhja "Wind Threnody II"')
-    windower.send_command('bind @s sat youcommand Zuuhja Silence')
+
+    send_command('bind @a sat youcommand Zuuhja "Bio";input /ma "Luminohelix" <t>')
+    send_command('bind @s sat youcommand Zuuhja "Bio";input /ma "Luminohelix II" <t>')
+
+    -- windower.send_command('bind @a sat youcommand Muuhja "Wind Threnody II"')
+    -- windower.send_command('bind @s sat youcommand Zuuhja Silence')
     -- windower.send_command('bind @d send zuuhja /ma "Cure" Aller')
     windower.send_command('bind @z send zuuhja input /ja "Full Circle" <me>')
     windower.send_command('bind @x send zuuhja input /ja "Radial Arcana" <me>')
@@ -322,7 +326,6 @@ function get_sets()
       ammo="Ghastly Tathlum +1",
       neck="Fotia Gorget",
       waist="Fotia Belt",
-      head={ name="Blistering Sallet +1", augments={'Path: A',}},
       hands={ name="Gazu Bracelet +1", augments={'Path: A',}},
       left_ring={ name="Metamor. Ring +1", augments={'Path: A',}},
       right_ring="Freke Ring",
@@ -368,10 +371,10 @@ function get_sets()
     sets.me["Cataclysm"] = {
       ammo="Ghastly Tathlum +1",
       head="Pixie hairpin +1",
-      body="Agwu's Robe",
+      body="Nyame Mail",
       hands="Jhakri Cuffs +2",
-      legs={ name="Amalric Slops +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
-      feet={ name="Amalric Nails +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
+      legs="Nyame Flanchard",
+      feet="Nyame Sollerets",
       neck={ name="Argute Stole +2", augments={'Path: A',}},
       waist="Orpheus's Sash",
       left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
@@ -944,7 +947,8 @@ function get_sets()
       right_ear="Mimir Earring",
       left_ear="Regal Earring",
       body="Pedagogy gown +3",
-      hands="Telchine Gloves",
+      hands="Arbatel Bracers +1", -- Tired of this not swapping properly
+      -- hands="Telchine Gloves",
       left_ring={name="Stikini Ring +1",bag="wardrobe 2"},
       right_ring={name="Stikini Ring +1",bag="wardrobe 3"},
       waist="Embla Sash",

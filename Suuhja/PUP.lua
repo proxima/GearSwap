@@ -297,6 +297,11 @@ function init_gear_sets()
         }
     }
 
+    Visucius.Aeolian = {
+        name="Visucius's Mantle",
+        augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}
+    }
+
     --------------------------------------------------------------------------------
     --  __  __           _               ____        _          _____      _
     -- |  \/  |         | |             / __ \      | |        / ____|    | |
@@ -354,12 +359,12 @@ function init_gear_sets()
     sets.precast.JA["Maintenance"] = set_combine(sets.precast.JA["Repair"], {})
 
     sets.precast.JA.Maneuver = {    
-        main = "Midnights",
-        neck = "Buffoon's Collar +1",
-        body = Empy_Karagoz.Body_Overload,
-        hands = Artifact_Foire.Hands_Mane_Overload,
-        back = "Visucius's Mantle",
-        ear1 = "Burana Earring"
+      -- main = "Midnights",
+      neck = "Buffoon's Collar +1",
+      body = Empy_Karagoz.Body_Overload,
+      hands = Artifact_Foire.Hands_Mane_Overload,
+      back = "Visucius's Mantle",
+      ear1 = "Burana Earring"
     }
 
     sets.precast.JA["Activate"] = {back = "Visucius's Mantle"}
@@ -379,47 +384,86 @@ function init_gear_sets()
     -- Weaponskill sets
     -- Default set for any weaponskill that isn't any more specifically defined
     sets.precast.WS = {
-      head=Relic_Pitre.Head_PRegen,
-      body="Heyoka harness +1",
-      hands=Relic_Pitre.Hands_WSD,
-      legs="Hiza. Hizayoroi +2",
-      feet={ name="Herculean Boots", augments={'"Triple Atk."+3','Rng.Atk.+13','Quadruple Attack +3','Accuracy+13 Attack+13','Mag. Acc.+4 "Mag.Atk.Bns."+4',}},
+    }
+
+    -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
+    sets.precast.WS["Stringing Pummel"] = {
+      head={ name="Blistering Sallet +1", augments={'Path: A',}},
+      body="Mpaca's Doublet",
+      hands="Mpaca's Gloves",
+      legs="Mpaca's Hose",
+      feet="Mpaca's Boots",
       neck="Fotia Gorget",
-      waist="Fotia Belt",
-      left_ear="Brutal Earring",
+      waist="Moonbow Belt +1",
+      left_ear={ name="Schere Earring", augments={'Path: A',}},
       right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
       left_ring="Gere Ring",
       right_ring="Niqmaddu Ring",
       back=Visucius.MasterDA
     }
 
-    -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
-    sets.precast.WS["Stringing Pummel"] = set_combine(sets.precast.WS, {
+    sets.precast.WS["Stringing Pummel"].Mod = set_combine(sets.precast.WS["Stringing Pummel"], {
     })
 
-    sets.precast.WS["Stringing Pummel"].Mod = set_combine(sets.precast.WS, {
-    })
-
-    sets.precast.WS["Victory Smite"] = set_combine(sets.precast.WS, {
-      legs="Samnuha Tights",
+    sets.precast.WS["Victory Smite"] = {
+      head={ name="Blistering Sallet +1", augments={'Path: A',}},
+      body="Mpaca's Doublet",
+      hands="Mpaca's Gloves",
+      legs="Mpaca's Hose",
+      feet="Mpaca's Boots",
+      neck="Fotia Gorget",
       waist="Moonbow Belt +1",
-    })
+      left_ear={ name="Schere Earring", augments={'Path: A',}},
+      right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
+      left_ring="Gere Ring",
+      right_ring="Niqmaddu Ring",
+      back=Visucius.MasterDA
+    }
 
-    sets.precast.WS["Shijin Spiral"] = set_combine(sets.precast.WS, {
+    sets.precast.WS["Shijin Spiral"] = {
+      head="Malignance Chapeau",
+      body="Tali'ah Manteel +2",
+      hands="Malignance Gloves",
+      legs={ name="Samnuha Tights", augments={'STR+9','DEX+8','"Dbl.Atk."+2','"Triple Atk."+2',}},
+      feet={ name="Herculean Boots", augments={'"Triple Atk."+3','Rng.Atk.+13','Quadruple Attack +3','Accuracy+13 Attack+13','Mag. Acc.+4 "Mag.Atk.Bns."+4',}},
+      neck="Fotia Gorget",
+      waist="Moonbow Belt +1",
+      left_ear={ name="Schere Earring", augments={'Path: A',}},
+      right_ear="Mache Earring +1",
+      left_ring="Gere Ring",
+      right_ring="Niqmaddu Ring",
+      back=Visucius.MasterDA
+    }
+
+    sets.precast.WS["Howling Fist"] = {
+      head="Mpaca's Cap",
       body="Tali'ah Manteel +2",
       hands="Mpaca's Gloves",
-      legs="Samnuha Tights",     
-      right_ring="Regal Ring", 
-      left_ear="Mache Earring +1",      
-    })
-
-    sets.precast.WS["Howling Fist"] = set_combine(sets.precast.WS, {
-      body="Tali'ah Manteel +2",
-      hands="Mpaca's Gloves",
-      legs="Samnuha Tights",
-      waist="Moonbow Belt +1",
+      legs="Mpaca's Hose",
+      feet={ name="Herculean Boots", augments={'"Triple Atk."+3','Rng.Atk.+13','Quadruple Attack +3','Accuracy+13 Attack+13','Mag. Acc.+4 "Mag.Atk.Bns."+4',}},
       neck={ name="Pup. Collar +2", augments={'Path: A',}},
-    })
+      waist="Moonbow Belt +1",
+      left_ear={ name="Schere Earring", augments={'Path: A',}},
+      right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
+      left_ring="Gere Ring",
+      right_ring="Niqmaddu Ring",
+      back=Visucius.MasterDA
+    }
+
+    sets.precast.WS["Aeolian Edge"] = {
+      head={ name="Nyame Helm", augments={'Path: B',}},
+      body={ name="Nyame Mail", augments={'Path: B',}},
+      hands={ name="Nyame Gauntlets", augments={'Path: B',}},
+      legs={ name="Nyame Flanchard", augments={'Path: B',}},
+      feet={ name="Nyame Sollerets", augments={'Path: B',}},
+      neck="Saevus Pendant +1",
+      waist="Orpheus's Sash",
+      left_ear="Friomisi Earring",
+      right_ear="Crematio Earring",
+      left_ring={ name="Metamor. Ring +1", augments={'Path: A',}},
+      right_ring="Epaminondas's Ring",
+      back=Visucius.Aeolian
+    }
 
     -------------------------------------Idle
     --[[
@@ -427,7 +471,6 @@ function init_gear_sets()
         Idle Mode = MasterDT
     ]]
     sets.idle.MasterDT = {
-        main={ name="Xiucoatl", augments={'Path: C',}},
         head="Malignance Chapeau",
         body="Malignance Tabard",
         hands="Malignance Gloves",
@@ -474,7 +517,20 @@ function init_gear_sets()
         Offense Mode = Master
         Hybrid Mode = TP
     ]]
-    sets.engaged.Master.TP = sets.engaged.Master
+    sets.engaged.Master.TP = {
+        head="Malignance Chapeau", -- 6
+        body="Malignance Tabard", -- 9
+        hands="Malignance Gloves", -- 5
+        legs = "Malignance Tights", -- 7
+        feet="Malignance Boots", -- 4
+        neck="Shulmanu Collar",
+        waist="Moonbow Belt +1", -- 6
+        left_ear="Mache Earring +1",
+        right_ear="Odnowa Earring +1", -- 3
+        left_ring="Niqmaddu Ring",
+        right_ring="Gere Ring",
+        back=Visucius.MasterDA
+    }
 
     -------------------------------------DT
     --[[
@@ -487,7 +543,7 @@ function init_gear_sets()
         hands="Malignance Gloves", -- 5
         legs = "Malignance Tights", -- 7
         feet="Malignance Boots", -- 4
-        neck={ name="Pup. Collar +2", augments={'Path: A',}},
+        neck="Shulmanu Collar",
         waist="Moonbow Belt +1", -- 6
         left_ear="Mache Earring +1",
         right_ear="Odnowa Earring +1", -- 3

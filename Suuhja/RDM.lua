@@ -81,7 +81,7 @@ nukeModes = M('normal', 'acc')
 
 
 mainWeapon = M('Crocea Mors', 'Daybreak', 'Naegling', 'Kaja Rod', 'Tauret', 'Wind Knife')
-subWeapon = M('Ammurapi Shield', 'Daybreak', 'Malevolence', 'Sacro Bulwark', 'Firetongue')
+subWeapon = M('Ammurapi Shield', "Bunzi's Rod", 'Daybreak', 'Malevolence', 'Sacro Bulwark', 'Firetongue')
 
 ------------------------------------------------------------------------------------------------------
 
@@ -354,7 +354,7 @@ function get_sets()
       neck={ name="Dls. Torque +2", augments={'Path: A',}},
       waist="Grunfeld Rope",
       left_ear="Moonshade Earring",
-      right_ear="Sherida Earring",
+      right_ear="Regal Earring",
       left_ring={ name="Metamor. Ring +1", augments={'Path: A',}},
       right_ring="Epaminondas's Ring",
       back=RDMCape.BlackHalo
@@ -400,11 +400,11 @@ function get_sets()
 
     sets.me["Red Lotus Blade"] = {
       ammo="Pemphredo Tathlum",
-      head={ name="Merlinic Hood", augments={'Mag. Acc.+24 "Mag.Atk.Bns."+24','Magic burst dmg.+10%','INT+5','Mag. Acc.+3','"Mag.Atk.Bns."+9',}}, -- Replace with Cait Sith head
-      body={ name="Amalric Doublet +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
+      head="Nyame Helm",
+      body="Nyame Mail",
       hands="Jhakri Cuffs +2",
-      legs={ name="Amalric Slops +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
-      feet={ name="Amalric Nails +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
+      legs="Nyame Flanchard",
+      feet="Nyame Sollerets",
       neck="Sanctity Necklace",
       waist="Orpheus's Sash",
       left_ear="Moonshade Earring",
@@ -416,16 +416,20 @@ function get_sets()
 
     sets.me["Burning Blade"] = sets.me["Red Lotus Blade"]
     sets.me["Shining Blade"] = sets.me["Red Lotus Blade"]
-    sets.me["Seraph Blade"] = sets.me["Red Lotus Blade"]
-    sets.me["Seraph Strike"] = sets.me["Red Lotus Blade"]
+
+    sets.me["Seraph Blade"] = set_combine(sets.me["Red Lotus Blade"], {
+      ammo="Regal Gem",
+    })
+
+    sets.me["Seraph Strike"] = sets.me["Seraph Blade"]
     
     sets.me["Aeolian Edge"] = {
       ammo={ name="Ghastly Tathlum +1", augments={'Path: A',}},
-      head={ name="Merlinic Hood", augments={'Mag. Acc.+24 "Mag.Atk.Bns."+24','Magic burst dmg.+10%','INT+5','Mag. Acc.+3','"Mag.Atk.Bns."+9',}}, -- Replace with Cait Sith head
-      body={ name="Amalric Doublet +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
+      head="Nyame Helm",
+      body="Nyame Mail",
       hands="Jhakri Cuffs +2",
-      legs={ name="Amalric Slops +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
-      feet={ name="Amalric Nails +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
+      legs="Nyame Flanchard",
+      feet="Nyame Sollerets",
       neck="Sanctity Necklace",
       waist="Orpheus's Sash",
       left_ear="Regal Earring",
@@ -453,7 +457,7 @@ function get_sets()
     -- Generic Casting Set that all others take off of. Here you should add all your fast cast RDM need 50 pre JP 42 at master
     sets.precast.casting = {
       head={ name="Merlinic Hood", augments={'"Fast Cast"+7','"Mag.Atk.Bns."+14',}},
-	  body="Viti. Tabard +3",
+      body="Viti. Tabard +3",
       hands={ name="Chironic Gloves", augments={'"Fast Cast"+7','MND+9','Mag. Acc.+4','"Mag.Atk.Bns."+13',}},
       legs="Aya. Cosciales +2",
       feet={ name="Merlinic Crackows", augments={'Attack+22','"Fast Cast"+7',}},
@@ -501,7 +505,7 @@ function get_sets()
     }
     
     sets.midcast.Orpheus = {
-      -- waist="Orpheus's Sash", -- Commented cause I dont have one yet
+      waist="Orpheus's Sash",
     }
     
     -----------------------------------------------------------------------------------------------
@@ -526,8 +530,8 @@ function get_sets()
     }
 
     sets.midcast.nuking.normal = {
-      main="Marin staff +1",
-      sub="Enki strap",
+      main="Bunzi's Rod",
+      sub="Ammurapi Shield",
       ammo="Ghastly Tathlum +1",
       head={ name="Merlinic Hood", augments={'Mag. Acc.+24 "Mag.Atk.Bns."+24','Magic burst dmg.+10%','INT+5','Mag. Acc.+3','"Mag.Atk.Bns."+9',}},
       body={ name="Amalric Doublet +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
@@ -540,7 +544,6 @@ function get_sets()
       right_ear="Malignance Earring",
       left_ring="Freke Ring",
       right_ring={ name="Metamor. Ring +1", augments={'Path: A',}},
-      legs={ name="Merlinic Shalwar", augments={'Mag. Acc.+25 "Mag.Atk.Bns."+25','Magic burst dmg.+10%','INT+8','Mag. Acc.+8',}},
       back=RDMCape.MACC      
     }
 
@@ -552,7 +555,6 @@ function get_sets()
       legs="Ea Slops +1",
       hands={ name="Amalric Gages +1", augments={'INT+12','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
       right_ring="Mujin Band",
-      legs={ name="Merlinic Shalwar", augments={'Mag. Acc.+25 "Mag.Atk.Bns."+25','Magic burst dmg.+10%','INT+8','Mag. Acc.+8',}},
     })
 
     sets.midcast.nuking.acc = {
@@ -566,27 +568,26 @@ function get_sets()
     sets.midcast.MB.acc = set_combine(sets.midcast.nuking.acc, {
       waist="Acuity Belt +1",
       right_ring={ name="Metamor. Ring +1", augments={'Path: A',}},	
-      feet="Jhakri Pigaches +2",     
+      feet="Jhakri Pigaches +2",
     })
 
     -- Enfeebling
-
     sets.midcast.Enfeebling = {} -- leave Empty
     
     --Type A-pure macc no potency mod
     sets.midcast.Enfeebling.macc = {
-      main="Daybreak",
+      main="Daybreak",             -- Murgleis
       sub="Ammurapi Shield",
-      ammo="Regal gem",
-      head="Vitiation Chapeau +3",
+      range="Ullr",
+      head="Vitiation Chapeau +3", -- Atrophy Chapeau +3
       neck="Dls. Torque +2",
       left_ear="Snotra Earring",
       right_ear="Regal Earring",
       body="Atrophy Tabard +3",
-      hands="Regal Cuffs",
+      hands="Regal Cuffs",         -- Kaykaus Cuffs +1, Path A
       left_ring={name="Stikini Ring +1",bag="wardrobe 2"},
       right_ring={name="Stikini Ring +1",bag="wardrobe 3"},
-      back=RDMCape.MACC,
+      back=RDMCape.MACC,           -- Aurist's Cape +1
       waist="Acuity Belt +1",
       legs={ name="Chironic Hose", augments={'Mag. Acc.+21 "Mag.Atk.Bns."+21','"Fast Cast"+5','MND+11','Mag. Acc.+13','"Mag.Atk.Bns."+6',}},
       feet="Vitiation Boots +3",
@@ -594,20 +595,22 @@ function get_sets()
 
     -- Type B-potency from: Mnd & "Enfeeb Potency" gear
     sets.midcast.Enfeebling.mndpot = set_combine(sets.midcast.Enfeebling.macc, {
+      ammo="Regal Gem",
       body="Lethargy Sayon +1",
       left_ring="Metamorph Ring +1",
       waist="Luminary Sash",
-	})
+    })
 
     -- Type C-potency from: Int & "Enfeeb Potency" gear
     sets.midcast.Enfeebling.intpot = set_combine(sets.midcast.Enfeebling.macc, {
+      ammo="Regal Gem",
       body="Lethargy Sayon +1",
       left_ring="Metamorph Ring +1",
-	})
+    })
 
     -- Type D-potency from: Enfeeb Skill & "Enfeeb Potency" gear
     sets.midcast.Enfeebling.skillpot = sets.midcast.Enfeebling.macc
-	
+ 
     -- Type E-potency from: Enfeeb skill, Mnd, & "Enfeeb Potency" gear
     sets.midcast.Enfeebling.skillmndpot = sets.midcast.Enfeebling.macc
     
@@ -616,7 +619,12 @@ function get_sets()
       body="Lethargy Sayon +1",
       legs="Malignance Tights",
       left_ring="Kishar ring",
-	})
+    })
+
+    sets.midcast["Dispelga"] = set_combine(sets.midcast.Enfeebling.macc, {
+      main="Daybreak",
+      sub="Ammurapi Shield"
+    })
 
     sets.midcast["Stun"] = set_combine(sets.midcast.Enfeebling.macc, {
     })
@@ -627,7 +635,7 @@ function get_sets()
       sub="Ammurapi Shield",
       ammo="Staunch Tathlum +1",
       neck="Dls. Torque +2",
-      body="Telchine Chas.",
+      body="Viti. Tabard +3",
       head="Telchine Cap",
       hands="Atrophy Gloves +3",
       legs="Telchine Braconi",
@@ -642,8 +650,7 @@ function get_sets()
     -- For Potency spells like Temper and Enspells
     sets.midcast.enhancing.potency = set_combine(sets.midcast.enhancing.duration, {
       head="Befouled crown",
-	  body="Viti. Tabard +3",
-	  hands="Viti. Gloves +3",
+      hands="Viti. Gloves +3",
       legs="Atrophy Tights +3",
     }) 
 
@@ -671,7 +678,7 @@ function get_sets()
     })
 
     sets.midcast.aquaveil = set_combine(sets.midcast.refresh, {
-	  body="Viti. Tabard +3",
+      body="Viti. Tabard +3",
       hands="Regal Cuffs",
     })
 
@@ -680,9 +687,7 @@ function get_sets()
       sub="Ammurapi shield",
       ammo="Pemphredo tathlum",
       head="Pixie hairpin +1",
-      body={ name="Merlinic Jubbah", augments={'Mag. Acc.+24 "Mag.Atk.Bns."+24','Magic burst dmg.+10%','INT+1','Mag. Acc.+1','"Mag.Atk.Bns."+11',}},
       hands={ name="Merlinic Dastanas", augments={'"Mag.Atk.Bns."+11','"Drain" and "Aspir" potency +10','MND+6',}},
-      legs={ name="Merlinic Shalwar", augments={'Mag. Acc.+25 "Mag.Atk.Bns."+25','Magic burst dmg.+10%','INT+8','Mag. Acc.+8',}},
       feet={ name="Merlinic Crackows", augments={'"Drain" and "Aspir" potency +10',}},
       neck="Erra pendant",
       waist="Fucho-no-Obi",

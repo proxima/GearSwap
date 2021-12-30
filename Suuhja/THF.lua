@@ -361,7 +361,7 @@ function init_gear_sets()
       feet="Nyame Sollerets",
       neck="Loricate Torque +1",
       waist="Reiki Yotai",
-	  left_ear="Etiolation Earring",
+      left_ear="Etiolation Earring",
       right_ear="Odnowa Earring +1",
       right_ring="Defending ring",
       left_ring="Gelatinous Ring +1",

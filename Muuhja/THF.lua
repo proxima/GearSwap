@@ -146,8 +146,8 @@ function init_gear_sets()
       waist="Fotia Belt",
       left_ear="Sherida Earring",
       right_ear="Odr Earring",
-      left_ring="Gere Ring",
-      right_ring="Begrudging Ring",
+      left_ring="Regal Ring",
+      right_ring="Ilabrat Ring",
       back={ name="Senuna's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Crit.hit rate+10',}},
     }
     sets.precast.WS.Acc = set_combine(sets.precast.WS, {})
@@ -179,7 +179,7 @@ function init_gear_sets()
       left_ear="Sherida Earring",
       right_ear="Odr Earring",
       left_ring="Regal Ring",
-      right_ring="Overbearing Ring",
+      right_ring="Ilabrat Ring",
       back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Crit.hit rate+10','Phys. dmg. taken-10%',}},
     })
     sets.precast.WS['Evisceration'].Acc = set_combine(sets.precast.WS['Evisceration'], {})
@@ -200,13 +200,15 @@ function init_gear_sets()
       left_ear="Sherida Earring",
       right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
       left_ring="Regal Ring",
-      right_ring="Epaminondas's Ring",
+      right_ring="Ilabrat Ring",
       back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Crit.hit rate+10',}},
     })
     
     sets.precast.WS["Rudra's Storm"].Acc = set_combine(sets.precast.WS["Rudra's Storm"], {})
     sets.precast.WS["Rudra's Storm"].Mod = set_combine(sets.precast.WS["Rudra's Storm"], {})
-    sets.precast.WS["Rudra's Storm"].SA = set_combine(sets.precast.WS["Rudra's Storm"].Mod, {})
+    sets.precast.WS["Rudra's Storm"].SA = set_combine(sets.precast.WS["Rudra's Storm"].Mod, {
+        right_ring="Epaminondas's Ring",
+    })
     sets.precast.WS["Rudra's Storm"].TA = set_combine(sets.precast.WS["Rudra's Storm"].Mod, {})
     sets.precast.WS["Rudra's Storm"].SATA = set_combine(sets.precast.WS["Rudra's Storm"].Mod, {})
 
