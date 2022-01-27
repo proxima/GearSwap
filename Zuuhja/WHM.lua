@@ -572,7 +572,7 @@ function init_gear_sets()
       left_ear={ name="Odnowa Earring +1", augments={'Path: A',}},
       right_ear={ name="Moonshade Earring", augments={'HP+25','Latent effect: "Refresh"+1',}},
       left_ring="Defending Ring",
-      right_ring="Vocane Ring +1",
+      right_ring="Gelatinous Ring +1", -- 7 dt
     }
 
     sets.idle.DT = set_combine(sets.idle, {
@@ -586,7 +586,7 @@ function init_gear_sets()
       feet="Inyanga Crackows +2",
       right_ear="Etiolation earring",
       left_ring="Defending Ring",
-      right_ring="Vocane Ring +1",
+      right_ring="Gelatinous Ring +1", -- 7 dt
     })
 
     sets.idle.MEva = set_combine(sets.idle, {
@@ -601,7 +601,7 @@ function init_gear_sets()
     })
 
     sets.idle.Town = set_combine(sets.idle, {
-      feet="Herald's Gaiters"
+      right_ring="Shneddick Ring +1"
     })
 
     -- Defense sets
@@ -609,7 +609,7 @@ function init_gear_sets()
     sets.defense.PDT = sets.idle.DT
     sets.defense.MDT = sets.idle.DT
 
-    sets.Kiting = {feet="Herald's Gaiters"}
+    sets.Kiting = {right_ring="Shneddick Ring +1"}
     sets.latent_refresh = {waist="Fucho-no-obi"}
 
     -- Engaged sets

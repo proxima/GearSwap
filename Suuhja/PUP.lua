@@ -318,6 +318,21 @@ function init_gear_sets()
     ]]
     sets.idle = {}
 
+    sets.MEVA = {
+      head="Malignance Chapeau",
+      body="Malignance Tabard",
+      hands="Malignance Gloves",
+      legs="Malignance Tights",
+      feet="Malignance Boots",
+      neck="Shulmanu Collar",
+      waist="Carrier's Sash",
+      left_ear="Eabani Earring",
+      right_ear="Etiolation Earring",
+      left_ring="C. Palug Ring",
+      right_ring="Thur. Ring +1",
+      back=Visucius.PetDT
+    }
+
     -------------------------------------Fastcast
     sets.precast.FC = {
     }
@@ -690,20 +705,22 @@ function init_gear_sets()
         F10 if Physical Defense Mode = PetDT
     ]]
     sets.pet.EmergencyDT = {
-        main="Midnights",
-        head="Anwig Salade",
-        -- head={ name="Rao Kabuto +1", augments={'Pet: HP+125','Pet: Accuracy+20','Pet: Damage taken -4%',}},       --  4
-        body={ name="Rao Togi +1", augments={'Pet: HP+125','Pet: Accuracy+20','Pet: Damage taken -4%',}},         --  4
-        hands={ name="Rao Kote +1", augments={'Pet: HP+125','Pet: Accuracy+20','Pet: Damage taken -4%',}},        --  4
-        legs={ name="Rao Haidate +1", augments={'Pet: HP+125','Pet: Accuracy+20','Pet: Damage taken -4%',}},      --  4
-        feet={ name="Rao sune-ate +1", augments={'Pet: HP+125','Pet: Accuracy+20','Pet: Damage taken -4%',}},     --  4
-        neck="Shulmanu Collar",
-        waist="Isa Belt",                                                                                         --  3
-        left_ear="Enmerkar earring",                                                                              --  3
-        right_ear="Rimeice Earring",                                                                              --  1
-        left_ring="Thurandaut Ring +1",                                                                           --  4
-        right_ring="Overbearing Ring",
-        back=Visucius.PetDT                                                                                       --  5
+      main="Xiucoatl",
+      -- head="Anwig Salade",
+      head={ name="Rao Kabuto +1", augments={'Pet: HP+125','Pet: Accuracy+20','Pet: Damage taken -4%',}},       --  4
+      body={ name="Rao Togi +1", augments={'Pet: HP+125','Pet: Accuracy+20','Pet: Damage taken -4%',}},         --  4
+      hands={ name="Rao Kote +1", augments={'Pet: HP+125','Pet: Accuracy+20','Pet: Damage taken -4%',}},        --  4
+      legs={ name="Rao Haidate +1", augments={'Pet: HP+125','Pet: Accuracy+20','Pet: Damage taken -4%',}},      --  4
+      feet={ name="Rao sune-ate +1", augments={'Pet: HP+125','Pet: Accuracy+20','Pet: Damage taken -4%',}},     --  4
+      neck="Shulmanu Collar",
+      waist="Klouskap sash +1",
+      -- waist="Isa Belt",                                                                                         --  3
+      left_ear="Enmerkar earring",                                                                              --  3
+      right_ear="Rimeice Earring",                                                                              --  1
+      left_ring="Thurandaut Ring +1",                                                                           --  4
+      right_ring="C. Palug Ring",
+      --right_ring="Overbearing Ring",
+      back=Visucius.PetDT                                                                                       --  5
     }
 
     -------------------------------------Engaged for Pet Only

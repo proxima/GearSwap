@@ -282,6 +282,7 @@ function init_gear_sets()
 
     sets.precast.WS['Black Halo'] = set_combine(sets.precast.WS, {
       waist="Luminary sash",
+      right_ear="Ishvara Earring",
     })
 
     sets.precast.WS['Hexa Strike'] = set_combine(sets.precast.WS, {
@@ -560,9 +561,9 @@ function init_gear_sets()
       main="Daybreak",
       sub="Ammurapi Shield",
       ammo="Pemphredo Tathlum",
-      head="Theophany Cap +2",
-      body="Theo. Bliaut +2",
-      hands="Theophany Mitts +2",
+      head=empty, 
+      body="Cohort Cloak +1",
+      hands="Kaykaus Cuffs +1",
       legs={ name="Chironic Hose", augments={'Mag. Acc.+21 "Mag.Atk.Bns."+21','"Fast Cast"+5','MND+11','Mag. Acc.+13','"Mag.Atk.Bns."+6',}},
       feet="Theo. Duckbills +2",
       neck="Erra Pendant",
@@ -675,11 +676,13 @@ function init_gear_sets()
     -- Basic set for if no TP weapon is defined.
     sets.engaged = {
       main="Yagrush",
-      sub="Magesmasher +1",
+      -- sub="Magesmasher +1",
       ammo="Staunch Tathlum +1",
-      head={ name="Blistering Sallet +1", augments={'Path: A',}},
+      head="Nyame Helm",
+      hands="Nyame Gauntlets",
+      -- head={ name="Blistering Sallet +1", augments={'Path: A',}},
       body="Nyame Mail",
-      hands={ name="Gazu Bracelet +1", augments={'Path: A',}},
+      -- hands={ name="Gazu Bracelet +1", augments={'Path: A',}},
       legs="Nyame Flanchard",
       feet="Nyame Sollerets",
       neck="Lissome necklace",

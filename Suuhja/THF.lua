@@ -212,7 +212,7 @@ function init_gear_sets()
       right_ear="Odr Earring",
       left_ring="Regal Ring",
       right_ring="Ilabrat Ring",
-      back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Crit.hit rate+10',}},
+      back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Crit.hit rate+10','Phys. dmg. taken-10%',}},
     })
 
     sets.precast.WS['Evisceration'].Acc =  set_combine(sets.precast.WS['Evisceration'], {})
@@ -225,8 +225,10 @@ function init_gear_sets()
       ammo={ name="Seeth. Bomblet +1", augments={'Path: A',}},
       head="Nyame Helm",
       body="Nyame Mail",
-      hands="Meg. Gloves +2",
-      legs="Plunderer's Culottes +3",
+      -- hands="Meg. Gloves +2",
+      -- legs="Plunderer's Culottes +3",
+      hands="Nyame Gauntlets",
+      legs="Nyame Flanchard",  
       feet="Nyame Sollerets",
       neck="Assassin's Gorget +2",
       waist="Kentarch Belt +1",

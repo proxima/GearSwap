@@ -37,7 +37,7 @@ end
 -- Setup vars that are user-dependent.  Can override this function in a sidecar file.
 function user_setup()
     state.OffenseMode:options('Ranged', 'Melee', 'Acc')
-    state.RangedMode:options('Normal', 'Acc')
+    state.RangedMode:options('Normal', 'Acc', 'Crit')
     state.WeaponskillMode:options('Normal', 'Acc', 'Att', 'Mod')
     state.CastingMode:options('Normal', 'Resistant')
     state.IdleMode:options('Normal', 'PDT', 'Refresh')
@@ -81,12 +81,12 @@ function init_gear_sets()
     
     sets.precast.JA['Triple Shot'] = {body="Chasseur's Frac +1"}
     sets.precast.JA['Snake Eye'] = {legs="Lanun Trews +1"}
-    sets.precast.JA['Wild Card'] = {feet="Lanun Bottes +2"}
+    sets.precast.JA['Wild Card'] = {feet="Lanun Bottes +3"}
     sets.precast.JA['Random Deal'] = {body="Lanun Frac +3"}
 
     sets.precast.CorsairRoll = {
       main={ name="Rostam", bag="wardrobe 4", priority=1},
-      head="Lanun Tricorne +2",
+      head="Lanun Tricorne +3",
       neck="Regal necklace",
       range="Compensator",
       hands="Chasseur's gants +1",
@@ -101,7 +101,7 @@ function init_gear_sets()
     sets.precast.CorsairRoll["Allies' Roll"] = set_combine(sets.precast.CorsairRoll, {hands="Chasseur's gants +1"})
     
     sets.precast.LuzafRing = {ring2="Luzaf's Ring"}
-    sets.precast.FoldDoubleBust = {hands="Lanun Gants +2"}
+    sets.precast.FoldDoubleBust = {hands="Lanun Gants +3"}
     sets.precast.CorsairShot = {}    
 
     -- Waltz set (chr and vit)
@@ -115,17 +115,20 @@ function init_gear_sets()
 
     sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {})
 
-
     sets.precast.RA = {ammo=gear.RAbullet,
-      head="Chasseur's tricorne +1",
+      head="Taeon Chapeau",
+      -- head="Chasseur's tricorne +1",
       neck="Commodore Charm +2",
-      body="Laksa. Frac"
+      body="Laksa. Frac +3",
+      hands="Carmine Finger Gauntlets +1",
+      back=Cape.ROLL,
+      waist="Yemaya Belt",
+      legs="Adhemar Kecks +1",
     }
 
     -- Weaponskill sets
     -- Default set for any weaponskill that isn't any more specifically defined
     sets.precast.WS = {}
-
 
     -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
     sets.precast.WS['Evisceration'] = sets.precast.WS
@@ -134,7 +137,21 @@ function init_gear_sets()
 
     sets.precast.WS['Requiescat'] = set_combine(sets.precast.WS, {})
 
-    sets.precast.WS['Last Stand'] = {ammo=gear.WSbullet}
+    sets.precast.WS['Last Stand'] = {ammo=gear.WSbullet,
+      head={ name="Lanun Tricorne +3", augments={'Enhances "Winning Streak" effect',}},
+      body="Laksa. Frac +3",
+      hands="Meg. Gloves +2",
+      legs="Malignance Tights",
+      feet={ name="Lanun Bottes +3", augments={'Enhances "Wild Card" effect',}},
+      neck="Fotia Gorget",
+      waist="Fotia Belt",
+      left_ear="Ishvara Earring",
+      right_ear={ name="Moonshade Earring", augments={'"Mag.Atk.Bns."+4','TP Bonus +250',}},
+      left_ring="Ilabrat Ring",
+      right_ring="Dingir Ring",
+      back={ name="Camulus's Mantle", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','AGI+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}},
+    }
+
     sets.precast.WS['Last Stand'].Acc = {ammo=gear.WSbullet}
 
     sets.precast.WS['Detonator'] = {
@@ -156,9 +173,36 @@ function init_gear_sets()
     sets.precast.WS['Wildfire'] = {ammo=gear.MAbullet}
     sets.precast.WS['Wildfire'].Brew = {ammo=gear.MAbullet,}
 
-    sets.precast.WS['Leaden Salute'] = sets.precast.WS['Wildfire']
-    
-    
+    sets.precast.WS['Leaden Salute'] = {ammo=gear.MAbullet,
+      head="Pixie Hairpin +1",
+      body={ name="Lanun Frac +3", augments={'Enhances "Loaded Deck" effect',}},
+      hands="Nyame Gauntlets",
+      legs="Nyame Flanchard",
+      feet={ name="Lanun Bottes +3", augments={'Enhances "Wild Card" effect',}},
+      neck={ name="Comm. Charm +2", augments={'Path: A',}},
+      waist="Svelt. Gouriz +1",
+      left_ear={ name="Moonshade Earring", augments={'"Mag.Atk.Bns."+4','TP Bonus +250',}},
+      right_ear="Crematio Earring",
+      left_ring="Dingir Ring",
+      right_ring="Ilabrat Ring",
+      back={ name="Camulus's Mantle", augments={'AGI+20','Mag. Acc+20 /Mag. Dmg.+20','AGI+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}},
+    }
+
+    sets.precast.WS['Savage Blade'] = {
+      head={ name="Blistering Sallet +1", augments={'Path: A',}}, -- Nyame
+      body="Laksa. Frac +3",
+      hands="Meg. Gloves +2",                                     -- Eventually Nyame
+      legs="Malignance Tights",                                   -- Nyame
+      feet="Lanun Bottes +3",
+      neck={ name="Comm. Charm +2", augments={'Path: A',}},
+      waist={ name="Sailfi Belt +1", augments={'Path: A',}},
+      left_ear="Ishvara Earring",
+      right_ear={ name="Moonshade Earring", augments={'"Mag.Atk.Bns."+4','TP Bonus +250',}},
+      left_ring={ name="Metamor. Ring +1", augments={'Path: A',}},
+      right_ring="Shukuyu Ring",
+      back={ name="Camulus's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}},
+    }
+        
     -- Midcast Sets
     sets.midcast.FastRecast = {}
         
@@ -175,13 +219,13 @@ function init_gear_sets()
 
     -- Ranged gear
     sets.midcast.RA = {ammo=gear.RAbullet,
-      head="Malignance Chapeau",
+      head="Ikenga's Hat",
       neck="Iskur Gorget",
       left_ear="Telos Earring",
       right_ear="Enervating Earring",
       body="Malignance Tabard",
       hands="Malignance Gloves",
-      legs="Malignance Tights",
+      legs="Ikenga's Trousers",
       feet="Malignance Boots",
       left_ring="Dingir Ring",
       right_ring="Ilabrat Ring",
@@ -189,8 +233,23 @@ function init_gear_sets()
       back=Cape.RTP
     }
 
-    sets.midcast.RA.Acc = set_combine(sets.midcast.RA, {
-    })
+    sets.midcast.RA.Acc = {
+    }
+
+    sets.midcast.RA.Crit = {ammo=gear.RAbullet,
+      head="Meghanada Visor +2",
+      neck="Iskur Gorget",
+      left_ear="Odr Earring",
+      right_ear="Telos Earring",
+      body="Meghanada Cuirie +2",
+      hands="Mummu Wrists +2",
+      left_ring="Mummu Ring",
+      right_ring="Begrudging Ring",
+      back=Cape.RCRIT,
+      waist="K. Kachina Belt +1",
+      legs="Darraigner's Brais",
+      feet="Oshosi Leggings +1"
+    }
     
     -- Sets to return to when not performing an action.
     
@@ -209,20 +268,20 @@ function init_gear_sets()
       neck="Commodore Charm +2",
       waist="Flume belt +1",
       left_ear="Odnowa Earring +1",
-      right_ear="Tuisto Earring +1",
+      right_ear="Tuisto Earring",
       left_ring="Defending Ring",
-      right_ring="Vocane Ring +1",
+      right_ring="Gelatinous Ring +1", -- 7 dt
       back=Cape.ROLL
     }
 
-    sets.idle.Town = sets.idle
+    sets.idle.Town = set_combine(sets.idle, {right_ring="Shneddick Ring +1"})
     
     -- Defense sets
     sets.defense.PDT = sets.idle
     
     sets.defense.MDT = sets.idle
 
-    sets.Kiting = {feet="Skadi's Jambeaux +1"}
+    sets.Kiting = {right_ring="Shneddick Ring +1"}
 
     -- Engaged sets
 
@@ -233,7 +292,6 @@ function init_gear_sets()
     
     -- Normal melee group
     sets.engaged.Melee = {
-      ammo=gear.RAbullet,
       head="Malignance Chapeau",
       body="Malignance Tabard",
       hands="Malignance Gloves",
@@ -241,10 +299,10 @@ function init_gear_sets()
       feet="Malignance Boots",
       neck="Iskur Gorget",
       waist={ name="Sailfi Belt +1", augments={'Path: A',}},
-      left_ear="Telos Earring",
-      right_ear="Suppanomimi",
-      left_ring="Crepuscular Ring",
-      right_ring="Rajas Ring",
+      left_ear="Enervating Earring",
+      right_ear="Telos Earring",
+      left_ring="Petrov Ring",
+      right_ring="Gelatinous Ring +1", -- 7 dt
       back=Cape.TP
     }
     
@@ -273,11 +331,11 @@ function init_gear_sets()
       feet="Malignance Boots",
       neck="Iskur Gorget",
       waist={ name="Sailfi Belt +1", augments={'Path: A',}},
-      left_ear="Telos Earring",
-      right_ear="Enervating Earring",
-      left_ring="Crepuscular Ring",
-      right_ring="Rajas Ring",
-      back=Cape.TP  
+      left_ear="Suppanomimi",
+      right_ear="Eabani Earring",
+      left_ring="Petrov Ring",
+      right_ring="Gelatinous Ring +1", -- 7 dt
+      back=Cape.TP
     }
     
     sets.engaged.Acc.DW = {}

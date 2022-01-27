@@ -130,7 +130,7 @@ hud_font = 'Impact'
    windower.send_command('bind @b sat youcommand Muuhja "Magic Finale"')
    windower.send_command('bind @n sat youcommand Muuhja "Carnage Elegy"')
    windower.send_command('bind @m sat youcommand Muuhja "Pining Nocturne"')
-   windower.send_command('bind @o sat youcommand Muuhja "Horde Lullaby II"')
+   windower.send_command('bind @o sat youcommand Muuhja "Horde Lullaby"')
    windower.send_command('bind @p sat youcommand Zuuhja "Sleepga"')
     
    -- windower.send_command('bind @b send muuhja input /ma "Siren" <me>')
@@ -573,29 +573,35 @@ function get_sets()
 
     -- Enfeebling
     sets.midcast.Enfeebling = {} -- leave Empty
-    
+ 
     --Type A-pure macc no potency mod
     sets.midcast.Enfeebling.macc = {
-      main="Daybreak",             -- Murgleis
+      main="Crocea Mors",          -- Murgleis
       sub="Ammurapi Shield",
       range="Ullr",
-      head="Vitiation Chapeau +3", -- Atrophy Chapeau +3
+      ammo=none;
+      head="Atrophy Chapeau +2",   -- Atrophy Chapeau +3
       neck="Dls. Torque +2",
       left_ear="Snotra Earring",
       right_ear="Regal Earring",
       body="Atrophy Tabard +3",
-      hands="Regal Cuffs",         -- Kaykaus Cuffs +1, Path A
+      hands="Kaykaus Cuffs +1",
+      -- hands="Regal Cuffs",     -- When duration is wanted
       left_ring={name="Stikini Ring +1",bag="wardrobe 2"},
+      -- left_ring="Kishar ring", -- When duration is wanted
       right_ring={name="Stikini Ring +1",bag="wardrobe 3"},
       back=RDMCape.MACC,           -- Aurist's Cape +1
-      waist="Acuity Belt +1",
+      waist="Acuity Belt +1",                              
+      -- waist="Obstinate Sash",  -- When duration is wanted
       legs={ name="Chironic Hose", augments={'Mag. Acc.+21 "Mag.Atk.Bns."+21','"Fast Cast"+5','MND+11','Mag. Acc.+13','"Mag.Atk.Bns."+6',}},
       feet="Vitiation Boots +3",
     }
 
     -- Type B-potency from: Mnd & "Enfeeb Potency" gear
     sets.midcast.Enfeebling.mndpot = set_combine(sets.midcast.Enfeebling.macc, {
+      range=none,
       ammo="Regal Gem",
+      head="Vitiation Chapeau +3",
       body="Lethargy Sayon +1",
       left_ring="Metamorph Ring +1",
       waist="Luminary Sash",
@@ -612,7 +618,24 @@ function get_sets()
     sets.midcast.Enfeebling.skillpot = sets.midcast.Enfeebling.macc
  
     -- Type E-potency from: Enfeeb skill, Mnd, & "Enfeeb Potency" gear
-    sets.midcast.Enfeebling.skillmndpot = sets.midcast.Enfeebling.macc
+    sets.midcast.Enfeebling.skillmndpot = {
+      main={ name="Crocea Mors", augments={'Path: C',}},
+      sub="Ammurapi Shield",
+      range=none,
+      ammo="Regal Gem",
+      head={ name="Viti. Chapeau +3", augments={'Enfeebling Magic duration','Magic Accuracy',}},
+      body="Atrophy Tabard +3",
+      hands="Leth. Gantherots +1",
+      legs={ name="Psycloth Lappas", augments={'MP+80','Mag. Acc.+15','"Fast Cast"+7',}},
+      feet={ name="Vitiation Boots +3", augments={'Immunobreak Chance',}},
+      neck={ name="Dls. Torque +2", augments={'Path: A',}},
+      waist="Luminary Sash",
+      left_ear="Snotra Earring",
+      right_ear="Vor Earring",
+      left_ring="Stikini Ring +1",
+      right_ring="Stikini Ring +1",
+      back={ name="Ghostfyre Cape", augments={'Enfb.mag. skill +7','Enha.mag. skill +7','Mag. Acc.+6','Enh. Mag. eff. dur. +19',}},
+    }
     
     -- Type F-potency from "Enfeebling potency" gear only
     sets.midcast.Enfeebling.potency = set_combine(sets.midcast.Enfeebling.macc, {
@@ -722,7 +745,7 @@ function get_sets()
       head="Kaykaus mitra +1",           -- 11     6
       neck="Debilis medallion",          --     3
       body="Malignance tabard",          --        4
-      hands="Chironic gloves",           --     4  3
+      hands="Kaykaus Cuffs +1",          -- 11  6  3
       legs="Atrophy Tights +3",          -- 11     5
       feet="Kaykaus boots +1",           -- 17  6  3
       left_ear="Domesticator's earring", --     5
@@ -731,7 +754,7 @@ function get_sets()
       right_ring="Stikini ring +1",
       waist="Witful belt",               --        3
       --                                        5
-      back=RDMCape.MACC                  --     10
+      back=RDMCape.MACC                  --
     })
 
     sets.midcast.cure.weather = set_combine(sets.midcast.cure.normal, {

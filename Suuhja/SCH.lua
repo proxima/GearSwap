@@ -722,7 +722,7 @@ function get_sets()
 
    -- used with toggle, default: F10
    -- Pieces to swap from free nuke to Magic Burst
-   sets.midcast.MB.acc = set_combine(sets.midcast.MB.normal, {
+   sets.midcast.MB.acc = set_combine(sets.midcast.MB.normal, {   
      feet="Jhakri Pigaches +2",
      waist="Acuity Belt +1",
    })
@@ -829,7 +829,7 @@ function get_sets()
      ammo="Pemphredo tathlum",
      head=none,
      body="Cohort Cloak +1",
-     hands="Acad. Bracers +3",
+     hands="Kaykaus Cuffs +1",
      legs={ name="Chironic Hose", augments={'Mag. Acc.+21 "Mag.Atk.Bns."+21','"Fast Cast"+5','MND+11','Mag. Acc.+13','"Mag.Atk.Bns."+6',}},
      feet="Acad. Loafers +3",
      neck={ name="Argute Stole +2", augments={'Path: A',}},

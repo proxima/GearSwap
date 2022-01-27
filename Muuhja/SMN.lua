@@ -1028,12 +1028,4 @@ function idle()
             equip(sets.aftercast.Idle)
         end
     end
-    -- Balrahn's Ring
-    --if Salvage:contains(world.area) then
-    --  equip({ring2="Balrahn's Ring"})
-    --end
-    -- Maquette Ring
-    --if world.area=='Maquette Abdhaljs-Legion' and not IdleMode=='DT' then
-    --  equip({ring2="Maquette Ring"})
-    --end
 end

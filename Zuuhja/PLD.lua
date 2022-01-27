@@ -66,7 +66,7 @@ function init_gear_sets()
   Rud.STP =    { name="Rudianos's Mantle", augments={'HP+60','Accuracy+20 Attack+20','Accuracy+10','"Store TP"+10','Occ. inc. resist. to stat. ailments+10',} }
   Rud.MEVA =   { name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Occ. inc. resist. to stat. ailments+10',} }
   Rud.CURE =   { name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','"Cure" potency +10%','Phys. dmg. taken-10%',} }
-  Rud.SB =     {}
+  Rud.SB =     { name="Rudianos's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%','Phys. dmg. taken-10%',} }
 
   Ody = {}
   Ody.FC_LEGS = { name="Odyssean Cuisses", augments={'"Mag.Atk.Bns."+11','"Fast Cast"+6','INT+7',}}
@@ -171,7 +171,7 @@ function init_gear_sets()
   sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS, {
     ammo="Crepuscular Pebble",
     ring1=MR.One,
-    ring2=MR.Two,
+    ring2="Shukuyu Ring",
     left_ear="Moonshade Earring",
     right_ear="Thrud Earring",
     back=Rud.SB
@@ -356,10 +356,10 @@ function init_gear_sets()
     back=Rud.BLOCK
   }
 
-  sets.idle.Town = {}   
+  sets.idle.Town = {right_ring="Shneddick Ring +1"}   
   sets.idle.Weak = {}    
   sets.idle.Weak.Reraise = set_combine(sets.idle.Weak, sets.Reraise)    
-  sets.Kiting = {}
+  sets.Kiting = {right_ring="Shneddick Ring +1"}
   sets.latent_refresh = {waist="Fucho-no-obi"}
 
   --------------------------------------
@@ -367,7 +367,7 @@ function init_gear_sets()
   --------------------------------------
     
   -- Extra defense sets.  Apply these on top of melee or defense sets.
-  sets.Knockback    = { left_ring="Vocane Ring +1", back="Philidor mantle" }
+  sets.Knockback    = { back="Philidor mantle" }
   sets.MP           = { waist="Flume Belt +1" }
   sets.MP_Knockback = {}
     
@@ -404,8 +404,8 @@ function init_gear_sets()
   -- Engaged sets
   --------------------------------------
   sets.engaged = {
-    main="Naegling",
-    sub="Blurred Shield +1",
+    main="Burtgang",
+    sub="Srivatsa",
     ammo="Staunch Tathlum +1",
     head="Sakpata's Helm",
     body="Sakpata's Breastplate",
@@ -585,11 +585,11 @@ function job_buff_change(buff, gain)
       handle_equipping_gear(player.status)
   end
 
-  if not gain then 
-      if tostring(buff) == 'Majesty' and not Town:contains(world.area) then
-          windower.send_command('input /ja Majesty <me>')
-      end
-  end
+  -- if not gain then 
+  --    if tostring(buff) == 'Majesty' and not Town:contains(world.area) then
+  --        windower.send_command('input /ja Majesty <me>')
+  --    end
+  -- end
 
   if buff:lower() == 'paralysis' then
     if gain then

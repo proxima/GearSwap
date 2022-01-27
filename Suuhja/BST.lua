@@ -202,7 +202,7 @@ function init_gear_sets()
       right_ring="C. Palug Ring",
       back={ name="Artio's Mantle", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Eva.+20 /Mag. Eva.+20','Pet: Attack+10 Pet: Rng.Atk.+10','Pet: "Regen"+10','Pet: Damage taken -5%',}},
     }
-	   
+
     sets.midcast.Pet.Neutral = set_combine(sets.midcast.Pet.WS, {})           
     sets.midcast.Pet.HighAcc =  set_combine(sets.midcast.Pet.WS, {})
     sets.midcast.Pet.MaxAcc =  set_combine(sets.midcast.Pet.WS, {})

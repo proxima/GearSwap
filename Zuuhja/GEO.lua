@@ -165,22 +165,23 @@ function get_sets()
      left_ear={ name="Odnowa Earring +1", augments={'Path: A',}},
      right_ear="Etiolation Earring",
      left_ring="Defending Ring",
-     right_ring="Vocane Ring +1",
+     right_ring="Gelatinous Ring +1", -- 7 dt
      back={ name="Nantosuelta's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Pet: "Regen"+10','Damage taken-5%',}},
    }
 
    -- This or herald gaiters or +1 +2 +3... 
-   sets.me.movespeed = {feet="Geomancy Sandals +3"}
+   sets.me.movespeed = {right_ring="Shneddick Ring +1"}
 
    -- Your idle MasterDT set (Notice the sets.me, means no Luopan is out)
    sets.me.idle.dt = set_combine(sets.me.idle.normal, {
-     legs="Bagua Pants +3",
-     feet="Bagua Sandals +3",
+     head="Nyame Helm",
+     body="Nyame Mail",
+     hands="Nyame Gauntlets",
+     legs="Nyame Flanchard",
+     feet="Nyame Sollerets",
    })
 
-   sets.me.idle.mdt = set_combine(sets.me.idle.normal, {
-     legs="Bagua Pants +3",
-     feet="Bagua Sandals +3",   
+   sets.me.idle.mdt = set_combine(sets.me.idle.dt, {
    })
 
    -- Your MP Recovered Whilst Resting Set
@@ -211,21 +212,19 @@ function get_sets()
      back={ name="Nantosuelta's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Pet: "Regen"+10','Damage taken-5%',}}, -- 5 dt
      waist="Isa belt",
      left_ring="Defending Ring", -- 10 dt
-     right_ring="Vocane Ring +1", -- 8 dt
+     right_ring="Gelatinous Ring +1", -- 7 dt
    }
 
    -- This is when you have a Luopan out but want to sacrifice some slot for master DT, put those slots in.
    sets.pan.idle.dt = set_combine(sets.pan.idle.normal, {
-     head="Bagua Galero +3",
-     body="Mallquis saio +2",
-     legs="Geomancy Pants +3",
+     head="Nyame Helm",
+     body="Nyame Mail",
+     legs="Nyame Flanchard",
+     feet="Nyame Sollerets",
      waist="Slipor Sash",
    })
 
-   sets.pan.idle.mdt = set_combine(sets.pan.idle.normal, {
-     head="Ea Hat +1",
-     body="Ea Houppe. +1",
-     legs="Ea Slops +1",
+   sets.pan.idle.mdt = set_combine(sets.pan.idle.dt, {
    })
 
    -- Combat Related Sets
