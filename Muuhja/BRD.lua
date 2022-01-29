@@ -257,11 +257,11 @@ function init_gear_sets()
 
     sets.precast.WS['Mordant Rime'] = set_combine(sets.precast.WS, {
       range={ name="Linos", augments={'Accuracy+12 Attack+12','Weapon skill damage +3%','STR+6 CHR+6',}},
-      head={ name="Bihu Roundlet +3", augments={'Enhances "Con Anima" effect',}},
+      head="Nyame Helm",
       body={ name="Bihu Jstcorps. +3", augments={'Enhances "Troubadour" effect',}},
-      hands={ name="Bihu Cuffs +3", augments={'Enhances "Con Brio" effect',}},
-      legs={ name="Bihu Cannions +3", augments={'Enhances "Soul Voice" effect',}},
-      feet={ name="Bihu Slippers +3", augments={'Enhances "Nightingale" effect',}},
+      hands="Nyame Gauntlets",
+      legs="Nyame Flanchard",
+      feet="Nyame Sollerets",
       neck={ name="Bard's Charm +2", augments={'Path: A',}},
       waist="Grunfeld Rope",
       left_ear="Regal Earring",
@@ -272,17 +272,30 @@ function init_gear_sets()
     })
 
     sets.precast.WS['Rudra\'s Storm'] = set_combine(sets.precast.WS, {
+      range={ name="Linos", augments={'Accuracy+12 Attack+12','Weapon skill damage +3%','STR+6 CHR+6',}}, -- Dex Linos
+      head="Nyame Helm",
+      body={ name="Bihu Jstcorps. +3", augments={'Enhances "Troubadour" effect',}},
+      hands="Nyame Gauntlets",
+      legs="Nyame Flanchard",
+      feet="Nyame Sollerets",
+      neck={ name="Bard's Charm +2", augments={'Path: A',}},
+      waist="Grunfeld Rope", -- Kentarch Belt +1
+      left_ear="Moonshade Earring",
+      right_ear="Ishvara Earring",
+      left_ring="Ilabrat Ring",
+      right_ring="Epaminondas's Ring",
+      back={ name="Intarabus's Cape", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}, -- Dex belt
     })
 
     sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS, {
       range={ name="Linos", augments={'Accuracy+12 Attack+12','Weapon skill damage +3%','STR+6 CHR+6',}},
-      head={ name="Bihu Roundlet +3", augments={'Enhances "Con Anima" effect',}},
+      head="Nyame Helm",
       body={ name="Bihu Jstcorps. +3", augments={'Enhances "Troubadour" effect',}},
-      hands={ name="Bihu Cuffs +3", augments={'Enhances "Con Brio" effect',}},
-      legs={ name="Bihu Cannions +3", augments={'Enhances "Soul Voice" effect',}},
-      feet={ name="Bihu Slippers +3", augments={'Enhances "Nightingale" effect',}},
+      hands="Nyame Gauntlets",
+      legs="Nyame Flanchard",
+      feet="Nyame Sollerets",
       neck={ name="Bard's Charm +2", augments={'Path: A',}},
-      waist="Grunfeld Rope",
+      waist="Grunfeld Rope", -- Kentarch Belt +1
       left_ear="Moonshade Earring",
       right_ear="Ishvara Earring",
       left_ring="Metamorph Ring +1",
@@ -444,11 +457,11 @@ function init_gear_sets()
       main="Carnwenhan",
       sub="Genmei Shield",
       range={ name="Linos", augments={'Mag. Evasion+14','Phys. dmg. taken -4%','HP+17',}},
-      head="Inyanga Tiara +2",
-      body="Inyanga Jubbah +2",
-      hands="Inyan. Dastanas +2",
-      legs="Brioso Cannions +3",
-      feet="Inyan. Crackows +2",
+      head="Bunzi's Hat",
+      body="Nyame Mail",
+      hands="Bunzi's Gloves",
+      legs="Nyame Flanchard",
+      feet="Nyame Sollerets",
       neck="Loricate Torque +1",
       waist="Flume Belt +1",
       left_ear="Odnowa Earring +1",
@@ -462,11 +475,11 @@ function init_gear_sets()
       main="Carnwenhan",
       sub="Genmei Shield",
       range={ name="Linos", augments={'Mag. Evasion+14','Phys. dmg. taken -4%','HP+17',}},
-      head="Aya. Zucchetto +2",
-      body="Ayanmo Corazza +2",
-      hands="Aya. Manopolas +2",
-      legs="Brioso Cannions +3",
-      feet="Aya. Gambieras +2",
+      head="Bunzi's Hat",
+      body="Nyame Mail",
+      hands="Bunzi's Gloves",
+      legs="Nyame Flanchard",
+      feet="Nyame Sollerets",
       neck="Loricate Torque +1",
       waist="Carrier's Sash",
       left_ear="Odnowa Earring +1",
@@ -480,11 +493,11 @@ function init_gear_sets()
       main="Carnwenhan",
       sub="Genmei Shield",
       range={ name="Linos", augments={'Mag. Evasion+14','Phys. dmg. taken -4%','HP+17',}},
-      head="Inyanga Tiara +2",
-      body="Inyanga Jubbah +2",
-      hands="Inyan. Dastanas +2",
-      legs="Inyanga Shalwar +2",
-      feet="Inyan. Crackows +2",
+      head="Bunzi's Hat",
+      body="Nyame Mail",
+      hands="Bunzi's Gloves",
+      legs="Nyame Flanchard",
+      feet="Nyame Sollerets",
       neck="Loricate Torque +1",
       waist="Flume Belt +1",
       left_ear="Odnowa Earring +1",
@@ -520,11 +533,11 @@ function init_gear_sets()
 
     sets.engaged = {
       range={ name="Linos", augments={'Accuracy+17','"Store TP"+3','Quadruple Attack +3',}},
-      head="Aya. Zucchetto +2",
+      head="Bunzi's Hat",
       body="Ayanmo Corazza +2",
-      hands="Aya. Manopolas +2",
-      legs="Aya. Cosciales +2",
-      feet="Aya. Gambieras +2",
+      hands="Bunzi's Gloves",
+      legs="Nyame Flanchard",
+      feet="Nyame Sollerets",
       neck="Bard's Charm +2",
       ear1="Brutal Earring",
       ear2="Dignitary's Earring",
@@ -543,14 +556,14 @@ function init_gear_sets()
     -- No Magic Haste (74% DW to cap)
     sets.engaged.DW = {
       range={ name="Linos", augments={'Accuracy+17','"Store TP"+3','Quadruple Attack +3',}},
-      head="Aya. Zucchetto +2",
+      head="Bunzi's Hat",
       body="Ayanmo Corazza +2",
-      hands="Aya. Manopolas +2",
-      legs="Aya. Cosciales +2",
-      feet="Aya. Gambieras +2",
+      hands="Bunzi's Gloves",
+      legs="Nyame Flanchard",
+      feet="Nyame Sollerets",
       neck="Bard's Charm +2",
       ear1="Eabani Earring",
-      ear2="Suppanomimi",
+      ear2="Telos Earring",
       left_ring={name="Chirich Ring +1",bag="wardrobe 2"},
       right_ring={name="Chirich Ring +1",bag="wardrobe 3"},
       back={ name="Intarabus's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10','Damage taken-5%',}},
@@ -573,30 +586,13 @@ function init_gear_sets()
     sets.engaged.DW.Acc.HighHaste = sets.engaged.DW.Acc
 
     -- 45% Magic Haste (36% DW to cap)
-    sets.engaged.DW.MaxHaste = {
-      range={ name="Linos", augments={'Accuracy+17','"Store TP"+3','Quadruple Attack +3',}},
-      head="Aya. Zucchetto +2",
-      body="Ayanmo Corazza +2",
-      hands="Aya. Manopolas +2",
-      legs="Aya. Cosciales +2",
-      feet="Aya. Gambieras +2",
-      neck="Bard's Charm +2",
-      ear1="Eabani Earring",
-      ear2="Suppanomimi",
-      left_ring={name="Chirich Ring +1",bag="wardrobe 2"},
-      right_ring={name="Chirich Ring +1",bag="wardrobe 3"},
-      back={ name="Intarabus's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10','Damage taken-5%',}},
-      waist="Reiki Yotai"
-    }
+    sets.engaged.DW.MaxHaste = sets.engaged.DW
+    sets.engaged.DW.MaxHaste.Acc = sets.engaged.DW.Acc
 
-    sets.engaged.DW.MaxHaste.Acc = set_combine(sets.engaged.DW, {
-    })
+    sets.engaged.DW.MaxHastePlus = sets.engaged.DW
+    sets.engaged.DW.Acc.MaxHastePlus = sets.engaged.DW.Acc
 
-    sets.engaged.DW.MaxHastePlus = set_combine(sets.engaged.DW.MaxHaste, {ear1="Cessance Earring", back=gear.BRD_DW_Cape})
-    sets.engaged.DW.Acc.MaxHastePlus = set_combine(sets.engaged.DW.Acc.MaxHaste, {ear1="Cessance Earring", back=gear.BRD_DW_Cape})
-
-    sets.engaged.Aftermath = {
-    }
+    sets.engaged.Aftermath = sets.engaged.DW
 
     ------------------------------------------------------------------------------------------------
     ---------------------------------------- Hybrid Sets -------------------------------------------
@@ -658,16 +654,6 @@ end
 -- Set eventArgs.useMidcastGear to true if we want midcast gear equipped on precast.
 function job_precast(spell, action, spellMap, eventArgs)
     if spell.type == 'BardSong' then
-        --[[ Auto-Pianissimo
-        if ((spell.target.type == 'PLAYER' and not spell.target.charmed) or (spell.target.type == 'NPC' and spell.target.in_party)) and
-            not state.Buff['Pianissimo'] then
-            local spell_recasts = windower.ffxi.get_spell_recasts()
-            if spell_recasts[spell.recast_id] < 2 then
-                send_command('@input /ja "Pianissimo" <me>; wait 1.5; input /ma "'..spell.name..'" '..spell.target.name)
-                eventArgs.cancel = true
-                return
-            end
-        end]]
         if spell.name == 'Honor March' then
             equip({range="Marsyas"})
         end

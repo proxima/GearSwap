@@ -170,6 +170,11 @@ function init_gear_sets()
     
   sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS, {
     ammo="Crepuscular Pebble",
+    head="Nyame Helm",
+    body="Nyame Mail",
+    hands="Nyame Gauntlets",
+    legs="Nyame Flanchard",
+    feet="Nyame Sollerets",
     ring1=MR.One,
     ring2="Shukuyu Ring",
     left_ear="Moonshade Earring",

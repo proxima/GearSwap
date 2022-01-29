@@ -241,7 +241,7 @@ function get_sets()
       head="Cath Palug Crown",
       neck="Eddy Necklace",
       ear1="Malignance Earring",
-      ear2="Friomisi Earring",
+      ear2="Regal Earring",
       body={ name="Amalric Doublet +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
       hands={ name="Amalric Gages +1", augments={'INT+12','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
       ring1="Freke Ring",
@@ -278,35 +278,35 @@ function get_sets()
     -- I stack magic accuracy here to land the defense down effect, rather than MAB for damage.
     -- It's a personal preference, use whatever you prefer.
     sets.midcast["Garland of Bliss"] = {
-        head="Cath Palug Crown",
-        neck="Sanctity Necklace",
-        ear1="Malignance Earring",
-        ear2="Dignitary's Earring",
-        body="Inyanga Jubbah +2",
-        hands="Inyanga Dastanas +2",
-        ring1="Freke Ring",
-        ring2="Stikini Ring +1",
-        back={ name="Campestres's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','"Fast Cast"+10',}},
-        waist="Eschan Stone",
-        legs="Merlinic shalwar",
-        feet="Inyanga Crackows +2"
+      head="Nyame Helm",
+      neck="Sanctity Necklace",
+      ear1="Malignance Earring",
+      ear2="Regal Earring",
+      body="Nyame Mail",
+      hands="Nyame Gauntlets",
+      ring1="Freke Ring",
+      ring2="Metamorph Ring +1",
+      back={ name="Campestres's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','"Fast Cast"+10',}},
+      waist="Eschan Stone",
+      legs="Nyame Flanchard",
+      feet="Nyame Sollerets"
     }
  
     -- My set focuses on accuracy here to make skillchains with Ifrit
     -- Just like Garland, it's not hard to improve on the damage from this set if that's what you're after.
     sets.midcast["Shattersoul"] = {
-        head="Convoker's Horn +3",
-        neck="Fotia Gorget",
-        ear1="Zennaroi Earring",
-        ear2="Telos Earring",
-        body="Tali'ah Manteel +2",
-        hands="Tali'ah Gages +2",
-        ring1="Freke Ring",
-        ring2="Shiva Ring +1",
-        back={ name="Campestres's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10',}},
-        waist="Fotia Belt",
-        legs={ name="Telchine Braconi", augments={'Accuracy+17','Weapon Skill Acc.+14','Weapon skill damage +3%',}},
-        feet="Convoker's Pigaches +3"
+      head="Nyame Helm",
+      neck="Fotia Gorget",
+      ear1="Zennaroi Earring",
+      ear2="Telos Earring",
+      body="Nyame Mail",
+      hands="Nyame Gauntlets",
+      ring1="Freke Ring",
+      ring2="Shiva Ring +1",
+      back={ name="Campestres's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10',}},
+      waist="Fotia Belt",
+      legs="Nyame Flanchard",
+      feet="Nyame Sollerets"
     }
  
     sets.midcast["Cataclysm"] = sets.midcast.Nuke

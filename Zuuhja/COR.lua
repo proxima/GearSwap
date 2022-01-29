@@ -42,10 +42,10 @@ function user_setup()
     state.CastingMode:options('Normal', 'Resistant')
     state.IdleMode:options('Normal', 'PDT', 'Refresh')
 
-    gear.RAbullet = "Eminent Bullet"
-    gear.WSbullet = "Eminent Bullet"
-    gear.MAbullet = "Eminent Bullet"
-    gear.QDbullet = "Eminent Bullet"
+    gear.RAbullet = "Devastating Bullet"
+    gear.WSbullet = "Devastating Bullet"
+    gear.MAbullet = "Devastating Bullet"
+    gear.QDbullet = "Devastating Bullet"
     options.ammo_warning_limit = 15
 
     -- Additional local binds
@@ -170,7 +170,21 @@ function init_gear_sets()
       Cape.RATK
     }
 
-    sets.precast.WS['Wildfire'] = {ammo=gear.MAbullet}
+    sets.precast.WS['Wildfire'] = {ammo=gear.MAbullet,
+      head="Nyame Helm",
+      body={ name="Lanun Frac +3", augments={'Enhances "Loaded Deck" effect',}},
+      hands="Nyame Gauntlets",
+      legs="Nyame Flanchard",
+      feet={ name="Lanun Bottes +3", augments={'Enhances "Wild Card" effect',}},
+      neck={ name="Comm. Charm +2", augments={'Path: A',}},
+      waist="Orpheus's Sash",
+      left_ear={ name="Moonshade Earring", augments={'"Mag.Atk.Bns."+4','TP Bonus +250',}},
+      right_ear="Crematio Earring",
+      left_ring="Dingir Ring",
+      right_ring="Ilabrat Ring",
+      back={ name="Camulus's Mantle", augments={'AGI+20','Mag. Acc+20 /Mag. Dmg.+20','AGI+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}},
+    }
+
     sets.precast.WS['Wildfire'].Brew = {ammo=gear.MAbullet,}
 
     sets.precast.WS['Leaden Salute'] = {ammo=gear.MAbullet,
@@ -180,7 +194,7 @@ function init_gear_sets()
       legs="Nyame Flanchard",
       feet={ name="Lanun Bottes +3", augments={'Enhances "Wild Card" effect',}},
       neck={ name="Comm. Charm +2", augments={'Path: A',}},
-      waist="Svelt. Gouriz +1",
+      waist="Orpheus's Sash",
       left_ear={ name="Moonshade Earring", augments={'"Mag.Atk.Bns."+4','TP Bonus +250',}},
       right_ear="Crematio Earring",
       left_ring="Dingir Ring",
@@ -189,11 +203,11 @@ function init_gear_sets()
     }
 
     sets.precast.WS['Savage Blade'] = {
-      head={ name="Blistering Sallet +1", augments={'Path: A',}}, -- Nyame
+      head="Nyame Helm",
       body="Laksa. Frac +3",
-      hands="Meg. Gloves +2",                                     -- Eventually Nyame
-      legs="Malignance Tights",                                   -- Nyame
-      feet="Lanun Bottes +3",
+      hands="Nyame Gauntlets",
+      legs="Nyame Flanchard",
+      feet="Nyame Sollerets",
       neck={ name="Comm. Charm +2", augments={'Path: A',}},
       waist={ name="Sailfi Belt +1", augments={'Path: A',}},
       left_ear="Ishvara Earring",

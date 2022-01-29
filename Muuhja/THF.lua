@@ -190,11 +190,11 @@ function init_gear_sets()
 
     sets.precast.WS["Rudra's Storm"] = set_combine(sets.precast.WS, {
       ammo="Cath Palug Stone",
-      head={ name="Herculean Helm", augments={'Accuracy+29','Weapon skill damage +4%',}},
-      body={ name="Herculean Vest", augments={'Accuracy+21','Weapon skill damage +4%','Attack+5',}},
-      hands="Mummu Wrists +2",
-      legs={ name="Lustr. Subligar +1", augments={'Accuracy+20','DEX+8','Crit. hit rate+3%',}},
-      feet={ name="Herculean Boots", augments={'Weapon Skill Acc.+1','DEX+5','Weapon skill damage +8%','Accuracy+1 Attack+1',}},
+      head="Nyame Helm",
+      body="Nyame Mail",
+      hands="Nyame Gauntlets",
+      legs="Nyame Flanchard",
+      feet="Nyame Sollerets",
       neck="Fotia Gorget",
       waist="Grunfeld Rope",
       left_ear="Sherida Earring",
@@ -228,11 +228,11 @@ function init_gear_sets()
 
     sets.precast.WS['Aeolian Edge'] = {
       ammo="Ghastly Tathlum +1",
-      head="Malignance chapeau",
-      body="Samnuha Coat",
-      hands="Malignance gloves",
-      legs="Malignance tights",
-      feet={ name="Herculean Boots", augments={'Weapon skill damage +4%','"Mag.Atk.Bns."+28','Mag. Acc.+19 "Mag.Atk.Bns."+19',}},
+      head="Nyame Helm",
+      body="Nyame Mail",
+      hands="Nyame Gauntlets",
+      legs="Nyame Flanchard",
+      feet="Nyame Sollerets",
       back="Argochampsa mantle",
       waist="Orpheus's Sash",
       left_ear="Odr Earring",

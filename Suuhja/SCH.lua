@@ -334,15 +334,21 @@ function get_sets()
       back={ name="Lugh's Cape", augments={'INT+20','Accuracy+20 Attack+20','INT+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}},
     })
     
-    sets.me["Shell Crusher"] = set_combine(sets.me["Heavy Swing"], {
-      neck="Fotia Gorget",
-      waist="Fotia Belt",
-      left_ear="Moonshade Earring",
+    sets.me["Shell Crusher"] = {
+      ammo="Staunch Tathlum +1",
+      head={ name="Nyame Helm", augments={'Path: B',}},
+      body={ name="Agwu's Robe", augments={'Path: A',}},
+      hands={ name="Gazu Bracelet +1", augments={'Path: A',}},
+      legs={ name="Nyame Flanchard", augments={'Path: B',}},
+      feet={ name="Nyame Sollerets", augments={'Path: B',}},
+      neck="Lissome Necklace",
+      waist="Grunfeld Rope",
+      left_ear="Mache Earring +1",
       right_ear="Telos Earring",
       left_ring={name="Chirich Ring +1",bag="wardrobe 2"},
       right_ring={name="Chirich Ring +1",bag="wardrobe 4"},
       back={ name="Lugh's Cape", augments={'INT+20','Accuracy+20 Attack+20','INT+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}},
-    })
+    }
     
     sets.me["Full Swing"] = sets.me["Heavy Swing"]
     sets.me["Spirit Taker"] = sets.me["Heavy Swing"]
@@ -911,8 +917,13 @@ function get_sets()
 
     -- Cure Potency    
     sets.midcast.cure.normal = set_combine(sets.midcast.casting, {
-      ammo="Leisure Musk +1",            --     4
+      -- main="Chatoyant staff",             -- 10
+      main="Malignance Pole",
+      sub="Khonsu",
+      -- ammo="Leisure Musk +1",            --     4
+      ammo="Staunch Tathlum +1",
       head="Kaykaus mitra +1",           -- 11     6
+      neck="Loricate torque +1",
       body="Pedagogy gown +3",           --        3
       hands="Pedagogy bracers +3",       --     7  3
       legs="Academic's pants +3",        -- 15  6  5
@@ -920,7 +931,8 @@ function get_sets()
       left_ear="Domesticator's earring", --     5
       right_ear="Mendi. Earring",        --  5
       left_ring="Lebeche ring",          --  3  5
-      right_ring="Stikini ring +1",
+      -- right_ring="Stikini ring +1",
+      right_ring="Defending Ring",
       waist="Witful belt",               --        3
       back={ name="Lugh's Cape", augments={'MND+20','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity-10','Phys. dmg. taken-10%',}}, --  0 10  0
       -- merits                                 5
@@ -928,8 +940,9 @@ function get_sets()
     })
     
     sets.midcast.cure.weather = set_combine(sets.midcast.cure.normal, {
-      main="Chatoyant staff",             -- 10
-      sub="Enki Strap",
+      -- main="Chatoyant staff",             -- 10
+      main="Malignance Pole",
+      sub="Khonsu",
       waist="Hachirin-no-Obi",
     })
 

@@ -399,7 +399,7 @@ function get_sets()
      legs={ name="Amalric Slops +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
      feet={ name="Amalric Nails +1", augments={'Mag. Acc.+20','"Mag.Atk.Bns."+20','"Conserve MP"+7',}},
      neck="Mizu. Kubikazari",
-     waist="Sacro Cord",
+     waist="Orpheus's Sash",
      left_ear="Malignance Earring",
      right_ear="Regal Earring",
      left_ring="Metamorph Ring +1",
