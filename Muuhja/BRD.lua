@@ -263,7 +263,7 @@ function init_gear_sets()
       legs="Nyame Flanchard",
       feet="Nyame Sollerets",
       neck={ name="Bard's Charm +2", augments={'Path: A',}},
-      waist="Grunfeld Rope",
+      waist="Kentarch Belt +1",
       left_ear="Regal Earring",
       right_ear="Ishvara Earring",
       left_ring="Metamorph Ring +1",
@@ -279,7 +279,7 @@ function init_gear_sets()
       legs="Nyame Flanchard",
       feet="Nyame Sollerets",
       neck={ name="Bard's Charm +2", augments={'Path: A',}},
-      waist="Grunfeld Rope", -- Kentarch Belt +1
+      waist="Kentarch Belt +1",
       left_ear="Moonshade Earring",
       right_ear="Ishvara Earring",
       left_ring="Ilabrat Ring",
@@ -295,7 +295,7 @@ function init_gear_sets()
       legs="Nyame Flanchard",
       feet="Nyame Sollerets",
       neck={ name="Bard's Charm +2", augments={'Path: A',}},
-      waist="Grunfeld Rope", -- Kentarch Belt +1
+      waist="Kentarch Belt +1",
       left_ear="Moonshade Earring",
       right_ear="Ishvara Earring",
       left_ring="Metamorph Ring +1",

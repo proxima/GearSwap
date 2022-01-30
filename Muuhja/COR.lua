@@ -161,7 +161,7 @@ function init_gear_sets()
       legs={ name="Nyame Flanchard", augments={'Path: B',}},
       feet={ name="Nyame Sollerets", augments={'Path: B',}},
       neck="Loricate Torque +1",
-      waist="Grunfeld Rope",
+      waist="Kentarch Belt +1",
       left_ear="Ishvara Earring",
       right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
       left_ring="Regal Ring",
