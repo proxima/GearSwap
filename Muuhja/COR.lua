@@ -42,10 +42,10 @@ function user_setup()
     state.CastingMode:options('Normal', 'Resistant')
     state.IdleMode:options('Normal', 'PDT', 'Refresh')
 
-    gear.RAbullet = "Eminent Bullet"
-    gear.WSbullet = "Eminent Bullet"
-    gear.MAbullet = "Eminent Bullet"
-    gear.QDbullet = "Eminent Bullet"
+    gear.RAbullet = "Bronze Bullet"
+    gear.WSbullet = "Bronze Bullet"
+    gear.MAbullet = "Bronze Bullet"
+    gear.QDbullet = "Bronze Bullet"
     options.ammo_warning_limit = 15
 
     -- Additional local binds
@@ -55,12 +55,8 @@ function user_setup()
     select_default_macro_book()
 
     Cape = {}
-    Cape.ROLL   = {name="Camulus's Mantle", augments={'INT+20','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','"Snapshot"+10','Mag. Evasion+15',}}
-    Cape.LEADEN = {name="Camulus's Mantle", augments={'AGI+20','Mag. Acc+20 /Mag. Dmg.+20','AGI+10','Weapon skill damage +10%','Phys. dmg. taken-10%'}}
     Cape.SB     = {name="Camulus's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%','Phys. dmg. taken-10%'}}
-    Cape.RATK   = {name="Camulus's Mantle", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','AGI+10','Weapon skill damage +10%','Phys. dmg. taken-10%'}}
     Cape.TP     = {name="Camulus's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}}
-    Cape.RTP    = {name="Camulus's Mantle", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','Rng.Acc.+10','"Store TP"+10','Phys. dmg. taken-10%',}}
 end
 
 -- Called when this job file is unloaded (eg: job change)
@@ -91,7 +87,7 @@ function init_gear_sets()
       range="Compensator",
       hands="Chasseur's gants +1",
       right_ring="Luzaf's Ring",
-      back=Cape.ROLL
+      back=Cape.TP
     }
     
     sets.precast.CorsairRoll["Caster's Roll"] = set_combine(sets.precast.CorsairRoll, {legs="Chasseur's culottes +1"})
@@ -118,7 +114,7 @@ function init_gear_sets()
 
     sets.precast.RA = {ammo=gear.RAbullet,
       head="Chasseur's tricorne +1",
-      neck="Commodore's Charm +2",
+      neck="Commodore Charm +2",
       body="Laksa. Frac"
     }
 
@@ -150,7 +146,7 @@ function init_gear_sets()
       right_ear="Enervating Earring",
       left_ring="Crepuscular Ring",
       right_ring="Shukuyu Ring",
-      Cape.RATK
+      back=Cape.RATK
     }
 
     sets.precast.WS['Wildfire'] = {ammo=gear.MAbullet}
@@ -158,7 +154,21 @@ function init_gear_sets()
 
     sets.precast.WS['Leaden Salute'] = sets.precast.WS['Wildfire']
     
-    
+    sets.precast.WS['Savage Blade'] = {
+      head={ name="Nyame Helm", augments={'Path: B',}},
+      body={ name="Nyame Mail", augments={'Path: B',}},
+      hands={ name="Nyame Gauntlets", augments={'Path: B',}},
+      legs={ name="Nyame Flanchard", augments={'Path: B',}},
+      feet={ name="Nyame Sollerets", augments={'Path: B',}},
+      neck="Loricate Torque +1",
+      waist="Grunfeld Rope",
+      left_ear="Ishvara Earring",
+      right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
+      left_ring="Regal Ring",
+      right_ring="Epaminondas's Ring",
+      back=Cape.SB
+    }
+
     -- Midcast Sets
     sets.midcast.FastRecast = {}
         
@@ -212,7 +222,7 @@ function init_gear_sets()
       right_ear="Tuisto Earring +1",
       left_ring="Defending Ring",
       right_ring="Vocane Ring +1",
-      back=Cape.ROLL
+      back=Cape.TP
     }
 
     sets.idle.Town = sets.idle
@@ -232,52 +242,49 @@ function init_gear_sets()
     -- EG: sets.engaged.Dagger.Accuracy.Evasion
     
     -- Normal melee group
-    sets.engaged.Melee = {
-      ammo=gear.RAbullet,
+    sets.engaged.Melee = {ammo=gear.RAbullet,
       head="Malignance Chapeau",
       body="Malignance Tabard",
       hands="Malignance Gloves",
       legs="Malignance Tights",
       feet="Malignance Boots",
-      neck="Iskur Gorget",
-      waist={ name="Sailfi Belt +1", augments={'Path: A',}},
+      neck={ name="Loricate Torque +1", augments={'Path: A',}},
+      waist="Grunfeld Rope",
       left_ear="Telos Earring",
-      right_ear="Suppanomimi",
-      left_ring="Crepuscular Ring",
-      right_ring="Rajas Ring",
+      right_ear="Digni. Earring",
+      left_ring={name="Chirich Ring +1",bag="wardrobe 2"},
+      right_ring={name="Chirich Ring +1",bag="wardrobe 3"},
       back=Cape.TP
     }
     
-    sets.engaged.Acc = {
-      ammo=gear.RAbullet,
+    sets.engaged.Acc = {ammo=gear.RAbullet,
       head="Malignance Chapeau",
       body="Malignance Tabard",
       hands="Malignance Gloves",
       legs="Malignance Tights",
       feet="Malignance Boots",
-      neck="Iskur Gorget",
-      waist={ name="Sailfi Belt +1", augments={'Path: A',}},
+      neck={ name="Loricate Torque +1", augments={'Path: A',}},
+      waist="Grunfeld Rope",
       left_ear="Telos Earring",
-      right_ear="Enervating Earring",
-      left_ring="Crepuscular Ring",
-      right_ring="Rajas Ring",
+      right_ear="Digni. Earring",
+      left_ring={name="Chirich Ring +1",bag="wardrobe 2"},
+      right_ring={name="Chirich Ring +1",bag="wardrobe 3"},
       back=Cape.TP
     }
 
     sets.engaged.Melee.DW = {ammo=gear.RAbullet,
-      ammo=gear.RAbullet,
       head="Malignance Chapeau",
       body="Malignance Tabard",
       hands="Malignance Gloves",
       legs="Malignance Tights",
       feet="Malignance Boots",
-      neck="Iskur Gorget",
-      waist={ name="Sailfi Belt +1", augments={'Path: A',}},
+      neck={ name="Loricate Torque +1", augments={'Path: A',}},
+      waist="Grunfeld Rope",
       left_ear="Telos Earring",
-      right_ear="Enervating Earring",
-      left_ring="Crepuscular Ring",
-      right_ring="Rajas Ring",
-      back=Cape.TP  
+      right_ear="Digni. Earring",
+      left_ring={name="Chirich Ring +1",bag="wardrobe 2"},
+      right_ring={name="Chirich Ring +1",bag="wardrobe 3"},
+      back=Cape.TP
     }
     
     sets.engaged.Acc.DW = {}

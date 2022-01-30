@@ -88,7 +88,7 @@ function init_gear_sets()
       main={ name="Rostam", bag="wardrobe 4", priority=1},
       head="Lanun Tricorne +3",
       neck="Regal necklace",
-      range="Compensator",
+      -- range="Compensator",
       hands="Chasseur's gants +1",
       right_ring="Luzaf's Ring",
       back=Cape.ROLL
@@ -149,7 +149,7 @@ function init_gear_sets()
       right_ear={ name="Moonshade Earring", augments={'"Mag.Atk.Bns."+4','TP Bonus +250',}},
       left_ring="Ilabrat Ring",
       right_ring="Dingir Ring",
-      back={ name="Camulus's Mantle", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','AGI+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}},
+      back=Cape.RATK
     }
 
     sets.precast.WS['Last Stand'].Acc = {ammo=gear.WSbullet}
@@ -167,7 +167,7 @@ function init_gear_sets()
       right_ear="Enervating Earring",
       left_ring="Crepuscular Ring",
       right_ring="Shukuyu Ring",
-      Cape.RATK
+      back=Cape.RATK
     }
 
     sets.precast.WS['Wildfire'] = {ammo=gear.MAbullet,
@@ -182,7 +182,7 @@ function init_gear_sets()
       right_ear="Crematio Earring",
       left_ring="Dingir Ring",
       right_ring="Ilabrat Ring",
-      back={ name="Camulus's Mantle", augments={'AGI+20','Mag. Acc+20 /Mag. Dmg.+20','AGI+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}},
+      back=Cape.LEADEN
     }
 
     sets.precast.WS['Wildfire'].Brew = {ammo=gear.MAbullet,}
@@ -199,7 +199,7 @@ function init_gear_sets()
       right_ear="Crematio Earring",
       left_ring="Dingir Ring",
       right_ring="Ilabrat Ring",
-      back={ name="Camulus's Mantle", augments={'AGI+20','Mag. Acc+20 /Mag. Dmg.+20','AGI+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}},
+      back=Cape.LEADEN
     }
 
     sets.precast.WS['Savage Blade'] = {
@@ -214,7 +214,22 @@ function init_gear_sets()
       right_ear={ name="Moonshade Earring", augments={'"Mag.Atk.Bns."+4','TP Bonus +250',}},
       left_ring={ name="Metamor. Ring +1", augments={'Path: A',}},
       right_ring="Shukuyu Ring",
-      back={ name="Camulus's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}},
+      back=Cape.SB
+    }
+
+    sets.precast.WS['Aeolian Edge'] = {ammo="Hauksbok bullet",
+      head="Nyame Helm",
+      body={ name="Lanun Frac +3", augments={'Enhances "Loaded Deck" effect',}},
+      hands="Nyame Gauntlets",
+      legs="Nyame Flanchard",
+      feet={ name="Lanun Bottes +3", augments={'Enhances "Wild Card" effect',}},
+      neck={ name="Comm. Charm +2", augments={'Path: A',}},
+      waist="Orpheus's Sash",
+      left_ear={ name="Moonshade Earring", augments={'"Mag.Atk.Bns."+4','TP Bonus +250',}},
+      right_ear="Crematio Earring",
+      left_ring="Dingir Ring",
+      right_ring="Metamorph Ring +1",
+      back=Cape.LEADEN
     }
         
     -- Midcast Sets
