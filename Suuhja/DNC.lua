@@ -340,7 +340,7 @@ function init_gear_sets()
     sets.precast.WS.Acc = set_combine(sets.precast.WS, {
     })
 
-    sets.precast.WS.Critical = {head="Maculele Tiara +1", left_ring="Epaminondas's Ring", left_ear="Ishvara Earring"}
+    sets.precast.WS.Critical = {head="Maculele Tiara +1", right_ring="Epaminondas's Ring"}
 
     sets.precast.WS['Pyrrhic Kleos'] = set_combine(sets.precast.WS, {
       ammo="C. Palug Stone",
@@ -363,37 +363,37 @@ function init_gear_sets()
 
     sets.precast.WS['Evisceration'] = set_combine(sets.precast.WS, {
       ammo="Charis Feather",
-      head="Gleti's Mask",
+      head="Adhemar Bonnet +1",
+      -- body="Meg. Cuirie +2",
+      -- hands="Mummu Wrists +2",
       body="Gleti's Cuirass",
-      hands="Gleti's Gauntlets",
+      hands="Adhemar Wrist. +1",
       legs="Gleti's Breeches",
-      feet="Gleti's Boots",
+      -- legs="Lustr. Subligar +1",
+      feet={ name="Herculean Boots", augments={'Accuracy+20 Attack+20','Crit. hit damage +4%','STR+8',}},
       neck="Fotia Gorget",
       waist="Fotia Belt",
-      left_ear="Sherida Earring",
+      left_ear="Moonshade Earring",
       right_ear="Odr Earring",
       left_ring="Regal Ring",
       right_ring="Ilabrat Ring",
-      back={ name="Senuna's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Crit.hit rate+10','Phys. dmg. taken-10%',}},
+      back={ name="Senuna's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Crit.hit rate+10','Phys. dmg. taken-10%'}},
     })
 
     sets.precast.WS['Rudra\'s Storm'] = set_combine(sets.precast.WS, {
-      ammo="Charis Feather",
+      ammo="C. Palug Stone",
       head="Nyame Helm",
-      -- body="Nyame Mail",
-      body="Gleti's Cuirass",
+      body="Nyame Mail",
       hands="Maxixi bangles +3",
       legs={ name="Horos Tights +3", augments={'Enhances "Saber Dance" effect',}},
-      -- hands="Nyame Gauntlets",
-      -- legs="Nyame Flanchard",
       feet="Nyame Sollerets",
       neck="Etoile gorget +2",
       waist="Kentarch Belt +1",
-      left_ear="Sherida Earring",
+      left_ear="Odr Earring",
       right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
       left_ring="Regal Ring",
       right_ring="Ilabrat Ring",
-      back={ name="Senuna's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%',}},
+      back={ name="Senuna's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%','Phys. dmg. taken-10%'}},
     })
     
     sets.precast.WS['Dancing Edge'] = sets.precast.WS['Rudra\'s Storm']
@@ -415,7 +415,21 @@ function init_gear_sets()
       waist="Orpheus's Sash",
     }
     
-    sets.precast.WS['Exenterator'] = sets.precast.WS['Aeolian Edge']
+    sets.precast.WS['Exenterator'] = {
+      ammo="C. Palug Stone",
+      head="Nyame Helm",
+      neck="Fotia Gorget",
+      right_ear="Brutal Earring",
+      left_ear="Sherida Earring",
+      body="Horos Casaque +3",
+      hands="Nyame Gauntlets",
+      left_ring="Regal Ring",
+      right_ring="Ilabrat Ring",
+      back={ name="Senuna's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%','Phys. dmg. taken-10%'}},
+      waist="Fotia Belt",
+      legs="Nyame Flanchard",
+      feet="Nyame Sollerets" 
+    }
 
     sets.precast.Skillchain = {
         -- hands="Macu. Bangles",
@@ -724,16 +738,19 @@ function init_gear_sets()
 
     -- No Magic Haste (74% DW to cap)
     sets.engaged.Hybrid = {
-      main="Tauret",
-      sub="Twashtar",
-      ammo="Staunch Tathlum +1",
-      left_ring={name="Chirich Ring +1",bag="wardrobe 2"},
-      right_ring={name="Chirich Ring +1",bag="wardrobe 4"},
-      head="Gleti's Mask",
-      body="Gleti's Cuirass",
-      hands="Gleti's Gauntlets",
-      legs="Gleti's Breeches",
-      feet="Gleti's Boots",
+      ammo="Coiste Bodhar",
+      head="Malignance chapeau", -- 6
+      neck="Etoile gorget +2",
+      left_ear="Sherida Earring",
+      right_ear="Mache Earring +1",
+      body="Gleti's Cuirass", -- 9 PDT
+      hands="Malignance gloves", -- 5
+      left_ring={name="Moonlight Ring",bag="wardrobe 3"}, -- 5
+      right_ring={name="Moonlight Ring",bag="wardrobe 4"}, -- 5
+      back={ name="Senuna's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}},  -- 10 PDT
+      waist="Reiki Yotai",
+      legs="Malignance tights", -- 7
+      feet="Malignance boots" -- 4
     }
 
     sets.engaged.DT = set_combine(sets.engaged, sets.engaged.Hybrid)

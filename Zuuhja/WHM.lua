@@ -365,15 +365,15 @@ function init_gear_sets()
       sub="Chanter's Shield",
       body="Ebers Bliaut +1",
       head={ name="Vanya Hood", augments={'Healing magic skill +20','"Cure" spellcasting time -7%','Magic dmg. taken -3',}},
-      hands="Fanatic Gloves", --15
+      hands={ name="Fanatic Gloves", augments={'MP+45','Healing magic skill +9','"Conserve MP"+6','"Fast Cast"+5',}},
       legs="Th. Pant. +3", --21
-      feet="Vanya Clogs", --5
+      feet={ name="Vanya Clogs", augments={'Healing magic skill +20','"Cure" spellcasting time -7%','Magic dmg. taken -3',}}, -- 5
       neck="Debilis Medallion", --15
       ear1="Beatific Earring",
       ear2="Meili Earring",
       ring1="Menelaus's Ring", --20
       ring2="Haoma's Ring", --15
-      back="Alaunus's Cape", --25
+      back={ name="Alaunus's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','MND+10','"Fast Cast"+10','Phys. dmg. taken-10%',}}, -- 25
       waist="Bishop's Sash",
     })
 
@@ -570,7 +570,7 @@ function init_gear_sets()
       waist="Carrier's Sash",
       back={ name="Alaunus's Cape", augments={'MND+20','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Haste+10','Mag. Evasion+15',}},
       left_ear={ name="Odnowa Earring +1", augments={'Path: A',}},
-      right_ear={ name="Moonshade Earring", augments={'HP+25','Latent effect: "Refresh"+1',}},
+      -- right_ear={ name="Moonshade Earring", augments={'HP+25','Latent effect: "Refresh"+1',}},
       left_ring="Defending Ring",
       right_ring="Gelatinous Ring +1", -- 7 dt
     }
@@ -631,7 +631,7 @@ function init_gear_sets()
     sets.buff.Doom = {
       neck="Nicander's Necklace", --20
       ring1={name="Eshmun's Ring", bag="wardrobe3"}, --20
-      ring2={name="Eshmun's Ring", bag="wardrobe4"}, --20
+      ring2={name="Eshmun's Ring", bag="wardrobe5"}, --20
       waist="Gishdubar Sash", --10
     }
 

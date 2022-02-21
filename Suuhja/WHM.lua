@@ -133,15 +133,15 @@ function user_setup()
     
     send_command('bind @b sat youcommand Muuhja "Magic Finale"')
     send_command('bind @n sat youcommand Muuhja "Carnage Elegy"')
-    send_command('bind @m sat youcommand Muuhja "Pining Nocturne"')
-    send_command('bind @o sat youcommand Muuhja "Horde Lullaby II"')
-    send_command('bind @p sat youcommand Muuhja "Horde Lullaby"')
+    -- send_command('bind @m sat youcommand Muuhja "Pining Nocturne"')
+    -- send_command('bind @o sat youcommand Muuhja "Horde Lullaby II"')
+    -- send_command('bind @p sat youcommand Muuhja "Horde Lullaby"')
     
-    -- send_command('bind @b send muuhja input /ma "Cait Sith" <me>')
+    send_command('bind @b send muuhja input /ma "Cait Sith" <me>')
     -- send_command('bind @n sat youcommand Muuhja "Predator Claws"')
-    -- send_command('bind @m sat youcommand Muuhja "Mewing Lullaby"')
-    -- send_command('bind @o sat youcommand Muuhja Assault')
-    -- send_command('bind @p send muuhja input /pet "Release" <me>')
+    send_command('bind @m sat youcommand Muuhja "Mewing Lullaby"')
+    send_command('bind @o sat youcommand Muuhja Assault')
+    send_command('bind @p send muuhja input /pet "Release" <me>')
     send_command('bind @= send muuhja input /ja "Apogee" <me>')
         
     send_command('bind ^numpad7 input /ws "Black Halo" <t>')
@@ -455,7 +455,7 @@ function init_gear_sets()
       head="Inyanga Tiara +2",
       hands="Ebers Mitts +1",
       legs="Th. Pant. +3",
-      feet="Theo. Duckbills +2",
+      feet="Theo. Duckbills +3",
     })
 
     sets.midcast.RegenDuration = set_combine(sets.midcast.EnhancingDuration, {
@@ -465,7 +465,7 @@ function init_gear_sets()
       head="Inyanga Tiara +2",
       hands="Ebers Mitts +1",
       legs="Th. Pant. +3",
-      feet="Theo. Duckbills +2",
+      feet="Theo. Duckbills +3",
     })
 
     sets.midcast.Refresh = set_combine(sets.midcast.EnhancingDuration, {
@@ -523,7 +523,7 @@ function init_gear_sets()
       body="Theo. Bliaut +2",
       hands="Piety Mitts +3",
       legs="Th. Pant. +3",
-      feet="Theo. Duckbills +2",
+      feet="Theo. Duckbills +3",
       neck="Erra Pendant",
       left_ear="Malignance Earring",
       right_ear="Regal Earring",
@@ -546,7 +546,7 @@ function init_gear_sets()
       body="Theo. Bliaut +2",
       hands="Theophany Mitts +2",
       legs={ name="Chironic Hose", augments={'Mag. Acc.+21 "Mag.Atk.Bns."+21','"Fast Cast"+5','MND+11','Mag. Acc.+13','"Mag.Atk.Bns."+6',}},
-      feet="Theo. Duckbills +2",
+      feet="Theo. Duckbills +3",
       neck="Erra Pendant",
       ear1="Malignance Earring",
       ear2="Regal Earring",
@@ -558,21 +558,21 @@ function init_gear_sets()
 
      -- Custom spell classes
     sets.midcast.MndEnfeebles = {
-      main="Daybreak",
+      main="Asclepius",
       sub="Ammurapi Shield",
       ammo="Pemphredo Tathlum",
       head=empty, 
       body="Cohort Cloak +1",
       hands="Kaykaus Cuffs +1",
       legs={ name="Chironic Hose", augments={'Mag. Acc.+21 "Mag.Atk.Bns."+21','"Fast Cast"+5','MND+11','Mag. Acc.+13','"Mag.Atk.Bns."+6',}},
-      feet="Theo. Duckbills +2",
+      feet="Theo. Duckbills +3",
       neck="Erra Pendant",
       ear1="Malignance Earring",
       ear2="Regal Earring",
       left_ring={name="Stikini Ring +1",bag="wardrobe 2"},
       right_ring={name="Stikini Ring +1",bag="wardrobe 3"},
       back={ name="Alaunus's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','MND+10','"Fast Cast"+10','Phys. dmg. taken-10%',}},
-      waist="Luminary Sash",
+      waist="Obstinate Sash",
     }
 
     sets.midcast.IntEnfeebles = set_combine(sets.midcast.MndEnfeebles, {
@@ -587,7 +587,7 @@ function init_gear_sets()
       body="Twilight Cloak",
       hands="Theophany Mitts +2",
       legs="Th. Pant. +3",
-      feet="Theo. Duckbills +2",
+      feet="Theo. Duckbills +3",
       neck="Erra Pendant",
       waist={ name="Acuity Belt +1", augments={'Path: A',}},
       left_ear="Regal Earring",
@@ -675,14 +675,14 @@ function init_gear_sets()
 
     -- Basic set for if no TP weapon is defined.
     sets.engaged = {
-      main="Yagrush",
+      -- main="Yagrush",
       -- sub="Magesmasher +1",
       ammo="Staunch Tathlum +1",
-      head="Nyame Helm",
-      hands="Nyame Gauntlets",
-      -- head={ name="Blistering Sallet +1", augments={'Path: A',}},
+      -- head="Nyame Helm",
+      -- hands="Nyame Gauntlets",
+      head={ name="Blistering Sallet +1", augments={'Path: A',}},
       body="Nyame Mail",
-      -- hands={ name="Gazu Bracelet +1", augments={'Path: A',}},
+      hands={ name="Gazu Bracelet +1", augments={'Path: A',}},
       legs="Nyame Flanchard",
       feet="Nyame Sollerets",
       neck="Lissome necklace",

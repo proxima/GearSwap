@@ -99,7 +99,7 @@ function init_gear_sets()
 
   -- Precast sets to enhance JAs
   sets.precast.JA['Invincible'] = set_combine(sets.precast.Enmity, {legs="Caballarius Breeches +1"})
-  sets.precast.JA['Holy Circle'] = set_combine(sets.precast.Enmity, {feet="Reverence Leggings +2"})
+  sets.precast.JA['Holy Circle'] = set_combine(sets.precast.Enmity, {feet="Reverence Leggings +3"})
   sets.precast.JA['Shield Bash'] = set_combine(sets.precast.Enmity, {hands="Caballarius Gauntlets +2"})
   sets.precast.JA['Sentinel'] = set_combine(sets.precast.Enmity, {feet="Caballarius Leggings +2"})
   sets.precast.JA['Rampart'] = set_combine(sets.precast.Enmity, {head="Caballarius Coronet +1"})
@@ -108,6 +108,9 @@ function init_gear_sets()
   sets.precast.JA['Sepulcher'] = sets.precast.Enmity
   sets.precast.JA['Palisade'] = sets.precast.Enmity
   sets.precast.JA['Cover'] = set_combine(sets.precast.Enmity, {head="Reverence Coronet +1"})
+  
+  sets.precast.JA['Valiance'] = sets.precast.Enmity
+
 
   -- add mnd for Chivalry
   sets.precast.JA['Chivalry'] = {
@@ -203,25 +206,9 @@ function init_gear_sets()
   --------------------------------------
   
   sets.midcast.FastRecast = {}
-
-  sets.precast.Enmity = {
-    ammo="Sapience Orb",
-    head="Loess Barbuta +1",
-    neck="Moonlight Necklace",
-    ear1="Cryptic Earring",
-    ear2="Trux Earring",
-    body="Souv. Cuirass +1",
-    hands={ name="Souv. Handsch. +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
-    ring1="Supershear Ring",
-    ring2="Eihwaz Ring",
-    back=Rud.ENMITY,
-    waist="Creed Baudrier",
-    legs={ name="Souv. Diechlings +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
-    feet="Eschite Greaves"
-  }
   
   sets.midcast.Enmity = set_combine(sets.precast.Enmity, {})
-
+  
   sets.midcast.SIRD = {
     ammo="Staunch Tathlum +1",   -- 11
     head="Souveran Schaller +1", -- 20
@@ -250,7 +237,7 @@ function init_gear_sets()
   sets.midcast['Banish II'] = sets.midcast.Banish
   
   sets.midcast.Holy = sets.precast.JA['Provoke']
-  
+
   sets.midcast['Holy II'] = sets.midcast.Holy
     
   sets.midcast.Cure = {
@@ -327,11 +314,12 @@ function init_gear_sets()
   -- Idle sets
   sets.idle = {
     main="Burtgang",
-    sub="Srivatsa",  
+    sub="Srivatsa",
     ammo="Staunch Tathlum +1",
     head="Sakpata's Helm",
     body="Sakpata's Breastplate",
     hands="Sakpata's Gauntlets",
+    -- hands="Reverence Gauntlets +3",
     legs="Sakpata's Cuisses",
     feet="Sakpata's Leggings",
     neck="Unmoving collar +1",
@@ -361,8 +349,8 @@ function init_gear_sets()
     back=Rud.BLOCK
   }
 
-  sets.idle.Town = {right_ring="Shneddick Ring +1"}   
-  sets.idle.Weak = {}    
+  sets.idle.Town = set_combine(sets.idle, {right_ring="Shneddick Ring +1"})
+  sets.idle.Weak = sets.idle    
   sets.idle.Weak.Reraise = set_combine(sets.idle.Weak, sets.Reraise)    
   sets.Kiting = {right_ring="Shneddick Ring +1"}
   sets.latent_refresh = {waist="Fucho-no-obi"}
@@ -409,12 +397,12 @@ function init_gear_sets()
   -- Engaged sets
   --------------------------------------
   sets.engaged = {
-    main="Burtgang",
-    sub="Srivatsa",
+    main="Naegling",
+    sub="Ochain",
     ammo="Staunch Tathlum +1",
     head="Sakpata's Helm",
     body="Sakpata's Breastplate",
-    hands="Sakpata's Gauntlets",
+    hands="Reverence Gauntlets +3",
     legs="Sakpata's Cuisses",
     feet="Sakpata's Leggings",
     neck="Unmoving collar +1",
@@ -430,7 +418,7 @@ function init_gear_sets()
   -- Custom buff sets
   --------------------------------------
   
-  sets.buff.Doom = {neck="Nicander Necklace",}
+  sets.buff.Doom = {neck="Nicander's Necklace",}
   sets.buff.Cover = {head="Reverence Coronet +1", body="Caballarius Surcoat +1"}
 end
 

@@ -374,7 +374,6 @@ function init_gear_sets()
     sets.precast.JA["Maintenance"] = set_combine(sets.precast.JA["Repair"], {})
 
     sets.precast.JA.Maneuver = {    
-      -- main = "Midnights",
       neck = "Buffoon's Collar +1",
       body = Empy_Karagoz.Body_Overload,
       hands = Artifact_Foire.Hands_Mane_Overload,
@@ -584,7 +583,6 @@ function init_gear_sets()
         Hybrid Mode = Normal
     ]]
     sets.engaged.MasterPet = {
-      main={ name="Xiucoatl", augments={'Path: C',}},
       head="Heyoka Cap +1",
       body="Tali'ah Manteel +2",
       hands="Mpaca's Gloves",
@@ -705,7 +703,6 @@ function init_gear_sets()
         F10 if Physical Defense Mode = PetDT
     ]]
     sets.pet.EmergencyDT = {
-      main="Xiucoatl",
       -- head="Anwig Salade",
       head={ name="Rao Kabuto +1", augments={'Pet: HP+125','Pet: Accuracy+20','Pet: Damage taken -4%',}},       --  4
       body={ name="Rao Togi +1", augments={'Pet: HP+125','Pet: Accuracy+20','Pet: Damage taken -4%',}},         --  4
@@ -737,7 +734,6 @@ function init_gear_sets()
         Hybrid Mode = Normal
     ]]
     sets.idle.Pet.Engaged = {
-        main={ name="Xiucoatl", augments={'Path: C',}},
         head="Karagoz Capello +1",
         body= Relic_Pitre.Body_PTP,
         hands="Mpaca's Gloves",
@@ -758,7 +754,6 @@ function init_gear_sets()
         Hybrid Mode = Acc
     ]]
     sets.idle.Pet.Engaged.Acc = {
-        main={ name="Xiucoatl", augments={'Path: C',}},
         head=Relic_Pitre.Head_PRegen,
         body= Relic_Pitre.Body_PTP,
         hands="Mpaca's Gloves",
@@ -778,7 +773,6 @@ function init_gear_sets()
         Hybrid Mode = TP
     ]]
     sets.idle.Pet.Engaged.TP = {
-      main={ name="Xiucoatl", augments={'Path: C',}},
       head={ name="Taeon Chapeau", augments={'Pet: Accuracy+23 Pet: Rng. Acc.+23','Pet: "Dbl. Atk."+5','Pet: Damage taken -4%',}},
       body={ name="Pitre Tobe +3", augments={'Enhances "Overdrive" effect',}},
       hands={ name="Taeon Gloves", augments={'Pet: Accuracy+23 Pet: Rng. Acc.+23','Pet: "Dbl. Atk."+5','Pet: Damage taken -4%',}},
@@ -912,7 +906,6 @@ function init_gear_sets()
     ---------------------------------------------
     -- Town Set
     sets.idle.Town = {
-        main={ name="Xiucoatl", augments={'Path: C',}},
         range="Animator P +1",
         ammo="Automat. Oil +3",
         head="Pitre Taj +3",

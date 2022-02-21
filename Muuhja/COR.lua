@@ -121,7 +121,21 @@ function init_gear_sets()
    -- Weaponskill sets
     -- Default set for any weaponskill that isn't any more specifically defined
     sets.precast.WS = {}
-
+   
+    sets.precast.WS['Hot Shot'] = {ammo="Eminent Bullet",
+      head={ name="Nyame Helm", augments={'Path: B',}},
+      body={ name="Nyame Mail", augments={'Path: B',}},
+      hands={ name="Nyame Gauntlets", augments={'Path: B',}},
+      legs={ name="Nyame Flanchard", augments={'Path: B',}},
+      feet={ name="Nyame Sollerets", augments={'Path: B',}},
+      neck="Fotia Gorget",
+      waist="Fotia Belt",
+      left_ear="Telos Earring",
+      right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
+      left_ring="Regal Ring",
+      right_ring="Epaminondas's Ring",
+      back={ name="Camulus's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}},
+    }
 
     -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
     sets.precast.WS['Evisceration'] = sets.precast.WS
@@ -133,23 +147,22 @@ function init_gear_sets()
     sets.precast.WS['Last Stand'] = {ammo=gear.WSbullet}
     sets.precast.WS['Last Stand'].Acc = {ammo=gear.WSbullet}
 
-    sets.precast.WS['Detonator'] = {
-      ammo=gear.WSbullet,
-      head="Ikenga's Hat",
-      body="Ikenga's Vest",
-      hands="Meg. Gloves +2",
-      legs="Ikenga's Trousers",
-      feet="Ikenga's Clogs",
+    sets.precast.WS['Detonator'] = {ammo="Eminent Bullet",
+      head={ name="Nyame Helm", augments={'Path: B',}},
+      body={ name="Nyame Mail", augments={'Path: B',}},
+      hands={ name="Nyame Gauntlets", augments={'Path: B',}},
+      legs={ name="Nyame Flanchard", augments={'Path: B',}},
+      feet={ name="Nyame Sollerets", augments={'Path: B',}},
       neck="Fotia Gorget",
       waist="Fotia Belt",
       left_ear="Telos Earring",
-      right_ear="Enervating Earring",
-      left_ring="Crepuscular Ring",
-      right_ring="Shukuyu Ring",
-      back=Cape.RATK
+      right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
+      left_ring="Regal Ring",
+      right_ring="Epaminondas's Ring",
+      back={ name="Camulus's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}},
     }
 
-    sets.precast.WS['Wildfire'] = {ammo=gear.MAbullet}
+    sets.precast.WS['Wildfire'] = {ammo="Bronze Bullet",}
     sets.precast.WS['Wildfire'].Brew = {ammo=gear.MAbullet,}
 
     sets.precast.WS['Leaden Salute'] = sets.precast.WS['Wildfire']
@@ -179,23 +192,24 @@ function init_gear_sets()
 
     sets.midcast.CorsairShot.Acc = {ammo=gear.QDbullet}
 
-    sets.midcast.CorsairShot['Light Shot'] = {ammo=gear.QDbullet}
+    sets.midcast.CorsairShot['Light Shot'] = {ammo=gear.QDbullet
+    }
 
     sets.midcast.CorsairShot['Dark Shot'] = sets.midcast.CorsairShot['Light Shot']
 
     -- Ranged gear
     sets.midcast.RA = {ammo=gear.RAbullet,
       head="Malignance Chapeau",
-      neck="Iskur Gorget",
+      -- neck="Iskur Gorget",
       left_ear="Telos Earring",
-      right_ear="Enervating Earring",
+      right_ear="Digni. Earring",
       body="Malignance Tabard",
       hands="Malignance Gloves",
       legs="Malignance Tights",
       feet="Malignance Boots",
-      left_ring="Dingir Ring",
-      right_ring="Ilabrat Ring",
-      waist="Yemaya Belt",
+      left_ring={name="Chirich Ring +1",bag="wardrobe 2"},
+      right_ring={name="Chirich Ring +1",bag="wardrobe 3"},
+      waist="Reiki Yotai",
       back=Cape.RTP
     }
 
@@ -249,7 +263,7 @@ function init_gear_sets()
       legs="Malignance Tights",
       feet="Malignance Boots",
       neck={ name="Loricate Torque +1", augments={'Path: A',}},
-      waist="Grunfeld Rope",
+      waist="Reiki Yotai",
       left_ear="Telos Earring",
       right_ear="Digni. Earring",
       left_ring={name="Chirich Ring +1",bag="wardrobe 2"},
@@ -264,7 +278,7 @@ function init_gear_sets()
       legs="Malignance Tights",
       feet="Malignance Boots",
       neck={ name="Loricate Torque +1", augments={'Path: A',}},
-      waist="Grunfeld Rope",
+      waist="Reiki Yotai",
       left_ear="Telos Earring",
       right_ear="Digni. Earring",
       left_ring={name="Chirich Ring +1",bag="wardrobe 2"},
@@ -279,9 +293,11 @@ function init_gear_sets()
       legs="Malignance Tights",
       feet="Malignance Boots",
       neck={ name="Loricate Torque +1", augments={'Path: A',}},
-      waist="Grunfeld Rope",
-      left_ear="Telos Earring",
-      right_ear="Digni. Earring",
+      waist="Reiki Yotai",
+      left_ear="Eabani Earring",
+      right_ear="Suppanomimi",
+      -- left_ear="Telos Earring",
+      -- right_ear="Digni. Earring",
       left_ring={name="Chirich Ring +1",bag="wardrobe 2"},
       right_ring={name="Chirich Ring +1",bag="wardrobe 3"},
       back=Cape.TP

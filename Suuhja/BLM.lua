@@ -95,7 +95,7 @@ function init_gear_sets()
       head={ name="Merlinic Hood", augments={'"Fast Cast"+7','"Mag.Atk.Bns."+14',}}, -- 15
       body="Mallquis Saio +2", -- 9
       hands="Jhakri Cuffs +2",
-      legs={ name="Merlinic Shalwar", augments={'Mag. Acc.+25 "Mag.Atk.Bns."+25','Magic burst dmg.+10%','INT+8','Mag. Acc.+8',}},
+      legs="Agwu's Slops", -- 7
       feet={ name="Merlinic Crackows", augments={'Attack+22','"Fast Cast"+7',}}, -- 12
       neck="Voltsurge Torque", -- 4
       waist="Embla Sash", -- 5
@@ -277,11 +277,11 @@ function init_gear_sets()
       body={ name="Amalric Doublet +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
       hands={ name="Merlinic Dastanas", augments={'"Mag.Atk.Bns."+11','"Drain" and "Aspir" potency +10','MND+6',}},
       waist="Fucho-no-Obi",
-      legs={ name="Merlinic Shalwar", augments={'Mag. Acc.+25 "Mag.Atk.Bns."+25','Magic burst dmg.+10%','INT+8','Mag. Acc.+8',}},
+      legs="Agwu's Slops",
       left_ring="Archon ring",
       right_ring="Evanescence ring",
       back={ name="Taranus's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Phys. dmg. taken-10%',}},
-      feet={ name="Merlinic Crackows", augments={'"Drain" and "Aspir" potency +10',}},
+      feet="Agwu's Pigaches"
     }
     
     sets.midcast.Aspir = sets.midcast.Drain
@@ -299,12 +299,12 @@ function init_gear_sets()
       -- body="Archmage's coat +3",
       hands="Archmage's Gloves +3",
       legs="Archmage's Tonban +3",
-      feet="Archmage's Sabots +3",
+      feet="Agwu's Pigaches",
       neck="Sorcerer's Stole +2",
       -- waist="Orpheus's Sash",
       -- waist="Sacro Cord", -- waist="Hachirin-no-Obi",
       waist="Acuity Belt +1",
-	  left_ear="Regal Earring",
+      left_ear="Regal Earring",
       right_ear="Malignance Earring",
       left_ring="Metamorph Ring +1",
       right_ring="Freke Ring",
@@ -317,7 +317,7 @@ function init_gear_sets()
       body="Agwu's Robe",
       hands={ name="Amalric Gages +1", augments={'INT+12','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
       legs={ name="Amalric Slops +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
-      feet={ name="Amalric Nails +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
+      feet="Agwu's Pigaches",
       left_ear="Crematio Earring",
       left_ring="Mallquis Ring",
       waist="Skrymir Cord +1",

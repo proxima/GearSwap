@@ -125,7 +125,7 @@ hud_font = 'Impact'
     windower.send_command('bind @b sat youcommand Muuhja "Earth Threnody II"')
     windower.send_command('bind @n sat youcommand Muuhja "Carnage Elegy"')
     windower.send_command('bind @m sat youcommand Muuhja "Pining Nocture"')
-    windower.send_command('bind @o sat youcommand Muuhja "Horde Lullaby II"')
+    windower.send_command('bind @o sat youcommand Muuhja "Horde Lullaby"')
     windower.send_command('bind @p sat youcommand Muuhja "Foe Lullaby II"')
 	-- windower.send_command('bind @p send muuhja input /pet "Release" <me>')
     windower.send_command('bind @= send muuhja input /ja "Apogee" <me>')
@@ -358,8 +358,8 @@ function get_sets()
       head="Nyame Helm",
       body="Agwu's Robe",
       hands="Jhakri Cuffs +2",
-      legs={ name="Amalric Slops +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
-      feet="Nyame Sollerets",
+      legs="Agwu's Slops",
+      feet="Agwu's Pigaches",
       neck={ name="Argute Stole +2", augments={'Path: A',}},
       waist="Orpheus's Sash",
       left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
@@ -370,17 +370,15 @@ function get_sets()
     }
     
     sets.me["Rock Crusher"] = sets.me["Earth Crusher"]
-    
-    sets.me["Starburst"] = {
-    }
+    sets.me["Starburst"] = sets.me["Earth Crusher"]
     
     sets.me["Cataclysm"] = {
       ammo="Ghastly Tathlum +1",
       head="Pixie hairpin +1",
       body="Nyame Mail",
       hands="Jhakri Cuffs +2",
-      legs="Nyame Flanchard",
-      feet="Nyame Sollerets",
+      legs="Agwu's Slops",
+      feet="Agwu's Pigaches",
       neck={ name="Argute Stole +2", augments={'Path: A',}},
       waist="Orpheus's Sash",
       left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
@@ -390,14 +388,13 @@ function get_sets()
       back={ name="Lugh's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Damage taken-5%',}},
     }
 
-    -- current set vs ceizak bee, voidstorm ii: 21633
     sets.me["Omniscience"] = {
       ammo="Ghastly Tathlum +1",
       head="Pixie hairpin +1",
       body="Agwu's Robe",
       hands="Jhakri Cuffs +2",
-      legs={ name="Amalric Slops +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
-      feet={ name="Amalric Nails +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
+      legs="Agwu's Slops",
+      feet="Agwu's Pigaches",
       neck={ name="Argute Stole +2", augments={'Path: A',}},
       waist="Orpheus's Sash",
       left_ear="Regal Earring",
@@ -446,10 +443,7 @@ function get_sets()
     -- Fill up following with your avaible pieces.
     sets.buff['Rapture'] = {head="Arbatel bonnet +1"}
     sets.buff['Perpetuance'] = {hands="Arbatel Bracers +1"}
-
-    sets.buff['Immanence'] = {
-    }
-
+    sets.buff['Immanence'] = {}
     sets.buff['Penury'] = {}
     sets.buff['Parsimony'] = {}
     sets.buff['Celerity'] = {feet="Pedagogy loafers +3"}
@@ -574,7 +568,7 @@ function get_sets()
       body={ name="Agwu's Robe", augments={'Path: A',}},
       hands="Regal Cuffs",
       legs={ name="Peda. Pants +3", augments={'Enhances "Tabula Rasa" effect',}},
-      feet="Jhakri Pigaches +2",
+      feet="Agwu's Pigaches",
       neck={ name="Argute Stole +2", augments={'Path: A',}},
       waist={ name="Acuity Belt +1", augments={'Path: A',}},
       left_ear="Regal Earring",
@@ -582,6 +576,7 @@ function get_sets()
       left_ring="Freke Ring",
       right_ring={ name="Metamor. Ring +1", augments={'Path: A',}},
       back={ name="Lugh's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Damage taken-5%',}},
+  
       -- When not doing Ongo swap to this stuff, maybe change hands.
       -- head="Pixie hairpin +1",
       -- left_ring="Archon ring",
@@ -589,18 +584,14 @@ function get_sets()
     
     -- Make sure you have a non weather obi in this set. Helix get bonus naturally no need Obi.
     sets.midcast.Helix = {
-      -- left_ear="Crematio Earring",
-      -- waist="Skrymir Cord +1",
-      -- left_ring="Mallquis Ring",
-      -- back={ name="Bookworm's Cape", augments={'INT+1','MND+2','Helix eff. dur. +20','"Regen" potency+10',}},     
       main="Bunzi's Rod",
       sub="Ammurapi Shield", -- sub="Culminus",
       ammo="Ghastly Tathlum +1",
       head="Pedagogy mortarboard +3",
       body="Agwu's Robe",
       hands={ name="Amalric Gages +1", augments={'INT+12','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
-      legs={ name="Merlinic Shalwar", augments={'Mag. Acc.+25 "Mag.Atk.Bns."+25','Magic burst dmg.+10%','INT+8','Mag. Acc.+8',}},
-      feet={ name="Amalric Nails +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
+      legs="Agwu's Slops",
+      feet="Agwu's Pigaches",
       neck={ name="Argute Stole +2", augments={'Path: A',}},
       waist="Skrymir Cord +1",
       left_ear="Regal Earring",
@@ -641,6 +632,9 @@ function get_sets()
     sets.midcast.WindHelix = {
       main="Marin staff +1",
       sub="Enki Strap",
+      body="Agwu's Robe",
+      legs="Agwu's Slops",
+      feet="Agwu's Pigaches",
       waist="Skrymir Cord +1",
       left_ring="Mallquis Ring",
       left_ear="Crematio Earring",
@@ -650,6 +644,9 @@ function get_sets()
     sets.midcast.LightHelix = {
       main="Daybreak",
       sub="Culminus",
+      body="Agwu's Robe",
+      legs="Agwu's Slops",
+      feet="Agwu's Pigaches",
       left_ear="Crematio Earring",
       left_ring="Mallquis Ring",
       waist="Skrymir Cord +1",
@@ -658,6 +655,9 @@ function get_sets()
 
     sets.midcast.DarkHelix = {
       head="Pixie hairpin +1",
+      body="Agwu's Robe",
+      legs="Agwu's Slops",
+      feet="Agwu's Pigaches",
       left_ear="Crematio Earring",
       left_ring="Archon ring",
       right_ring="Mallquis Ring",
@@ -682,8 +682,8 @@ function get_sets()
      feet={ name="Merlinic Crackows", augments={'Attack+22','"Fast Cast"+7',}}, -- 12 fc, 3 haste
    }
 
-   sets.midcast["Sublimation"] = {
-   }    
+   sets.midcast["Sublimation"] = {}
+   sets.midcast["Tabula Rasa"] = { legs="Pedagogy Pants +3" }
    
    sets.midcast.nuking.normal = {
      ammo="Ghastly Tathlum +1",
@@ -703,7 +703,7 @@ function get_sets()
 
    sets.midcast.nuking.acc = set_combine(sets.midcast.nuking.normal, {
      sub="Khonsu",
-     feet="Jhakri Pigaches +2",
+     feet="Agwu's Pigaches",
    })
    
    -- used with toggle, default: F10
@@ -715,7 +715,7 @@ function get_sets()
      head="Pedagogy mortarboard +3",
      body="Agwu's Robe",
      hands={ name="Amalric Gages +1", augments={'INT+12','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
-     legs={ name="Merlinic Shalwar", augments={'Mag. Acc.+25 "Mag.Atk.Bns."+25','Magic burst dmg.+10%','INT+8','Mag. Acc.+8',}},
+     legs="Agwu's Slops",
      feet={ name="Amalric Nails +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
      neck={ name="Argute Stole +2", augments={'Path: A',}},
      waist="Sacro Cord",
@@ -729,7 +729,7 @@ function get_sets()
    -- used with toggle, default: F10
    -- Pieces to swap from free nuke to Magic Burst
    sets.midcast.MB.acc = set_combine(sets.midcast.MB.normal, {   
-     feet="Jhakri Pigaches +2",
+     feet="Agwu's Pigaches",
      waist="Acuity Belt +1",
    })
    
@@ -750,7 +750,8 @@ function get_sets()
    })
 
    sets.midcast.MB.occult = set_combine(sets.midcast.MB.normal, {
-     main="Khatvanga"
+     main="Khatvanga",
+     sub="Khonsu",
    })
 
     -- Enfeebling
@@ -866,7 +867,8 @@ function get_sets()
     })
 
     sets.midcast.storm = set_combine(sets.midcast.enhancing, {
-    })       
+    })
+
     -- Stoneskin
     sets.midcast.stoneskin = set_combine(sets.midcast.enhancing, {
     })
@@ -892,7 +894,7 @@ function get_sets()
       left_ring="Archon ring",
       right_ring="Evanescence ring",
       back={ name="Bookworm's Cape", augments={'INT+1','MND+2','Helix eff. dur. +20','"Regen" potency+10',}},
-      feet={ name="Merlinic Crackows", augments={'"Drain" and "Aspir" potency +10',}},
+      feet="Agwu's Pigaches"
     })
 
     sets.midcast["Aspir"] = sets.midcast["Drain"]
@@ -960,8 +962,7 @@ function get_sets()
       right_ear="Mimir Earring",
       left_ear="Regal Earring",
       body="Pedagogy gown +3",
-      hands="Arbatel Bracers +1", -- Tired of this not swapping properly
-      -- hands="Telchine Gloves",
+      hands="Arbatel Bracers +1", -- Tired of this not swapping properly | hands="Telchine Gloves",
       left_ring={name="Stikini Ring +1",bag="wardrobe 2"},
       right_ring={name="Stikini Ring +1",bag="wardrobe 3"},
       waist="Embla Sash",

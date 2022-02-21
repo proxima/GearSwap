@@ -371,10 +371,17 @@ function init_gear_sets()
     }
 
     sets.idle.Town = set_combine(sets.idle, {
-	  feet="Pillager's Poulaines +3"
-	})
+      feet="Pillager's Poulaines +3"
+    })
 
     sets.idle.Weak = {}
+
+    sets.buff.Doom = {
+      neck="Nicander's Necklace", --20
+      ring1={name="Eshmun's Ring", bag="wardrobe5"}, --20
+      ring2={name="Eshmun's Ring", bag="wardrobe6"}, --20
+      waist="Gishdubar Sash", --10
+    }
 
     -- Defense sets
 
@@ -485,13 +492,24 @@ end
 -- buff == buff gained or lost
 -- gain == true if the buff was gained, false if it was lost.
 function job_buff_change(buff, gain)
+    if buff == "doom" then
+        if gain then
+            equip(sets.buff.Doom)
+            disable('ring1','ring2','waist')
+        else
+            enable('ring1','ring2','waist')
+            handle_equipping_gear(player.status)
+        end
+
+        return
+    end
+
     if state.Buff[buff] ~= nil then
         if not midaction() then
             handle_equipping_gear(player.status)
         end
     end
 end
-
 
 -------------------------------------------------------------------------------------------------------------------
 -- User code that supplements standard library decisions.

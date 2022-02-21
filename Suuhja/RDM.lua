@@ -580,19 +580,16 @@ function get_sets()
       sub="Ammurapi Shield",
       range="Ullr",
       ammo=none;
-      head="Atrophy Chapeau +2",   -- Atrophy Chapeau +3
+      head="Atrophy Chapeau +3",
       neck="Dls. Torque +2",
       left_ear="Snotra Earring",
       right_ear="Regal Earring",
       body="Atrophy Tabard +3",
       hands="Kaykaus Cuffs +1",
-      -- hands="Regal Cuffs",     -- When duration is wanted
       left_ring={name="Stikini Ring +1",bag="wardrobe 2"},
-      -- left_ring="Kishar ring", -- When duration is wanted
       right_ring={name="Stikini Ring +1",bag="wardrobe 3"},
       back=RDMCape.MACC,           -- Aurist's Cape +1
-      waist="Acuity Belt +1",                              
-      -- waist="Obstinate Sash",  -- When duration is wanted
+      waist="Obstinate Sash", 
       legs={ name="Chironic Hose", augments={'Mag. Acc.+21 "Mag.Atk.Bns."+21','"Fast Cast"+5','MND+11','Mag. Acc.+13','"Mag.Atk.Bns."+6',}},
       feet="Vitiation Boots +3",
     }
