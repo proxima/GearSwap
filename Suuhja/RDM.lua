@@ -489,6 +489,11 @@ function get_sets()
     sets.precast.cure = set_combine(sets.precast.casting, {
     })
 
+  sets.precast.Impact = set_combine(sets.midcast.casting, {
+    head=empty, 
+    body="Twilight Cloak"
+  })
+
     ---------------------
     -- Ability Precasting
     ---------------------
@@ -647,6 +652,11 @@ function get_sets()
     })
 
     sets.midcast["Stun"] = set_combine(sets.midcast.Enfeebling.macc, {
+    })
+
+    sets.midcast.Impact = set_combine(sets.midcast.Enfeebling.macc, {
+      head=empty, 
+      body="Twilight Cloak"
     })
 
     -- Enhancing yourself 

@@ -506,14 +506,14 @@ function init_gear_sets()
     ]]
     sets.engaged.Master = {
         head={ name="Ryuo Somen +1", augments={'HP+65','"Store TP"+5','"Subtle Blow"+8',}},
-        body="Tali'ah Manteel +2",
+        body="Mpaca's Doublet",
         hands="Mpaca's Gloves",
         legs={ name="Ryuo Hakama +1", augments={'Accuracy+25','"Store TP"+5','Phys. dmg. taken -4',}},
         feet={ name="Herculean Boots", augments={'"Triple Atk."+3','Rng.Atk.+13','Quadruple Attack +3','Accuracy+13 Attack+13','Mag. Acc.+4 "Mag.Atk.Bns."+4',}},
         neck="Shulmanu Collar",
         waist="Moonbow Belt +1",
-        left_ear="Mache Earring +1",
-        right_ear="Telos Earring",
+        left_ear={name="Mache Earring +1",bag="wardrobe 4"},
+        right_ear={name="Mache Earring +1",bag="wardrobe 5"},
         left_ring="Niqmaddu Ring",
         right_ring="Gere Ring",
         back=Visucius.MasterDA
@@ -539,8 +539,8 @@ function init_gear_sets()
         feet="Malignance Boots", -- 4
         neck="Shulmanu Collar",
         waist="Moonbow Belt +1", -- 6
-        left_ear="Mache Earring +1",
-        right_ear="Odnowa Earring +1", -- 3
+        left_ear={name="Mache Earring +1",bag="wardrobe 4"},
+        right_ear={name="Mache Earring +1",bag="wardrobe 5"},
         left_ring="Niqmaddu Ring",
         right_ring="Gere Ring",
         back=Visucius.MasterDA
@@ -559,8 +559,8 @@ function init_gear_sets()
         feet="Malignance Boots", -- 4
         neck="Shulmanu Collar",
         waist="Moonbow Belt +1", -- 6
-        left_ear="Mache Earring +1",
-        right_ear="Odnowa Earring +1", -- 3
+        left_ear={name="Mache Earring +1",bag="wardrobe 4"},
+        right_ear={name="Mache Earring +1",bag="wardrobe 5"},
         left_ring="Niqmaddu Ring",
         right_ring="Gere Ring",
         back=Visucius.MasterDA
@@ -702,23 +702,24 @@ function init_gear_sets()
         Activated by Alt+D or
         F10 if Physical Defense Mode = PetDT
     ]]
-    sets.pet.EmergencyDT = {
+    sets.pet.EmergencyDT = sets.idle.MasterDT
+	--{
       -- head="Anwig Salade",
-      head={ name="Rao Kabuto +1", augments={'Pet: HP+125','Pet: Accuracy+20','Pet: Damage taken -4%',}},       --  4
-      body={ name="Rao Togi +1", augments={'Pet: HP+125','Pet: Accuracy+20','Pet: Damage taken -4%',}},         --  4
-      hands={ name="Rao Kote +1", augments={'Pet: HP+125','Pet: Accuracy+20','Pet: Damage taken -4%',}},        --  4
-      legs={ name="Rao Haidate +1", augments={'Pet: HP+125','Pet: Accuracy+20','Pet: Damage taken -4%',}},      --  4
-      feet={ name="Rao sune-ate +1", augments={'Pet: HP+125','Pet: Accuracy+20','Pet: Damage taken -4%',}},     --  4
-      neck="Shulmanu Collar",
-      waist="Klouskap sash +1",
+    --  head={ name="Rao Kabuto +1", augments={'Pet: HP+125','Pet: Accuracy+20','Pet: Damage taken -4%',}},       --  4
+    --  body={ name="Rao Togi +1", augments={'Pet: HP+125','Pet: Accuracy+20','Pet: Damage taken -4%',}},         --  4
+    --  hands={ name="Rao Kote +1", augments={'Pet: HP+125','Pet: Accuracy+20','Pet: Damage taken -4%',}},        --  4
+    --  legs={ name="Rao Haidate +1", augments={'Pet: HP+125','Pet: Accuracy+20','Pet: Damage taken -4%',}},      --  4
+    --  feet={ name="Rao sune-ate +1", augments={'Pet: HP+125','Pet: Accuracy+20','Pet: Damage taken -4%',}},     --  4
+    --  neck="Shulmanu Collar",
+    --  waist="Klouskap sash +1",
       -- waist="Isa Belt",                                                                                         --  3
-      left_ear="Enmerkar earring",                                                                              --  3
-      right_ear="Rimeice Earring",                                                                              --  1
-      left_ring="Thurandaut Ring +1",                                                                           --  4
-      right_ring="C. Palug Ring",
+    --  left_ear="Enmerkar earring",                                                                              --  3
+    --  right_ear="Rimeice Earring",                                                                              --  1
+    --  left_ring="Thurandaut Ring +1",                                                                           --  4
+    --  right_ring="C. Palug Ring",
       --right_ring="Overbearing Ring",
-      back=Visucius.PetDT                                                                                       --  5
-    }
+    --  back=Visucius.PetDT                                                                                       --  5
+    --}
 
     -------------------------------------Engaged for Pet Only
     --[[
@@ -791,7 +792,21 @@ function init_gear_sets()
         Idle Mode = Idle
         Hybrid Mode = DT
     ]]
-    sets.idle.Pet.Engaged.DT = sets.pet.EmergencyDT
+    sets.idle.Pet.Engaged.DT = {
+      head="Anwig Salade",
+      -- head={ name="Rao Kabuto +1", augments={'Pet: HP+125','Pet: Accuracy+20','Pet: Damage taken -4%',}},       --  4
+      body={ name="Rao Togi +1", augments={'Pet: HP+125','Pet: Accuracy+20','Pet: Damage taken -4%',}},         --  4
+      hands={ name="Rao Kote +1", augments={'Pet: HP+125','Pet: Accuracy+20','Pet: Damage taken -4%',}},        --  4
+      legs={ name="Rao Haidate +1", augments={'Pet: HP+125','Pet: Accuracy+20','Pet: Damage taken -4%',}},      --  4
+      feet={ name="Rao sune-ate +1", augments={'Pet: HP+125','Pet: Accuracy+20','Pet: Damage taken -4%',}},     --  4
+      neck="Shulmanu Collar",
+      waist="Isa Belt",                                                                                         --  3
+      left_ear="Enmerkar earring",                                                                              --  3
+      right_ear="Rimeice Earring",                                                                              --  1
+      left_ring="Thurandaut Ring +1",                                                                           --  4
+      right_ring="Overbearing Ring",
+      back=Visucius.PetDT                                                                                       --  5
+    }
 
     --[[
         Idle Mode = Idle

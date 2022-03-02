@@ -172,7 +172,23 @@ function init_gear_sets()
       right_ring="Epona's Ring",
       back={ name="Artio's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+5','"Dbl.Atk."+10','Phys. dmg. taken-10%',}},
     }
-               
+
+    sets.precast.WS['Savage Blade'] = {
+      ammo="Floestone",
+      ammo="Voluspa Tathlum",
+      head="Nyame Helm",
+      body="Nyame Mail",
+      hands="Nyame Gauntlets",
+      legs="Nyame Flanchard",
+      neck="Fotia Gorget",
+      waist="Fotia Belt",
+      left_ear="Brutal Earring",
+      right_ear="Sherida Earring",
+      left_ring="Gere Ring",
+      right_ring="Epona's Ring",
+      back={ name="Artio's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+5','"Dbl.Atk."+10','Phys. dmg. taken-10%',}},
+    }
+
     sets.precast.WS['Onslaught'] = {
     }
        

@@ -124,7 +124,7 @@ function init_gear_sets()
     sets.precast.JA['Conspirator'] = {body="Plunderer's Vest +3"}
     sets.precast.JA['Steal'] = {head="Plunderer's Bonnet +3",hands="Pillager's Armlets +3",legs="Pillager's Culottes +3",feet="Pillager's Poulaines +3"}
     sets.precast.JA['Despoil'] = {legs="Raider's Culottes +2",feet="Raider's Poulaines +2"}
-    sets.precast.JA['Perfect Dodge'] = {hands="Plunderer's Armlets +3"}
+    sets.precast.JA['Perfect Dodge'] = {hands="Plunderer's Armlets +1"}
     sets.precast.JA['Feint'] = {}
 
     sets.precast.JA['Sneak Attack'] = sets.buff['Sneak Attack']

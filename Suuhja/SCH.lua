@@ -449,7 +449,7 @@ function get_sets()
     sets.buff['Celerity'] = {feet="Pedagogy loafers +3"}
     sets.buff['Alacrity'] = {feet="Pedagogy loafers +3"}
     -- sets.buff['Klimaform'] = {feet="Arbatel Loafers +1"}
-    sets.buff['Ebullience'] = {head="Arbatel bonnet +1"}
+    -- sets.buff['Ebullience'] = {head="Arbatel bonnet +1"}
    	
     ---------------
     -- Casting Sets
@@ -560,24 +560,22 @@ function get_sets()
     -----------------------------------------------------------------------------------------------
     -- Make sure you have a non weather obi in this set. Helix get bonus naturally no need Obi.	
     sets.midcast.Kaustra = {
-      -- Set prioritizing intelligence, mb acc, macc, dark magic skill for Ongo fun.
-      main={ name="Bunzi's Rod", augments={'Path: A',}},
+      main={ name="Bunzi's Rod", augments={'Path: A',}},                                  -- 10
       sub="Ammurapi Shield",
       ammo={ name="Ghastly Tathlum +1", augments={'Path: A',}},
-      head={ name="Peda. M.Board +3", augments={'Enh. "Altruism" and "Focalization"',}},
-      body={ name="Agwu's Robe", augments={'Path: A',}},
-      hands="Regal Cuffs",
-      legs={ name="Peda. Pants +3", augments={'Enhances "Tabula Rasa" effect',}},
-      feet="Agwu's Pigaches",
-      neck={ name="Argute Stole +2", augments={'Path: A',}},
+      head={ name="Peda. M.Board +3", augments={'Enh. "Altruism" and "Focalization"',}},  --  4 II
+      body={ name="Agwu's Robe", augments={'Path: A',}},                                  -- 10
+      hands="Regal Cuffs",                                                                -- Until r20+ agwu
+      legs="Agwu's Slops",                                                                --  9
+      feet="Agwu's Pigaches",                                                             --  6
+      neck={ name="Argute Stole +2", augments={'Path: A',}},                              -- 10
       waist={ name="Acuity Belt +1", augments={'Path: A',}},
       left_ear="Regal Earring",
       right_ear="Malignance Earring",
       left_ring="Freke Ring",
       right_ring={ name="Metamor. Ring +1", augments={'Path: A',}},
       back={ name="Lugh's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Damage taken-5%',}},
-  
-      -- When not doing Ongo swap to this stuff, maybe change hands.
+      -- When not doing super ody swap to this stuff
       -- head="Pixie hairpin +1",
       -- left_ring="Archon ring",
     }
@@ -804,8 +802,8 @@ function get_sets()
    })
    
    sets.midcast.SC_Open = {
-      -- main="Malignance Pole",
-      main="Hvergelmir",
+      main="Malignance Pole",
+      -- main="Hvergelmir",
       sub="Khonsu",                                                                                       --         4 haste
       ammo="Staunch Tathlum +1",
       head={ name="Vanya Hood", augments={'MP+50','"Fast Cast"+10','Haste+2%',}},                         -- 10 fc,  8 haste
@@ -826,9 +824,17 @@ function get_sets()
    sets.midcast["Blizzard"] = sets.midcast.SC_Open
    sets.midcast["Fire"] = sets.midcast.SC_Open
    sets.midcast["Stone"] = sets.midcast.SC_Open
+   sets.midcast["Thunder"] = sets.midcast.SC_Open
+   sets.midcast["Water"] = sets.midcast.SC_Open
+
    sets.midcast["Hydrohelix"] = sets.midcast.SC_Open
    sets.midcast["Ionohelix"] = sets.midcast.SC_Open
    sets.midcast["Noctohelix"] = sets.midcast.SC_Open
+   sets.midcast["Luminohelix"] = sets.midcast.SC_Open
+   sets.midcast["Anemohelix"] = sets.midcast.SC_Open
+   sets.midcast["Geohelix"] = sets.midcast.SC_Open
+   sets.midcast["Pyrohelix"] = sets.midcast.SC_Open
+   sets.midcast["Cryohelix"] = sets.midcast.SC_Open
    
    sets.midcast.MndEnfeebling = {
      main="Tupsimati",
