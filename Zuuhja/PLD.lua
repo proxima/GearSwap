@@ -174,14 +174,15 @@ function init_gear_sets()
   sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS, {
     ammo="Crepuscular Pebble",
     head="Nyame Helm",
+    neck="Republican platinum medal",
+    left_ear="Moonshade Earring",
+    right_ear="Thrud Earring",
     body="Nyame Mail",
     hands="Nyame Gauntlets",
     legs="Nyame Flanchard",
     feet="Nyame Sollerets",
     ring1=MR.One,
     ring2="Shukuyu Ring",
-    left_ear="Moonshade Earring",
-    right_ear="Thrud Earring",
     back=Rud.SB
   })
 
@@ -314,7 +315,7 @@ function init_gear_sets()
   -- Idle sets
   sets.idle = {
     main="Burtgang",
-    sub="Srivatsa",
+    sub="Ochain",
     ammo="Staunch Tathlum +1",
     head="Sakpata's Helm",
     body="Sakpata's Breastplate",
@@ -323,12 +324,15 @@ function init_gear_sets()
     legs="Sakpata's Cuisses",
     feet="Sakpata's Leggings",
     neck="Unmoving collar +1",
-    waist="Asklepian Belt",
-    ear1="Cryptic Earring",
+    -- waist="Asklepian Belt",
+    waist="Audumbla Sash",
+    -- ear1="Cryptic Earring",
+    ear1="Odnowa Earring +1",
     ear2="Tuisto Earring",
     ring1=MR.One,
     ring2=MR.Two,
-    back=Rud.BLOCK
+    back=Rud.BLOCK,
+    -- back=Rud.ENMITY
   }
 
   sets.idle.Meva = {
@@ -353,7 +357,9 @@ function init_gear_sets()
   sets.idle.Weak = sets.idle    
   sets.idle.Weak.Reraise = set_combine(sets.idle.Weak, sets.Reraise)    
   sets.Kiting = {right_ring="Shneddick Ring +1"}
-  sets.latent_refresh = {waist="Fucho-no-obi"}
+  sets.latent_refresh = {
+    -- waist="Fucho-no-obi"
+  }
 
   --------------------------------------
   -- Defense sets
@@ -397,7 +403,7 @@ function init_gear_sets()
   -- Engaged sets
   --------------------------------------
   sets.engaged = {
-    main="Burtgang",
+    main="Naegling",
     sub="Ochain",
     ammo="Staunch Tathlum +1",
     head="Sakpata's Helm",

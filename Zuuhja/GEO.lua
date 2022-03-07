@@ -345,43 +345,43 @@ function get_sets()
    sets.midcast.casting = {
    }
 
-   -- For Geo spells
-   sets.midcast.geo = set_combine(sets.midcast.casting, {
+   -- ML20 is 445/445 skill, so you cap with only Dunna.
+  sets.midcast.geo = set_combine(sets.midcast.casting, {
      main="Idris",
      sub="Genmei Shield",
-     range={ name="Dunna", augments={'MP+20','Mag. Acc.+10','"Fast Cast"+3',}},
-     head="Azimuth Hood +1",
-     body="Vedic Coat",
-     hands="Azimuth Gloves +1",
-     legs={ name="Vanya Slops", augments={'MND+10','Spell interruption rate down +15%','"Conserve MP"+6',}},
-     feet="Azimuth Gaiters +1",
-     neck={ name="Bagua Charm +2", augments={'Path: A',}},
-     waist={ name="Shinjutsu-no-Obi +1", augments={'Path: A',}},
-     left_ear="Mendi. Earring",
-     right_ear="Gna Earring",
-     left_ring={ name="Mephitas's Ring +1", augments={'Path: A',}},
-     right_ring="Stikini Ring +1",
-     back={ name="Lifestream Cape", augments={'Geomancy Skill +10','Indi. eff. dur. +19',}},
-   })
-    
-   -- For Indi Spells
+     range={ name="Dunna", augments={'MP+20','Mag. Acc.+10','"Fast Cast"+3',}},                              -- Only item needed for 900 combined
+     head="Bagua Galero +3",                                                                                 -- 600 hp
+     body="Vedic Coat",                                                                                      -- 10 Conserve
+     hands="Azimuth Gloves +1",                                                                              -- Occasionally Free
+     legs={ name="Vanya Slops", augments={'MND+10','Spell interruption rate down +15%','"Conserve MP"+6',}}, -- 12 Conserve
+     feet="Azimuth Gaiters +1",                                                                              -- Occasionally Free
+     neck={ name="Bagua Charm +2", augments={'Path: A',}},                                                   -- 25% Duration
+     waist={ name="Shinjutsu-no-Obi +1", augments={'Path: A',}},                                             -- 15 Conserve
+     left_ear="Mendi. Earring",                                                                              --  2 Conserve
+     right_ear="Calamitous Earring",                                                                         --  4 Conserve
+     left_ring={ name="Mephitas's Ring +1", augments={'Path: A',}},                                          -- 15 Conserve
+     right_ring="Defending Ring",
+     back={ name="Nantosuelta's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Pet: "Regen"+10','Damage taken-5%',}},
+   })                                                                                                        -- 58 conserve (101 total)
+
+   -- ML20 is 445/445 skill, so you cap with only Dunna.
    sets.midcast.indi = set_combine(sets.midcast.geo, {
      main="Idris",
      sub="Genmei Shield",
      range={ name="Dunna", augments={'MP+20','Mag. Acc.+10','"Fast Cast"+3',}}, 
-     head={ name="Vanya Hood", augments={'MND+10','Spell interruption rate down +15%','"Conserve MP"+6',}},
-     body="Vedic Coat",
-     hands="Azimuth Gloves +1",
-     legs={ name="Bagua Pants +3", augments={'Enhances "Mending Halation" effect',}},
-     feet="Azimuth Gaiters +1",
-     neck="Reti Pendant",
-     waist={ name="Shinjutsu-no-Obi +1", augments={'Path: A',}},
-     left_ear="Mendi. Earring",
-     right_ear="Gna Earring",
-     left_ring={ name="Mephitas's Ring +1", augments={'Path: A',}},
-     right_ring="Stikini Ring +1",
+     head={ name="Vanya Hood", augments={'MND+10','Spell interruption rate down +15%','"Conserve MP"+6',}},  -- 12 Conserve
+     body="Vedic Coat",                                                                                      -- 10 Conserve
+     hands="Azimuth Gloves +1",                                                                              -- Occasionally Free
+     legs={ name="Bagua Pants +3", augments={'Enhances "Mending Halation" effect',}},                        -- 21 Duration
+     feet="Azimuth Gaiters +1",                                                                              -- Occasionally Free, 20 Duration
+     neck="Loricate Torque +1",
+     waist={ name="Shinjutsu-no-Obi +1", augments={'Path: A',}},                                             -- 15 Conserve
+     left_ear="Mendi. Earring",                                                                              --  2 Conserve
+     right_ear="Calamitous Earring",                                                                         --  4 Conserve
+     left_ring={ name="Mephitas's Ring +1", augments={'Path: A',}},                                          -- 15 Conserve
+     right_ring="Defending Ring",
      back={ name="Lifestream Cape", augments={'Geomancy Skill +10','Indi. eff. dur. +19',}},
-   })
+   })                                                                                                        -- 58 conserve (101 total)
 
    sets.midcast.Obi = {
      waist="Hachirin-no-Obi",
@@ -415,8 +415,8 @@ function get_sets()
    })
 
    sets.midcast.nuking.acc = set_combine(sets.midcast.nuking.normal, {
-     main="Cath Palug hammer",
-     neck="Sanctity necklace",
+     -- main="Cath Palug hammer",
+     -- neck="Sanctity necklace",
      hands="Bagua mitaines +3",
      feet="Jhakri Pigaches +2",
      waist="Acuity belt +1",

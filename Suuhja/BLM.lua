@@ -93,15 +93,16 @@ function init_gear_sets()
     sets.precast.FC = {
       ammo="Impatiens",
       head={ name="Merlinic Hood", augments={'"Fast Cast"+7','"Mag.Atk.Bns."+14',}}, -- 15
-      body="Mallquis Saio +2", -- 9
-      hands="Jhakri Cuffs +2",
-      legs="Agwu's Slops", -- 7
-      feet={ name="Merlinic Crackows", augments={'Attack+22','"Fast Cast"+7',}}, -- 12
-      neck="Voltsurge Torque", -- 4
-      waist="Embla Sash", -- 5
-      left_ear="Malignance Earring", -- 4
-      left_ring="Mallquis Ring", -- 3
-      right_ring="Kishar Ring", -- 4
+      body="Agwu's Robe",                                                            --  8
+      hands="Agwu's gages",                                                          --  6
+      legs="Agwu's Slops",                                                           --  7
+      feet={ name="Merlinic Crackows", augments={'Attack+22','"Fast Cast"+7',}},     -- 12
+      neck="Voltsurge Torque",                                                       --  4
+      waist="Embla Sash",                                                            --  5
+      left_ear="Malignance Earring",                                                 --  4
+      right_ear="Etiolation Earring",                                                --  1
+      left_ring="Mallquis Ring",                                                     --  3~
+      right_ring="Kishar Ring",                                                      --  4
       back={ name="Taranus's Cape", augments={'MND+20','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','"Fast Cast"+10','Mag. Evasion+15',}},    
     }
     
@@ -348,7 +349,7 @@ function init_gear_sets()
 
     sets.precast.FC.Death = sets.midcast.Death
     sets.midcast.Drain.Death = sets.midcast.Death
-    sets.midcast.Aspir.Death = sets.midcast.Death
+    sets.midcast.Aspir.Death = sets.midcast.Death4
     
     sets.midcast['Elemental Magic'].Occult = {
       ammo="Seraphic Ampulla",
@@ -426,21 +427,14 @@ function init_gear_sets()
       neck="Sorcerer's Stole +2",
       left_ear="Regal Earring",
       right_ear="Malignance Earring",
-      body="Spaekona's Coat +3",
-      -- body="Ea Houppe. +1",
-      hands="Archmage's gloves +3",
-      -- hands={ name="Amalric Gages +1", augments={'INT+12','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
-      -- left_ring="Mujin Band",
+      body="Ea Houppe. +1",
+      hands={ name="Amalric Gages +1", augments={'INT+12','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
       left_ring="Metamorph Ring +1",
       right_ring="Freke Ring",
       back={ name="Taranus's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Phys. dmg. taken-10%',}},    
-      waist="Hachirin-no-Obi",
-      --waist="Acuity Belt +1",
-      --waist="Sacro Cord",
-      --waist="Skrymir Cord +1",
+      waist="Acuity Belt +1",
       legs="Ea Slops +1",
-      feet="Arch. Sabots +3",
-      -- feet={ name="Amalric Nails +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
+      feet="Agwu's Pigaches",
     }
 
     -- Engaged sets

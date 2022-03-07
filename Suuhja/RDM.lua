@@ -584,7 +584,7 @@ function get_sets()
       main="Crocea Mors",          -- Murgleis
       sub="Ammurapi Shield",
       range="Ullr",
-      ammo=none;
+      ammo=none,
       head="Atrophy Chapeau +3",
       neck="Dls. Torque +2",
       left_ear="Snotra Earring",
