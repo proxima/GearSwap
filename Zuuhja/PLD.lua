@@ -311,46 +311,43 @@ function init_gear_sets()
     
   sets.resting = {
   }
-    
+
   -- Idle sets
   sets.idle = {
     main="Burtgang",
-    sub="Ochain",
-    ammo="Staunch Tathlum +1",
-    head="Sakpata's Helm",
-    body="Sakpata's Breastplate",
-    -- hands="Sakpata's Gauntlets",
-    hands="Reverence Gauntlets +3",
-    legs="Sakpata's Cuisses",
-    feet="Sakpata's Leggings",
+    sub="Srivatsa",               --  8
+    ammo="Staunch Tathlum +1",    --  3
+    head="Sakpata's Helm",        --  7
+    body="Sakpata's Breastplate", -- 10
+    hands="Sakpata's Gauntlets",  --  8
+    -- hands="Reverence Gauntlets +3",
+    legs="Sakpata's Cuisses",     --  9
+    feet="Sakpata's Leggings",    --  6
     neck="Unmoving collar +1",
-    -- waist="Asklepian Belt",
-    waist="Audumbla Sash",
-    -- ear1="Cryptic Earring",
-    ear1="Odnowa Earring +1",
+    waist="Asklepian Belt",
+    ear1="Cryptic Earring",
     ear2="Tuisto Earring",
     ring1=MR.One,
     ring2=MR.Two,
     back=Rud.BLOCK,
-    -- back=Rud.ENMITY
   }
 
   sets.idle.Meva = {
     main="Burtgang",
     sub="Aegis",
-    ammo="Staunch Tathlum +1",
-    head="Sakpata's Helm",
-    body="Sakpata's Breastplate",
-    hands="Sakpata's Gauntlets",
-    legs="Sakpata's Cuisses",
-    feet="Sakpata's Leggings",
+    ammo="Staunch Tathlum +1",    --  3
+    head="Sakpata's Helm",        --  7
+    body="Sakpata's Breastplate", -- 10
+    hands="Sakpata's Gauntlets",  --  8
+    legs="Sakpata's Cuisses",     --  9
+    feet="Sakpata's Leggings",    --  6
     neck="Unmoving collar +1",
     waist="Carrier's Sash",
     ear1="Eabani Earring",
     ear2="Tuisto Earring", 
     ring1="Vexer ring +1",
     ring2="Apeile Ring +1",
-    back=Rud.BLOCK
+    back=Rud.ENMITY               -- 10
   }
 
   sets.idle.Town = set_combine(sets.idle, {right_ring="Shneddick Ring +1"})
@@ -403,7 +400,7 @@ function init_gear_sets()
   -- Engaged sets
   --------------------------------------
   sets.engaged = {
-    main="Naegling",
+    main="Burtgang",
     sub="Ochain",
     ammo="Staunch Tathlum +1",
     head="Sakpata's Helm",

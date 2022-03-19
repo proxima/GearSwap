@@ -111,28 +111,23 @@ hud_font = 'Impact'
 
     -- windower.send_command('bind @a send zuuhja input /ma "Indi-Wilt" <me>')
     -- windower.send_command('bind @s sat youcommand Zuuhja Geo-Frailty')
-
     send_command('bind @a sat youcommand Zuuhja "Bio";input /ma "Luminohelix" <t>')
     send_command('bind @s sat youcommand Zuuhja "Bio";input /ma "Luminohelix II" <t>')
-
     -- windower.send_command('bind @a sat youcommand Muuhja "Wind Threnody II"')
     -- windower.send_command('bind @s sat youcommand Zuuhja Silence')
     -- windower.send_command('bind @d send zuuhja /ma "Cure" Aller')
     windower.send_command('bind @z send zuuhja input /ja "Full Circle" <me>')
     windower.send_command('bind @x send zuuhja input /ja "Radial Arcana" <me>')
-
-	-- windower.send_command('bind @b sat youcommand Zuuhja "Dispel"')
+    -- windower.send_command('bind @b sat youcommand Zuuhja "Dispel"')
     windower.send_command('bind @b sat youcommand Muuhja "Earth Threnody II"')
     windower.send_command('bind @n sat youcommand Muuhja "Carnage Elegy"')
     windower.send_command('bind @m sat youcommand Muuhja "Pining Nocture"')
     windower.send_command('bind @o sat youcommand Muuhja "Horde Lullaby"')
     windower.send_command('bind @p sat youcommand Muuhja "Foe Lullaby II"')
-	-- windower.send_command('bind @p send muuhja input /pet "Release" <me>')
+    -- windower.send_command('bind @p send muuhja input /pet "Release" <me>')
     windower.send_command('bind @= send muuhja input /ja "Apogee" <me>')
     -- windower.send_command('bind @n sat youcommand Muuhja "Level ? Holy"')
     windower.send_command('bind @d sat youcommand Muuhja Deploy')
-
-
     -- windower.send_command('bind @b send muuhja input /ma "Ramuh" <me>')
     -- windower.send_command('bind @n send Muuhja /input /ja "Mana Cede" <me>')
     -- windower.send_command('bind @v sat youcommand Muuhja "Volt Strike"')
@@ -204,7 +199,24 @@ set_macros(1,17) -- Sheet, Book
 
 -- Setup your Gear Sets below:
 function get_sets()
-  
+
+    -- Capes I don't have but want: 
+
+    -- STR_WSD - Black halo, full swing, heavy swing, judgment
+    -- DEX_DA  - Melee
+    -- DEX_DW  - DW melee
+
+    Lugh = {}
+    Lugh.DT        = { name="Lugh's Cape", augments={'MND+20','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity-10','Phys. dmg. taken-10%',}}
+    Lugh.INT_DA    = { name="Lugh's Cape", augments={'INT+20','Accuracy+20 Attack+20','INT+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}}
+    Lugh.INT_MAB   = { name="Lugh's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Damage taken-5%',}}
+    Lugh.INT_STP   = { name="Lugh's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Store TP"+10','Phys. dmg. taken-10%',}}
+    Lugh.INT_WSD   = { name="Lugh's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}
+    Lugh.MND_HASTE = { name="Lugh's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','Haste+10','Spell interruption rate down-10%',}}
+    Lugh.MND_WSD   = { name="Lugh's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','MND+10','Weapon skill damage +10%',}}
+    Lugh.MP_FC     = { name="Lugh's Cape", augments={'MP+60','MP+20','"Fast Cast"+10','Phys. dmg. taken-10%',}}
+    Lugh.ADOULIN   = { name="Bookworm's Cape", augments={'INT+1','MND+2','Helix eff. dur. +20','"Regen" potency+10',}}
+
     -- My formatting is very easy to follow. All sets that pertain to my character doing things are under 'me'.
     -- All sets that are equipped to faciliate my avatar's behaviour or abilities are under 'avatar', eg, Perpetuation, Blood Pacts, etc
       
@@ -228,7 +240,7 @@ function get_sets()
       right_ring={name="Stikini Ring +1",bag="wardrobe 3"},
       feet="Pinga pumps +1",
       waist="Carrier's Sash",
-      back={ name="Lugh's Cape", augments={'MND+20','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity-10','Phys. dmg. taken-10%',}},
+      back=Lugh.DT
     }
 
     -- Your idle Sublimation set combine from refresh or DT depening on mode.
@@ -252,7 +264,7 @@ function get_sets()
       right_ear={ name="Odnowa Earring +1", augments={'Path: A',}},
       left_ring="Defending Ring",
       right_ring="Gelatinous Ring +1",
-      back={ name="Lugh's Cape", augments={'MND+20','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity-10','Phys. dmg. taken-10%',}},
+      back=Lugh.DT
     })
 
     sets.me.idle.mdt = set_combine(sets.me.idle.dt, {
@@ -270,7 +282,7 @@ function get_sets()
       ring2="Gelatinous ring +1", --  7 PDT, -1MDT
       feet="Pinga pumps +1",
       waist="Carrier's Sash",
-      back={ name="Lugh's Cape", augments={'MND+20','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity-10','Phys. dmg. taken-10%',}},
+      back=Lugh.DT
     })
 
     -- Your MP Recovered Whilst Resting Set
@@ -295,13 +307,13 @@ function get_sets()
       right_ear="Telos Earring",
       left_ring={name="Chirich Ring +1",bag="wardrobe 2"},
       right_ring={name="Chirich Ring +1",bag="wardrobe 4"},
-      back={ name="Lugh's Cape", augments={'INT+20','Accuracy+20 Attack+20','INT+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}}, -- Make stp + dex version
+      back=Lugh.INT_DA -- Make stp + dex version
     }
 
     sets.me.melee_dw = set_combine(sets.me.melee, {
       left_ear="Eabani Earring",
       right_ear="Suppanomimi",
-      back={ name="Lugh's Cape", augments={'INT+20','Accuracy+20 Attack+20','INT+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}}, -- Make dual wield + dex version
+      back=Lugh.INT_DA -- Make dw + dex version
     })
       
     -- Weapon Skills sets just add them by name.
@@ -312,27 +324,32 @@ function get_sets()
       hands="Nyame Gauntlets",
       legs="Nyame Flanchard",
       feet="Nyame Sollerets",
-      neck={ name="Argute Stole +2", augments={'Path: A',}},
-      waist="Luminary Sash",
+      neck="Rep. Plat. Medal",
+      waist="Grunfeld Rope",
       left_ear="Regal Earring",
       right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
       left_ring={ name="Metamor. Ring +1", augments={'Path: A',}},
       right_ring="Epaminondas's Ring",
-      back={ name="Lugh's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','MND+10','Weapon skill damage +10%',}},    
+      back=Lugh.MND_WSD  
     }
     
     sets.me["Retribution"] = sets.me["Heavy Swing"]
-    sets.me["Shattersoul"] = set_combine(sets.me["Heavy Swing"], {
+
+    sets.me["Shattersoul"] = {
       ammo="Ghastly Tathlum +1",
+      head="Nyame Helm",
       neck="Fotia Gorget",
-      waist="Fotia Belt",
-      hands={ name="Gazu Bracelet +1", augments={'Path: A',}},
+      right_ear="Malignance earring",
+      left_ear="Regal earring",
+      body="Nyame Mail",
+      hands="Nyame Gauntlets",
       left_ring={ name="Metamor. Ring +1", augments={'Path: A',}},
       right_ring="Freke Ring",
-      right_ear="Brutal earring",
-      left_ear="Regal earring",
-      back={ name="Lugh's Cape", augments={'INT+20','Accuracy+20 Attack+20','INT+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}},
-    })
+      back=Lugh.INT_DA,
+      waist="Fotia Belt",
+      legs="Nyame Flanchard",
+      feet="Nyame Sollerets"
+    }
     
     sets.me["Shell Crusher"] = {
       ammo="Staunch Tathlum +1",
@@ -347,7 +364,7 @@ function get_sets()
       right_ear="Telos Earring",
       left_ring={name="Chirich Ring +1",bag="wardrobe 2"},
       right_ring={name="Chirich Ring +1",bag="wardrobe 4"},
-      back={ name="Lugh's Cape", augments={'INT+20','Accuracy+20 Attack+20','INT+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}},
+      back=Lugh.INT_DA
     }
     
     sets.me["Full Swing"] = sets.me["Heavy Swing"]
@@ -355,7 +372,7 @@ function get_sets()
 
     sets.me["Earth Crusher"] = {
       ammo="Ghastly Tathlum +1",
-      head="Nyame Helm",
+      head="Agwu's Cap",
       body="Agwu's Robe",
       hands="Jhakri Cuffs +2",
       legs="Agwu's Slops",
@@ -364,18 +381,19 @@ function get_sets()
       waist="Orpheus's Sash",
       left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
       right_ear="Malignance Earring",
-      left_ring="Epaminondas's Ring",
+      left_ring="Freke Ring",
       right_ring="Metamorph Ring +1",
-      back={ name="Lugh's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Damage taken-5%',}},
+      back=Lugh.INT_WSD
     }
-    
+
+    sets.me["Aeolian Edge"] = sets.me["Earth Crusher"] 
     sets.me["Rock Crusher"] = sets.me["Earth Crusher"]
     sets.me["Starburst"] = sets.me["Earth Crusher"]
     
     sets.me["Cataclysm"] = {
       ammo="Ghastly Tathlum +1",
       head="Pixie hairpin +1",
-      body="Nyame Mail",
+      body="Agwu's Robe",
       hands="Jhakri Cuffs +2",
       legs="Agwu's Slops",
       feet="Agwu's Pigaches",
@@ -385,7 +403,7 @@ function get_sets()
       right_ear="Malignance Earring",
       left_ring="Archon Ring",
       right_ring="Metamorph Ring +1",
-      back={ name="Lugh's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Damage taken-5%',}},
+      back=Lugh.INT_WSD
     }
 
     sets.me["Omniscience"] = {
@@ -401,7 +419,7 @@ function get_sets()
       right_ear="Malignance Earring",
       left_ring="Archon Ring",
       right_ring="Metamorph Ring +1",
-      back={ name="Lugh's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','MND+10','Weapon skill damage +10%',}},
+      back=Lugh.MND_WSD
     }
     
     sets.me["Myrkr"] = {
@@ -414,7 +432,7 @@ function get_sets()
       hands="Pinga mittens +1",
       left_ring="Mephitas's Ring",
       right_ring="Metamorph ring +1",
-      back={ name="Lugh's Cape", augments={'MP+60','MP+20','"Fast Cast"+10','Phys. dmg. taken-10%',}},
+      back=Lugh.MP_FC,
       waist="Luminary sash",
       legs={ name="Amalric Slops +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
       feet={ name="Amalric Nails +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
@@ -433,14 +451,19 @@ function get_sets()
       right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
       left_ring={ name="Metamor. Ring +1", augments={'Path: A',}},
       right_ring="Epaminondas's Ring",
-      back={ name="Lugh's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','MND+10','Weapon skill damage +10%',}},    
+      back=Lugh.MND_WSD
     }
-        
+
+    sets.me["Realmrazer"] = set_combine(sets.me["Black Halo"], {
+      neck="Fotia Gorget",
+      waist="Fotia Belt",
+      right_ring={name="Chirich Ring +1",bag="wardrobe 4"},
+    })
+
     ------------
     -- Buff Sets
     ------------
     -- Gear that needs to be worn to **actively** enhance a current player buff.
-    -- Fill up following with your avaible pieces.
     sets.buff['Rapture'] = {head="Arbatel bonnet +1"}
     sets.buff['Perpetuance'] = {hands="Arbatel Bracers +1"}
     sets.buff['Immanence'] = {}
@@ -473,7 +496,7 @@ function get_sets()
       hands="Acad. Bracers +3",  -- 9 fc
       ring1="Lebeche ring",      -- 
       ring2="Kishar ring",       -- 4 fc
-      back={ name="Lugh's Cape", augments={'MP+60','MP+20','"Fast Cast"+10','Phys. dmg. taken-10%',}},
+      back=Lugh.MP_FC,
       waist="Embla sash",        -- 5 fc
       legs="Pinga pants +1",     -- 13 fc
       feet={ name="Merlinic Crackows", augments={'Attack+22','"Fast Cast"+7',}}, -- 12 fc, 3 haste
@@ -511,7 +534,7 @@ function get_sets()
      right_ear="Malignance Earring",
      left_ring={name="Stikini Ring +1",bag="wardrobe 2"},
      right_ring={name="Stikini Ring +1",bag="wardrobe 3"},
-     back={ name="Lugh's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Damage taken-5%',}},
+     back=INT_MAB
    }
 
    -- When spell school is aligned with grimoire, swap relevent pieces -- Can also use Arbatel +1 set here if you value 1% quickcast procs per piece. (2+ pieces)  
@@ -563,104 +586,89 @@ function get_sets()
       main={ name="Bunzi's Rod", augments={'Path: A',}},                                  -- 10
       sub="Ammurapi Shield",
       ammo={ name="Ghastly Tathlum +1", augments={'Path: A',}},
-      head={ name="Peda. M.Board +3", augments={'Enh. "Altruism" and "Focalization"',}},  --  4 II
+      head="Pixie hairpin +1",
       body={ name="Agwu's Robe", augments={'Path: A',}},                                  -- 10
-      hands="Regal Cuffs",                                                                -- Until r20+ agwu
+      hands="Agwu's Gages",                                                               --  8
       legs="Agwu's Slops",                                                                --  9
       feet="Agwu's Pigaches",                                                             --  6
       neck={ name="Argute Stole +2", augments={'Path: A',}},                              -- 10
       waist={ name="Acuity Belt +1", augments={'Path: A',}},
       left_ear="Regal Earring",
       right_ear="Malignance Earring",
-      left_ring="Freke Ring",
+      left_ring="Archon ring",
       right_ring={ name="Metamor. Ring +1", augments={'Path: A',}},
-      back={ name="Lugh's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Damage taken-5%',}},
-      -- When not doing super ody swap to this stuff
-      -- head="Pixie hairpin +1",
-      -- left_ring="Archon ring",
+      back=Lugh.INT_MAB
     }
     
     -- Make sure you have a non weather obi in this set. Helix get bonus naturally no need Obi.
     sets.midcast.Helix = {
       main="Bunzi's Rod",
-      sub="Ammurapi Shield", -- sub="Culminus",
+      sub="Culminus",
       ammo="Ghastly Tathlum +1",
-      head="Pedagogy mortarboard +3",
+      head="Agwu's Cap",
       body="Agwu's Robe",
-      hands={ name="Amalric Gages +1", augments={'INT+12','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
+      hands="Agwu's Gages",
       legs="Agwu's Slops",
       feet="Agwu's Pigaches",
       neck={ name="Argute Stole +2", augments={'Path: A',}},
       waist="Skrymir Cord +1",
-      left_ear="Regal Earring",
+      left_ear="Crematio Earring",
       right_ear="Malignance Earring",
-      left_ring="Metamorph ring +1",
+      left_ring="Mallquis Ring",
       right_ring="Freke Ring",
-      back={ name="Bookworm's Cape", augments={'INT+1','MND+2','Helix eff. dur. +20','"Regen" potency+10',}},     
+      back=Lugh.ADOULIN     
     }
-
-   -- mb helix compared to agwus
-   -- head  @ r20: -6int, -11macc,  +5mab, +30mdmg,
-   -- body  @ r20: +6int,                  +20mdmg
-   -- hands @ r20: -3int, +11macc,  +2mab, +20mdmg
-   -- legs  @ r20: -2int,  -8macc, +15mab,  +7mdmg
-   -- feet  @ r20: +9int, +25macc,  -7mab
-   
-   -- nuking compared to agwus
-   -- head  @ r20: -6int, -11macc,  +5mab, +30mdmg
-   -- body  @ r20: +9int,  -8macc,  -8mab, +20mdmg
-   -- hands @ r20: -3int, +11macc,  -8mab, +20mdmg
-   -- legs  @ r20: +9int, +25macc, -15mab, +20mdmg
-   -- feet  @ r20: +9int, +25macc,  -7mab      
-   
-   -- mb acc compared to agwus
-   -- head  @ r20: -6int, -26macc,  +5mab, +30mdmg,        -4mbd2
-   -- body  @ r20: +6int,                  +20mdmg
-   -- hands @ r20: -3int, +11macc,  +2mab, +20mdmg, +8mbd, -2mbd2
-   -- legs  @ r20: -2int,  -8macc, +15mab,  +7mdmg, -1mbd
-   -- feet  @ r20: -3int,  +3macc, +16mab, +20mdmg, -1mbd
-   
-   -- mb normal compared to agwus
-   -- head  @ r20: -6int, -26macc,  +5mab, +30mdmg,        -4mbd2
-   -- body  @ r20: +6int,                  +20mdmg
-   -- hands @ r20: -3int, +11macc,  -8mab, +20mdmg, +8mbd, -2mbd2
-   -- legs  @ r20: -2int,  -8macc, +15mab,  +7mdmg, -1mbd
-   -- feet  @ r20: +9int, +25macc,  -7mab,          +6mbd
     
     sets.midcast.WindHelix = {
       main="Marin staff +1",
       sub="Enki Strap",
+      ammo="Ghastly Tathlum +1",
+      head="Agwu's Cap",
       body="Agwu's Robe",
+      hands="Agwu's Gages",
       legs="Agwu's Slops",
       feet="Agwu's Pigaches",
+      neck={ name="Argute Stole +2", augments={'Path: A',}},
       waist="Skrymir Cord +1",
-      left_ring="Mallquis Ring",
       left_ear="Crematio Earring",
-      back={ name="Bookworm's Cape", augments={'INT+1','MND+2','Helix eff. dur. +20','"Regen" potency+10',}},
+      right_ear="Malignance Earring",
+      left_ring="Mallquis Ring",
+      right_ring="Freke Ring",
+      back=Lugh.ADOULIN
     }
     
     sets.midcast.LightHelix = {
       main="Daybreak",
       sub="Culminus",
+      ammo="Ghastly Tathlum +1",
+      head="Agwu's Cap",
       body="Agwu's Robe",
+      hands="Agwu's Gages",
       legs="Agwu's Slops",
       feet="Agwu's Pigaches",
-      left_ear="Crematio Earring",
-      left_ring="Mallquis Ring",
+      neck={ name="Argute Stole +2", augments={'Path: A',}},
       waist="Skrymir Cord +1",
-      -- back={ name="Bookworm's Cape", augments={'INT+1','MND+2','Helix eff. dur. +20','"Regen" potency+10',}},      
+      left_ear="Crematio Earring",
+      right_ear="Malignance Earring",
+      left_ring="Mallquis Ring",
+      right_ring="Freke Ring",
+      back=Lugh.INT_MAB -- Damage > Duration
     }
 
     sets.midcast.DarkHelix = {
+      ammo="Ghastly Tathlum +1",
       head="Pixie hairpin +1",
       body="Agwu's Robe",
+      hands="Agwu's Gages",
       legs="Agwu's Slops",
       feet="Agwu's Pigaches",
-      left_ear="Crematio Earring",
-      left_ring="Archon ring",
-      right_ring="Mallquis Ring",
+      neck={ name="Argute Stole +2", augments={'Path: A',}},
       waist="Skrymir Cord +1",
-      back={ name="Bookworm's Cape", augments={'INT+1','MND+2','Helix eff. dur. +20','"Regen" potency+10',}},
+      left_ear="Crematio Earring",
+      right_ear="Malignance Earring",
+      left_ring="Archon ring",
+      right_ring="Freke Ring",
+      back=Lugh.ADOULIN 
     }
 
     -- Whatever you want to equip mid-cast as a catch all for all spells, and we'll overwrite later for individual spells
@@ -674,7 +682,7 @@ function get_sets()
      hands="Acad. Bracers +3",  -- 9 fc, 3 haste
      ring1="Defending ring",
      ring2="Kishar ring",       -- 4
-     back={ name="Lugh's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','Haste+10','Spell interruption rate down-10%',}},
+     back=Lugh.MND_HASTE,
      waist="Witful belt",       -- 3 fc, 3 haste
      legs="Pinga pants +1",     -- 13
      feet={ name="Merlinic Crackows", augments={'Attack+22','"Fast Cast"+7',}}, -- 12 fc, 3 haste
@@ -684,9 +692,11 @@ function get_sets()
    sets.midcast["Tabula Rasa"] = { legs="Pedagogy Pants +3" }
    
    sets.midcast.nuking.normal = {
+     main="Bunzi's Rod",
+     sub="Ammurapi Shield",
      ammo="Ghastly Tathlum +1",
-     head={ name="Peda. M.Board +3", augments={'Enh. "Altruism" and "Focalization"',}},
-     body="Agwu's Robe",
+     head="Agwu's Cap",
+     body={ name="Amalric Doublet +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
      hands={ name="Amalric Gages +1", augments={'INT+12','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
      legs={ name="Amalric Slops +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
      feet={ name="Amalric Nails +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
@@ -696,11 +706,13 @@ function get_sets()
      right_ear="Malignance Earring",
      left_ring="Metamorph ring +1",
      right_ring="Freke Ring",
-     back={ name="Lugh's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Damage taken-5%',}},
+     back=Lugh.INT_MAB,
    }
 
    sets.midcast.nuking.acc = set_combine(sets.midcast.nuking.normal, {
-     sub="Khonsu",
+     body="Agwu's Robe",
+     hands="Agwu's Gages",
+     legs="Agwu's Slops",
      feet="Agwu's Pigaches",
    })
    
@@ -721,12 +733,13 @@ function get_sets()
      right_ear="Malignance Earring",
      left_ring="Metamorph Ring +1",
      right_ring="Freke Ring",
-     back={ name="Lugh's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Damage taken-5%',}},
+     back=Lugh.INT_MAB
    })
 
    -- used with toggle, default: F10
    -- Pieces to swap from free nuke to Magic Burst
-   sets.midcast.MB.acc = set_combine(sets.midcast.MB.normal, {   
+   sets.midcast.MB.acc = set_combine(sets.midcast.MB.normal, {
+     hands="Agwu's Gages",
      feet="Agwu's Pigaches",
      waist="Acuity Belt +1",
    })
@@ -744,12 +757,10 @@ function get_sets()
      right_ear="Telos Earring",
      left_ring={name="Chirich Ring +1",bag="wardrobe 2"},
      right_ring={name="Chirich Ring +1",bag="wardrobe 4"},
-     back={ name="Lugh's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Store TP"+10','Phys. dmg. taken-10%',}},
+     back=Lugh.INT_STP
    })
 
    sets.midcast.MB.occult = set_combine(sets.midcast.MB.normal, {
-     main="Khatvanga",
-     sub="Khonsu",
    })
 
     -- Enfeebling
@@ -768,7 +779,7 @@ function get_sets()
      right_ear="Malignance Earring",
      left_ring={name="Stikini Ring +1",bag="wardrobe 2"},
      right_ring={name="Stikini Ring +1",bag="wardrobe 3"},
-     back={ name="Lugh's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','Haste+10','Spell interruption rate down-10%',}}, 
+     back=Lugh.MND_HASTE
    }
 
    sets.midcast.IntEnfeebling = {
@@ -786,7 +797,7 @@ function get_sets()
      right_ear="Malignance Earring",
      left_ring={name="Stikini Ring +1",bag="wardrobe 2"},
      right_ring={name="Stikini Ring +1",bag="wardrobe 3"},
-     back={ name="Lugh's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Damage taken-5%',}},
+     back=Lugh.INT_MAB
    }
    
    sets.midcast.Dispelga = set_combine(sets.midcast.IntEnfeebling, {
@@ -802,8 +813,8 @@ function get_sets()
    })
    
    sets.midcast.SC_Open = {
-      main="Malignance Pole",
-      -- main="Hvergelmir",
+      main="Malignance Pole", 
+      -- main="Hvergelmir", -- For when you have low haste buffs during tabula and recast is important
       sub="Khonsu",                                                                                       --         4 haste
       ammo="Staunch Tathlum +1",
       head={ name="Vanya Hood", augments={'MP+50','"Fast Cast"+10','Haste+2%',}},                         -- 10 fc,  8 haste
@@ -814,7 +825,7 @@ function get_sets()
       hands="Acad. Bracers +3",                                                                           --  9 fc,  3 haste
       left_ring="Defending Ring",
       right_ring="Kishar Ring",                                                                           --  4 fc
-      back={ name="Lugh's Cape", augments={'MP+60','MP+20','"Fast Cast"+10','Phys. dmg. taken-10%',}},    -- 10 fc
+      back=Lugh.MB_FC,                                                                                    -- 10 fc
       waist="Witful Belt",                                                                                --  3 fc,  3 haste
       legs="Psycloth Lappas",                                                                             --  7 fc,  5 haste
       feet="Acad. Loafers +3",                                                                            --         3 haste
@@ -830,7 +841,7 @@ function get_sets()
    sets.midcast["Hydrohelix"] = sets.midcast.SC_Open
    sets.midcast["Ionohelix"] = sets.midcast.SC_Open
    sets.midcast["Noctohelix"] = sets.midcast.SC_Open
-   sets.midcast["Luminohelix"] = sets.midcast.SC_Open
+   -- sets.midcast["Luminohelix"] = sets.midcast.SC_Open
    sets.midcast["Anemohelix"] = sets.midcast.SC_Open
    sets.midcast["Geohelix"] = sets.midcast.SC_Open
    sets.midcast["Pyrohelix"] = sets.midcast.SC_Open
@@ -851,7 +862,7 @@ function get_sets()
      left_ear="Regal Earring",
      left_ring={name="Stikini Ring +1",bag="wardrobe 2"},
      right_ring={name="Stikini Ring +1",bag="wardrobe 3"},
-     back={ name="Lugh's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','Haste+10','Spell interruption rate down-10%',}}, 
+     back=Lugh.MND_HASTE 
    }
 
    -- Enhancing, 501 skill atm w/ light arts, caps barspells
@@ -869,13 +880,12 @@ function get_sets()
       right_ring={name="Stikini Ring +1",bag="wardrobe 3"},
       right_ear="Mimir Earring",
       left_ear="Regal Earring",
-      back={ name="Bookworm's Cape", augments={'INT+1','MND+2','Helix eff. dur. +20','"Regen" potency+10',}},
+      back=Lugh.ADOULIN
     })
 
     sets.midcast.storm = set_combine(sets.midcast.enhancing, {
     })
 
-    -- Stoneskin
     sets.midcast.stoneskin = set_combine(sets.midcast.enhancing, {
     })
 
@@ -899,7 +909,7 @@ function get_sets()
       legs="Pedagogy pants +3",
       left_ring="Archon ring",
       right_ring="Evanescence ring",
-      back={ name="Bookworm's Cape", augments={'INT+1','MND+2','Helix eff. dur. +20','"Regen" potency+10',}},
+      back=Lugh.ADOULIN,
       feet="Agwu's Pigaches"
     })
 
@@ -926,10 +936,10 @@ function get_sets()
     -- Cure Potency    
     sets.midcast.cure.normal = set_combine(sets.midcast.casting, {
       -- main="Chatoyant staff",             -- 10
-      main="Malignance Pole",
+      main="Malignance Pole",                        -- DT up for Ody V20s
       sub="Khonsu",
       -- ammo="Leisure Musk +1",            --     4
-      ammo="Staunch Tathlum +1",
+      ammo="Staunch Tathlum +1",                     -- DT up for Ody V20s
       head="Kaykaus mitra +1",           -- 11     6
       neck="Loricate torque +1",
       body="Pedagogy gown +3",           --        3
@@ -939,10 +949,9 @@ function get_sets()
       left_ear="Domesticator's earring", --     5
       right_ear="Mendi. Earring",        --  5
       left_ring="Lebeche ring",          --  3  5
-      -- right_ring="Stikini ring +1",
       right_ring="Defending Ring",
       waist="Witful belt",               --        3
-      back={ name="Lugh's Cape", augments={'MND+20','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity-10','Phys. dmg. taken-10%',}}, --  0 10  0
+      back=Lugh.DT                       --  0 10  0
       -- merits                                 5
       -- totals:                             51 48 23 (ignoring Daybreak potency incase we are weapon locked)
     })
@@ -972,19 +981,19 @@ function get_sets()
       left_ring={name="Stikini Ring +1",bag="wardrobe 2"},
       right_ring={name="Stikini Ring +1",bag="wardrobe 3"},
       waist="Embla Sash",
-      back={ name="Lugh's Cape", augments={'MND+20','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity-10','Phys. dmg. taken-10%',}},
+      back=Lugh.DT,
       legs="Telchine Braconi",
       feet="Telchine Pigaches",
     }
     
     -- Focus on Regen Duration
     sets.midcast.regen.duration = set_combine(sets.midcast.regen.hybrid,{
-      back={ name="Lugh's Cape", augments={'MND+20','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity-10','Phys. dmg. taken-10%',}},
+      back=Lugh.DT
     }) 
     
     -- Focus on Regen Potency
     sets.midcast.regen.potency = set_combine(sets.midcast.regen.hybrid,{
-      back={ name="Bookworm's Cape", augments={'INT+1','MND+2','Helix eff. dur. +20','"Regen" potency+10',}},
+      back=Lugh.ADOULIN
     }) 
 
     ------------

@@ -184,6 +184,9 @@ function user_setup()
     send_command('bind @n sat youcommand Muuhja "Hysteric Assault"')
     send_command('bind @n sat youcommand Muuhja "Carnage Elegy"')
     send_command('bind @m sat youcommand Muuhja "Pining Nocturne"')
+
+    send_command('bind @o sat youcommand Muuhja "Shock Squall"')
+    send_command('bind @p sat youcommand Zuuhja "Sleepga"')
     
     select_default_macro_book()
 
@@ -211,6 +214,8 @@ function file_unload()
     
     send_command('unbind @=')
     send_command('unbind @n')
+    send_command('unbind @o')
+    send_command('unbind @p')
 end
 
 function job_setup()
@@ -316,7 +321,20 @@ function init_gear_sets()
     --[[
         Will be activated when Pet is not active, otherwise refer to sets.idle.Pet
     ]]
-    sets.idle = {}
+    sets.idle = {
+      head={ name="Nyame Helm", augments={'Path: B',}},
+      body={ name="Nyame Mail", augments={'Path: B',}},
+      hands={ name="Nyame Gauntlets", augments={'Path: B',}},
+      legs={ name="Nyame Flanchard", augments={'Path: B',}},
+      feet={ name="Nyame Sollerets", augments={'Path: B',}},
+      neck={ name="Pup. Collar +2", augments={'Path: A',}},
+      waist="Moonbow Belt +1",
+      left_ear="Infused Earring",
+      right_ear="Eabani Earring",
+      left_ring="Regal Ring",
+      right_ring="Gere Ring",
+      back={ name="Visucius's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}},
+    }
 
     sets.MEVA = {
       head="Malignance Chapeau",
