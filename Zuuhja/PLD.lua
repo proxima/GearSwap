@@ -60,13 +60,14 @@ Town = S {
 -- Define sets and vars used by this job file.
 function init_gear_sets()
   Rud = {}
-  Rud.BLOCK =  { name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity+10','Chance of successful block +5',} }
-  Rud.ENMITY = { name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity+10','Phys. dmg. taken-10%',} }
-  Rud.FC =     { name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','"Fast Cast"+10','Phys. dmg. taken-10%',} }
-  Rud.STP =    { name="Rudianos's Mantle", augments={'HP+60','Accuracy+20 Attack+20','Accuracy+10','"Store TP"+10','Occ. inc. resist. to stat. ailments+10',} }
-  Rud.MEVA =   { name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Occ. inc. resist. to stat. ailments+10',} }
-  Rud.CURE =   { name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','"Cure" potency +10%','Phys. dmg. taken-10%',} }
-  Rud.SB =     { name="Rudianos's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%','Phys. dmg. taken-10%',} }
+  Rud.AEOLIAN = { name="Rudianos's Mantle", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','Weapon skill damage +10%','Phys. dmg. taken-10%',} }
+  Rud.BLOCK =   { name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity+10','Chance of successful block +5',} }
+  Rud.ENMITY =  { name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity+10','Phys. dmg. taken-10%',} }
+  Rud.FC =      { name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','"Fast Cast"+10','Phys. dmg. taken-10%',} }
+  Rud.STP =     { name="Rudianos's Mantle", augments={'HP+60','Accuracy+20 Attack+20','Accuracy+10','"Store TP"+10','Occ. inc. resist. to stat. ailments+10',} }
+  Rud.MEVA =    { name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Occ. inc. resist. to stat. ailments+10',} }
+  Rud.CURE =    { name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','"Cure" potency +10%','Phys. dmg. taken-10%',} }
+  Rud.SB =      { name="Rudianos's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%','Phys. dmg. taken-10%',} }
 
   Ody = {}
   Ody.FC_LEGS = { name="Odyssean Cuisses", augments={'"Mag.Atk.Bns."+11','"Fast Cast"+6','INT+7',}}
@@ -202,6 +203,22 @@ function init_gear_sets()
     feet="Eschite Greaves"
   }
     
+  sets.precast.WS['Aeolian Edge'] = {
+    ammo={ name="Ghastly Tathlum +1", augments={'Path: A',}},
+    head={ name="Nyame Helm", augments={'Path: B',}},
+    body={ name="Nyame Mail", augments={'Path: B',}},
+    hands={ name="Nyame Gauntlets", augments={'Path: B',}},
+    legs={ name="Nyame Flanchard", augments={'Path: B',}},
+    feet={ name="Nyame Sollerets", augments={'Path: B',}},
+    neck="Sanctity Necklace",
+    waist="Orpheus's Sash",
+    left_ear="Crematio Earring",
+    right_ear="Friomisi Earring",
+    left_ring={ name="Metamor. Ring +1", augments={'Path: A',}},
+    right_ring="Defending Ring",
+    back=Rud.AEOLIAN
+  }
+
   --------------------------------------
   -- Midcast sets
   --------------------------------------
@@ -259,7 +276,10 @@ function init_gear_sets()
   
   sets.midcast.Cure.SIRD = set_combine(sets.midcast.Cure, sets.midcast.SIRD)
   
-  sets.midcast.Reprisal = set_combine(sets.midcast.Cure, {ammo="Egoist's Tathlum",neck="Unmoving Collar +1",hands="Regal Gauntlets",back=Rud.FC})
+  sets.midcast.Reprisal = set_combine(sets.precast.FC, {
+    left_ring="Kishar Ring",
+    right_ring="Prolix Ring",
+  })
   
   sets.midcast.Reprisal.SIRD = set_combine(sets.midcast.Reprisal, sets.midcast.SIRD)
   
@@ -315,7 +335,7 @@ function init_gear_sets()
   -- Idle sets
   sets.idle = {
     main="Burtgang",
-    sub="Srivatsa",               --  8
+    sub="Ochain",                 --  8
     ammo="Staunch Tathlum +1",    --  3
     head="Sakpata's Helm",        --  7
     body="Sakpata's Breastplate", -- 10
@@ -405,9 +425,9 @@ function init_gear_sets()
     ammo="Staunch Tathlum +1",
     head="Sakpata's Helm",
     body="Sakpata's Breastplate",
-    hands="Reverence Gauntlets +3",
+    hands="Sakpata's Gauntlets",
     legs="Sakpata's Cuisses",
-    feet="Reverence Leggings +3",
+    feet="Sakpata's Leggings",
     neck="Unmoving collar +1",
     waist="Sailfi belt +1",
     ear1="Odnowa Earring +1",
@@ -416,6 +436,24 @@ function init_gear_sets()
     ring2=MR.Two,
     back=Rud.STP
   }
+  
+  -- sets.engaged = {
+  --   main="Malevolence",
+  --   sub="Ochain",
+  --   ammo="Staunch Tathlum +1",
+  --   head="Sakpata's Helm",
+  --   body="Sakpata's Plate",
+  --   legs="Sakpata's Cuisses",
+  --   feet="Sakpata's Leggings",
+  --   waist="Carrier's Sash",
+  --   left_ear="Sanare Earring",
+  --   right_ear="Eabani Earring",
+  --   left_ring=MR.One,
+  --   right_ring="Defending Ring",
+  --   back=Rud.ENMITY,
+  --   neck="Loricate Torque +1",
+  --   hands="Rev. Gauntlets +3",
+  -- }
 
   --------------------------------------
   -- Custom buff sets

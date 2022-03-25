@@ -189,6 +189,19 @@ function init_gear_sets()
 
     -- Fast cast sets for spells
     sets.precast.FC = {
+      main="Kali",                                                                                                  --  7
+      head="Fili Calot +1",                                                                                         -- 14
+      body="Inyanga Jubbah +2",                                                                                     -- 14
+      hands="Gendewitha gages +1",                                                                                  -- 12
+      legs="Aya. Cosciales +2",                                                                                     --  6
+      feet={ name="Telchine Pigaches", augments={'Song spellcasting time -6%',}},                                   -- 12
+      neck="Mnbw. Whistle +1",
+      waist="Flume Belt +1",
+      left_ear="Genmei Earring",
+      right_ear="Odnowa Earring +1",
+      left_ring="Gelatinous Ring",
+      right_ring="Kishar Ring",                                                                                     --  4
+      back={ name="Intarabus's Cape", augments={'CHR+20','Mag. Acc+20 /Mag. Dmg.+20','CHR+10','"Fast Cast"+10',}},  -- 10
     }
 
     sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, {
@@ -318,10 +331,10 @@ function init_gear_sets()
     sets.midcast.HonorMarch = {range="Marsyas", hands="Fili Manchettes +1"}
     sets.midcast.Lullaby = {
       body="Fili Hongreline +1",
-      hands="Brioso Cuffs +3",
+      -- hands="Brioso Cuffs +3",
       legs="Inyanga Shalwar +2",
-      -- hands={ name="Chironic Gloves", augments={'Crit. hit damage +3%','MND+13','"Treasure Hunter"+2','Mag. Acc.+10 "Mag.Atk.Bns."+10',}},
-      -- feet={ name="Chironic Slippers", augments={'"Fast Cast"+2','MND+5','"Treasure Hunter"+2',}}
+      hands={ name="Chironic Gloves", augments={'Crit. hit damage +3%','MND+13','"Treasure Hunter"+2','Mag. Acc.+10 "Mag.Atk.Bns."+10',}},
+      feet={ name="Chironic Slippers", augments={'"Fast Cast"+2','MND+5','"Treasure Hunter"+2',}}
     }
     sets.midcast.Madrigal = {head="Fili Calot +1"}
     sets.midcast.Mambo = {feet="Mousai Crackows +1"}

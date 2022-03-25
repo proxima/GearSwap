@@ -458,7 +458,7 @@ function init_gear_sets()
       legs="Malignance Tights",
       feet="Malignance Boots",
       neck="Iskur Gorget",
-      left_ear="Enervating Earring",
+      left_ear="Crepuscular Earring",
       right_ear="Telos Earring",
       left_ring="Ilabrat Ring",
       right_ring="Rajas Ring",
@@ -474,7 +474,7 @@ function init_gear_sets()
       feet="Laksa. Bottes +3",
       neck="Comm. Charm +2",
       left_ear="Enervating Earring", -- Dignitary's earring
-      right_ear="Telos Earring", -- Some other macc earring
+      right_ear="Crepuscular Earring",
       left_ring="Stikini Ring +1",
       right_ring="Metamorph Ring +1",
       back=Cape.LEADEN,
@@ -488,7 +488,7 @@ function init_gear_sets()
     sets.midcast.RA = {ammo=gear.RAbullet,
       head="Ikenga's hat",
       neck="Iskur Gorget",
-      left_ear="Enervating Earring",
+      left_ear="Crepuscular Earring",
       right_ear="Telos Earring",
       body="Malignance Tabard",
       hands="Malignance Gloves",
@@ -513,15 +513,15 @@ function init_gear_sets()
     })
 
     sets.midcast.RA.Critical = set_combine(sets.midcast.RA, {
-       head="Meghanada Visor +2",
-       left_ear="Odr Earring",
-       body="Meghanada Cuirie +2",
-       hands="Mummu Wrists +2",
-       legs="Darraigner's Brais",
-       feet="Osh. Leggings +1",
-       left_ring="Begrudging Ring",
-       right_ring="Mummu Ring",
-       waist="K. Kachina Belt +1",
+      head="Meghanada Visor +2",
+      left_ear="Odr Earring",
+      body="Meghanada Cuirie +2",
+      hands="Mummu Wrists +2",
+      legs="Darraigner's Brais",
+      feet="Osh. Leggings +1",
+      left_ring="Begrudging Ring",
+      right_ring="Mummu Ring",
+      waist="K. Kachina Belt +1",
     })
 
     sets.midcast.RA.STP = set_combine(sets.midcast.RA, {
@@ -614,7 +614,7 @@ function init_gear_sets()
       feet="Malignance Boots",
       neck="Iskur Gorget",
       waist="Windbuffet Belt +1",
-      left_ear="Enervating Earring",
+      left_ear="Crepuscular Earring",
       right_ear="Telos Earring",
       left_ring="Ilabrat Ring",
       right_ring="Rajas Ring",

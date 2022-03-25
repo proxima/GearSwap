@@ -264,7 +264,18 @@ function init_gear_sets()
             'System: 1 ID: 1247 Val: 4'
         }
     }
-	
+
+    Visucius.MasterDA = {
+        name = "Visucius's Mantle",
+        augments={
+            'STR+20',
+            'Accuracy+20 Attack+20',
+            'STR+10',
+            '"Dbl.Atk."+10',
+            'Phys. dmg. taken-10%'
+        }
+     }
+
     --------------------------------------------------------------------------------
     --  __  __           _               ____        _          _____      _
     -- |  \/  |         | |             / __ \      | |        / ____|    | |
@@ -371,7 +382,20 @@ function init_gear_sets()
 
     )
 
-    sets.precast.WS["Howling Fist"] = set_combine(sets.precast.WS, {})
+    sets.precast.WS["Howling Fist"] = {
+      head="Mpaca's Cap",
+      body="Mpaca's Doublet",
+      hands="Mpaca's Gloves",
+      legs="Mpaca's Hose",
+      feet="Mpaca's Boots",
+      neck="Fotia Gorget", -- neck={ name="Pup. Collar +2", augments={'Path: A',}},
+      waist="Moonbow Belt +1",
+      left_ear={ name="Schere Earring", augments={'Path: A',}},
+      right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
+      left_ring="Regal Ring",
+      right_ring="Niqmaddu Ring",
+      back=Visucius.MasterDA
+    }
 
     -------------------------------------Idle
     --[[
@@ -379,19 +403,18 @@ function init_gear_sets()
         Idle Mode = MasterDT
     ]]
     sets.idle.MasterDT = {
-        main={ name="Xiucoatl", augments={'Path: C',}},
-        head="Malignance Chapeau",
-        body="Malignance Tabard",
-        hands="Malignance Gloves",
-        legs="Malignance Tights",
-        feet="Malignance Boots",
-        neck="Loricate Torque +1",
-        waist="Moonbow Belt +1",
-        left_ear="Etiolation Earring",
-        right_ear="Odnowa Earring +1",
-        left_ring="Gelatinous Ring +1",
-        right_ring="Defending Ring",
-        back=Visucius.PetDT
+      head="Malignance Chapeau",
+      body="Malignance Tabard",
+      hands="Malignance Gloves",
+      legs="Malignance Tights",
+      feet="Malignance Boots",
+      neck="Loricate Torque +1",
+      waist="Moonbow Belt +1",
+      left_ear="Etiolation Earring",
+      right_ear="Odnowa Earring +1",
+      left_ring="Gelatinous Ring +1",
+      right_ring="Defending Ring",
+      back=Visucius.PetDT
     }
     
     -------------------------------------Engaged
@@ -414,15 +437,27 @@ function init_gear_sets()
         Offense Mode = Master
         Hybrid Mode = TP
     ]]
-    sets.engaged.Master.TP = sets.engaged.Master
+    sets.engaged.Master.TP = {
+      head="Mpaca's Cap",
+      body="Mpaca's Doublet",
+      hands="Mpaca's Gloves",
+      legs="Mpaca's Hose",
+      feet="Mpaca's Boots",
+      neck="Shulmanu Collar",
+      waist="Moonbow Belt +1", -- 6
+      left_ear={name="Mache Earring +1",bag="wardrobe 4"},
+      right_ear="Schere Earring",  
+      left_ring="Niqmaddu Ring",
+      right_ring="Chirich Ring +1",
+      back=Visucius.MasterDA
+    }
 
     -------------------------------------DT
     --[[
         Offense Mode = Master
         Hybrid Mode = DT
     ]]
-    sets.engaged.Master.DT = {
-    }
+    sets.engaged.Master.DT = sets.engaged.Master.TP
     
     ----------------------------------------------------------------------------------
     --  __  __         _           ___     _     ___      _
@@ -455,7 +490,7 @@ function init_gear_sets()
         Offense Mode = MasterPet
         Hybrid Mode = TP
     ]]
-    sets.engaged.MasterPet.TP = sets.engaged.MasterPet
+    sets.engaged.MasterPet.TP = sets.engaged.Master.TP
     
     -------------------------------------DT
     --[[
@@ -578,9 +613,9 @@ function init_gear_sets()
         main={ name="Xiucoatl", augments={'Path: C',}},
         head=Relic_Pitre.Head_PRegen,
         body= Relic_Pitre.Body_PTP,
-        hands=Empy_Karagoz.Hands,
+        hands="Mpaca's Gloves",
         legs="Heyoka Subligar +1",
-        feet="Naga Kyahan",
+        feet="Mpaca's Boots",
         neck="Shulmanu Collar",
         waist="Klouskap sash +1",
         left_ear="Enmerkar earring",
@@ -590,7 +625,6 @@ function init_gear_sets()
         back=Visucius.PetDT
     }
 
-
     --[[
         Idle Mode = Idle
         Hybrid Mode = Acc
@@ -599,9 +633,9 @@ function init_gear_sets()
         main={ name="Xiucoatl", augments={'Path: C',}},
         head=Relic_Pitre.Head_PRegen,
         body= Relic_Pitre.Body_PTP,
-        hands=Empy_Karagoz.Hands,
+        hands="Mpaca's Gloves",
         legs="Heyoka Subligar +1",
-        feet="Naga Kyahan",
+        feet="Mpaca's Boots",
         neck="Shulmanu Collar",
         waist="Klouskap sash +1",
         left_ear="Enmerkar Earring",
@@ -616,33 +650,18 @@ function init_gear_sets()
         Hybrid Mode = TP
     ]]
     sets.idle.Pet.Engaged.TP = {
-      -- main={ name="Xiucoatl", augments={'Path: C',}},
-      -- head={ name="Taeon Chapeau", augments={'Pet: Accuracy+24 Pet: Rng. Acc.+24','Pet: "Dbl. Atk."+5','Pet: Damage taken -4%',}},
-      -- body={ name="Pitre Tobe +3", augments={'Enhances "Overdrive" effect',}},
-      -- hands={ name="Taeon Gloves", augments={'Pet: Accuracy+23 Pet: Rng. Acc.+23','Pet: "Dbl. Atk."+5','Pet: Damage taken -4%',}},
-      -- legs={ name="Taeon Tights", augments={'Pet: Accuracy+23 Pet: Rng. Acc.+23','Pet: "Dbl. Atk."+5','Pet: Damage taken -4%',}},
-      -- feet={ name="Taeon Boots", augments={'Pet: Accuracy+24 Pet: Rng. Acc.+24','Pet: "Dbl. Atk."+5','Pet: Damage taken -4%',}},
-      -- neck="Shulmanu Collar",
-      -- waist="Klouskap Sash +1",
-      -- left_ear="Enmerkar Earring",
-      -- right_ear="Rimeice Earring",
-      -- left_ring="Thurandaut Ring +1",
-      -- right_ring="C. Palug Ring",
-      -- back=Visucius.PetDT
-      main={ name="Xiucoatl", augments={'Path: C',}},
-      range="Animator P +1",
       head={ name="Taeon Chapeau", augments={'Pet: Accuracy+24 Pet: Rng. Acc.+24','Pet: "Dbl. Atk."+5','Pet: Damage taken -4%',}},
-      body={ name="Rao Togi +1", augments={'Pet: HP+125','Pet: Accuracy+20','Pet: Damage taken -4%',}},
+      body={ name="Pitre Tobe +3", augments={'Enhances "Overdrive" effect',}},
       hands={ name="Taeon Gloves", augments={'Pet: Accuracy+23 Pet: Rng. Acc.+23','Pet: "Dbl. Atk."+5','Pet: Damage taken -4%',}},
       legs={ name="Taeon Tights", augments={'Pet: Accuracy+23 Pet: Rng. Acc.+23','Pet: "Dbl. Atk."+5','Pet: Damage taken -4%',}},
       feet={ name="Taeon Boots", augments={'Pet: Accuracy+24 Pet: Rng. Acc.+24','Pet: "Dbl. Atk."+5','Pet: Damage taken -4%',}},
       neck="Shulmanu Collar",
       waist="Klouskap Sash +1",
       left_ear="Enmerkar Earring",
-      right_ear="Domes. Earring",
-      left_ring="Thur. Ring +1",
+      right_ear="Rimeice Earring",
+      left_ring="Thurandaut Ring +1",
       right_ring="C. Palug Ring",
-	  back=Visucius.PetDT
+      back=Visucius.PetDT
     }
 
     --[[
@@ -677,9 +696,9 @@ function init_gear_sets()
     sets.midcast.Pet.WSNoFTP = {
         head=Relic_Pitre.Head_PRegen,
         body= Relic_Pitre.Body_PTP,
-        hands=Empy_Karagoz.Hands,    
+        hands="Mpaca's Gloves",   
         legs=Empy_Karagoz.Legs_Combat,
-        feet="Naga Kyahan",
+        feet="Mpaca's Boots",
         neck="Shulmanu Collar",
         waist="Incarnation Sash",
         left_ear="Enmerkar earring",
@@ -712,9 +731,9 @@ function init_gear_sets()
     sets.midcast.Pet.WS["VIT"] = {
       head={ name="Taeon Chapeau", augments={'Pet: Accuracy+24 Pet: Rng. Acc.+24','Pet: "Dbl. Atk."+5','Pet: Damage taken -4%',}},
       body={ name="Pitre Tobe +3", augments={'Enhances "Overdrive" effect',}},
-      hands={ name="Taeon Gloves", augments={'Pet: Accuracy+23 Pet: Rng. Acc.+23','Pet: "Dbl. Atk."+5','Pet: Damage taken -4%',}},
+      hands="Mpaca's Gloves",
       legs={ name="Taeon Tights", augments={'Pet: Accuracy+23 Pet: Rng. Acc.+23','Pet: "Dbl. Atk."+5','Pet: Damage taken -4%',}},
-      feet={ name="Taeon Boots", augments={'Pet: Accuracy+24 Pet: Rng. Acc.+24','Pet: "Dbl. Atk."+5','Pet: Damage taken -4%',}},
+      feet="Mpaca's Boots",
       neck="Shulmanu Collar",
       waist="Incarnation Sash",
       left_ear="Enmerkar earring",
