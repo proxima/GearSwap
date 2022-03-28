@@ -86,6 +86,8 @@ function job_setup()
   rayke_duration = 35
   gambit_duration = 96
  
+  state.Buff['Fast Cast'] = buffactive['Fast Cast']
+  
   lockstyleset = 2
 end
 
@@ -99,7 +101,7 @@ function user_setup()
   state.HybridMode:options('Normal', 'DT')
   state.CastingMode:options('Normal', 'Resistant')
   state.IdleMode:options('Normal', 'DT', 'Refresh')
-  state.PhysicalDefenseMode:options('PDT', 'HP')
+  state.PhysicalDefenseMode:options('PDT')
   state.MagicalDefenseMode:options('MDT')
 
   state.Knockback = M(false, 'Knockback')
@@ -175,7 +177,7 @@ function user_setup()
 
   Relic = {}
   Relic.Head  = "Futhark Bandeau +3"
-  Relic.Body  = "Futhark Coat +1"
+  Relic.Body  = "Futhark Coat +3"
   Relic.Hands = "Futhark Mitons +1"
   Relic.Legs  = "Futhark Trousers +3"
   Relic.Feet  = "Futhark Boots +1"
@@ -262,22 +264,6 @@ function init_gear_sets()
     back=Cape.Enmity
   }
   
-  sets.Enmity.SIRD = {
-    ammo="Staunch Tathlum +1",
-    head="Agwu's Cap",  
-    body="Nyame Mail",   
-    hands="Rawhide Gloves",
-    legs="Carmine Cuisses +1",
-    feet=TaeonPhalanx.Feet,
-    neck="Moonlight Necklace",
-    waist="Audumbla Sash",
-    left_ear="Cryptic Earring",
-    right_ear={ name="Odnowa Earring +1", augments={'Path: A',}},
-    left_ring="Defending Ring",
-    right_ring={ name="Gelatinous Ring +1", augments={'Path: A',}},
-    back=Cape.Enmity
-  }
-  
   sets.Enmity.DT = {
     ammo="Staunch Tathlum +1",
     head="Halitus Helm",
@@ -293,40 +279,77 @@ function init_gear_sets()
     right_ring={ name="Gelatinous Ring +1", priority=1},
     back=Cape.Enmity
   }
- 
+
+  sets.Enmity.SIRD = {
+    ammo="Staunch Tathlum +1",
+    head="Agwu's Cap",  
+    body="Nyame Mail",   
+    hands="Rawhide Gloves",
+    legs="Carmine Cuisses +1",
+    feet=TaeonPhalanx.Feet,
+    neck="Moonlight Necklace",
+    waist="Audumbla Sash",
+    left_ear="Cryptic Earring",
+    right_ear={ name="Odnowa Earring +1", augments={'Path: A',}},
+    left_ring="Defending Ring",
+    right_ring={ name="Gelatinous Ring +1", augments={'Path: A',}},
+    back=Cape.Enmity
+  }
+   
   sets.precast.JA['Vallation'] = set_combine(sets.Enmity, {
     body=AF.Body,
     legs=Relic.Legs,
   })
  
-  sets.precast.JA['Valiance'] = sets.precast.JA['Vallation'] 
+  sets.precast.JA['Valiance'] = sets.precast.JA['Vallation']
+  
   sets.precast.JA['Pflug'] = set_combine(sets.Enmity, {feet=AF.Feet})
   sets.precast.JA['Battuta'] = set_combine(sets.Enmity, {head=Relic.Head})
   sets.precast.JA['Liement'] = set_combine(sets.Enmity, {body=Relic.Body})
  
   sets.precast.JA['Lunge'] = {
   }
- 
+  
   sets.precast.JA['Swipe'] = sets.precast.JA['Lunge']
+ 
   sets.precast.JA['Gambit'] = set_combine(sets.Enmity, {hands=AF.Hands})
   sets.precast.JA['Rayke'] = set_combine(sets.Enmity, {feet=Relic.Feet})
   sets.precast.JA['Elemental Sforzo'] = set_combine(sets.Enmity, {body=Relic.Body})
   sets.precast.JA['Swordplay'] = set_combine(sets.Enmity, {hands=Relic.Hands})
  
   sets.precast.JA['Vivacious Pulse'] = {
+    left_ring={name="Stikini Ring +1", bag="wardrobe"},
+    right_ring={name="Stikini Ring +1", bag="wardrobe5"},
+    legs=AF.Legs
   }
- 
+
   sets.precast.JA['Vivacious Pulse'].Status = {head=Empy.HEAD}
  
   sets.precast.FC = {
+    ammo="Sapience Orb",
+    head=AF.Head,
+    neck="Voltsurge Torque",
+    left_ear="Etiolation Earring",
+    right_ear="Loquacious Earring",
+    body="Agwu's Robe",
+    hands="Agwu's Gages",
+    left_ring="Kishar Ring",
+    right_ring="Gelatinous Ring +1",
+    back=Cape.FC,
+    waist="Kasiri Belt",
+    legs="Agwu's Slops",
+    feet="Carmine Greaves +1",
+  }
+
+  sets.precast.FC.Inspiration = {
+    right_ear="Loquacious Earring",
     legs=Relic.Legs,
+    feet="Carmine greaves +1",
     back=Cape.FC
   }
- 
-  sets.precast.FC.HP = set_combine(sets.precast.FC, {
-  })
- 
+  
   sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, {
+    waist="Siegel Sash",
     legs=Relic.Legs
   })
  
@@ -335,6 +358,19 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
  
   sets.precast.WS = {
+    ammo="Knobkierrie",
+    head={ name="Nyame Helm", augments={'Path: B',}},
+    body={ name="Nyame Mail", augments={'Path: B',}},
+    hands={ name="Nyame Gauntlets", augments={'Path: B',}},
+    legs={ name="Nyame Flanchard", augments={'Path: B',}},
+    feet={ name="Nyame Sollerets", augments={'Path: B',}},
+    neck="Fotia Gorget",
+    waist="Fotia Belt",
+    left_ear="Moonshade Earring",
+    right_ear="Sherida Earring",
+    left_ring="Epaminondas's Ring",
+    right_ring="Niqmaddu Ring",
+    back=Cape.WSD
   }
  
   sets.precast.WS.Acc = set_combine(sets.precast.WS, {
@@ -356,19 +392,6 @@ function init_gear_sets()
   })
  
   sets.precast.WS['Dimidiation'] = set_combine(sets.precast.WS, {
-    ammo="Knobkierrie",
-    head={ name="Nyame Helm", augments={'Path: B',}},
-    body={ name="Nyame Mail", augments={'Path: B',}},
-    hands={ name="Nyame Gauntlets", augments={'Path: B',}},
-    legs={ name="Nyame Flanchard", augments={'Path: B',}},
-    feet={ name="Nyame Sollerets", augments={'Path: B',}},
-    neck="Fotia Gorget",
-    waist="Fotia Belt",
-    left_ear="Moonshade Earring",
-    right_ear="Sherida Earring",
-    left_ring="Epaminondas's Ring",
-    right_ring="Niqmaddu Ring",
-    back=Cape.WSD
   })
  
   sets.precast.WS['Dimidiation'].Acc = set_combine(sets.precast.WS['Dimidiation'], {
@@ -382,8 +405,8 @@ function init_gear_sets()
  
   sets.precast.WS['Herculean Slash'] = sets.precast.JA['Lunge']
  
-  sets.precast.WS['Shockwave'] = {
-  }
+  sets.precast.WS['Shockwave'] = set_combine(sets.precast.WS, {
+  })
  
   sets.precast.WS['Fell Cleave'] = set_combine(sets.precast.WS, {
   })
@@ -414,8 +437,6 @@ function init_gear_sets()
   sets.midcast.FastRecast = sets.precast.FC
  
   sets.midcast.SpellInterrupt = {
-    main="Epeolatry",
-    sub="Mensch Strap",
     ammo="Staunch Tathlum +1",   -- 11
     head="Agwu's Cap",           -- 10
     neck="Moonlight Necklace",   -- 15
@@ -433,10 +454,21 @@ function init_gear_sets()
  
   sets.midcast.Utsusemi = sets.midcast.SpellInterrupt
  
-  sets.midcast.Cure = {
-  }
+  sets.midcast.Cure = {}
  
   sets.midcast['Enhancing Magic'] = set_combine(sets.midcast.SpellInterrupt, {
+    head=Empy.Head,
+    neck="Melic Torque",
+    left_ear="Andoaa Earring",
+    right_ear="Mimir Earring",
+    body="Nyame Mail",
+    hands=AF.Hands,
+    left_ring={name="Stikini Ring +1", bag="wardrobe"},
+    right_ring={name="Stikini Ring +1", bag="wardrobe5"},
+    back="Reiki Cloak",
+    waist="Olympus sash",
+    legs=Relic.Legs,
+    feet="Carmine greaves +1"
   })
  
   sets.midcast.Phalanx = set_combine(sets.midcast['Enhancing Magic'], {
@@ -448,13 +480,15 @@ function init_gear_sets()
   })
   
   sets.midcast.PhalanxDuration = set_combine(sets.midcast.Phalanx, {
+    head=Empy.Head,
+    legs=Relic.Legs,
   })
  
-  sets.midcast['Aquaveil'] = set_combine(sets.midcast['Enhancing Magic'], {
-  })
+  sets.midcast['Aquaveil'] = sets.midcast.SpellInterrupt
  
-  sets.midcast.Temper = {
-  }
+  sets.midcast.Temper = set_combine(sets.midcast['Enhancing Magic'], {
+    legs="Carmine cuisses +1",
+  })
  
   sets.midcast.Regen = set_combine(sets.midcast['Enhancing Magic'], {head=AF.Head, neck="Sacro Gorget"})
   sets.midcast.Refresh = set_combine(sets.midcast['Enhancing Magic'], {head=Empy.Head, waist="Gishdubar Sash"})
@@ -471,10 +505,9 @@ function init_gear_sets()
   sets.midcast.Utsusemi = sets.midcast.SpellInterrupt
  
   sets.midcast['Blue Magic'] = {}
-  sets.midcast['Blue Magic'].Enmity = sets.Enmity
+  sets.midcast['Blue Magic'].Enmity = sets.Enmity.SIRD
   sets.midcast['Blue Magic'].Cure = sets.midcast.Cure
-  sets.midcast['Blue Magic'].Buff = {}
- 
+  sets.midcast['Blue Magic'].Buff = sets.midcast['Enhancing Magic']
  
   ------------------------------------------------------------------------------------------------
   ----------------------------------------- Idle Sets --------------------------------------------
@@ -515,15 +548,51 @@ function init_gear_sets()
   sets.defense.Knockback = {}
  
   sets.defense.PDT = {
+    ammo="Staunch Tathlum +1",
+    head={ name="Nyame Helm", augments={'Path: B',}},
+    body={ name="Nyame Mail", augments={'Path: B',}},
+    hands={ name="Nyame Gauntlets", augments={'Path: B',}},
+    legs={ name="Nyame Flanchard", augments={'Path: B',}},
+    feet={ name="Nyame Sollerets", augments={'Path: B',}},
+    neck={ name="Loricate Torque +1", augments={'Path: A',}},
+    waist="Flume Belt +1",
+    left_ear="Tuisto Earring",
+    right_ear={ name="Odnowa Earring +1", augments={'Path: A',}},
+    left_ring="Moonlight Ring",
+    right_ring={ name="Gelatinous Ring +1", augments={'Path: A',}},
+    back=Cape.Enmity
   }
  
   sets.defense.MDT = {
+    ammo="Staunch Tathlum +1",
+    head={ name="Nyame Helm", augments={'Path: B',}},
+    neck="Futhark Torque +2",
+    left_ear="Sanare earring",
+    right_ear="Odnowa earring +1",
+    body=AF.Body,
+    hands={ name="Nyame Gauntlets", augments={'Path: B',}},
+    left_ring="Vengeful ring",
+    right_Ring="Vexer ring +1",
+    back=Cape.Enmity,
+    waist="Engraved Belt",
+    legs={ name="Nyame Flanchard", augments={'Path: B',}},
+    feet={ name="Nyame Sollerets", augments={'Path: B',}},
   }
- 
-  sets.defense.HP = {
-  }
- 
+  
   sets.defense.Parry = {
+    ammo="Staunch Tathlum +1",
+    head={ name="Nyame Helm", augments={'Path: B',}},
+    neck="Futhark Torque +2",
+    left_ear="Cryptic earring",
+    right_ear="Odnowa earring +1",
+    body={ name="Nyame Mail", augments={'Path: B',}},
+    hands="Turms mittens +1",
+    left_ring="Gelatinous ring +1",
+    right_Ring="Moonlight ring",
+    back=Cape.Parry,
+    waist="Engraved Belt",
+    legs={ name="Nyame Flanchard", augments={'Path: B',}},
+    feet="Turms leggings +1",
   }
  
   ------------------------------------------------------------------------------------------------
@@ -581,7 +650,6 @@ function init_gear_sets()
   sets.EpeolatryTank = {main="Epeolatry", sub="Mensch Strap"}
   sets.Aettir = {main="Aettir", sub="Utu Grip"}
   sets.Lycurgos = {main="Lycurgos", sub="Utu Grip"}
- 
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -599,12 +667,10 @@ function job_precast(spell, action, spellMap, eventArgs)
     if rune_enchantments:contains(spell.english) then
         eventArgs.handled = true
     end
-    if state.DefenseMode.value == 'Physical' and state.PhysicalDefenseMode.current == 'HP' then
-        currentSpell = spell.english
+    if spell.action_type == 'Magic' and state.Buff['Fast Cast'] then
+        equip(sets.precast.FC.Inspiration)
         eventArgs.handled = true
-        if spell.action_type == 'Magic' then
-            equip(sets.precast.FC.HP)
-        end
+        return
     end
     if spell.english == 'Lunge' then
         local abil_recasts = windower.ffxi.get_ability_recasts()
@@ -663,12 +729,16 @@ end
 function job_aftercast(spell, action, spellMap, eventArgs)
     equip(sets[state.WeaponSet.current])
 
-    if spell.name == 'Rayke' and not spell.interrupted then
-        send_command('@timers c "Rayke ['..spell.target.name..']" '..rayke_duration..' down spells/00136.png')
-        send_command('wait '..rayke_duration..';input /echo [Rayke just wore off!];')
-    elseif spell.name == 'Gambit' and not spell.interrupted then
-        send_command('@timers c "Gambit ['..spell.target.name..']" '..gambit_duration..' down spells/00136.png')
-        send_command('wait '..gambit_duration..';input /echo [Gambit just wore off!];')
+    if not spell.interrupted then
+        if spell.english == 'Valiance' or spell.english == 'Vallation' then
+            state.Buff['Fast Cast'] = true
+        elseif spell.name == 'Rayke' then
+            send_command('@timers c "Rayke ['..spell.target.name..']" '..rayke_duration..' down spells/00136.png')
+            send_command('wait '..rayke_duration..';input /echo [Rayke just wore off!];')
+        elseif spell.name == 'Gambit' then
+            send_command('@timers c "Gambit ['..spell.target.name..']" '..gambit_duration..' down spells/00136.png')
+            send_command('wait '..gambit_duration..';input /echo [Gambit just wore off!];')
+        end
     end
 end
 
@@ -689,7 +759,7 @@ function job_state_change(field, new_value, old_value)
     classes.CustomMeleeGroups:append(state.Death.current)
 end
 
-function job_buff_change(buff,gain)
+function job_buff_change(buff, gain)
     if buff == "terror" then
         if gain then
             equip(sets.defense.PDT)
@@ -710,9 +780,9 @@ function job_buff_change(buff,gain)
     if buff == 'Embolden' then
         if gain then
             equip(sets.Embolden)
-            disable('head','legs','back')
+            disable('back')
         else
-            enable('head','legs','back')
+            enable('back')
             status_change(player.status)
         end
     end
@@ -721,6 +791,10 @@ function job_buff_change(buff,gain)
         state.Buff.Aftermath = gain
         customize_melee_set()
         handle_equipping_gear(player.status)
+    end
+
+    if buff:lower() == 'fast cast' then
+        state.Buff['Fast Cast'] = gain
     end
 
     if buff == 'Battuta' and not gain then

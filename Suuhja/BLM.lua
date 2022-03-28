@@ -137,36 +137,60 @@ function init_gear_sets()
     -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
     sets.precast.WS['Cataclysm'] = {
       ammo="Ghastly Tathlum +1",
-      head="Pixie hairpin +1",
+      -- head="Pixie hairpin +1",
+      head="Agwu's Cap",
       body="Agwu's Robe",
       hands="Jhakri Cuffs +2",
-      legs={ name="Amalric Slops +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
-      feet={ name="Amalric Nails +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
+      legs="Agwu's Slops",
+      feet="Agwu's Pigaches",
       neck="Sorcerer's Stole +2",
       waist="Hachirin-no-Obi",
       -- waist="Orpheus's Sash",
-      left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
+      -- left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
+      left_ear="Regal Earring",
       right_ear="Malignance Earring",
-      left_ring="Archon Ring",
-      right_ring="Epaminondas's Ring",
+      -- left_ring="Archon Ring",
+      left_ring="Freke Ring",
+      right_ring={ name="Metamor. Ring +1", augments={'Path: A',}},
+      -- right_ring="Epaminondas's Ring",
+      back={ name="Taranus's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Phys. dmg. taken-10%',}},      
+    }
+
+    sets.precast.WS['Earth Crusher'] = {
+      ammo="Ghastly Tathlum +1",
+      -- head="Pixie hairpin +1",
+      head="Agwu's Cap",
+      body="Agwu's Robe",
+      hands="Jhakri Cuffs +2",
+      legs="Agwu's Slops",
+      feet="Agwu's Pigaches",
+      neck="Sorcerer's Stole +2",
+      waist="Hachirin-no-Obi",
+      -- waist="Orpheus's Sash",
+      -- left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
+      left_ear="Regal Earring",
+      right_ear="Malignance Earring",
+      -- left_ring="Archon Ring",
+      left_ring="Freke Ring",
+      right_ring={ name="Metamor. Ring +1", augments={'Path: A',}},
+      -- right_ring="Epaminondas's Ring",
       back={ name="Taranus's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Phys. dmg. taken-10%',}},      
     }
 
     sets.precast.WS['Shattersoul'] = {
-      ammo="Floestone",
-      head="Jhakri Coronal +2",
-      body="Jhakri Robe +2",
-      hands="Jhakri Cuffs +2",
-      legs="Jhakri Slops +2",
-      feet="Jhakri Pigaches +2",
-      waist="Luminary Sash",
-      left_ear="Regal Earring",
-      right_ring="Epaminondas's Ring",
-      back={ name="Taranus's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Phys. dmg. taken-10%',}},
-      neck="Fotia Gorget",
-      waist="Fotia Belt",
-      right_ear="Brutal earring",
-      left_ear="Regal earring"
+      ammo={ name="Ghastly Tathlum +1", augments={'Path: A',}},
+      head={ name="Nyame Helm", augments={'Path: B',}},
+      body={ name="Nyame Mail", augments={'Path: B',}},
+      hands={ name="Gazu Bracelet +1", augments={'Path: A',}},
+      legs={ name="Nyame Flanchard", augments={'Path: B',}},
+      feet={ name="Nyame Sollerets", augments={'Path: B',}},
+      neck={ name="Src. Stole +2", augments={'Path: A',}},
+      waist={ name="Acuity Belt +1", augments={'Path: A',}},
+      left_ear="Malignance Earring",
+      right_ear="Regal Earring",
+      left_ring="Freke Ring",
+      right_ring={ name="Metamor. Ring +1", augments={'Path: A',}},
+      back={ name="Taranus's Cape", augments={'INT+20','Accuracy+20 Attack+20','INT+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}},
     }
     
     sets.precast.WS['Vidohunir'] = {
@@ -175,7 +199,7 @@ function init_gear_sets()
       body="Agwu's Robe",
       hands="Jhakri Cuffs +2",
       legs={ name="Amalric Slops +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
-      feet={ name="Amalric Nails +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
+      feet="Agwu's Pigaches",
       neck="Sorcerer's Stole +2",
       waist="Orpheus's Sash",
       left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
@@ -295,7 +319,7 @@ function init_gear_sets()
     
     sets.midcast['Elemental Magic'] = {
       ammo="Ghastly Tathlum +1",
-      head="Archmage's Petasos +3",
+      head="Agwu's Cap",
       body="Spaekona's Coat +3",
       -- body="Archmage's coat +3",
       hands="Archmage's Gloves +3",
@@ -395,7 +419,7 @@ function init_gear_sets()
     
     -- Idle mode that keeps PDT gear on, but doesn't prevent normal gear swaps for precast/etc.
     sets.idle.PDT = set_combine(sets.idle, {
-      feet="Hippo. Socks +1",
+      -- feet="Hippo. Socks +1",
       back={ name="Taranus's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Phys. dmg. taken-10%',}},    
     })
 
@@ -446,19 +470,19 @@ function init_gear_sets()
     
     -- Normal melee group
     sets.engaged = {
-      ammo="Staunch Tathlum +1",
-      head={ name="Blistering Sallet +1", augments={'Path: A',}},
-      body="Jhakri Robe +2",
+      ammo="Floestone",
+      head={ name="Nyame Helm", augments={'Path: B',}},
+      body={ name="Nyame Mail", augments={'Path: B',}},
       hands={ name="Gazu Bracelet +1", augments={'Path: A',}},
-      legs="Jhakri Slops +2",
-      feet="Jhakri Pigaches +2",
+      legs={ name="Nyame Flanchard", augments={'Path: B',}},
+      feet={ name="Nyame Sollerets", augments={'Path: B',}},
       neck="Lissome Necklace",
       waist="Grunfeld Rope",
-      left_ear="Cessance Earring",
+      left_ear="Mache Earring +1",
       right_ear="Telos Earring",
       left_ring={name="Chirich Ring +1",bag="wardrobe 2"},
       right_ring={name="Chirich Ring +1",bag="wardrobe 4"},
-      back={ name="Taranus's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+5','"Store TP"+10','Phys. dmg. taken-10%',}},
+      back={ name="Taranus's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}},
     }
 end
 

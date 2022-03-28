@@ -544,17 +544,17 @@ function init_gear_sets()
 
     sets.engaged = {
       range={ name="Linos", augments={'Accuracy+17','"Store TP"+3','Quadruple Attack +3',}},
-      head="Bunzi's Hat",
-      body="Ayanmo Corazza +2",
-      hands="Bunzi's Gloves",
-      legs="Nyame Flanchard",
-      feet="Nyame Sollerets",
+      head="Bunzi's Hat",       -- 7
+      body="Ayanmo Corazza +2", -- 6
+      hands="Bunzi's Gloves",   -- 8
+      legs="Nyame Flanchard",   -- 8
+      feet="Nyame Sollerets",   -- 7
       neck="Bard's Charm +2",
       ear1="Brutal Earring",
       ear2="Dignitary's Earring",
       left_ring={name="Chirich Ring +1",bag="wardrobe 2"},
-      right_ring={name="Chirich Ring +1",bag="wardrobe 3"},
-      back={ name="Intarabus's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10','Damage taken-5%',}},
+      right_ring="Moonlight Ring",
+      back={ name="Intarabus's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10','Phys. dmg. taken-10%',}},
       waist="Grunfeld Rope"
     }
 
@@ -576,8 +576,8 @@ function init_gear_sets()
       ear1="Eabani Earring",
       ear2="Telos Earring",
       left_ring={name="Chirich Ring +1",bag="wardrobe 2"},
-      right_ring={name="Chirich Ring +1",bag="wardrobe 3"},
-      back={ name="Intarabus's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10','Damage taken-5%',}},
+      right_ring="Moonlight Ring",
+      back={ name="Intarabus's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10','Phys. dmg. taken-10%',}},
       waist="Reiki Yotai"
     }
 

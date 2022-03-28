@@ -498,7 +498,7 @@ function get_sets()
      left_ring="Evanescence ring",
      legs="Azimuth tights +1",
      head="Bagua Galero +3",
-     feet="Merlinic crackows",
+     feet="Agwu's Pigaches",
    })
 
    sets.midcast["Aspir"] = sets.midcast["Drain"]

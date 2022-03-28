@@ -335,7 +335,7 @@ function init_gear_sets()
   -- Idle sets
   sets.idle = {
     main="Burtgang",
-    sub="Ochain",                 --  8
+    sub="Srivatsa",               --  8
     ammo="Staunch Tathlum +1",    --  3
     head="Sakpata's Helm",        --  7
     body="Sakpata's Breastplate", -- 10
