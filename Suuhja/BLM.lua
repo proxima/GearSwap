@@ -43,7 +43,7 @@ function user_setup()
     windower.send_command('bind @d sat youcommand Suuhja "Thundaja"')
     windower.send_command('bind @f sat youcommand Muuhja "Shock Squall"')
 
-    windower.send_command('bind @b sat youcommand Muuhja "Earth Threnody II"')
+    windower.send_command('bind @b sat youcommand Muuhja "Magic Finale"')
     windower.send_command('bind @n sat youcommand Muuhja "Carnage Elegy"')
     windower.send_command('bind @m sat youcommand Muuhja "Pining Nocturne"')
         

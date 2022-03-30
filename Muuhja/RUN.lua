@@ -96,7 +96,7 @@ end
 -------------------------------------------------------------------------------------------------------------------
 
 function user_setup()
-  state.OffenseMode:options('Normal', 'LowAcc', 'MidAcc', 'HighAcc', 'STP')
+  state.OffenseMode:options('Normal', 'Parry')
   state.WeaponskillMode:options('Normal', 'Acc')
   state.HybridMode:options('Normal', 'DT')
   state.CastingMode:options('Normal', 'Resistant')
@@ -307,9 +307,7 @@ function init_gear_sets()
   sets.precast.JA['Battuta'] = set_combine(sets.Enmity, {head=Relic.Head})
   sets.precast.JA['Liement'] = set_combine(sets.Enmity, {body=Relic.Body})
  
-  sets.precast.JA['Lunge'] = {
-  }
-  
+  sets.precast.JA['Lunge'] = {}
   sets.precast.JA['Swipe'] = sets.precast.JA['Lunge']
  
   sets.precast.JA['Gambit'] = set_combine(sets.Enmity, {hands=AF.Hands})
@@ -535,12 +533,14 @@ function init_gear_sets()
     body=AF.Body,
     left_ring={name="Stikini Ring +1", bag="wardrobe"},
     right_ring={name="Stikini Ring +1", bag="wardrobe5"},
+    legs="Carmine Cuisses +1",
   })
  
-  sets.idle.Town = set_combine(sets.idle, {})
- 
   sets.Kiting = {legs="Carmine Cuisses +1"}
-  
+ 
+  sets.idle.Town = set_combine(sets.idle, sets.Kiting)
+
+ 
   ------------------------------------------------------------------------------------------------
   ---------------------------------------- Defense Sets ------------------------------------------
   ------------------------------------------------------------------------------------------------
@@ -600,38 +600,34 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
  
   sets.engaged = {
+    ammo="Yamarang",
+    head={ name="Nyame Helm", augments={'Path: B',}},
+    neck="Anu Torque",
+    left_ear="Telos Earring",
+    right_ear="Sherida Earring",
+    body={ name="Nyame Mail", augments={'Path: B',}},
+    hands={ name="Nyame Gauntlets", augments={'Path: B',}},
+    left_ring="Niqmaddu Ring",
+    right_ring="Moonlight Ring",
+    back=Cape.STP,
+    waist="Dynamic Belt +1",
+    legs={ name="Nyame Flanchard", augments={'Path: B',}},
+    feet={ name="Nyame Sollerets", augments={'Path: B',}},  
   }
- 
-  sets.engaged.LowAcc = set_combine(sets.engaged, {
-  })
- 
-  sets.engaged.MidAcc = set_combine(sets.engaged.LowAcc, {
-  })
- 
-  sets.engaged.HighAcc = set_combine(sets.engaged.MidAcc, {
-  })
- 
-  sets.engaged.STP = set_combine(sets.engaged, {
-  })
- 
-  sets.engaged.Aftermath = {
-  }
+
+  sets.engaged.Parry = sets.defense.Parry
+  
+  sets.engaged.Aftermath = sets.engaged
  
   ------------------------------------------------------------------------------------------------
   ---------------------------------------- Hybrid Sets -------------------------------------------
   ------------------------------------------------------------------------------------------------
  
-  sets.Hybrid = {
-  }
+  sets.Hybrid = sets.engaged
  
-  sets.engaged.DT = set_combine(sets.engaged, sets.Hybrid)
-  sets.engaged.LowAcc.DT = set_combine(sets.engaged.LowAcc, sets.Hybrid)
-  sets.engaged.MidAcc.DT = set_combine(sets.engaged.MidAcc, sets.Hybrid)
-  sets.engaged.HighAcc.DT = set_combine(sets.engaged.HighAcc, sets.Hybrid)
-  sets.engaged.STP.DT = set_combine(sets.engaged.STP, sets.Hybrid)
+  sets.engaged.DT = sets.engaged.Parry
  
-  sets.engaged.Aftermath.DT = {
-  }
+  sets.engaged.Aftermath.DT = sets.engaged
  
   ------------------------------------------------------------------------------------------------
   ---------------------------------------- Special Sets ------------------------------------------
@@ -647,7 +643,7 @@ function init_gear_sets()
   sets.Embolden = set_combine(sets.midcast['Enhancing Magic'], {back="Evasionist's Cape"})
   sets.Obi = {waist="Hachirin-no-Obi"}
   sets.Epeolatry = {main="Epeolatry", sub="Utu Grip"}
-  sets.EpeolatryTank = {main="Epeolatry", sub="Mensch Strap"}
+  sets.EpeolatryTank = {main="Epeolatry", sub="Refined Grip +1"}
   sets.Aettir = {main="Aettir", sub="Utu Grip"}
   sets.Lycurgos = {main="Lycurgos", sub="Utu Grip"}
 end
