@@ -505,7 +505,7 @@ function init_gear_sets()
   sets.midcast['Blue Magic'] = {}
   sets.midcast['Blue Magic'].Enmity = sets.Enmity.SIRD
   sets.midcast['Blue Magic'].Cure = sets.midcast.Cure
-  sets.midcast['Blue Magic'].Buff = sets.midcast['Enhancing Magic']
+  sets.midcast['Blue Magic'].Buffs = sets.Enmity.SIRD
  
   ------------------------------------------------------------------------------------------------
   ----------------------------------------- Idle Sets --------------------------------------------

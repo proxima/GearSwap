@@ -104,7 +104,7 @@ function user_setup()
         'Spirited Etude', 'Logical Etude', 'Enchanting Etude', 'Bewitching Etude'
     }
 
-    state.WeaponSet = M{['description']='Weapon Set', 'Carnwenhan', 'Twashtar', 'Naegling', 'Tauret', 'Free'}
+    state.WeaponSet = M{['description']='Weapon Set', 'Carnwenhan', 'Twashtar', 'Naegling', 'Tauret', 'Aeolian', 'Free'}
     state.WeaponLock = M(false, 'Weapon Lock')
     state.CP = M(false, "Capacity Points Mode")
 
@@ -316,6 +316,20 @@ function init_gear_sets()
       back={ name="Intarabus's Cape", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}},
     })
 
+    sets.precast.WS['Aeolian Edge'] = {
+      range={ name="Linos", augments={'"Mag.Atk.Bns."+15','Weapon skill damage +3%','INT+7',}},
+      body={ name="Cohort Cloak +1", augments={'Path: A',}},
+      hands={ name="Nyame Gauntlets", augments={'Path: B',}},
+      legs={ name="Nyame Flanchard", augments={'Path: B',}},
+      feet={ name="Nyame Sollerets", augments={'Path: B',}},
+      neck="Sanctity Necklace",
+      waist="Eschan Stone",
+      left_ear="Regal Earring",
+      right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
+      left_ring="Metamorph Ring +1",
+      right_ring="Epaminondas's Ring",
+      back={ name="Intarabus's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}},
+    }
 
     ------------------------------------------------------------------------------------------------
     ---------------------------------------- Midcast Sets ------------------------------------------
@@ -809,6 +823,8 @@ function customize_melee_set(meleeSet)
         equip({main="Naegling",sub="Fusetto +2"})
     elseif state.WeaponSet.value == "Tauret" then
         equip({main="Tauret",sub="Twashtar"})
+    elseif state.WeaponSet.value == "Aeolian" then
+        equip({main="Tauret",sub="Malevolence"})
     end
     if buffactive['Aftermath: Lv.3'] and player.equipment.main == "Carnwenhan" then
         meleeSet = set_combine(meleeSet, sets.engaged.Aftermath)

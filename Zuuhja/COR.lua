@@ -132,7 +132,7 @@ function user_setup()
     state.WeaponskillMode:options('Normal', 'Acc')
     state.IdleMode:options('Normal', 'DT', 'Refresh')
 
-    state.WeaponSet = M{['description']='Weapon Set', 'DeathPenalty_M', 'DeathPenalty_R', 'Armageddon_M', 'Armageddon_R', 'Anarchy', 'Rolls'}
+    state.WeaponSet = M{['description']='Weapon Set', 'DeathPenalty_M', 'DeathPenalty_R', 'Armageddon_M', 'Armageddon_R', 'Anarchy', 'Aeolian', 'Rolls'}
     state.WeaponLock = M(false, 'Weapon Lock')
 
     gear.RAbullet = "Devastating Bullet"
@@ -764,6 +764,9 @@ function init_gear_sets()
 
     sets.Rolls = {main={name="Rostam", bag="wardrobe4"}, sub={name="Rostam", bag="wardrobe2", priority=1}, ranged="Compensator"}
     sets.Rolls.Acc = sets.Rolls
+
+    sets.Aeolian = {main={name="Rostam", bag="wardrobe2"}, sub="Tauret", ranged="Anarchy +2"}
+    sets.Aeolian.Acc = {main={name="Rostam", bag="wardrobe2"}, sub="Tauret", ranged="Anarchy +2"}
 
     sets.DefaultShield = {sub="Nusku Shield"}
 

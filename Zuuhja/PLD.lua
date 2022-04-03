@@ -422,19 +422,20 @@ function init_gear_sets()
   sets.engaged = {
     main="Burtgang",
     sub="Ochain",
-    ammo="Staunch Tathlum +1",
-    head="Sakpata's Helm",
-    body="Sakpata's Breastplate",
+    ammo="Staunch Tathlum +1", -- 3
+    head="Sakpata's Helm", -- 7
+    body="Sakpata's Breastplate", -- 8
     hands="Sakpata's Gauntlets",
-    legs="Sakpata's Cuisses",
-    feet="Sakpata's Leggings",
+    -- hands="Reverence Gauntlets +3", 
+    legs="Sakpata's Cuisses", -- 9
+    feet="Sakpata's Leggings", -- 6
     neck="Unmoving collar +1",
     waist="Sailfi belt +1",
     ear1="Odnowa Earring +1",
     ear2="Tuisto Earring",
-    ring1=MR.One,
-    ring2=MR.Two,
-    back=Rud.STP
+    ring1=MR.One, -- 5
+    ring2=MR.Two, -- 5
+    back=Rud.BLOCK
   }
   
   -- sets.engaged = {

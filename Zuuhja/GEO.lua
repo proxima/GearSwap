@@ -65,7 +65,7 @@ include('Modes.lua')            -- leave this as is
 -- to define sets for idle if you add more modes, name them: sets.me.idle.mymode and add 'mymode' in the group.
 -- to define sets for regen if you add more modes, name them: sets.midcast.regen.mymode and add 'mymode' in the group.
 -- Same idea for nuke modes. 
-idleModes = M('normal', 'dt', 'mdt')
+idleModes = M('normal', 'dt', 'mdt', 'refresh')
 -- To add a new mode to nuking, you need to define both sets: sets.midcast.nuking.mynewmode as well as sets.midcast.MB.mynewmode
 nukeModes = M('normal', 'acc')
 
@@ -226,6 +226,9 @@ function get_sets()
 
    sets.pan.idle.mdt = set_combine(sets.pan.idle.dt, {
    })
+   
+   sets.pan.idle.refresh = {
+   }
 
    -- Combat Related Sets
       
@@ -409,21 +412,24 @@ function get_sets()
    
    sets.midcast.MB.normal = set_combine(sets.midcast.nuking.normal, {
      head="Ea Hat +1",
-     body="Ea Houppe. +1",
+     -- body="Ea Houppe. +1",
+     body="Seidr Cotehardie",
      legs="Ea Slops +1",
      left_ring="Mujin Band",
    })
 
    sets.midcast.nuking.acc = set_combine(sets.midcast.nuking.normal, {
-     -- main="Cath Palug hammer",
-     -- neck="Sanctity necklace",
-     hands="Bagua mitaines +3",
-     feet="Jhakri Pigaches +2",
+     hands="Agwu's Gages",
+     feet="Agwu's Pigaches",
      waist="Acuity belt +1",
      left_ring="Metamorph Ring +1",
    })
 
    sets.midcast.MB.acc = set_combine(sets.midcast.MB.normal, {
+     hands="Agwu's Gages",
+     feet="Agwu's Pigaches",
+     -- waist="Acuity belt +1",
+     left_ring="Metamorph Ring +1",   
    })
 
    -- Enfeebling
@@ -488,6 +494,7 @@ function get_sets()
    })
 
    sets.midcast.refresh = set_combine(sets.midcast.enhancing, {
+     waist="Gishdubar Sash",
    })
     
    sets.midcast.aquaveil = sets.midcast.refresh

@@ -340,7 +340,7 @@ function init_gear_sets()
     sets.precast.WS.Acc = set_combine(sets.precast.WS, {
     })
 
-    sets.precast.WS.Critical = {head="Maculele Tiara +1", right_ring="Epaminondas's Ring"}
+    sets.precast.WS.Critical = {head="Maculele Tiara +1", right_ring="Epaminondas's Ring", ammo="Crepuscular pebble"}
 
     sets.precast.WS['Pyrrhic Kleos'] = set_combine(sets.precast.WS, {
       ammo="C. Palug Stone",
@@ -386,8 +386,6 @@ function init_gear_sets()
       body="Nyame Mail",
       hands="Nyame Gauntlets",
       legs="Nyame Flanchard",
-      -- hands="Maxixi bangles +3",
-      -- legs={ name="Horos Tights +3", augments={'Enhances "Saber Dance" effect',}},
       feet="Nyame Sollerets",
       neck="Etoile gorget +2",
       waist="Kentarch Belt +1",

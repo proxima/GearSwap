@@ -356,24 +356,26 @@ function init_gear_sets()
     sets.midcast['Elemental Magic'].HighTierNuke.Resistant = set_combine(sets.midcast['Elemental Magic'], {})
 
     sets.midcast['Death'] = {
+      main="Hvergelmir",
+      sub="Khonsu",
       ammo={ name="Ghastly Tathlum +1", augments={'Path: A',}},
       head="Pixie Hairpin +1",
       body={ name="Amalric Doublet +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
-      hands={ name="Amalric Gages +1", augments={'INT+12','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
+      hands={ name="Agwu's Gages", augments={'Path: A',}},
       legs={ name="Amalric Slops +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
       feet={ name="Amalric Nails +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
-      neck={ name="Src. Stole +2", augments={'Path: A',}},
+      neck="Sanctity Necklace",
       waist="Hachirin-no-Obi",
       left_ear="Barkaro. Earring",
-      right_ear="Malignance Earring",
-      left_ring="Freke Ring",
+      right_ear="Regal Earring",
+      left_ring="Mephitas's Ring",
       right_ring="Archon Ring",
       back={ name="Taranus's Cape", augments={'MP+60','Mag. Acc+20 /Mag. Dmg.+20','MP+20','"Fast Cast"+10','Mag. Evasion+15',}},
     }
 
     sets.precast.FC.Death = sets.midcast.Death
     sets.midcast.Drain.Death = sets.midcast.Death
-    sets.midcast.Aspir.Death = sets.midcast.Death4
+    sets.midcast.Aspir.Death = sets.midcast.Death
     
     sets.midcast['Elemental Magic'].Occult = {
       ammo="Seraphic Ampulla",

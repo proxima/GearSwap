@@ -185,7 +185,7 @@ function user_setup()
     send_command('bind @n sat youcommand Muuhja "Carnage Elegy"')
     send_command('bind @m sat youcommand Muuhja "Pining Nocturne"')
 
-    send_command('bind @o sat youcommand Muuhja "Shock Squall"')
+    send_command('bind @o sat youcommand Muuhja "Horde Lullaby"')
     send_command('bind @p sat youcommand Zuuhja "Sleepga"')
     
     select_default_macro_book()
@@ -416,6 +416,18 @@ function init_gear_sets()
     -- Weaponskill sets
     -- Default set for any weaponskill that isn't any more specifically defined
     sets.precast.WS = {
+      head="Mpaca's Cap",
+      body="Mpaca's Doublet",
+      hands="Mpaca's Gloves",
+      legs="Mpaca's Hose",
+      feet="Mpaca's Boots",
+      neck="Fotia Gorget",
+      waist="Moonbow Belt +1",
+      left_ear={ name="Schere Earring", augments={'Path: A',}},
+      right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
+      left_ring="Gere Ring",
+      right_ring="Niqmaddu Ring",
+      back=Visucius.MasterDA
     }
 
     -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
@@ -557,7 +569,7 @@ function init_gear_sets()
         feet="Malignance Boots", -- 4
         neck="Shulmanu Collar",
         waist="Moonbow Belt +1", -- 6
-        left_ear={name="Mache Earring +1",bag="wardrobe 4"},
+        left_ear="Telos Earring",
         right_ear={name="Mache Earring +1",bag="wardrobe 5"},
         left_ring="Niqmaddu Ring",
         right_ring="Gere Ring",

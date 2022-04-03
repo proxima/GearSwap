@@ -81,7 +81,7 @@ function init_gear_sets()
 
     sets.TreasureHunter = {
       sub="Taming Sari",
-	  waist="Chaac Belt",
+      waist="Chaac Belt",
       feet="Skulker's poulaines +1"
     }
     sets.ExtraRegen = {}
