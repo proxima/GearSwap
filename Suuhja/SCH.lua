@@ -536,6 +536,8 @@ function get_sets()
      right_ring={name="Stikini Ring +1",bag="wardrobe 3"},
      back=INT_MAB
    }
+   
+   sets.midcast["Modus Veritas"] = sets.precast["Modus Veritas"]
 
    -- When spell school is aligned with grimoire, swap relevent pieces -- Can also use Arbatel +1 set here if you value 1% quickcast procs per piece. (2+ pieces)  
    -- Dont set_combine here, as this is the last step of the precast, it will have sorted all the needed pieces already based on type of spell.
@@ -544,23 +546,21 @@ function get_sets()
      feet="Academic's loafers +3", -- 12 Grimoire
    }
 
-
-    -- Enhancing Magic, eg. Siegal Sash, etc
-    sets.precast.enhancing = set_combine(sets.precast.casting, {
-    })
+   -- Enhancing Magic, eg. Siegal Sash, etc
+   sets.precast.enhancing = set_combine(sets.precast.casting, {
+   })
     
-    -- Stoneskin casting time -, works off of enhancing -
-    sets.precast.stoneskin = set_combine(sets.precast.enhancing, {
-
-    })
+   -- Stoneskin casting time -, works off of enhancing -
+   sets.precast.stoneskin = set_combine(sets.precast.enhancing, {
+   })
       
-    -- Curing Precast, Cure Spell Casting time -
-    sets.precast.cure = set_combine(sets.precast.casting,{    
-    })
+   -- Curing Precast, Cure Spell Casting time -
+   sets.precast.cure = set_combine(sets.precast.casting,{    
+   })
       
-    ---------------------
-    -- Ability Precasting
-    ---------------------
+   ---------------------
+   -- Ability Precasting
+   ---------------------
 
     sets.precast["Tabula Rasa"] = {legs="Pedagogy Pants +3"}
     sets.precast["Enlightenment"] = {body="Pedagogy Gown +3"} 

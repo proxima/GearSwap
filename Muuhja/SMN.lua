@@ -534,7 +534,7 @@ function get_sets()
         feet="Baayami Sabots +1",
         waist="Lucidity Sash",
         back={ name="Campestres's Cape", augments={'Pet: M.Acc.+20 Pet: M.Dmg.+20','Pet: Magic Damage+10','Damage taken-5%',}},
-	}
+    }
  
     -- Avatar Melee set. Equipped when IdleMode is "DD" and MeleeMode is OFF.
     -- You really don't need this set. It's only here because I can't bring myself to throw it away.

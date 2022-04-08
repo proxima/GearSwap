@@ -185,7 +185,8 @@ function user_setup()
     send_command('bind @n sat youcommand Muuhja "Carnage Elegy"')
     send_command('bind @m sat youcommand Muuhja "Pining Nocturne"')
 
-    send_command('bind @o sat youcommand Muuhja "Horde Lullaby"')
+    send_command('bind @a sat youcommand Muuhja "Thunderspark"')
+    send_command('bind @o sat youcommand Muuhja "Shock Squall"')
     send_command('bind @p sat youcommand Zuuhja "Sleepga"')
     
     select_default_macro_book()
@@ -213,6 +214,7 @@ function file_unload()
     send_command("unbind =")
     
     send_command('unbind @=')
+    send_command('unbind @a')
     send_command('unbind @n')
     send_command('unbind @o')
     send_command('unbind @p')

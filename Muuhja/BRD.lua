@@ -559,7 +559,7 @@ function init_gear_sets()
     sets.engaged = {
       range={ name="Linos", augments={'Accuracy+17','"Store TP"+3','Quadruple Attack +3',}},
       head="Bunzi's Hat",       -- 7
-      body="Ayanmo Corazza +2", -- 6
+      body="Ashera Harness",    -- 9
       hands="Bunzi's Gloves",   -- 8
       legs="Nyame Flanchard",   -- 8
       feet="Nyame Sollerets",   -- 7
@@ -582,7 +582,7 @@ function init_gear_sets()
     sets.engaged.DW = {
       range={ name="Linos", augments={'Accuracy+17','"Store TP"+3','Quadruple Attack +3',}},
       head="Bunzi's Hat",
-      body="Ayanmo Corazza +2",
+      body="Ashera Harness",
       hands="Bunzi's Gloves",
       legs="Nyame Flanchard",
       feet="Nyame Sollerets",

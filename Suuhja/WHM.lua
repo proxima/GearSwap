@@ -310,7 +310,7 @@ function init_gear_sets()
       ring1="Metamorph ring +1",
       ring2="Archon Ring",
       back={ name="Alaunus's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','MND+10','"Fast Cast"+10','Phys. dmg. taken-10%',}},
-      waist="Luminary Sash",
+      waist="Orpheus's Sash",
     })
 
     -- Midcast Sets

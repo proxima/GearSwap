@@ -605,7 +605,7 @@ function init_gear_sets()
     neck="Anu Torque",
     left_ear="Telos Earring",
     right_ear="Sherida Earring",
-    body={ name="Nyame Mail", augments={'Path: B',}},
+    body="Ashera Harness",
     hands={ name="Nyame Gauntlets", augments={'Path: B',}},
     left_ring="Niqmaddu Ring",
     right_ring="Moonlight Ring",

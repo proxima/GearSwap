@@ -23,7 +23,7 @@ function user_setup()
   state.CastingMode:options('Normal', 'SIRD')
   state.PhysicalDefenseMode:options('PDT', 'HP', 'Reraise', 'Charm')
   state.MagicalDefenseMode:options('MDT', 'HP', 'Reraise', 'Charm')
-  state.IdleMode:options('Normal', 'Meva')
+  state.IdleMode:options('Normal', 'Meva', 'Block')
   state.ExtraDefenseMode = M{['description']='Extra Defense Mode', 'None', 'MP', 'Knockback', 'MP_Knockback'}
   state.EquipShield = M(false, 'Equip Shield w/Defense')
   update_defense_mode()
@@ -218,7 +218,8 @@ function init_gear_sets()
     right_ring="Defending Ring",
     back=Rud.AEOLIAN
   }
-
+  
+  sets.precast.WS['Sanguine Blade'] = sets.precast.WS['Aeolian Edge']
   --------------------------------------
   -- Midcast sets
   --------------------------------------
@@ -265,7 +266,7 @@ function init_gear_sets()
     hands="Macabre Gauntlets +1",
     legs={ name="Souv. Diechlings +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
     feet="Odyssean Greaves",
-    neck="Moonlight Necklace", -- Sacro Gorget
+    neck="Sacro Gorget",
     waist="Creed Baudrier",
     ear1="Cryptic Earring",
     ear2="Tuisto Earring",
@@ -285,6 +286,8 @@ function init_gear_sets()
   
   sets.midcast.Crusade = set_combine(sets.midcast.Cure, {body="Shabti Cuirass +1",hands="Regal Gauntlets",back=Rud.FC})
 
+  sets.midcast.Crusade.SIRD = set_combine(sets.midcast.Crusade, sets.midcast.SIRD)
+  
   sets.midcast['Enhancing Magic'] = {}
 
   sets.midcast.Phalanx = {
@@ -369,6 +372,24 @@ function init_gear_sets()
     ring2="Apeile Ring +1",
     back=Rud.ENMITY               -- 10
   }
+  
+   sets.idle.Block = {
+     main="Malevolence",
+     sub="Ochain",
+     ammo="Staunch Tathlum +1",
+     head="Sakpata's Helm",
+     body="Sakpata's Plate",
+     legs="Sakpata's Cuisses",
+     feet="Sakpata's Leggings",
+     waist="Carrier's Sash",
+     left_ear="Sanare Earring",
+     right_ear="Eabani Earring",
+     left_ring=MR.One,
+     right_ring="Defending Ring",
+     back=Rud.ENMITY,
+     neck="Loricate Torque +1",
+     hands="Rev. Gauntlets +3",
+   }
 
   sets.idle.Town = set_combine(sets.idle, {right_ring="Shneddick Ring +1"})
   sets.idle.Weak = sets.idle    
@@ -421,7 +442,7 @@ function init_gear_sets()
   --------------------------------------
   sets.engaged = {
     main="Burtgang",
-    sub="Ochain",
+    sub="Srivatsa",
     ammo="Staunch Tathlum +1", -- 3
     head="Sakpata's Helm", -- 7
     body="Sakpata's Breastplate", -- 8
@@ -437,24 +458,6 @@ function init_gear_sets()
     ring2=MR.Two, -- 5
     back=Rud.BLOCK
   }
-  
-  -- sets.engaged = {
-  --   main="Malevolence",
-  --   sub="Ochain",
-  --   ammo="Staunch Tathlum +1",
-  --   head="Sakpata's Helm",
-  --   body="Sakpata's Plate",
-  --   legs="Sakpata's Cuisses",
-  --   feet="Sakpata's Leggings",
-  --   waist="Carrier's Sash",
-  --   left_ear="Sanare Earring",
-  --   right_ear="Eabani Earring",
-  --   left_ring=MR.One,
-  --   right_ring="Defending Ring",
-  --   back=Rud.ENMITY,
-  --   neck="Loricate Torque +1",
-  --   hands="Rev. Gauntlets +3",
-  -- }
 
   --------------------------------------
   -- Custom buff sets
