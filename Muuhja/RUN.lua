@@ -609,7 +609,7 @@ function init_gear_sets()
     hands={ name="Nyame Gauntlets", augments={'Path: B',}},
     left_ring="Niqmaddu Ring",
     right_ring="Moonlight Ring",
-    back=Cape.STP,
+    back=Cape.Parry,
     waist="Dynamic Belt +1",
     legs={ name="Nyame Flanchard", augments={'Path: B',}},
     feet={ name="Nyame Sollerets", augments={'Path: B',}},  

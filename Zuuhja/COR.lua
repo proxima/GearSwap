@@ -365,8 +365,8 @@ function init_gear_sets()
       neck="Comm. Charm +2",
       left_ear="Crematio Earring",
       right_ear="Friomisi Earring",
-      ring1="Dingir Ring",
-      ring2="Epaminondas's Ring",
+      left_ring="Dingir Ring",
+      right_ring="Epaminondas's Ring",
       back=Cape.LEADEN,
       waist="Sveltesse gouriz +1",
     }
@@ -381,16 +381,20 @@ function init_gear_sets()
       waist="K. Kachina Belt +1",
       left_ear={ name="Moonshade Earring", augments={'"Mag.Atk.Bns."+4','TP Bonus +250',}},
       right_ear="Friomisi Earring",
-      left_ring="Epaminondas's Ring",
-      right_ring="Dingir Ring",
+      left_ring="Dingir Ring",
+      right_ring="Epaminondas's Ring",
       back=Cape.RATK
     }
 
     sets.precast.WS['Leaden Salute'] = set_combine(sets.precast.WS['Wildfire'], {
       head="Pixie Hairpin +1",
       left_ear="Moonshade Earring",
-      ring1="Dingir Ring",
-      -- left_ring="Archon Ring",
+      -- right_ring="Archon Ring",
+    })
+
+    sets.precast.WS['Leaden Salute'].Acc = set_combine(sets.precast.WS['Leaden Salute'], {
+      head={ name="Nyame Helm", augments={'Path: B',}},
+      feet={ name="Nyame Sollerets", augments={'Path: B',}}
     })
 
     sets.precast.WS['Evisceration'] = {}

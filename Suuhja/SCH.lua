@@ -207,15 +207,15 @@ function get_sets()
     -- DEX_DW  - DW melee
 
     Lugh = {}
-    Lugh.DT        = { name="Lugh's Cape", augments={'MND+20','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity-10','Phys. dmg. taken-10%',}}
-    Lugh.INT_DA    = { name="Lugh's Cape", augments={'INT+20','Accuracy+20 Attack+20','INT+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}}
-    Lugh.INT_MAB   = { name="Lugh's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Damage taken-5%',}}
-    Lugh.INT_STP   = { name="Lugh's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Store TP"+10','Phys. dmg. taken-10%',}}
-    Lugh.INT_WSD   = { name="Lugh's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}
-    Lugh.MND_HASTE = { name="Lugh's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','Haste+10','Spell interruption rate down-10%',}}
-    Lugh.MND_WSD   = { name="Lugh's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','MND+10','Weapon skill damage +10%',}}
-    Lugh.MP_FC     = { name="Lugh's Cape", augments={'MP+60','MP+20','"Fast Cast"+10','Phys. dmg. taken-10%',}}
-    Lugh.ADOULIN   = { name="Bookworm's Cape", augments={'INT+1','MND+2','Helix eff. dur. +20','"Regen" potency+10',}}
+    Lugh.DT          = { name="Lugh's Cape", augments={'MND+20','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity-10','Phys. dmg. taken-10%',}}
+    Lugh.SHATTERSOUL = { name="Lugh's Cape", augments={'INT+20','Accuracy+20 Attack+20','INT+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}
+    Lugh.INT_MAB     = { name="Lugh's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Damage taken-5%',}}
+    Lugh.INT_STP     = { name="Lugh's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Store TP"+10','Phys. dmg. taken-10%',}}
+    Lugh.INT_WSD     = { name="Lugh's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}
+    Lugh.MND_HASTE   = { name="Lugh's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','Haste+10','Spell interruption rate down-10%',}}
+    Lugh.MND_WSD     = { name="Lugh's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','MND+10','Weapon skill damage +10%',}}
+    Lugh.MP_FC       = { name="Lugh's Cape", augments={'MP+60','MP+20','"Fast Cast"+10','Phys. dmg. taken-10%',}}
+    Lugh.ADOULIN     = { name="Bookworm's Cape", augments={'INT+1','MND+2','Helix eff. dur. +20','"Regen" potency+10',}}
 
     -- My formatting is very easy to follow. All sets that pertain to my character doing things are under 'me'.
     -- All sets that are equipped to faciliate my avatar's behaviour or abilities are under 'avatar', eg, Perpetuation, Blood Pacts, etc
@@ -338,14 +338,14 @@ function get_sets()
     sets.me["Shattersoul"] = {
       ammo="Ghastly Tathlum +1",
       head="Nyame Helm",
-      neck="Fotia Gorget",
+      neck="Argute stole +2",
       right_ear="Malignance earring",
       left_ear="Regal earring",
       body="Nyame Mail",
-      hands="Nyame Gauntlets",
+      hands={ name="Gazu Bracelet +1", augments={'Path: A',}},
       left_ring={ name="Metamor. Ring +1", augments={'Path: A',}},
       right_ring="Freke Ring",
-      back=Lugh.INT_DA,
+      back=Lugh.SHATTERSOUL,
       waist="Fotia Belt",
       legs="Nyame Flanchard",
       feet="Nyame Sollerets"

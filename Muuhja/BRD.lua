@@ -84,9 +84,27 @@ function user_setup()
     state.HybridMode:options('Normal', 'DT')
     state.WeaponskillMode:options('Normal', 'Acc')
     state.CastingMode:options('Normal', 'Resistant')
-    state.IdleMode:options('Normal', 'DT', 'MEva')
+    state.IdleMode:options('Normal', 'DT', 'Evasion', 'MEva')
 
-    state.LullabyMode = M{['description']='Lullaby Instrument', 'Harp', 'Horn'}
+    Linos = {}
+    Linos.MEVA    = { name="Linos", augments={'Mag. Evasion+15','Phys. dmg. taken -4%','HP+20',}}
+    Linos.EVA     = { name="Linos", augments={'Evasion+15','Phys. dmg. taken -4%','VIT+8',}}
+    Linos.RUDRA   = { name="Linos", augments={'Attack+20','Weapon skill damage +3%','DEX+8',}}
+    Linos.WSD     = { name="Linos", augments={'Accuracy+13 Attack+13','Weapon skill damage +3%','STR+6 CHR+6',}}
+    Linos.TP      = { name="Linos", augments={'Accuracy+17','"Store TP"+3','Quadruple Attack +3',}}
+    Linos.AEOLIAN = { name="Linos", augments={'"Mag.Atk.Bns."+15','Weapon skill damage +3%','INT+8',}} -- Can get 20 MAB w/ Snowdim +2
+
+    Cape = {}
+    Cape.TP         = { name="Intarabus's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10','Phys. dmg. taken-10%',}}
+    Cape.MEVA       = { name="Intarabus's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Phys. dmg. taken-10%',}}
+    Cape.CHARISMA   = { name="Intarabus's Cape", augments={'CHR+20','Accuracy+20 Attack+20','CHR+10','Weapon skill damage +10%','Damage taken-5%',}}
+    Cape.FC         = { name="Intarabus's Cape", augments={'CHR+20','Mag. Acc+20 /Mag. Dmg.+20','CHR+10','"Fast Cast"+10',}}
+    Cape.WSD        = { name="Intarabus's Cape", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}
+    Cape.AEOLIAN    = { name="Intarabus's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}
+    Cape.ENMITY_EVA = { name="Intarabus's Cape", augments={'AGI+20','Eva.+20 /Mag. Eva.+20','Evasion+10','Enmity+10','Evasion+15',}}
+    Cape.RUDRA      = { name="Intarabus's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}
+
+    state.LullabyMode = M{['description']='Lullaby Instrument', 'Harp', 'Horn', 'TH', 'Enmity'}
 
     state.Carol = M{['description']='Carol',
         'Fire Carol', 'Fire Carol II', 'Ice Carol', 'Ice Carol II', 'Wind Carol', 'Wind Carol II',
@@ -199,9 +217,9 @@ function init_gear_sets()
       waist="Flume Belt +1",
       left_ear="Genmei Earring",
       right_ear="Odnowa Earring +1",
-      left_ring="Gelatinous Ring",
+      left_ring="Gelatinous Ring +1",
       right_ring="Kishar Ring",                                                                                     --  4
-      back={ name="Intarabus's Cape", augments={'CHR+20','Mag. Acc+20 /Mag. Dmg.+20','CHR+10','"Fast Cast"+10',}},  -- 10
+      back=Cape.FC                                                                                                  -- 10
     }
 
     sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, {
@@ -221,9 +239,9 @@ function init_gear_sets()
       waist="Flume Belt +1",
       left_ear="Genmei Earring",
       right_ear="Odnowa Earring +1",
-      left_ring="Gelatinous Ring",
+      left_ring="Gelatinous Ring +1",
       right_ring="Kishar Ring",                                                                            --  4
-      back={ name="Intarabus's Cape", augments={'CHR+20','Mag. Acc+20 /Mag. Dmg.+20','CHR+10','"Fast Cast"+10',}},  -- 10
+      back=Cape.FC                                                                                         -- 10
     }
 
     sets.precast.FC.SongPlaceholder = set_combine(sets.precast.FC.BardSong, {range=info.ExtraSongInstrument})
@@ -250,7 +268,7 @@ function init_gear_sets()
 
     -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
     sets.precast.WS['Evisceration'] = set_combine(sets.precast.WS, {
-      range="Linos",
+      range=Linos.RUDRA,
       head="Aya. Zucchetto +2",
       body="Ayanmo Corazza +2",
       hands="Aya. Manopolas +2",
@@ -262,14 +280,14 @@ function init_gear_sets()
       right_ear="Rimeice Earring",
       left_ring="Metamorph Ring +1",
       right_ring="Overbearing Ring",
-      back={ name="Intarabus's Cape", augments={'CHR+20','Accuracy+20 Attack+20','CHR+10','Weapon skill damage +10%','Damage taken-5%',}},    
+      back=Cape.RUDRA
     })
 
     sets.precast.WS['Exenterator'] = set_combine(sets.precast.WS, {
     })
 
     sets.precast.WS['Mordant Rime'] = set_combine(sets.precast.WS, {
-      range={ name="Linos", augments={'Accuracy+12 Attack+12','Weapon skill damage +3%','STR+6 CHR+6',}},
+      range=Linos.WSD,
       head="Nyame Helm",
       body={ name="Bihu Jstcorps. +3", augments={'Enhances "Troubadour" effect',}},
       hands="Nyame Gauntlets",
@@ -281,11 +299,11 @@ function init_gear_sets()
       right_ear="Ishvara Earring",
       left_ring="Metamorph Ring +1",
       right_ring="Epaminondas's Ring",
-      back={ name="Intarabus's Cape", augments={'CHR+20','Accuracy+20 Attack+20','CHR+10','Weapon skill damage +10%','Damage taken-5%',}},
+      back=Cape.CHARISMA
     })
 
     sets.precast.WS['Rudra\'s Storm'] = set_combine(sets.precast.WS, {
-      range={ name="Linos", augments={'Accuracy+12 Attack+12','Weapon skill damage +3%','STR+6 CHR+6',}}, -- Dex Linos
+      range=Linos.RUDRA,
       head="Nyame Helm",
       body={ name="Bihu Jstcorps. +3", augments={'Enhances "Troubadour" effect',}},
       hands="Nyame Gauntlets",
@@ -294,14 +312,14 @@ function init_gear_sets()
       neck={ name="Bard's Charm +2", augments={'Path: A',}},
       waist="Kentarch Belt +1",
       left_ear="Moonshade Earring",
-      right_ear="Ishvara Earring",
+      right_ear="Mache earring +1",
       left_ring="Ilabrat Ring",
       right_ring="Epaminondas's Ring",
-      back={ name="Intarabus's Cape", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}, -- Dex belt
+      back=Cape.RUDRA
     })
 
     sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS, {
-      range={ name="Linos", augments={'Accuracy+12 Attack+12','Weapon skill damage +3%','STR+6 CHR+6',}},
+      range=Linos.WSD,
       head="Nyame Helm",
       body={ name="Bihu Jstcorps. +3", augments={'Enhances "Troubadour" effect',}},
       hands="Nyame Gauntlets",
@@ -313,11 +331,11 @@ function init_gear_sets()
       right_ear="Ishvara Earring",
       left_ring="Metamorph Ring +1",
       right_ring="Epaminondas's Ring",
-      back={ name="Intarabus's Cape", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}},
+      back=Cape.WSD
     })
 
     sets.precast.WS['Aeolian Edge'] = {
-      range={ name="Linos", augments={'"Mag.Atk.Bns."+15','Weapon skill damage +3%','INT+7',}},
+      range=Linos.AEOLIAN,
       body={ name="Cohort Cloak +1", augments={'Path: A',}},
       hands={ name="Nyame Gauntlets", augments={'Path: B',}},
       legs={ name="Nyame Flanchard", augments={'Path: B',}},
@@ -328,7 +346,7 @@ function init_gear_sets()
       right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
       left_ring="Metamorph Ring +1",
       right_ring="Epaminondas's Ring",
-      back={ name="Intarabus's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}},
+      back=Cape.AEOLIAN
     }
 
     ------------------------------------------------------------------------------------------------
@@ -343,13 +361,31 @@ function init_gear_sets()
     sets.midcast.Carol = {hands="Mousai Gages +1"}
     sets.midcast.Etude = {head="Mousai Turban +1"}
     sets.midcast.HonorMarch = {range="Marsyas", hands="Fili Manchettes +1"}
+
     sets.midcast.Lullaby = {
       body="Fili Hongreline +1",
-      -- hands="Brioso Cuffs +3",
+      hands="Brioso Cuffs +3",
       legs="Inyanga Shalwar +2",
+    } 
+
+    sets.midcast.Enmity = {
+      head="Halitus Helm",
+      body="Emet Harness +1",
+      legs="Zoar Subligar +1",
+      neck="Unmoving Collar +1",
+      left_ear="Cryptic Earring",
+      -- right_ear="Trux Earring",
+      left_ring="Supershear Ring",
+      right_ring="Eihwaz Ring",
+      -- waist="Goading Belt",
+      back=Cape.ENMITY_EVA
+    }
+
+    sets.TreasureHunter = {
       hands={ name="Chironic Gloves", augments={'Crit. hit damage +3%','MND+13','"Treasure Hunter"+2','Mag. Acc.+10 "Mag.Atk.Bns."+10',}},
       feet={ name="Chironic Slippers", augments={'"Fast Cast"+2','MND+5','"Treasure Hunter"+2',}}
     }
+
     sets.midcast.Madrigal = {head="Fili Calot +1"}
     sets.midcast.Mambo = {feet="Mousai Crackows +1"}
     sets.midcast.March = {hands="Fili Manchettes +1"}
@@ -378,8 +414,8 @@ function init_gear_sets()
       left_ear="Odnowa Earring +1",
       right_ear="Etiolation Earring",
       left_ring="Defending Ring",
-      right_ring="Gelatinous Ring",
-      back={ name="Intarabus's Cape", augments={'CHR+20','Mag. Acc+20 /Mag. Dmg.+20','CHR+10','"Fast Cast"+10',}},
+      right_ring="Gelatinous Ring +1",
+      back=Cape.FC
     }
 
     -- For song defbuffs (duration primary, accuracy secondary)
@@ -398,7 +434,7 @@ function init_gear_sets()
       ring1="Stikini Ring +1",
       ring2="Stikini Ring +1",
       waist="Acuity Belt +1",
-      back={ name="Intarabus's Cape", augments={'CHR+20','Mag. Acc+20 /Mag. Dmg.+20','CHR+10','"Fast Cast"+10',}},
+      back=Cape.FC
     }
 
     -- For song defbuffs (accuracy primary, duration secondary)
@@ -424,8 +460,8 @@ function init_gear_sets()
       waist="Flume Belt +1",
       left_ear="Odnowa Earring +1",
       left_ring="Stikini Ring +1",
-      right_ring="Gelatinous Ring",
-      back={ name="Intarabus's Cape", augments={'CHR+20','Mag. Acc+20 /Mag. Dmg.+20','CHR+10','"Fast Cast"+10',}},
+      right_ring="Gelatinous Ring +1",
+      back=Cape.FC
     })
 
     -- Other general spells and classes.
@@ -469,7 +505,7 @@ function init_gear_sets()
       ring1="Stikini Ring +1",
       ring2="Metamor. Ring +1",
       waist="Acuity Belt +1",
-      back={ name="Intarabus's Cape", augments={'CHR+20','Mag. Acc+20 /Mag. Dmg.+20','CHR+10','"Fast Cast"+10',}},
+      back=Cape.FC
     }
 
     sets.midcast.Dispelga = set_combine(sets.midcast['Enfeebling Magic'], {main="Daybreak", sub="Ammurapi Shield"})
@@ -479,57 +515,67 @@ function init_gear_sets()
     ------------------------------------------------------------------------------------------------
 
     sets.idle = {
-      main="Carnwenhan",
-      sub="Genmei Shield",
-      range={ name="Linos", augments={'Mag. Evasion+14','Phys. dmg. taken -4%','HP+17',}},
+      range=Linos.MEVA,
       head="Bunzi's Hat",
       body="Nyame Mail",
       hands="Bunzi's Gloves",
       legs="Nyame Flanchard",
       feet="Nyame Sollerets",
-      neck="Loricate Torque +1",
-      waist="Flume Belt +1",
-      left_ear="Odnowa Earring +1",
-      right_ear="Etiolation Earring",
-      left_ring="Inyanga Ring",
-      right_ring="Defending ring",
-      back={ name="Intarabus's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Phys. dmg. taken-10%',}},
+      neck="Warder's Charm +1",
+      waist="Carrier's Sash",
+      left_ear="Tuisto Earring",
+      right_ear={ name="Odnowa Earring +1", augments={'Path: A',}},
+      left_ring="Vexer Ring +1",
+      right_ring="Inyanga Ring",
+      back=Cape.MEVA
     }
 
     sets.idle.DT = {
-      main="Carnwenhan",
-      sub="Genmei Shield",
-      range={ name="Linos", augments={'Mag. Evasion+14','Phys. dmg. taken -4%','HP+17',}},
-      head="Bunzi's Hat",
+      range=Linos.EVA,
+      head={ name="Nyame Helm", augments={'Path: B',}},
+      body={ name="Nyame Mail", augments={'Path: B',}},
+      hands={ name="Nyame Gauntlets", augments={'Path: B',}},
+      legs={ name="Nyame Flanchard", augments={'Path: B',}},
+      feet={ name="Nyame Sollerets", augments={'Path: B',}},
+      neck={ name="Loricate Torque +1", augments={'Path: A',}},
+      waist="Flume Belt +1",
+      left_ear="Tuisto Earring",
+      right_ear={ name="Odnowa Earring +1", augments={'Path: A',}},
+      left_ring="Moonlight Ring",
+      right_ring={ name="Gelatinous Ring +1", augments={'Path: A',}},
+      back=Cape.MEVA
+    }
+
+    sets.idle.Evasion = {
+      range=Linos.EVA,
+      head="Nyame Helm",
       body="Nyame Mail",
-      hands="Bunzi's Gloves",
+      hands="Nyame Gauntlets",
       legs="Nyame Flanchard",
       feet="Nyame Sollerets",
-      neck="Loricate Torque +1",
-      waist="Carrier's Sash",
-      left_ear="Odnowa Earring +1",
-      right_ear="Etiolation Earring",
-      left_ring="Defending ring",
-      right_ring="Gelatinous Ring",
-      back={ name="Intarabus's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Phys. dmg. taken-10%',}},
+      neck="Bathy Choker +1",
+      waist="Kasiri Belt",
+      left_ear="Infused Earring",
+      right_ear="Eabani Earring",
+      left_ring="Moonlight Ring",
+      right_ring="Gelatinous Ring +1",
+      back=Cape.ENMITY_EVA,
     }
 
     sets.idle.MEva = {
-      main="Carnwenhan",
-      sub="Genmei Shield",
-      range={ name="Linos", augments={'Mag. Evasion+14','Phys. dmg. taken -4%','HP+17',}},
+      range=Linos.MEVA,
       head="Bunzi's Hat",
       body="Nyame Mail",
       hands="Bunzi's Gloves",
       legs="Nyame Flanchard",
       feet="Nyame Sollerets",
-      neck="Loricate Torque +1",
-      waist="Flume Belt +1",
-      left_ear="Odnowa Earring +1",
-      right_ear="Etiolation Earring",
-      left_ring="Defending ring",
+      neck="Warder's Charm +1",
+      waist="Carrier's Sash",
+      left_ear="Tuisto Earring",
+      right_ear={ name="Odnowa Earring +1", augments={'Path: A',}},
+      left_ring="Vexer Ring +1",
       right_ring="Inyanga Ring",
-      back={ name="Intarabus's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Phys. dmg. taken-10%',}},
+      back=Cape.MEVA
     }
 
     sets.idle.Town = set_combine(sets.idle, {
@@ -540,10 +586,10 @@ function init_gear_sets()
     ------------------------------------------------------------------------------------------------
 
     sets.defense.PDT = sets.idle.DT
-    sets.defense.MDT = sets.idle.DT
+    sets.defense.MDT = sets.idle.MEva
 
     sets.Kiting = {feet="Fili Cothurnes +1"}
-    sets.latent_refresh = {waist="Fucho-no-obi"}
+    sets.latent_refresh = {} --waist="Fucho-no-obi"
 
     ------------------------------------------------------------------------------------------------
     ---------------------------------------- Engaged Sets ------------------------------------------
@@ -557,7 +603,7 @@ function init_gear_sets()
     -- EG: sets.engaged.Dagger.Accuracy.Evasion
 
     sets.engaged = {
-      range={ name="Linos", augments={'Accuracy+17','"Store TP"+3','Quadruple Attack +3',}},
+      range=Linos.TP,
       head="Bunzi's Hat",       -- 7
       body="Ashera Harness",    -- 9
       hands="Bunzi's Gloves",   -- 8
@@ -568,7 +614,7 @@ function init_gear_sets()
       ear2="Dignitary's Earring",
       left_ring={name="Chirich Ring +1",bag="wardrobe 2"},
       right_ring="Moonlight Ring",
-      back={ name="Intarabus's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10','Phys. dmg. taken-10%',}},
+      back=Cape.TP,
       waist="Grunfeld Rope"
     }
 
@@ -580,7 +626,7 @@ function init_gear_sets()
 
     -- No Magic Haste (74% DW to cap)
     sets.engaged.DW = {
-      range={ name="Linos", augments={'Accuracy+17','"Store TP"+3','Quadruple Attack +3',}},
+      range=Linos.TP,
       head="Bunzi's Hat",
       body="Ashera Harness",
       hands="Bunzi's Gloves",
@@ -591,7 +637,7 @@ function init_gear_sets()
       ear2="Telos Earring",
       left_ring={name="Chirich Ring +1",bag="wardrobe 2"},
       right_ring="Moonlight Ring",
-      back={ name="Intarabus's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10','Phys. dmg. taken-10%',}},
+      back=Cape.TP,
       waist="Reiki Yotai"
     }
 
@@ -625,7 +671,7 @@ function init_gear_sets()
 
     sets.engaged.Hybrid = {
         neck="Loricate Torque +1", --6/6
-        ring1="Gelatinous Ring",
+        ring1="Gelatinous Ring +1",
         ring2="Defending Ring", --10/10
     }
 
@@ -685,6 +731,10 @@ function job_precast(spell, action, spellMap, eventArgs)
         if string.find(spell.name,'Lullaby') then
             if state.LullabyMode.value == 'Harp' and spell.english:contains('Horde') then
                 equip({range="Daurdabla"})
+            elseif state.LullabyMode.value == 'TH' and spell.english:contains('Horde') then
+                equip({range="Daurdabla"})
+            elseif state.LullabyMode.value == 'Enmity' then
+                equip({range="Daurdabla"})
             elseif buffactive.Troubadour then
                 equip({range="Marsyas"})
             else
@@ -719,10 +769,16 @@ function job_midcast(spell, action, spellMap, eventArgs)
             if state.LullabyMode.value == 'Harp' and spell.english:contains('Horde') then
                 equip({range="Daurdabla"})
                 equip(sets.midcast.SongStringSkill)
+            elseif state.LullabyMode.value == 'TH' and spell.english:contains('Horde') then
+                equip({range="Daurdabla"})
+                equip(sets.TreasureHunter)
+            elseif state.LullabyMode.value == 'Enmity' then
+                equip({range="Daurdabla"})
+                equip(sets.midcast.Enmity)
             elseif buffactive.Troubadour then
                 equip({range="Marsyas"})
             else
-			    equip({range="Gjallarhorn"})
+                equip({range="Gjallarhorn"})
             end
         end
     end

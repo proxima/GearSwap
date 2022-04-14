@@ -675,11 +675,9 @@ function init_gear_sets()
 
     -- Basic set for if no TP weapon is defined.
     sets.engaged = {
-      -- main="Yagrush",
-      -- sub="Magesmasher +1",
+      main="Kaja Rod",
+      sub="Magesmasher +1",
       ammo="Staunch Tathlum +1",
-      -- head="Nyame Helm",
-      -- hands="Nyame Gauntlets",
       head={ name="Blistering Sallet +1", augments={'Path: A',}},
       body="Nyame Mail",
       hands={ name="Gazu Bracelet +1", augments={'Path: A',}},
