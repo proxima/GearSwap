@@ -158,22 +158,17 @@ function init_gear_sets()
 
     sets.precast.WS['Earth Crusher'] = {
       ammo="Ghastly Tathlum +1",
-      -- head="Pixie hairpin +1",
       head="Agwu's Cap",
       body="Agwu's Robe",
       hands="Jhakri Cuffs +2",
       legs="Agwu's Slops",
       feet="Agwu's Pigaches",
       neck="Sorcerer's Stole +2",
-      waist="Hachirin-no-Obi",
-      -- waist="Orpheus's Sash",
-      -- left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
+      waist="Orpheus's Sash",
       left_ear="Regal Earring",
       right_ear="Malignance Earring",
-      -- left_ring="Archon Ring",
       left_ring="Freke Ring",
       right_ring={ name="Metamor. Ring +1", augments={'Path: A',}},
-      -- right_ring="Epaminondas's Ring",
       back={ name="Taranus's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Phys. dmg. taken-10%',}},      
     }
 
@@ -321,9 +316,8 @@ function init_gear_sets()
       ammo="Ghastly Tathlum +1",
       head="Agwu's Cap",
       body="Spaekona's Coat +3",
-      -- body="Archmage's coat +3",
-      hands="Archmage's Gloves +3",
-      legs="Archmage's Tonban +3",
+      hands="Agwu's Gages",
+      legs="Agwu's Slops",
       feet="Agwu's Pigaches",
       neck="Sorcerer's Stole +2",
       -- waist="Orpheus's Sash",
@@ -445,6 +439,7 @@ function init_gear_sets()
     -- Buff sets: Gear that needs to be worn to actively enhance a current player buff.
     sets.buff['Mana Wall'] = {
       main="Kaumodaki",
+      sub="Khonsu",
     }
  
     sets.magic_burst = {

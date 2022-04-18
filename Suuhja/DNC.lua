@@ -343,33 +343,31 @@ function init_gear_sets()
     sets.precast.WS.Critical = {head="Maculele Tiara +1", right_ring="Epaminondas's Ring", ammo="Crepuscular pebble"}
 
     sets.precast.WS['Pyrrhic Kleos'] = set_combine(sets.precast.WS, {
-      ammo="C. Palug Stone",
+      ammo="Coiste Bodhar",
       head="Gleti's Mask",
       body="Gleti's Cuirass",
       hands="Gleti's Gauntlets",
       legs="Gleti's Breeches",
       feet="Gleti's Boots",
-      neck={ name="Etoile Gorget +2", augments={'Path: A',}},
+      neck="Republican platinum medal",
       waist="Fotia Belt",
       left_ear="Sherida Earring",
       right_ear="Mache Earring +1",
       left_ring="Gere Ring",
       right_ring="Regal Ring",
-      back={ name="Senuna's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}},
+      back={ name="Senuna's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}},
     })
 
     sets.precast.WS['Pyrrhic Kleos'].Acc = set_combine(sets.precast.WS['Pyrrhic Kleos'], {
+      neck="Etoile Gorget +2",
     })
 
     sets.precast.WS['Evisceration'] = set_combine(sets.precast.WS, {
       ammo="Charis Feather",
       head="Adhemar Bonnet +1",
-      -- body="Meg. Cuirie +2",
-      -- hands="Mummu Wrists +2",
       body="Gleti's Cuirass",
-      hands="Adhemar Wrist. +1",
+      hands="Gleti's Gauntlets",
       legs="Gleti's Breeches",
-      -- legs="Lustr. Subligar +1",
       feet={ name="Herculean Boots", augments={'Accuracy+20 Attack+20','Crit. hit damage +4%','STR+8',}},
       neck="Fotia Gorget",
       waist="Fotia Belt",

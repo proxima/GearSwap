@@ -200,7 +200,11 @@ function user_setup()
   TaeonPhalanx.Body = { name="Taeon Tabard", augments={'Mag. Evasion+20','Spell interruption rate down -10%','Phalanx +3',}}
   TaeonPhalanx.Hands = {name="Taeon Gloves", augments={'Mag. Evasion+20','Phalanx +3',}}
   TaeonPhalanx.Legs = {name="Taeon Tights", augments={'Mag. Evasion+20','Phalanx +3',}}
-  TaeonPhalanx.Feet = {name="Taeon Boots", augments={'Mag. Evasion+20','Spell interruption rate down -10%','Phalanx +3',}}  
+  TaeonPhalanx.Feet = {name="Taeon Boots", augments={'Mag. Evasion+20','Spell interruption rate down -10%','Phalanx +3',}}
+  
+  MR = {}
+  MR.One = {name="Moonlight Ring",bag="Wardrobe 3"}
+  MR.Two = {name="Moonlight Ring",bag="Wardrobe 5"}  
 end
 
 function user_unload()

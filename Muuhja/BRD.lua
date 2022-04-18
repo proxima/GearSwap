@@ -87,8 +87,8 @@ function user_setup()
     state.IdleMode:options('Normal', 'DT', 'Evasion', 'MEva')
 
     Linos = {}
-    Linos.MEVA    = { name="Linos", augments={'Mag. Evasion+15','Phys. dmg. taken -4%','HP+20',}}
-    Linos.EVA     = { name="Linos", augments={'Evasion+15','Phys. dmg. taken -4%','VIT+8',}}
+    Linos.MEVA    = { name="Linos", augments={'Mag. Evasion+15','Phys. dmg. taken -5%','HP+20',}}
+    Linos.EVA     = { name="Linos", augments={'Evasion+15','Phys. dmg. taken -5%','VIT+8',}}
     Linos.RUDRA   = { name="Linos", augments={'Attack+20','Weapon skill damage +3%','DEX+8',}}
     Linos.WSD     = { name="Linos", augments={'Accuracy+13 Attack+13','Weapon skill damage +3%','STR+6 CHR+6',}}
     Linos.TP      = { name="Linos", augments={'Accuracy+17','"Store TP"+3','Quadruple Attack +3',}}
@@ -103,6 +103,14 @@ function user_setup()
     Cape.AEOLIAN    = { name="Intarabus's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}
     Cape.ENMITY_EVA = { name="Intarabus's Cape", augments={'AGI+20','Eva.+20 /Mag. Eva.+20','Evasion+10','Enmity+10','Evasion+15',}}
     Cape.RUDRA      = { name="Intarabus's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}
+
+    MR = {}
+    MR.One = {name="Moonlight Ring",bag="Wardrobe 3"}
+    MR.Two = {name="Moonlight Ring",bag="Wardrobe 5"}
+
+    Nibiru = {}
+    Nibiru.One = {name="Nibiru Knife", bag="Wardrobe 3"}
+    Nibiru.Two = {name="Nibiru Knife", bag="Wardrobe 4"}
 
     state.LullabyMode = M{['description']='Lullaby Instrument', 'Harp', 'Horn', 'TH', 'Enmity'}
 
@@ -122,7 +130,7 @@ function user_setup()
         'Spirited Etude', 'Logical Etude', 'Enchanting Etude', 'Bewitching Etude'
     }
 
-    state.WeaponSet = M{['description']='Weapon Set', 'Carnwenhan', 'Twashtar', 'Naegling', 'Tauret', 'Aeolian', 'Free'}
+    state.WeaponSet = M{['description']='Weapon Set', 'Carnwenhan', 'Twashtar', 'Naegling', 'Tauret', 'Aeolian', 'Nibiru', 'NibiruDW', 'Free'}
     state.WeaponLock = M(false, 'Weapon Lock')
     state.CP = M(false, "Capacity Points Mode")
 
@@ -208,15 +216,14 @@ function init_gear_sets()
     -- Fast cast sets for spells
     sets.precast.FC = {
       main="Kali",                                                                                                  --  7
-      head="Fili Calot +1",                                                                                         -- 14
+      head="Bunzi's Hat",                                                                                           -- 10
+      neck="Voltsurge Torque",                                                                                      --  4
+      left_ear="Loquacious earring",                                                                                --  2
+      right_ear="Etiolation earring",                                                                               --  1
       body="Inyanga Jubbah +2",                                                                                     -- 14
-      hands="Gendewitha gages +1",                                                                                  -- 12
+      hands="Gendewitha gages +1",                                                                                  --  7
       legs="Aya. Cosciales +2",                                                                                     --  6
-      feet={ name="Telchine Pigaches", augments={'Song spellcasting time -6%',}},                                   -- 12
-      neck="Mnbw. Whistle +1",
-      waist="Flume Belt +1",
-      left_ear="Genmei Earring",
-      right_ear="Odnowa Earring +1",
+      waist="Embla Sash",
       left_ring="Gelatinous Ring +1",
       right_ring="Kishar Ring",                                                                                     --  4
       back=Cape.FC                                                                                                  -- 10
@@ -237,10 +244,10 @@ function init_gear_sets()
       feet={ name="Telchine Pigaches", augments={'Song spellcasting time -6%',}},                          -- 12
       neck="Mnbw. Whistle +1",
       waist="Flume Belt +1",
-      left_ear="Genmei Earring",
-      right_ear="Odnowa Earring +1",
       left_ring="Gelatinous Ring +1",
       right_ring="Kishar Ring",                                                                            --  4
+      left_ear="Odnowa Earring +1",                                                                       
+      right_ear="Etiolation earring",                                                                      --  1
       back=Cape.FC                                                                                         -- 10
     }
 
@@ -422,26 +429,28 @@ function init_gear_sets()
     sets.midcast.SongEnfeeble = {
       main="Carnwenhan",
       sub="Ammurapi Shield",
-      range="Gjallarhorn",
+      range="Marsyas",
       head="Brioso Roundlet +2",
-      body="Brioso Justau. +3",
+      body="Fili Hongreline +1",
       hands="Brioso Cuffs +3",
-      legs="Brioso Cannions +3",
+      legs="Inyanga shalwar +2",
       feet="Brioso Slippers +3",
       neck="Mnbw. Whistle +1",
       ear1="Digni. Earring",
       ear2="Regal Earring",
-      ring1="Stikini Ring +1",
-      ring2="Stikini Ring +1",
+      left_ring={name="Stikini Ring +1", bag="wardrobe"},
+      right_ring={name="Stikini Ring +1", bag="wardrobe5"},
       waist="Acuity Belt +1",
       back=Cape.FC
     }
 
     -- For song defbuffs (accuracy primary, duration secondary)
     sets.midcast.SongEnfeebleAcc = set_combine(sets.midcast.SongEnfeeble, {
+      body="Brioso Justau. +3",
+      legs="Brioso Cannions +3",
     })
 
-    -- For Horde Lullaby maxiumum AOE range.
+    -- For Horde Lullaby maximum AOE range.
     sets.midcast.SongStringSkill = {
       ear1="Darkside Earring",
       ear2="Gersemi Earring"
@@ -557,12 +566,12 @@ function init_gear_sets()
       waist="Kasiri Belt",
       left_ear="Infused Earring",
       right_ear="Eabani Earring",
-      left_ring="Moonlight Ring",
+      left_ring="Vengeful Ring",
       right_ring="Gelatinous Ring +1",
       back=Cape.ENMITY_EVA,
     }
 
-    sets.idle.MEva = {
+    sets.MEva = {
       range=Linos.MEVA,
       head="Bunzi's Hat",
       body="Nyame Mail",
@@ -604,17 +613,17 @@ function init_gear_sets()
 
     sets.engaged = {
       range=Linos.TP,
-      head="Bunzi's Hat",       -- 7
-      body="Ashera Harness",    -- 9
-      hands="Bunzi's Gloves",   -- 8
-      legs="Nyame Flanchard",   -- 8
-      feet="Nyame Sollerets",   -- 7
+      head="Bunzi's Hat",           -- 7, 6
+      body="Ashera Harness",        -- 9, 4
+      hands="Bunzi's Gloves",       -- 8, 3
+      legs="Volte Tights",          --    9
+      feet="Nyame Sollerets",       -- 7, 3
       neck="Bard's Charm +2",
       ear1="Brutal Earring",
       ear2="Dignitary's Earring",
-      left_ring={name="Chirich Ring +1",bag="wardrobe 2"},
-      right_ring="Moonlight Ring",
-      back=Cape.TP,
+      left_ring=MR.One,
+      right_ring=MR.Two,
+      back=Cape.TP,                 --   10
       waist="Grunfeld Rope"
     }
 
@@ -627,17 +636,17 @@ function init_gear_sets()
     -- No Magic Haste (74% DW to cap)
     sets.engaged.DW = {
       range=Linos.TP,
-      head="Bunzi's Hat",
-      body="Ashera Harness",
-      hands="Bunzi's Gloves",
-      legs="Nyame Flanchard",
-      feet="Nyame Sollerets",
+      head="Bunzi's Hat",           -- 7, 6
+      body="Ashera Harness",        -- 9, 4
+      hands="Bunzi's Gloves",       -- 8, 3
+      legs="Volte Tights",          --    9
+      feet="Nyame Sollerets",       -- 7, 3
       neck="Bard's Charm +2",
       ear1="Eabani Earring",
       ear2="Telos Earring",
-      left_ring={name="Chirich Ring +1",bag="wardrobe 2"},
-      right_ring="Moonlight Ring",
-      back=Cape.TP,
+      left_ring=MR.One,
+      right_ring=MR.Two,
+      back=Cape.TP,                 --   10
       waist="Reiki Yotai"
     }
 
@@ -712,8 +721,6 @@ function init_gear_sets()
 
     sets.Obi = {waist="Hachirin-no-Obi"}
     sets.CP = {back="Mecisto. Mantle"}
-    --sets.Reive = {neck="Ygnas's Resolve +1"}
-
 end
 
 
@@ -799,16 +806,6 @@ function job_aftercast(spell, action, spellMap, eventArgs)
 end
 
 function job_buff_change(buff,gain)
-
---    if buffactive['Reive Mark'] then
---        if gain then
---            equip(sets.Reive)
---            disable('neck')
---        else
---            enable('neck')
---        end
---    end
-
     if buff == "doom" then
         if gain then
             equip(sets.buff.Doom)
@@ -900,11 +897,14 @@ end
 
 -- Modify the default idle set after it was constructed.
 function customize_idle_set(idleSet)
-    if player.mpp < 51 then
-        idleSet = set_combine(idleSet, sets.latent_refresh)
-    end
     if state.Auto_Kite.value == true then
        idleSet = set_combine(idleSet, sets.Kiting)
+    end
+
+    if state.WeaponSet.value == "NibiruDW" then
+        equip({main=Nibiru.One,sub=Nibiru.Two})
+    elseif state.WeaponSet.value == "NibiruShield" then
+        equip({main=Nibiru.One,sub="Genmei Shield"})
     end
 
     return idleSet
@@ -1008,7 +1008,7 @@ function get_lullaby_duration(spell)
     if player.equipment.hands == 'Brioso Cuffs +2' then mult = mult + 0.1 end
     if player.equipment.hands == 'Brioso Cuffs +3' then mult = mult + 0.2 end
 
-    --JP Duration Gift
+    -- JP Duration Gift
     if self.job_points.brd.jp_spent >= 1200 then
         mult = mult + 0.05
     end

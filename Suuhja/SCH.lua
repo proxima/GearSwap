@@ -123,7 +123,7 @@ hud_font = 'Impact'
     windower.send_command('bind @n sat youcommand Muuhja "Carnage Elegy"')
     windower.send_command('bind @m sat youcommand Muuhja "Pining Nocture"')
     windower.send_command('bind @o sat youcommand Muuhja "Horde Lullaby"')
-    windower.send_command('bind @p sat youcommand Muuhja "Foe Lullaby II"')
+    windower.send_command('bind @p sat youcommand Muuhja "Sleepga"')
     -- windower.send_command('bind @p send muuhja input /pet "Release" <me>')
     windower.send_command('bind @= send muuhja input /ja "Apogee" <me>')
     -- windower.send_command('bind @n sat youcommand Muuhja "Level ? Holy"')
@@ -378,8 +378,8 @@ function get_sets()
       legs="Agwu's Slops",
       feet="Agwu's Pigaches",
       neck={ name="Argute Stole +2", augments={'Path: A',}},
-      waist="Orpheus's Sash",
-      left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
+      waist="Hachirin-no-Obi",
+      left_ear="Regal Earring",
       right_ear="Malignance Earring",
       left_ring="Freke Ring",
       right_ring="Metamorph Ring +1",
@@ -392,13 +392,14 @@ function get_sets()
     
     sets.me["Cataclysm"] = {
       ammo="Ghastly Tathlum +1",
-      head="Pixie hairpin +1",
+      -- head="Pixie hairpin +1",
+      head="Agwu's Cap",
       body="Agwu's Robe",
       hands="Jhakri Cuffs +2",
       legs="Agwu's Slops",
       feet="Agwu's Pigaches",
       neck={ name="Argute Stole +2", augments={'Path: A',}},
-      waist="Orpheus's Sash",
+      waist="Hachirin-no-Obi",
       left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
       right_ear="Malignance Earring",
       left_ring="Archon Ring",

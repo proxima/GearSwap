@@ -65,7 +65,7 @@ include('Modes.lua')            -- leave this as is
 -- to define sets for idle if you add more modes, name them: sets.me.idle.mymode and add 'mymode' in the group.
 -- to define sets for regen if you add more modes, name them: sets.midcast.regen.mymode and add 'mymode' in the group.
 -- Same idea for nuke modes. 
-idleModes = M('normal', 'dt', 'mdt', 'refresh')
+idleModes = M('normal', 'dt', 'mdt')
 -- To add a new mode to nuking, you need to define both sets: sets.midcast.nuking.mynewmode as well as sets.midcast.MB.mynewmode
 nukeModes = M('normal', 'acc')
 
@@ -516,6 +516,9 @@ function get_sets()
      legs={ name="Merlinic Shalwar", augments={'INT+10','VIT+1','"Treasure Hunter"+2',}},
      feet={ name="Merlinic Crackows", augments={'Mag. Acc.+17','Weapon skill damage +1%','"Treasure Hunter"+2','Accuracy+8 Attack+8',}},
    })
+   
+   sets.midcast['Sleep'] = sets.midcast['Sleepga']
+   sets.midcast['Sleep II'] = sets.midcast['Sleep']
 
    sets.midcast['Phalanx'] = set_combine(sets.midcast.enhancing, {
      body={ name="Merlinic Jubbah", augments={'Pet: DEX+5','Crit. hit damage +3%','Phalanx +4','Mag. Acc.+19 "Mag.Atk.Bns."+19',}},

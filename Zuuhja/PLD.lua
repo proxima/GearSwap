@@ -102,7 +102,7 @@ function init_gear_sets()
   sets.precast.JA['Invincible'] = set_combine(sets.precast.Enmity, {legs="Caballarius Breeches +1"})
   sets.precast.JA['Holy Circle'] = set_combine(sets.precast.Enmity, {feet="Reverence Leggings +3"})
   sets.precast.JA['Shield Bash'] = set_combine(sets.precast.Enmity, {hands="Caballarius Gauntlets +2"})
-  sets.precast.JA['Sentinel'] = set_combine(sets.precast.Enmity, {feet="Caballarius Leggings +2"})
+  sets.precast.JA['Sentinel'] = set_combine(sets.precast.Enmity, {feet="Caballarius Leggings +3"})
   sets.precast.JA['Rampart'] = set_combine(sets.precast.Enmity, {head="Caballarius Coronet +1"})
   sets.precast.JA['Fealty'] = set_combine(sets.precast.Enmity, {body="Caballarius Surcoat +1"})
   sets.precast.JA['Divine Emblem'] = set_combine(sets.precast.Enmity, {feet="Chevalier's Sabatons +1"})
@@ -343,7 +343,6 @@ function init_gear_sets()
     head="Sakpata's Helm",        --  7
     body="Sakpata's Breastplate", -- 10
     hands="Sakpata's Gauntlets",  --  8
-    -- hands="Reverence Gauntlets +3",
     legs="Sakpata's Cuisses",     --  9
     feet="Sakpata's Leggings",    --  6
     neck="Unmoving collar +1",
@@ -376,21 +375,39 @@ function init_gear_sets()
    sets.idle.Block = {
      main="Malevolence",
      sub="Ochain",
-     ammo="Staunch Tathlum +1",
-     head="Sakpata's Helm",
-     body="Sakpata's Plate",
-     legs="Sakpata's Cuisses",
-     feet="Sakpata's Leggings",
+     ammo="Staunch Tathlum +1",      --  3
+     head="Hjarrandi Helm",          -- 10
+     neck="Agelast Torque",          -- Combatant's Torque
+     body="Hjarrandi Breastplate",   -- 12
+     hands="Rev. Gauntlets +3",
+     legs="Sakpata's Cuisses",       --  9
+     feet="Reverence Leggings +3",   --  6
      waist="Carrier's Sash",
      left_ear="Sanare Earring",
      right_ear="Eabani Earring",
-     left_ring=MR.One,
-     right_ring="Defending Ring",
-     back=Rud.ENMITY,
-     neck="Loricate Torque +1",
-     hands="Rev. Gauntlets +3",
+     left_ring=MR.One,               --  5
+     right_ring="Defending Ring",    -- 10
+     back=Rud.BLOCK,
    }
 
+   sets.idle.BlockDT = {
+    main="Burtgang",
+    sub="Srivatsa",                 --  8
+    ammo="Staunch Tathlum +1",      --  3
+    head="Sakpata's Helm",          --  7
+    neck="Agelast Torque",          -- Combatant's Torque
+    body="Sakpata's Breastplate",   -- 10
+    hands="Reverence Gauntlets +3",
+    legs="Volte Brayettes",         --  7
+    feet="Reverence Leggings +3",   --  6
+    waist="Sailfi belt +1",
+    ear1="Odnowa Earring +1",       --  3
+    ear2="Tuisto Earring",          -- Zwazo Earring +1
+    ring1=MR.One,                   --  5
+    ring2=MR.Two,                   --  5
+    back=Rud.BLOCK
+  }
+   
   sets.idle.Town = set_combine(sets.idle, {right_ring="Shneddick Ring +1"})
   sets.idle.Weak = sets.idle    
   sets.idle.Weak.Reraise = set_combine(sets.idle.Weak, sets.Reraise)    
@@ -443,19 +460,18 @@ function init_gear_sets()
   sets.engaged = {
     main="Burtgang",
     sub="Srivatsa",
-    ammo="Staunch Tathlum +1", -- 3
-    head="Sakpata's Helm", -- 7
-    body="Sakpata's Breastplate", -- 8
-    hands="Sakpata's Gauntlets",
-    -- hands="Reverence Gauntlets +3", 
-    legs="Sakpata's Cuisses", -- 9
-    feet="Sakpata's Leggings", -- 6
-    neck="Unmoving collar +1",
+    ammo="Staunch Tathlum +1",      --  3
+    head="Hjarrandi Helm",          -- 10
+    body="Hjarrandi Breastplate",   -- 12
+    hands="Reverence Gauntlets +3",
+    legs="Volte Brayettes",         --  7
+    feet="Reverence Leggings +3",   --  6
+    neck="Agelast Torque",          -- Combatants Torque
     waist="Sailfi belt +1",
-    ear1="Odnowa Earring +1",
-    ear2="Tuisto Earring",
-    ring1=MR.One, -- 5
-    ring2=MR.Two, -- 5
+    ear1="Odnowa Earring +1",       --  3
+    ear2="Tuisto Earring",          -- Zwazo Earring +1
+    ring1=MR.One,                   --  5
+    ring2=MR.Two,                   --  5
     back=Rud.BLOCK
   }
 

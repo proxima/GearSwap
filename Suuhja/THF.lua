@@ -117,11 +117,11 @@ function init_gear_sets()
     --------------------------------------
 
     -- Precast sets to enhance JAs
-    sets.precast.JA['Collaborator'] = {head="Plunderer's Bonnet +3"}
-    sets.precast.JA['Accomplice'] = {head="Plunderer's Bonnet +3"}
+    sets.precast.JA['Collaborator'] = {head="Skulker's Bonnet +1"}
+    sets.precast.JA['Accomplice'] = {head="Skulker's Bonnet +1"}
     sets.precast.JA['Flee'] = {feet="Pillager's Poulaines +3"}
     sets.precast.JA['Hide'] = {body="Pillager's Vest +3"}
-    sets.precast.JA['Conspirator'] = {body="Plunderer's Vest +3"}
+    sets.precast.JA['Conspirator'] = {body="Skulker's Vest +1"}
     sets.precast.JA['Steal'] = {head="Plunderer's Bonnet +3",hands="Pillager's Armlets +3",legs="Pillager's Culottes +3",feet="Pillager's Poulaines +3"}
     sets.precast.JA['Despoil'] = {legs="Raider's Culottes +2",feet="Raider's Poulaines +2"}
     sets.precast.JA['Perfect Dodge'] = {hands="Plunderer's Armlets +1"}
@@ -225,8 +225,6 @@ function init_gear_sets()
       ammo={ name="Seeth. Bomblet +1", augments={'Path: A',}},
       head="Nyame Helm",
       body="Nyame Mail",
-      -- hands="Meg. Gloves +2",
-      -- legs="Plunderer's Culottes +3",
       hands="Nyame Gauntlets",
       legs="Nyame Flanchard",  
       feet="Nyame Sollerets",
@@ -259,7 +257,7 @@ function init_gear_sets()
       hands="Nyame Gauntlets",
       legs="Nyame Flanchard",
       feet="Nyame Sollerets",
-      neck="Anu Torque",
+      neck="Republican platinum medal",
       waist={ name="Kentarch Belt +1", augments={'Path: A',}},
       left_ear="Ishvara Earring",
       right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
