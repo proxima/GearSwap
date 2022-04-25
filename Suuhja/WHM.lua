@@ -455,7 +455,7 @@ function init_gear_sets()
       head="Inyanga Tiara +2",
       hands="Ebers Mitts +1",
       legs="Th. Pant. +3",
-      feet="Theo. Duckbills +3",
+      feet="Bunzi's Sabots",
     })
 
     sets.midcast.RegenDuration = set_combine(sets.midcast.EnhancingDuration, {

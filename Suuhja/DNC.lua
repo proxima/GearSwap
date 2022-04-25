@@ -579,6 +579,8 @@ function init_gear_sets()
     sets.engaged.DW.STP = set_combine(sets.engaged.DW, {
       left_ring="Chirich Ring +1",
       right_ring="Defending ring",
+      left_ear="Suppanomimi",     -- 5
+      right_ear="Eabani Earring",
       body="Malignance tabard",
       head="Malignance chapeau",
       hands="Malignance gloves",

@@ -192,6 +192,8 @@ function user_setup()
     Cape.RTP    = {name="Camulus's Mantle", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','Rng.Acc.+10','"Store TP"+10','Phys. dmg. taken-10%',}}
     Cape.DW     = {name="Camulus's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dual Wield"+10','Phys. dmg. taken-10%',}}
 
+    send_command('lua l gearinfo')
+
     state.Auto_Kite = M(false, 'Auto_Kite')
     Haste = 0
     DW_needed = 0
@@ -389,7 +391,7 @@ function init_gear_sets()
     sets.precast.WS['Leaden Salute'] = set_combine(sets.precast.WS['Wildfire'], {
       head="Pixie Hairpin +1",
       left_ear="Moonshade Earring",
-      -- right_ring="Archon Ring",
+      right_ring="Archon Ring",
     })
 
     sets.precast.WS['Leaden Salute'].Acc = set_combine(sets.precast.WS['Leaden Salute'], {

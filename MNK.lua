@@ -59,6 +59,11 @@ function init_gear_sets()
     sets.precast.JA['Formless Strikes'] = {body="Hesychast's Cyclas"}
     sets.precast.JA['Mantra'] = {feet="Hesychast's Gaiters +1"}
 
+    sets.precast.JA['Provoke'] = {
+      head={ name="Herculean Helm", augments={'"Store TP"+1','Magic Damage +1','"Treasure Hunter"+2','Accuracy+7 Attack+7',}},
+      hands={ name="Herculean Gloves", augments={'"Conserve MP"+1','Accuracy+21','"Treasure Hunter"+2',}},
+    }
+
     sets.precast.JA['Chi Blast'] = {
         head="Melee Crown +2",
         body="Otronif Harness +1",hands="Hesychast's Gloves +1",
@@ -197,19 +202,21 @@ function init_gear_sets()
     -- EG: sets.engaged.Dagger.Accuracy.Evasion
     
     -- Normal melee sets
-    sets.engaged = {ammo={ name="Coiste Bodhar", augments={'Path: A',}},
-      head={ name="Mpaca's Cap", augments={'Path: A',}},
-      body={ name="Mpaca's Doublet", augments={'Path: A',}},
-      hands={ name="Mpaca's Gloves", augments={'Path: A',}},
-      legs={ name="Mpaca's Hose", augments={'Path: A',}},
-      feet={ name="Mpaca's Boots", augments={'Path: A',}},
+    sets.engaged = {
+      ammo="Coiste Bodhar",
+      head="Malignance Chapeau",
+      body="Malignance Tabard",
+      hands="Malignance Gloves",
+      legs="Malignance Tights",
+      feet="Malignance Boots",
       neck="Anu Torque",
       waist="Moonbow Belt +1",
-      left_ear={ name="Schere Earring", augments={'Path: A',}},
-      right_ear="Sherida Earring",
-      left_ring="Niqmaddu Ring",
-      right_ring="Gere Ring",
+      left_ear="Dedition Earring",
+      right_ear="Telos Earring",
+      left_ring="Chirich Ring +1",
+      right_ring="Chirich Ring +1",
     }
+
     sets.engaged.SomeAcc = {}
     sets.engaged.Acc = {}
     sets.engaged.Mod = {}

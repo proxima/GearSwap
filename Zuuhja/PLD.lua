@@ -23,14 +23,14 @@ function user_setup()
   state.CastingMode:options('Normal', 'SIRD')
   state.PhysicalDefenseMode:options('PDT', 'HP', 'Reraise', 'Charm')
   state.MagicalDefenseMode:options('MDT', 'HP', 'Reraise', 'Charm')
-  state.IdleMode:options('Normal', 'Meva', 'Block')
+  state.IdleMode:options('Normal', 'Meva', 'Block', 'BlockDT')
   state.ExtraDefenseMode = M{['description']='Extra Defense Mode', 'None', 'MP', 'Knockback', 'MP_Knockback'}
   state.EquipShield = M(false, 'Equip Shield w/Defense')
   update_defense_mode()
  
   send_command('bind @o sat youcommand Muuhja "Horde Lullaby"')
 
-  send_command('bind @f12 gs c cycle CastingMode') -- Turns Spell Interruption Rate set on
+  send_command('bind @f12 gs c cycle CastingMode')
   send_command('bind ^f11 gs c cycle MagicalDefenseMode')
   send_command('bind !f11 gs c cycle ExtraDefenseMode')
   send_command('bind @f10 gs c toggle EquipShield')
@@ -112,8 +112,6 @@ function init_gear_sets()
   
   sets.precast.JA['Valiance'] = sets.precast.Enmity
 
-
-  -- add mnd for Chivalry
   sets.precast.JA['Chivalry'] = {
     body="Reverence Surcoat +3",
   }
@@ -126,7 +124,6 @@ function init_gear_sets()
   sets.precast.JA['Defender'] = set_combine(sets.precast.Enmity, {})
 
   -- Fast cast sets for spells
-    
   sets.precast.FC = {
     ammo="Egoist's Tathlum",
     head="Carmine Mask +1",         -- 14
@@ -220,6 +217,7 @@ function init_gear_sets()
   }
   
   sets.precast.WS['Sanguine Blade'] = sets.precast.WS['Aeolian Edge']
+
   --------------------------------------
   -- Midcast sets
   --------------------------------------
@@ -349,8 +347,8 @@ function init_gear_sets()
     waist="Asklepian Belt",
     ear1="Cryptic Earring",
     ear2="Tuisto Earring",
-    ring1=MR.One,
-    ring2=MR.Two,
+    left_ring=MR.One,
+    right_ring="Shneddick Ring +1",
     back=Rud.BLOCK,
   }
 
@@ -372,37 +370,19 @@ function init_gear_sets()
     back=Rud.ENMITY               -- 10
   }
   
-   sets.idle.Block = {
-     main="Malevolence",
-     sub="Ochain",
-     ammo="Staunch Tathlum +1",      --  3
-     head="Hjarrandi Helm",          -- 10
-     neck="Agelast Torque",          -- Combatant's Torque
-     body="Hjarrandi Breastplate",   -- 12
-     hands="Rev. Gauntlets +3",
-     legs="Sakpata's Cuisses",       --  9
-     feet="Reverence Leggings +3",   --  6
-     waist="Carrier's Sash",
-     left_ear="Sanare Earring",
-     right_ear="Eabani Earring",
-     left_ring=MR.One,               --  5
-     right_ring="Defending Ring",    -- 10
-     back=Rud.BLOCK,
-   }
-
-   sets.idle.BlockDT = {
-    main="Burtgang",
-    sub="Srivatsa",                 --  8
+  sets.idle.Block = {
+    main="Malevolence",
+    sub="Ochain",
     ammo="Staunch Tathlum +1",      --  3
     head="Sakpata's Helm",          --  7
     neck="Agelast Torque",          -- Combatant's Torque
     body="Sakpata's Breastplate",   -- 10
     hands="Reverence Gauntlets +3",
-    legs="Volte Brayettes",         --  7
-    feet="Reverence Leggings +3",   --  6
-    waist="Sailfi belt +1",
+    legs="Sakpata's Cuisses",       --  9
+    feet="Sakpata's Leggings",      --  6
+    waist="Flume belt +1",
     ear1="Odnowa Earring +1",       --  3
-    ear2="Tuisto Earring",          -- Zwazo Earring +1
+    ear2="Zwazo Earring +1",
     ring1=MR.One,                   --  5
     ring2=MR.Two,                   --  5
     back=Rud.BLOCK
@@ -458,8 +438,6 @@ function init_gear_sets()
   -- Engaged sets
   --------------------------------------
   sets.engaged = {
-    main="Burtgang",
-    sub="Srivatsa",
     ammo="Staunch Tathlum +1",      --  3
     head="Hjarrandi Helm",          -- 10
     body="Hjarrandi Breastplate",   -- 12
@@ -469,7 +447,7 @@ function init_gear_sets()
     neck="Agelast Torque",          -- Combatants Torque
     waist="Sailfi belt +1",
     ear1="Odnowa Earring +1",       --  3
-    ear2="Tuisto Earring",          -- Zwazo Earring +1
+    ear2="Zwazo Earring +1",
     ring1=MR.One,                   --  5
     ring2=MR.Two,                   --  5
     back=Rud.BLOCK
@@ -479,7 +457,12 @@ function init_gear_sets()
   -- Custom buff sets
   --------------------------------------
   
-  sets.buff.Doom = {neck="Nicander's Necklace",}
+  sets.buff.Doom = {neck="Nicander's Necklace", -- 20
+    ring1={name="Eshmun's Ring", bag="wardrobe3"}, -- 20
+    ring2={name="Eshmun's Ring", bag="wardrobe5"}, -- 20
+    waist="Gishdubar Sash", --10
+  }
+
   sets.buff.Cover = {head="Reverence Coronet +1", body="Caballarius Surcoat +1"}
 end
 

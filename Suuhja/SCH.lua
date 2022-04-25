@@ -988,14 +988,15 @@ function get_sets()
     }
     
     -- Focus on Regen Duration
-    sets.midcast.regen.duration = set_combine(sets.midcast.regen.hybrid,{
+    sets.midcast.regen.duration = set_combine(sets.midcast.regen.hybrid, {
+      head="Telchine Cap",
       back=Lugh.DT
-    }) 
+    })
     
     -- Focus on Regen Potency
-    sets.midcast.regen.potency = set_combine(sets.midcast.regen.hybrid,{
+    sets.midcast.regen.potency = set_combine(sets.midcast.regen.hybrid, {
       back=Lugh.ADOULIN
-    }) 
+    })
 
     ------------
     -- Aftercast

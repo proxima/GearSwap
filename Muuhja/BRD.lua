@@ -398,7 +398,7 @@ function init_gear_sets()
     sets.midcast.March = {hands="Fili Manchettes +1"}
     sets.midcast.Minne = {legs="Mousai Seraweels +1"}
     sets.midcast.Minuet = {body="Fili Hongreline +1"}
-    sets.midcast.Paeon = {head="Brioso Roundlet +2"}
+    sets.midcast.Paeon = {head="Brioso Roundlet +3"}
     sets.midcast.Threnody = {body="Mou. Manteel +1"}
     sets.midcast['Adventurer\'s Dirge'] = {range="Marsyas", hands="Bihu Cuffs +3"}
     sets.midcast['Foe Sirvente'] = {head="Bihu Roundlet +3"}
@@ -430,7 +430,7 @@ function init_gear_sets()
       main="Carnwenhan",
       sub="Ammurapi Shield",
       range="Marsyas",
-      head="Brioso Roundlet +2",
+      head="Brioso Roundlet +3",
       body="Fili Hongreline +1",
       hands="Brioso Cuffs +3",
       legs="Inyanga shalwar +2",
@@ -503,7 +503,7 @@ function init_gear_sets()
       main="Carnwenhan",
       sub="Ammurapi Shield",
       range="Gjallarhorn",
-      head="Brioso Roundlet +2",
+      head="Brioso Roundlet +3",
       body="Brioso Justau. +3",
       hands="Inyanga Dastanas +2",
       legs="Brioso Cannions +3",

@@ -100,7 +100,7 @@ function init_gear_sets()
       hands={ name="Herculean Gloves", augments={'"Conserve MP"+1','Accuracy+21','"Treasure Hunter"+2',}}, 
       feet="Skulker's poulaines +1"
     }
-    sets.ExtraRegen = {}
+
     sets.Kiting = {feet="Pillager's Poulaines +3"}
 
     sets.buff['Sneak Attack'] = {}
@@ -123,9 +123,9 @@ function init_gear_sets()
     sets.precast.JA['Hide'] = {body="Pillager's Vest +3"}
     sets.precast.JA['Conspirator'] = {body="Skulker's Vest +1"}
     sets.precast.JA['Steal'] = {head="Plunderer's Bonnet +3",hands="Pillager's Armlets +3",legs="Pillager's Culottes +3",feet="Pillager's Poulaines +3"}
-    sets.precast.JA['Despoil'] = {legs="Raider's Culottes +2",feet="Raider's Poulaines +2"}
+    sets.precast.JA['Despoil'] = {legs="Skulker's Culottes +1",feet="Skulker's Poulaines +1"}
     sets.precast.JA['Perfect Dodge'] = {hands="Plunderer's Armlets +1"}
-    sets.precast.JA['Feint'] = {}
+    sets.precast.JA['Feint'] = {legs="Plunderer's Culottes +3"}
 
     sets.precast.JA['Sneak Attack'] = sets.buff['Sneak Attack']
     sets.precast.JA['Trick Attack'] = sets.buff['Trick Attack']
@@ -359,8 +359,8 @@ function init_gear_sets()
       hands="Nyame Gauntlets",
       legs="Nyame Flanchard",
       feet="Nyame Sollerets",
-      neck="Loricate Torque +1",
-      waist="Reiki Yotai",
+      neck="Assassin's Gorget +2",
+      waist="Carrier's Sash",
       left_ear="Etiolation Earring",
       right_ear="Odnowa Earring +1",
       right_ring="Defending ring",
@@ -540,10 +540,6 @@ end
 
 
 function customize_idle_set(idleSet)
-    if player.hpp < 80 then
-        idleSet = set_combine(idleSet, sets.ExtraRegen)
-    end
-
     return idleSet
 end
 
@@ -646,13 +642,13 @@ end
 function select_default_macro_book()
     -- Default macro set/book
     if player.sub_job == 'DNC' then
-        set_macro_page(2, 5)
+        set_macro_page(2, 1)
     elseif player.sub_job == 'WAR' then
-        set_macro_page(3, 5)
+        set_macro_page(3, 1)
     elseif player.sub_job == 'NIN' then
-        set_macro_page(4, 5)
+        set_macro_page(4, 1)
     else
-        set_macro_page(2, 5)
+        set_macro_page(2, 1)
     end
 end
 
