@@ -614,7 +614,7 @@ function init_gear_sets()
     left_ring="Niqmaddu Ring",
     right_ring="Moonlight Ring",
     back=Cape.Parry,
-    waist="Dynamic Belt +1",
+    waist="Kentarch blet +1",
     legs={ name="Nyame Flanchard", augments={'Path: B',}},
     feet={ name="Nyame Sollerets", augments={'Path: B',}},  
   }

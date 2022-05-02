@@ -708,8 +708,10 @@ function get_sets()
     })
 
     sets.midcast.aquaveil = set_combine(sets.midcast.refresh, {
+      head="Amalric Coif +1",
       body="Viti. Tabard +3",
       hands="Regal Cuffs",
+      waist="Emphatikos Rope",
     })
 
     sets.midcast["Drain"] = set_combine(sets.midcast.nuking.normal, {

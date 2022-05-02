@@ -182,6 +182,21 @@ function init_gear_sets()
       back=Cape.SB
     }
 
+    sets.precast.WS['Aeolian Edge'] = {
+      head={ name="Nyame Helm", augments={'Path: B',}},
+      body={ name="Nyame Mail", augments={'Path: B',}},
+      hands={ name="Nyame Gauntlets", augments={'Path: B',}},
+      legs={ name="Nyame Flanchard", augments={'Path: B',}},
+      feet={ name="Nyame Sollerets", augments={'Path: B',}},
+      neck="Sibyl Scarf",
+      left_ear="Moonshade Earring",
+      right_ear="Odr Earring",
+      left_ring="Dingir Ring",
+      right_ring="Epaminondas's Ring",
+      back=Cape.SB,
+      waist="Eschan Stone",
+    }
+
     -- Midcast Sets
     sets.midcast.FastRecast = {}
         
@@ -236,7 +251,7 @@ function init_gear_sets()
       right_ear="Tuisto Earring +1",
       left_ring="Defending Ring",
       right_ring="Vocane Ring +1",
-      back=Cape.TP
+      back="Mecisto. Mantle",
     }
 
     sets.idle.Town = sets.idle

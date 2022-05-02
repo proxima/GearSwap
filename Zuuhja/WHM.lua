@@ -386,7 +386,7 @@ function init_gear_sets()
       head={ name="Telchine Cap", augments={'Enh. Mag. eff. dur. +10',}},
       body={ name="Telchine Chas.", augments={'Enh. Mag. eff. dur. +10',}},
       hands="Inyanga dastanas +2",
-      legs="Cleric's pantaloons",
+      legs="Piety Pantaloons +3",
       feet="Ebers duckbills +1",
       ring1="Stikini Ring +1",
       ring2="Stikini Ring +1",
@@ -454,7 +454,7 @@ function init_gear_sets()
       head="Ebers Cap +1",
       body="Ebers Bliaut +1",
       hands="Ebers Mitts +1",
-      legs="Cleric's pantaloons",
+      legs="Piety Pantaloons +3",
       feet="Ebers Duckbills +1",
     })
 
@@ -627,7 +627,7 @@ function init_gear_sets()
 
     -- Buff sets: Gear that needs to be worn to actively enhance a current player buff.
     sets.buff['Divine Caress'] = {hands="Ebers Mitts +1", back="Mending Cape"}
-    sets.buff['Devotion'] = {head="Piety Cap +3"}
+    sets.buff['Devotion'] = {head="Piety Cap +1"}
     sets.buff.Sublimation = {waist="Embla Sash"}
 
     sets.buff.Doom = {

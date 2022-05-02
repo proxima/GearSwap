@@ -200,7 +200,7 @@ function init_gear_sets()
     sets.precast.WS['Evisceration'].SATA = set_combine(sets.precast.WS['Evisceration'].Mod, {})
 
     sets.precast.WS["Rudra's Storm"] = set_combine(sets.precast.WS, {
-      ammo="Cath Palug Stone", -- ammo={ name="Seeth. Bomblet +1", augments={'Path: A',}},
+      ammo={ name="Seeth. Bomblet +1", augments={'Path: A',}},
       head="Nyame Helm",
       body="Nyame Mail",
       hands="Nyame Gauntlets",

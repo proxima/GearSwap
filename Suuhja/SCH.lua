@@ -109,13 +109,13 @@ hud_font = 'Impact'
     windower.send_command('bind ^F10 gs c toggle matchsc')      -- CTRL-F10 to change Match SC Mode      	
     windower.send_command('bind !end gs c hud lite')            -- Alt-End to toggle light hud version   
 
-    -- windower.send_command('bind @a send zuuhja input /ma "Indi-Wilt" <me>')
-    -- windower.send_command('bind @s sat youcommand Zuuhja Geo-Frailty')
+    -- windower.send_command('bind @a sat youcommand Zuuhja Ge input /ma "Indi-Wil" <me>')
+    send_command('bind @s sat youcommand Zuuhja Geo-Malaise')
     send_command('bind @a sat youcommand Zuuhja "Bio";input /ma "Luminohelix" <t>')
-    send_command('bind @s sat youcommand Zuuhja "Bio";input /ma "Luminohelix II" <t>')
+    -- send_command('bind @s sat youcommand Zuuhja "Bio";input /ma "Luminohelix II" <t>')
     -- windower.send_command('bind @a sat youcommand Muuhja "Wind Threnody II"')
     -- windower.send_command('bind @s sat youcommand Zuuhja Silence')
-    -- windower.send_command('bind @d send zuuhja /ma "Cure" Aller')
+    windower.send_command('bind @d send zuuhja input /ma "Cure" Arklights')
     windower.send_command('bind @z send zuuhja input /ja "Full Circle" <me>')
     windower.send_command('bind @x send zuuhja input /ja "Radial Arcana" <me>')
     -- windower.send_command('bind @b sat youcommand Zuuhja "Dispel"')
@@ -127,7 +127,7 @@ hud_font = 'Impact'
     -- windower.send_command('bind @p send muuhja input /pet "Release" <me>')
     windower.send_command('bind @= send muuhja input /ja "Apogee" <me>')
     -- windower.send_command('bind @n sat youcommand Muuhja "Level ? Holy"')
-    windower.send_command('bind @d sat youcommand Muuhja Deploy')
+    -- windower.send_command('bind @d sat youcommand Muuhja Deploy')
     -- windower.send_command('bind @b send muuhja input /ma "Ramuh" <me>')
     -- windower.send_command('bind @n send Muuhja /input /ja "Mana Cede" <me>')
     -- windower.send_command('bind @v sat youcommand Muuhja "Volt Strike"')
@@ -744,7 +744,7 @@ function get_sets()
      feet="Agwu's Pigaches",
      waist="Acuity Belt +1",
    })
-   
+      
    sets.midcast.nuking.occult = set_combine(sets.midcast.nuking.normal, { 
      ammo="Seraphic Ampulla",
      head="Mall. Chapeau +2",
@@ -891,11 +891,13 @@ function get_sets()
     })
 
     sets.midcast.refresh = set_combine(sets.midcast.enhancing, {
+      head="Amalric Coif +1",
     })
 
     sets.midcast.aquaveil = set_combine(sets.midcast.refresh, {
-      head="Chironic hat",
+      head="Amalric Coif +1",
       hands="Regal cuffs",
+      waist="Emphatikos Rope",
     })
 
     sets.midcast["Drain"] = set_combine(sets.midcast.nuking.normal, {

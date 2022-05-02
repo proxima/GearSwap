@@ -23,13 +23,14 @@ function user_setup()
   state.CastingMode:options('Normal', 'SIRD')
   state.PhysicalDefenseMode:options('PDT', 'HP', 'Reraise', 'Charm')
   state.MagicalDefenseMode:options('MDT', 'HP', 'Reraise', 'Charm')
-  state.IdleMode:options('Normal', 'Meva', 'Block', 'BlockDT')
+  state.IdleMode:options('Normal', 'Block', 'Meva')
   state.ExtraDefenseMode = M{['description']='Extra Defense Mode', 'None', 'MP', 'Knockback', 'MP_Knockback'}
   state.EquipShield = M(false, 'Equip Shield w/Defense')
   update_defense_mode()
  
   send_command('bind @o sat youcommand Muuhja "Horde Lullaby"')
-
+  send_command('bind @a sat youcommand Suuhja "Spectral Floe"')
+  
   send_command('bind @f12 gs c cycle CastingMode')
   send_command('bind ^f11 gs c cycle MagicalDefenseMode')
   send_command('bind !f11 gs c cycle ExtraDefenseMode')
@@ -276,13 +277,18 @@ function init_gear_sets()
   sets.midcast.Cure.SIRD = set_combine(sets.midcast.Cure, sets.midcast.SIRD)
   
   sets.midcast.Reprisal = set_combine(sets.precast.FC, {
+    body="Shabti Cuirass +1",
     left_ring="Kishar Ring",
     right_ring="Prolix Ring",
   })
   
   sets.midcast.Reprisal.SIRD = set_combine(sets.midcast.Reprisal, sets.midcast.SIRD)
   
-  sets.midcast.Crusade = set_combine(sets.midcast.Cure, {body="Shabti Cuirass +1",hands="Regal Gauntlets",back=Rud.FC})
+  sets.midcast.Crusade = set_combine(sets.midcast.Cure, {
+    body="Shabti Cuirass +1",
+    hands="Regal Gauntlets",
+    back=Rud.FC
+  })
 
   sets.midcast.Crusade.SIRD = set_combine(sets.midcast.Crusade, sets.midcast.SIRD)
   
@@ -308,8 +314,8 @@ function init_gear_sets()
   
   sets.midcast.Phalanx.SIRD = set_combine(sets.midcast.Phalanx, sets.midcast.SIRD)
 
-  sets.midcast.Protect = {sub= "Srivatsa", ring1="Sheltered Ring"}
-  sets.midcast.Shell = {ring1="Sheltered Ring"}
+  sets.midcast.Protect = {sub= "Srivatsa", body="Shabti Cuirass +1", ring1="Sheltered Ring"}
+  sets.midcast.Shell = {ring1="Sheltered Ring", body="Shabti Cuirass +1"}
 
   sets.midcast['Geist Wall']     = set_combine(sets.midcast.Enmity, sets.midcast.SIRD)  
   sets.midcast.Refueling         = set_combine(sets.midcast.Enmity, sets.midcast.SIRD)
