@@ -367,7 +367,7 @@ function init_gear_sets()
     hands="Sakpata's Gauntlets",  --  8
     legs="Sakpata's Cuisses",     --  9
     feet="Sakpata's Leggings",    --  6
-    neck="Unmoving collar +1",
+    neck="Warder's Charm +1",
     waist="Carrier's Sash",
     ear1="Eabani Earring",
     ear2="Tuisto Earring", 

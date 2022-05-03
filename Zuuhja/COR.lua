@@ -132,7 +132,7 @@ function user_setup()
     state.WeaponskillMode:options('Normal', 'Acc')
     state.IdleMode:options('Normal', 'DT', 'Refresh')
 
-    state.WeaponSet = M{['description']='Weapon Set', 'DeathPenalty_M', 'DeathPenalty_R', 'Armageddon_M', 'Armageddon_R', 'Anarchy', 'Aeolian', 'Rolls'}
+    state.WeaponSet = M{['description']='Weapon Set', 'DeathPenalty_M', 'DeathPenalty_R', 'Armageddon_M', 'Armageddon_R', 'Fomalhaut', 'Anarchy', 'Aeolian', 'Rolls'}
     state.WeaponLock = M(false, 'Weapon Lock')
 
     gear.RAbullet = "Devastating Bullet"
@@ -764,6 +764,9 @@ function init_gear_sets()
 
     sets.Armageddon_R = {main={name="Rostam", bag="wardrobe2"}, sub={name="Rostam", bag="wardrobe4"}, ranged="Armageddon"}
     sets.Armageddon_R.Acc = sets.Armageddon_R
+
+    sets.Fomalhaut = {main={name="Rostam", bag="wardrobe2"}, sub={name="Rostam", bag="wardrobe4"}, ranged="Fomalhaut"}
+    sets.Fomalhaut.Acc = sets.Fomalhaut
 
     sets.Anarchy = {main="Naegling", sub="Gleti's Knife", ranged="Anarchy +2"}
     sets.Anarchy.Acc = {main="Naegling", sub="Gleti's Knife", ranged="Anarchy +2"}

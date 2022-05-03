@@ -556,7 +556,7 @@ function init_gear_sets()
       head="Maxixi Tiara +3",     -- 8
       neck="Etoile Gorget +2",
       left_ear="Suppanomimi",     -- 5
-      right_ear="Sherida Earring",
+      right_ear="Eabani Earring", -- 4
       body="Adhemar Jacket +1",   -- 6
       hands={ name="Adhemar Wrist. +1", augments={'STR+12','DEX+12','Attack+20',}},
       left_ring="Epona's Ring",
@@ -565,7 +565,7 @@ function init_gear_sets()
       waist="Reiki Yotai",        -- 7
       legs="Samnuha Tights",
       feet={ name="Herculean Boots", augments={'"Triple Atk."+3','Rng.Atk.+13','Quadruple Attack +3','Accuracy+13 Attack+13','Mag. Acc.+4 "Mag.Atk.Bns."+4',}},
-    }
+    } -- 40%
 
     sets.engaged.DW.LowAcc = set_combine(sets.engaged.DW, {
     })

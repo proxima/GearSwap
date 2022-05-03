@@ -141,7 +141,7 @@ function job_setup()
         'Enervation','Feather Tickle','Filamented Hold','Frightful Roar','Geist Wall','Hecatomb Wave',
         'Infrasonics','Jettatura','Light of Penance','Lowing','Mind Blast','Mortal Ray','MP Drainkiss',
         'Osmosis','Reaving Wind','Sandspin','Sandspray','Sheep Song','Soporific','Sound Blast',
-        'Stinking Gas','Sub-zero Smash','Venom Shell','Voracious Trunk','Yawn'}
+        'Stinking Gas','Sub-zero Smash','Venom Shell','Voracious Trunk','Yawn','Cruel Joke'}
 
     -- Breath-based spells
     blue_magic_maps.Breath = S{'Bad Breath','Flying Hip Press','Frost Breath','Heat Breath','Hecatomb Wave',
