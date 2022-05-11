@@ -567,11 +567,16 @@ function init_gear_sets()
       left_ear="Odnowa Earring +1",
       right_ear="Tuisto Earring",
       left_ring="Defending Ring",
-      right_ring="Gelatinous Ring +1", -- 7 dt
+      right_ring="Gelatinous Ring +1",
       back=Cape.ROLL
     }
 
     sets.idle.DT = set_combine(sets.idle, {
+      head="Nyame Helm",
+      body="Nyame Mail",
+      hands="Nyame Gauntlets",
+      legs="Nyame Flanchard",
+      feet="Nyame Sollerets",
     })
 
     sets.idle.Refresh = set_combine(sets.idle, {

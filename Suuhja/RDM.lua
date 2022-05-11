@@ -81,7 +81,7 @@ nukeModes = M('normal', 'acc')
 
 
 mainWeapon = M('Crocea Mors', 'Daybreak', 'Naegling', 'Kaja Rod', 'Tauret', 'Wind Knife')
-subWeapon = M('Ammurapi Shield', "Bunzi's Rod", 'Daybreak', 'Malevolence', 'Sacro Bulwark', 'Firetongue')
+subWeapon = M('Ammurapi Shield', "Bunzi's Rod", 'Daybreak', 'Machaera +2', 'Malevolence', 'Sacro Bulwark', 'Firetongue')
 
 ------------------------------------------------------------------------------------------------------
 
@@ -228,6 +228,8 @@ function get_sets()
     RDMCape = {}
     RDMCape.TP        = { name="Sucellos's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dual Wield"+10','Phys. dmg. taken-10%',}}
     RDMCape.MACC      = { name="Sucellos's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','MND+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}
+    RDMCape.Aeolian   = { name="Sucellos's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}
+
     RDMCape.BlackHalo = { name="Sucellos's Cape", augments={'MND+20','Accuracy+20 Attack+20','MND+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}
 
     -- SETS
@@ -426,11 +428,11 @@ function get_sets()
     sets.me["Aeolian Edge"] = {
       ammo={ name="Ghastly Tathlum +1", augments={'Path: A',}},
       head="Nyame Helm",
-      body="Nyame Mail",
+      body="Amalric Doublet +1",
       hands="Jhakri Cuffs +2",
-      legs="Nyame Flanchard",
+      legs="Amalric Slops +1",
       feet="Nyame Sollerets",
-      neck="Sanctity Necklace",
+      neck="Sibyl Scarf",
       waist="Orpheus's Sash",
       left_ear="Regal Earring",
       right_ear="Malignance Earring",

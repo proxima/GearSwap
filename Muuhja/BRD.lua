@@ -130,7 +130,7 @@ function user_setup()
         'Spirited Etude', 'Logical Etude', 'Enchanting Etude', 'Bewitching Etude'
     }
 
-    state.WeaponSet = M{['description']='Weapon Set', 'Carnwenhan', 'Twashtar', 'Naegling', 'Tauret', 'Aeolian', 'Nibiru', 'NibiruDW', 'Free'}
+    state.WeaponSet = M{['description']='Weapon Set', 'Carnwenhan', 'Twashtar', 'Naegling', 'Aeneas', 'Tauret', 'Aeolian', 'Nibiru', 'NibiruDW', 'Free'}
     state.WeaponLock = M(false, 'Weapon Lock')
     state.CP = M(false, "Capacity Points Mode")
 
@@ -876,8 +876,10 @@ function customize_melee_set(meleeSet)
         equip({main="Naegling",sub="Fusetto +2"})
     elseif state.WeaponSet.value == "Tauret" then
         equip({main="Tauret",sub="Twashtar"})
+    elseif state.WeaponSet.value == "Aeneas" then
+        equip({main="Aeneas",sub="Twashtar"})
     elseif state.WeaponSet.value == "Aeolian" then
-        equip({main="Tauret",sub="Malevolence"})
+        equip({main="Aeneas",sub="Malevolence"})
     end
     if buffactive['Aftermath: Lv.3'] and player.equipment.main == "Carnwenhan" then
         meleeSet = set_combine(meleeSet, sets.engaged.Aftermath)

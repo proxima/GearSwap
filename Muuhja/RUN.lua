@@ -614,7 +614,7 @@ function init_gear_sets()
     left_ring="Niqmaddu Ring",
     right_ring="Moonlight Ring",
     back=Cape.Parry,
-    waist="Kentarch blet +1",
+    waist="Kentarch belt +1",
     legs={ name="Nyame Flanchard", augments={'Path: B',}},
     feet={ name="Nyame Sollerets", augments={'Path: B',}},  
   }
@@ -645,6 +645,7 @@ function init_gear_sets()
   }
  
   sets.Embolden = set_combine(sets.midcast['Enhancing Magic'], {back="Evasionist's Cape"})
+
   sets.Obi = {waist="Hachirin-no-Obi"}
   sets.Epeolatry = {main="Epeolatry", sub="Utu Grip"}
   sets.EpeolatryTank = {main="Epeolatry", sub="Refined Grip +1"}

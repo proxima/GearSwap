@@ -139,7 +139,7 @@ function init_gear_sets()
     ring1=MR.One,
     ring2=MR.Two,
     back=Rud.FC                     -- 10
-  }                                 --    = 71 (79 when enhancing)
+  }                                 --    = 61 (69 when enhancing)
 
   sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, {waist="Siegel Sash"})
        

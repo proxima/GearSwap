@@ -161,7 +161,7 @@ function user_setup()
         ]]
     state.CustomGearLock = M(false, "Custom Gear Lock")
     --Example customGearLock = T{"head", "waist"}
-    customGearLock = T{}
+    customGearLock = T{"head","body","hands","legs","feet"}
 
     send_command("bind !f7 gs c cycle PetModeCycle")
     send_command("bind ^f7 gs c cycleback PetModeCycle")
@@ -177,6 +177,8 @@ function user_setup()
     send_command("bind end gs c toggle CP") 
     send_command("bind = gs c clear")
     
+    send_command('bind @c gs c toggle CustomGearLock')
+
     send_command('bind @d sat youcommand Muuhja Deploy')
     
     send_command('bind @b send muuhja input /ja "Apogee" <me>')
@@ -203,6 +205,7 @@ function file_unload()
     send_command("unbind ^f7")
     send_command("unbind !f8")
     send_command("unbind ^f8")
+    send_command('unbind @c')
     send_command("unbind !e")
     send_command("unbind !d")
     send_command("unbind !f6")
@@ -806,7 +809,8 @@ function init_gear_sets()
     ]]
     sets.idle.Pet.Engaged.TP = {
       head={ name="Taeon Chapeau", augments={'Pet: Accuracy+23 Pet: Rng. Acc.+23','Pet: "Dbl. Atk."+5','Pet: Damage taken -4%',}},
-      body={ name="Pitre Tobe +3", augments={'Enhances "Overdrive" effect',}},
+      -- body={ name="Pitre Tobe +3", augments={'Enhances "Overdrive" effect',}},
+      body={ name="Taeon Tabard", augments={'Pet: Accuracy+21 Pet: Rng. Acc.+21','Pet: "Dbl. Atk."+5','Pet: Damage taken -4%',}},
       hands={ name="Taeon Gloves", augments={'Pet: Accuracy+23 Pet: Rng. Acc.+23','Pet: "Dbl. Atk."+5','Pet: Damage taken -4%',}},
       legs={ name="Taeon Tights", augments={'Pet: Accuracy+23 Pet: Rng. Acc.+23','Pet: "Dbl. Atk."+5','Pet: Damage taken -4%',}},
       feet={ name="Taeon Boots", augments={'Pet: Accuracy+21 Pet: Rng. Acc.+21','Pet: "Dbl. Atk."+5','Pet: Damage taken -4%',}},

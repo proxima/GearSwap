@@ -111,7 +111,7 @@ function job_setup()
 
     -- Magical spells with the typical Int mod
     blue_magic_maps.Magical = S{'Anvil Lightning','Blastbomb','Blazing Bound','Bomb Toss','Cursed Sphere',
-        'Droning Whirlwind','Embalming Earth','Entomb','Firespit','Foul Waters','Ice Break','Leafstorm',
+        'Droning Whirlwind','Embalming Earth','Firespit','Foul Waters','Ice Break','Leafstorm',
         'Maelstrom','Molting Plumage','Nectarous Deluge','Regurgitation','Rending Deluge','Scouring Spate',
         'Silent Storm','Spectral Floe','Subduction','Tem. Upheaval','Water Bomb'}
 
@@ -120,6 +120,8 @@ function job_setup()
 
     blue_magic_maps.MagicalLight = S{'Blinding Fulgor','Diffusion Ray','Radiant Breath','Rail Cannon',
         'Retinal Glare'}
+
+    blue_magic_maps.MagicalEarth = S{'Entomb'}
 
     -- Magical spells with a primary Mnd mod
     blue_magic_maps.MagicalMnd = S{'Acrid Stream','Magic Hammer','Mind Blast'}
@@ -202,7 +204,7 @@ function user_setup()
     state.IdleMode:options('Normal', 'DT', 'Refresh', 'Learning')
 
     state.CP = M(false, 'Capacity Points')
-    state.WeaponSet = M{['description']='Weapon Set', 'Naegling', 'Maxentius', 'Nuking'}
+    state.WeaponSet = M{['description']='Weapon Set', 'Naegling', 'Maxentius', 'Nuking', 'WpnLearning'}
     state.WeaponLock = M(false, 'Weapon Lock')
     state.MagicBurst = M(false, 'Magic Burst')
 
@@ -253,8 +255,11 @@ function user_setup()
     send_command('bind ^numpad1 input /ws "Sanguine Blade" <t>')
     send_command('bind ^numpad2 input /ws "Black Halo" <t>')
 
+    send_command('bind @o sat youcommand Muuhja "Sleepga"')
+    send_command('bind @p sat youcommand Zuuhja "Sleepga"')
+
     Cape = {}
-    Cape.REIVE      = { name="Cornflower Cape", augments={'MP+23','DEX+1','Accuracy+2','Blue Magic skill +9',}}
+    Cape.REIVE      = { name="Cornflower Cape", augments={'MP+17','DEX+4','Accuracy+1','Blue Magic skill +10',}}
     Cape.INT_MAB    = { name="Rosmerta's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Phys. dmg. taken-10%',}}
     Cape.ENMITY_EVA = { name="Rosmerta's Cape", augments={'AGI+20','Eva.+20 /Mag. Eva.+20','Evasion+10','Enmity+10','Evasion+15',}}
     Cape.TP_DW      = { name="Rosmerta's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dual Wield"+10','Phys. dmg. taken-10%',}}
@@ -318,6 +323,9 @@ function user_unload()
     send_command('unbind #9')
     send_command('unbind #0')
 
+    send_command('unbind @o')
+    send_command('unbind @p')
+
     send_command('lua u azureSets')
     send_command('lua u gearinfo')
 end
@@ -334,7 +342,7 @@ function init_gear_sets()
     sets.Enmity = {}
     sets.precast.JA['Provoke'] = sets.Enmity
 
-    sets.buff['Burst Affinity'] = {legs="Assim. Shalwar +1", feet="Hashi. Basmak +1"}
+    sets.buff['Burst Affinity'] = {legs="Assim. Shalwar +2", feet="Hashi. Basmak +1"}
     sets.buff['Diffusion'] = {feet="Luhlaza Charuqs +1"}
     sets.buff['Efflux'] = {legs="Hashishin Tayt +1"}
 
@@ -345,7 +353,7 @@ function init_gear_sets()
 
     sets.precast.FC = {
       ammo="Staunch Tathlum +1",
-      head="Pinga Crown +1",                                        -- 10
+      head="Carmine Mask +1",                                       -- 14
       body="Pinga Tunic +1",                                        -- 15
       hands="Pinga Mittens +1",                                     --  7
       legs="Pinga Pants +1",                                        -- 13
@@ -358,7 +366,7 @@ function init_gear_sets()
       left_ring="Gelatinous Ring +1",
       right_ring="Kishar Ring",                                     --  4
     }                                                               -- --
-                                                                    -- 72
+                                                                    -- 76
 
     sets.precast.FC['Blue Magic'] = set_combine(sets.precast.FC, {})
     sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, {})
@@ -479,7 +487,7 @@ function init_gear_sets()
       head="Nyame Helm",
       body={ name="Taeon Tabard", augments={'Spell interruption rate down -10%','Phalanx +3',}},
       hands="Nyame Gauntlets",
-      legs="Assim. Shalwar +1",
+      legs="Assim. Shalwar +2",
       feet={ name="Amalric Nails +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
       neck={ name="Loricate Torque +1", augments={'Path: A',}},
       waist="Emphatikos Rope",
@@ -554,6 +562,10 @@ function init_gear_sets()
     sets.midcast['Blue Magic'].MagicalLight = set_combine(sets.midcast['Blue Magic'].Magical, {
     })
 
+    sets.midcast['Blue Magic'].MagicalEarth = set_combine(sets.midcast['Blue Magic'].Magical, {
+      neck="Quanpur Necklace"
+    })
+
     sets.midcast['Blue Magic'].MagicalMnd = set_combine(sets.midcast['Blue Magic'].Magical, {
       left_ring={name="Stikini Ring +1", bag="wardrobe 2"},
       right_ring={name="Stikini Ring +1", bag="wardrobe 3"},
@@ -573,7 +585,7 @@ function init_gear_sets()
 
     sets.midcast['Blue Magic'].MagicAccuracy = {
       ammo="Pemphredo Tathlum",
-      head="Malignance Chapeau", -- AF+3 head
+      head="Assim. Keffiyeh +2",
       neck="Mirage Stole +2",
       left_ear="Regal Earring",
       right_ear="Digni. Earring",
@@ -583,23 +595,27 @@ function init_gear_sets()
       right_ring="Metamorph Ring +1",
       back="Aurist's Cape +1",  
       waist="Acuity Belt +1",
-      legs="Malignance Tights",
+      legs="Assim. Shalwar +2",
       feet="Jhakri Pigaches +2"
     }
 
     sets.midcast['Blue Magic'].Breath = set_combine(sets.midcast['Blue Magic'].Magical, {head="Luh. Keffiyeh +1"})
 
-    sets.midcast['Blue Magic'].StunPhysical = set_combine(sets.midcast['Blue Magic'].MagicAccuracy, {
-      ammo="Voluspa Tathlum",
-      head="Malignance Chapeau",
-      body="Malignance Tabard",
-      hands="Malignance Gloves",
-      legs="Malignance Tights",
-      feet="Malignance Boots",
-      neck="Mirage Stole +2",
-      ear2="Mache Earring +1",
-      -- waist="Eschan Stone",
-    })
+    sets.midcast['Blue Magic'].StunPhysical = {
+       ammo="Voluspa Tathlum",
+       head="Carmine Mask +1",
+       neck="Mirage Stole +2",
+       left_ear="Digni. Earring",
+       right_ear="Crepuscular Earring", 
+       body="Jhakri Robe +2", -- Luhlaza Jubbah +3?
+       hands="Jhakri Cuffs +2",
+       left_ring={name="Stikini Ring +1", bag="wardrobe 2"},
+       right_ring={name="Stikini Ring +1", bag="wardrobe 3"},
+       back="Aurist Cape +1",
+       waist="Eschan Stone",
+       legs="Jhakri Slops +2",
+       feet="Jhakri Pigaches +2"
+     }
 
     sets.midcast['Blue Magic'].StunMagical = sets.midcast['Blue Magic'].MagicAccuracy
 
@@ -639,12 +655,10 @@ function init_gear_sets()
 
     sets.midcast['Enhancing Magic'] = {
       ammo="Pemphredo Tathlum",
-      -- head="Carmine Mask +1",
-      body="Telchine Chas.",
-      hands="Telchine Gloves",
-      -- legs="Carmine Cuisses +1",
+      head="Carmine Mask +1",
+      legs="Carmine Cuisses +1",
       feet="Telchine Pigaches",
-      -- neck="Incanter's Torque",
+      neck="Melic Torque",
       ear1="Mimir Earring",
       -- ear2="Andoaa Earring",
       left_ring={name="Stikini Ring +1",bag="wardrobe 2"},
@@ -653,9 +667,13 @@ function init_gear_sets()
       -- waist="Olympus Sash",
     }
 
-    sets.midcast.EnhancingDuration = {
+    sets.midcast.EnhancingDuration = set_combine(sets.midcast['Enhancing Magic'], {
+      head="Telchine Cap",
+      body="Telchine Chas.",
+      hands="Telchine Gloves",
       legs="Telchine Braconi",
-    }
+      feet="Telchine Pigaches",
+    })
 
     sets.midcast.Refresh = set_combine(sets.midcast.EnhancingDuration, {head="Amalric Coif +1", waist="Gishdubar Sash"})
     sets.midcast.Stoneskin = set_combine(sets.midcast.EnhancingDuration, {})
@@ -673,7 +691,7 @@ function init_gear_sets()
       head="Amalric Coif +1",
       body={ name="Taeon Tabard", augments={'Spell interruption rate down -10%','Phalanx +3',}},
       hands="Regal Cuffs",
-      legs="Assim. Shalwar +1",
+      legs="Assim. Shalwar +2",
       feet={ name="Amalric Nails +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
       neck={ name="Loricate Torque +1", augments={'Path: A',}},
       waist="Emphatikos Rope",
@@ -690,7 +708,7 @@ function init_gear_sets()
     sets.midcast.Shellra = sets.midcast.Protect
 
     sets.midcast['Enfeebling Magic'] = set_combine(sets.midcast['Blue Magic'].MagicAccuracy, {
-      head=empty;
+      head=empty,
       body="Cohort Cloak +1",
       ear2="Vor Earring",
     })
@@ -701,6 +719,8 @@ function init_gear_sets()
     ----------------------------------------- Idle Sets --------------------------------------------
     ------------------------------------------------------------------------------------------------
 
+    sets.Learning = {hands="Assim. Bazu. +2"}
+
     -- Resting sets
     sets.resting = {}
 
@@ -710,6 +730,7 @@ function init_gear_sets()
       head={ name="Nyame Helm", augments={'Path: B',}},
       body="Nyame Mail",
       hands={ name="Nyame Gauntlets", augments={'Path: B',}},
+      -- hands="Assim. Bazu. +2",
       legs={ name="Nyame Flanchard", augments={'Path: B',}},
       feet={ name="Nyame Sollerets", augments={'Path: B',}},
       neck={ name="Bathy Choker +1", augments={'Path: A',}},
@@ -735,7 +756,9 @@ function init_gear_sets()
       right_ring={name="Stikini Ring +1",bag="wardrobe 3"},
     })
 
-    sets.idle.Town = sets.idle.DT
+    sets.Kiting = {legs="Carmine Cuisses +1"}
+
+    sets.idle.Town = set_combine(sets.idle.DT, sets.Kiting)
     sets.idle.Weak = sets.idle.DT
     sets.idle.Learning = set_combine(sets.idle, sets.Learning)
 
@@ -776,6 +799,7 @@ function init_gear_sets()
       ammo={ name="Coiste Bodhar", augments={'Path: A',}},
       head={ name="Adhemar Bonnet +1", augments={'STR+12','DEX+12','Attack+20',}},
       body={ name="Adhemar Jacket +1", augments={'STR+12','DEX+12','Attack+20',}},
+      -- hands="Assim. Bazu. +2",
       hands={ name="Adhemar Wrist. +1", augments={'STR+12','DEX+12','Attack+20',}},
       legs={ name="Samnuha Tights", augments={'STR+9','DEX+8','"Dbl.Atk."+2','"Triple Atk."+2',}},
       feet={ name="Herculean Boots", augments={'"Triple Atk."+3','Rng.Atk.+13','Quadruple Attack +3','Accuracy+13 Attack+13','Mag. Acc.+4 "Mag.Atk.Bns."+4',}},
@@ -834,6 +858,7 @@ function init_gear_sets()
       left_ear="Cessance Earring",
       right_ear="Telos Earring",
       body="Malignance Tabard",
+      -- hands="Assim. Bazu. +2",
       hands={ name="Adhemar Wrist. +1", augments={'STR+12','DEX+12','Attack+20',}},
       left_ring="Epona's Ring",
       right_ring="Chirich Ring +1",
@@ -887,8 +912,6 @@ function init_gear_sets()
     sets.magic_burst = set_combine(sets.midcast['Blue Magic'].Magical, {
     })
 
-    sets.Kiting = {}
-    sets.Learning = {hands="Assim. Bazu. +2"}
     sets.latent_refresh = {waist="Fucho-no-obi"}
 
     sets.buff.Doom = {
@@ -911,6 +934,7 @@ function init_gear_sets()
     sets.Naegling = {main="Naegling", sub="Machaera +2"}
     sets.Maxentius = {main="Maxentius", sub="Machaera +2"}
     sets.Nuking = {main="Bunzi's Rod", sub="Maxentius"}
+    sets.WpnLearning = {main="Firetongue", sub="Wind Knife"}
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -1107,12 +1131,6 @@ function customize_idle_set(idleSet)
         enable('back')
     end
 
-    if state.IdleMode.value == 'Learning' then
-        equip(sets.Learning)
-        disable('hands')
-    else
-        enable('hands')
-    end
     if state.Auto_Kite.value == true then
        idleSet = set_combine(idleSet, sets.Kiting)
     end
@@ -1239,7 +1257,8 @@ end
 
 -- State buff checks that will equip buff gear and mark the event as handled.
 function apply_ability_bonuses(spell, action, spellMap)
-    if state.Buff['Burst Affinity'] and (spellMap == 'Magical' or spellMap == 'MagicalLight' or spellMap == 'MagicalDark' or spellMap == 'Breath') then
+    if state.Buff['Burst Affinity'] and (spellMap == 'Magical' or spellMap == 'MagicalLight' or spellMap == 'MagicalDark' 
+      or spellMap == 'MagicalEarth' or spellMap == 'Breath') then
         if state.MagicBurst.value then
             equip(sets.magic_burst)
         end
