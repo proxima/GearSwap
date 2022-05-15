@@ -229,7 +229,6 @@ function get_sets()
     RDMCape.TP        = { name="Sucellos's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dual Wield"+10','Phys. dmg. taken-10%',}}
     RDMCape.MACC      = { name="Sucellos's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','MND+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}
     RDMCape.Aeolian   = { name="Sucellos's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}
-
     RDMCape.BlackHalo = { name="Sucellos's Cape", augments={'MND+20','Accuracy+20 Attack+20','MND+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}
 
     -- SETS
@@ -244,7 +243,6 @@ function get_sets()
     --include('AugGear.lua') -- I list all my Augmented gears in a sidecar file since it's shared across many jobs. 
 
     -- Leave weapons out of the idles and melee sets. You can/should add weapons to the casting sets though
-    -- Your idle set
     sets.me.idle.refresh = {
       ammo="Homiliary",
       head="Befouled Crown",
@@ -261,7 +259,6 @@ function get_sets()
       back=RDMCape.MACC
     }
 
-    -- Your idle DT set
     sets.me.idle.dt = set_combine(sets.me.idle.refresh, {
       ammo="Staunch Tathlum +1",
       head="Nyame Helm",
@@ -353,8 +350,8 @@ function get_sets()
       hands="Nyame Gauntlets",
       legs="Nyame Flanchard",
       feet="Nyame Sollerets",
-      neck={ name="Dls. Torque +2", augments={'Path: A',}},
-      waist="Grunfeld Rope",
+      neck="Republican platinum medal",
+      waist="Kentarch Belt +1",
       left_ear="Moonshade Earring",
       right_ear="Regal Earring",
       left_ring={ name="Metamor. Ring +1", augments={'Path: A',}},
@@ -369,8 +366,8 @@ function get_sets()
       hands="Nyame Gauntlets",
       legs="Nyame Flanchard",
       feet="Nyame Sollerets",
-      neck={ name="Dls. Torque +2", augments={'Path: A',}},
-      waist="Grunfeld Rope",
+      neck="Republican platinum medal",
+      waist="Kentarch Belt +1",
       left_ear="Regal Earring",
       right_ear="Sherida Earring",
       left_ring={ name="Metamor. Ring +1", augments={'Path: A',}},
@@ -387,11 +384,11 @@ function get_sets()
     sets.me["Sanguine Blade"] = {
       ammo="Pemphredo Tathlum",
       head="Pixie Hairpin +1",
-      body="Nyame Mail",
+      body="Amalric Doublet +1",
       hands="Jhakri Cuffs +2",
-      legs="Nyame Flanchard",
+      legs="Amalric Slops +1",
       feet="Nyame Sollerets",
-      neck="Sanctity Necklace",
+      neck="Sibyl Scarf",
       waist="Orpheus's Sash",
       left_ear="Regal Earring",
       right_ear="Malignance Earring",
@@ -403,11 +400,11 @@ function get_sets()
     sets.me["Red Lotus Blade"] = {
       ammo="Pemphredo Tathlum",
       head="Nyame Helm",
-      body="Nyame Mail",
+      body="Amalric Doublet +1",
       hands="Jhakri Cuffs +2",
-      legs="Nyame Flanchard",
+      legs="Amalric Slops +1",
       feet="Nyame Sollerets",
-      neck="Sanctity Necklace",
+      neck="Sibyl Scarf",
       waist="Orpheus's Sash",
       left_ear="Moonshade Earring",
       right_ear="Malignance Earring",
@@ -438,7 +435,7 @@ function get_sets()
       right_ear="Malignance Earring",
       left_ring="Freke Ring",
       right_ring="Epaminondas's Ring",
-      back=RDMCape.MACC
+      back=RDMCape.Aeolian
     }
 
     -- Feel free to add new weapon skills, make sure you spell it the same as in game. These are the only two I ever use though 
@@ -464,6 +461,7 @@ function get_sets()
       legs="Aya. Cosciales +2",
       feet={ name="Merlinic Crackows", augments={'Attack+22','"Fast Cast"+7',}},
       neck="Voltsurge Torque",
+      back="Fi Follet Cape +1",
       waist="Embla Sash",
       left_ear="Etiolation Earring",
       right_ear="Malignance Earring",
@@ -491,10 +489,10 @@ function get_sets()
     sets.precast.cure = set_combine(sets.precast.casting, {
     })
 
-  sets.precast.Impact = set_combine(sets.midcast.casting, {
-    head=empty, 
-    body="Twilight Cloak"
-  })
+    sets.precast.Impact = set_combine(sets.midcast.casting, {
+      head=empty, 
+      body="Twilight Cloak"
+    })
 
     ---------------------
     -- Ability Precasting
@@ -551,7 +549,7 @@ function get_sets()
       right_ear="Malignance Earring",
       left_ring="Freke Ring",
       right_ring={ name="Metamor. Ring +1", augments={'Path: A',}},
-      back=RDMCape.MACC      
+      back=RDMCape.Aeolian
     }
 
     -- used with toggle, default: F10
@@ -595,7 +593,7 @@ function get_sets()
       hands="Kaykaus Cuffs +1",
       left_ring={name="Stikini Ring +1",bag="wardrobe 2"},
       right_ring={name="Stikini Ring +1",bag="wardrobe 3"},
-      back=RDMCape.MACC,           -- Aurist's Cape +1
+      back="Aurist's Cape +1",
       waist="Obstinate Sash", 
       legs={ name="Chironic Hose", augments={'Mag. Acc.+21 "Mag.Atk.Bns."+21','"Fast Cast"+5','MND+11','Mag. Acc.+13','"Mag.Atk.Bns."+6',}},
       feet="Vitiation Boots +3",
@@ -697,6 +695,11 @@ function get_sets()
 
     -- Phalanx
     sets.midcast.phalanx =  set_combine(sets.midcast.enhancing.duration, {
+      head={ name="Taeon Chapeau", augments={'Phalanx +3',}},
+      body={ name="Taeon Tabard", augments={'Spell interruption rate down -10%','Phalanx +3',}},
+      hands={ name="Taeon Gloves", augments={'Phalanx +3',}},
+      legs={ name="Taeon Tights", augments={'Phalanx +3',}},
+      feet={ name="Taeon Boots", augments={'Phalanx +3',}},
     })
 
     -- Stoneskin
@@ -710,14 +713,21 @@ function get_sets()
     })
 
     sets.midcast.aquaveil = set_combine(sets.midcast.refresh, {
+      ammo="Staunch Tathlum +1",
       head="Amalric Coif +1",
-      body="Viti. Tabard +3",
+      body={ name="Taeon Tabard", augments={'Spell interruption rate down -10%','Phalanx +3',}},
       hands="Regal Cuffs",
+      feet={ name="Amalric Nails +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
       waist="Emphatikos Rope",
+      left_ear="Magnetic Earring",
+      right_ear={ name="Odnowa Earring +1", augments={'Path: A',}},
+      left_ring="Evanescence Ring",
+      right_ring="Defending Ring",
+      back={ name="Fi Follet Cape +1", augments={'Path: A',}},
     })
 
     sets.midcast["Drain"] = set_combine(sets.midcast.nuking.normal, {
-      main="Daybreak",
+      main="Bunzi's Rod",
       sub="Ammurapi shield",
       ammo="Pemphredo tathlum",
       head="Pixie hairpin +1",
@@ -745,7 +755,7 @@ function get_sets()
     }
 
     sets.midcast["Aspir"] = sets.midcast["Drain"]
- 	
+
     sets.midcast.cure = {} -- Leave This Empty
 
     -- Cure Potency
@@ -778,6 +788,7 @@ function get_sets()
     -- Regen
     ------------
     sets.midcast.regen = set_combine(sets.midcast.enhancing.duration, {
+      feet="Bunzi's Sabots",
     })
 
     ------------

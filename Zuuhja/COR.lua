@@ -137,7 +137,7 @@ function user_setup()
 
     gear.RAbullet = "Devastating Bullet"
     gear.RAccbullet = "Devastating Bullet"
-    gear.WSbullet = "Devastating Bullet"
+    gear.WSbullet = "Chrono Bullet"
     gear.MAbullet = "Living Bullet"
     gear.QDbullet = "Living Bullet"
     options.ammo_warning_limit = 10
@@ -184,13 +184,14 @@ function user_setup()
     set_lockstyle()
 
     Cape = {}
-    Cape.ROLL   = {name="Camulus's Mantle", augments={'INT+20','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','"Snapshot"+10','Mag. Evasion+15',}}
-    Cape.LEADEN = {name="Camulus's Mantle", augments={'AGI+20','Mag. Acc+20 /Mag. Dmg.+20','AGI+10','Weapon skill damage +10%','Phys. dmg. taken-10%'}}
-    Cape.SB     = {name="Camulus's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%','Phys. dmg. taken-10%'}}
-    Cape.RATK   = {name="Camulus's Mantle", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','AGI+10','Weapon skill damage +10%','Phys. dmg. taken-10%'}}
-    Cape.TP     = {name="Camulus's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}}
-    Cape.RTP    = {name="Camulus's Mantle", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','Rng.Acc.+10','"Store TP"+10','Phys. dmg. taken-10%',}}
-    Cape.DW     = {name="Camulus's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dual Wield"+10','Phys. dmg. taken-10%',}}
+    Cape.ROLL    = {name="Camulus's Mantle", augments={'INT+20','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','"Snapshot"+10','Mag. Evasion+15',}}
+    Cape.LEADEN  = {name="Camulus's Mantle", augments={'AGI+20','Mag. Acc+20 /Mag. Dmg.+20','AGI+10','Weapon skill damage +10%','Phys. dmg. taken-10%'}}
+    Cape.SB      = {name="Camulus's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%','Phys. dmg. taken-10%'}}
+    Cape.RATK    = {name="Camulus's Mantle", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','AGI+10','Weapon skill damage +10%','Phys. dmg. taken-10%'}}
+    Cape.TP      = {name="Camulus's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}}
+    Cape.RTP     = {name="Camulus's Mantle", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','Rng.Acc.+10','"Store TP"+10','Phys. dmg. taken-10%',}}
+    Cape.DW      = {name="Camulus's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dual Wield"+10','Phys. dmg. taken-10%',}}
+    Cape.AEOLIAN = {name="Camulus's Mantle", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}
 
     send_command('lua l gearinfo')
 
@@ -429,6 +430,7 @@ function init_gear_sets()
 
     sets.precast.WS['Aeolian Edge'] = set_combine(sets.precast.WS['Wildfire'], {ammo="Hauksbok Bullet",
       left_ear="Moonshade Earring",
+      back=Cape.AEOLIAN,
       waist="Orpheus's Sash",
     })
 
@@ -922,30 +924,19 @@ function job_aftercast(spell, action, spellMap, eventArgs)
 end
 
 function job_buff_change(buff,gain)
--- If we gain or lose any flurry buffs, adjust gear.
     if S{'flurry'}:contains(buff:lower()) then
         if not gain then
             flurry = nil
-            --add_to_chat(122, "Flurry status cleared.")
         end
         if not midaction() then
             handle_equipping_gear(player.status)
         end
     end
 
---    if buffactive['Reive Mark'] then
---        if gain then
---            equip(sets.Reive)
---            disable('neck')
---        else
---            enable('neck')
---        end
---    end
-
     if buff == "doom" then
         if gain then
             equip(sets.buff.Doom)
-            --send_command('@input /p Doomed.')
+            send_command('@input /p Doomed.')
             disable('ring1','ring2','waist')
         else
             enable('ring1','ring2','waist')
@@ -1015,12 +1006,6 @@ end
 
 -- Modify the default idle set after it was constructed.
 function customize_idle_set(idleSet)
-    -- if state.CP.current == 'on' then
-    --     equip(sets.CP)
-    --     disable('back')
-    -- else
-    --     enable('back')
-    -- end
     if state.Auto_Kite.value == true then
        idleSet = set_combine(idleSet, sets.Kiting)
     end
@@ -1103,10 +1088,8 @@ windower.register_event('action',
             if act.category == 4 then
                 local param = act.param
                 if param == 845 and flurry ~= 2 then
-                    --add_to_chat(122, 'Flurry Status: Flurry I')
                     flurry = 1
                 elseif param == 846 then
-                    --add_to_chat(122, 'Flurry Status: Flurry II')
                     flurry = 2
               end
             end

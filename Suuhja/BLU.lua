@@ -593,7 +593,7 @@ function init_gear_sets()
       hands="Regal Cuffs",
       left_ring={name="Stikini Ring +1",bag="wardrobe 2"},
       right_ring="Metamorph Ring +1",
-      back="Aurist's Cape +1",  
+      back="Aurist's Cape +1",
       waist="Acuity Belt +1",
       legs="Assim. Shalwar +2",
       feet="Jhakri Pigaches +2"
@@ -611,7 +611,7 @@ function init_gear_sets()
        hands="Jhakri Cuffs +2",
        left_ring={name="Stikini Ring +1", bag="wardrobe 2"},
        right_ring={name="Stikini Ring +1", bag="wardrobe 3"},
-       back="Aurist Cape +1",
+       back="Aurist's Cape +1",
        waist="Eschan Stone",
        legs="Jhakri Slops +2",
        feet="Jhakri Pigaches +2"
@@ -620,6 +620,11 @@ function init_gear_sets()
     sets.midcast['Blue Magic'].StunMagical = sets.midcast['Blue Magic'].MagicAccuracy
 
     sets.midcast['Blue Magic'].Healing = {
+      head="Pinga Crown +1",
+      body="Pinga Tunic +1",
+      hands="Pinga Mittens +1", 
+      legs="Pinga Pants +1",
+      feet="Pinga Pumps +1",
     }
 
     sets.midcast['Blue Magic'].HealingSelf = set_combine(sets.midcast['Blue Magic'].Healing, {

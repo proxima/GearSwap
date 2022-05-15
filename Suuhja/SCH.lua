@@ -235,7 +235,7 @@ function get_sets()
       neck="Loricate torque +1",
       body="Jhakri robe +2",     -- 4
       hands="Pinga mittens +1",
-      legs="Pinga pants +1",
+      legs="Agwu's slops",
       left_ring={name="Stikini Ring +1",bag="wardrobe 2"},
       right_ring={name="Stikini Ring +1",bag="wardrobe 3"},
       feet="Pinga pumps +1",
@@ -270,19 +270,19 @@ function get_sets()
     sets.me.idle.mdt = set_combine(sets.me.idle.dt, {
       main="Daybreak",
       sub="Ammurapi Shield",
-      ammo="Staunch tathlum +1",  -- 3 DT
+      ammo="Staunch tathlum +1",  --  3 DT
       head="Pinga crown +1",
       ear1="Lugalbanda earring",
-      ear2="Odnowa earring +1",   -- 3 DT, 2 MDT
+      ear2="Odnowa earring +1",   --  3 DT, 2 MDT
       neck="Warder's charm +1",
       body="Pinga Tunic +1",      
       hands="Pinga mittens +1",
-      legs="Pinga pants +1",
+      legs="Agwu's slops",        --  9 DT
       ring1="Defending ring",     -- 10 DT
       ring2="Gelatinous ring +1", --  7 PDT, -1MDT
       feet="Pinga pumps +1",
       waist="Carrier's Sash",
-      back=Lugh.DT
+      back=Lugh.DT                -- 10 PDT
     })
 
     -- Your MP Recovered Whilst Resting Set
@@ -303,17 +303,17 @@ function get_sets()
       feet="Nyame Sollerets",
       neck="Lissome Necklace",
       waist="Grunfeld Rope",
-      left_ear="Cessance Earring",
+      left_ear="Crepuscular Earring",
       right_ear="Telos Earring",
       left_ring={name="Chirich Ring +1",bag="wardrobe 2"},
       right_ring={name="Chirich Ring +1",bag="wardrobe 4"},
-      back=Lugh.INT_DA -- Make stp + dex version
+      back=Lugh.SHATTERSOUL -- Make stp + dex version
     }
 
     sets.me.melee_dw = set_combine(sets.me.melee, {
       left_ear="Eabani Earring",
       right_ear="Suppanomimi",
-      back=Lugh.INT_DA -- Make dw + dex version
+      back=Lugh.SHATTERSOUL -- Make dw + dex version
     })
       
     -- Weapon Skills sets just add them by name.
@@ -352,7 +352,7 @@ function get_sets()
     }
     
     sets.me["Shell Crusher"] = {
-      ammo="Staunch Tathlum +1",
+      ammo="Amar Cluster",
       head={ name="Nyame Helm", augments={'Path: B',}},
       body={ name="Agwu's Robe", augments={'Path: A',}},
       hands={ name="Gazu Bracelet +1", augments={'Path: A',}},
@@ -378,7 +378,7 @@ function get_sets()
       legs="Agwu's Slops",
       feet="Agwu's Pigaches",
       neck={ name="Argute Stole +2", augments={'Path: A',}},
-      waist="Hachirin-no-Obi",
+      waist="Orpheus's Sash",
       left_ear="Regal Earring",
       right_ear="Malignance Earring",
       left_ring="Freke Ring",
@@ -446,7 +446,7 @@ function get_sets()
       hands="Nyame Gauntlets",
       legs="Nyame Flanchard",
       feet="Nyame Sollerets",
-      neck={ name="Argute Stole +2", augments={'Path: A',}},
+      neck="Rep. Plat. Medal",
       waist="Luminary Sash",
       left_ear="Regal Earring",
       right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
@@ -458,6 +458,7 @@ function get_sets()
     sets.me["Realmrazer"] = set_combine(sets.me["Black Halo"], {
       neck="Fotia Gorget",
       waist="Fotia Belt",
+      left_ring={name="Chirich Ring +1",bag="wardrobe 2"},
       right_ring={name="Chirich Ring +1",bag="wardrobe 4"},
     })
 
@@ -535,7 +536,7 @@ function get_sets()
      right_ear="Malignance Earring",
      left_ring={name="Stikini Ring +1",bag="wardrobe 2"},
      right_ring={name="Stikini Ring +1",bag="wardrobe 3"},
-     back=INT_MAB
+     back=Lugh.INT_MAB
    }
    
    sets.midcast["Modus Veritas"] = sets.precast["Modus Veritas"]
@@ -798,7 +799,7 @@ function get_sets()
      right_ear="Malignance Earring",
      left_ring={name="Stikini Ring +1",bag="wardrobe 2"},
      right_ring={name="Stikini Ring +1",bag="wardrobe 3"},
-     back=Lugh.INT_MAB
+     back="Aurist's Cape +1"
    }
    
    sets.midcast.Dispelga = set_combine(sets.midcast.IntEnfeebling, {
@@ -863,7 +864,7 @@ function get_sets()
      left_ear="Regal Earring",
      left_ring={name="Stikini Ring +1",bag="wardrobe 2"},
      right_ring={name="Stikini Ring +1",bag="wardrobe 3"},
-     back=Lugh.MND_HASTE 
+     back="Aurist's Cape +1"
    }
 
    -- Enhancing, 501 skill atm w/ light arts, caps barspells

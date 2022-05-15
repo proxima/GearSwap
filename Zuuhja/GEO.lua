@@ -236,12 +236,23 @@ function get_sets()
    -- Anything you equip here will overwrite the perpetuation/refresh in that slot.
    -- No Luopan out
    -- they end in [idleMode] so it will derive from either the normal or the dt set depending in which mode you are then add the pieces filled in below.
-   sets.me.melee = set_combine(sets.me.idle[idleMode], {
-   })
+   sets.me.melee = {
+    ammo="Staunch Tathlum +1",
+    head={ name="Blistering Sallet +1", augments={'Path: A',}},
+    body={ name="Nyame Mail", augments={'Path: B',}},
+    hands={ name="Gazu Bracelet +1", augments={'Path: A',}},
+    legs={ name="Nyame Flanchard", augments={'Path: B',}},
+    feet={ name="Nyame Sollerets", augments={'Path: B',}},
+    neck="Sanctity Necklace",
+    waist="Windbuffet Belt +1",
+    left_ear="Crep. Earring",
+    right_ear="Telos Earring",
+    left_ring="Petrov Ring",
+    right_ring="Rajas Ring",
+    -- Cape
+   }
 
-   -- Luopan is out
-   sets.pan.melee = set_combine(sets.pan.idle[idleMode], {
-   }) 
+   sets.pan.melee = sets.me.melee
     
    -- Weapon Skill sets
    -- Example:
@@ -252,10 +263,24 @@ function get_sets()
    }
 
    sets.me["Exudation"] = {
-   } 
-   
-   -- Feel free to add new weapon skills, make sure you spell it the same as in game.
-  
+   }
+
+   sets.me["Cataclysm"] = {
+     ammo={ name="Ghastly Tathlum +1", augments={'Path: A',}},
+     head="Pixie Hairpin +1",
+     body={ name="Amalric Doublet +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
+     hands="Jhakri Cuffs +2",
+     legs={ name="Amalric Slops +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
+     feet={ name="Agwu's Pigaches", augments={'Path: A',}},
+     neck="Sibyl Scarf",
+     waist="Orpheus's Sash",
+     left_ear="Regal Earring",
+     right_ear="Malignance Earring",
+     left_ring="Freke Ring",
+     right_ring="Archon Ring",
+     back={ name="Nantosuelta's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Phys. dmg. taken-10%',}},
+   }
+     
    ---------------
    -- Casting Sets
    ---------------
@@ -428,7 +453,7 @@ function get_sets()
    sets.midcast.MB.acc = set_combine(sets.midcast.MB.normal, {
      hands="Agwu's Gages",
      feet="Agwu's Pigaches",
-     -- waist="Acuity belt +1",
+     waist="Acuity belt +1",
      left_ring="Metamorph Ring +1",   
    })
 
@@ -451,7 +476,7 @@ function get_sets()
      back={ name="Nantosuelta's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Phys. dmg. taken-10%',}},
    })
 
-   -- could use MND cape, stikinis, ammurapi, regal ear
+   -- could use MND cape
    sets.midcast.MndEnfeebling = set_combine(sets.midcast.casting, {
      main="Daybreak",
      sub="Ammurapi Shield",
@@ -478,6 +503,8 @@ function get_sets()
    -- Enhancing
    sets.midcast.enhancing = set_combine(sets.midcast.casting, {
      main="Gada",
+     sub="Ammurapi Shield",
+     neck="Melic Torque",
      right_ear="Mimir Earring",
      right_ring="Stikini Ring +1",
      head={ name="Telchine Cap", augments={'Enh. Mag. eff. dur. +10',}},
@@ -541,7 +568,7 @@ function get_sets()
      waist="Luminary Sash",
      left_ear="Mendi. Earring",
      right_ear="Meili Earring",
-     left_ring="Janniston Ring",
+     left_ring="Stikini Ring +1",
      right_ring="Lebeche Ring",   
    })
 
@@ -558,5 +585,4 @@ function get_sets()
    ------------
 
    -- I don't use aftercast sets, as we handle what to equip later depending on conditions using a function, eg, do we have a Luopan pan out?
-  
 end

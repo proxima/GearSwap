@@ -208,7 +208,7 @@ function init_gear_sets()
     hands={ name="Nyame Gauntlets", augments={'Path: B',}},
     legs={ name="Nyame Flanchard", augments={'Path: B',}},
     feet={ name="Nyame Sollerets", augments={'Path: B',}},
-    neck="Sanctity Necklace",
+    neck="Sibyl Scarf",
     waist="Orpheus's Sash",
     left_ear="Crematio Earring",
     right_ear="Friomisi Earring",

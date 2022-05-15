@@ -285,7 +285,8 @@ function init_gear_sets()
 
     -- Cure sets
     sets.midcast.CureSolace = {
-      main="Daybreak",
+      -- main="Daybreak",
+      main="Malignance Pole",
       sub="Genmei Shield",
       ammo="Staunch Tathlum +1",
       head={ name="Vanya Hood", augments={'MP+50','"Fast Cast"+10','Haste+2%',}},
@@ -326,7 +327,7 @@ function init_gear_sets()
       -- neck="Nuna Gorget +1",
       ring1="Stikini Ring +1",
       ring2="Stikini Ring +1",
-      waist="Luminary Sash",	
+      waist="Luminary Sash",
     })
 
     sets.midcast.CuragaWeather = set_combine(sets.midcast.CuragaNormal, {
@@ -578,8 +579,8 @@ function init_gear_sets()
     sets.idle.DT = set_combine(sets.idle, {
       main="Malignance pole",
       sub="Enki Strap",
-      -- neck="Loricate Torque +1",
-      neck="Cleric's torque +1",
+      neck="Loricate Torque +1",
+      -- neck="Cleric's torque +1",
       ammo="Staunch Tathlum +1",
       head="Nyame Helm",
       body="Nyame Mail",

@@ -272,7 +272,7 @@ function init_gear_sets()
       right_ear="Malignance Earring",
       left_ring="Kishar Ring",
       right_ring="Metamorph Ring +1",
-      back={ name="Taranus's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Phys. dmg. taken-10%',}},    
+      back="Aurist's Cape +1",
     }
     
     sets.midcast.Impact = set_combine(sets.midcast['Enfeebling Magic'], {

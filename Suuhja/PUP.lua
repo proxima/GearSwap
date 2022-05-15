@@ -45,7 +45,7 @@ function user_setup()
         Used when you are Engaged with Pet
         Used when you are Idle and Pet is Engaged
     ]]
-    state.HybridMode:options("Normal", "Acc", "TP", "DT", "Regen", "Ranged")
+    state.HybridMode:options("Normal", "DW", "TP", "DT", "Regen", "Ranged")
 
     --[[
         Alt-F12 - Turns off any emergency mode
@@ -505,7 +505,7 @@ function init_gear_sets()
       hands={ name="Nyame Gauntlets", augments={'Path: B',}},
       legs={ name="Nyame Flanchard", augments={'Path: B',}},
       feet={ name="Nyame Sollerets", augments={'Path: B',}},
-      neck="Saevus Pendant +1",
+      neck="Sibyl Scarf",
       waist="Orpheus's Sash",
       left_ear="Friomisi Earring",
       right_ear="Crematio Earring",
@@ -554,12 +554,16 @@ function init_gear_sets()
         back=Visucius.MasterDA
     }
 
-    -------------------------------------Acc
+    -------------------------------------DW
     --[[
         Offense Mode = Master
-        Hybrid Mode = Acc
+        Hybrid Mode = DW
     ]]
-    sets.engaged.Master.Acc = sets.engaged.Master
+    sets.engaged.Master.DW = set_combine(sets.engaged.Master, {
+      left_ear="Eabani Earring",
+      right_ear="Suppanomimi",
+      feet="Hizamaru Sune-ate +2"
+    })
 
     -------------------------------------TP
     --[[
@@ -586,19 +590,21 @@ function init_gear_sets()
         Offense Mode = Master
         Hybrid Mode = DT
     ]]
+
+    -- 26 Haste, 50 PDT, 25 SB, 25 SBII
     sets.engaged.Master.DT = {
-        head="Malignance Chapeau", -- 6
-        body="Malignance Tabard", -- 9
-        hands="Malignance Gloves", -- 5
-        legs = "Malignance Tights", -- 7
-        feet="Malignance Boots", -- 4
-        neck="Shulmanu Collar",
-        waist="Moonbow Belt +1", -- 6
-        left_ear={name="Mache Earring +1",bag="wardrobe 4"},
-        right_ear={name="Mache Earring +1",bag="wardrobe 5"},
-        left_ring="Niqmaddu Ring",
-        right_ring="Gere Ring",
-        back=Visucius.MasterDA
+      head={ name="Nyame Helm", augments={'Path: B',}},
+      body="Malignance Tabard",
+      hands="Malignance Gloves",
+      legs={ name="Mpaca's Hose", augments={'Path: A',}},
+      feet="Malignance Boots",
+      neck={ name="Bathy Choker +1", augments={'Path: A',}},
+      waist="Moonbow Belt +1",
+      left_ear="Mache Earring +1",
+      right_ear="Digni. Earring",
+      left_ring="Niqmaddu Ring",
+      right_ring="Chirich Ring +1",
+      back=Visucius.MasterDA
     }
        
     ----------------------------------------------------------------------------------
@@ -632,12 +638,12 @@ function init_gear_sets()
       back=Visucius.PetDT
     }
 
-    -------------------------------------Acc
+    -------------------------------------DW
     --[[
         Offense Mode = MasterPet
-        Hybrid Mode = Acc
+        Hybrid Mode = DW
     ]]
-    sets.engaged.MasterPet.Acc = sets.engaged.MasterPet
+    sets.engaged.MasterPet.DW = sets.engaged.Master.DW
     
     -------------------------------------TP
     --[[
@@ -786,9 +792,9 @@ function init_gear_sets()
 
     --[[
         Idle Mode = Idle
-        Hybrid Mode = Acc
+        Hybrid Mode = DW
     ]]
-    sets.idle.Pet.Engaged.Acc = {
+    sets.idle.Pet.Engaged.DW = {
         head=Relic_Pitre.Head_PRegen,
         body= Relic_Pitre.Body_PTP,
         hands="Mpaca's Gloves",
