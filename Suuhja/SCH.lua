@@ -231,14 +231,14 @@ function get_sets()
       ammo="Homiliary",
       head="Befouled crown",
       ear1="Etiolation earring",
-      ear2="Odnowa earring +1",  -- 3 DT, 2 MDT
+      ear2="Odnowa earring +1",
       neck="Loricate torque +1",
-      body="Jhakri robe +2",     -- 4
-      hands="Pinga mittens +1",
+      body="Jhakri robe +2",
+      hands="Nyame Gauntlets",
       legs="Agwu's slops",
       left_ring={name="Stikini Ring +1",bag="wardrobe 2"},
       right_ring={name="Stikini Ring +1",bag="wardrobe 3"},
-      feet="Pinga pumps +1",
+      feet="Nyame Sollerets",
       waist="Carrier's Sash",
       back=Lugh.DT
     }

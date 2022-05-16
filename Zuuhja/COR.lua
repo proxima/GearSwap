@@ -132,10 +132,10 @@ function user_setup()
     state.WeaponskillMode:options('Normal', 'Acc')
     state.IdleMode:options('Normal', 'DT', 'Refresh')
 
-    state.WeaponSet = M{['description']='Weapon Set', 'DeathPenalty_M', 'DeathPenalty_R', 'Armageddon_M', 'Armageddon_R', 'Fomalhaut', 'Anarchy', 'Aeolian', 'Rolls'}
+    state.WeaponSet = M{['description']='Weapon Set', 'DeathPenalty_M', 'DeathPenalty_R', 'Armageddon_M', 'Armageddon_R', 'Fomalhaut_M', 'Fomalhaut_R', 'Anarchy', 'Aeolian', 'Rolls'}
     state.WeaponLock = M(false, 'Weapon Lock')
 
-    gear.RAbullet = "Devastating Bullet"
+    gear.RAbullet = "Chrono Bullet"
     gear.RAccbullet = "Devastating Bullet"
     gear.WSbullet = "Chrono Bullet"
     gear.MAbullet = "Living Bullet"
@@ -193,6 +193,11 @@ function user_setup()
     Cape.DW      = {name="Camulus's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dual Wield"+10','Phys. dmg. taken-10%',}}
     Cape.AEOLIAN = {name="Camulus's Mantle", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}
 
+    Rostam = {}
+    Rostam.A = {name="Rostam", bag="wardrobe2"}
+    Rostam.B = {name="Rostam", bag="wardrobe5"}
+    Rostam.C = {name="Rostam", bag="wardrobe4"}
+    
     send_command('lua l gearinfo')
 
     state.Auto_Kite = M(false, 'Auto_Kite')
@@ -409,7 +414,7 @@ function init_gear_sets()
       hands="Nyame Gauntlets",
       legs="Nyame Flanchard",
       feet="Nyame Sollerets",
-      neck={ name="Comm. Charm +2", augments={'Path: A',}},
+      neck="Republican platinum medal",
       waist={ name="Sailfi Belt +1", augments={'Path: A',}},
       left_ear="Ishvara Earring",
       right_ear={ name="Moonshade Earring", augments={'"Mag.Atk.Bns."+4','TP Bonus +250',}},
@@ -442,7 +447,6 @@ function init_gear_sets()
     sets.midcast.SpellInterrupt = {}
     sets.midcast.Utsusemi = sets.midcast.SpellInterrupt
     sets.midcast.Cure = {}
-
 
     sets.midcast.CorsairShot = {ammo="Hauksbok Bullet",
       head="Nyame Helm",
@@ -626,7 +630,7 @@ function init_gear_sets()
       legs="Malignance Tights",
       feet="Malignance Boots",
       neck="Iskur Gorget",
-      waist="Windbuffet Belt +1",
+      waist="Reiki Yotai",
       left_ear="Crepuscular Earring",
       right_ear="Telos Earring",
       left_ring="Ilabrat Ring",
@@ -760,20 +764,23 @@ function init_gear_sets()
 
     sets.TreasureHunter = {waist="Chaac Belt"}
 
-    sets.DeathPenalty_M = {main={name="Rostam", bag="wardrobe2"}, sub="Tauret", ranged="Death Penalty"}
-    sets.DeathPenalty_M.Acc = {main={name="Rostam", bag="wardrobe2"}, sub={name="Rostam", bag="wardrobe4"}, ranged="Death Penalty"}
+    sets.DeathPenalty_M = {main=Rostam.B, sub="Tauret", ranged="Death Penalty"}
+    sets.DeathPenalty_M.Acc = {main=Rostam.B, sub=Rostam.A, ranged="Death Penalty"}
 
-    sets.DeathPenalty_R = {main={name="Rostam", bag="wardrobe2"}, sub="Tauret", ranged="Death Penalty"}
-    sets.DeathPenalty_R.Acc = {main={name="Rostam", bag="wardrobe2"}, sub={name="Rostam", bag="wardrobe4"}, ranged="Death Penalty"}
+    sets.DeathPenalty_R = {main=Rostam.A, sub="Tauret", ranged="Death Penalty"}
+    sets.DeathPenalty_R.Acc = {main=Rostam.A, sub=Rostam.B, ranged="Death Penalty"}
 
     sets.Armageddon_M = {main="Naegling", sub="Tauret", ranged="Armageddon"}
-    sets.Armageddon_M.Acc = {main={name="Rostam", bag="wardrobe2"}, sub={name="Rostam", bag="wardrobe4"}, ranged="Armageddon"}
+    sets.Armageddon_M.Acc = {main=Rostam.B, sub=Rostam.A, ranged="Armageddon"}
 
-    sets.Armageddon_R = {main={name="Rostam", bag="wardrobe2"}, sub={name="Rostam", bag="wardrobe4"}, ranged="Armageddon"}
+    sets.Armageddon_R = {main=Rostam.A, sub=Rostam.B, ranged="Armageddon"}
     sets.Armageddon_R.Acc = sets.Armageddon_R
 
-    sets.Fomalhaut = {main={name="Rostam", bag="wardrobe2"}, sub={name="Rostam", bag="wardrobe4"}, ranged="Fomalhaut"}
-    sets.Fomalhaut.Acc = sets.Fomalhaut
+    sets.Fomalhaut_M = {main=Rostam.B, sub=Rostam.A, ranged="Fomalhaut"}
+    sets.Fomalhaut_M.Acc = sets.Fomalhaut_M
+    
+    sets.Fomalhaut_R = {main=Rostam.A, sub=Rostam.B, ranged="Fomalhaut"}
+    sets.Fomalhaut_R.Acc = sets.Fomalhaut_R
 
     sets.Anarchy = {main="Naegling", sub="Gleti's Knife", ranged="Anarchy +2"}
     sets.Anarchy.Acc = {main="Naegling", sub="Gleti's Knife", ranged="Anarchy +2"}
@@ -781,13 +788,11 @@ function init_gear_sets()
     sets.Rolls = {main={name="Rostam", bag="wardrobe4"}, sub={name="Rostam", bag="wardrobe2", priority=1}, ranged="Compensator"}
     sets.Rolls.Acc = sets.Rolls
 
-    sets.Aeolian = {main={name="Rostam", bag="wardrobe2"}, sub="Tauret", ranged="Anarchy +2"}
-    sets.Aeolian.Acc = {main={name="Rostam", bag="wardrobe2"}, sub="Tauret", ranged="Anarchy +2"}
+    sets.Aeolian = {main=Rostam.B, sub="Tauret", ranged="Anarchy +2"}
+    sets.Aeolian.Acc = {main=Rostam.B, sub=Rostam.A, ranged="Anarchy +2"}
 
     sets.DefaultShield = {sub="Nusku Shield"}
-
 end
-
 
 -------------------------------------------------------------------------------------------------------------------
 -- Job-specific hooks for standard casting events.

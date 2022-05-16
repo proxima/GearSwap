@@ -228,12 +228,12 @@ function init_gear_sets()
     sets.precast.FC = {
       main="Cath Palug Hammer",
       sub="Genmei Shield",
-      ammo="Impatiens",
+      ammo="Sapience Orb",
       head={ name="Vanya Hood", augments={'MP+50','"Fast Cast"+10','Haste+2%',}},
       body="Inyanga Jubbah +2",
       hands="Fanatic Gloves",
       legs="Aya. Cosciales +2",
-      feet={ name="Chironic Slippers", augments={'Mag. Acc.+21','"Fast Cast"+7','MND+9',}},
+      feet="Nyame Sollerets",
       neck="Cleric's torque +1",
       waist="Embla Sash",
       left_ear="Etiolation Earring",
@@ -251,7 +251,7 @@ function init_gear_sets()
       sub="Sors shield",
       left_ear="Mendicant's Earring", --  5  
       legs="Ebers pantaloons +1",     -- 13, 5
-      feet="Vanya Clogs",             -- 15, 3
+      feet={ name="Vanya Clogs", augments={'"Cure" potency +5%','"Cure" spellcasting time -15%','"Conserve MP"+6',}}, -- 15, 3
     })
 
     sets.precast.FC.Curaga = sets.precast.FC.Cure
@@ -316,17 +316,13 @@ function init_gear_sets()
     sets.midcast.CureWeather = set_combine(sets.midcast.CureNormal, {
       main="Chatoyant Staff",
       sub="Enki Strap",
-      hands="Kaykaus Cuffs +1",
-      ear2="Nourish. Earring +1",
       back="Twilight Cape",
-      waist="Hachirin-no-Obi",	
+      waist="Hachirin-no-Obi",
     })
 
     sets.midcast.CuragaNormal = set_combine(sets.midcast.CureNormal, {
       body="Theo. Bliaut +2",
-      -- neck="Nuna Gorget +1",
       ring1="Stikini Ring +1",
-      ring2="Stikini Ring +1",
       waist="Luminary Sash",
     })
 
@@ -338,7 +334,7 @@ function init_gear_sets()
       back="Twilight Cape",
       ring1="Stikini Ring +1",
       ring2="Stikini Ring +1",
-      waist="Hachirin-no-Obi",	
+      waist="Hachirin-no-Obi",
     })
 
     --sets.midcast.CureMelee = sets.midcast.CureSolace
@@ -424,25 +420,14 @@ function init_gear_sets()
 
     sets.midcast.Refresh = set_combine(sets.midcast.EnhancingDuration, {
       waist="Gishdubar Sash",
-      back="Grapevine Cape",
     })
 
     sets.midcast.Stoneskin = set_combine(sets.midcast.EnhancingDuration, {
       left_ear="Earthcry Earring",
-      neck="Nodens Gorget",
       waist="Siegel Sash",
     })
 
     sets.midcast.Aquaveil = set_combine(sets.midcast.EnhancingDuration, {
-      main="Vadose Rod",
-      sub="Ammurapi Shield",
-      ammo="Staunch Tathlum +1",
-      ear1="Halasz Earring",
-      ring1="Freke Ring",
-      ring2="Evanescence Ring",
-      head="Chironic hat",
-      hands="Regal Cuffs",
-      waist="Emphatikos Rope",
     })
 
     sets.midcast.Auspice = set_combine(sets.midcast.EnhancingDuration, {
@@ -463,7 +448,6 @@ function init_gear_sets()
     })
 
     sets.midcast.Protect = set_combine(sets.midcast.ConserveMP, sets.midcast.EnhancingDuration, {
-      ring1="Sheltered Ring",
     })
 
     sets.midcast.Protectra = sets.midcast.Protect
@@ -473,7 +457,7 @@ function init_gear_sets()
     sets.midcast['Divine Magic'] = {
       main="Daybreak",
       sub="Ammurapi Shield",
-      ammo="Pemphredo Tathlum",
+      ammo="Staunch Tathlum +1",
       head="Theophany Cap +2",
       body="Theo. Bliaut +2",
       hands="Piety Mitts +3",
@@ -498,7 +482,7 @@ function init_gear_sets()
       head="Pixie Hairpin +1",
       body="Theo. Bliaut +2",
       hands="Theophany Mitts +2",
-      legs={ name="Chironic Hose", augments={'Mag. Acc.+21 "Mag.Atk.Bns."+21','"Fast Cast"+5','MND+11','Mag. Acc.+13','"Mag.Atk.Bns."+6',}},
+      legs="Chironic Hose",
       feet="Theo. Duckbills +2",
       neck="Erra Pendant",
       ear1="Malignance Earring",
@@ -533,11 +517,10 @@ function init_gear_sets()
     sets.midcast.Dispelga = set_combine(sets.midcast.IntEnfeebles, {main="Daybreak", sub="Ammurapi Shield"})
 
     sets.midcast.Impact = {
-      main="Maxentius",
+      main="Daybreak",
       sub="Ammurapi Shield",
       head=empty,
       body="Twilight Cloak",
-      hands="Raetic Bangles +1",
       legs="Th. Pant. +3",
       feet="Theo. Duckbills +2",
       ring1="Freke Ring",
@@ -546,7 +529,6 @@ function init_gear_sets()
 
     -- Initializes trusts at iLvl 119
     sets.midcast.Trust = sets.precast.FC
-
 
     -- Sets to return to when not performing an action.
 
@@ -566,12 +548,11 @@ function init_gear_sets()
       hands={ name="Chironic Gloves", augments={'"Blood Boon"+10','"Dual Wield"+3','"Refresh"+2','Accuracy+7 Attack+7','Mag. Acc.+15 "Mag.Atk.Bns."+15',}},
       legs={ name="Chironic Hose", augments={'Enmity-3','Rng.Acc.+11 Rng.Atk.+11','"Refresh"+2','Mag. Acc.+7 "Mag.Atk.Bns."+7',}},
       feet={ name="Chironic Slippers", augments={'Pet: STR+6','Enmity+3','"Refresh"+2','Accuracy+8 Attack+8',}},
-      -- neck="Warder's Charm +1",
-      neck="Cleric's torque +1",
+      neck="Warder's Charm +1",
       waist="Carrier's Sash",
       back={ name="Alaunus's Cape", augments={'MND+20','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Haste+10','Mag. Evasion+15',}},
       left_ear={ name="Odnowa Earring +1", augments={'Path: A',}},
-      -- right_ear={ name="Moonshade Earring", augments={'HP+25','Latent effect: "Refresh"+1',}},
+      right_ear="Tuisto Earring",
       left_ring="Defending Ring",
       right_ring="Gelatinous Ring +1", -- 7 dt
     }
@@ -580,7 +561,6 @@ function init_gear_sets()
       main="Malignance pole",
       sub="Enki Strap",
       neck="Loricate Torque +1",
-      -- neck="Cleric's torque +1",
       ammo="Staunch Tathlum +1",
       head="Nyame Helm",
       body="Nyame Mail",

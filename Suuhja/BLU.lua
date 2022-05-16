@@ -938,7 +938,7 @@ function init_gear_sets()
 
     sets.Naegling = {main="Naegling", sub="Machaera +2"}
     sets.Maxentius = {main="Maxentius", sub="Machaera +2"}
-    sets.Nuking = {main="Bunzi's Rod", sub="Maxentius"}
+    sets.Nuking = {main="Maxentius", sub="Bunzi's Rod"}
     sets.WpnLearning = {main="Firetongue", sub="Wind Knife"}
 end
 

@@ -183,7 +183,7 @@ function init_gear_sets()
       back=Cape.SB
     }
 
-    sets.precast.WS['Aeolian Edge'] = {
+    sets.precast.WS['Aeolian Edge'] = {ammo="Hauksbok Bullet",
       head={ name="Nyame Helm", augments={'Path: B',}},
       body={ name="Nyame Mail", augments={'Path: B',}},
       hands={ name="Nyame Gauntlets", augments={'Path: B',}},

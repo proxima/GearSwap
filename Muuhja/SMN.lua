@@ -5,8 +5,7 @@
 -- PetDT: Sacrifice refresh to reduce avatar's damage taken. WARNING: Selenian Cap drops you below 119, use with caution!
 -- DD: When melee mode is on and you're engaged, uses TP gear. Otherwise, avatar melee gear.
 -- Favor: Uses Beckoner's Horn +1 and max smn skill to boost the favor effect.
--- Zendik: Favor build with the Zendik Robe added in, for Shiva's Favor in manaburn parties. (Shut up, it sounded like a good idea at the time)
- 
+
 -- Additional Bindings:
 -- F9 - Toggles between a subset of IdleModes (Refresh > DT > PetDT)
 -- F10 - Toggles MeleeMode (When enabled, equips Nirvana and Elan+1, then disables those 2 slots from swapping)
@@ -77,7 +76,7 @@ function get_sets()
       waist="Carrier's Sash",
       left_ear="Odnowa Earring +1",
       right_ear="Lugalbanda Earring",
-      left_ring="Gelatinous Ring",
+      left_ring="Gelatinous Ring +1",
       right_ring="Defending Ring",
       back={ name="Campestres's Cape", augments={'Pet: M.Acc.+20 Pet: M.Dmg.+20','Pet: Magic Damage+10','Damage taken-5%',}},
     }
@@ -145,121 +144,41 @@ function get_sets()
     }
  
     sets.midcast.SiphonZodiac = set_combine(sets.midcast.Siphon, { ring1="Zodiac Ring" })
- 
     sets.midcast.SiphonWeather = set_combine(sets.midcast.Siphon, { main="Chatoyant Staff" })
-   
     sets.midcast.SiphonWeatherZodiac = set_combine(sets.midcast.SiphonZodiac, { main="Chatoyant Staff" })
  
     -- Summoning Midcast, cap spell interruption if possible (Baayami Robe gives 100, need 2 more)
     -- PDT isn't a bad idea either, so don't overwrite a lot from the DT set it inherits from.
     sets.midcast.Summon = set_combine(sets.DT_Base, {
-        body="Baayami Robe",
-        legs="Lengo Pants"
+      body="Baayami Robe",
     })
  
     -- If you ever lock your weapon, keep that in mind when building cure potency set.
     sets.midcast.Cure = {
-      main="Nirvana",
-      sub="Oneiros Grip",
-      ammo="Sancus Sachet +1",
-      head={ name="Vanya Hood", augments={'MP+50','"Cure" potency +7%','Enmity-6',}},
-      neck="Nodens Gorget",
-      ear1="Mendi. Earring",
-      ear2="Novia Earring",
-      body="Zendik Robe",
-      hands={ name="Telchine Gloves", augments={'"Fast Cast"+5','Enh. Mag. eff. dur. +10',}},
-      ring1="Lebeche Ring",
-      ring2="Menelaus's Ring",
-      back="Tempered Cape +1",
-      waist="Witful Belt",
-      legs="Assiduity Pants +1",
-      feet={ name="Vanya Clogs", augments={'MP+50','"Cure" potency +7%','Enmity-6',}}
     }
  
     sets.midcast.Cursna = set_combine(sets.precast.FC, {
-      neck="Debilis Medallion",
-      ear1="Healing Earring",
-      ear2="Beatific Earring",
-      ring1="Menelaus's Ring",
-      ring2="Haoma's Ring",
-      back="Tempered Cape +1",
-      waist="Bishop's Sash",
-      feet={ name="Vanya Clogs", augments={'Healing magic skill +20','"Cure" spellcasting time -7%','Magic dmg. taken -3',}}
     })
    
-    -- Just a standard set for spells that have no set
     sets.midcast.EnmityRecast = set_combine(sets.precast.FC, {
-      main="Nirvana",
-      ear1="Novia Earring",
-      body={ name="Apo. Dalmatica +1", augments={'Summoning magic skill +20','Enmity-6','Pet: Damage taken -4%',}}
     })
  
     sets.midcast.Enfeeble = {
-      main={ name="Gada", augments={'"Fast Cast"+2','MND+13','Mag. Acc.+20','"Mag.Atk.Bns."+14',}},
-      sub="Ammurapi Shield",
-      head="Inyanga Tiara +2",
-      neck="Erra Pendant",
-      ear1="Malignance Earring",
-      ear2="Dignitary's Earring",
-      body="Inyanga Jubbah +2",
-      hands="Inyanga Dastanas +2",
-      ring1="Stikini Ring +1",
-      ring2="Stikini Ring +1",
-      back={ name="Campestres's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','"Fast Cast"+10',}},
-      waist="Luminary Sash",
-      legs="Inyanga Shalwar +2",
-      feet="Skaoi Boots"
     }
     
     sets.midcast.Enhancing = {
-      main={ name="Gada", augments={'Enh. Mag. eff. dur. +6','DEX+1','Mag. Acc.+5','"Mag.Atk.Bns."+18','DMG:+4',}},
-      sub="Ammurapi Shield",
-      head={ name="Telchine Cap", augments={'Pet: "Mag.Atk.Bns."+19','"Elemental Siphon"+25','Enh. Mag. eff. dur. +10',}},
-      neck="Incanter's Torque",
-      ear1="Mimir Earring",
-      ear2="Andoaa Earring",
-      body={ name="Telchine Chas.", augments={'"Conserve MP"+5','Enh. Mag. eff. dur. +10',}},
-      hands={ name="Telchine Gloves", augments={'"Fast Cast"+5','Enh. Mag. eff. dur. +10',}},
-      ring1="Stikini Ring +1",
-      ring2="Stikini Ring +1",
-      back="Merciful Cape",
-      waist="Embla Sash",
-      legs={ name="Telchine Braconi", augments={'"Conserve MP"+4','Enh. Mag. eff. dur. +10',}},
-      feet={ name="Telchine Pigaches", augments={'"Conserve MP"+3','Enh. Mag. eff. dur. +9',}}
     }
  
     sets.midcast.Stoneskin = set_combine(sets.midcast.Enhancing, {
-      neck="Nodens Gorget",
-      ear2="Earthcry Earring",
-      waist="Siegel Sash",
-      --legs="Shedir Seraweels"
     })
  
     sets.midcast.Nuke = {
-      main={ name="Grioavolr", augments={'"Fast Cast"+6','INT+2','"Mag.Atk.Bns."+17',}},
-      sub="Niobid Strap",
-      head="Cath Palug Crown",
-      neck="Eddy Necklace",
-      ear1="Malignance Earring",
-      ear2="Regal Earring",
-      body={ name="Amalric Doublet +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
-      hands={ name="Amalric Gages +1", augments={'INT+12','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
-      ring1="Freke Ring",
-      ring2="Shiva Ring +1",
-      back={ name="Campestres's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','"Fast Cast"+10',}},
-      waist="Eschan Stone",
-      legs={ name="Amalric Slops +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
-      feet={ name="Amalric Nails +1", augments={'Mag. Acc.+20','"Mag.Atk.Bns."+20','"Conserve MP"+7',}}
     }
  
     sets.midcast["Refresh"] = set_combine(sets.midcast.Enhancing, {
-        head="Amalric Coif +1",
-        waist="Gishdubar Sash"
     })
  
     sets.midcast["Aquaveil"] = set_combine(sets.midcast.Enhancing, {
-        main="Vadose Rod",
-        head="Amalric Coif +1"
     })
  
     sets.midcast["Dispelga"] = set_combine(sets.midcast.Enfeeble, {
@@ -267,16 +186,13 @@ function get_sets()
       sub="Ammurapi Shield"
     })
  
-    sets.midcast["Mana Cede"] = { hands="Beckoner's Bracers +1" }
- 
+    sets.midcast["Mana Cede"] = { hands="Beckoner's Bracers +1" } 
     sets.midcast["Astral Flow"] = { head="Glyphic Horn" }
    
     -- ===================================================================================================================
     --  Weaponskills
     -- ===================================================================================================================
  
-    -- I stack magic accuracy here to land the defense down effect, rather than MAB for damage.
-    -- It's a personal preference, use whatever you prefer.
     sets.midcast["Garland of Bliss"] = {
       head="Nyame Helm",
       neck="Sanctity Necklace",
@@ -292,18 +208,15 @@ function get_sets()
       feet="Nyame Sollerets"
     }
  
-    -- My set focuses on accuracy here to make skillchains with Ifrit
-    -- Just like Garland, it's not hard to improve on the damage from this set if that's what you're after.
     sets.midcast["Shattersoul"] = {
       head="Nyame Helm",
       neck="Fotia Gorget",
-      ear1="Zennaroi Earring",
+      ear1="Crepuscular Earring",
       ear2="Telos Earring",
       body="Nyame Mail",
       hands="Nyame Gauntlets",
       ring1="Freke Ring",
-      ring2="Shiva Ring +1",
-      back={ name="Campestres's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10',}},
+      ring2="Metamorph Ring +1",
       waist="Fotia Belt",
       legs="Nyame Flanchard",
       feet="Nyame Sollerets"
@@ -315,8 +228,6 @@ function get_sets()
  
     -- Main physical pact set (Volt Strike, Pred Claws, etc.)
     -- Prioritize BP Damage & Pet: DA
-    -- Strong Alternatives:
-    -- Apogee Crown, Apogee Pumps, Convoker's Doublet, Apogee Dalmatica, Shulmanu Collar
     sets.pet_midcast.Physical_BP = {
       main="Nirvana",
       sub="Elan Strap +1",
@@ -345,27 +256,25 @@ function get_sets()
  
     -- Physical pacts which benefit more from TP than Pet:DA (like single-hit BP)
     sets.pet_midcast.Physical_BP_TP = set_combine(sets.pet_midcast.Physical_BP, {
-        head={ name="Apogee Crown +1", augments={'MP+80','Pet: Attack+35','Blood Pact Dmg.+8',}},
-        ear2="Gelos Earring",
-        body="Convoker's Doublet +3",
-        right_ring="Varar Ring +1",
-        waist="Regal Belt",
-        legs="Enticer's Pants",
-        feet={ name="Apogee Pumps +1", augments={'MP+80','Pet: Attack+35','Blood Pact Dmg.+8',}}
+      head={ name="Apogee Crown +1", augments={'MP+80','Pet: Attack+35','Blood Pact Dmg.+8',}},
+      ear2="Gelos Earring",
+      body="Convoker's Doublet +3",
+      right_ring="Varar Ring +1",
+      waist="Regal Belt",
+      legs="Enticer's Pants",
+      feet={ name="Apogee Pumps +1", augments={'MP+80','Pet: Attack+35','Blood Pact Dmg.+8',}}
     })
  
     -- Used for all physical pacts when AccMode is true
     sets.pet_midcast.Physical_BP_Acc = set_combine(sets.pet_midcast.Physical_BP, {
-        head={ name="Apogee Crown +1", augments={'MP+80','Pet: Attack+35','Blood Pact Dmg.+8',}},
-        right_ring="Varar Ring +1",
-        body="Convoker's Doublet +3",
-        hands="Convoker's Bracers +3",
+      head={ name="Apogee Crown +1", augments={'MP+80','Pet: Attack+35','Blood Pact Dmg.+8',}},
+      right_ring="Varar Ring +1",
+      body="Convoker's Doublet +3",
+      hands="Convoker's Bracers +3",
     })
  
     -- Base magic pact set
     -- Prioritize BP Damage & Pet:MAB
-    -- Strong Alternatives:
-    -- Apogee Crown, Adad Amulet
     sets.pet_midcast.Magic_BP_Base = {
       main="Grioavolr",
       sub="Elan Strap +1",
@@ -379,8 +288,8 @@ function get_sets()
       waist="Regal Belt",
       left_ear="Lugalbanda Earring",
       right_ear="Gelos Earring",
-      left_ring="Varar Ring +1",
-      right_ring="Varar Ring +1",
+      left_ring={name="Varar Ring +1", bag="wardrobe"},
+      right_ring={name="Varar Ring +1", bag="wardrobe5"},
       back={ name="Campestres's Cape", augments={'Pet: M.Acc.+20 Pet: M.Dmg.+20','Pet: Magic Damage+10','Damage taken-5%',}},
     }
    
@@ -388,28 +297,26 @@ function get_sets()
     -- Note: This set will only be used on merit pacts if you have less than 4 merits.
     --       Make sure to update your merit values at the top of this Lua.
     sets.pet_midcast.Magic_BP_TP = set_combine(sets.pet_midcast.Magic_BP_Base, {
-        legs="Enticer's Pants"
+      legs="Enticer's Pants"
     })
  
     -- NoTP set used when you don't need Enticer's
     sets.pet_midcast.Magic_BP_NoTP = set_combine(sets.pet_midcast.Magic_BP_Base, {
-        legs={ name="Apogee Slacks +1", augments={'MP+80','Pet: "Mag.Atk.Bns."+35','Blood Pact Dmg.+8',}}
+      legs={ name="Apogee Slacks +1", augments={'MP+80','Pet: "Mag.Atk.Bns."+35','Blood Pact Dmg.+8',}}
     })
  
     sets.pet_midcast.Magic_BP_TP_Acc = set_combine(sets.pet_midcast.Magic_BP_TP, {
-        body="Convoker's Doublet +3",
-        hands={ name="Merlinic Dastanas", augments={'Pet: Mag. Acc.+20 Pet: "Mag.Atk.Bns."+20','Blood Pact Dmg.+10','Pet: Mag. Acc.+2',}},	
+      body="Convoker's Doublet +3",
+      hands={ name="Merlinic Dastanas", augments={'Pet: Mag. Acc.+20 Pet: "Mag.Atk.Bns."+20','Blood Pact Dmg.+10','Pet: Mag. Acc.+2',}},	
     })
  
     sets.pet_midcast.Magic_BP_NoTP_Acc = set_combine(sets.pet_midcast.Magic_BP_NoTP, {
-        body="Convoker's Doublet +3",
-        hands={ name="Merlinic Dastanas", augments={'Pet: Mag. Acc.+20 Pet: "Mag.Atk.Bns."+20','Blood Pact Dmg.+10','Pet: Mag. Acc.+2',}},
+      body="Convoker's Doublet +3",
+      hands={ name="Merlinic Dastanas", augments={'Pet: Mag. Acc.+20 Pet: "Mag.Atk.Bns."+20','Blood Pact Dmg.+10','Pet: Mag. Acc.+2',}},
     })
  
     -- Favor BP Damage above all. Pet:MAB also very strong.
     -- Pet: Accuracy, Attack, Magic Accuracy moderately important.
-    -- Strong Alternatives:
-    -- Apogee Crown, Apogee Dalmatica
     sets.pet_midcast.FlamingCrush = {
       main="Nirvana",
       sub="Elan Strap +1",
@@ -423,8 +330,8 @@ function get_sets()
       waist="Regal Belt",
       left_ear="Lugalbanda Earring",
       right_ear="Gelos Earring",
-      left_ring="Varar Ring +1",
-      right_ring="Varar Ring +1",
+      left_ring={name="Varar Ring +1", bag="wardrobe"},
+      right_ring={name="Varar Ring +1", bag="wardrobe5"},
       back={ name="Campestres's Cape", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Pet: Accuracy+10 Pet: Rng. Acc.+10',}},
     }
  
@@ -435,28 +342,26 @@ function get_sets()
  
     -- Pet: Magic Acc set - Mainly used for debuff pacts like Shock Squall
     sets.pet_midcast.MagicAcc_BP = {
-        main="Nirvana",
-        sub="Vox Grip",
-        ammo="Sancus Sachet +1",
-        head="Convoker's Horn +3",
-        neck="Summoner's Collar +2",
-        ear1="Lugalbanda Earring",
-        ear2="Enmerkar Earring",
-        body="Convoker's Doublet +3",
-        hands={ name="Merlinic Dastanas", augments={'Pet: Mag. Acc.+20 Pet: "Mag.Atk.Bns."+20','Blood Pact Dmg.+10','Pet: Mag. Acc.+2',}},
-        ring1="Cath Palug Ring",
-        ring2="Evoker's Ring",
-        back={ name="Campestres's Cape", augments={'Pet: M.Acc.+20 Pet: M.Dmg.+20','Pet: Magic Damage+10','Damage taken-5%',}},
-        waist="Regal Belt",
-        legs="Convoker's Spats +3",
-        feet="Convoker's Pigaches +3"
+      main={ name="Espiritus", augments={'Summoning magic skill +15','Pet: Mag. Acc.+30','Pet: Damage taken -4%',}},
+      sub="Vox Grip",
+      ammo="Sancus Sachet +1",
+      head="Convoker's Horn +2",
+      neck="Summoner's Collar +2",
+      ear1="Lugalbanda Earring",
+      ear2="Enmerkar Earring",
+      body="Convoker's Doublet +3",
+      hands="Convoker's Bracers +3", -- Augmented Lamassu Mitts +1
+      ring1="Cath Palug Ring",
+      ring2="Evoker's Ring",
+      back={ name="Campestres's Cape", augments={'Pet: M.Acc.+20 Pet: M.Dmg.+20','Pet: Magic Damage+10','Damage taken-5%',}},
+      waist="Regal Belt",
+      legs="Convoker's Spats +2",
+      feet="Convoker's Pigaches +2"
     }
  
     sets.pet_midcast.Debuff_Rage = sets.pet_midcast.MagicAcc_BP
  
     -- Pure summoning magic set, mainly used for buffs like Hastega II.
-    -- Strong Alternatives:
-    -- Andoaa Earring, Summoning Earring, Lamassu Mitts +1, Caller's Pendant
     sets.pet_midcast.SummoningMagic = {
       main={ name="Espiritus", augments={'Summoning magic skill +15','Pet: Mag. Acc.+30','Pet: Damage taken -4%',}},
       sub="Vox Grip",
@@ -489,17 +394,15 @@ function get_sets()
     sets.pet_midcast.Buff_Healing = set_combine(sets.pet_midcast.Buff, {
         main="Nirvana",
         back={ name="Campestres's Cape", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Eva.+20 /Mag. Eva.+20','Pet: Attack+10 Pet: Rng.Atk.+10','Pet: "Regen"+10','Pet: Damage taken -5%',}},
-        --body={ name="Apo. Dalmatica +1", augments={'Summoning magic skill +20','Enmity-6','Pet: Damage taken -4%',}},
-        --feet={ name="Apogee Pumps +1", augments={'MP+80','Pet: "Mag.Atk.Bns."+35','Blood Pact Dmg.+8',}}
     })
  
     -- This set is used for certain blood pacts when ImpactDebuff mode is ON. (/console gs c ImpactDebuff)
     -- These pacts are normally used as nukes, but they're also strong debuffs which are enhanced by smn skill.
     sets.pet_midcast.Impact = set_combine(sets.pet_midcast.SummoningMagic, {
-        main="Nirvana",
-        head="Convoker's Horn +3",
-        ear1="Lugalbanda Earring",
-        ear2="Enmerkar Earring"
+      main="Nirvana",
+      head="Convoker's Horn +2",
+      ear1="Lugalbanda Earring",
+      ear2="Enmerkar Earring"
     })
  
     sets.aftercast = {}
@@ -519,31 +422,26 @@ function get_sets()
     -- Strong Alternatives:
     -- Asteria Mitts, Shomonjijoe
     sets.aftercast.Perp_Base = {
-        main="Nirvana",
-        sub="Oneiros Grip",
-        ammo="Sancus Sachet +1",
-        head="Beckoner's horn +1",
-        neck="Caller's Pendant",
-        ear1="Cath Palug Earring",
-        ear2="Evans earring",
-        body="Apo. Dalmatica +1",
-        hands={ name="Merlinic Dastanas", augments={'Weapon skill damage +1%','"Avatar perpetuation cost" -1','"Refresh"+2','Accuracy+9 Attack+9','Mag. Acc.+14 "Mag.Atk.Bns."+14',}},
-        ring1="Stikini Ring +1",
-        ring2="Evoker's Ring",
-        legs={ name="Merlinic Shalwar", augments={'Mag. Acc.+15','Attack+2','"Refresh"+2','Accuracy+10 Attack+10',}},
-        feet="Baayami Sabots +1",
-        waist="Lucidity Sash",
-        back={ name="Campestres's Cape", augments={'Pet: M.Acc.+20 Pet: M.Dmg.+20','Pet: Magic Damage+10','Damage taken-5%',}},
+      main="Nirvana",            -- 8 perp, can use jse
+      sub="Khonsu",              -- 
+      ammo="Sancus Sachet +1",   -- ilevel avatar, can use epitaph
+      head="Beckoner's horn +1", -- 3 favor, 2 refresh
+      neck="Caller's Pendant",   -- 1 perp sometimes
+      ear1="Cath Palug Earring", -- 1 refresh
+      ear2="Evans earring",      -- 2 perp
+      body="Apo. Dalmatica +1",  -- 4 refresh
+      hands={ name="Merlinic Dastanas", augments={'Weapon skill damage +1%','"Avatar perpetuation cost" -1','"Refresh"+2','Accuracy+9 Attack+9','Mag. Acc.+14 "Mag.Atk.Bns."+14',}}, -- 2 refresh 1 perp
+      ring1="Stikini Ring +1", -- 1 refresh
+      ring2="Evoker's Ring", -- 1 refresh
+      legs={ name="Merlinic Shalwar", augments={'Mag. Acc.+15','Attack+2','"Refresh"+2','Accuracy+10 Attack+10',}}, -- 2 refresh
+      feet="Baayami Sabots +1", -- 3 refresh
+      waist="Lucidity Sash", -- 2 perp
+      back={ name="Campestres's Cape", augments={'Pet: M.Acc.+20 Pet: M.Dmg.+20','Pet: Magic Damage+10','Damage taken-5%',}}, -- avatar level
     }
  
     -- Avatar Melee set. Equipped when IdleMode is "DD" and MeleeMode is OFF.
     -- You really don't need this set. It's only here because I can't bring myself to throw it away.
     sets.aftercast.Perp_DD = set_combine(sets.aftercast.Perp_Base, {
-        ear2="Rimeice Earring",
-        body="Glyphic Doublet +3",
-        hands={ name="Helios Gloves", augments={'Pet: Accuracy+22 Pet: Rng. Acc.+22','Pet: "Dbl. Atk."+8','Pet: Haste+6',}},
-        waist="Klouskap Sash",
-        feet={ name="Helios Boots", augments={'Pet: Accuracy+21 Pet: Rng. Acc.+21','Pet: "Dbl. Atk."+8','Pet: Haste+6',}}
     })
  
     -- Refresh set with avatar out. Equipped when IdleMode is "Refresh".
@@ -566,42 +464,14 @@ function get_sets()
     })
  
     sets.aftercast.Perp_Zendik = set_combine(sets.aftercast.Perp_Favor, {
-        body="Zendik Robe"
     })
  
     -- TP set. Equipped when IdleMode is "DD" and MeleeMode is ON.
     sets.aftercast.Perp_Melee = set_combine(sets.aftercast.Perp_Refresh, {
-        head="Convoker's Horn +3",
-        neck="Shulmanu Collar",
-        ear1="Telos Earring",
-        ear2="Cessance Earring",
-        body="Tali'ah Manteel +2",
-        hands={ name="Merlinic Dastanas", augments={'"Mag.Atk.Bns."+3','Accuracy+12','"Store TP"+7','Accuracy+7 Attack+7',}},
-        ring1="Rajas Ring",
-        ring2="Petrov Ring",
-        back={ name="Campestres's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10',}},
-        waist="Cetl Belt",
-        legs="Convoker's Spats +3",
-        feet="Convoker's Pigaches +3"
     })
  
     -- Pet:DT build. Equipped when IdleMode is "PetDT".
     sets.aftercast.Avatar_DT = {
-        main="Nirvana",
-        sub="Oneiros Grip",
-        ammo="Sancus Sachet +1",
-        head={ name="Apogee Crown +1", augments={'Pet: Accuracy+25','"Avatar perpetuation cost"+7','Pet: Damage taken -4%',}},
-        neck="Summoner's Collar +2",
-        ear1="Cath Palug Earring",
-        ear2="Enmerkar Earring",
-        body={ name="Apo. Dalmatica +1", augments={'Summoning magic skill +20','Enmity-6','Pet: Damage taken -4%',}},
-        hands={ name="Telchine Gloves", augments={'Pet: Mag. Evasion+18','Pet: "Regen"+3','Pet: Damage taken -4%',}},
-        ring1="Stikini Ring +1",
-        ring2="Stikini Ring +1",
-        back={ name="Campestres's Cape", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Eva.+20 /Mag. Eva.+20','Pet: Attack+10 Pet: Rng.Atk.+10','Pet: "Regen"+10','Pet: Damage taken -5%',}},
-        waist="Isa Belt",
-        legs="Enticer's Pants",
-        feet={ name="Telchine Pigaches", augments={'Pet: Mag. Evasion+20','Pet: "Regen"+3','Pet: Damage taken -4%',}}
     }
  
     -- Perp down set used when ForceIlvl is ON. If you use Selenian Cap for Pet:DT, you can make another set here without it.
@@ -610,27 +480,24 @@ function get_sets()
  
     -- DT build with avatar out. Equipped when IdleMode is "DT".
     sets.aftercast.Perp_DT = set_combine(sets.DT_Base, {
-        ear2="Evans Earring",
-        body="Udug Jacket",
-        waist="Lucidity Sash"
     })
  
     sets.aftercast.Spirit = {
-        main="Nirvana",
-        sub="Vox Grip",
-        ammo="Sancus Sachet +1",
-        head="Convoker's Horn +3",
-        neck="Incanter's Torque",
-        ear1="Cath Palug Earring",
-        ear2="Evans Earring",
-        body="Baayami Robe +1",
-        hands="Baayami Cuffs +1",
-        ring1="Stikini Ring +1",
-        ring2="Evoker's Ring",
-        back={ name="Conveyance Cape", augments={'Summoning magic skill +5','Blood Pact Dmg.+1','Blood Pact ab. del. II -3',}},
-        waist="Lucidity Sash",
-        legs="Glyphic Spats +3",
-        feet="Baayami Sabots +1"
+      main="Nirvana",
+      sub="Vox Grip",
+      ammo="Sancus Sachet +1",
+      head="Convoker's Horn +2",
+      neck="Caller's Pendant",
+      ear1="Cath Palug Earring",
+      ear2="Evans Earring",
+      body="Baayami Robe",
+      hands="Baayami Cuffs",
+      ring1="Stikini Ring +1",
+      ring2="Evoker's Ring",
+      back={ name="Conveyance Cape", augments={'Summoning magic skill +5','Blood Pact Dmg.+1','Blood Pact ab. del. II -3',}},
+      waist="Lucidity Sash",
+      legs="Baayami Slops",
+      feet="Baayami Sabots +1"
     }
  
     -- ===================================================================================================================
