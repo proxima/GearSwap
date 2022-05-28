@@ -491,7 +491,7 @@ function get_sets()
 
     sets.precast.Impact = set_combine(sets.midcast.casting, {
       head=empty, 
-      body="Twilight Cloak"
+      body="Crepuscular Cloak"
     })
 
     ---------------------
@@ -656,7 +656,7 @@ function get_sets()
 
     sets.midcast.Impact = set_combine(sets.midcast.Enfeebling.macc, {
       head=empty, 
-      body="Twilight Cloak"
+      body="Crepuscular Cloak"
     })
 
     -- Enhancing yourself 

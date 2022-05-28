@@ -106,7 +106,7 @@ function init_gear_sets()
       back={ name="Taranus's Cape", augments={'MND+20','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','"Fast Cast"+10','Mag. Evasion+15',}},    
     }
     
-    sets.precast.FC.Impact = set_combine(sets.precast.FC, {head=empty, body="Twilight Cloak"})
+    sets.precast.FC.Impact = set_combine(sets.precast.FC, {head=empty, body="Crepuscular Cloak"})
 
     sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, {waist="Siegel Sash"})
 
@@ -276,7 +276,7 @@ function init_gear_sets()
     }
     
     sets.midcast.Impact = set_combine(sets.midcast['Enfeebling Magic'], {
-      head=empty, body="Twilight Cloak"
+      head=empty, body="Crepuscular Cloak"
     })
     
     sets.midcast['Sleepga'] = set_combine(sets.midcast['Enfeebling Magic'], {

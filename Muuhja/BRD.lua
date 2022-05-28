@@ -347,8 +347,8 @@ function init_gear_sets()
       hands={ name="Nyame Gauntlets", augments={'Path: B',}},
       legs={ name="Nyame Flanchard", augments={'Path: B',}},
       feet={ name="Nyame Sollerets", augments={'Path: B',}},
-      neck="Sanctity Necklace",
-      waist="Eschan Stone",
+      neck="Sibyl Scarf",
+      waist="Orpheus's Sash", -- waist="Eschan Stone",
       left_ear="Regal Earring",
       right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
       left_ring="Metamorph Ring +1",
@@ -879,7 +879,7 @@ function customize_melee_set(meleeSet)
     elseif state.WeaponSet.value == "Aeneas" then
         equip({main="Aeneas",sub="Twashtar"})
     elseif state.WeaponSet.value == "Aeolian" then
-        equip({main="Aeneas",sub="Malevolence"})
+        equip({main="Aeneas",sub="Fusetto +2"})
     end
     if buffactive['Aftermath: Lv.3'] and player.equipment.main == "Carnwenhan" then
         meleeSet = set_combine(meleeSet, sets.engaged.Aftermath)

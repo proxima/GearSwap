@@ -735,7 +735,6 @@ function init_gear_sets()
       head={ name="Nyame Helm", augments={'Path: B',}},
       body="Nyame Mail",
       hands={ name="Nyame Gauntlets", augments={'Path: B',}},
-      -- hands="Assim. Bazu. +2",
       legs={ name="Nyame Flanchard", augments={'Path: B',}},
       feet={ name="Nyame Sollerets", augments={'Path: B',}},
       neck={ name="Bathy Choker +1", augments={'Path: A',}},
@@ -1295,13 +1294,13 @@ function th_action_check(category, param)
 end
 
 function check_moving()
-    if state.DefenseMode.value == 'None'  and state.Kiting.value == false then
-        if state.Auto_Kite.value == false and moving then
-            state.Auto_Kite:set(true)
-        elseif state.Auto_Kite.value == true and moving == false then
-            state.Auto_Kite:set(false)
-        end
-    end
+    -- if state.DefenseMode.value == 'None'  and state.Kiting.value == false then
+    --     if state.Auto_Kite.value == false and moving then
+    --         state.Auto_Kite:set(true)
+    --     elseif state.Auto_Kite.value == true and moving == false then
+    --         state.Auto_Kite:set(false)
+    --     end
+    -- end
 end
 
 function check_gear()

@@ -404,7 +404,7 @@ function init_gear_sets()
       hands="Nyame gauntlets",
       legs="Nyame Flanchard",
       feet={ name="Herculean Boots", augments={'Weapon skill damage +4%','"Mag.Atk.Bns."+28','Mag. Acc.+19 "Mag.Atk.Bns."+19',}},
-      neck="Sanctity Necklace",
+      neck="Sibyl Scarf",
       left_ear="Moonshade Earring",
       right_ear="Friomisi Earring",
       left_ring="Metamorph ring +1",

@@ -274,7 +274,7 @@ function init_gear_sets()
       hands="Nyame Gauntlets",
       legs="Nyame Flanchard",
       feet="Nyame Sollerets",
-      back="Argochampsa mantle",
+      back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}},
       waist="Eschan Stone",
       left_ear="Friomisi Earring",
       right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},

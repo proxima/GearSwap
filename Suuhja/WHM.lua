@@ -255,7 +255,7 @@ function init_gear_sets()
 
     sets.precast.FC.Curaga = sets.precast.FC.Cure
     sets.precast.FC.CureSolace = sets.precast.FC.Cure
-    sets.precast.FC.Impact = set_combine(sets.precast.FC, {head=empty, body="Twilight Cloak"})
+    sets.precast.FC.Impact = set_combine(sets.precast.FC, {head=empty, body="Crepuscular Cloak"})
     sets.precast.FC.Dispelga = set_combine(sets.precast.FC, {main="Daybreak", sub="Ammurapi Shield"})
 
     -- Precast sets to enhance JAs
@@ -353,7 +353,6 @@ function init_gear_sets()
       main="Chatoyant Staff",
       sub="Enki Strap",
       hands="Kaykaus Cuffs +1",
-      ear2="Nourish. Earring +1",
       back="Twilight Cape",
       waist="Hachirin-no-Obi",
     })
@@ -470,24 +469,13 @@ function init_gear_sets()
 
     sets.midcast.Refresh = set_combine(sets.midcast.EnhancingDuration, {
       waist="Gishdubar Sash",
-      back="Grapevine Cape",
     })
 
     sets.midcast.Stoneskin = set_combine(sets.midcast.EnhancingDuration, {
-      neck="Nodens Gorget",
       waist="Siegel Sash",
     })
 
     sets.midcast.Aquaveil = set_combine(sets.midcast.EnhancingDuration, {
-      main="Vadose Rod",
-      sub="Ammurapi Shield",
-      ammo="Staunch Tathlum +1",
-      ear1="Halasz Earring",
-      ring1="Freke Ring",
-      ring2="Evanescence Ring",
-      head="Chironic hat",
-      hands="Regal Cuffs",
-      waist="Emphatikos Rope",
     })
 
     sets.midcast.Auspice = set_combine(sets.midcast.EnhancingDuration, {
@@ -552,11 +540,10 @@ function init_gear_sets()
       ear2="Regal Earring",
       ring1="Metamorph ring +1",
       ring2="Archon Ring",
-      back={ name="Alaunus's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','MND+10','"Fast Cast"+10','Phys. dmg. taken-10%',}},
-      waist="Luminary Sash",
+      back="Aurist's Cape +1",
+      waist="Obstinate Sash",
     }
 
-     -- Custom spell classes
     sets.midcast.MndEnfeebles = {
       main="Asclepius",
       sub="Ammurapi Shield",
@@ -571,7 +558,7 @@ function init_gear_sets()
       ear2="Regal Earring",
       left_ring={name="Stikini Ring +1",bag="wardrobe 2"},
       right_ring={name="Stikini Ring +1",bag="wardrobe 3"},
-      back={ name="Alaunus's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','MND+10','"Fast Cast"+10','Phys. dmg. taken-10%',}},
+      back="Aurist's Cape +1",
       waist="Obstinate Sash",
     }
 
@@ -584,7 +571,8 @@ function init_gear_sets()
       main="Yagrush",
       sub="Ammurapi Shield",
       ammo="Pemphredo Tathlum",
-      body="Twilight Cloak",
+      head=empty,
+      body="Crepuscular Cloak",
       hands="Theophany Mitts +2",
       legs="Th. Pant. +3",
       feet="Theo. Duckbills +3",
@@ -594,7 +582,7 @@ function init_gear_sets()
       right_ear="Malignance Earring",
       left_ring="Stikini Ring +1",
       right_ring={ name="Metamor. Ring +1", augments={'Path: A',}},
-      back={ name="Alaunus's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','MND+10','"Fast Cast"+10','Phys. dmg. taken-10%',}},
+      back="Aurist's Cape +1",
     }
 
     -- Initializes trusts at iLvl 119
@@ -605,7 +593,7 @@ function init_gear_sets()
     -- Resting sets
     sets.resting = {
       main="Chatoyant Staff",
-      waist="Shinjutsu-no-Obi +1",
+      waist="Shinjutsu-no-Obi",
     }
 
     -- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
@@ -647,7 +635,11 @@ function init_gear_sets()
     sets.idle.MEva = set_combine(sets.idle, {
       main="Asclepius",
       sub="Ammurapi Shield",
-      hands="Pinga mittens +1",
+      head="Bunzi's Hat",
+      body="Bunzi's Robe",
+      hands="Bunzi's Gloves",
+      legs="Bunzi's Pants",
+      feet="Bunzi's Sabots",
       left_ring="Defending Ring",
       right_ring="Inyanga Ring",
     })
@@ -675,8 +667,8 @@ function init_gear_sets()
 
     -- Basic set for if no TP weapon is defined.
     sets.engaged = {
-      main="Kaja Rod",
-      sub="Magesmasher +1",
+      main="Maxentius",
+      sub="Ammurapi Shield",
       ammo="Staunch Tathlum +1",
       head={ name="Blistering Sallet +1", augments={'Path: A',}},
       body="Nyame Mail",

@@ -377,7 +377,7 @@ function get_sets()
       hands="Jhakri Cuffs +2",
       legs="Agwu's Slops",
       feet="Agwu's Pigaches",
-      neck={ name="Argute Stole +2", augments={'Path: A',}},
+      neck="Quanpur Necklace",
       waist="Orpheus's Sash",
       left_ear="Regal Earring",
       right_ear="Malignance Earring",
@@ -386,26 +386,26 @@ function get_sets()
       back=Lugh.INT_WSD
     }
 
-    sets.me["Aeolian Edge"] = sets.me["Earth Crusher"] 
     sets.me["Rock Crusher"] = sets.me["Earth Crusher"]
-    sets.me["Starburst"] = sets.me["Earth Crusher"]
+
+    sets.me["Aeolian Edge"] = set_combine(sets.me["Earth Crusher"], {
+      neck="Argute Stole +2",
+    })
     
-    sets.me["Cataclysm"] = {
+    sets.me["Cataclysm"] = set_combine(sets.me["Aeolian Edge"], {
       ammo="Ghastly Tathlum +1",
-      -- head="Pixie hairpin +1",
-      head="Agwu's Cap",
+      head="Pixie hairpin +1",
       body="Agwu's Robe",
       hands="Jhakri Cuffs +2",
       legs="Agwu's Slops",
       feet="Agwu's Pigaches",
       neck={ name="Argute Stole +2", augments={'Path: A',}},
-      waist="Hachirin-no-Obi",
+      waist="Orpheus's Sash",
       left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
       right_ear="Malignance Earring",
       left_ring="Archon Ring",
       right_ring="Metamorph Ring +1",
-      back=Lugh.INT_WSD
-    }
+    })
 
     sets.me["Omniscience"] = {
       ammo="Ghastly Tathlum +1",
@@ -422,6 +422,25 @@ function get_sets()
       right_ring="Metamorph Ring +1",
       back=Lugh.MND_WSD
     }
+
+    sets.me["Seraph Strike"] = {
+      ammo="Pemphredo Tathlum",
+      head="Agwu's Cap",
+      body="Agwu's Robe",
+      hands="Jhakri Cuffs +2",
+      legs="Agwu's Slops",
+      feet="Agwu's Pigaches",
+      neck={ name="Argute Stole +2", augments={'Path: A',}},
+      waist="Hachirin-no-Obi",
+      left_ear="Regal Earring",
+      right_ear="Malignance Earring",
+      left_ring="Epaminondas's Ring",
+      right_ring="Metamorph Ring +1",
+      back=Lugh.MND_WSD
+    }
+
+    sets.me["Flash Nova"] = sets.me["Seraph Strike"]
+    sets.me["Starburst"] = sets.me["Flash Nova"]
     
     sets.me["Myrkr"] = {
       ammo="Ghastly Tathlum +1",
@@ -513,7 +532,7 @@ function get_sets()
      main="Hvergelmir",
      sub="Khonsu",
      head=empty, 
-     body="Twilight Cloak"
+     body="Crepuscular Cloak"
    })
     
    sets.precast["Stun"] = set_combine(sets.precast.casting, {
@@ -811,7 +830,7 @@ function get_sets()
      main="Hvergelmir",
      sub="Khonsu",
      head=empty, 
-     body="Twilight Cloak"
+     body="Crepuscular Cloak"
    })
    
    sets.midcast.SC_Open = {

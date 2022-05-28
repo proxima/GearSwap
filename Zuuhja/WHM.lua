@@ -285,9 +285,8 @@ function init_gear_sets()
 
     -- Cure sets
     sets.midcast.CureSolace = {
-      -- main="Daybreak",
       main="Malignance Pole",
-      sub="Genmei Shield",
+      sub="Enki Strap",
       ammo="Staunch Tathlum +1",
       head={ name="Vanya Hood", augments={'MP+50','"Fast Cast"+10','Haste+2%',}},
       body="Ebers Bliaut +1",                               --       3
@@ -304,8 +303,6 @@ function init_gear_sets()
     }
 
     sets.midcast.CureSolaceWeather = set_combine(sets.midcast.CureSolace, {
-      main="Chatoyant Staff",
-      sub="Enki Strap",
       waist="Hachirin-no-Obi",
     })
 
@@ -314,8 +311,6 @@ function init_gear_sets()
     })
 
     sets.midcast.CureWeather = set_combine(sets.midcast.CureNormal, {
-      main="Chatoyant Staff",
-      sub="Enki Strap",
       back="Twilight Cape",
       waist="Hachirin-no-Obi",
     })
@@ -327,8 +322,6 @@ function init_gear_sets()
     })
 
     sets.midcast.CuragaWeather = set_combine(sets.midcast.CuragaNormal, {
-      main="Chatoyant Staff",
-      sub="Enki Strap",
       body="Theo. Bliaut +2",
       hands="Kaykaus Cuffs +1",
       back="Twilight Cape",
@@ -415,7 +408,7 @@ function init_gear_sets()
     sets.midcast.RegenDuration = set_combine(sets.midcast.EnhancingDuration, {
       hands="Ebers Mitts +1",
       legs="Th. Pant. +3",
-      feet="Theo. Duckbills +2",
+      feet="Theo. Duckbills +3",
     })
 
     sets.midcast.Refresh = set_combine(sets.midcast.EnhancingDuration, {
@@ -462,7 +455,7 @@ function init_gear_sets()
       body="Theo. Bliaut +2",
       hands="Piety Mitts +3",
       legs="Th. Pant. +3",
-      feet="Theo. Duckbills +2",
+      feet="Theo. Duckbills +3",
       neck="Erra Pendant",
       left_ear="Malignance Earring",
       right_ear="Regal Earring",
@@ -482,8 +475,8 @@ function init_gear_sets()
       head="Pixie Hairpin +1",
       body="Theo. Bliaut +2",
       hands="Theophany Mitts +2",
-      legs="Chironic Hose",
-      feet="Theo. Duckbills +2",
+      legs={ name="Chironic Hose", augments={'Mag. Acc.+23 "Mag.Atk.Bns."+23','MND+10','Mag. Acc.+11',}},
+      feet="Theo. Duckbills +3",
       neck="Erra Pendant",
       ear1="Malignance Earring",
       ear2="Regal Earring",
@@ -497,11 +490,11 @@ function init_gear_sets()
       main="Daybreak",
       sub="Ammurapi Shield",
       ammo="Hydrocera",
-      head="Theophany Cap +2",
-      body="Theo. Bliaut +2",
-      hands="Theophany Mitts +2",
-      legs="Th. Pant. +3",
-      feet="Theo. Duckbills +2",
+      head=empty, 
+      body="Cohort Cloak +1",
+      hands="Kaykaus Cuffs +1",
+      legs={ name="Chironic Hose", augments={'Mag. Acc.+23 "Mag.Atk.Bns."+23','MND+10','Mag. Acc.+11',}},
+      feet="Theo. Duckbills +3",
       neck="Erra Pendant",
       ear1="Malignance Earring",
       ear2="Regal Earring",
@@ -522,7 +515,7 @@ function init_gear_sets()
       head=empty,
       body="Twilight Cloak",
       legs="Th. Pant. +3",
-      feet="Theo. Duckbills +2",
+      feet="Theo. Duckbills +3",
       ring1="Freke Ring",
       ring2="Archon Ring",
     }
@@ -574,7 +567,7 @@ function init_gear_sets()
 
     sets.idle.MEva = set_combine(sets.idle, {
       main="Daybreak",
-      sub="Ammurapi Shield",
+      sub="Genmei Shield",
       ammo="Staunch Tathlum +1",
       hands="Inyanga Dastanas +2",
       legs="Inyanga Shalwar +2",

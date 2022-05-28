@@ -106,7 +106,7 @@ function user_setup()
 
   state.Knockback = M(false, 'Knockback')
 
-  state.WeaponSet = M{['description']='Weapon Set', 'Epeolatry', 'EpeolatryTank', 'Aettir', 'Lycurgos'}
+  state.WeaponSet = M{['description']='Weapon Set', 'Epeolatry', 'EpeolatryTank', 'Aettir', 'Lycurgos', 'Malignance'}
   state.AttackMode = M{['description']='Attack', 'Uncapped', 'Capped'}
   state.WeaponLock = M(false, 'Weapon Lock')
 
@@ -311,7 +311,22 @@ function init_gear_sets()
   sets.precast.JA['Battuta'] = set_combine(sets.Enmity, {head=Relic.Head})
   sets.precast.JA['Liement'] = set_combine(sets.Enmity, {body=Relic.Body})
  
-  sets.precast.JA['Lunge'] = {}
+  -- Need cape
+  sets.precast.JA['Lunge'] = {
+    ammo="Seething Bomblet +1",
+    head="Agwu's Cap",
+    neck="Sibyl Scarf",
+    left_ear="Friomisi Earring",
+    right_ear="Crematio Earring",
+    body="Agwu's Robe",
+    hands="Agwu's Gages",
+    left_ring="Metamorph Ring =1",
+    right_ring={name="Stikini Ring +1", bag="wardrobe5"},
+    waist="Orpheus's Sash",
+    legs="Agwu's Slops",
+    feet="Agwu's Pigaches",
+  }
+  
   sets.precast.JA['Swipe'] = sets.precast.JA['Lunge']
  
   sets.precast.JA['Gambit'] = set_combine(sets.Enmity, {hands=AF.Hands})
@@ -615,19 +630,31 @@ function init_gear_sets()
     right_ring="Moonlight Ring",
     back=Cape.Parry,
     waist="Kentarch belt +1",
-    legs={ name="Nyame Flanchard", augments={'Path: B',}},
+    legs="Volte Tights",
     feet={ name="Nyame Sollerets", augments={'Path: B',}},  
   }
 
+  sets.Hybrid = {
+    ammo="Vanir Battery",
+    head={ name="Nyame Helm", augments={'Path: B',}},
+    body={ name="Nyame Mail", augments={'Path: B',}},
+    hands={ name="Nyame Gauntlets", augments={'Path: B',}},
+    legs={ name="Nyame Flanchard", augments={'Path: B',}},
+    feet={ name="Nyame Sollerets", augments={'Path: B',}},
+    neck="Inq. Bead Necklace",
+    waist="Engraved Belt",
+    left_ear="Tuisto Earring",
+    right_ear={ name="Odnowa Earring +1", augments={'Path: A',}},
+    left_ring="Defending Ring",
+    right_ring="Lunette Ring +1",
+    back=Cape.Enmity
+  }
+
+  sets.engaged = sets.Hybrid
+  
   sets.engaged.Parry = sets.defense.Parry
   
   sets.engaged.Aftermath = sets.engaged
- 
-  ------------------------------------------------------------------------------------------------
-  ---------------------------------------- Hybrid Sets -------------------------------------------
-  ------------------------------------------------------------------------------------------------
- 
-  sets.Hybrid = sets.engaged
  
   sets.engaged.DT = sets.engaged.Parry
  
@@ -647,10 +674,12 @@ function init_gear_sets()
   sets.Embolden = set_combine(sets.midcast['Enhancing Magic'], {back="Evasionist's Cape"})
 
   sets.Obi = {waist="Hachirin-no-Obi"}
+  
   sets.Epeolatry = {main="Epeolatry", sub="Utu Grip"}
   sets.EpeolatryTank = {main="Epeolatry", sub="Refined Grip +1"}
   sets.Aettir = {main="Aettir", sub="Utu Grip"}
   sets.Lycurgos = {main="Lycurgos", sub="Utu Grip"}
+  sets.Malignance = {main="Malignance Sword", sub=empty}  
 end
 
 -------------------------------------------------------------------------------------------------------------------

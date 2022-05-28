@@ -649,7 +649,6 @@ function init_gear_sets()
 
     -- No Magic Haste (74% DW to cap)
     sets.engaged.DW = set_combine(sets.engaged, {
-      left_ear="Suppanomimi",
       right_ear="Eabani Earring",
       waist="Reiki Yotai",
     })
@@ -782,8 +781,11 @@ function init_gear_sets()
     sets.Fomalhaut_R = {main=Rostam.A, sub=Rostam.B, ranged="Fomalhaut"}
     sets.Fomalhaut_R.Acc = sets.Fomalhaut_R
 
-    sets.Anarchy = {main="Naegling", sub="Gleti's Knife", ranged="Anarchy +2"}
-    sets.Anarchy.Acc = {main="Naegling", sub="Gleti's Knife", ranged="Anarchy +2"}
+    -- sets.Anarchy = {main="Naegling", sub="Gleti's Knife", ranged="Anarchy +2"}
+    -- sets.Anarchy.Acc = {main="Naegling", sub="Gleti's Knife", ranged="Anarchy +2"}
+
+    sets.Anarchy = {main="Naegling", sub=Rostam.B, ranged="Anarchy +2"}
+    sets.Anarchy.Acc = {main="Naegling", sub=Rostam.B, ranged="Anarchy +2"}
 
     sets.Rolls = {main={name="Rostam", bag="wardrobe4"}, sub={name="Rostam", bag="wardrobe2", priority=1}, ranged="Compensator"}
     sets.Rolls.Acc = sets.Rolls

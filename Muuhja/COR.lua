@@ -83,7 +83,7 @@ function init_gear_sets()
 
     sets.precast.CorsairRoll = {
       main={ name="Rostam", bag="wardrobe 4", priority=1},
-      head="Lanun Tricorne +2",
+      head="Comm. Tricorne +2",
       neck="Regal necklace",
       range="Compensator",
       hands="Chasseur's gants +1",
