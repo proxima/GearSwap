@@ -131,7 +131,7 @@ function init_gear_sets()
       right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
       left_ring={ name="Metamor. Ring +1", augments={'Path: A',}},
       right_ring="Epaminondas's Ring",
-      back={ name="Lugh's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','MND+10','Weapon skill damage +10%',}},    
+      back={ name="Taranus's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Phys. dmg. taken-10%',}},      
     }
     
     -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
@@ -193,7 +193,7 @@ function init_gear_sets()
       head="Pixie hairpin +1",
       body="Agwu's Robe",
       hands="Jhakri Cuffs +2",
-      legs={ name="Amalric Slops +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
+      legs="Agwu's Slops",
       feet="Agwu's Pigaches",
       neck="Sorcerer's Stole +2",
       waist="Orpheus's Sash",
@@ -266,7 +266,7 @@ function init_gear_sets()
       hands="Regal Cuffs",
       legs="Archmage's Tonban +3",
       feet="Archmage's Sabots +3",
-      neck="Sorcerer's Stole +2",
+      neck="Melic Torque",
       waist="Acuity Belt +1",
       left_ear="Regal Earring",
       right_ear="Malignance Earring",
@@ -449,7 +449,7 @@ function init_gear_sets()
       left_ear="Regal Earring",
       right_ear="Malignance Earring",
       body="Ea Houppe. +1",
-      hands={ name="Amalric Gages +1", augments={'INT+12','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
+      hands="Agwu's Gages",
       left_ring="Metamorph Ring +1",
       right_ring="Freke Ring",
       back={ name="Taranus's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Phys. dmg. taken-10%',}},    

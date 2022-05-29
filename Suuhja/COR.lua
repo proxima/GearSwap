@@ -136,9 +136,9 @@ function user_setup()
     state.WeaponLock = M(false, 'Weapon Lock')
 
     gear.RAbullet = "Chrono Bullet"
-    gear.RAccbullet = "Devastating Bullet"
+    gear.RAccbullet = "Chrono Bullet"
     gear.WSbullet = "Chrono Bullet"
-    gear.MAbullet = "Living Bullet"
+    gear.MAbullet = "Chrono Bullet"
     gear.QDbullet = "Hauksbok Bullet"
     options.ammo_warning_limit = 10
 
@@ -265,7 +265,7 @@ function init_gear_sets()
     sets.precast.JA['Triple Shot'] = {body="Chasseur's Frac +1"}
     sets.precast.JA['Snake Eye'] = {legs="Lanun Trews +1"}
     sets.precast.JA['Wild Card'] = {feet="Lanun Bottes +3"}
-    sets.precast.JA['Random Deal'] = {body="Lanun Frac +3"}
+    sets.precast.JA['Random Deal'] = {body="Lanun Frac +2"}
 
     sets.precast.CorsairRoll = {
       head="Lanun Tricorne +3",
@@ -312,10 +312,10 @@ function init_gear_sets()
     sets.precast.RA = {ammo=gear.RAbullet,
       head={ name="Taeon Chapeau", augments={'"Snapshot"+5','"Snapshot"+5',}}, 
       neck="Comm. Charm +2",
-      body="Laksa. Frac +3",
-      hands="Lanun Gants +3", 
+      body="Laksa. Frac +3", -- Rapid, Recyle
+      hands="Lanun Gants +3",
       legs={ name="Adhemar Kecks +1", augments={'AGI+12','"Rapid Shot"+13','Enmity-6',}},
-      back=Cape.ROLL, --10 Snapshot
+      back=Cape.ROLL, -- 10 Snapshot
       waist="Yemaya Belt", 
       feet="Meg. Jam. +2", 
       ring1="Crepuscular Ring"
@@ -366,7 +366,7 @@ function init_gear_sets()
 
     sets.precast.WS['Wildfire'] = {ammo=gear.MAbullet, -- 25
       head="Nyame Helm", 
-      body={ name="Lanun Frac +3", augments={'Enhances "Loaded Deck" effect',}},
+      body={ name="Lanun Frac +2", augments={'Enhances "Loaded Deck" effect',}},
       hands="Nyame Gauntlets",
       legs="Nyame Flanchard",
       feet={ name="Lanun Bottes +3", augments={'Enhances "Wild Card" effect',}},
@@ -387,7 +387,7 @@ function init_gear_sets()
       feet={ name="Nyame Sollerets", augments={'Path: B',}},
       neck={ name="Comm. Charm +2", augments={'Path: A',}},
       waist="K. Kachina Belt +1",
-      left_ear={ name="Moonshade Earring", augments={'"Mag.Atk.Bns."+4','TP Bonus +250',}},
+      left_ear="Moonshade Earring",
       right_ear="Friomisi Earring",
       left_ring="Dingir Ring",
       right_ring="Epaminondas's Ring",
@@ -417,9 +417,9 @@ function init_gear_sets()
       neck="Republican platinum medal",
       waist={ name="Sailfi Belt +1", augments={'Path: A',}},
       left_ear="Ishvara Earring",
-      right_ear={ name="Moonshade Earring", augments={'"Mag.Atk.Bns."+4','TP Bonus +250',}},
+      right_ear="Moonshade Earring",
       left_ring="Epaminondas's Ring",
-      right_ring="Shukuyu Ring", -- Regal Ring
+      right_ring="Regal Ring",
       back=Cape.SB
     }
 
@@ -450,17 +450,17 @@ function init_gear_sets()
 
     sets.midcast.CorsairShot = {ammo=gear.QDBullet,
       head="Nyame Helm",
-      body={ name="Lanun Frac +3", augments={'Enhances "Loaded Deck" effect',}},
-      hands={ name="Carmine Fin. Ga. +1", augments={'Rng.Atk.+20','"Mag.Atk.Bns."+12','"Store TP"+6',}},
+      body="Nyame Mail", -- body={ name="Lanun Frac +2", augments={'Enhances "Loaded Deck" effect',}},
+      hands="Nyame Gauntlets", -- hands={ name="Carmine Fin. Ga. +1", augments={'Rng.Atk.+20','"Mag.Atk.Bns."+12','"Store TP"+6',}},
       legs="Nyame Flanchard",
-      feet={ name="Lanun Bottes +3", augments={'Enhances "Wild Card" effect',}},
+      feet="Nyame Sollerets", -- feet={ name="Lanun Bottes +3", augments={'Enhances "Wild Card" effect',}},
       neck="Comm. Charm +2",
       left_ear="Crematio Earring",
       right_ear="Friomisi Earring",
       left_ring="Dingir Ring",
       right_ring="Metamorph Ring +1",
       back=Cape.LEADEN,
-      waist="Sveltesse gouriz +1",
+      waist="Skrymir Cord +1",
     }
 
     sets.midcast.CorsairShot.STP = {ammo=gear.RAccbullet,
@@ -472,20 +472,20 @@ function init_gear_sets()
       neck="Iskur Gorget",
       left_ear="Crepuscular Earring",
       right_ear="Telos Earring",
-      left_ring="Ilabrat Ring",
-      right_ring="Rajas Ring",
+      left_ring={name="Chirich Ring +1",bag="wardrobe 2"},
+      right_ring={name="Chirich Ring +1",bag="wardrobe 4"},
       back=Cape.RTP,
       waist="Yemaya belt",
     }
 
     sets.midcast.CorsairShot['Light Shot'] = {ammo=gear.RAccbullet,
-      head="Laksa. Tricorne +3",
+      head="Malignance Chapeau", -- head="Laksa. Tricorne +3",
       body="Malignance Tabard",
-      hands="Laksa. Gants +3",
+      hands="Malignance Gloves", -- hands="Laksa. Gants +3",
       legs="Malignance Tights",
-      feet="Laksa. Bottes +3",
-      neck="Comm. Charm +2",
-      left_ear="Enervating Earring", -- Dignitary's earring
+      feet="Malignance Boots", -- feet="Laksa. Bottes +3",
+      neck="Sanctity Necklace", -- neck="Comm. Charm +2",
+      left_ear="Dignitary's Earring",
       right_ear="Crepuscular Earring",
       left_ring="Stikini Ring +1",
       right_ring="Metamorph Ring +1",
@@ -612,7 +612,7 @@ function init_gear_sets()
       waist="Carrier's Sash",
     }
 
-    sets.Kiting = {right_ring="Shneddick Ring +1"}
+    sets.Kiting = {legs="Carmine Cuisses +1"}
 
     ------------------------------------------------------------------------------------------------
     ---------------------------------------- Engaged Sets ------------------------------------------
@@ -633,8 +633,8 @@ function init_gear_sets()
       waist="Reiki Yotai",
       left_ear="Crepuscular Earring",
       right_ear="Telos Earring",
-      left_ring="Ilabrat Ring",
-      right_ring="Rajas Ring",
+      left_ring="Petrov Ring",
+      right_ring="Epona's Ring",
       back=Cape.TP
     }
 
@@ -697,11 +697,11 @@ function init_gear_sets()
     ------------------------------------------------------------------------------------------------
 
     sets.engaged.Hybrid = {
-      head="Malignance Chapeau", --6/6
-      body="Malignance Tabard", --9/9
-      hands="Malignance Gloves", --5/5
-      legs="Malignance Tights", --7/7
-      feet="Malignance Boots", --4/4
+      head="Malignance Chapeau",
+      body="Malignance Tabard",
+      hands="Malignance Gloves",
+      legs="Malignance Tights",
+      feet="Malignance Boots",
     }
 
     sets.engaged.DT = set_combine(sets.engaged, sets.engaged.Hybrid)
@@ -761,7 +761,10 @@ function init_gear_sets()
     sets.FullTP = {ear1="Crematio Earring"}
     sets.Obi = {waist="Hachirin-no-Obi"}
 
-    sets.TreasureHunter = {waist="Chaac Belt"}
+    sets.TreasureHunter = {
+      head={ name="Herculean Helm", augments={'"Store TP"+1','Magic Damage +1','"Treasure Hunter"+2','Accuracy+7 Attack+7',}},
+      hands={ name="Herculean Gloves", augments={'"Conserve MP"+1','Accuracy+21','"Treasure Hunter"+2',}}
+    }
 
     sets.DeathPenalty_M = {main=Rostam.B, sub="Tauret", ranged="Death Penalty"}
     sets.DeathPenalty_M.Acc = {main=Rostam.B, sub=Rostam.A, ranged="Death Penalty"}
@@ -781,11 +784,8 @@ function init_gear_sets()
     sets.Fomalhaut_R = {main=Rostam.A, sub=Rostam.B, ranged="Fomalhaut"}
     sets.Fomalhaut_R.Acc = sets.Fomalhaut_R
 
-    -- sets.Anarchy = {main="Naegling", sub="Gleti's Knife", ranged="Anarchy +2"}
-    -- sets.Anarchy.Acc = {main="Naegling", sub="Gleti's Knife", ranged="Anarchy +2"}
-
-    sets.Anarchy = {main="Naegling", sub=Rostam.B, ranged="Anarchy +2"}
-    sets.Anarchy.Acc = {main="Naegling", sub=Rostam.B, ranged="Anarchy +2"}
+    sets.Anarchy = {main="Naegling", sub="Gleti's Knife", ranged="Anarchy +2"}
+    sets.Anarchy.Acc = {main="Naegling", sub="Gleti's Knife", ranged="Anarchy +2"}
 
     sets.Rolls = {main={name="Rostam", bag="wardrobe4"}, sub={name="Rostam", bag="wardrobe2", priority=1}, ranged="Compensator"}
     sets.Rolls.Acc = sets.Rolls
@@ -1250,7 +1250,7 @@ function do_bullet_checks(spell, spellMap, eventArgs)
         end
     end
 
-    local available_bullets = player.inventory[bullet_name] or player.wardrobe4[bullet_name]
+    local available_bullets = player.inventory[bullet_name] or player.wardrobe7[bullet_name]
 
     -- If no ammo is available, give appropriate warning and end.
     if not available_bullets then
@@ -1375,9 +1375,9 @@ windower.register_event('zone change',
 -- Select default macro book on initial load or subjob change.
 function select_default_macro_book()
     if player.sub_job == 'DNC' then
-        set_macro_page(1, 7)
+        set_macro_page(1, 8)
     else
-        set_macro_page(1, 7)
+        set_macro_page(1, 8)
     end
 end
 
