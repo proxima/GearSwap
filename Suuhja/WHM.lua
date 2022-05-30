@@ -413,37 +413,23 @@ function init_gear_sets()
 
     sets.midcast.Erase = set_combine(sets.midcast.StatusRemoval, {neck="Cleric's Torque +1"})
 
-    -- 110 total Enhancing Magic Skill; caps even without Light Arts
-    sets.midcast['Enhancing Magic'] = {
-      main="Beneficus",
-      sub="Ammurapi Shield",
-      head="Telchine Cap",
-      body="Telchine Chasuble",
-      hands="Inyanga dastanas +2",
-      legs="Piety pantaloons +3",
-      feet="Ebers duckbills +1",
-      left_ring={name="Stikini Ring +1",bag="wardrobe 2"},
-      right_ring={name="Stikini Ring +1",bag="wardrobe 3"},
-      left_ear="Beatific Earring",
-      right_ear="Mimir Earring",
-      back="Mending cape",
-    }
-
-    sets.midcast.EnhancingDuration = {
+    sets.midcast['Enhancing Magic'] = { -- 502 @ ML 24
       main="Beneficus",
       sub="Ammurapi Shield",
       head="Telchine Cap",
       body="Telchine Chasuble",
       hands="Telchine Gloves",
       legs="Telchine Braconi",
-      feet="Telchine Pigaches",
-      waist="Embla Sash",
+      feet="Theophany duckbills +3",
       left_ring={name="Stikini Ring +1",bag="wardrobe 2"},
       right_ring={name="Stikini Ring +1",bag="wardrobe 3"},
       left_ear="Beatific Earring",
       right_ear="Mimir Earring",
+      waist="Embla Sash",
       back="Mending cape",
     }
+
+    sets.midcast.EnhancingDuration = sets.midcast['Enhancing Magic']
 
     sets.midcast['Haste'] = sets.midcast.EnhancingDuration
 
@@ -491,6 +477,19 @@ function init_gear_sets()
       legs="Piety Pantaln. +3",
       feet="Ebers Duckbills +1",
     })
+
+    sets.midcast.BarStatus = set_combine(sets.midcast['Enhancing Magic'], {
+      neck="Sroda Necklace",
+    })
+    
+    sets.midcast.Baramnesra = sets.midcast.BarStatus
+    sets.midcast.Barvira = sets.midcast.BarStatus
+    sets.midcast.Barparalyzra = sets.midcast.BarStatus
+    sets.midcast.Barsilencera = sets.midcast.BarStatus
+    sets.midcast.Barpetra = sets.midcast.BarStatus
+    sets.midcast.Barpoisonra = sets.midcast.BarStatus
+    sets.midcast.Barblindra = sets.midcast.BarStatus
+    sets.midcast.Barsleepra = sets.midcast.BarStatus
 
     sets.midcast.BoostStat = set_combine(sets.midcast['Enhancing Magic'], {
     })

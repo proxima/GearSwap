@@ -209,7 +209,6 @@ function user_setup()
     determine_haste_group()
 end
 
-
 -- Called when this job file is unloaded (eg: job change)
 function user_unload()
     send_command('unbind ^`')
@@ -316,7 +315,7 @@ function init_gear_sets()
       hands="Lanun Gants +3", 
       legs={ name="Adhemar Kecks +1", augments={'AGI+12','"Rapid Shot"+13','Enmity-6',}},
       back=Cape.ROLL, --10 Snapshot
-      waist="Yemaya Belt", 
+      waist="Yemaya Belt",
       feet="Meg. Jam. +2", 
       ring1="Crepuscular Ring"
     }

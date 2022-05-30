@@ -365,6 +365,11 @@ function get_sets()
       feet = "Bagua Sandals +3",
    }
 
+   sets.precast["Dispelga"] = set_combine(sets.precast.casting, {
+     main="Daybreak",
+     sub="Ammurapi Shield"
+   })
+   
    ----------
    -- Midcast
    ----------
@@ -476,6 +481,11 @@ function get_sets()
      back={ name="Nantosuelta's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Phys. dmg. taken-10%',}},
    })
 
+   sets.midcast.Dispelga = set_combine(sets.midcast.IntEnfeebling, {
+     main="Daybreak",
+     sub="Ammurapi Shield"
+   })
+   
    -- could use MND cape
    sets.midcast.MndEnfeebling = set_combine(sets.midcast.casting, {
      main="Daybreak",

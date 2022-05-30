@@ -180,7 +180,7 @@ function init_gear_sets()
     sets.precast.WS['Evisceration'] = set_combine(sets.precast.WS, {
       ammo="Yetshila +1",
       head={ name="Adhemar Bonnet +1", augments={'STR+12','DEX+12','Attack+20',}},
-      body="Meg. Cuirie +2", -- body="Plunderer's Vest +3",
+      body="Plunderer's Vest +3",
       hands="Adhemar Wrist. +1",
       legs="Pillager's Culottes +3",
       feet="Mummu Gamash. +2",

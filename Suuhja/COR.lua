@@ -312,7 +312,7 @@ function init_gear_sets()
     sets.precast.RA = {ammo=gear.RAbullet,
       head={ name="Taeon Chapeau", augments={'"Snapshot"+5','"Snapshot"+5',}}, 
       neck="Comm. Charm +2",
-      body="Laksa. Frac +3", -- Rapid, Recyle
+      body="Laksa. Frac +1", -- Rapid, Recyle
       hands="Lanun Gants +3",
       legs={ name="Adhemar Kecks +1", augments={'AGI+12','"Rapid Shot"+13','Enmity-6',}},
       back=Cape.ROLL, -- 10 Snapshot
