@@ -276,7 +276,7 @@ function get_sets()
     -- Base magic pact set
     -- Prioritize BP Damage & Pet:MAB
     sets.pet_midcast.Magic_BP_Base = {
-      main="Grioavolr",
+      main="Grioavolr", -- or Espiritus
       sub="Elan Strap +1",
       ammo="Sancus Sachet +1",
       head="C. Palug Crown",

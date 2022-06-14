@@ -298,18 +298,18 @@ function init_gear_sets()
     sets.precast.WS['Flash Nova'] = set_combine(sets.precast.WS, {})
     
     sets.precast.WS['Cataclysm'] = set_combine(sets.precast.WS, {
-      ammo="Pemphredo Tathlum",
+      ammo="Ghastly Tathlum +1",
       head="Pixie Hairpin +1",
       body="Nyame Mail",
       hands="Nyame Gauntlets",
       legs="Nyame Flanchard",
       feet="Nyame Sollerets",
-      neck="Cleric's Torque +1",
+      neck="Sibyl Scarf",
       ear1="Malignance Earring",
       ear2="Regal Earring",
       ring1="Metamorph ring +1",
       ring2="Archon Ring",
-      back={ name="Alaunus's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','MND+10','"Fast Cast"+10','Phys. dmg. taken-10%',}},
+      back={ name="Alaunus's Cape", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}},
       waist="Orpheus's Sash",
     })
 

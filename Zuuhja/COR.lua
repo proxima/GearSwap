@@ -386,7 +386,7 @@ function init_gear_sets()
       feet={ name="Nyame Sollerets", augments={'Path: B',}},
       neck={ name="Comm. Charm +2", augments={'Path: A',}},
       waist="K. Kachina Belt +1",
-      left_ear={ name="Moonshade Earring", augments={'"Mag.Atk.Bns."+4','TP Bonus +250',}},
+      left_ear="Moonshade Earring",
       right_ear="Friomisi Earring",
       left_ring="Dingir Ring",
       right_ring="Epaminondas's Ring",
@@ -632,8 +632,8 @@ function init_gear_sets()
       waist="Reiki Yotai",
       left_ear="Crepuscular Earring",
       right_ear="Telos Earring",
-      left_ring="Ilabrat Ring",
-      right_ring="Rajas Ring",
+      left_ring="Epona's Ring",
+      right_ring="Defending Ring",
       back=Cape.TP
     }
 
@@ -780,11 +780,11 @@ function init_gear_sets()
     sets.Fomalhaut_R = {main=Rostam.A, sub=Rostam.B, ranged="Fomalhaut"}
     sets.Fomalhaut_R.Acc = sets.Fomalhaut_R
 
-    -- sets.Anarchy = {main="Naegling", sub="Gleti's Knife", ranged="Anarchy +2"}
-    -- sets.Anarchy.Acc = {main="Naegling", sub="Gleti's Knife", ranged="Anarchy +2"}
+    sets.Anarchy = {main="Naegling", sub="Gleti's Knife", ranged="Anarchy +2"}
+    sets.Anarchy.Acc = {main="Naegling", sub="Gleti's Knife", ranged="Anarchy +2"}
 
-    sets.Anarchy = {main="Naegling", sub=Rostam.B, ranged="Anarchy +2"}
-    sets.Anarchy.Acc = {main="Naegling", sub=Rostam.B, ranged="Anarchy +2"}
+    -- sets.Anarchy = {main="Naegling", sub=Rostam.B, ranged="Anarchy +2"}
+    -- sets.Anarchy.Acc = {main="Naegling", sub=Rostam.B, ranged="Anarchy +2"}
 
     sets.Rolls = {main={name="Rostam", bag="wardrobe4"}, sub={name="Rostam", bag="wardrobe2", priority=1}, ranged="Compensator"}
     sets.Rolls.Acc = sets.Rolls

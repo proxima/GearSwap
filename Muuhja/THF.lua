@@ -54,6 +54,9 @@ function user_setup()
     send_command('bind ^` input /ja "Flee" <me>')
     send_command('bind ^= gs c cycle treasuremode')
     send_command('bind !- gs c cycle targetmode')
+    send_command('bind @o sat youcommand Muuhja "Horde Lullaby"')
+    send_command('bind @p sat youcommand Zuuhja "Sleepga"')
+    
 
     select_default_macro_book()
 end
@@ -66,6 +69,9 @@ function user_unload()
     send_command('unbind @b')
     send_command('unbind @n')
     send_command('unbind @m')
+
+    send_command('unbind @o')
+    send_command('unbind @p')
 end
 
 -- Define sets and vars used by this job file.

@@ -227,7 +227,7 @@ function get_sets()
     -- Sucellos's And such, add your own.
     RDMCape = {}
     RDMCape.TP        = { name="Sucellos's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dual Wield"+10','Phys. dmg. taken-10%',}}
-    RDMCape.MACC      = { name="Sucellos's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','MND+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}
+    RDMCape.MND_WSD   = { name="Sucellos's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','MND+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}
     RDMCape.Aeolian   = { name="Sucellos's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}
     RDMCape.BlackHalo = { name="Sucellos's Cape", augments={'MND+20','Accuracy+20 Attack+20','MND+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}
 
@@ -256,7 +256,7 @@ function get_sets()
       right_ear="Odnowa Earring +1",
       left_ring={name="Stikini Ring +1",bag="wardrobe 2"},
       right_ring={name="Stikini Ring +1",bag="wardrobe 3"},
-      back=RDMCape.MACC
+      back=RDMCape.MND_WSD
     }
 
     sets.me.idle.dt = set_combine(sets.me.idle.refresh, {
@@ -271,7 +271,7 @@ function get_sets()
       right_ear="Odnowa Earring +1",
       left_ring="Ilabrat Ring",
       right_ring="Defending Ring",
-      back=RDMCape.MACC
+      back=RDMCape.MND_WSD
     })
     
     sets.me.idle.mdt = set_combine(sets.me.idle.refresh, {
@@ -287,7 +287,7 @@ function get_sets()
       right_ear="Odnowa Earring +1",
       left_ring="Stikini Ring +1",
       right_ring="Defending Ring",
-      back=RDMCape.MACC	  
+      back=RDMCape.MND_WSD
     })
     
     -- Your MP Recovered Whilst Resting Set
@@ -379,7 +379,22 @@ function get_sets()
     }
     
     sets.me["Chant du Cygne"] = {
+      ammo="Yetshila +1",
+      head="Blistering Sallet +1",
+      neck="Fotia Gorget",
+      left_ear="Sherida Earring",
+      right_ear="Mache Earring +1",
+      body="Ayanmo Corazza +2",
+      hands="Bunzi's Gloves",
+      left_ring="Begrudging Ring",
+      right_ring="Ilabrat Ring",
+      back=RDMCape.BlackHalo, -- Make cape
+      waist="Fotia Belt",
+      legs="Nyame Flanchard", -- "Zoar Subligar +1",
+      feet="Thereoid Greaves",
     }
+    
+    sets.me["Evisceration"] = sets.me["Chant du Cygne"]
 
     sets.me["Sanguine Blade"] = {
       ammo="Pemphredo Tathlum",
@@ -394,7 +409,7 @@ function get_sets()
       right_ear="Malignance Earring",
       left_ring="Archon Ring",
       right_ring={ name="Metamor. Ring +1", augments={'Path: A',}},
-      back=RDMCape.MACC
+      back=RDMCape.MND_WSD
     }
 
     sets.me["Red Lotus Blade"] = {
@@ -410,7 +425,7 @@ function get_sets()
       right_ear="Malignance Earring",
       left_ring="Freke Ring",
       right_ring="Epaminondas's Ring",
-      back=RDMCape.MACC
+      back=RDMCape.MND_WSD
     }
 
     sets.me["Burning Blade"] = sets.me["Red Lotus Blade"]
@@ -775,7 +790,7 @@ function get_sets()
       right_ring="Stikini ring +1",
       waist="Witful belt",               --        3
       --                                        5
-      back=RDMCape.MACC                  --
+      back=RDMCape.MND_WSD               --
     })
 
     sets.midcast.cure.weather = set_combine(sets.midcast.cure.normal, {

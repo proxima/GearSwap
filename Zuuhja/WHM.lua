@@ -380,6 +380,7 @@ function init_gear_sets()
       feet="Ebers duckbills +1",
       ring1="Stikini Ring +1",
       ring2="Stikini Ring +1",
+      waist="Embla Sash",
       back="Mending cape",
     }
 
@@ -437,6 +438,19 @@ function init_gear_sets()
       feet="Ebers Duckbills +1",
     })
 
+    sets.midcast.BarStatus = set_combine(sets.midcast['Enhancing Magic'], {
+      neck="Sroda Necklace",
+    })
+    
+    sets.midcast.Baramnesra = sets.midcast.BarStatus
+    sets.midcast.Barvira = sets.midcast.BarStatus
+    sets.midcast.Barparalyzra = sets.midcast.BarStatus
+    sets.midcast.Barsilencera = sets.midcast.BarStatus
+    sets.midcast.Barpetra = sets.midcast.BarStatus
+    sets.midcast.Barpoisonra = sets.midcast.BarStatus
+    sets.midcast.Barblindra = sets.midcast.BarStatus
+    sets.midcast.Barsleepra = sets.midcast.BarStatus
+        
     sets.midcast.BoostStat = set_combine(sets.midcast['Enhancing Magic'], {
     })
 
@@ -597,6 +611,19 @@ function init_gear_sets()
 
     -- Basic set for if no TP weapon is defined.
     sets.engaged = {
+      ammo="Vanir Battery",
+      head={ name="Blistering Sallet +1", augments={'Path: A',}},
+      body={ name="Nyame Mail", augments={'Path: B',}},
+      hands={ name="Gazu Bracelet +1", augments={'Path: A',}},
+      legs={ name="Nyame Flanchard", augments={'Path: B',}},
+      feet={ name="Nyame Sollerets", augments={'Path: B',}},
+      neck={ name="Loricate Torque +1", augments={'Path: A',}},
+      waist="Windbuffet Belt +1",
+      left_ear="Telos Earring",
+      right_ear="Crep. Earring",
+      left_ring="Ilabrat Ring",
+      right_ring="Rajas Ring",
+      back={ name="Alaunus's Cape", augments={'MND+20','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Haste+10','Mag. Evasion+15',}},
     }
 
     -- Buff sets: Gear that needs to be worn to actively enhance a current player buff.

@@ -477,7 +477,7 @@ function get_sets()
     sets.me["Realmrazer"] = set_combine(sets.me["Black Halo"], {
       neck="Fotia Gorget",
       waist="Fotia Belt",
-      left_ring={name="Chirich Ring +1",bag="wardrobe 2"},
+      left_ring="Rufescent Ring",
       right_ring={name="Chirich Ring +1",bag="wardrobe 4"},
     })
 
@@ -604,19 +604,19 @@ function get_sets()
     -----------------------------------------------------------------------------------------------
     -- Make sure you have a non weather obi in this set. Helix get bonus naturally no need Obi.	
     sets.midcast.Kaustra = {
-      main={ name="Bunzi's Rod", augments={'Path: A',}},                                  -- 10
+      main={ name="Bunzi's Rod", augments={'Path: A',}},       
       sub="Ammurapi Shield",
       ammo={ name="Ghastly Tathlum +1", augments={'Path: A',}},
-      head="Pixie hairpin +1",
-      body={ name="Agwu's Robe", augments={'Path: A',}},                                  -- 10
-      hands="Agwu's Gages",                                                               --  8
-      legs="Agwu's Slops",                                                                --  9
-      feet="Agwu's Pigaches",                                                             --  6
-      neck={ name="Argute Stole +2", augments={'Path: A',}},                              -- 10
+      head="Agwu's Cap",
+      body={ name="Agwu's Robe", augments={'Path: A',}},       
+      hands="Agwu's Gages",                                    
+      legs="Agwu's Slops",                                     
+      feet="Agwu's Pigaches",                                  
+      neck={ name="Argute Stole +2", augments={'Path: A',}},   
       waist={ name="Acuity Belt +1", augments={'Path: A',}},
       left_ear="Regal Earring",
       right_ear="Malignance Earring",
-      left_ring="Archon ring",
+      left_ring="Freke Ring",
       right_ring={ name="Metamor. Ring +1", augments={'Path: A',}},
       back=Lugh.INT_MAB
     }
@@ -677,6 +677,8 @@ function get_sets()
     }
 
     sets.midcast.DarkHelix = {
+      main={ name="Bunzi's Rod", augments={'Path: A',}},
+      sub="Ammurapi Shield",
       ammo="Ghastly Tathlum +1",
       head="Pixie hairpin +1",
       body="Agwu's Robe",
@@ -684,7 +686,8 @@ function get_sets()
       legs="Agwu's Slops",
       feet="Agwu's Pigaches",
       neck={ name="Argute Stole +2", augments={'Path: A',}},
-      waist="Skrymir Cord +1",
+      -- waist="Skrymir Cord +1",
+      waist="Orpheus's Sash",
       left_ear="Crematio Earring",
       right_ear="Malignance Earring",
       left_ring="Archon ring",
@@ -834,8 +837,8 @@ function get_sets()
    })
    
    sets.midcast.SC_Open = {
-      main="Malignance Pole", 
-      -- main="Hvergelmir", -- For when you have low haste buffs during tabula and recast is important
+      -- main="Malignance Pole", 
+      main="Hvergelmir", -- For when you have low haste buffs during tabula and recast is important
       sub="Khonsu",                                                                                       --         4 haste
       ammo="Staunch Tathlum +1",
       head={ name="Vanya Hood", augments={'MP+50','"Fast Cast"+10','Haste+2%',}},                         -- 10 fc,  8 haste

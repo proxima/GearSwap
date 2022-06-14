@@ -41,13 +41,6 @@
 --  Weapons:    [ WIN+E/R ]         Cycles between available Weapon Sets
 --              [ WIN+W ]           Toggle Ranged Weapon Lock
 --
---  WS:         [ CTRL+Numpad7 ]    Savage Blade
---              [ CTRL+Numpad8 ]    Last Stand
---              [ CTRL+Numpad4 ]    Leaden Salute
---              [ CTRL+Numpad5 ]    Requiescat
---              [ CTRL+Numpad6 ]    Wildfire
---              [ CTRL+Numpad1 ]    Aeolian Edge
---              [ CTRL+Numpad2 ]    Evisceration
 --
 --  RA:         [ Numpad0 ]         Ranged Attack
 --
@@ -132,13 +125,14 @@ function user_setup()
     state.WeaponskillMode:options('Normal', 'Acc')
     state.IdleMode:options('Normal', 'DT', 'Refresh')
 
-    state.WeaponSet = M{['description']='Weapon Set', 'DeathPenalty_M', 'DeathPenalty_R', 'Armageddon_M', 'Armageddon_R', 'Fomalhaut_M', 'Fomalhaut_R', 'Anarchy', 'Aeolian', 'Rolls'}
+    state.WeaponSet = M{['description']='Weapon Set', 'DeathPenalty_M', 'DeathPenalty_R', 'Anarchy', 'Aeolian', 'Rolls'}
+    -- 'Armageddon_M', 'Armageddon_R', 'Fomalhaut_M', 'Fomalhaut_R',
     state.WeaponLock = M(false, 'Weapon Lock')
 
     gear.RAbullet = "Chrono Bullet"
     gear.RAccbullet = "Chrono Bullet"
     gear.WSbullet = "Chrono Bullet"
-    gear.MAbullet = "Chrono Bullet"
+    gear.MAbullet = "Living Bullet"
     gear.QDbullet = "Hauksbok Bullet"
     options.ammo_warning_limit = 10
 
@@ -161,22 +155,14 @@ function user_setup()
     send_command('bind @e gs c cycleback WeaponSet')
     send_command('bind @r gs c cycle WeaponSet')
     send_command('bind @w gs c toggle WeaponLock')
+    
+    send_command('bind ^numpad4 send zuuhja /ma "Curaga III" Suuhja')
+    send_command('bind ^numpad5 send zuuhja /ma "Curaga IV" Suuhja')
+    send_command('bind ^numpad2 send zuuhja /ma "Cursna" Suuhja')
+    send_command('bind ^numpad3 send zuuhja /ma "Esuna" Zuuhja')
+    send_command('bind ^numpad1 send zuuhja /ma "Cure IV" Suuhja')    
 
     send_command('bind ^numlock input /ja "Triple Shot" <me>')
-
-    if player.sub_job == 'WAR' then
-        send_command('bind ^numpad/ input /ja "Berserk" <me>')
-        send_command('bind ^numpad* input /ja "Warcry" <me>')
-        send_command('bind ^numpad- input /ja "Aggressor" <me>')
-    end
-
-    send_command('bind ^numpad7 input /ws "Savage Blade" <t>')
-    send_command('bind ^numpad8 input /ws "Last Stand" <t>')
-    send_command('bind ^numpad4 input /ws "Leaden Salute" <t>')
-    send_command('bind ^numpad5 input /ws "Requiescat" <t>')
-    send_command('bind ^numpad6 input /ws "Wildfire" <t>')
-    send_command('bind ^numpad1 input /ws "Aeolian Edge" <t>')
-    send_command('bind ^numpad2 input /ws "Evisceration" <t>')
 
     send_command('bind %numpad0 input /ra <t>')
 
@@ -184,14 +170,16 @@ function user_setup()
     set_lockstyle()
 
     Cape = {}
-    Cape.ROLL    = {name="Camulus's Mantle", augments={'INT+20','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','"Snapshot"+10','Mag. Evasion+15',}}
-    Cape.LEADEN  = {name="Camulus's Mantle", augments={'AGI+20','Mag. Acc+20 /Mag. Dmg.+20','AGI+10','Weapon skill damage +10%','Phys. dmg. taken-10%'}}
-    Cape.SB      = {name="Camulus's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%','Phys. dmg. taken-10%'}}
-    Cape.RATK    = {name="Camulus's Mantle", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','AGI+10','Weapon skill damage +10%','Phys. dmg. taken-10%'}}
-    Cape.TP      = {name="Camulus's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}}
-    Cape.RTP     = {name="Camulus's Mantle", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','Rng.Acc.+10','"Store TP"+10','Phys. dmg. taken-10%',}}
-    Cape.DW      = {name="Camulus's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dual Wield"+10','Phys. dmg. taken-10%',}}
-    Cape.AEOLIAN = {name="Camulus's Mantle", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}
+    Cape.SB      = {name="Camulus's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%','Phys. dmg. taken-10%'}} -- Made
+    Cape.DW      = {name="Camulus's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dual Wield"+10','Phys. dmg. taken-10%',}} -- Made
+
+    Cape.ROLL    = {name="Camulus's Mantle", augments={'INT+20','Eva.+20 /Mag. Eva.+20','"Snapshot"+10','Mag. Evasion+15',}} -- ,'Mag. Evasion+10' -- Mostly Made
+    Cape.TP      = {name="Camulus's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10','Phys. dmg. taken-10%',}} -- 'Accuracy+10', -- Mostly Made
+    Cape.AEOLIAN = {name="Camulus's Mantle", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','Weapon skill damage +10%','Phys. dmg. taken-10%',}} -- ,'INT+10' -- Mostly Made
+
+    Cape.LEADEN  = {name="Camulus's Mantle", augments={'AGI+20','Mag. Acc+20 /Mag. Dmg.+20','Weapon skill damage +10%',}} -- 'AGI+10', 'Phys. dmg. taken-10%' -- Somewhat Made
+    Cape.RATK    = {name="Camulus's Mantle", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','AGI+10','Weapon skill damage +10%','Phys. dmg. taken-10%'}} -- Unmade
+    Cape.RTP     = {name="Camulus's Mantle", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','Rng.Acc.+10','"Store TP"+10','Phys. dmg. taken-10%',}} -- Unmade
 
     Rostam = {}
     Rostam.A = {name="Rostam", bag="wardrobe2"}
@@ -231,17 +219,14 @@ function user_unload()
     send_command('unbind @e')
     send_command('unbind @r')
     send_command('unbind ^numlock')
-    send_command('unbind ^numpad/')
-    send_command('unbind ^numpad*')
-    send_command('unbind ^numpad-')
-    send_command('unbind ^numpad8')
-    send_command('unbind ^numpad4')
-    send_command('unbind ^numpad5')
-    send_command('unbind ^numpad6')
-    send_command('unbind ^numpad1')
-    send_command('unbind ^numpad2')
     send_command('unbind numpad0')
 
+    send_command('unbind ^numpad4')
+    send_command('unbind ^numpad5')
+    send_command('unbind ^numpad2')
+    send_command('unbind ^numpad3')
+    send_command('unbind ^numpad1')	
+    
     send_command('unbind #`')
     send_command('unbind #1')
     send_command('unbind #2')
@@ -268,7 +253,7 @@ function init_gear_sets()
     sets.precast.JA['Random Deal'] = {body="Lanun Frac +2"}
 
     sets.precast.CorsairRoll = {
-      head="Lanun Tricorne +3",
+      head="Lanun Tricorne +1",
       body="Malignance Tabard",
       hands="Chasseur's Gants +1",
       legs="Malignance Tights",
@@ -277,13 +262,13 @@ function init_gear_sets()
       neck="Regal Necklace",
       ear1="Odnowa Earring +1",
       ear2="Etiolation Earring",
-      ring1="Gelatinous Ring +1",
-      ring2="Defending Ring",
+      ring1="Defending Ring",
+      ring2="Gelatinous Ring +1",
       back=Cape.ROLL,
       waist="Flume Belt +1"
     }
 
-    sets.precast.CorsairRoll.Duration = {main={ name="Rostam", bag="wardrobe 4"}, range="Compensator"}
+    sets.precast.CorsairRoll.Duration = {main={ name="Rostam", bag="wardrobe 7"}, range="Compensator"}
     sets.precast.CorsairRoll.LowerDelay = {back="Gunslinger's Cape"}
     sets.precast.CorsairRoll["Caster's Roll"] = set_combine(sets.precast.CorsairRoll, {legs="Chas. Culottes +1"})
     sets.precast.CorsairRoll["Courser's Roll"] = set_combine(sets.precast.CorsairRoll, {feet="Chass. Bottes +1"})
@@ -339,7 +324,7 @@ function init_gear_sets()
 
     sets.precast.WS['Last Stand'] = {ammo=gear.WSbullet,
       head="Nyame Helm",
-      body="Laksa. Frac +3",
+      body="Nyame Mail",-- body="Laksa. Frac +3",
       hands="Nyame Gauntlets",
       legs="Nyame Flanchard",
       feet="Lanun Bottes +3",
@@ -376,7 +361,7 @@ function init_gear_sets()
       left_ring="Dingir Ring",
       right_ring="Epaminondas's Ring",
       back=Cape.LEADEN,
-      waist="Sveltesse gouriz +1",
+      waist="K. Kachina Belt +1",
     }
 
     sets.precast.WS['Hot Shot'] = {ammo=gear.WSbullet,
@@ -397,7 +382,7 @@ function init_gear_sets()
     sets.precast.WS['Leaden Salute'] = set_combine(sets.precast.WS['Wildfire'], {
       head="Pixie Hairpin +1",
       left_ear="Moonshade Earring",
-      right_ring="Archon Ring",
+      right_ring="Archon Ring"
     })
 
     sets.precast.WS['Leaden Salute'].Acc = set_combine(sets.precast.WS['Leaden Salute'], {
@@ -450,10 +435,10 @@ function init_gear_sets()
 
     sets.midcast.CorsairShot = {ammo=gear.QDBullet,
       head="Nyame Helm",
-      body="Nyame Mail", -- body={ name="Lanun Frac +2", augments={'Enhances "Loaded Deck" effect',}},
+      body={ name="Lanun Frac +2", augments={'Enhances "Loaded Deck" effect',}},
       hands="Nyame Gauntlets", -- hands={ name="Carmine Fin. Ga. +1", augments={'Rng.Atk.+20','"Mag.Atk.Bns."+12','"Store TP"+6',}},
       legs="Nyame Flanchard",
-      feet="Nyame Sollerets", -- feet={ name="Lanun Bottes +3", augments={'Enhances "Wild Card" effect',}},
+      feet={ name="Lanun Bottes +3", augments={'Enhances "Wild Card" effect',}},
       neck="Comm. Charm +2",
       left_ear="Crematio Earring",
       right_ear="Friomisi Earring",
@@ -484,7 +469,7 @@ function init_gear_sets()
       hands="Malignance Gloves", -- hands="Laksa. Gants +3",
       legs="Malignance Tights",
       feet="Malignance Boots", -- feet="Laksa. Bottes +3",
-      neck="Sanctity Necklace", -- neck="Comm. Charm +2",
+      neck="Comm. Charm +2",
       left_ear="Dignitary's Earring",
       right_ear="Crepuscular Earring",
       left_ring="Stikini Ring +1",
@@ -498,7 +483,7 @@ function init_gear_sets()
 
     -- Ranged gear
     sets.midcast.RA = {ammo=gear.RAbullet,
-      head="Ikenga's hat",
+      head="Malignance Chapeau", -- head="Ikenga's hat",
       neck="Iskur Gorget",
       left_ear="Crepuscular Earring",
       right_ear="Telos Earring",
@@ -508,7 +493,7 @@ function init_gear_sets()
       ring2="Ilabrat Ring",
       back=Cape.RTP,
       waist="Yemaya Belt",
-      legs="Ikenga's Trousers",
+      legs="Malignance Tights", -- legs="Ikenga's Trousers",
       feet="Malignance Boots"
     }
 
@@ -519,7 +504,7 @@ function init_gear_sets()
 
     sets.midcast.RA.HighAcc = set_combine(sets.midcast.RA.Acc, {
       neck="Comm. Charm +2",
-      body="Laksa. Frac +3",
+      -- body="Laksa. Frac +3",
       left_ring="Regal Ring",
       waist="K. Kachina Belt +1",
     })
@@ -766,31 +751,31 @@ function init_gear_sets()
       hands={ name="Herculean Gloves", augments={'"Conserve MP"+1','Accuracy+21','"Treasure Hunter"+2',}}
     }
 
-    sets.DeathPenalty_M = {main=Rostam.B, sub="Tauret", ranged="Death Penalty"}
-    sets.DeathPenalty_M.Acc = {main=Rostam.B, sub=Rostam.A, ranged="Death Penalty"}
+    sets.DeathPenalty_M = {main="Rostam", sub="Tauret", ranged="Death Penalty"}
+    sets.DeathPenalty_M.Acc = {main="Rostam", sub="Tauret", ranged="Death Penalty"}
 
-    sets.DeathPenalty_R = {main=Rostam.A, sub="Tauret", ranged="Death Penalty"}
-    sets.DeathPenalty_R.Acc = {main=Rostam.A, sub=Rostam.B, ranged="Death Penalty"}
+    sets.DeathPenalty_R = {main="Rostam", sub="Tauret", ranged="Death Penalty"}
+    sets.DeathPenalty_R.Acc = {main="Rostam", sub="Tauret", ranged="Death Penalty"}
 
-    sets.Armageddon_M = {main="Naegling", sub="Tauret", ranged="Armageddon"}
-    sets.Armageddon_M.Acc = {main=Rostam.B, sub=Rostam.A, ranged="Armageddon"}
+    sets.Armageddon_M = {main="Tauret", sub="Kaja Knife", ranged="Armageddon"}
+    sets.Armageddon_M.Acc = {main="Tauret", sub="Kaja Knife", ranged="Armageddon"}
 
-    sets.Armageddon_R = {main=Rostam.A, sub=Rostam.B, ranged="Armageddon"}
+    sets.Armageddon_R = {main="Tauret", sub="Kaja Knife", ranged="Armageddon"}
     sets.Armageddon_R.Acc = sets.Armageddon_R
 
-    sets.Fomalhaut_M = {main=Rostam.B, sub=Rostam.A, ranged="Fomalhaut"}
+    sets.Fomalhaut_M = {main="Tauret", sub="Kaja Knife", ranged="Fomalhaut"}
     sets.Fomalhaut_M.Acc = sets.Fomalhaut_M
     
-    sets.Fomalhaut_R = {main=Rostam.A, sub=Rostam.B, ranged="Fomalhaut"}
+    sets.Fomalhaut_R = {main="Tauret", sub="Kaja Knife", ranged="Fomalhaut"}
     sets.Fomalhaut_R.Acc = sets.Fomalhaut_R
 
     sets.Anarchy = {main="Naegling", sub="Gleti's Knife", ranged="Anarchy +2"}
     sets.Anarchy.Acc = {main="Naegling", sub="Gleti's Knife", ranged="Anarchy +2"}
 
-    sets.Rolls = {main={name="Rostam", bag="wardrobe4"}, sub={name="Rostam", bag="wardrobe2", priority=1}, ranged="Compensator"}
+    sets.Rolls = {main={name="Rostam", bag="wardrobe7"}, sub={name="Rostam", bag="wardrobe2", priority=1}, ranged="Compensator"}
     sets.Rolls.Acc = sets.Rolls
 
-    sets.Aeolian = {main=Rostam.B, sub="Tauret", ranged="Anarchy +2"}
+    sets.Aeolian = {main="Rostam", sub="Tauret", ranged="Anarchy +2"}
     sets.Aeolian.Acc = {main=Rostam.B, sub=Rostam.A, ranged="Anarchy +2"}
 
     sets.DefaultShield = {sub="Nusku Shield"}
@@ -950,7 +935,6 @@ function job_buff_change(buff,gain)
             handle_equipping_gear(player.status)
         end
     end
-
 end
 
 -- Handle notifications of general user state change.

@@ -130,7 +130,7 @@ function user_setup()
         'Spirited Etude', 'Logical Etude', 'Enchanting Etude', 'Bewitching Etude'
     }
 
-    state.WeaponSet = M{['description']='Weapon Set', 'Carnwenhan', 'Twashtar', 'Naegling', 'Aeneas', 'Tauret', 'Aeolian', 'Nibiru', 'NibiruDW', 'Free'}
+    state.WeaponSet = M{['description']='Weapon Set', 'Carnwenhan', 'Twashtar', 'NaeglingDW', 'NaeglingSW', 'Aeneas', 'Tauret', 'Aeolian', 'NibiruShield', 'NibiruDW', 'Free'}
     state.WeaponLock = M(false, 'Weapon Lock')
     state.CP = M(false, "Capacity Points Mode")
 
@@ -223,7 +223,7 @@ function init_gear_sets()
       body="Inyanga Jubbah +2",                                                                                     -- 14
       hands="Gendewitha gages +1",                                                                                  --  7
       legs="Aya. Cosciales +2",                                                                                     --  6
-      waist="Embla Sash",
+      waist="Embla Sash",                                                                                           --  5
       left_ring="Gelatinous Ring +1",
       right_ring="Kishar Ring",                                                                                     --  4
       back=Cape.FC                                                                                                  -- 10
@@ -241,9 +241,9 @@ function init_gear_sets()
       body="Inyanga Jubbah +2",                                                                            -- 14
       hands="Gendewitha gages +1",                                                                         -- 12
       legs="Aya. Cosciales +2",                                                                            --  6
-      feet={ name="Telchine Pigaches", augments={'Song spellcasting time -6%',}},                          -- 12
+      feet="Bihu Slippers +3",                                                                             -- 12
       neck="Mnbw. Whistle +1",
-      waist="Flume Belt +1",
+      waist="Embla Sash",                                                                                  --  5
       left_ring="Gelatinous Ring +1",
       right_ring="Kishar Ring",                                                                            --  4
       left_ear="Odnowa Earring +1",                                                                       
@@ -348,9 +348,9 @@ function init_gear_sets()
       legs={ name="Nyame Flanchard", augments={'Path: B',}},
       feet={ name="Nyame Sollerets", augments={'Path: B',}},
       neck="Sibyl Scarf",
-      waist="Orpheus's Sash", -- waist="Eschan Stone",
+      waist="Orpheus's Sash",
       left_ear="Regal Earring",
-      right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
+      right_ear="Moonshade Earring",
       left_ring="Metamorph Ring +1",
       right_ring="Epaminondas's Ring",
       back=Cape.AEOLIAN
@@ -373,19 +373,21 @@ function init_gear_sets()
       body="Fili Hongreline +1",
       hands="Brioso Cuffs +3",
       legs="Inyanga Shalwar +2",
-    } 
+    }
 
     sets.midcast.Enmity = {
       head="Halitus Helm",
-      body="Emet Harness +1",
-      legs="Zoar Subligar +1",
       neck="Unmoving Collar +1",
       left_ear="Cryptic Earring",
-      -- right_ear="Trux Earring",
+      right_ear="Trux Earring",
+      body="Emet Harness +1",
+      hands="Nyame Gauntlets",
       left_ring="Supershear Ring",
       right_ring="Eihwaz Ring",
-      -- waist="Goading Belt",
-      back=Cape.ENMITY_EVA
+      back=Cape.ENMITY_EVA,
+      waist="Goading Belt",
+      legs="Zoar Subligar +1",
+      feet="Nyame Sollerets",
     }
 
     sets.TreasureHunter = {
@@ -624,7 +626,7 @@ function init_gear_sets()
       left_ring=MR.One,
       right_ring=MR.Two,
       back=Cape.TP,                 --   10
-      waist="Grunfeld Rope"
+      waist="Sailfi Belt +1"
     }
 
     sets.engaged.Acc = set_combine(sets.engaged, {
@@ -679,9 +681,6 @@ function init_gear_sets()
     ------------------------------------------------------------------------------------------------
 
     sets.engaged.Hybrid = {
-        neck="Loricate Torque +1", --6/6
-        ring1="Gelatinous Ring +1",
-        ring2="Defending Ring", --10/10
     }
 
     sets.engaged.DT = set_combine(sets.engaged, sets.engaged.Hybrid)
@@ -779,9 +778,11 @@ function job_midcast(spell, action, spellMap, eventArgs)
             elseif state.LullabyMode.value == 'TH' and spell.english:contains('Horde') then
                 equip({range="Daurdabla"})
                 equip(sets.TreasureHunter)
+		eventArgs.handled = true
             elseif state.LullabyMode.value == 'Enmity' then
                 equip({range="Daurdabla"})
                 equip(sets.midcast.Enmity)
+		eventArgs.handled = true
             elseif buffactive.Troubadour then
                 equip({range="Marsyas"})
             else
@@ -869,11 +870,13 @@ end
 -- Modify the default melee set after it was constructed.
 function customize_melee_set(meleeSet)
     if state.WeaponSet.value == "Carnwenhan" then
-        equip({main="Carnwenhan",sub="Taming Sari"})
+        equip({main="Carnwenhan",sub="Gleti's Knife"})
     elseif state.WeaponSet.value == "Twashtar" then
         equip({main="Twashtar",sub="Fusetto +2"})
-    elseif state.WeaponSet.value == "Naegling" then
+    elseif state.WeaponSet.value == "NaeglingDW" then
         equip({main="Naegling",sub="Fusetto +2"})
+    elseif state.WeaponSet.value == "NaeglingSW" then
+        equip({main="Naegling",sub="Ammurapi Shield"})
     elseif state.WeaponSet.value == "Tauret" then
         equip({main="Tauret",sub="Twashtar"})
     elseif state.WeaponSet.value == "Aeneas" then

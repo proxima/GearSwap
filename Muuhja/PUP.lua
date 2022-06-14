@@ -373,7 +373,20 @@ function init_gear_sets()
 
     sets.precast.WS["Stringing Pummel"].Mod = set_combine(sets.precast.WS, {})
 
-    sets.precast.WS["Victory Smite"] = set_combine(sets.precast.WS, {})
+    sets.precast.WS["Victory Smite"] = {
+      head="Mpaca's Cap",
+      body="Mpaca's Doublet",
+      hands="Mpaca's Gloves",
+      legs="Mpaca's Hose",
+      feet="Mpaca's Boots",
+      neck="Fotia Gorget",
+      waist="Moonbow Belt +1",
+      left_ear={ name="Schere Earring", augments={'Path: A',}},
+      right_ear="Moonshade Earring",
+      left_ring="Gere Ring",
+      right_ring="Niqmaddu Ring",
+      back=Visucius.MasterDA
+    }
 
     sets.precast.WS["Shijin Spiral"] =
         set_combine(
