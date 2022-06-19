@@ -849,7 +849,7 @@ function get_sets()
       hands="Acad. Bracers +3",                                                                           --  9 fc,  3 haste
       left_ring="Defending Ring",
       right_ring="Kishar Ring",                                                                           --  4 fc
-      back=Lugh.MB_FC,                                                                                    -- 10 fc
+      back=Lugh.MP_FC,                                                                                    -- 10 fc
       waist="Witful Belt",                                                                                --  3 fc,  3 haste
       legs="Psycloth Lappas",                                                                             --  7 fc,  5 haste
       feet="Acad. Loafers +3",                                                                            --         3 haste
@@ -1002,7 +1002,7 @@ function get_sets()
       neck={ name="Argute Stole +2", augments={'Path: A',}},
       right_ear="Mimir Earring",
       left_ear="Regal Earring",
-      body="Pedagogy gown +3",
+      body="Telchine chas.",
       hands="Arbatel Bracers +1", -- Tired of this not swapping properly | hands="Telchine Gloves",
       left_ring={name="Stikini Ring +1",bag="wardrobe 2"},
       right_ring={name="Stikini Ring +1",bag="wardrobe 3"},
@@ -1020,6 +1020,8 @@ function get_sets()
     
     -- Focus on Regen Potency
     sets.midcast.regen.potency = set_combine(sets.midcast.regen.hybrid, {
+      main="Bolelabunga",
+      sub="Ammurapi Shield",
       back=Lugh.ADOULIN
     })
 

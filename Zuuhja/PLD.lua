@@ -30,6 +30,7 @@ function user_setup()
  
   send_command('bind @o sat youcommand Muuhja "Horde Lullaby"')
   send_command('bind @a sat youcommand Suuhja "Spectral Floe"')
+  send_command('bind @m sat youcommand Muuhja "Mewing Lullaby"')
   
   send_command('bind @f12 gs c cycle CastingMode')
   send_command('bind ^f11 gs c cycle MagicalDefenseMode')
@@ -41,6 +42,7 @@ end
 function user_unload()
   send_command('unbind @f')
   send_command('unbind @o')  
+  send_command('unbind @m')
   send_command('unbind ^f11')
   send_command('unbind !f11')
   send_command('unbind @f10')

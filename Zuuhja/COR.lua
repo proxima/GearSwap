@@ -768,7 +768,7 @@ function init_gear_sets()
     sets.DeathPenalty_R = {main=Rostam.A, sub="Tauret", ranged="Death Penalty"}
     sets.DeathPenalty_R.Acc = {main=Rostam.A, sub=Rostam.B, ranged="Death Penalty"}
 
-    sets.Armageddon_M = {main="Naegling", sub="Tauret", ranged="Armageddon"}
+    sets.Armageddon_M = {main=Rostam.B, sub="Tauret", ranged="Armageddon"}
     sets.Armageddon_M.Acc = {main=Rostam.B, sub=Rostam.A, ranged="Armageddon"}
 
     sets.Armageddon_R = {main=Rostam.A, sub=Rostam.B, ranged="Armageddon"}
