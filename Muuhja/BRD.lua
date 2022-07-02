@@ -333,7 +333,7 @@ function init_gear_sets()
       legs="Nyame Flanchard",
       feet="Nyame Sollerets",
       neck={ name="Bard's Charm +2", augments={'Path: A',}},
-      waist="Kentarch Belt +1",
+      waist="Sailfi Belt +1",
       left_ear="Moonshade Earring",
       right_ear="Ishvara Earring",
       left_ring="Metamorph Ring +1",

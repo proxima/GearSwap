@@ -776,18 +776,18 @@ function get_sets()
     -- Cure Potency
     sets.midcast.cure.normal = set_combine(sets.midcast.casting, {
       main="Daybreak",
-      sub="Ammurapi shield",
+      sub="Genmei Shield",
       ammo="Leisure Musk +1",            --     4
       head="Kaykaus mitra +1",           -- 11     6
       neck="Debilis medallion",          --     3
-      body="Malignance tabard",          --        4
+      body="Bunzi's Robe",               -- 15 10  3
       hands="Kaykaus Cuffs +1",          -- 11  6  3
       legs="Atrophy Tights +3",          -- 11     5
-      feet="Kaykaus boots +1",           -- 17  6  3
+      feet="Bunzi's Sabots",             --     6  3
       left_ear="Domesticator's earring", --     5
       right_ear="Mendi. Earring",        --  5
       left_ring="Lebeche ring",          --  3  5
-      right_ring="Stikini ring +1",
+      right_ring="Defending Ring",
       waist="Witful belt",               --        3
       --                                        5
       back=RDMCape.MND_WSD               --

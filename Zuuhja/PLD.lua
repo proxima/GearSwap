@@ -379,7 +379,7 @@ function init_gear_sets()
   }
   
   sets.idle.Block = {
-    main="Burtgang",
+    main="Malevolence",
     sub="Ochain",
     ammo="Staunch Tathlum +1",      --  3
     head="Sakpata's Helm",          --  7

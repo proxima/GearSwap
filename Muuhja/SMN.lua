@@ -56,8 +56,6 @@ function get_sets()
     AutoRemedy = false -- Auto Remedy when using an ability while Paralyzed.
     AutoEcho = false -- Auto Echo Drop when using an ability while Silenced.
     
-    -- todo: af body, af head, af legs, af feet
- 
     -- ===================================================================================================================
     --      Sets
     -- ===================================================================================================================
@@ -336,7 +334,7 @@ function get_sets()
     }
  
     sets.pet_midcast.FlamingCrush_Acc = set_combine(sets.pet_midcast.FlamingCrush, {
-      ear2="Kyrene's Earring",
+      right_ear="Kyrene's Earring",
       body="Convoker's Doublet +3",
     })
  
@@ -463,9 +461,6 @@ function get_sets()
         feet="Baayami Sabots +1"
     })
  
-    sets.aftercast.Perp_Zendik = set_combine(sets.aftercast.Perp_Favor, {
-    })
- 
     -- TP set. Equipped when IdleMode is "DD" and MeleeMode is ON.
     sets.aftercast.Perp_Melee = set_combine(sets.aftercast.Perp_Refresh, {
     })
@@ -479,7 +474,11 @@ function get_sets()
     })
  
     -- DT build with avatar out. Equipped when IdleMode is "DT".
-    sets.aftercast.Perp_DT = set_combine(sets.DT_Base, {
+    sets.aftercast.Perp_DT = set_combine(sets.aftercast.Perp_Base, {
+      body="Bunzi's Robe",
+      hands="Bunzi's Gloves",
+      legs="Bunzi's Pants",
+      feet="Bunzi's Sabots",
     })
  
     sets.aftercast.Spirit = {
@@ -751,7 +750,7 @@ end
  
 -- This command is called whenever you input "gs c <command>"
 function self_command(command)
-    IdleModeCommands = {'DD','Refresh','DT','Favor','PetDT','Zendik'}
+    IdleModeCommands = {'DD','Refresh','DT','Favor','PetDT'}
     is_valid = false
    
     for _, v in ipairs(IdleModeCommands) do
@@ -851,9 +850,6 @@ end
  
 -- This function is for returning to aftercast gear after an action/event.
 function idle()
-    --if TownIdle:contains(world.area:lower()) then
-    --  return
-    --end
     if pet.isvalid then
         if IdleMode=='DT' then
             equip(sets.aftercast.Perp_DT)
@@ -873,8 +869,6 @@ function idle()
             end
         elseif IdleMode=='Favor' then
             equip(sets.aftercast.Perp_Favor)
-        elseif IdleMode=='Zendik' then
-            equip(sets.aftercast.Perp_Zendik)
         elseif MeleeMode then
             equip(sets.aftercast.Perp_Melee)
         elseif IdleMode=='DD' then

@@ -961,11 +961,9 @@ function get_sets()
 
     -- Cure Potency    
     sets.midcast.cure.normal = set_combine(sets.midcast.casting, {
-      -- main="Chatoyant staff",             -- 10
       main="Malignance Pole",                        -- DT up for Ody V20s
-      sub="Khonsu",
-      -- ammo="Leisure Musk +1",            --     4
-      ammo="Staunch Tathlum +1",                     -- DT up for Ody V20s
+      sub="Khonsu",                      --        4
+      ammo="Leisure Musk +1",            --     4
       head="Kaykaus mitra +1",           -- 11     6
       neck="Loricate torque +1",
       body="Pedagogy gown +3",           --        3
@@ -979,13 +977,10 @@ function get_sets()
       waist="Witful belt",               --        3
       back=Lugh.DT                       --  0 10  0
       -- merits                                 5
-      -- totals:                             51 48 23 (ignoring Daybreak potency incase we are weapon locked)
+      -- totals:                             51 48 27
     })
     
     sets.midcast.cure.weather = set_combine(sets.midcast.cure.normal, {
-      -- main="Chatoyant staff",             -- 10
-      main="Malignance Pole",
-      sub="Khonsu",
       waist="Hachirin-no-Obi",
     })
 

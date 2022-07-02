@@ -190,6 +190,7 @@ function user_setup()
     send_command('bind @a sat youcommand Muuhja "Thunderspark"')
     send_command('bind @o sat youcommand Muuhja "Shock Squall"')
     send_command('bind @p sat youcommand Zuuhja "Sleepga"')
+    send_command('bind @v sat youcommand Muuhja "Flaming Crush"')
     
     select_default_macro_book()
 

@@ -352,7 +352,6 @@ function init_gear_sets()
     }
     
     sets.precast.WS['Last Stand'].Acc = set_combine(sets.precast.WS['Last Stand'], {ammo=gear.RAccbullet,
-      head="Lanun Tricorne +3",
       neck="Iskur Gorget",
       left_ear="Beyla Earring",
       right_ring="Hajduk Ring +1",
@@ -383,7 +382,7 @@ function init_gear_sets()
       body={ name="Nyame Mail", augments={'Path: B',}},
       hands={ name="Nyame Gauntlets", augments={'Path: B',}},
       legs={ name="Nyame Flanchard", augments={'Path: B',}},
-      feet={ name="Nyame Sollerets", augments={'Path: B',}},
+      feet={ name="Lanun Bottes +3", augments={'Enhances "Wild Card" effect',}},
       neck={ name="Comm. Charm +2", augments={'Path: A',}},
       waist="K. Kachina Belt +1",
       left_ear="Moonshade Earring",
@@ -629,7 +628,7 @@ function init_gear_sets()
       legs="Malignance Tights",
       feet="Malignance Boots",
       neck="Iskur Gorget",
-      waist="Reiki Yotai",
+      waist="Windbuffet Belt +1",
       left_ear="Crepuscular Earring",
       right_ear="Telos Earring",
       left_ring="Epona's Ring",
@@ -685,11 +684,11 @@ function init_gear_sets()
     sets.engaged.DW.HighAcc.MaxHaste = set_combine(sets.engaged.DW.MidAcc.MaxHaste, {})
     sets.engaged.DW.STP.MaxHaste = set_combine(sets.engaged.DW.MaxHaste, {})
 
-    sets.engaged.DW.MaxHastePlus = set_combine(sets.engaged.DW.MaxHaste, {back=Cape.DW})
-    sets.engaged.DW.LowAcc.MaxHastePlus = set_combine(sets.engaged.DW.LowAcc.MaxHaste, {back=Cape.DW})
-    sets.engaged.DW.MidAcc.MaxHastePlus = set_combine(sets.engaged.DW.MidAcc.MaxHaste, {back=Cape.DW})
-    sets.engaged.DW.HighAcc.MaxHastePlus = set_combine(sets.engaged.DW.HighAcc.MaxHaste, {back=Cape.DW})
-    sets.engaged.DW.STP.MaxHastePlus = set_combine(sets.engaged.DW.STP.MaxHaste, {back=Cape.DW})
+    sets.engaged.DW.MaxHastePlus = set_combine(sets.engaged.DW.MaxHaste, {})
+    sets.engaged.DW.LowAcc.MaxHastePlus = set_combine(sets.engaged.DW.LowAcc.MaxHaste, {})
+    sets.engaged.DW.MidAcc.MaxHastePlus = set_combine(sets.engaged.DW.MidAcc.MaxHaste, {})
+    sets.engaged.DW.HighAcc.MaxHastePlus = set_combine(sets.engaged.DW.HighAcc.MaxHaste, {})
+    sets.engaged.DW.STP.MaxHastePlus = set_combine(sets.engaged.DW.STP.MaxHaste, {})
 
     ------------------------------------------------------------------------------------------------
     ---------------------------------------- Hybrid Sets -------------------------------------------
@@ -783,10 +782,7 @@ function init_gear_sets()
     sets.Anarchy = {main="Naegling", sub="Gleti's Knife", ranged="Anarchy +2"}
     sets.Anarchy.Acc = {main="Naegling", sub="Gleti's Knife", ranged="Anarchy +2"}
 
-    -- sets.Anarchy = {main="Naegling", sub=Rostam.B, ranged="Anarchy +2"}
-    -- sets.Anarchy.Acc = {main="Naegling", sub=Rostam.B, ranged="Anarchy +2"}
-
-    sets.Rolls = {main={name="Rostam", bag="wardrobe4"}, sub={name="Rostam", bag="wardrobe2", priority=1}, ranged="Compensator"}
+    sets.Rolls = {main=Rostam.C, sub=Rostam.B, ranged="Compensator"}
     sets.Rolls.Acc = sets.Rolls
 
     sets.Aeolian = {main=Rostam.B, sub="Tauret", ranged="Anarchy +2"}

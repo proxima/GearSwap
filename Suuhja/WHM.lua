@@ -233,7 +233,7 @@ function init_gear_sets()
       ammo="Impatiens",
       head={ name="Vanya Hood", augments={'MP+50','"Fast Cast"+10','Haste+2%',}},
       body="Inyanga Jubbah +2",
-      hands={ name="Chironic Gloves", augments={'"Fast Cast"+7','MND+9','Mag. Acc.+4','"Mag.Atk.Bns."+13',}},
+      hands="Fanatic Gloves",
       legs="Aya. Cosciales +2",
       feet={ name="Chironic Slippers", augments={'Mag. Acc.+21','"Fast Cast"+7','MND+9',}},
       neck="Cleric's torque +1",
@@ -323,25 +323,23 @@ function init_gear_sets()
     -- Cure sets
     sets.midcast.CureSolace = {
       main="Asclepius",                                 
-      sub="Ammurapi shield",
+      sub="Genmei Shield",
       ammo="Leisure Musk +1",                               --     4
       head="Kaykaus Mitra +1",                              -- 11    6
       body="Ebers Bliaut +1",                               --       3
-      hands="Theophany Mitts +2",                           --     6 3
+      hands="Kaykaus Cuffs +1",                             -- 11  6 3
       legs="Ebers Pant. +1",                                --       5
       feet="Kaykaus Boots +1",                              -- 17  6 3
       neck={ name="Clr. Torque +1", augments={'Path: A',}}, --  7 20
       waist="Witful belt",                                  --       3
       left_ear="Glorious Earring",                          --     5
       right_ear="Mendi. Earring",                           --  5
-      left_ring="Lebeche Ring",                             --  3  5
-      right_ring="Stikini Ring +1",
+      left_ring="Gelatinous Ring +1", 
+      right_ring="Defending Ring",
       back={ name="Alaunus's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','MND+10','"Fast Cast"+10','Phys. dmg. taken-10%',}},
     }
 
     sets.midcast.CureSolaceWeather = set_combine(sets.midcast.CureSolace, {
-      main="Chatoyant Staff",
-      sub="Enki Strap",
       waist="Hachirin-no-Obi",
     })
 
@@ -350,29 +348,18 @@ function init_gear_sets()
     })
 
     sets.midcast.CureWeather = set_combine(sets.midcast.CureNormal, {
-      main="Chatoyant Staff",
-      sub="Enki Strap",
-      hands="Kaykaus Cuffs +1",
       back="Twilight Cape",
       waist="Hachirin-no-Obi",
     })
 
     sets.midcast.CuragaNormal = set_combine(sets.midcast.CureNormal, {
       body="Theo. Bliaut +2",
-      -- neck="Nuna Gorget +1",
-      left_ring={name="Stikini Ring +1",bag="wardrobe 2"},
-      right_ring={name="Stikini Ring +1",bag="wardrobe 3"},
       waist="Luminary Sash",
     })
 
     sets.midcast.CuragaWeather = set_combine(sets.midcast.CuragaNormal, {
-      main="Chatoyant Staff",
-      sub="Enki Strap",
       body="Theo. Bliaut +2",
-      hands="Kaykaus Cuffs +1",
       back="Twilight Cape",
-      left_ring={name="Stikini Ring +1",bag="wardrobe 2"},
-      right_ring={name="Stikini Ring +1",bag="wardrobe 3"},
       waist="Hachirin-no-Obi",
     })
 
