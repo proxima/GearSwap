@@ -47,7 +47,7 @@ function get_sets()
     GrandFall = 1
  
     StartLockStyle = '1'
-    IdleMode = 'Refresh'
+    IdleMode = 'DT'
     AccMode = false
     ImpactDebuff = false
     MeleeMode = false
@@ -475,6 +475,7 @@ function get_sets()
  
     -- DT build with avatar out. Equipped when IdleMode is "DT".
     sets.aftercast.Perp_DT = set_combine(sets.aftercast.Perp_Base, {
+      neck="Loricate Torque +1",
       body="Bunzi's Robe",
       hands="Bunzi's Gloves",
       legs="Bunzi's Pants",
