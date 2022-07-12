@@ -125,8 +125,7 @@ function user_setup()
     state.WeaponskillMode:options('Normal', 'Acc')
     state.IdleMode:options('Normal', 'DT', 'Refresh')
 
-    state.WeaponSet = M{['description']='Weapon Set', 'DeathPenalty_M', 'DeathPenalty_R', 'Fomalhaut_M', 'Fomalhaut_R', 'Anarchy', 'Aeolian', 'Rolls'}
-    -- 'Armageddon_M', 'Armageddon_R',
+    state.WeaponSet = M{['description']='Weapon Set', 'DeathPenalty_M', 'DeathPenalty_R', 'Armageddon_M', 'Armageddon_R', 'Fomalhaut_M', 'Fomalhaut_R', 'Anarchy', 'Aeolian', 'Rolls'}
     state.WeaponLock = M(false, 'Weapon Lock')
 
     gear.RAbullet = "Chrono Bullet"
@@ -156,6 +155,8 @@ function user_setup()
     send_command('bind @r gs c cycle WeaponSet')
     send_command('bind @w gs c toggle WeaponLock')
     
+    send_command('bind @o sat youcommand Muuhja "Horde Lullaby"')
+
     send_command('bind ^numpad4 send zuuhja /ma "Curaga III" Suuhja')
     send_command('bind ^numpad5 send zuuhja /ma "Curaga IV" Suuhja')
     send_command('bind ^numpad2 send zuuhja /ma "Cursna" Suuhja')
@@ -217,6 +218,7 @@ function user_unload()
     send_command('unbind @w')
     send_command('unbind @e')
     send_command('unbind @r')
+    send_command('unbind @o')
     send_command('unbind ^numlock')
     send_command('unbind numpad0')
 
@@ -366,9 +368,9 @@ function init_gear_sets()
       body={ name="Nyame Mail", augments={'Path: B',}},
       hands={ name="Nyame Gauntlets", augments={'Path: B',}},
       legs={ name="Nyame Flanchard", augments={'Path: B',}},
-      feet={ name="Nyame Sollerets", augments={'Path: B',}},
-      neck={ name="Comm. Charm +2", augments={'Path: A',}},
-      waist="K. Kachina Belt +1",
+      feet={ name="Lanun Bottes +3", augments={'Enhances "Wild Card" effect',}},
+      neck="Fotia Gorget",
+      waist="Fotia Belt",
       left_ear="Moonshade Earring",
       right_ear="Friomisi Earring",
       left_ring="Dingir Ring",

@@ -105,12 +105,16 @@ function user_setup()
     Cape.RUDRA      = { name="Intarabus's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}
 
     MR = {}
-    MR.One = {name="Moonlight Ring",bag="Wardrobe 3"}
-    MR.Two = {name="Moonlight Ring",bag="Wardrobe 5"}
+    MR.One = {name="Moonlight Ring",bag="Wardrobe 2"}
+    MR.Two = {name="Moonlight Ring",bag="Wardrobe 3"}
 
     Nibiru = {}
     Nibiru.One = {name="Nibiru Knife", bag="Wardrobe 3"}
     Nibiru.Two = {name="Nibiru Knife", bag="Wardrobe 4"}
+
+    Kali = {}
+    Kali.One = {name="Kali", augments={'DMG:+15','CHR+15','Mag. Acc.+15',}}
+    Kali.Two = {name="Kali", augments={'Mag. Acc.+15','String instrument skill +10','Wind instrument skill +10',}}
 
     state.LullabyMode = M{['description']='Lullaby Instrument', 'Harp', 'Horn', 'TH', 'Enmity'}
 
@@ -256,8 +260,8 @@ function init_gear_sets()
     -- Precast sets to enhance JAs
 
     sets.precast.JA.Nightingale = {feet="Bihu Slippers +3"}
-    sets.precast.JA.Troubadour = {body="Bihu Jstcorps. +3"}
-    sets.precast.JA['Soul Voice'] = {legs="Bihu Cannions +3"}
+    sets.precast.JA.Troubadour = {body="Bihu Jstcorps +1"}
+    sets.precast.JA['Soul Voice'] = {legs="Bihu Cannions +1"}
 
     -- Waltz set (chr and vit)
     sets.precast.Waltz = {}
@@ -281,7 +285,7 @@ function init_gear_sets()
     sets.precast.WS['Mordant Rime'] = set_combine(sets.precast.WS, {
       range=Linos.WSD,
       head="Nyame Helm",
-      body={ name="Bihu Jstcorps. +3", augments={'Enhances "Troubadour" effect',}},
+      body="Nyame Mail", -- body={ name="Bihu Jstcorps. +3", augments={'Enhances "Troubadour" effect',}},
       hands="Nyame Gauntlets",
       legs="Nyame Flanchard",
       feet="Nyame Sollerets",
@@ -297,12 +301,12 @@ function init_gear_sets()
     sets.precast.WS['Rudra\'s Storm'] = set_combine(sets.precast.WS, {
       range=Linos.RUDRA,
       head="Nyame Helm",
-      body={ name="Bihu Jstcorps. +3", augments={'Enhances "Troubadour" effect',}},
+      body="Nyame Mail", -- body={ name="Bihu Jstcorps. +3", augments={'Enhances "Troubadour" effect',}},
       hands="Nyame Gauntlets",
       legs="Nyame Flanchard",
       feet="Nyame Sollerets",
       neck={ name="Bard's Charm +2", augments={'Path: A',}},
-      waist="Kentarch Belt +1",
+      waist="Grunfeld Rope", -- waist="Kentarch Belt +1",
       left_ear="Moonshade Earring",
       right_ear="Mache earring +1",
       left_ring="Ilabrat Ring",
@@ -313,7 +317,7 @@ function init_gear_sets()
     sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS, {
       range=Linos.WSD,
       head="Nyame Helm",
-      body={ name="Bihu Jstcorps. +3", augments={'Enhances "Troubadour" effect',}},
+      body="Nyame Mail", -- body={ name="Bihu Jstcorps. +3", augments={'Enhances "Troubadour" effect',}},
       hands="Nyame Gauntlets",
       legs="Nyame Flanchard",
       feet="Nyame Sollerets",
@@ -361,24 +365,23 @@ function init_gear_sets()
     }
 
     sets.midcast.Enmity = {
-      range=Linos.EVA,
-      head="Halitus Helm",
-      neck="Unmoving Collar +1",
-      left_ear="Cryptic Earring",
-      right_ear="Trux Earring",
-      body="Emet Harness +1",
-      hands="Nyame Gauntlets",
-      left_ring="Supershear Ring",
-      right_ring="Eihwaz Ring",
-      back=Cape.ENMITY_EVA,
-      waist="Goading Belt",
-      legs="Zoar Subligar +1",
-      feet="Nyame Sollerets",
+      -- range=Linos.EVA,
+      -- head="Halitus Helm",
+      -- neck="Unmoving Collar +1",
+      -- left_ear="Cryptic Earring",
+      -- right_ear="Trux Earring",
+      -- body="Emet Harness +1",
+      -- hands="Nyame Gauntlets",
+      -- left_ring="Supershear Ring",
+      -- right_ring="Eihwaz Ring",
+      -- back=Cape.ENMITY_EVA,
+      -- waist="Goading Belt",
+      -- legs="Zoar Subligar", -- legs="Zoar Subligar +1",
+      -- feet="Nyame Sollerets",
     }
 
     sets.TreasureHunter = {
-      hands={ name="Chironic Gloves", augments={'Crit. hit damage +3%','MND+13','"Treasure Hunter"+2','Mag. Acc.+10 "Mag.Atk.Bns."+10',}},
-      feet={ name="Chironic Slippers", augments={'"Fast Cast"+2','MND+5','"Treasure Hunter"+2',}}
+      waist="Chaac Belt",
     }
 
     sets.midcast.Madrigal = {head="Fili Calot +1"}
@@ -396,7 +399,7 @@ function init_gear_sets()
 
     -- For song buffs (duration and AF3 set bonus)
     sets.midcast.SongEnhancing = {
-      main="Carnwenhan",
+      main=Kali.One,
       sub="Genmei Shield",
       range="Gjallarhorn",
       head="Fili Calot +1",
@@ -415,7 +418,7 @@ function init_gear_sets()
 
     -- For song defbuffs (duration primary, accuracy secondary)
     sets.midcast.SongEnfeeble = {
-      main="Carnwenhan",
+      main=Kali.One,
       sub="Ammurapi Shield",
       range="Marsyas",
       head="Brioso Roundlet +3",
@@ -427,7 +430,7 @@ function init_gear_sets()
       ear1="Digni. Earring",
       ear2="Regal Earring",
       left_ring={name="Stikini Ring +1", bag="wardrobe"},
-      right_ring={name="Stikini Ring +1", bag="wardrobe5"},
+      right_ring="Metamorph Ring +1",
       waist="Acuity Belt +1",
       back=Cape.FC
     }
@@ -440,8 +443,8 @@ function init_gear_sets()
 
     -- For Horde Lullaby maximum AOE range.
     sets.midcast.SongStringSkill = {
-      ear1="Darkside Earring",
-      ear2="Gersemi Earring"
+      -- ear1="Darkside Earring",
+      -- ear2="Gersemi Earring"
     }
 
     -- Placeholder song; minimize duration to make it easy to overwrite.
@@ -488,7 +491,7 @@ function init_gear_sets()
     sets.midcast.Shellra = sets.midcast.Shell
 
     sets.midcast['Enfeebling Magic'] = {
-      main="Carnwenhan",
+      main=Kali.One,
       sub="Ammurapi Shield",
       range="Gjallarhorn",
       head="Brioso Roundlet +3",
@@ -539,24 +542,8 @@ function init_gear_sets()
       left_ear="Tuisto Earring",
       right_ear={ name="Odnowa Earring +1", augments={'Path: A',}},
       left_ring="Moonlight Ring",
-      right_ring={ name="Gelatinous Ring +1", augments={'Path: A',}},
-      back=Cape.MEVA
-    }
-
-    sets.idle.Evasion = {
-      range=Linos.EVA,
-      head="Nyame Helm",
-      body="Nyame Mail",
-      hands="Nyame Gauntlets",
-      legs="Nyame Flanchard",
-      feet="Nyame Sollerets",
-      neck="Bathy Choker +1",
-      waist="Kasiri Belt",
-      left_ear="Infused Earring",
-      right_ear="Eabani Earring",
-      left_ring="Vengeful Ring",
       right_ring="Gelatinous Ring +1",
-      back=Cape.ENMITY_EVA,
+      back=Cape.MEVA
     }
 
     sets.MEva = {
@@ -575,6 +562,22 @@ function init_gear_sets()
       back=Cape.MEVA
     }
 
+    sets.idle.Evasion = {
+      -- range=Linos.EVA,
+      -- head="Nyame Helm",
+      -- body="Nyame Mail",
+      -- hands="Nyame Gauntlets",
+      -- legs="Nyame Flanchard",
+      -- feet="Hippomenes Socks +1",
+      -- neck="Bathy Choker +1",
+      -- waist="Svelt. Gouriz +1",
+      -- left_ear="Infused Earring",
+      -- right_ear="Eabani Earring",
+      -- left_ring="Vengeful Ring",
+      -- right_ring="Defending Ring",
+      -- back=Cape.ENMITY_EVA,
+    }
+
     sets.idle.Town = set_combine(sets.idle, {
     })
 
@@ -585,8 +588,8 @@ function init_gear_sets()
     sets.defense.PDT = sets.idle.DT
     sets.defense.MDT = sets.idle.MEva
 
-    sets.Kiting = {feet="Fili Cothurnes +1"}
-    sets.latent_refresh = {} --waist="Fucho-no-obi"
+    sets.Kiting = {left_ring="Shneddick Ring +1"}
+    sets.latent_refresh = {}
 
     ------------------------------------------------------------------------------------------------
     ---------------------------------------- Engaged Sets ------------------------------------------
@@ -601,11 +604,11 @@ function init_gear_sets()
 
     sets.engaged = {
       range=Linos.TP,
-      head="Bunzi's Hat",           -- 7, 6
-      body="Ashera Harness",        -- 9, 4
-      hands="Bunzi's Gloves",       -- 8, 3
-      legs="Volte Tights",          --    9
-      feet="Nyame Sollerets",       -- 7, 3
+      head="Bunzi's Hat",
+      body="Nyame Mail",
+      hands="Bunzi's Gloves",
+      legs="Nyame Flanchard", 
+      feet="Nyame Sollerets",
       neck="Bard's Charm +2",
       ear1="Brutal Earring",
       ear2="Dignitary's Earring",
@@ -624,11 +627,11 @@ function init_gear_sets()
     -- No Magic Haste (74% DW to cap)
     sets.engaged.DW = {
       range=Linos.TP,
-      head="Bunzi's Hat",           -- 7, 6
-      body="Ashera Harness",        -- 9, 4
-      hands="Bunzi's Gloves",       -- 8, 3
-      legs="Volte Tights",          --    9
-      feet="Nyame Sollerets",       -- 7, 3
+      head="Bunzi's Hat",    
+      body="Nyame Mail",
+      hands="Bunzi's Gloves",
+      legs="Nyame Flanchard", 
+      feet="Nyame Sollerets",
       neck="Bard's Charm +2",
       ear1="Eabani Earring",
       ear2="Telos Earring",
@@ -694,8 +697,7 @@ function init_gear_sets()
     ------------------------------------------------------------------------------------------------
     ---------------------------------------- Special Sets ------------------------------------------
     ------------------------------------------------------------------------------------------------
-
-    sets.SongDWDuration = {main="Carnwenhan", sub="Kali"}
+    sets.SongDWDuration = {main=Kali.One, sub=Kali.Two}
 
     sets.buff.Doom = {
         neck="Nicander's Necklace", --20
@@ -766,8 +768,8 @@ function job_midcast(spell, action, spellMap, eventArgs)
                 equip(sets.TreasureHunter)
                 eventArgs.handled = true
             elseif state.LullabyMode.value == 'Enmity' then
-               equip(sets.midcast.Enmity)
-               eventArgs.handled = true
+                equip(sets.midcast.Enmity)
+                eventArgs.handled = true
             elseif buffactive.Troubadour then
                 equip({range="Marsyas"})
             else
@@ -801,8 +803,15 @@ function job_buff_change(buff,gain)
             enable('ring1','ring2','waist')
             handle_equipping_gear(player.status)
         end
+    elseif buff == "Flee" and state.IdleMode.value == "Evasion" then
+        if gain then
+           equip({feet=sets.idle.DT.feet})
+           disable('feet')
+        else
+           equip({feet=sets.idle.Evasion.feet})
+           enable('feet')
+        end
     end
-
 end
 
 -- Handle notifications of general user state change.
@@ -850,6 +859,14 @@ function job_self_command(cmdParams, eventArgs)
     end
 
     gearinfo(cmdParams, eventArgs)
+end
+
+function customize_defense_set(defenseSet)
+    if state.IdleMode.value == "Evasion" then
+      defenseSet = set_combine(defenseSet, sets.idle.Evasion)
+    end
+    
+    return defenseSet
 end
 
 -- Modify the default melee set after it was constructed.
@@ -1095,7 +1112,7 @@ function gearinfo(cmdParams, eventArgs)
 end
 
 function check_moving()
-    if state.DefenseMode.value == 'None'  and state.Kiting.value == false then
+    if state.DefenseMode.value == 'None' and state.Kiting.value == false then
         if state.Auto_Kite.value == false and moving then
             state.Auto_Kite:set(true)
         elseif state.Auto_Kite.value == true and moving == false then

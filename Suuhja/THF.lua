@@ -306,6 +306,8 @@ function init_gear_sets()
       right_ring="Epaminondas's Ring",
       back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}},
     }
+
+    sets.precast.WS['Sanguine Blade'] = sets.precast.WS['Aeolian Edge']
     
     sets.precast.WS['Cyclone'] = sets.precast.WS['Aeolian Edge']
     sets.precast.WS['Gust Slash'] = sets.precast.WS['Aeolian Edge']    

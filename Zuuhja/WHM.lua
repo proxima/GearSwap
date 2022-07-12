@@ -298,7 +298,7 @@ function init_gear_sets()
       left_ear="Glorious Earring",
       right_ear="Mendi. Earring",
       left_ring="Defending Ring",
-      right_ring="Lebeche Ring",
+      right_ring="Gelatinous Ring +1", 
       back={ name="Alaunus's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','MND+10','"Fast Cast"+10','Phys. dmg. taken-10%',}},
     }
 
@@ -307,7 +307,7 @@ function init_gear_sets()
     })
 
     sets.midcast.CureNormal = set_combine(sets.midcast.CureSolace, {
-      body="Theo. Bliaut +2",	
+      body="Theo. Bliaut +2",
     })
 
     sets.midcast.CureWeather = set_combine(sets.midcast.CureNormal, {
@@ -583,7 +583,8 @@ function init_gear_sets()
       main="Daybreak",
       sub="Genmei Shield",
       ammo="Staunch Tathlum +1",
-      hands="Inyanga Dastanas +2",
+      head="Bunzi's Hat",
+      hands="Bunzi's Gloves",
       legs="Inyanga Shalwar +2",
       feet="Inyanga Crackows +2",
       right_ring="Inyanga ring",

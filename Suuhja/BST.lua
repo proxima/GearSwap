@@ -311,7 +311,7 @@ function init_gear_sets()
    
     -- MELEE (SINGLE-WIELD) SETS   
     sets.engaged = {
-      main="Kaja Axe",
+      main="Dolichenus",
       sub="Sacro Bulwark",
       ammo="Staunch Tathlum +1",
       head="Malignance Chapeau",
@@ -348,7 +348,7 @@ function init_gear_sets()
                
     -- MELEE (DUAL-WIELD) SETS FOR DNC AND NIN SUBJOB   
     sets.engaged.DW = {
-      main="Kaja Axe",
+      main="Dolichenus",
       sub="Agwu's Axe",
       ammo="Staunch Tathlum +1",
       head="Malignance Chapeau",

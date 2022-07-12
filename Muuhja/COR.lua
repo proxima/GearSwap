@@ -651,7 +651,7 @@ function init_gear_sets()
       waist="Gishdubar Sash", -- 10
     }
 
-    sets.FullTP = { -- ear1="Crematio Earring"
+    sets.FullTP = { --ear1="Crematio Earring"
     }
     sets.Obi = { -- waist="Hachirin-no-Obi"
     }
@@ -659,9 +659,9 @@ function init_gear_sets()
     sets.TreasureHunter = {waist="Chaac Belt"}
 
     sets.Anarchy = {main="Naegling", sub="Gleti's Knife", ranged="Anarchy +2"}
-    sets.Anarchy.Acc = {main="Naegling", sub="Gleti's Knife", ranged="Anarchy +2"}
+    sets.Anarchy.Acc = sets.Anarchy
 
-    sets.Rolls = {main={name="Rostam", bag="wardrobe4"}, sub={name="Rostam", bag="wardrobe2", priority=1}, ranged="Compensator"}
+    sets.Rolls = {main=empty, sub=empty, ranged="Compensator"}
     sets.Rolls.Acc = sets.Rolls
 
     sets.Aeolian = {main="Tauret", sub="Naegling", ranged="Anarchy +2"}

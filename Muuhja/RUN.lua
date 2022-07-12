@@ -650,11 +650,9 @@ function init_gear_sets()
     back=Cape.Enmity
   }
 
-  sets.engaged = sets.Hybrid
-  
-  sets.engaged.Parry = sets.defense.Parry
-  
+  -- sets.engaged = sets.Hybrid
   sets.engaged.Aftermath = sets.engaged
+  sets.engaged.Parry = sets.defense.Parry  
  
   sets.engaged.DT = sets.engaged.Parry
  
