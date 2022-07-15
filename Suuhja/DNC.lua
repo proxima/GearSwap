@@ -134,6 +134,7 @@ function user_setup()
     send_command('bind @n sat youcommand Muuhja "Carnage Elegy"')
     send_command('bind @m sat youcommand Muuhja "Mewing Lullaby"')
     send_command('bind @o sat youcommand Muuhja "Horde Lullaby"')
+    -- send_command('bind @o sat youcommand Muuhja "Horde Lullaby"')
     send_command('bind @p sat youcommand Zuuhja "Sleepga"')
     -- send_command('bind @p send muuhja input /pet "Release" <me>')
     send_command('bind @= send muuhja input /ja "Apogee" <me>')
@@ -490,8 +491,8 @@ function init_gear_sets()
       feet="Malignance Boots",
       neck={ name="Etoile Gorget +2", augments={'Path: A',}},
       waist="Reiki Yotai",
-      left_ear="Eabani Earring",
-      right_ear="Sherida Earring",
+      left_ear="Sherida Earring",
+      right_ear="Eabani Earring",
       left_ring={name="Chirich Ring +1",bag="wardrobe 2"},
       right_ring={name="Chirich Ring +1",bag="wardrobe 4"},
       back={ name="Senuna's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dual Wield"+10','Phys. dmg. taken-10%',}},    
@@ -629,8 +630,8 @@ function init_gear_sets()
       ammo="Yamarang",
       head="Maxixi Tiara +3",     -- 8
       neck="Etoile Gorget +2",
-      left_ear="Eabani Earring",  -- 4
-      right_ear="Sherida Earring",
+      left_ear="Sherida Earring",
+      right_ear="Eabani Earring",  -- 4
       body="Horos Casaque +3",
       hands={ name="Adhemar Wrist. +1", augments={'STR+12','DEX+12','Attack+20',}},
       left_ring="Epona's Ring",

@@ -598,8 +598,8 @@ function get_sets()
     sets.midcast.Enfeebling.macc = {
       main="Crocea Mors",          -- Murgleis
       sub="Ammurapi Shield",
-      range="Ullr",
-      ammo=none,
+      ranged={name="Ullr", priority=10},
+      ammo=empty,
       head="Atrophy Chapeau +3",
       neck="Dls. Torque +2",
       left_ear="Snotra Earring",
@@ -616,8 +616,7 @@ function get_sets()
 
     -- Type B-potency from: Mnd & "Enfeeb Potency" gear
     sets.midcast.Enfeebling.mndpot = set_combine(sets.midcast.Enfeebling.macc, {
-      range=none,
-      ammo="Regal Gem",
+      ammo={name="Regal Gem", priority=10},
       head="Vitiation Chapeau +3",
       body="Lethargy Sayon +1",
       left_ring="Metamorph Ring +1",

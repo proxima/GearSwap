@@ -175,11 +175,12 @@ function user_setup()
     Cape.DW      = {name="Camulus's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dual Wield"+10','Phys. dmg. taken-10%',}}
     Cape.LEADEN  = {name="Camulus's Mantle", augments={'AGI+20','Mag. Acc+20 /Mag. Dmg.+20','AGI+10','Weapon skill damage +10%','Phys. dmg. taken-10%'}}
     Cape.RATK    = {name="Camulus's Mantle", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','AGI+10','Weapon skill damage +10%','Phys. dmg. taken-10%'}}
+    Cape.RTP     = {name="Camulus's Mantle", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','Rng.Acc.+10','"Store TP"+10','Phys. dmg. taken-10%',}}
+    Cape.TP      = {name="Camulus's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}}
 
     Cape.ROLL    = {name="Camulus's Mantle", augments={'INT+20','Eva.+20 /Mag. Eva.+20','"Snapshot"+10','Mag. Evasion+15',}} -- ,'Mag. Evasion+10' --            In progress (Dye)
-    Cape.TP      = {name="Camulus's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10','Phys. dmg. taken-10%',}} -- 'Accuracy+10', --           In progress (Dye)
     Cape.AEOLIAN = {name="Camulus's Mantle", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','Weapon skill damage +10%','Phys. dmg. taken-10%',}} -- ,'INT+10' -- In progress (Dye)
-    Cape.RTP     = {name="Camulus's Mantle", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','"Store TP"+10',}} -- 'Rng.Acc.+10','Phys. dmg. taken-10%',            In progress (Dye, Resin) 
+    -- Cape.RCRIT to make
 
     Rostam = {}
     Rostam.A = {name="Rostam", bag="wardrobe4"}
@@ -776,7 +777,7 @@ function init_gear_sets()
 
     sets.Anarchy = {main="Naegling", sub=Rostam.A, ranged="Anarchy +2"}
     sets.Anarchy.Acc = {main="Naegling", sub=Rostam.A, ranged="Anarchy +2"}
-    -- sets.Anarchy = {main="Naegling", sub="Gleti's Knife", ranged="Anarchy +2"}
+    sets.Anarchy = {main="Naegling", sub="Gleti's Knife", ranged="Anarchy +2"}
     -- sets.Anarchy.Acc = {main="Naegling", sub="Gleti's Knife", ranged="Anarchy +2"}
 
     sets.Rolls = {main=Rostam.C, sub=Rostam.B, ranged="Compensator"}

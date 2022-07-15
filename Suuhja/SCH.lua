@@ -364,7 +364,7 @@ function get_sets()
       right_ear="Telos Earring",
       left_ring={name="Chirich Ring +1",bag="wardrobe 2"},
       right_ring={name="Chirich Ring +1",bag="wardrobe 4"},
-      back=Lugh.INT_DA
+      back=Lugh.INT_WSD
     }
     
     sets.me["Full Swing"] = sets.me["Heavy Swing"]

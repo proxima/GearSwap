@@ -363,8 +363,8 @@ function init_gear_sets()
       back="Fi Follet Cape +1",                                     -- 10
       left_ear="Etiolation Earring",                                --  1
       right_ear={ name="Odnowa Earring +1", augments={'Path: A',}},
-      left_ring="Gelatinous Ring +1",
-      right_ring="Kishar Ring",                                     --  4
+      left_ring="Kishar Ring",                                      --  4
+      right_ring="Gelatinous Ring +1",
     }                                                               -- --
                                                                     -- 76
 
@@ -750,8 +750,8 @@ function init_gear_sets()
       ammo="Staunch Tathlum +1",
       body="Nyame Mail",
       neck="Warder's Charm +1",
-      ring1="Gelatinous Ring +1",
-      ring2="Defending Ring",
+      left_ring="Defending Ring",
+      right_ring="Gelatinous Ring +1", 
     })
 
     sets.idle.Refresh = set_combine(sets.idle, {      

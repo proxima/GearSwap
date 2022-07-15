@@ -87,22 +87,22 @@ function user_setup()
     state.IdleMode:options('Normal', 'DT', 'Evasion', 'MEva')
 
     Linos = {}
-    Linos.MEVA    = { name="Linos", augments={'Mag. Evasion+15','Phys. dmg. taken -5%','HP+20',}}
-    Linos.EVA     = { name="Linos", augments={'Evasion+15','Phys. dmg. taken -5%','VIT+8',}}
-    Linos.RUDRA   = { name="Linos", augments={'Attack+20','Weapon skill damage +3%','DEX+8',}}
-    Linos.WSD     = { name="Linos", augments={'Accuracy+13 Attack+13','Weapon skill damage +3%','STR+6 CHR+6',}}
-    Linos.TP      = { name="Linos", augments={'Accuracy+17','"Store TP"+3','Quadruple Attack +3',}}
+    Linos.MEVA    = { name="Linos", augments={'Mag. Evasion+15','Phys. dmg. taken -4%','HP+20',}}
+    Linos.EVA     = { name="Linos", augments={'Evasion+15','Phys. dmg. taken -4%','AGI+8',}}
+    Linos.RUDRA   = { name="Linos", augments={'Attack+15','Weapon skill damage +3%','DEX+8',}}
+    Linos.WSD     = { name="Linos", augments={'Attack+15','Weapon skill damage +3%','STR+8',}}
+    Linos.TP      = { name="Linos", augments={'Accuracy+14','"Store TP"+4','Quadruple Attack +3',}}
     Linos.AEOLIAN = { name="Linos", augments={'"Mag.Atk.Bns."+15','Weapon skill damage +3%','INT+8',}} -- Can get 20 MAB w/ Snowdim +2
 
     Cape = {}
-    Cape.TP         = { name="Intarabus's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10','Phys. dmg. taken-10%',}}
-    Cape.MEVA       = { name="Intarabus's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Phys. dmg. taken-10%',}}
-    Cape.CHARISMA   = { name="Intarabus's Cape", augments={'CHR+20','Accuracy+20 Attack+20','CHR+10','Weapon skill damage +10%','Damage taken-5%',}}
-    Cape.FC         = { name="Intarabus's Cape", augments={'CHR+20','Mag. Acc+20 /Mag. Dmg.+20','CHR+10','"Fast Cast"+10',}}
-    Cape.WSD        = { name="Intarabus's Cape", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}
-    Cape.AEOLIAN    = { name="Intarabus's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}
-    Cape.ENMITY_EVA = { name="Intarabus's Cape", augments={'AGI+20','Eva.+20 /Mag. Eva.+20','Evasion+10','Enmity+10','Evasion+15',}}
-    Cape.RUDRA      = { name="Intarabus's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}
+    Cape.TP         = { name="Intarabus's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Store TP"+10','Phys. dmg. taken-10%',}}
+    Cape.MEVA       = { name="Intarabus's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Phys. dmg. taken-10%',}} -- Not made
+    Cape.CHARISMA   = { name="Intarabus's Cape", augments={'CHR+20','Accuracy+20 Attack+20','CHR+10','Weapon skill damage +10%','Damage taken-5%',}} -- Not made
+    Cape.FC         = { name="Intarabus's Cape", augments={'CHR+20','Mag. Acc+20 /Mag. Dmg.+20','CHR+10','"Fast Cast"+10',}} -- Not made
+    Cape.WSD        = { name="Intarabus's Cape", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}} -- Not made
+    Cape.AEOLIAN    = { name="Intarabus's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}} -- Not made
+    Cape.ENMITY_EVA = { name="Intarabus's Cape", augments={'AGI+20','Eva.+20 /Mag. Eva.+20','Evasion+10','Enmity+10','Evasion+15',}} -- Not made
+    Cape.RUDRA      = { name="Intarabus's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}} -- Not made
 
     MR = {}
     MR.One = {name="Moonlight Ring",bag="Wardrobe 2"}
@@ -275,8 +275,26 @@ function init_gear_sets()
     sets.precast.WS = {
     }
 
+    sets.precast.WS['Wasp Sting'] = set_combine(sets.precast.FC, {
+       head="Brioso Roundlet +2",
+       legs=empty
+    })
+
     -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
     sets.precast.WS['Evisceration'] = set_combine(sets.precast.WS, {
+      range=Linos.RUDRA,
+      head="Blistering Sallet +1",
+      body="Nyame Mail",
+      hands="Nyame Gauntlets",
+      legs="Nyame Flanchard",
+      feet="Nyame Sollerets",
+      neck="Fotia Gorget",
+      waist="Fotia Belt",
+      left_ear="Moonshade Earring",
+      right_ear="Brutal Earring",
+      left_ring="Ilabrat Ring",
+      right_ring="Begrudging Ring",
+      back=Cape.RUDRA
     })
 
     sets.precast.WS['Exenterator'] = set_combine(sets.precast.WS, {
@@ -345,6 +363,8 @@ function init_gear_sets()
       back=Cape.AEOLIAN
     }
 
+    sets.precast.WS['Cyclone'] = sets.precast.WS['Aeolian Edge']
+
     ------------------------------------------------------------------------------------------------
     ---------------------------------------- Midcast Sets ------------------------------------------
     ------------------------------------------------------------------------------------------------
@@ -360,7 +380,7 @@ function init_gear_sets()
 
     sets.midcast.Lullaby = {
       body="Fili Hongreline +1",
-      hands="Brioso Cuffs +3",
+      hands="Brioso Cuffs +2",
       legs="Inyanga Shalwar +2",
     }
 
@@ -389,7 +409,7 @@ function init_gear_sets()
     sets.midcast.March = {hands="Fili Manchettes +1"}
     sets.midcast.Minne = {legs="Mousai Seraweels +1"}
     sets.midcast.Minuet = {body="Fili Hongreline +1"}
-    sets.midcast.Paeon = {head="Brioso Roundlet +3"}
+    sets.midcast.Paeon = {head="Brioso Roundlet +2"}
     sets.midcast.Threnody = {body="Mou. Manteel +1"}
     sets.midcast['Adventurer\'s Dirge'] = {range="Marsyas"}
     sets.midcast['Foe Sirvente'] = {}
@@ -421,9 +441,9 @@ function init_gear_sets()
       main=Kali.One,
       sub="Ammurapi Shield",
       range="Marsyas",
-      head="Brioso Roundlet +3",
+      head="Brioso Roundlet +2",
       body="Fili Hongreline +1",
-      hands="Brioso Cuffs +3",
+      hands="Brioso Cuffs +2",
       legs="Inyanga shalwar +2",
       feet="Brioso Slippers +3",
       neck="Mnbw. Whistle +1",
@@ -437,8 +457,8 @@ function init_gear_sets()
 
     -- For song defbuffs (accuracy primary, duration secondary)
     sets.midcast.SongEnfeebleAcc = set_combine(sets.midcast.SongEnfeeble, {
-      body="Brioso Justau. +3",
-      legs="Brioso Cannions +3",
+      body="Brioso Justau. +2",
+      legs="Brioso Cannions +2",
     })
 
     -- For Horde Lullaby maximum AOE range.
@@ -494,10 +514,10 @@ function init_gear_sets()
       main=Kali.One,
       sub="Ammurapi Shield",
       range="Gjallarhorn",
-      head="Brioso Roundlet +3",
-      body="Brioso Justau. +3",
+      head="Brioso Roundlet +2",
+      body="Brioso Justau. +2",
       hands="Inyanga Dastanas +2",
-      legs="Brioso Cannions +3",
+      legs="Brioso Cannions +2",
       feet="Brioso Slippers +3",
       neck="Mnbw. Whistle +1",
       ear1="Digni. Earring",
@@ -634,11 +654,13 @@ function init_gear_sets()
       feet="Nyame Sollerets",
       neck="Bard's Charm +2",
       ear1="Eabani Earring",
-      ear2="Telos Earring",
+      ear2="Suppanomimi",
+      -- ear2="Telos Earring",
       left_ring=MR.One,
       right_ring=MR.Two,
       back=Cape.TP,                 --   10
-      waist="Reiki Yotai"
+      waist="Sailfi Belt +1"
+      -- waist="Reiki Yotai"
     }
 
     sets.engaged.DW.Acc = set_combine(sets.engaged.DW, {

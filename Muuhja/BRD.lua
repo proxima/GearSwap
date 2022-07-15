@@ -88,14 +88,14 @@ function user_setup()
 
     Linos = {}
     Linos.MEVA    = { name="Linos", augments={'Mag. Evasion+15','Phys. dmg. taken -5%','HP+20',}}
-    Linos.EVA     = { name="Linos", augments={'Evasion+15','Phys. dmg. taken -5%','VIT+8',}}
+    Linos.EVA     = { name="Linos", augments={'Evasion+15','Phys. dmg. taken -5%','AGI+8',}}
     Linos.RUDRA   = { name="Linos", augments={'Attack+20','Weapon skill damage +3%','DEX+8',}}
-    Linos.WSD     = { name="Linos", augments={'Accuracy+13 Attack+13','Weapon skill damage +3%','STR+6 CHR+6',}}
-    Linos.TP      = { name="Linos", augments={'Accuracy+17','"Store TP"+3','Quadruple Attack +3',}}
-    Linos.AEOLIAN = { name="Linos", augments={'"Mag.Atk.Bns."+15','Weapon skill damage +3%','INT+8',}} -- Can get 20 MAB w/ Snowdim +2
+    Linos.WSD     = { name="Linos", augments={'Accuracy+13 Attack+13','Weapon skill damage +3%','STR+6 CHR+6',}} -- Can improve to 15 acc/atk
+    Linos.TP      = { name="Linos", augments={'Accuracy+17','"Store TP"+4','Quadruple Attack +3',}} -- Can improve to 20 acc
+    Linos.AEOLIAN = { name="Linos", augments={'"Mag.Atk.Bns."+15','Weapon skill damage +3%','INT+8',}} -- Can get 20 mab w/ Snowdim +2
 
     Cape = {}
-    Cape.TP         = { name="Intarabus's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10','Phys. dmg. taken-10%',}}
+    Cape.TP         = { name="Intarabus's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Store TP"+10','Phys. dmg. taken-10%',}}
     Cape.MEVA       = { name="Intarabus's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Phys. dmg. taken-10%',}}
     Cape.CHARISMA   = { name="Intarabus's Cape", augments={'CHR+20','Accuracy+20 Attack+20','CHR+10','Weapon skill damage +10%','Damage taken-5%',}}
     Cape.FC         = { name="Intarabus's Cape", augments={'CHR+20','Mag. Acc+20 /Mag. Dmg.+20','CHR+10','"Fast Cast"+10',}}
@@ -361,19 +361,21 @@ function init_gear_sets()
     }
 
     sets.midcast.Enmity = {
-      range=Linos.EVA,
+      main="Daybreak",
+      sub="Genmei Shield",         -- 10
+      range=Linos.EVA,             --  5
       head="Halitus Helm",
       neck="Unmoving Collar +1",
       left_ear="Cryptic Earring",
       right_ear="Trux Earring",
-      body="Emet Harness +1",
-      hands="Nyame Gauntlets",
+      body="Emet Harness +1",      --  6
+      hands="Nyame Gauntlets",     --  7
       left_ring="Supershear Ring",
       right_ring="Eihwaz Ring",
-      back=Cape.ENMITY_EVA,
+      back=Cape.ENMITY_EVA,        
       waist="Goading Belt",
       legs="Zoar Subligar +1",
-      feet="Nyame Sollerets",
+      feet="Nyame Sollerets",      --  7
     }
 
     sets.TreasureHunter = {
