@@ -490,7 +490,7 @@ function init_gear_sets()
  
   sets.midcast.Phalanx = set_combine(sets.midcast['Enhancing Magic'], {
     head="Fu. Bandeau +3",
-    body=TaeonPhalanx.Body,
+    body={name="Herculean Vest", augments={'Crit.hit rate+4','MND+1','Phalanx +5','Accuracy+16 Attack+16','Mag. Acc.+18 "Mag.Atk.Bns."+18',}},
     hands=TaeonPhalanx.Hands,
     legs=TaeonPhalanx.Legs,
     feet=TaeonPhalanx.Feet

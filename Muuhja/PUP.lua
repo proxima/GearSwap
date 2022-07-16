@@ -797,6 +797,13 @@ function init_gear_sets()
         back=Visucius.MasterCritWS
     }
 
+    sets.midcast.Phalanx = {
+      body={name="Herculean Vest", augments={'Crit.hit rate+4','MND+1','Phalanx +5','Accuracy+16 Attack+16','Mag. Acc.+18 "Mag.Atk.Bns."+18',}},
+      hands= {name="Taeon Gloves", augments={'Mag. Evasion+20','Phalanx +3',}},
+      legs={name="Taeon Tights", augments={'Mag. Evasion+20','Phalanx +3',}},
+      feet={name="Taeon Boots", augments={'Mag. Evasion+20','Spell interruption rate down -10%','Phalanx +3',}}
+    }  
+ 
     -- Resting sets
     sets.resting = {
        -- Add your set here
