@@ -97,8 +97,8 @@ function user_setup()
     Cape = {}
     Cape.TP         = { name="Intarabus's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Store TP"+10','Phys. dmg. taken-10%',}}
     Cape.MEVA       = { name="Intarabus's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Phys. dmg. taken-10%',}}
-    Cape.CHARISMA   = { name="Intarabus's Cape", augments={'CHR+20','Accuracy+20 Attack+20','CHR+10','Weapon skill damage +10%','Damage taken-5%',}}
-    Cape.FC         = { name="Intarabus's Cape", augments={'CHR+20','Mag. Acc+20 /Mag. Dmg.+20','CHR+10','"Fast Cast"+10',}}
+    Cape.MORDANT    = { name="Intarabus's Cape", augments={'CHR+20','Accuracy+20 Attack+20','CHR+10','Weapon skill damage +10%','Damage taken-5%',}}
+    Cape.FC         = { name="Intarabus's Cape", augments={'CHR+20','Mag. Acc+20 /Mag. Dmg.+20','CHR+10','"Fast Cast"+10','Phys. dmg. taken-10%',}}
     Cape.WSD        = { name="Intarabus's Cape", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}
     Cape.AEOLIAN    = { name="Intarabus's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}
     Cape.ENMITY_EVA = { name="Intarabus's Cape", augments={'AGI+20','Eva.+20 /Mag. Eva.+20','Evasion+10','Enmity+10','Evasion+15',}}
@@ -291,7 +291,7 @@ function init_gear_sets()
       right_ear="Ishvara Earring",
       left_ring="Metamorph Ring +1",
       right_ring="Epaminondas's Ring",
-      back=Cape.CHARISMA
+      back=Cape.MORDANT
     })
 
     sets.precast.WS['Rudra\'s Storm'] = set_combine(sets.precast.WS, {
