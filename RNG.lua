@@ -134,11 +134,20 @@ function init_gear_sets()
 	sets.resting = {head="Ocelomeh Headpiece +1",neck="Wiglen Gorget",
 		ring1="Sheltered Ring",ring2="Paguroidea Ring"}
 
-	-- Idle sets
-	sets.idle = {
-		head="Arcadian Beret +1",neck="Ej Necklace +1",ear1="Vulcan's Pearl",ear2="Vulcan's Pearl",
-		body="Khepri Jacket",hands="Arcadian Bracers +1",ring1="Defending Ring",ring2="Shadow Ring",
-		back="Shadow Mantle",waist="Pya'ekue Belt +1",legs="Nahtirah Trousers",feet="Fajin Boots"}
+    -- Idle sets
+    sets.idle = {
+      head="Malignance Chapeau",
+      body="Malignance Tabard",
+      hands="Malignance Gloves",
+      legs="Malignance Tights",
+      feet="Malignance Boots",
+      neck="Loricate Torque +1",
+      waist="Flume belt +1",
+      left_ear="Odnowa Earring +1",
+      right_ear="Tuisto Earring",
+      left_ring="Defending Ring",
+      right_ring="Gelatinous Ring +1",
+    }
 	
 	-- Defense sets
 	sets.defense.PDT = {

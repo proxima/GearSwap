@@ -360,24 +360,6 @@ function init_gear_sets()
       legs="Inyanga Shalwar +2",
     }
 
-    sets.midcast.Enmity = {
-      main="Daybreak",
-      sub="Genmei Shield",         -- 10
-      range=Linos.EVA,             --  5
-      head="Halitus Helm",
-      neck="Unmoving Collar +1",
-      left_ear="Cryptic Earring",
-      right_ear="Trux Earring",
-      body="Emet Harness +1",      --  6
-      hands="Nyame Gauntlets",     --  7
-      left_ring="Supershear Ring",
-      right_ring="Eihwaz Ring",
-      back=Cape.ENMITY_EVA,        
-      waist="Goading Belt",
-      legs="Zoar Subligar +1",
-      feet="Nyame Sollerets",      --  7
-    }
-
     sets.TreasureHunter = {
       hands={ name="Chironic Gloves", augments={'Crit. hit damage +3%','MND+13','"Treasure Hunter"+2','Mag. Acc.+10 "Mag.Atk.Bns."+10',}},
       feet={ name="Chironic Slippers", augments={'"Fast Cast"+2','MND+5','"Treasure Hunter"+2',}}
@@ -439,6 +421,24 @@ function init_gear_sets()
       body="Brioso Justau. +3",
       legs="Brioso Cannions +3",
     })
+
+    sets.midcast.SongEnmity = {
+      main="Mafic Cudgel",         -- 10
+      sub="Genmei Shield",         -- 10
+      range=Linos.EVA,             --  5
+      head="Halitus Helm",
+      neck="Unmoving Collar +1",
+      left_ear="Cryptic Earring",
+      right_ear="Trux Earring",
+      body="Emet Harness +1",      --  6
+      hands="Nyame Gauntlets",     --  7
+      left_ring="Supershear Ring",
+      right_ring="Eihwaz Ring",
+      back=Cape.ENMITY_EVA,
+      waist="Goading Belt",
+      legs="Zoar Subligar +1",
+      feet="Nyame Sollerets",      --  7
+    }
 
     -- For Horde Lullaby maximum AOE range.
     sets.midcast.SongStringSkill = {
@@ -584,10 +584,11 @@ function init_gear_sets()
     ---------------------------------------- Defense Sets ------------------------------------------
     ------------------------------------------------------------------------------------------------
 
-    sets.defense.PDT = sets.idle.DT
+    sets.defense.PDT = sets.idle.Evasion
     sets.defense.MDT = sets.idle.MEva
 
-    sets.Kiting = {feet="Fili Cothurnes +1"}
+    sets.Kiting = {--feet="Hippomenes socks +1"
+    }
     sets.latent_refresh = {} --waist="Fucho-no-obi"
 
     ------------------------------------------------------------------------------------------------
@@ -755,6 +756,9 @@ function job_midcast(spell, action, spellMap, eventArgs)
         local generalClass = get_song_class(spell)
         if generalClass and sets.midcast[generalClass] then
             equip(sets.midcast[generalClass])
+            if generalClass == 'SongEnmity' then
+                eventArgs.handled = true
+            end
         end
         if spell.name == 'Honor March' then
             equip({range="Marsyas"})
@@ -768,7 +772,7 @@ function job_midcast(spell, action, spellMap, eventArgs)
                 equip(sets.TreasureHunter)
                 eventArgs.handled = true
             elseif state.LullabyMode.value == 'Enmity' then
-               equip(sets.midcast.Enmity)
+               equip(sets.midcast.SongEnmity)
                eventArgs.handled = true
             elseif buffactive.Troubadour then
                 equip({range="Marsyas"})
@@ -946,17 +950,21 @@ end
 
 -- Determine the custom class to use for the given song.
 function get_song_class(spell)
-    -- Can't use spell.targets:contains() because this is being pulled from resources
+   -- Can't use spell.targets:contains() because this is being pulled from resources
     if set.contains(spell.targets, 'Enemy') then
-        if state.CastingMode.value == 'Resistant' then
-            return 'SongEnfeebleAcc'
-        else
-            return 'SongEnfeeble'
-        end
+       if spell.english:contains('Threnody') and spell.english:sub(-2) ~= "II" then
+         return 'SongEnmity'
+       elseif spell.english:contains('Requiem') then 
+         return 'SongEnmity'
+       elseif state.CastingMode.value == 'Resistant' then
+         return 'SongEnfeebleAcc'
+       else
+         return 'SongEnfeeble'
+       end
     elseif state.SongMode.value == 'Placeholder' then
-        return 'SongPlaceholder'
+      return 'SongPlaceholder'
     else
-        return 'SongEnhancing'
+      return 'SongEnhancing'
     end
 end
 

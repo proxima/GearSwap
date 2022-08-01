@@ -125,7 +125,8 @@ function user_setup()
     state.WeaponskillMode:options('Normal', 'Acc')
     state.IdleMode:options('Normal', 'DT', 'Refresh')
 
-    state.WeaponSet = M{['description']='Weapon Set', 'DeathPenalty_M', 'DeathPenalty_R', 'Armageddon_M', 'Armageddon_R', 'Fomalhaut_M', 'Fomalhaut_R', 'Anarchy', 'Aeolian', 'Rolls'}
+    state.WeaponSet = M{['description']='Weapon Set', 'Armageddon_R', 'Fomalhaut_R', 'Rolls'}
+    -- state.WeaponSet = M{['description']='Weapon Set', 'DeathPenalty_M', 'DeathPenalty_R', 'Armageddon_M', 'Armageddon_R', 'Fomalhaut_M', 'Fomalhaut_R', 'Anarchy', 'Aeolian', 'Rolls'}
     state.WeaponLock = M(false, 'Weapon Lock')
 
     gear.RAbullet = "Chrono Bullet"
@@ -177,10 +178,9 @@ function user_setup()
     Cape.RATK    = {name="Camulus's Mantle", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','AGI+10','Weapon skill damage +10%','Phys. dmg. taken-10%'}}
     Cape.RTP     = {name="Camulus's Mantle", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','Rng.Acc.+10','"Store TP"+10','Phys. dmg. taken-10%',}}
     Cape.TP      = {name="Camulus's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}}
-
+    Cape.RCRIT   = {name="Camulus's Mantle", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','Crit.hit rate+10','Phys. dmg. taken-10%',}} -- 'AGI+10',              In Progress (Dye)
     Cape.ROLL    = {name="Camulus's Mantle", augments={'INT+20','Eva.+20 /Mag. Eva.+20','"Snapshot"+10','Mag. Evasion+15',}} -- ,'Mag. Evasion+10' --            In progress (Dye)
     Cape.AEOLIAN = {name="Camulus's Mantle", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','Weapon skill damage +10%','Phys. dmg. taken-10%',}} -- ,'INT+10' -- In progress (Dye)
-    -- Cape.RCRIT to make
 
     Rostam = {}
     Rostam.A = {name="Rostam", bag="wardrobe4"}
@@ -315,6 +315,8 @@ function init_gear_sets()
     sets.precast.RA.Flurry2 = set_combine(sets.precast.RA.Flurry1, {
       feet="Pursuer's Gaiters",
     })
+
+    sets.precast.RA.Embrava = sets.precast.RA.Flurry2
 
     ------------------------------------------------------------------------------------------------
     ------------------------------------- Weapon Skill Sets ----------------------------------------
@@ -518,6 +520,7 @@ function init_gear_sets()
       feet="Osh. Leggings +1",
       left_ring="Begrudging Ring",
       right_ring="Mummu Ring",
+      back=Cape.RCRIT,
       waist="K. Kachina Belt +1",
     })
 
@@ -537,6 +540,10 @@ function init_gear_sets()
 
     sets.TripleShotCritical = {
       head="Meghanada Visor +2",
+      left_ear="Odr Earring",  
+      left_ring="Begrudging Ring",
+      right_ring="Mummu Ring",
+      back=Cape.RCRIT,
       waist="K. Kachina Belt +1",
     }
 
@@ -791,7 +798,8 @@ function init_gear_sets()
     sets.Rolls = {main=Rostam.C, sub=Rostam.B, ranged="Compensator"}
     sets.Rolls.Acc = sets.Rolls
 
-    sets.Aeolian = {main=Rostam.B, sub="Tauret", ranged="Anarchy +2"}
+    -- sets.Aeolian = {main=Rostam.B, sub="Tauret", ranged="Anarchy +2"}
+    sets.Aeolian = {main=Rostam.B, sub=Rostam.A, ranged="Anarchy +2"}
     sets.Aeolian.Acc = {main=Rostam.B, sub=Rostam.A, ranged="Anarchy +2"}
 
     sets.DefaultShield = {sub="Nusku Shield"}
@@ -840,6 +848,8 @@ function job_post_precast(spell, action, spellMap, eventArgs)
         special_ammo_check()
         if flurry == 2 then
             equip(sets.precast.RA.Flurry2)
+        elseif embrava == 1 then
+            equip(sets.precast.RA.Embrava)
         elseif flurry == 1 then
             equip(sets.precast.RA.Flurry1)
         end
@@ -941,16 +951,28 @@ function job_buff_change(buff,gain)
         end
     end
 
-    if buff == "doom" then
+    if S{'embrava'}:contains(buff:lower()) then
         if gain then
-            equip(sets.buff.Doom)
-            send_command('@input /p Doomed.')
-            disable('ring1','ring2','waist')
+            embrava = 1
         else
-            enable('ring1','ring2','waist')
+            embrava = nil
+        end
+
+        if not midaction() then
             handle_equipping_gear(player.status)
         end
     end
+
+    -- if buff == "doom" then
+    --     if gain then
+    --         equip(sets.buff.Doom)
+    --         send_command('@input /p Doomed.')
+    --         disable('ring1','ring2','waist')
+    --     else
+    --         enable('ring1','ring2','waist')
+    --         handle_equipping_gear(player.status)
+    --     end
+    -- end
 end
 
 -- Handle notifications of general user state change.

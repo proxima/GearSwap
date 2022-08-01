@@ -132,7 +132,8 @@ function user_setup()
     state.WeaponskillMode:options('Normal', 'Acc')
     state.IdleMode:options('Normal', 'DT', 'Refresh')
 
-    state.WeaponSet = M{['description']='Weapon Set', 'DeathPenalty_M', 'DeathPenalty_R', 'Armageddon_M', 'Armageddon_R', 'Fomalhaut_M', 'Fomalhaut_R', 'Anarchy', 'Aeolian', 'Rolls'}
+    state.WeaponSet = M{['description']='Weapon Set', 'Armageddon_R', 'Rolls'}
+    -- 'DeathPenalty_M', 'DeathPenalty_R', 'Armageddon_M',  'Fomalhaut_M', 'Fomalhaut_R', 'Anarchy', 'Aeolian', 'Rolls'}
     state.WeaponLock = M(false, 'Weapon Lock')
 
     gear.RAbullet = "Chrono Bullet"
@@ -172,6 +173,7 @@ function user_setup()
 
     send_command('bind ^numpad7 input /ws "Savage Blade" <t>')
     send_command('bind ^numpad8 input /ws "Last Stand" <t>')
+    send_command('bind ^numpad9 input /ws "Detonator" <t>')
     send_command('bind ^numpad4 input /ws "Leaden Salute" <t>')
     send_command('bind ^numpad5 input /ws "Requiescat" <t>')
     send_command('bind ^numpad6 input /ws "Wildfire" <t>')
@@ -315,7 +317,7 @@ function init_gear_sets()
       body="Laksa. Frac +3",
       hands="Lanun Gants +3", 
       legs={ name="Adhemar Kecks +1", augments={'AGI+12','"Rapid Shot"+13','Enmity-6',}},
-      back=Cape.ROLL, --10 Snapshot
+      back=Cape.ROLL, -- 10 Snapshot
       waist="Yemaya Belt",
       feet="Meg. Jam. +2", 
       ring1="Crepuscular Ring"
@@ -326,9 +328,12 @@ function init_gear_sets()
       hands={ name="Carmine Fin. Ga. +1", augments={'Rng.Atk.+20','"Mag.Atk.Bns."+12','"Store TP"+6',}},
     })
 
+
     sets.precast.RA.Flurry2 = set_combine(sets.precast.RA.Flurry1, {
       feet="Pursuer's Gaiters",
     })
+
+    sets.precast.RA.Embrava = sets.precast.RA.Flurry2
 
     ------------------------------------------------------------------------------------------------
     ------------------------------------- Weapon Skill Sets ----------------------------------------
@@ -360,8 +365,15 @@ function init_gear_sets()
       feet="Nyame Sollerets"
     })
 
-    sets.precast.WS['Detonator'] = sets.precast.WS['Last Stand']
-    sets.precast.WS['Detonator'].Acc = sets.precast.WS['Last Stand'].Acc
+    sets.precast.WS['Detonator'] = set_combine(sets.precast.WS['Last Stand'], {
+    })
+
+    sets.precast.WS['Detonator'].Acc = set_combine(sets.precast.WS['Detonator'], {
+      ammo=gear.RAccbullet,
+      left_ear="Beyla Earring",
+      right_ring="Hajduk Ring +1",
+      feet="Nyame Sollerets"
+    })
 
     sets.precast.WS['Wildfire'] = {ammo=gear.MAbullet, -- 25
       head="Nyame Helm", 
@@ -549,7 +561,11 @@ function init_gear_sets()
 
     sets.TripleShotCritical = {
       head="Meghanada Visor +2",
+      left_ear="Odr Earring",
       waist="K. Kachina Belt +1",
+      left_ring="Begrudging Ring",
+      right_ring="Mummu Ring",
+      back=Cape.RCRIT,
     }
 
     sets.TrueShot = {
@@ -834,7 +850,9 @@ function job_post_precast(spell, action, spellMap, eventArgs)
     end
     if spell.action_type == 'Ranged Attack' then
         special_ammo_check()
-        if flurry == 2 then
+        if embrava == 1 then
+            equip(sets.precast.RA.Embrava)
+        elseif flurry == 2 then
             equip(sets.precast.RA.Flurry2)
         elseif flurry == 1 then
             equip(sets.precast.RA.Flurry1)
@@ -937,17 +955,28 @@ function job_buff_change(buff,gain)
         end
     end
 
-    if buff == "doom" then
+    if S{'embrava'}:contains(buff:lower()) then
         if gain then
-            equip(sets.buff.Doom)
-            send_command('@input /p Doomed.')
-            disable('ring1','ring2','waist')
+            embrava = 1
         else
-            enable('ring1','ring2','waist')
+            embrava = nil
+        end
+
+        if not midaction() then
             handle_equipping_gear(player.status)
         end
     end
 
+    -- if buff == "doom" then
+    --     if gain then
+    --         equip(sets.buff.Doom)
+    --         send_command('@input /p Doomed.')
+    --         disable('ring1','ring2','waist')
+    --     else
+    --         enable('ring1','ring2','waist')
+    --         handle_equipping_gear(player.status)
+    --     end
+    -- end
 end
 
 -- Handle notifications of general user state change.

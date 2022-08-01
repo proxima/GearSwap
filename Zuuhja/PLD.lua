@@ -28,9 +28,12 @@ function user_setup()
   state.EquipShield = M(false, 'Equip Shield w/Defense')
   update_defense_mode()
  
-  send_command('bind @o sat youcommand Muuhja "Horde Lullaby"')
+  send_command('bind @e sat youcommand Suuhja "Entomb"')
+  send_command('bind @o sat youcommand Suuhja "Anvil Lightning"')
+  send_command('bind @p sat youcommand Muuhja "Horde Lullaby"')
   send_command('bind @a sat youcommand Suuhja "Spectral Floe"')
-  send_command('bind @m sat youcommand Muuhja "Mewing Lullaby"')
+  send_command('bind @s sat youcommand Muuhja "Horde Lullaby II"')
+  send_command('bind @d sat youcommand Suuhja "Tenebral Crush"')
   
   send_command('bind @f12 gs c cycle CastingMode')
   send_command('bind ^f11 gs c cycle MagicalDefenseMode')
@@ -40,9 +43,12 @@ function user_setup()
 end
 
 function user_unload()
-  send_command('unbind @f')
+  send_command('unbind @e')
   send_command('unbind @o')  
-  send_command('unbind @m')
+  send_command('unbind @p')
+  send_command('unbind @a')
+  send_command('unbind @s')
+  send_command('unbind @d')
   send_command('unbind ^f11')
   send_command('unbind !f11')
   send_command('unbind @f10')
@@ -379,7 +385,7 @@ function init_gear_sets()
   }
   
   sets.idle.Block = {
-    main="Malevolence",
+    main="Burtgang",
     sub="Ochain",
     ammo="Staunch Tathlum +1",      --  3
     head="Sakpata's Helm",          --  7
