@@ -47,7 +47,7 @@ function user_setup()
     windower.send_command('bind @n sat youcommand Muuhja "Carnage Elegy"')
     windower.send_command('bind @m sat youcommand Muuhja "Pining Nocturne"')
         
-    windower.send_command('bind @o sat youcommand Muuhja "Horde Lullaby II"')
+    windower.send_command('bind @o sat youcommand Zuuhja "Horde Lullaby"')
     windower.send_command('bind @p sat youcommand Zuuhja "Sleepga"')
     -- windower.send_command('bind @n input /ma "Breakga" <t>')
     -- windower.send_command('bind @n sat youcommand Zuuhja "Dia II"')
@@ -320,9 +320,8 @@ function init_gear_sets()
       legs="Agwu's Slops",
       feet="Agwu's Pigaches",
       neck="Sorcerer's Stole +2",
-      -- waist="Orpheus's Sash",
-      -- waist="Sacro Cord", -- waist="Hachirin-no-Obi",
-      waist="Acuity Belt +1",
+      waist="Orpheus's Sash",
+      -- waist="Sacro Cord", -- waist="Hachirin-no-Obi", -- waist="Acuity Belt +1",
       left_ear="Regal Earring",
       right_ear="Malignance Earring",
       left_ring="Metamorph Ring +1",

@@ -324,7 +324,21 @@ function init_gear_sets()
     sets.precast.WS['Leaden Salute'].Acc = set_combine(sets.precast.WS['Leaden Salute'], {
     })
 
-    sets.precast.WS['Evisceration'] = {}
+    sets.precast.WS['Evisceration'] = {
+      head="Nyame Helm",
+      body="Nyame Mail",
+      hands="Nyame Gauntlets",
+      legs="Nyame Flanchard",
+      feet="Nyame Sollerets",
+      neck="Fotia Gorget",
+      waist="Fotia Belt",
+      left_ear="Moonshade Earring",
+      right_ear="Odr Earring",
+      left_ring="Regal Ring",
+      right_ring="Ilabrat Ring",  
+      back=Cape.SB
+  }
+
     sets.precast.WS['Evisceration'].Acc = set_combine(sets.precast.WS['Evisceration'], {})
 
     sets.precast.WS['Savage Blade'] = {

@@ -273,6 +273,19 @@ function init_gear_sets()
 
     -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
     sets.precast.WS['Evisceration'] = set_combine(sets.precast.WS, {
+      range=Linos.RUDRA,
+      head="Nyame Helm",
+      body="Nyame Mail",
+      hands="Nyame Gauntlets",
+      legs="Nyame Flanchard",
+      feet="Nyame Sollerets",
+      neck="Fotia Gorget",
+      waist="Fotia Belt",
+      left_ear="Moonshade Earring",
+      right_ear="Brutal Earring",
+      left_ring="Ilabrat Ring",
+      right_ring="Moonlight Ring",
+      back=Cape.RUDRA
     })
 
     sets.precast.WS['Exenterator'] = set_combine(sets.precast.WS, {
@@ -587,8 +600,7 @@ function init_gear_sets()
     sets.defense.PDT = sets.idle.Evasion
     sets.defense.MDT = sets.idle.MEva
 
-    sets.Kiting = {--feet="Hippomenes socks +1"
-    }
+    sets.Kiting = {feet="Fili Cothurnes +1"}
     sets.latent_refresh = {} --waist="Fucho-no-obi"
 
     ------------------------------------------------------------------------------------------------
@@ -619,6 +631,8 @@ function init_gear_sets()
     }
 
     sets.engaged.Acc = set_combine(sets.engaged, {
+      ear1="Telos Earring",
+      waist="Kentarch Belt +1",
     })
 
     -- * DNC Subjob DW Trait: +15%
@@ -873,7 +887,7 @@ function customize_melee_set(meleeSet)
     elseif state.WeaponSet.value == "Aeneas" then
         equip({main="Aeneas",sub="Twashtar"})
     elseif state.WeaponSet.value == "Aeolian" then
-        equip({main="Aeneas",sub="Fusetto +2"})
+        equip({main="Aeneas",sub="Daybreak"})
     end
     if buffactive['Aftermath: Lv.3'] and player.equipment.main == "Carnwenhan" then
         meleeSet = set_combine(meleeSet, sets.engaged.Aftermath)

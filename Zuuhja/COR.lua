@@ -132,8 +132,7 @@ function user_setup()
     state.WeaponskillMode:options('Normal', 'Acc')
     state.IdleMode:options('Normal', 'DT', 'Refresh')
 
-    state.WeaponSet = M{['description']='Weapon Set', 'Armageddon_R', 'Rolls'}
-    -- 'DeathPenalty_M', 'DeathPenalty_R', 'Armageddon_M',  'Fomalhaut_M', 'Fomalhaut_R', 'Anarchy', 'Aeolian', 'Rolls'}
+    state.WeaponSet = M{['description']='Weapon Set', 'Rolls', 'Anarchy', 'DeathPenalty_M', 'DeathPenalty_R', 'Armageddon_M', 'Armageddon_R', 'Fomalhaut_M', 'Fomalhaut_R', 'Aeolian'}
     state.WeaponLock = M(false, 'Weapon Lock')
 
     gear.RAbullet = "Chrono Bullet"
@@ -366,6 +365,10 @@ function init_gear_sets()
     })
 
     sets.precast.WS['Detonator'] = set_combine(sets.precast.WS['Last Stand'], {
+      ammo=gear.RAccbullet,
+      left_ear="Beyla Earring",
+      right_ring="Hajduk Ring +1",
+      feet="Nyame Sollerets"
     })
 
     sets.precast.WS['Detonator'].Acc = set_combine(sets.precast.WS['Detonator'], {
@@ -416,7 +419,21 @@ function init_gear_sets()
       feet={ name="Nyame Sollerets", augments={'Path: B',}}
     })
 
-    sets.precast.WS['Evisceration'] = {}
+    sets.precast.WS['Evisceration'] = {ammo=gear.WSbullet,
+      head={ name="Nyame Helm", augments={'Path: B',}},
+      body={ name="Nyame Mail", augments={'Path: B',}},
+      hands={ name="Nyame Gauntlets", augments={'Path: B',}},
+      legs={ name="Nyame Flanchard", augments={'Path: B',}},
+      feet="Nyame Boots",
+      neck="Fotia Gorget",
+      waist="Fotia Belt",
+      left_ear="Moonshade Earring",
+      right_ear="Telos Earring",
+      left_ring="Begrudging Ring",
+      right_ring="Epaminondas's Ring",
+      back=Cape.SB
+    }
+
     sets.precast.WS['Evisceration'].Acc = set_combine(sets.precast.WS['Evisceration'], {})
 
     sets.precast.WS['Savage Blade'] = {
@@ -850,10 +867,10 @@ function job_post_precast(spell, action, spellMap, eventArgs)
     end
     if spell.action_type == 'Ranged Attack' then
         special_ammo_check()
-        if embrava == 1 then
-            equip(sets.precast.RA.Embrava)
-        elseif flurry == 2 then
+        if flurry == 2 then
             equip(sets.precast.RA.Flurry2)
+        elseif embrava == 1 then
+            equip(sets.precast.RA.Embrava)
         elseif flurry == 1 then
             equip(sets.precast.RA.Flurry1)
         end

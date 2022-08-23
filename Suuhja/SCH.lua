@@ -111,7 +111,7 @@ hud_font = 'Impact'
 
     -- windower.send_command('bind @a sat youcommand Zuuhja Ge input /ma "Indi-Wil" <me>')
     send_command('bind @s sat youcommand Zuuhja Geo-Malaise')
-    send_command('bind @a sat youcommand Zuuhja "Bio";input /ma "Luminohelix" <t>')
+    send_command('bind @a sat youcommand Muuhja "Thunderspark"')
     -- send_command('bind @s sat youcommand Zuuhja "Bio";input /ma "Luminohelix II" <t>')
     -- windower.send_command('bind @a sat youcommand Muuhja "Wind Threnody II"')
     -- windower.send_command('bind @s sat youcommand Zuuhja Silence')
@@ -123,7 +123,7 @@ hud_font = 'Impact'
     windower.send_command('bind @n sat youcommand Muuhja "Carnage Elegy"')
     windower.send_command('bind @m sat youcommand Muuhja "Pining Nocture"')
     windower.send_command('bind @o sat youcommand Zuuhja "Sleepga"')
-    windower.send_command('bind @p sat youcommand Muuhja "Thunderspark"')
+    windower.send_command('bind @p sat youcommand Muuhja "Shock Squall"')
     -- windower.send_command('bind @p send muuhja input /pet "Release" <me>')
     windower.send_command('bind @= send muuhja input /ja "Apogee" <me>')
     -- windower.send_command('bind @n sat youcommand Muuhja "Level ? Holy"')
@@ -492,7 +492,7 @@ function get_sets()
     sets.buff['Parsimony'] = {}
     sets.buff['Celerity'] = {feet="Pedagogy loafers +3"}
     sets.buff['Alacrity'] = {feet="Pedagogy loafers +3"}
-    -- sets.buff['Klimaform'] = {feet="Arbatel Loafers +1"}
+    sets.buff['Klimaform'] = {feet="Arbatel Loafers +2"}
     -- sets.buff['Ebullience'] = {head="Arbatel bonnet +1"}
    	
     ---------------
@@ -811,7 +811,7 @@ function get_sets()
      ammo="Pemphredo tathlum",
      head="Acad. Mortar. +2",
      body="Acad. Gown +3",
-     hands="Acad. Bracers +3",
+     hands="Kaykaus Cuffs +1",
      legs="Acad. Pants +3",
      feet="Acad. Loafers +3",
      neck={ name="Argute Stole +2", augments={'Path: A',}},

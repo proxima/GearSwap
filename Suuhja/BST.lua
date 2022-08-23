@@ -367,7 +367,14 @@ function init_gear_sets()
            
     sets.engaged.DW.PetDT = {
     }
-   
+
+    sets.midcast.Phalanx = {
+      head={ name="Taeon Chapeau", augments={'Phalanx +3',}},
+      body={ name="Taeon Tabard", augments={'Spell interruption rate down -10%','Phalanx +3',}},
+      hands={ name="Taeon Gloves", augments={'Phalanx +3',}},
+      legs={ name="Taeon Tights", augments={'Phalanx +3',}},
+      feet={ name="Taeon Boots", augments={'Phalanx +3',}},
+    }
 
   -- THIS IS THE END OF THE GEARSWAP AS FAR AS YOU SHOULD BE CONCERNED --
 end

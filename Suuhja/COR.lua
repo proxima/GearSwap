@@ -125,8 +125,8 @@ function user_setup()
     state.WeaponskillMode:options('Normal', 'Acc')
     state.IdleMode:options('Normal', 'DT', 'Refresh')
 
-    state.WeaponSet = M{['description']='Weapon Set', 'Armageddon_R', 'Fomalhaut_R', 'Rolls'}
-    -- state.WeaponSet = M{['description']='Weapon Set', 'DeathPenalty_M', 'DeathPenalty_R', 'Armageddon_M', 'Armageddon_R', 'Fomalhaut_M', 'Fomalhaut_R', 'Anarchy', 'Aeolian', 'Rolls'}
+    -- state.WeaponSet = M{['description']='Weapon Set', 'Armageddon_R', 'Fomalhaut_R', 'Rolls'}
+    state.WeaponSet = M{['description']='Weapon Set', 'DeathPenalty_M', 'DeathPenalty_R', 'Armageddon_M', 'Armageddon_R', 'Fomalhaut_M', 'Fomalhaut_R', 'Anarchy', 'Aeolian', 'Rolls'}
     state.WeaponLock = M(false, 'Weapon Lock')
 
     gear.RAbullet = "Chrono Bullet"
@@ -178,9 +178,10 @@ function user_setup()
     Cape.RATK    = {name="Camulus's Mantle", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','AGI+10','Weapon skill damage +10%','Phys. dmg. taken-10%'}}
     Cape.RTP     = {name="Camulus's Mantle", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','Rng.Acc.+10','"Store TP"+10','Phys. dmg. taken-10%',}}
     Cape.TP      = {name="Camulus's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}}
-    Cape.RCRIT   = {name="Camulus's Mantle", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','Crit.hit rate+10','Phys. dmg. taken-10%',}} -- 'AGI+10',              In Progress (Dye)
+    Cape.RCRIT   = {name="Camulus's Mantle", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','AGI+10','Crit.hit rate+10','Phys. dmg. taken-10%',}}
+    Cape.AEOLIAN = {name="Camulus's Mantle", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}
+
     Cape.ROLL    = {name="Camulus's Mantle", augments={'INT+20','Eva.+20 /Mag. Eva.+20','"Snapshot"+10','Mag. Evasion+15',}} -- ,'Mag. Evasion+10' --            In progress (Dye)
-    Cape.AEOLIAN = {name="Camulus's Mantle", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','Weapon skill damage +10%','Phys. dmg. taken-10%',}} -- ,'INT+10' -- In progress (Dye)
 
     Rostam = {}
     Rostam.A = {name="Rostam", bag="wardrobe4"}
@@ -335,7 +336,7 @@ function init_gear_sets()
       waist="Fotia Belt",
       left_ear="Moonshade Earring",
       right_ear="Telos Earring",
-      left_ring="Dingir Ring",
+      left_ring="Regal Ring",
       right_ring="Epaminondas's Ring",
       back=Cape.RATK
     }
@@ -348,8 +349,14 @@ function init_gear_sets()
       feet="Nyame Sollerets"
     })
 
-    sets.precast.WS['Detonator'] = sets.precast.WS['Last Stand']
-    sets.precast.WS['Detonator'].Acc = sets.precast.WS['Last Stand'].Acc
+    sets.precast.WS['Detonator'] = set_combine(sets.precast.WS['Last Stand'], {
+    })
+
+    sets.precast.WS['Detonator'].Acc = set_combine(sets.precast.WS['Detonator'], {ammo=gear.RAccbullet,
+      left_ear="Beyla Earring",
+      right_ring="Hajduk Ring +1",
+      feet="Nyame Sollerets"
+    })
 
     sets.precast.WS['Wildfire'] = {ammo=gear.MAbullet, -- 25
       head="Nyame Helm", 
@@ -363,7 +370,7 @@ function init_gear_sets()
       left_ring="Dingir Ring",
       right_ring="Epaminondas's Ring",
       back=Cape.LEADEN,
-      waist="K. Kachina Belt +1",
+      waist="Skrymir Cord +1",
     }
 
     sets.precast.WS['Hot Shot'] = {ammo=gear.WSbullet,
@@ -392,7 +399,21 @@ function init_gear_sets()
       feet={ name="Nyame Sollerets", augments={'Path: B',}}
     })
 
-    sets.precast.WS['Evisceration'] = {}
+    sets.precast.WS['Evisceration'] = {
+      head="Nyame Helm",
+      body="Nyame Mail",
+      hands="Nyame Gauntlets",
+      legs="Nyame Flanchard",
+      feet="Nyame Sollerets",
+      neck="Fotia Gorget",
+      waist="Fotia Belt",
+      left_ear="Moonshade Earring",
+      right_ear="Odr Earring",
+      left_ring="Regal Ring",
+      right_ring="Ilabrat Ring",  
+      back=Cape.SB
+    }
+
     sets.precast.WS['Evisceration'].Acc = set_combine(sets.precast.WS['Evisceration'], {})
 
     sets.precast.WS['Savage Blade'] = {

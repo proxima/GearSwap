@@ -34,6 +34,7 @@ function user_setup()
   send_command('bind @a sat youcommand Suuhja "Spectral Floe"')
   send_command('bind @s sat youcommand Muuhja "Horde Lullaby II"')
   send_command('bind @d sat youcommand Suuhja "Tenebral Crush"')
+  send_command('bind @z send Suuhja input /ja "Burst Affinity" <me>')
   
   send_command('bind @f12 gs c cycle CastingMode')
   send_command('bind ^f11 gs c cycle MagicalDefenseMode')
@@ -85,7 +86,11 @@ function init_gear_sets()
   MR = {}
   MR.One = {name="Moonlight Ring",bag="Wardrobe 2"}
   MR.Two = {name="Moonlight Ring",bag="Wardrobe 3"}  
-
+  
+  Malev = {}
+  Malev.One = { name="Malevolence", augments={'INT+10','Mag. Acc.+10','"Mag.Atk.Bns."+10','"Fast Cast"+5',}}
+  Malev.Two = { name="Malevolence", augments={'INT+9','Mag. Acc.+10','"Mag.Atk.Bns."+9','"Fast Cast"+4',}}
+  
   --------------------------------------
   -- Precast sets
   --------------------------------------
@@ -225,6 +230,8 @@ function init_gear_sets()
     back=Rud.AEOLIAN
   }
   
+  sets.precast.WS['Seraph Blade'] = sets.precast.WS['Aeolian Edge']   
+  sets.precast.WS['Red Lotus Blade'] = sets.precast.WS['Aeolian Edge']   
   sets.precast.WS['Sanguine Blade'] = sets.precast.WS['Aeolian Edge']
 
   --------------------------------------
@@ -385,7 +392,7 @@ function init_gear_sets()
   }
   
   sets.idle.Block = {
-    main="Burtgang",
+    main=Malev.One,
     sub="Ochain",
     ammo="Staunch Tathlum +1",      --  3
     head="Sakpata's Helm",          --  7
@@ -452,6 +459,8 @@ function init_gear_sets()
   -- Engaged sets
   --------------------------------------
   sets.engaged = {
+    main="Burtgang",
+    sub="Aegis",
     ammo="Staunch Tathlum +1",      --  3
     head="Hjarrandi Helm",          -- 10
     body="Hjarrandi Breastplate",   -- 12

@@ -95,13 +95,13 @@ function user_setup()
     Linos.AEOLIAN = { name="Linos", augments={'"Mag.Atk.Bns."+15','Weapon skill damage +3%','INT+8',}} -- Can get 20 MAB w/ Snowdim +2
 
     Cape = {}
-    Cape.TP         = { name="Intarabus's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Store TP"+10','Phys. dmg. taken-10%',}}
+    Cape.TP         = { name="Intarabus's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dual Wield"+10','Phys. dmg. taken-10%',}} -- '"Store TP"+10'
     Cape.MEVA       = { name="Intarabus's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity-10','Phys. dmg. taken-10%',}}
     Cape.FC         = { name="Intarabus's Cape", augments={'CHR+20','Mag. Acc+20 /Mag. Dmg.+20','CHR+10','"Fast Cast"+10','Phys. dmg. taken-10%',}}
     Cape.WSD        = { name="Intarabus's Cape", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}
     Cape.AEOLIAN    = { name="Intarabus's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}
+    Cape.MORDANT    = { name="Intarabus's Cape", augments={'CHR+20','Accuracy+20 Attack+20','CHR+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}
 
-    Cape.MORDANT    = { name="Intarabus's Cape", augments={'CHR+20','Accuracy+20 Attack+20','CHR+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}} -- Not made
     Cape.ENMITY_EVA = { name="Intarabus's Cape", augments={'AGI+20','Eva.+20 /Mag. Eva.+20','Evasion+10','Enmity+10','Evasion+15',}} -- Not made
     Cape.RUDRA      = { name="Intarabus's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}} -- Not made
 
@@ -114,8 +114,7 @@ function user_setup()
     Nibiru.Two = {name="Nibiru Knife", bag="Wardrobe 4"}
 
     Kali = {}
-    Kali.One = {name="Kali", augments={'DMG:+15','CHR+15','Mag. Acc.+15',}}
-    Kali.Two = {name="Kali", augments={'Mag. Acc.+15','String instrument skill +10','Wind instrument skill +10',}}
+    Kali.PH = {name="Kali", augments={'DMG:+15','CHR+15','Mag. Acc.+15',}}
 
     state.LullabyMode = M{['description']='Lullaby Instrument', 'Harp', 'Horn', 'TH', 'Enmity'}
 
@@ -135,7 +134,8 @@ function user_setup()
         'Spirited Etude', 'Logical Etude', 'Enchanting Etude', 'Bewitching Etude'
     }
 
-    state.WeaponSet = M{['description']='Weapon Set', 'Carnwenhan', 'Twashtar', 'NaeglingDW', 'NaeglingSW', 'Aeneas', 'Tauret', 'Aeolian', 'NibiruShield', 'NibiruDW', 'Free'}
+    state.WeaponSet = M{['description']='Weapon Set', 'Carnwenhan', 'NaeglingDW', 'NaeglingSW', 'Tauret', 'Aeolian', 'Free'}
+    -- 'Twashtar', 'Aeneas', 'NibiruShield', 'NibiruDW',
     state.WeaponLock = M(false, 'Weapon Lock')
     state.CP = M(false, "Capacity Points Mode")
 
@@ -261,7 +261,7 @@ function init_gear_sets()
     -- Precast sets to enhance JAs
 
     sets.precast.JA.Nightingale = {feet="Bihu Slippers +3"}
-    sets.precast.JA.Troubadour = {body="Bihu Jstcorps +1"}
+    sets.precast.JA.Troubadour = {body="Bihu Jstcorps. +3"}
     sets.precast.JA['Soul Voice'] = {legs="Bihu Cannions +1"}
 
     -- Waltz set (chr and vit)
@@ -275,11 +275,6 @@ function init_gear_sets()
     -- Default set for any weaponskill that isn't any more specifically defined
     sets.precast.WS = {
     }
-
-    sets.precast.WS['Wasp Sting'] = set_combine(sets.precast.FC, {
-       head="Brioso Roundlet +2",
-       legs=empty
-    })
 
     -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
     sets.precast.WS['Evisceration'] = set_combine(sets.precast.WS, {
@@ -304,12 +299,12 @@ function init_gear_sets()
     sets.precast.WS['Mordant Rime'] = set_combine(sets.precast.WS, {
       range=Linos.WSD,
       head="Nyame Helm",
-      body="Nyame Mail", -- body={ name="Bihu Jstcorps. +3", augments={'Enhances "Troubadour" effect',}},
+      body={ name="Bihu Jstcorps. +3", augments={'Enhances "Troubadour" effect',}},
       hands="Nyame Gauntlets",
       legs="Nyame Flanchard",
       feet="Nyame Sollerets",
       neck={ name="Bard's Charm +2", augments={'Path: A',}},
-      waist="Kentarch Belt +1",
+      waist="Grunfeld Rope", -- waist="Kentarch Belt +1",
       left_ear="Regal Earring",
       right_ear="Ishvara Earring",
       left_ring="Metamorph Ring +1",
@@ -320,7 +315,7 @@ function init_gear_sets()
     sets.precast.WS['Rudra\'s Storm'] = set_combine(sets.precast.WS, {
       range=Linos.RUDRA,
       head="Nyame Helm",
-      body="Nyame Mail", -- body={ name="Bihu Jstcorps. +3", augments={'Enhances "Troubadour" effect',}},
+      body={ name="Bihu Jstcorps. +3", augments={'Enhances "Troubadour" effect',}},
       hands="Nyame Gauntlets",
       legs="Nyame Flanchard",
       feet="Nyame Sollerets",
@@ -336,7 +331,7 @@ function init_gear_sets()
     sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS, {
       range=Linos.WSD,
       head="Nyame Helm",
-      body="Nyame Mail", -- body={ name="Bihu Jstcorps. +3", augments={'Enhances "Troubadour" effect',}},
+      body="Nyame Mail",
       hands="Nyame Gauntlets",
       legs="Nyame Flanchard",
       feet="Nyame Sollerets",
@@ -402,7 +397,8 @@ function init_gear_sets()
     }
 
     sets.TreasureHunter = {
-      waist="Chaac Belt",
+      head={ name="Chironic Hat", augments={'Accuracy+1 Attack+1','Rng.Acc.+30','"Treasure Hunter"+2','Mag. Acc.+17 "Mag.Atk.Bns."+17',}},
+      feet={ name="Chironic Slippers", augments={'MND+9','Potency of "Cure" effect received+6%','"Treasure Hunter"+2','Mag. Acc.+20 "Mag.Atk.Bns."+20',}},
     }
 
     sets.midcast.Madrigal = {head="Fili Calot +1"}
@@ -420,7 +416,7 @@ function init_gear_sets()
 
     -- For song buffs (duration and AF3 set bonus)
     sets.midcast.SongEnhancing = {
-      main=Kali.One,
+      main="Carnwenhan",
       sub="Genmei Shield",
       range="Gjallarhorn",
       head="Fili Calot +1",
@@ -439,7 +435,7 @@ function init_gear_sets()
 
     -- For song defbuffs (duration primary, accuracy secondary)
     sets.midcast.SongEnfeeble = {
-      main=Kali.One,
+      main="Carnwenhan",
       sub="Ammurapi Shield",
       range="Marsyas",
       head="Brioso Roundlet +2",
@@ -470,7 +466,7 @@ function init_gear_sets()
 
     -- Placeholder song; minimize duration to make it easy to overwrite.
     sets.midcast.SongPlaceholder = set_combine(sets.midcast.SongEnhancing, {
-      main={ name="Kali", augments={'DMG:+15','CHR+15','Mag. Acc.+15',}},
+      main=Kali.PH,
       range="Daurdabla",
       head="Fili Calot +1",
       body="Fili Hongreline +1",
@@ -512,7 +508,7 @@ function init_gear_sets()
     sets.midcast.Shellra = sets.midcast.Shell
 
     sets.midcast['Enfeebling Magic'] = {
-      main=Kali.One,
+      main="Carnwenhan",
       sub="Ammurapi Shield",
       range="Gjallarhorn",
       head="Brioso Roundlet +2",
@@ -654,13 +650,13 @@ function init_gear_sets()
       legs="Nyame Flanchard", 
       feet="Nyame Sollerets",
       neck="Bard's Charm +2",
-      ear1="Eabani Earring",
-      ear2="Suppanomimi",
-      -- ear2="Telos Earring",
+      ear1="Crepuscular Earring",
+      ear2="Telos Earring",
       left_ring=MR.One,
       right_ring=MR.Two,
-      back=Cape.TP,                 --   10
+      back=Cape.TP,
       waist="Sailfi Belt +1"
+      -- ear1="Eabani Earring",
       -- waist="Reiki Yotai"
     }
 
@@ -720,7 +716,7 @@ function init_gear_sets()
     ------------------------------------------------------------------------------------------------
     ---------------------------------------- Special Sets ------------------------------------------
     ------------------------------------------------------------------------------------------------
-    sets.SongDWDuration = {main=Kali.One, sub=Kali.Two}
+    sets.SongDWDuration = {main="Carnwenhan", sub=Kali.PH}
 
     sets.buff.Doom = {
         neck="Nicander's Necklace", --20
@@ -907,7 +903,7 @@ function customize_melee_set(meleeSet)
     elseif state.WeaponSet.value == "Aeneas" then
         equip({main="Aeneas",sub="Twashtar"})
     elseif state.WeaponSet.value == "Aeolian" then
-        equip({main="Aeneas",sub="Fusetto +2"})
+        equip({main="Tauret",sub="Daybreak"})
     end
     if buffactive['Aftermath: Lv.3'] and player.equipment.main == "Carnwenhan" then
         meleeSet = set_combine(meleeSet, sets.engaged.Aftermath)
