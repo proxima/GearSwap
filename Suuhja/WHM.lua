@@ -323,22 +323,22 @@ function init_gear_sets()
     }
 
     -- Cure sets
-    sets.midcast.CureSolace = {
-      main="Asclepius",                                 
-      sub="Genmei Shield",
-      ammo="Leisure Musk +1",                               --     4
-      head="Kaykaus Mitra +1",                              -- 11    6
-      body="Ebers Bliaut +2",                               --       3
-      hands="Kaykaus Cuffs +1",                             -- 11  6 3
-      legs="Ebers Pant. +2",                                --       5
-      feet="Kaykaus Boots +1",                              -- 17  6 3
-      neck={ name="Clr. Torque +1", augments={'Path: A',}}, --  7 20
-      waist="Witful belt",                                  --       3
-      left_ear="Glorious Earring",                          --     5
-      right_ear="Mendi. Earring",                           --  5
-      left_ring="Gelatinous Ring +1", 
-      right_ring="Defending Ring",
-      back={ name="Alaunus's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','MND+10','"Fast Cast"+10','Phys. dmg. taken-10%',}},
+    sets.midcast.CureSolace = {                             -- CP ENM HA FC DT
+      main="Asclepius",                                     --              15                               
+      sub="Ammurapi Shield",
+      ammo="Leisure Musk +1",                               --      4
+      head="Kaykaus Mitra +1",                              -- 11      6
+      body="Ebers Bliaut +2",                               --         3       +Solace
+      hands="Kaykaus Cuffs +1",                             -- 11   6  3
+      legs="Ebers Pant. +2",                                --         5    12
+      feet="Kaykaus Boots +1",                              -- 17   6  3
+      neck={ name="Clr. Torque +1", augments={'Path: A',}}, --  7  20     8
+      waist="Luminary Sash",
+      left_ear="Mendi. Earring",                            --  5
+      right_ear="Ebers Earring +2",                         --      9        6
+      left_ring="Gelatinous Ring +1",                       --               7
+      right_ring="Defending Ring",                          --              10
+      back={ name="Alaunus's Cape", augments={'MND+20','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Haste+10','Mag. Evasion+15',}},
     }
 
     sets.midcast.CureSolaceWeather = set_combine(sets.midcast.CureSolace, {
@@ -355,12 +355,15 @@ function init_gear_sets()
     })
 
     sets.midcast.CuragaNormal = set_combine(sets.midcast.CureNormal, {
-      body="Theo. Bliaut +2",
-      waist="Luminary Sash",
+      main="Daybreak",
+      sub="Ammurapi Shield",
+      head="Bunzi's Hat",
+      body="Bunzi's Robe",
+      hands="Bunzi's Gloves",
+      feet="Bunzi's Sabots",  
     })
 
     sets.midcast.CuragaWeather = set_combine(sets.midcast.CuragaNormal, {
-      body="Theo. Bliaut +2",
       back="Twilight Cape",
       waist="Hachirin-no-Obi",
     })
@@ -465,10 +468,12 @@ function init_gear_sets()
       hands="Ebers Mitts +1",
       legs="Piety Pantaln. +3",
       feet="Ebers Duckbills +1",
+      back={ name="Alaunus's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','MND+10','"Fast Cast"+10','Phys. dmg. taken-10%',}},
     })
 
     sets.midcast.BarStatus = set_combine(sets.midcast['Enhancing Magic'], {
       neck="Sroda Necklace",
+      back={ name="Alaunus's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','MND+10','"Fast Cast"+10','Phys. dmg. taken-10%',}},
     })
     
     sets.midcast.Baramnesra = sets.midcast.BarStatus

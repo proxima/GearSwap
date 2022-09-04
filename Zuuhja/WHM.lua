@@ -316,17 +316,16 @@ function init_gear_sets()
     })
 
     sets.midcast.CuragaNormal = set_combine(sets.midcast.CureNormal, {
-      body="Theo. Bliaut +2",
-      ring1="Stikini Ring +1",
-      waist="Luminary Sash",
+      main="Daybreak",
+      sub="Ammurapi Shield",
+      head="Bunzi's Hat",
+      body="Bunzi's Robe",
+      hands="Bunzi's Gloves",
+      feet="Bunzi's Sabots",  
     })
 
     sets.midcast.CuragaWeather = set_combine(sets.midcast.CuragaNormal, {
-      body="Theo. Bliaut +2",
-      hands="Kaykaus Cuffs +1",
       back="Twilight Cape",
-      ring1="Stikini Ring +1",
-      ring2="Stikini Ring +1",
       waist="Hachirin-no-Obi",
     })
 
@@ -436,10 +435,12 @@ function init_gear_sets()
       hands="Ebers Mitts +1",
       legs="Piety Pantaloons +3",
       feet="Ebers Duckbills +1",
+      back={ name="Alaunus's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','MND+10','"Fast Cast"+10','Phys. dmg. taken-10%',}},
     })
 
     sets.midcast.BarStatus = set_combine(sets.midcast['Enhancing Magic'], {
       neck="Sroda Necklace",
+      back={ name="Alaunus's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','MND+10','"Fast Cast"+10','Phys. dmg. taken-10%',}},
     })
     
     sets.midcast.Baramnesra = sets.midcast.BarStatus
