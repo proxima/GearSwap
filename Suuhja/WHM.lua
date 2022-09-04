@@ -250,7 +250,7 @@ function init_gear_sets()
     })
 
     sets.precast.FC.Cure = set_combine(sets.precast.FC, {
-      legs="Ebers pantaloons +1",     -- 13, 5
+      legs="Ebers pantaloons +2",     -- 13, 5
     })
 
     sets.precast.FC.Curaga = sets.precast.FC.Cure
@@ -282,17 +282,19 @@ function init_gear_sets()
 
     sets.precast.WS['Black Halo'] = set_combine(sets.precast.WS, {
       waist="Luminary sash",
-      right_ear="Ishvara Earring",
+      right_ear="Ebers Earring +2",      
     })
 
     sets.precast.WS['Hexa Strike'] = set_combine(sets.precast.WS, {
       neck="Fotia Gorget",
-      waist="Fotia Belt"
+      waist="Fotia Belt",
+      right_ear="Ebers Earring +2",
     })
     
     sets.precast.WS['Realmrazer'] = set_combine(sets.precast.WS, {
       neck="Fotia Gorget",
-      waist="Fotia Belt"
+      waist="Fotia Belt",
+      right_ear="Ebers Earring +2",
     })
 
     sets.precast.WS['Flash Nova'] = set_combine(sets.precast.WS, {})
@@ -326,9 +328,9 @@ function init_gear_sets()
       sub="Genmei Shield",
       ammo="Leisure Musk +1",                               --     4
       head="Kaykaus Mitra +1",                              -- 11    6
-      body="Ebers Bliaut +1",                               --       3
+      body="Ebers Bliaut +2",                               --       3
       hands="Kaykaus Cuffs +1",                             -- 11  6 3
-      legs="Ebers Pant. +1",                                --       5
+      legs="Ebers Pant. +2",                                --       5
       feet="Kaykaus Boots +1",                              -- 17  6 3
       neck={ name="Clr. Torque +1", augments={'Path: A',}}, --  7 20
       waist="Witful belt",                                  --       3
@@ -374,8 +376,8 @@ function init_gear_sets()
       feet={ name="Vanya Clogs", augments={'Healing magic skill +20','"Cure" spellcasting time -7%','Magic dmg. taken -3',}},
       neck="Debilis Medallion",
       waist="Bishop's Sash",
-      left_ear="Etiolation Earring",
-      right_ear="Meili Earring",
+      right_ear="Ebers Earring +2",
+      left_ear="Meili Earring",
       left_ring="Menelaus's Ring",
       right_ring="Haoma's Ring",
       back="Mending Cape",
@@ -385,14 +387,14 @@ function init_gear_sets()
       main="Yagrush",
       sub="Gambanteinn",
       head={ name="Vanya Hood", augments={'Healing magic skill +20','"Cure" spellcasting time -7%','Magic dmg. taken -3',}},
-      body="Ebers Bliaut +1",
+      body="Ebers Bliaut +2",
       hands="Fanatic Gloves",
       legs="Th. Pant. +3",
       feet={ name="Vanya Clogs", augments={'Healing magic skill +20','"Cure" spellcasting time -7%','Magic dmg. taken -3',}},
       neck="Debilis Medallion",
       waist="Bishop's Sash",
-      left_ear="Beatific Earring",
-      right_ear="Meili Earring",
+      right_ear="Ebers Earring +2",
+      left_ear="Meili Earring",
       left_ring="Menelaus's Ring",
       right_ring="Haoma's Ring",
       back={ name="Alaunus's Cape", augments={'MND+20','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Haste+10','Mag. Evasion+15',}},
@@ -459,7 +461,7 @@ function init_gear_sets()
       main="Beneficus",
       sub="Ammurapi Shield",
       head="Ebers Cap +1",
-      body="Ebers Bliaut +1",
+      body="Ebers Bliaut +2",
       hands="Ebers Mitts +1",
       legs="Piety Pantaln. +3",
       feet="Ebers Duckbills +1",
@@ -493,18 +495,17 @@ function init_gear_sets()
       main="Daybreak",
       sub="Ammurapi Shield",
       ammo="Pemphredo Tathlum",
-      head="Theophany Cap +2",
-      body="Theo. Bliaut +2",
-      hands="Piety Mitts +3",
-      legs="Th. Pant. +3",
-      feet="Theo. Duckbills +3",
-      neck="Erra Pendant",
+      head="Bunzi's Hat",
+      body="Bunzi's Robe",
+      hands="Bunzi's Gloves",
+      legs="Bunzi's Pants",
+      feet="Bunzi's Sabots",
+      neck="Saevus Pendant +1",
       left_ear="Malignance Earring",
       right_ear="Regal Earring",
-      left_ring={name="Stikini Ring +1",bag="wardrobe 2"},
-      right_ring={name="Stikini Ring +1",bag="wardrobe 3"},
+      left_ring="Freke Ring",
       back={ name="Alaunus's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','MND+10','"Fast Cast"+10','Phys. dmg. taken-10%',}},
-      waist="Luminary Sash",
+      waist="Sacro Cord",
     }
     
     sets.midcast['Elemental Magic'] = sets.midcast['Divine Magic']
@@ -522,8 +523,8 @@ function init_gear_sets()
       legs={ name="Chironic Hose", augments={'Mag. Acc.+21 "Mag.Atk.Bns."+21','"Fast Cast"+5','MND+11','Mag. Acc.+13','"Mag.Atk.Bns."+6',}},
       feet="Theo. Duckbills +3",
       neck="Erra Pendant",
-      ear1="Malignance Earring",
-      ear2="Regal Earring",
+      right_ear="Ebers Earring +2",
+      left_ear="Regal Earring",
       ring1="Metamorph ring +1",
       ring2="Archon Ring",
       back="Aurist's Cape +1",
@@ -540,8 +541,8 @@ function init_gear_sets()
       legs={ name="Chironic Hose", augments={'Mag. Acc.+21 "Mag.Atk.Bns."+21','"Fast Cast"+5','MND+11','Mag. Acc.+13','"Mag.Atk.Bns."+6',}},
       feet="Theo. Duckbills +3",
       neck="Erra Pendant",
-      ear1="Malignance Earring",
-      ear2="Regal Earring",
+      right_ear="Ebers Earring +2",
+      left_ear="Regal Earring",
       left_ring={name="Stikini Ring +1",bag="wardrobe 2"},
       right_ring={name="Stikini Ring +1",bag="wardrobe 3"},
       back="Aurist's Cape +1",
@@ -564,8 +565,8 @@ function init_gear_sets()
       feet="Theo. Duckbills +3",
       neck="Erra Pendant",
       waist={ name="Acuity Belt +1", augments={'Path: A',}},
+      right_ear="Ebers Earring +2",
       left_ear="Regal Earring",
-      right_ear="Malignance Earring",
       left_ring="Stikini Ring +1",
       right_ring={ name="Metamor. Ring +1", augments={'Path: A',}},
       back="Aurist's Cape +1",
@@ -589,15 +590,15 @@ function init_gear_sets()
       ammo="Staunch Tathlum +1",
       head="Inyanga Tiara +2",
       neck="Warder's charm +1",
-      ear1="Etiolation earring",
-      ear2="Odnowa earring +1",
-      body="Inyanga Jubbah +2",
+      left_ear="Odnowa earring +1",
+      right_ear="Ebers Earring +2",
+      body="Ebers Bliaut +2",
       hands="Inyanga Dastanas +2",
       left_ring={name="Stikini Ring +1",bag="wardrobe 2"},
       right_ring={name="Stikini Ring +1",bag="wardrobe 3"},
       waist="Carrier's Sash",
       back={ name="Alaunus's Cape", augments={'MND+20','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Haste+10','Mag. Evasion+15',}},
-      legs="Inyanga Shalwar +2",
+      legs="Ebers pantaloons +2",
       feet="Inyan. Crackows +2",
     }
 
@@ -606,14 +607,14 @@ function init_gear_sets()
       sub="Ammurapi Shield",
       ammo="Staunch Tathlum +1",
       head="Nyame Helm",
-      body="Nyame Mail",
+      body="Ebers Bliaut +2",
       hands="Nyame Gauntlets",
       legs="Nyame Flanchard",
       feet="Nyame Sollerets",
       neck="Loricate Torque +1",
       waist="Carrier's Sash",
-      left_ear="Etiolation Earring",
-      right_ear={ name="Odnowa Earring +1", augments={'Path: A',}},
+      left_ear="Odnowa earring +1",
+      right_ear="Ebers Earring +2",
       left_ring={name="Stikini Ring +1",bag="wardrobe 2"},
       right_ring={name="Stikini Ring +1",bag="wardrobe 3"},
     })
@@ -622,9 +623,9 @@ function init_gear_sets()
       main="Asclepius",
       sub="Ammurapi Shield",
       head="Bunzi's Hat",
-      body="Bunzi's Robe",
+      body="Ebers Bliaut +2",
       hands="Bunzi's Gloves",
-      legs="Bunzi's Pants",
+      legs="Ebers pantaloons +2",
       feet="Bunzi's Sabots",
       left_ring="Defending Ring",
       right_ring="Inyanga Ring",

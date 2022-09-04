@@ -309,7 +309,7 @@ function init_gear_sets()
       right_ear="Ishvara Earring",
       left_ring="Metamorph Ring +1",
       right_ring="Epaminondas's Ring",
-      back=Cape.MORDANT
+      back=Cape.WSD -- Cape.MORDANT
     })
 
     sets.precast.WS['Rudra\'s Storm'] = set_combine(sets.precast.WS, {

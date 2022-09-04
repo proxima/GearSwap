@@ -250,7 +250,7 @@ function init_gear_sets()
     sets.precast.FC.Cure = set_combine(sets.precast.FC, {
       sub="Sors shield",
       left_ear="Mendicant's Earring", --  5  
-      legs="Ebers pantaloons +1",     -- 13, 5
+      legs="Ebers pantaloons +2",     -- 13, 5
       feet={ name="Vanya Clogs", augments={'"Cure" potency +5%','"Cure" spellcasting time -15%','"Conserve MP"+6',}}, -- 15, 3
     })
 
@@ -289,9 +289,9 @@ function init_gear_sets()
       sub="Enki Strap",
       ammo="Staunch Tathlum +1",
       head={ name="Vanya Hood", augments={'MP+50','"Fast Cast"+10','Haste+2%',}},
-      body="Ebers Bliaut +1",                               --       3
+      body="Ebers Bliaut +2",                               --       3
       hands="Theophany Mitts +2",                           --     6 3
-      legs="Ebers Pant. +1",                                --       5
+      legs="Ebers Pant. +2",                                --       5
       feet={ name="Vanya Clogs", augments={'"Cure" potency +5%','"Cure" spellcasting time -15%','"Conserve MP"+6',}},
       neck="Cleric's Torque +1",
       waist="Luminary Sash",
@@ -353,7 +353,7 @@ function init_gear_sets()
     sets.midcast.Cursna = set_combine(sets.midcast.StatusRemoval, {
       main="Gada",
       sub="Chanter's Shield",
-      body="Ebers Bliaut +1",
+      body="Ebers Bliaut +2",
       head={ name="Vanya Hood", augments={'Healing magic skill +20','"Cure" spellcasting time -7%','Magic dmg. taken -3',}},
       hands={ name="Fanatic Gloves", augments={'MP+45','Healing magic skill +9','"Conserve MP"+6','"Fast Cast"+5',}},
       legs="Th. Pant. +3", --21
@@ -432,7 +432,7 @@ function init_gear_sets()
       main="Beneficus",
       sub="Ammurapi Shield",
       head="Ebers Cap +1",
-      body="Ebers Bliaut +1",
+      body="Ebers Bliaut +2",
       hands="Ebers Mitts +1",
       legs="Piety Pantaloons +3",
       feet="Ebers Duckbills +1",
@@ -551,7 +551,7 @@ function init_gear_sets()
       sub="Genmei Shield",
       ammo="Homiliary",
       head="Inyanga Tiara +2",
-      body="Inyanga Jubbah +2",
+      body="Ebers Bliaut +2",
       hands={ name="Chironic Gloves", augments={'"Blood Boon"+10','"Dual Wield"+3','"Refresh"+2','Accuracy+7 Attack+7','Mag. Acc.+15 "Mag.Atk.Bns."+15',}},
       legs={ name="Chironic Hose", augments={'Enmity-3','Rng.Acc.+11 Rng.Atk.+11','"Refresh"+2','Mag. Acc.+7 "Mag.Atk.Bns."+7',}},
       feet={ name="Chironic Slippers", augments={'Pet: STR+6','Enmity+3','"Refresh"+2','Accuracy+8 Attack+8',}},
@@ -570,7 +570,7 @@ function init_gear_sets()
       neck="Loricate Torque +1",
       ammo="Staunch Tathlum +1",
       head="Nyame Helm",
-      body="Nyame Mail",
+      body="Ebers Bliaut +2",
       hands="Nyame Gauntlets",
       legs="Nyame Flanchard",
       feet="Nyame Sollerets",
@@ -584,6 +584,7 @@ function init_gear_sets()
       sub="Genmei Shield",
       ammo="Staunch Tathlum +1",
       head="Bunzi's Hat",
+      body="Ebers Bliaut +2",
       hands="Bunzi's Gloves",
       legs="Inyanga Shalwar +2",
       feet="Inyanga Crackows +2",

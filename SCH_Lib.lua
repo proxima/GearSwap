@@ -716,11 +716,11 @@ function idle()
     -- We check if we're meleeing because we don't want to idle in melee gear when we're only engaged for trusts
     if (meleeing.current and player.status=='Engaged') then   
         -- We're engaged and meleeing
-        if player.sub_job == 'NIN' then
-		  equip(sets.me.melee_dw)
-		else
+        if player.sub_job == 'NIN' or player.sub_job == 'DNC' then
+          equip(sets.me.melee_dw)
+        else
           equip(sets.me.melee)               
-		end
+        end
     else
         -- If we are building sublimation, then we swap refresh to sublimation style idle.
         if buffactive['Sublimation: Activated'] then

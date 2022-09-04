@@ -258,7 +258,7 @@ function init_gear_sets()
     sets.precast.CorsairRoll = {
       head="Lanun Tricorne +1",
       body="Malignance Tabard",
-      hands="Chasseur's Gants +1",
+      hands="Chasseur's Gants +2",
       legs="Desultor Tassets",
       feet="Malignance Boots",
       neck="Regal Necklace",
@@ -273,11 +273,11 @@ function init_gear_sets()
     sets.precast.CorsairRoll.Duration = {main=Rostam.C, range="Compensator"}
     sets.precast.CorsairRoll.LowerDelay = { --back="Gunslinger's Cape"
     }
-    sets.precast.CorsairRoll["Caster's Roll"] = set_combine(sets.precast.CorsairRoll, {legs="Chas. Culottes +1"})
+    sets.precast.CorsairRoll["Caster's Roll"] = set_combine(sets.precast.CorsairRoll, {legs="Chas. Culottes +2"})
     sets.precast.CorsairRoll["Courser's Roll"] = set_combine(sets.precast.CorsairRoll, {feet="Chass. Bottes +1"})
     sets.precast.CorsairRoll["Blitzer's Roll"] = set_combine(sets.precast.CorsairRoll, {head="Chass. Tricorne +1"})
     sets.precast.CorsairRoll["Tactician's Roll"] = set_combine(sets.precast.CorsairRoll, {body="Chasseur's Frac +1"})
-    sets.precast.CorsairRoll["Allies' Roll"] = set_combine(sets.precast.CorsairRoll, {hands="Chasseur's Gants +1"})
+    sets.precast.CorsairRoll["Allies' Roll"] = set_combine(sets.precast.CorsairRoll, {hands="Chasseur's Gants +2"})
 
     sets.precast.LuzafRing = {ring1="Luzaf's Ring"}
     sets.precast.FoldDoubleBust = {hands="Lanun Gants +3"}
@@ -331,7 +331,7 @@ function init_gear_sets()
       body="Laksa. Frac +3",
       hands="Nyame Gauntlets",
       legs="Nyame Flanchard",
-      feet="Lanun Bottes +3",
+      feet="Nyame Sollerets",
       neck="Fotia Gorget",
       waist="Fotia Belt",
       left_ear="Moonshade Earring",
@@ -355,7 +355,6 @@ function init_gear_sets()
     sets.precast.WS['Detonator'].Acc = set_combine(sets.precast.WS['Detonator'], {ammo=gear.RAccbullet,
       left_ear="Beyla Earring",
       right_ring="Hajduk Ring +1",
-      feet="Nyame Sollerets"
     })
 
     sets.precast.WS['Wildfire'] = {ammo=gear.MAbullet, -- 25
@@ -536,7 +535,7 @@ function init_gear_sets()
       head="Meghanada Visor +2",
       left_ear="Odr Earring",
       body="Meghanada Cuirie +2",
-      hands="Mummu Wrists +2",
+      hands="Chasseur's Gants +2",
       legs="Darraigner's Brais",
       feet="Osh. Leggings +1",
       left_ring="Begrudging Ring",
@@ -643,7 +642,7 @@ function init_gear_sets()
       head="Malignance Chapeau",
       body="Malignance Tabard",
       hands="Malignance Gloves",
-      legs="Malignance Tights",
+      legs="Chas. Culottes +2",
       feet="Malignance Boots",
       neck="Iskur Gorget",
       waist="Reiki Yotai",
@@ -719,7 +718,7 @@ function init_gear_sets()
       head="Malignance Chapeau",
       body="Malignance Tabard",
       hands="Malignance Gloves",
-      legs="Malignance Tights",
+      legs="Chas. Culottes +2",
       feet="Malignance Boots",
     }
 

@@ -133,7 +133,7 @@ function user_setup()
     send_command('bind @b send muuhja input /ma "Siren" <me>')
     send_command('bind @n sat youcommand Muuhja "Carnage Elegy"')
     send_command('bind @m sat youcommand Muuhja "Mewing Lullaby"')
-    send_command('bind @o sat youcommand Muuhja "Horde Lullaby"')
+    send_command('bind @o sat youcommand Muuhja "Shock Squall"')
     -- send_command('bind @o sat youcommand Muuhja "Horde Lullaby"')
     send_command('bind @p sat youcommand Zuuhja "Sleepga"')
     -- send_command('bind @p send muuhja input /pet "Release" <me>')
@@ -231,13 +231,13 @@ function user_unload()
     send_command('unbind #8')
     send_command('unbind #9')
     send_command('unbind #0')
-	
+
     send_command('unbind @b')
     send_command('unbind @n')
     send_command('unbind @m')
     send_command('unbind @o')
     send_command('unbind @p')
-	
+
     send_command('lua u gearinfo')
 
 end
@@ -293,7 +293,7 @@ function init_gear_sets()
       feet="Horos T. Shoes +3"
     }
 
-    sets.precast.Step['Feather Step'] = set_combine(sets.precast.Step, {feet="Macu. Toe shoes +1",})
+    sets.precast.Step['Feather Step'] = set_combine(sets.precast.Step, {feet="Macu. Toe shoes +2",})
     sets.precast.Flourish1 = {}
     sets.precast.Flourish1['Animated Flourish'] = set_combine(sets.Enmity, {
       head={ name="Herculean Helm", augments={'"Store TP"+1','Magic Damage +1','"Treasure Hunter"+2','Accuracy+7 Attack+7',}},
@@ -321,7 +321,7 @@ function init_gear_sets()
     sets.precast.Flourish2['Reverse Flourish'] = {hands="Maculele Bangles +1", back="Toetapper Mantle"}
     sets.precast.Flourish3 = {}
     sets.precast.Flourish3['Striking Flourish'] = {body="Macu. Casaque +1"}
-    sets.precast.Flourish3['Climactic Flourish'] = {head="Maculele Tiara +1",}
+    sets.precast.Flourish3['Climactic Flourish'] = {head="Maculele Tiara +2",}
 
     sets.precast.FC = {
     }
@@ -341,7 +341,7 @@ function init_gear_sets()
     sets.precast.WS.Acc = set_combine(sets.precast.WS, {
     })
 
-    sets.precast.WS.Critical = {head="Maculele Tiara +1", right_ring="Epaminondas's Ring", ammo="Crepuscular pebble"}
+    sets.precast.WS.Critical = {head="Maculele Tiara +2", right_ring="Epaminondas's Ring", ammo="Crepuscular pebble"}
 
     sets.precast.WS['Pyrrhic Kleos'] = set_combine(sets.precast.WS, {
       ammo="Coiste Bodhar",
@@ -380,13 +380,14 @@ function init_gear_sets()
     })
 
     sets.precast.WS['Rudra\'s Storm'] = set_combine(sets.precast.WS, {
-      ammo="C. Palug Stone",
+      ammo="Oshasha's Treatise",
+      -- head="Maculele Tiara +2",
       head="Nyame Helm",
       body="Nyame Mail",
       hands="Nyame Gauntlets",
       legs="Nyame Flanchard",
       feet="Nyame Sollerets",
-      neck="Etoile gorget +2",
+      neck="Etoile Gorget +2",
       waist="Kentarch Belt +1",
       left_ear="Odr Earring",
       right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
@@ -462,7 +463,7 @@ function init_gear_sets()
       body="Malignance Tabard",
       hands="Malignance Gloves",
       legs="Malignance Tights",
-      feet="Malignance Boots",
+      feet="Macu. Toe shoes +2",
       neck={ name="Loricate Torque +1", augments={'Path: A',}},
       waist="Carrier's Sash",
       left_ear="Eabani Earring",
@@ -488,7 +489,7 @@ function init_gear_sets()
       body="Malignance Tabard",
       hands="Malignance Gloves",
       legs="Malignance Tights",
-      feet="Malignance Boots",
+      feet="Macu. Toe shoes +2",
       neck={ name="Etoile Gorget +2", augments={'Path: A',}},
       waist="Reiki Yotai",
       left_ear="Sherida Earring",
@@ -593,7 +594,7 @@ function init_gear_sets()
       head="Malignance chapeau",
       hands="Malignance gloves",
       legs="Malignance tights",
-      feet="Malignance boots"
+      feet="Macu. Toe shoes +2",
     })
 
     -- 15% Magic Haste (67% DW to cap)
@@ -629,7 +630,7 @@ function init_gear_sets()
       head="Malignance chapeau",
       hands="Malignance gloves",
       legs="Malignance tights",
-      feet="Malignance boots"
+      feet="Macu. Toe shoes +2",
     })
 
     -- 30% Magic Haste (56% DW to cap)
@@ -665,7 +666,7 @@ function init_gear_sets()
       head="Malignance chapeau",
       hands="Malignance gloves",
       legs="Malignance tights",
-      feet="Malignance boots"
+      feet="Macu. Toe shoes +2",
     })
 
     -- 35% Magic Haste (51% DW to cap)
@@ -701,7 +702,7 @@ function init_gear_sets()
       head="Malignance chapeau",
       hands="Malignance gloves",
       legs="Malignance tights",
-      feet="Malignance boots"
+      feet="Macu. Toe shoes +2",
     })
 
     -- 45% Magic Haste (36% DW to cap)
@@ -737,7 +738,7 @@ function init_gear_sets()
       head="Malignance chapeau",
       hands="Malignance gloves",
       legs="Malignance tights",
-      feet="Malignance boots"
+      feet="Macu. Toe shoes +2",
     })
 
     ------------------------------------------------------------------------------------------------
@@ -746,19 +747,19 @@ function init_gear_sets()
 
     -- No Magic Haste (74% DW to cap)
     sets.engaged.Hybrid = {
-      ammo="Coiste Bodhar",
+      ammo="Yamarang",
       head="Malignance chapeau", -- 6
       neck="Etoile gorget +2",
       left_ear="Sherida Earring",
       right_ear="Mache Earring +1",
       body="Gleti's Cuirass", -- 9 PDT
       hands="Malignance gloves", -- 5
-      left_ring={name="Moonlight Ring",bag="wardrobe 3"}, -- 5
-      right_ring={name="Moonlight Ring",bag="wardrobe 4"}, -- 5
+      left_ring={name="Moonlight Ring",bag="wardrobe 6"}, -- 5
+      right_ring={name="Moonlight Ring",bag="wardrobe 8"}, -- 5
       back={ name="Senuna's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}},  -- 10 PDT
-      waist="Reiki Yotai",
+      waist="Windbuffet belt +1",
       legs="Malignance tights", -- 7
-      feet="Malignance boots" -- 4
+      feet="Macu. Toe shoes +2", -- 9
     }
 
     sets.engaged.DT = set_combine(sets.engaged, sets.engaged.Hybrid)
@@ -804,7 +805,7 @@ function init_gear_sets()
 
     sets.buff['Saber Dance'] = {}
     sets.buff['Fan Dance'] = {}
-    sets.buff['Climactic Flourish'] = {head="Maculele Tiara +1"}
+    sets.buff['Climactic Flourish'] = {head="Maculele Tiara +2"}
     sets.buff['Closed Position'] = {feet="Horos T. Shoes +3"}
 
     sets.buff.Doom = {

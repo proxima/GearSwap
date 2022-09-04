@@ -229,11 +229,11 @@ function get_sets()
       main="Daybreak",
       sub="Ammurapi Shield",
       ammo="Homiliary",
-      head="Befouled crown",
+      head="Nyame Helm",
       ear1="Etiolation earring",
       ear2="Odnowa earring +1",
       neck="Loricate torque +1",
-      body="Jhakri robe +2",
+      body="Arbatel Gown +2",
       hands="Nyame Gauntlets",
       legs="Agwu's slops",
       left_ring={name="Stikini Ring +1",bag="wardrobe 2"},
@@ -246,7 +246,7 @@ function get_sets()
     -- Your idle Sublimation set combine from refresh or DT depening on mode.
     sets.me.idle.sublimation = set_combine(sets.me.idle.refresh, {
       head="Acad. Mortar. +2",
-      body="Pedagogy gown +3",
+      body="Arbatel Gown +2",
       waist="Embla Sash",
     })
 
@@ -254,7 +254,7 @@ function get_sets()
     sets.me.idle.dt = set_combine(sets.me.idle[refreshType], {
       ammo="Staunch Tathlum +1",
       head="Nyame Helm",
-      body="Nyame Mail",
+      body="Arbatel Gown +2",
       hands="Nyame Gauntlets",
       legs="Nyame Flanchard",
       feet="Nyame Sollerets",
@@ -262,7 +262,7 @@ function get_sets()
       waist="Carrier's Sash",
       left_ear="Eabani Earring",
       right_ear={ name="Odnowa Earring +1", augments={'Path: A',}},
-      left_ring="Defending Ring",
+      left_ring={name="Stikini Ring +1",bag="wardrobe 2"},
       right_ring="Gelatinous Ring +1",
       back=Lugh.DT
     })
@@ -275,7 +275,7 @@ function get_sets()
       ear1="Lugalbanda earring",
       ear2="Odnowa earring +1",   --  3 DT, 2 MDT
       neck="Warder's charm +1",
-      body="Pinga Tunic +1",      
+      body="Arbatel Gown +2",     -- 12 DT  
       hands="Pinga mittens +1",
       legs="Agwu's slops",        --  9 DT
       ring1="Defending ring",     -- 10 DT
@@ -485,16 +485,16 @@ function get_sets()
     -- Buff Sets
     ------------
     -- Gear that needs to be worn to **actively** enhance a current player buff.
-    sets.buff['Rapture'] = {head="Arbatel bonnet +1"}
-    sets.buff['Perpetuance'] = {hands="Arbatel Bracers +1"}
+    sets.buff['Rapture'] = {head="Arbatel bonnet +2"}
+    sets.buff['Perpetuance'] = {hands="Arbatel Bracers +2"}
     sets.buff['Immanence'] = {}
     sets.buff['Penury'] = {}
     sets.buff['Parsimony'] = {}
     sets.buff['Celerity'] = {feet="Pedagogy loafers +3"}
     sets.buff['Alacrity'] = {feet="Pedagogy loafers +3"}
     sets.buff['Klimaform'] = {feet="Arbatel Loafers +2"}
-    -- sets.buff['Ebullience'] = {head="Arbatel bonnet +1"}
-   	
+    sets.buff['Ebullience'] = {head="Arbatel bonnet +2"}
+
     ---------------
     -- Casting Sets
     ---------------
@@ -560,7 +560,7 @@ function get_sets()
    
    sets.midcast["Modus Veritas"] = sets.precast["Modus Veritas"]
 
-   -- When spell school is aligned with grimoire, swap relevent pieces -- Can also use Arbatel +1 set here if you value 1% quickcast procs per piece. (2+ pieces)  
+   -- When spell school is aligned with grimoire, swap relevent pieces -- Can also use Arbatel +2 set here if you value 1% quickcast procs per piece. (2+ pieces)  
    -- Dont set_combine here, as this is the last step of the precast, it will have sorted all the needed pieces already based on type of spell.
    -- Then only swap in what under this set after everything else. 
    sets.precast.grimoire = {
@@ -599,7 +599,6 @@ function get_sets()
     -----------------------------------------------------------------------------------------------
     -- Helix sets automatically derives from casting sets. SO DONT PUT ANYTHING IN THEM other than:
     -- Pixie in DarkHelix
-    -- Boots that aren't arbatel +1 (15% of small numbers meh, amalric+1 does more)
     -- Belt that isn't Obi.
     -----------------------------------------------------------------------------------------------
     -- Make sure you have a non weather obi in this set. Helix get bonus naturally no need Obi.	
@@ -992,12 +991,12 @@ function get_sets()
     sets.midcast.regen.hybrid = {
       main="Musa",
       sub="Khonsu",
-      head="Arbatel Bonnet +1",
+      head="Arbatel Bonnet +2",
       neck={ name="Argute Stole +2", augments={'Path: A',}},
       right_ear="Mimir Earring",
       left_ear="Regal Earring",
       body="Telchine chas.",
-      hands="Arbatel Bracers +1", -- Tired of this not swapping properly | hands="Telchine Gloves",
+      hands="Arbatel Bracers +2", -- Tired of this not swapping properly | hands="Telchine Gloves",
       left_ring={name="Stikini Ring +1",bag="wardrobe 2"},
       right_ring={name="Stikini Ring +1",bag="wardrobe 3"},
       waist="Embla Sash",

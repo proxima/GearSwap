@@ -424,7 +424,7 @@ function init_gear_sets()
       body={ name="Nyame Mail", augments={'Path: B',}},
       hands={ name="Nyame Gauntlets", augments={'Path: B',}},
       legs={ name="Nyame Flanchard", augments={'Path: B',}},
-      feet="Nyame Boots",
+      feet="Nyame Sollerets",
       neck="Fotia Gorget",
       waist="Fotia Belt",
       left_ear="Moonshade Earring",
