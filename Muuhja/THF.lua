@@ -208,7 +208,7 @@ function init_gear_sets()
     sets.precast.WS["Rudra's Storm"] = set_combine(sets.precast.WS, {
       ammo={ name="Seeth. Bomblet +1", augments={'Path: A',}},
       head="Nyame Helm",
-      body="Nyame Mail",
+      body="Skulker's Vest +2",
       hands="Nyame Gauntlets",
       legs="Nyame Flanchard",  
       feet="Nyame Sollerets",
@@ -229,6 +229,7 @@ function init_gear_sets()
       left_ring="Epaminondas's ring",
       left_ear="Odr Earring",
     })
+
     sets.precast.WS["Rudra's Storm"].SA = set_combine(sets.precast.WS["Rudra's Storm"].Mod, {})
     sets.precast.WS["Rudra's Storm"].TA = set_combine(sets.precast.WS["Rudra's Storm"].Mod, {})
     sets.precast.WS["Rudra's Storm"].SATA = set_combine(sets.precast.WS["Rudra's Storm"].Mod, {})
@@ -468,9 +469,9 @@ function job_buff_change(buff, gain)
     if buff == "doom" then
         if gain then
             equip(sets.buff.Doom)
-            disable('ring1','ring2','waist')
+            disable('neck','ring1','ring2','waist')
         else
-            enable('ring1','ring2','waist')
+            enable('neck','ring1','ring2','waist')
             handle_equipping_gear(player.status)
         end
 

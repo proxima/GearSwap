@@ -218,10 +218,10 @@ function get_sets()
 
     -- Lethargy
     EMPY.Head  = "Leth. Chappel +1"
-    EMPY.Body  = "Lethargy Sayon +1"
-    EMPY.Hands = "Leth. Gantherots +1"
-    EMPY.Legs  = "Leth. Fuseau +1"
-    EMPY.Feet  = "Leth. Houseaux +1"
+    EMPY.Body  = "Lethargy Sayon +2"
+    EMPY.Hands = "Leth. Gantherots +2"
+    EMPY.Legs  = "Leth. Fuseau +2"
+    EMPY.Feet  = "Leth. Houseaux +2"
 
     -- Capes:
     -- Sucellos's And such, add your own.
@@ -245,8 +245,8 @@ function get_sets()
     -- Leave weapons out of the idles and melee sets. You can/should add weapons to the casting sets though
     sets.me.idle.refresh = {
       ammo="Homiliary",
-      head="Befouled Crown",
-      body="Jhakri Robe +2",
+      head="Malignance Chapeau",
+      body=EMPY.Body,
       hands="Malignance Gloves",
       legs="Malignance Tights",
       feet="Malignance Boots",
@@ -276,11 +276,11 @@ function get_sets()
     
     sets.me.idle.mdt = set_combine(sets.me.idle.refresh, {
       ammo="Staunch Tathlum +1",
-      head="Malignance Chapeau",
-      body="Malignance Tabard",
-      hands="Malignance Gloves",
-      legs="Malignance Tights",
-      feet="Malignance Boots",
+      head="Bunzi's Hat",
+      body="Bunzi's Robe",
+      hands="Bunzi's Gloves",
+      legs="Bunzi's Pants",
+      feet="Bunzi's Sabots",
       neck="Warder's Charm +1",
       waist="Carrier's Sash",
       left_ear="Etiolation Earring",
@@ -301,7 +301,7 @@ function get_sets()
     -- Dual Wield sets
     ------------------------------------------------------------------------------------------------------
     sets.me.melee.normaldw = set_combine(sets.me.idle.refresh, {   
-      ammo="Staunch Tathlum +1",
+      ammo="Coiste Bodhar",
       head="Malignance Chapeau",
       body="Malignance Tabard",
       hands="Malignance Gloves",
@@ -344,14 +344,14 @@ function get_sets()
     -- Weapon Skills sets just add them by name.
     ------------------------------------------------------------------------------------------------------
     sets.me["Savage Blade"] = {
-      ammo="Regal Gem",
+      ammo="Coiste Bodhar",
       head="Nyame Helm",
       body="Nyame Mail",
       hands="Nyame Gauntlets",
       legs="Nyame Flanchard",
       feet="Nyame Sollerets",
       neck="Republican platinum medal",
-      waist="Kentarch Belt +1",
+      waist="Sailfi Belt +1",
       left_ear="Moonshade Earring",
       right_ear="Regal Earring",
       left_ring={ name="Metamor. Ring +1", augments={'Path: A',}},
@@ -399,10 +399,10 @@ function get_sets()
     sets.me["Sanguine Blade"] = {
       ammo="Pemphredo Tathlum",
       head="Pixie Hairpin +1",
-      body="Amalric Doublet +1",
+      body="Nyame Mail",
       hands="Jhakri Cuffs +2",
       legs="Amalric Slops +1",
-      feet="Nyame Sollerets",
+      feet=EMPY.Feet,
       neck="Sibyl Scarf",
       waist="Orpheus's Sash",
       left_ear="Regal Earring",
@@ -415,10 +415,10 @@ function get_sets()
     sets.me["Red Lotus Blade"] = {
       ammo="Pemphredo Tathlum",
       head="Nyame Helm",
-      body="Amalric Doublet +1",
+      body="Nyame Mail",
       hands="Jhakri Cuffs +2",
       legs="Amalric Slops +1",
-      feet="Nyame Sollerets",
+      feet=EMPY.Feet,
       neck="Sibyl Scarf",
       waist="Orpheus's Sash",
       left_ear="Moonshade Earring",
@@ -440,10 +440,10 @@ function get_sets()
     sets.me["Aeolian Edge"] = {
       ammo={ name="Ghastly Tathlum +1", augments={'Path: A',}},
       head="Nyame Helm",
-      body="Amalric Doublet +1",
+      body="Nyame Mail",
       hands="Jhakri Cuffs +2",
       legs="Amalric Slops +1",
-      feet="Nyame Sollerets",
+      feet=EMPY.Feet,
       neck="Sibyl Scarf",
       waist="Orpheus's Sash",
       left_ear="Regal Earring",
@@ -605,7 +605,7 @@ function get_sets()
       left_ear="Snotra Earring",
       right_ear="Regal Earring",
       body="Atrophy Tabard +3",
-      hands="Kaykaus Cuffs +1",
+      hands=EMPY.Hands,
       left_ring={name="Stikini Ring +1",bag="wardrobe 2"},
       right_ring={name="Stikini Ring +1",bag="wardrobe 3"},
       back="Aurist's Cape +1",
@@ -618,7 +618,7 @@ function get_sets()
     sets.midcast.Enfeebling.mndpot = set_combine(sets.midcast.Enfeebling.macc, {
       ammo={name="Regal Gem", priority=10},
       head="Vitiation Chapeau +3",
-      body="Lethargy Sayon +1",
+      body=EMPY.Body,
       left_ring="Metamorph Ring +1",
       waist="Luminary Sash",
     })
@@ -626,12 +626,14 @@ function get_sets()
     -- Type C-potency from: Int & "Enfeeb Potency" gear
     sets.midcast.Enfeebling.intpot = set_combine(sets.midcast.Enfeebling.macc, {
       ammo="Regal Gem",
-      body="Lethargy Sayon +1",
+      body=EMPY.Body,
       left_ring="Metamorph Ring +1",
     })
 
     -- Type D-potency from: Enfeeb Skill & "Enfeeb Potency" gear
-    sets.midcast.Enfeebling.skillpot = sets.midcast.Enfeebling.macc
+    sets.midcast.Enfeebling.skillpot = set_combine(sets.midcast.Enfeebling.macc, {
+      body=EMPY.Body,
+    })
  
     -- Type E-potency from: Enfeeb skill, Mnd, & "Enfeeb Potency" gear
     sets.midcast.Enfeebling.skillmndpot = {
@@ -641,7 +643,7 @@ function get_sets()
       ammo="Regal Gem",
       head={ name="Viti. Chapeau +3", augments={'Enfeebling Magic duration','Magic Accuracy',}},
       body="Atrophy Tabard +3",
-      hands="Leth. Gantherots +1",
+      hands=EMPY.Hands,
       legs={ name="Psycloth Lappas", augments={'MP+80','Mag. Acc.+15','"Fast Cast"+7',}},
       feet={ name="Vitiation Boots +3", augments={'Immunobreak Chance',}},
       neck={ name="Dls. Torque +2", augments={'Path: A',}},
@@ -655,7 +657,7 @@ function get_sets()
     
     -- Type F-potency from "Enfeebling potency" gear only
     sets.midcast.Enfeebling.potency = set_combine(sets.midcast.Enfeebling.macc, {
-      body="Lethargy Sayon +1",
+      body=EMPY.Body,
       legs="Malignance Tights",
       left_ring="Kishar ring",
     })
@@ -670,7 +672,8 @@ function get_sets()
 
     sets.midcast.Impact = set_combine(sets.midcast.Enfeebling.macc, {
       head=empty, 
-      body="Crepuscular Cloak"
+      body="Crepuscular Cloak",
+      feet=EMPY.Feet  
     })
 
     -- Enhancing yourself 
@@ -683,7 +686,7 @@ function get_sets()
       head="Telchine Cap",
       hands="Atrophy Gloves +3",
       legs="Telchine Braconi",
-      feet="Lethargy Houseaux +1",
+      feet=EMPY.Feet,
       back="Ghostfyre cape",
       waist="Embla Sash",
       left_ring={name="Stikini Ring +1",bag="wardrobe 2"},
@@ -700,11 +703,11 @@ function get_sets()
 
     -- This is used when casting under Composure but enhancing someone else other than yourself. 
     sets.midcast.enhancing.composure = set_combine(sets.midcast.enhancing.duration, {
-      head="Leth. Chappel +1",
-      body="Lethargy Sayon +1",
+      head=EMPY.Head,
+      body=EMPY.Body,
       hands="Atrophy Gloves +3",
-      legs="Leth. Fuseau +1",
-      feet="Leth. Houseaux +1",
+      legs=EMPY.Legs,
+      feet=EMPY.Feet,
     })
 
     -- Phalanx
@@ -723,6 +726,7 @@ function get_sets()
     sets.midcast.refresh = set_combine(sets.midcast.enhancing.duration, {
       head="Amalric Coif +1",
       body="Atrophy Tabard +3",
+      legs=EMPY.Legs,  
       waist="Gishdubar Sash",
     })
 

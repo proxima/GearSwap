@@ -247,10 +247,10 @@ function init_gear_sets()
     Relic_Pitre.Feet_PMagic = "Pitre Babouches +3" --Role Reversal
 
     Empy_Karagoz = {}
-    Empy_Karagoz.Head_PTPBonus = "Karagoz Capello +1"
+    Empy_Karagoz.Head_PTPBonus = "Karagoz Capello +2"
     Empy_Karagoz.Body_Overload = "Karagoz Farsetto"
     Empy_Karagoz.Hands = "Karagoz Guanti +1"
-    Empy_Karagoz.Legs_Combat = "Karagoz Pantaloni +1"
+    Empy_Karagoz.Legs_Combat = "Karagoz Pantaloni +2"
     Empy_Karagoz.Feet_Tactical = "Karagoz Scarpe +1"
 
     Visucius = {}
@@ -592,21 +592,21 @@ function init_gear_sets()
         F10 if Physical Defense Mode = PetDT
     ]]
     sets.pet.EmergencyDT = {
-        main="Midnights",                                                                                         --  3
-        -- head="Anwig Salade",                                                                                      -- 10
-        head={ name="Rao Kabuto +1", augments={'Pet: HP+125','Pet: Accuracy+20','Pet: Damage taken -4%',}},       --  4
-        body={ name="Rao Togi +1", augments={'Pet: HP+125','Pet: Accuracy+20','Pet: Damage taken -4%',}},         --  4
-        hands={ name="Rao Kote +1", augments={'Pet: HP+125','Pet: Accuracy+20','Pet: Damage taken -4%',}},        --  4
-        legs={ name="Rao Haidate +1", augments={'Pet: HP+125','Pet: Accuracy+20','Pet: Damage taken -4%',}},      --  4
-        feet={ name="Rao sune-ate +1", augments={'Pet: HP+125','Pet: Accuracy+20','Pet: Damage taken -4%',}},     --  4
-        neck="Shulmanu Collar",
-        waist="Isa Belt",                                                                                         --  3
-        left_ear="Enmerkar earring",                                                                              --  3
-        right_ear="Rimeice Earring",                                                                              --  1
-        left_ring="Thurandaut Ring +1",                                                                           --  4
-        right_ring="C. Palug Ring",
-        --back={ name="Visucius's Mantle", augments={'Pet: "Regen"+10','System: 1 ID: 1247 Val: 4',}},              -- 10 MDT
-        back=Visucius.PetDT                                                                                       --  5
+       main="Midnights",                                                                                         --  3
+       -- head="Anwig Salade",                                                                                      -- 10
+       head={ name="Rao Kabuto +1", augments={'Pet: HP+125','Pet: Accuracy+20','Pet: Damage taken -4%',}},       --  4
+       body={ name="Rao Togi +1", augments={'Pet: HP+125','Pet: Accuracy+20','Pet: Damage taken -4%',}},         --  4
+       hands={ name="Rao Kote +1", augments={'Pet: HP+125','Pet: Accuracy+20','Pet: Damage taken -4%',}},        --  4
+       legs={ name="Rao Haidate +1", augments={'Pet: HP+125','Pet: Accuracy+20','Pet: Damage taken -4%',}},      --  4
+       feet={ name="Rao sune-ate +1", augments={'Pet: HP+125','Pet: Accuracy+20','Pet: Damage taken -4%',}},     --  4
+       neck="Shulmanu Collar",
+       waist="Isa Belt",                                                                                         --  3
+       left_ear="Enmerkar earring",                                                                              --  3
+       right_ear="Rimeice Earring",                                                                              --  1
+       left_ring="Thurandaut Ring +1",                                                                           --  4
+       right_ring="C. Palug Ring",
+       back={ name="Visucius's Mantle", augments={'Pet: "Regen"+10','System: 1 ID: 1247 Val: 4',}},              -- 10 MDT
+       back=Visucius.PetDT                                                                                       --  5
     }
 
     -------------------------------------Engaged for Pet Only

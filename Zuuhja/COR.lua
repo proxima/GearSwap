@@ -273,7 +273,7 @@ function init_gear_sets()
       body="Malignance Tabard",
       hands="Chasseur's Gants +1",
       legs="Malignance Tights",
-      legs="Desultor Tassets",
+      -- legs="Desultor Tassets",
       feet="Malignance Boots",
       neck="Regal Necklace",
       ear1="Odnowa Earring +1",
@@ -286,11 +286,11 @@ function init_gear_sets()
 
     sets.precast.CorsairRoll.Duration = {main={ name="Rostam", bag="wardrobe 4"}, range="Compensator"}
     sets.precast.CorsairRoll.LowerDelay = {back="Gunslinger's Cape"}
-    sets.precast.CorsairRoll["Caster's Roll"] = set_combine(sets.precast.CorsairRoll, {legs="Chas. Culottes +1"})
-    sets.precast.CorsairRoll["Courser's Roll"] = set_combine(sets.precast.CorsairRoll, {feet="Chass. Bottes +1"})
-    sets.precast.CorsairRoll["Blitzer's Roll"] = set_combine(sets.precast.CorsairRoll, {head="Chass. Tricorne +1"})
-    sets.precast.CorsairRoll["Tactician's Roll"] = set_combine(sets.precast.CorsairRoll, {body="Chasseur's Frac +1"})
-    sets.precast.CorsairRoll["Allies' Roll"] = set_combine(sets.precast.CorsairRoll, {hands="Chasseur's Gants +1"})
+    sets.precast.CorsairRoll["Caster's Roll"] = set_combine(sets.precast.CorsairRoll, {legs="Chas. Culottes +2"})
+    sets.precast.CorsairRoll["Courser's Roll"] = set_combine(sets.precast.CorsairRoll, {feet="Chass. Bottes +2"})
+    sets.precast.CorsairRoll["Blitzer's Roll"] = set_combine(sets.precast.CorsairRoll, {head="Chass. Tricorne +2"})
+    sets.precast.CorsairRoll["Tactician's Roll"] = set_combine(sets.precast.CorsairRoll, {body="Chasseur's Frac +2"})
+    sets.precast.CorsairRoll["Allies' Roll"] = set_combine(sets.precast.CorsairRoll, {hands="Chasseur's Gants +2"})
 
     sets.precast.LuzafRing = {ring1="Luzaf's Ring"}
     sets.precast.FoldDoubleBust = {hands="Lanun Gants +3"}
@@ -323,7 +323,7 @@ function init_gear_sets()
     }
 
     sets.precast.RA.Flurry1 = set_combine(sets.precast.RA, {
-      head="Chasseur's Tricorne +1",
+      head="Chasseur's Tricorne +2",
       hands={ name="Carmine Fin. Ga. +1", augments={'Rng.Atk.+20','"Mag.Atk.Bns."+12','"Store TP"+6',}},
     })
 
@@ -513,7 +513,7 @@ function init_gear_sets()
       legs="Malignance Tights",
       feet="Laksa. Bottes +3",
       neck="Comm. Charm +2",
-      left_ear="Enervating Earring", -- Dignitary's earring
+      left_ear="Dignitary's earring",
       right_ear="Crepuscular Earring",
       left_ring="Stikini Ring +1",
       right_ring="Metamorph Ring +1",
@@ -522,7 +522,7 @@ function init_gear_sets()
     }
 
     sets.midcast.CorsairShot['Dark Shot'] = sets.midcast.CorsairShot['Light Shot']
-    sets.midcast.CorsairShot.Enhance = {feet="Chass. Bottes +1"}
+    sets.midcast.CorsairShot.Enhance = {feet="Chass. Bottes +2"}
 
     -- Ranged gear
     sets.midcast.RA = {ammo=gear.RAbullet,
@@ -556,7 +556,7 @@ function init_gear_sets()
       head="Meghanada Visor +2",
       left_ear="Odr Earring",
       body="Meghanada Cuirie +2",
-      hands="Mummu Wrists +2",
+      hands="Chasseur's Gants +2",
       legs="Darraigner's Brais",
       feet="Osh. Leggings +1",
       left_ring="Begrudging Ring",
@@ -570,7 +570,7 @@ function init_gear_sets()
 
     sets.TripleShot = {
       head="Oshosi Mask +1",
-      body="Chasseur's Frac +1",
+      body="Chasseur's Frac +2",
       hands="Lanun Gants +3",
       legs="Osh. Trousers +1",
       feet="Osh. Leggings +1",
@@ -660,7 +660,7 @@ function init_gear_sets()
       head="Malignance Chapeau",
       body="Malignance Tabard",
       hands="Malignance Gloves",
-      legs="Malignance Tights",
+      legs="Chas. Culottes +2"
       feet="Malignance Boots",
       neck="Iskur Gorget",
       waist="Windbuffet Belt +1",
@@ -815,7 +815,7 @@ function init_gear_sets()
     sets.Fomalhaut_R.Acc = sets.Fomalhaut_R
 
     sets.Anarchy = {main="Naegling", sub="Gleti's Knife", ranged="Anarchy +2"}
-    sets.Anarchy.Acc = {main="Naegling", sub="Gleti's Knife", ranged="Anarchy +2"}
+    sets.Anarchy.Acc = {main="Naegling", sub=Rostam.A, ranged="Anarchy +2"}
 
     sets.Rolls = {main=Rostam.C, sub=Rostam.B, ranged="Compensator"}
     sets.Rolls.Acc = sets.Rolls

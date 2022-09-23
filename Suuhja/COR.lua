@@ -151,6 +151,8 @@ function user_setup()
     send_command('bind ^pageup gs c toggle selectqdtarget')
     send_command('bind ^pagedown gs c toggle usealtqd')
 
+    send_command('bind @v sat youcommand Muuhja "Wind Threnody II"; sat youcommand Zuuhja "Silence"')
+
     send_command('bind @q gs c cycle QDMode')
     send_command('bind @e gs c cycleback WeaponSet')
     send_command('bind @r gs c cycle WeaponSet')
@@ -221,6 +223,7 @@ function user_unload()
     send_command('unbind @e')
     send_command('unbind @r')
     send_command('unbind @o')
+    send_command('unbind @v')
     send_command('unbind ^numlock')
     send_command('unbind numpad0')
 
@@ -505,18 +508,23 @@ function init_gear_sets()
 
     -- Ranged gear
     sets.midcast.RA = {ammo=gear.RAbullet,
-      head="Malignance Chapeau", -- head="Ikenga's hat",
+      -- head="Malignance Chapeau",
+      head="Ikenga's hat",
       neck="Iskur Gorget",
       left_ear="Crepuscular Earring",
       right_ear="Telos Earring",
-      body="Malignance Tabard",
-      hands="Malignance Gloves",
+      body="Ikenga's Vest", -- body="Malignance Tabard",
+      -- hands="Malignance Gloves",
+      hands="Ikenga's Gloves",
       ring1="Dingir Ring",
       ring2="Ilabrat Ring",
       back=Cape.RTP,
       waist="Yemaya Belt",
-      legs="Malignance Tights", -- legs="Ikenga's Trousers",
-      feet="Malignance Boots"
+      legs="Ikenga's Trousers",
+      -- legs="Malignance Tights",
+      legs="Ikenga's Trousers",
+      feet="Ikenga's Clogs",
+      -- feet="Malignance Boots"
     }
 
     sets.midcast.RA.Acc = set_combine(sets.midcast.RA, {ammo=gear.RAccbullet,
@@ -810,16 +818,13 @@ function init_gear_sets()
     sets.Fomalhaut_R = {main=Rostam.A, sub=Rostam.B, ranged="Fomalhaut"}
     sets.Fomalhaut_R.Acc = sets.Fomalhaut_R
 
-    sets.Anarchy = {main="Naegling", sub=Rostam.A, ranged="Anarchy +2"}
-    sets.Anarchy.Acc = {main="Naegling", sub=Rostam.A, ranged="Anarchy +2"}
     sets.Anarchy = {main="Naegling", sub="Gleti's Knife", ranged="Anarchy +2"}
-    -- sets.Anarchy.Acc = {main="Naegling", sub="Gleti's Knife", ranged="Anarchy +2"}
+    sets.Anarchy.Acc = {main="Naegling", sub=Rostam.A, ranged="Anarchy +2"}
 
     sets.Rolls = {main=Rostam.C, sub=Rostam.B, ranged="Compensator"}
     sets.Rolls.Acc = sets.Rolls
 
-    -- sets.Aeolian = {main=Rostam.B, sub="Tauret", ranged="Anarchy +2"}
-    sets.Aeolian = {main=Rostam.B, sub=Rostam.A, ranged="Anarchy +2"}
+    sets.Aeolian = {main=Rostam.B, sub="Tauret", ranged="Anarchy +2"}
     sets.Aeolian.Acc = {main=Rostam.B, sub=Rostam.A, ranged="Anarchy +2"}
 
     sets.DefaultShield = {sub="Nusku Shield"}

@@ -201,7 +201,7 @@ function get_sets()
      main="Idris",
      sub="Genmei shield", -- 10 pdt
      ammo="Staunch Tathlum +1", -- 3 dt
-     head="Azimuth Hood +1",
+     head="Azimuth Hood +2",
      left_ear="Odnowa earring +1", -- 3 dt, 2 mdt
      right_ear="Etiolation Earring", -- 3 mdt
      body={ name="Telchine Chas.", augments={'Pet: "Regen"+3','Pet: Damage taken -4%',}},
@@ -350,7 +350,7 @@ function get_sets()
    }  
    
    sets.precast["Full Circle"] = {
-      head = "Azimuth Hood +1",
+      head = "Azimuth Hood +2",
    }  
    
    sets.precast["Curative Recantation"] = {
@@ -387,7 +387,7 @@ function get_sets()
      body="Vedic Coat",                                                                                      -- 10 Conserve
      hands="Azimuth Gloves +1",                                                                              -- Occasionally Free
      legs={ name="Vanya Slops", augments={'MND+10','Spell interruption rate down +15%','"Conserve MP"+6',}}, -- 12 Conserve
-     feet="Azimuth Gaiters +1",                                                                              -- Occasionally Free
+     feet="Azimuth Gaiters +2",                                                                              -- Occasionally Free
      neck={ name="Bagua Charm +2", augments={'Path: A',}},                                                   -- 25% Duration
      waist={ name="Shinjutsu-no-Obi +1", augments={'Path: A',}},                                             -- 15 Conserve
      left_ear="Mendi. Earring",                                                                              --  2 Conserve
@@ -406,7 +406,7 @@ function get_sets()
      body="Vedic Coat",                                                                                      -- 10 Conserve
      hands="Azimuth Gloves +1",                                                                              -- Occasionally Free
      legs={ name="Bagua Pants +3", augments={'Enhances "Mending Halation" effect',}},                        -- 21 Duration
-     feet="Azimuth Gaiters +1",                                                                              -- Occasionally Free, 20 Duration
+     feet="Azimuth Gaiters +2",                                                                              -- Occasionally Free, 25 Duration
      neck="Loricate Torque +1",
      waist={ name="Shinjutsu-no-Obi +1", augments={'Path: A',}},                                             -- 15 Conserve
      left_ear="Mendi. Earring",                                                                              --  2 Conserve

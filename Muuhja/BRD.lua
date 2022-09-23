@@ -130,7 +130,7 @@ function user_setup()
         'Spirited Etude', 'Logical Etude', 'Enchanting Etude', 'Bewitching Etude'
     }
 
-    state.WeaponSet = M{['description']='Weapon Set', 'Carnwenhan', 'Twashtar', 'NaeglingDW', 'NaeglingSW', 'Aeneas', 'Tauret', 'Aeolian', 'NibiruShield', 'NibiruDW', 'Free'}
+    state.WeaponSet = M{['description']='Weapon Set', 'Carnwenhan', 'Twashtar', 'NaeglingDW', 'NaeglingSW', 'Aeneas', 'Tauret', 'Aeolian', 'NibiruShield', 'NibiruDW', 'Staff', 'Free'}
     state.WeaponLock = M(false, 'Weapon Lock')
     state.CP = M(false, "Capacity Points Mode")
 
@@ -353,6 +353,12 @@ function init_gear_sets()
       right_ring="Epaminondas's Ring",
       back=Cape.AEOLIAN
     }
+
+    sets.precast.WS['Rock Crusher'] = set_combine(sets.precast.WS['Aeolian Edge'], {
+      head="Nyame Helm",
+      body="Nyame Mail",
+      neck="Quanpur Necklace"
+    })
 
     ------------------------------------------------------------------------------------------------
     ---------------------------------------- Midcast Sets ------------------------------------------
@@ -875,7 +881,7 @@ end
 -- Modify the default melee set after it was constructed.
 function customize_melee_set(meleeSet)
     if state.WeaponSet.value == "Carnwenhan" then
-        equip({main="Carnwenhan",sub="Gleti's Knife"})
+        equip({main="Carnwenhan",sub="Crepuscular knife"})
     elseif state.WeaponSet.value == "Twashtar" then
         equip({main="Twashtar",sub="Fusetto +2"})
     elseif state.WeaponSet.value == "NaeglingDW" then
@@ -888,6 +894,8 @@ function customize_melee_set(meleeSet)
         equip({main="Aeneas",sub="Twashtar"})
     elseif state.WeaponSet.value == "Aeolian" then
         equip({main="Aeneas",sub="Daybreak"})
+    elseif state.WeaponSet.value == "Staff" then
+        equip({main="Mpaca's Staff",sub="Enki Strap"})
     end
     if buffactive['Aftermath: Lv.3'] and player.equipment.main == "Carnwenhan" then
         meleeSet = set_combine(meleeSet, sets.engaged.Aftermath)

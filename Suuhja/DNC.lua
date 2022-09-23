@@ -318,7 +318,7 @@ function init_gear_sets()
     } -- Accuracy
 
     sets.precast.Flourish2 = {}
-    sets.precast.Flourish2['Reverse Flourish'] = {hands="Maculele Bangles +1", back="Toetapper Mantle"}
+    sets.precast.Flourish2['Reverse Flourish'] = {hands="Maculele Bangles +2", back="Toetapper Mantle"}
     sets.precast.Flourish3 = {}
     sets.precast.Flourish3['Striking Flourish'] = {body="Macu. Casaque +1"}
     sets.precast.Flourish3['Climactic Flourish'] = {head="Maculele Tiara +2",}
@@ -381,8 +381,7 @@ function init_gear_sets()
 
     sets.precast.WS['Rudra\'s Storm'] = set_combine(sets.precast.WS, {
       ammo="Oshasha's Treatise",
-      -- head="Maculele Tiara +2",
-      head="Nyame Helm",
+      head="Maculele Tiara +2",
       body="Nyame Mail",
       hands="Nyame Gauntlets",
       legs="Nyame Flanchard",
@@ -432,7 +431,7 @@ function init_gear_sets()
     }
 
     sets.precast.Skillchain = {
-        -- hands="Macu. Bangles",
+      -- hands="Macu. Bangles +2",
     }
 
     ------------------------------------------------------------------------------------------------

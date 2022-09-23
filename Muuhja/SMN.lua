@@ -4,7 +4,7 @@
 -- DT: A mix of refresh, PDT, and MDT to help when you can't avoid AOE.
 -- PetDT: Sacrifice refresh to reduce avatar's damage taken. WARNING: Selenian Cap drops you below 119, use with caution!
 -- DD: When melee mode is on and you're engaged, uses TP gear. Otherwise, avatar melee gear.
--- Favor: Uses Beckoner's Horn +1 and max smn skill to boost the favor effect.
+-- Favor: Uses Beckoner's Horn +2 and max smn skill to boost the favor effect.
 
 -- Additional Bindings:
 -- F9 - Toggles between a subset of IdleModes (Refresh > DT > PetDT)
@@ -66,14 +66,14 @@ function get_sets()
       hands="Inyan. Dastanas +2",
       legs="Inyanga Shalwar +2",
       sub="Elan Strap +1",
-      ammo="Sancus Sachet +1",
-      head="Inyanga Tiara +2",
+      ammo="Epitaph",
+      head="Beckoner's Horn +2",
       body="Inyanga Jubbah +2",
       feet="Inyan. Crackows +2",
       neck={ name="Smn. Collar +2", augments={'Path: A',}},
       waist="Carrier's Sash",
-      left_ear="Odnowa Earring +1",
-      right_ear="Lugalbanda Earring",
+      left_ear="Lugalbanda Earring",
+      right_ear="Odnowa Earring +1",
       left_ring="Gelatinous Ring +1",
       right_ring="Defending Ring",
       back={ name="Campestres's Cape", augments={'Pet: M.Acc.+20 Pet: M.Dmg.+20','Pet: Magic Damage+10','Damage taken-5%',}},
@@ -108,7 +108,7 @@ function get_sets()
       main={ name="Espiritus", augments={'Summoning magic skill +15','Pet: Mag. Acc.+30','Pet: Damage taken -4%',}},
       sub="Vox Grip",
       ammo="Sancus Sachet +1",
-      head="Beckoner's Horn +1",
+      head="Beckoner's Horn +2",
       body="Baayami Robe",
       hands="Baayami Cuffs",
       legs="Baayami Slops",
@@ -127,7 +127,7 @@ function get_sets()
       main={ name="Espiritus", augments={'Summoning magic skill +15','Pet: Mag. Acc.+30','Pet: Damage taken -4%',}},
       sub="Vox Grip",
       ammo="Sancus Sachet +1",
-      head="Beckoner's Horn +1",
+      head="Beckoner's Horn +2",
       body="Baayami Robe",
       hands="Baayami Cuffs",
       legs="Baayami Slops",
@@ -229,7 +229,7 @@ function get_sets()
     sets.pet_midcast.Physical_BP = {
       main="Nirvana",
       sub="Elan Strap +1",
-      ammo="Sancus Sachet +1",
+      ammo="Epitaph",
       head={ name="Helios Band", augments={'Pet: Accuracy+29 Pet: Rng. Acc.+29','Pet: "Dbl. Atk."+8','Blood Pact Dmg.+7',}},
       body="Glyphic Doublet +3",
       hands={ name="Merlinic Dastanas", augments={'Pet: Attack+22 Pet: Rng.Atk.+22','Blood Pact Dmg.+9','Pet: VIT+2','Pet: Mag. Acc.+5',}},
@@ -237,8 +237,8 @@ function get_sets()
       feet={ name="Helios Boots", augments={'Pet: Accuracy+28 Pet: Rng. Acc.+28','Pet: "Dbl. Atk."+8','Blood Pact Dmg.+7',}},
       neck={ name="Smn. Collar +2", augments={'Path: A',}},
       waist="Incarnation Sash",
-      left_ear="Kyrene's Earring",
-      right_ear="Lugalbanda Earring",
+      right_ear="Kyrene's Earring",
+      left_ear="Lugalbanda Earring",
       left_ring="Varar Ring +1",
       right_ring="Cath Palug Ring",
       back={ name="Campestres's Cape", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Pet: Accuracy+10 Pet: Rng. Acc.+10',}},
@@ -276,7 +276,7 @@ function get_sets()
     sets.pet_midcast.Magic_BP_Base = {
       main="Grioavolr", -- or Espiritus
       sub="Elan Strap +1",
-      ammo="Sancus Sachet +1",
+      ammo="Epitaph",
       head="C. Palug Crown",
       body={ name="Apo. Dalmatica +1", augments={'MP+80','Pet: "Mag.Atk.Bns."+35','Blood Pact Dmg.+8',}},
       hands={ name="Merlinic Dastanas", augments={'Pet: Mag. Acc.+20 Pet: "Mag.Atk.Bns."+20','Blood Pact Dmg.+10','Pet: Mag. Acc.+2',}},
@@ -318,7 +318,7 @@ function get_sets()
     sets.pet_midcast.FlamingCrush = {
       main="Nirvana",
       sub="Elan Strap +1",
-      ammo="Sancus Sachet +1",
+      ammo="Epitaph",
       head="C. Palug Crown",
       body={ name="Apo. Dalmatica +1", augments={'MP+80','Pet: "Mag.Atk.Bns."+35','Blood Pact Dmg.+8',}},
       hands={ name="Merlinic Dastanas", augments={'Pet: Mag. Acc.+20 Pet: "Mag.Atk.Bns."+20','Blood Pact Dmg.+10','Pet: Mag. Acc.+2',}},
@@ -342,7 +342,7 @@ function get_sets()
     sets.pet_midcast.MagicAcc_BP = {
       main={ name="Espiritus", augments={'Summoning magic skill +15','Pet: Mag. Acc.+30','Pet: Damage taken -4%',}},
       sub="Vox Grip",
-      ammo="Sancus Sachet +1",
+      ammo="Epitaph",
       head="Convoker's Horn +2",
       neck="Summoner's Collar +2",
       ear1="Lugalbanda Earring",
@@ -363,8 +363,8 @@ function get_sets()
     sets.pet_midcast.SummoningMagic = {
       main={ name="Espiritus", augments={'Summoning magic skill +15','Pet: Mag. Acc.+30','Pet: Damage taken -4%',}},
       sub="Vox Grip",
-      ammo="Sancus Sachet +1",
-      head="Beckoner's Horn +1",
+      ammo="Epitaph",
+      head="Beckoner's Horn +2",
       body="Baayami Robe", -- + 1 if you're rich
       hands="Baayami Cuffs", -- + 1 if you're rich
       legs="Baayami Slops", -- + 1 if you're rich
@@ -383,6 +383,7 @@ function get_sets()
     -- Used for Wind's Blessing. Here you can sacrifice summoning skill for Pet:MND to increase potency.
     sets.pet_midcast.Buff_MND = set_combine(sets.pet_midcast.Buff, {
         main="Nirvana",
+        sub="Vox Grip",
         neck="Summoner's Collar +2",
         back={ name="Campestres's Cape", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Eva.+20 /Mag. Eva.+20','Pet: Attack+10 Pet: Rng.Atk.+10','Pet: "Regen"+10','Pet: Damage taken -5%',}},
     })
@@ -422,8 +423,8 @@ function get_sets()
     sets.aftercast.Perp_Base = {
       main="Nirvana",            -- 8 perp, can use jse
       sub="Khonsu",              -- 
-      ammo="Sancus Sachet +1",   -- ilevel avatar, can use epitaph
-      head="Beckoner's horn +1", -- 3 favor, 2 refresh
+      ammo="Epitaph",
+      head="Beckoner's horn +2", -- 4 favor, 3 refresh
       neck="Caller's Pendant",   -- 1 perp sometimes
       ear1="Cath Palug Earring", -- 1 refresh
       ear2="Evans earring",      -- 2 perp
@@ -453,12 +454,12 @@ function get_sets()
     })
    
     sets.aftercast.Perp_Favor = set_combine(sets.aftercast.Perp_Refresh, {
-        head="Beckoner's Horn +1",
-        ear2="Lodurr Earring",
-        ring1="Stikini Ring +1",
-        ring2="Evoker's Ring",
-        legs="Baayami Slops",
-        feet="Baayami Sabots +1"
+      head="Beckoner's Horn +2",
+      ear2="Lodurr Earring",
+      ring1="Stikini Ring +1",
+      ring2="Evoker's Ring",
+      legs="Baayami Slops",
+      feet="Baayami Sabots +1"
     })
  
     -- TP set. Equipped when IdleMode is "DD" and MeleeMode is ON.
@@ -485,7 +486,7 @@ function get_sets()
     sets.aftercast.Spirit = {
       main="Nirvana",
       sub="Vox Grip",
-      ammo="Sancus Sachet +1",
+      ammo="Epitaph",
       head="Convoker's Horn +2",
       neck="Caller's Pendant",
       ear1="Cath Palug Earring",

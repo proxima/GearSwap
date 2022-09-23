@@ -487,19 +487,17 @@ function init_gear_sets()
 
     sets.precast.WS["Howling Fist"] = {
       head="Mpaca's Cap",
-      -- body="Tali'ah Manteel +2",
-      body={ name="Nyame Mail", augments={'Path: B',}},
-      hands="Mpaca's Gloves",
-      legs="Mpaca's Hose",
-      feet={ name="Nyame Sollerets", augments={'Path: B',}},
-      -- feet={ name="Herculean Boots", augments={'"Triple Atk."+3','Rng.Atk.+13','Quadruple Attack +3','Accuracy+13 Attack+13','Mag. Acc.+4 "Mag.Atk.Bns."+4',}},
       neck={ name="Pup. Collar +2", augments={'Path: A',}},
-      waist="Moonbow Belt +1",
       left_ear={ name="Schere Earring", augments={'Path: A',}},
       right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
+      body="Nyame Mail",
+      hands="Nyame Gauntlets",
       left_ring="Gere Ring",
       right_ring="Niqmaddu Ring",
-      back=Visucius.MasterDA
+      back=Visucius.MasterDA,
+      waist="Moonbow Belt +1",
+      legs="Mpaca's Hose",
+      feet={ name="Nyame Sollerets", augments={'Path: B',}},
     }
 
     sets.precast.WS["Aeolian Edge"] = {

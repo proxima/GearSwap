@@ -315,6 +315,12 @@ function init_gear_sets()
       waist="Orpheus's Sash",
     })
 
+    sets.precast.WS['Rock Crusher'] = set_combine(sets.precast.WS['Cataclysm'],  {
+      head="Nyame Helm",
+      neck="Quanpur Necklace",
+      ring2="Freke Ring",  
+    })
+
     -- Midcast Sets
 
     sets.midcast.FC = sets.precast.FC
@@ -430,7 +436,7 @@ function init_gear_sets()
       sub="Ammurapi Shield",      
       body="Piety Bliaut +3",
       head="Inyanga Tiara +2",
-      hands="Ebers Mitts +1",
+      hands="Ebers Mitts +2",
       legs="Th. Pant. +3",
       feet="Bunzi's Sabots",
     })
@@ -440,7 +446,7 @@ function init_gear_sets()
       sub="Ammurapi Shield",
       body="Piety Bliaut +3",
       head="Inyanga Tiara +2",
-      hands="Ebers Mitts +1",
+      hands="Ebers Mitts +2",
       legs="Th. Pant. +3",
       feet="Theo. Duckbills +3",
     })
@@ -465,9 +471,9 @@ function init_gear_sets()
       sub="Ammurapi Shield",
       head="Ebers Cap +1",
       body="Ebers Bliaut +2",
-      hands="Ebers Mitts +1",
+      hands="Ebers Mitts +2",
       legs="Piety Pantaln. +3",
-      feet="Ebers Duckbills +1",
+      feet="Ebers Duckbills +2",
       back={ name="Alaunus's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','MND+10','"Fast Cast"+10','Phys. dmg. taken-10%',}},
     })
 
@@ -677,7 +683,7 @@ function init_gear_sets()
     }
 
     -- Buff sets: Gear that needs to be worn to actively enhance a current player buff.
-    sets.buff['Divine Caress'] = {hands="Ebers Mitts +1", back="Mending Cape"}
+    sets.buff['Divine Caress'] = {hands="Ebers Mitts +2", back="Mending Cape"}
     sets.buff['Devotion'] = {head="Piety Cap +3"}
     sets.buff.Sublimation = {waist="Embla Sash"}
 

@@ -169,8 +169,8 @@ function user_setup()
   moving = false
   
   AF = {}
-  AF.Head = "Rune. Bandeau +2"
-  AF.Body = "Runeist's Coat +2"
+  AF.Head = "Rune. Bandeau +3"
+  AF.Body = "Runeist's Coat +3"
   AF.Hands = "Runeist's Mitons +2"
   AF.Legs = "Rune. Trousers +2"
   AF.Feet = "Runeist's Boots +2"
@@ -183,11 +183,11 @@ function user_setup()
   Relic.Feet  = "Futhark Boots +1"
   
   Empy = {}
-  Empy.Head  = "Erilaz Galea +1"
-  Empy.Body  = "Erilaz Surcoat +1"
+  Empy.Head  = "Erilaz Galea +2"
+  Empy.Body  = "Erilaz Surcoat +2"
   Empy.Hands = "Erilaz Gauntlets +1"
-  Empy.Legs  = "Erilaz Leg Guards +1"
-  Empy.Feet  = "Erilaz Greaves +1"
+  Empy.Legs  = "Erilaz Leg Guards +2"
+  Empy.Feet  = "Erilaz Greaves +2"
   
   Cape = {}
   Cape.Reive  = { name="Evasionist's Cape", augments={'Enmity+1','"Embolden"+15','"Dbl.Atk."+1',}}
@@ -348,7 +348,7 @@ function init_gear_sets()
     neck="Voltsurge Torque",
     left_ear="Etiolation Earring",
     right_ear="Loquacious Earring",
-    body="Agwu's Robe",
+    body=Empy.Body,
     hands="Agwu's Gages",
     left_ring="Kishar Ring",
     right_ring="Gelatinous Ring +1",
@@ -426,6 +426,9 @@ function init_gear_sets()
   })
  
   sets.precast.WS['Fell Cleave'] = set_combine(sets.precast.WS, {
+    neck="Rep. Plat. Medal",
+    left_ear="Ishvara Earring",
+    right_ring="Regal Ring",
   })
  
   sets.precast.WS['Fell Cleave'].Acc = set_combine(sets.precast.WS.Acc, {
@@ -585,7 +588,7 @@ function init_gear_sets()
   sets.defense.MDT = {
     ammo="Staunch Tathlum +1",
     head={ name="Nyame Helm", augments={'Path: B',}},
-    neck="Futhark Torque +2",
+    neck="Warder's Charm +1",
     left_ear="Sanare earring",
     right_ear="Odnowa earring +1",
     body=AF.Body,
@@ -594,8 +597,8 @@ function init_gear_sets()
     right_Ring="Vexer ring +1",
     back=Cape.Enmity,
     waist="Engraved Belt",
-    legs={ name="Nyame Flanchard", augments={'Path: B',}},
-    feet={ name="Nyame Sollerets", augments={'Path: B',}},
+    legs=Empy.Legs,
+    feet=Empy.Feet
   }
   
   sets.defense.Parry = {
@@ -604,13 +607,13 @@ function init_gear_sets()
     neck="Futhark Torque +2",
     left_ear="Cryptic earring",
     right_ear="Odnowa earring +1",
-    body={ name="Nyame Mail", augments={'Path: B',}},
+    body=Empy.Body,
     hands="Turms mittens +1",
     left_ring="Gelatinous ring +1",
     right_Ring="Moonlight ring",
     back=Cape.Parry,
     waist="Engraved Belt",
-    legs={ name="Nyame Flanchard", augments={'Path: B',}},
+    legs=Empy.Legs,
     feet="Turms leggings +1",
   }
  
@@ -675,7 +678,7 @@ function init_gear_sets()
   
   sets.Epeolatry = {main="Epeolatry", sub="Utu Grip"}
   sets.EpeolatryTank = {main="Epeolatry", sub="Refined Grip +1"}
-  sets.Aettir = {main="Aettir", sub="Utu Grip"}
+  sets.Aettir = {main="Aettir", sub="Khonsu"}
   sets.Lycurgos = {main="Lycurgos", sub="Utu Grip"}
   sets.Malignance = {main="Malignance Sword", sub=empty}  
 end

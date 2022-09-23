@@ -678,6 +678,7 @@ function get_sets()
    sets.midcast["Stun"] = sets.midcast.IntEnfeebling
 
    sets.midcast.ElementalEnfeeble = set_combine(sets.midcast.IntEnfeebling, {
+      head="Wicce Petasos +2",
       legs="Archmage's tonban +3",
       feet="Archmage's sabots +3",
     })   
@@ -688,7 +689,7 @@ function get_sets()
    })
    
    sets.midcast.Impact = set_combine(sets.midcast.IntEnfeebling, {
-     head=empty, 
+     head=empty,
      body="Crepuscular Cloak"
    })
 

@@ -119,7 +119,7 @@ function init_gear_sets()
   sets.precast.JA['Sentinel'] = set_combine(sets.precast.Enmity, {feet="Caballarius Leggings +3"})
   sets.precast.JA['Rampart'] = set_combine(sets.precast.Enmity, {head="Caballarius Coronet +1"})
   sets.precast.JA['Fealty'] = set_combine(sets.precast.Enmity, {body="Caballarius Surcoat +1"})
-  sets.precast.JA['Divine Emblem'] = set_combine(sets.precast.Enmity, {feet="Chevalier's Sabatons +1"})
+  sets.precast.JA['Divine Emblem'] = set_combine(sets.precast.Enmity, {feet="Chevalier's Sabatons +2"})
   sets.precast.JA['Sepulcher'] = sets.precast.Enmity
   sets.precast.JA['Palisade'] = sets.precast.Enmity
   sets.precast.JA['Cover'] = set_combine(sets.precast.Enmity, {head="Reverence Coronet +1"})
@@ -392,7 +392,8 @@ function init_gear_sets()
   }
   
   sets.idle.Block = {
-    main=Malev.One,
+    -- main=Malev.One,
+    main="Burtgang",
     sub="Ochain",
     ammo="Staunch Tathlum +1",      --  3
     head="Sakpata's Helm",          --  7
