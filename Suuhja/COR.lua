@@ -253,7 +253,7 @@ function init_gear_sets()
     ---------------------------------------- Precast Sets ------------------------------------------
     ------------------------------------------------------------------------------------------------
 
-    sets.precast.JA['Triple Shot'] = {body="Chasseur's Frac +1"}
+    sets.precast.JA['Triple Shot'] = {body="Chasseur's Frac +2"}
     sets.precast.JA['Snake Eye'] = {legs="Lanun Trews +1"}
     sets.precast.JA['Wild Card'] = {feet="Lanun Bottes +3"}
     sets.precast.JA['Random Deal'] = {body="Lanun Frac +3"}
@@ -277,9 +277,9 @@ function init_gear_sets()
     sets.precast.CorsairRoll.LowerDelay = { --back="Gunslinger's Cape"
     }
     sets.precast.CorsairRoll["Caster's Roll"] = set_combine(sets.precast.CorsairRoll, {legs="Chas. Culottes +2"})
-    sets.precast.CorsairRoll["Courser's Roll"] = set_combine(sets.precast.CorsairRoll, {feet="Chass. Bottes +1"})
-    sets.precast.CorsairRoll["Blitzer's Roll"] = set_combine(sets.precast.CorsairRoll, {head="Chass. Tricorne +1"})
-    sets.precast.CorsairRoll["Tactician's Roll"] = set_combine(sets.precast.CorsairRoll, {body="Chasseur's Frac +1"})
+    sets.precast.CorsairRoll["Courser's Roll"] = set_combine(sets.precast.CorsairRoll, {feet="Chass. Bottes +2"})
+    sets.precast.CorsairRoll["Blitzer's Roll"] = set_combine(sets.precast.CorsairRoll, {head="Chass. Tricorne +2"})
+    sets.precast.CorsairRoll["Tactician's Roll"] = set_combine(sets.precast.CorsairRoll, {body="Chasseur's Frac +2"})
     sets.precast.CorsairRoll["Allies' Roll"] = set_combine(sets.precast.CorsairRoll, {hands="Chasseur's Gants +2"})
 
     sets.precast.LuzafRing = {ring1="Luzaf's Ring"}
@@ -312,7 +312,7 @@ function init_gear_sets()
     }
 
     sets.precast.RA.Flurry1 = set_combine(sets.precast.RA, {
-      head="Chasseur's Tricorne +1",
+      head="Chasseur's Tricorne +2",
       hands={ name="Carmine Fin. Ga. +1", augments={'Rng.Atk.+20','"Mag.Atk.Bns."+12','"Store TP"+6',}},
     })
 
@@ -434,7 +434,6 @@ function init_gear_sets()
     }
 
     sets.precast.WS['Savage Blade'].Acc = set_combine(sets.precast.WS['Savage Blade'], {
-      -- body="Ikenga's Vest"
     })
 
     sets.precast.WS['Swift Blade'] = set_combine(sets.precast.WS, {})
@@ -459,7 +458,7 @@ function init_gear_sets()
     sets.midcast.Cure = {}
 
     sets.midcast.CorsairShot = {ammo=gear.QDBullet,
-      head="Nyame Helm",
+      head="Ikenga's Hat",
       body={ name="Lanun Frac +3", augments={'Enhances "Loaded Deck" effect',}},
       hands={ name="Carmine Fin. Ga. +1", augments={'Rng.Atk.+20','"Mag.Atk.Bns."+12','"Store TP"+6',}},
       legs="Nyame Flanchard",
@@ -489,11 +488,11 @@ function init_gear_sets()
     }
 
     sets.midcast.CorsairShot['Light Shot'] = {ammo=gear.RAccbullet,
-      head="Malignance Chapeau", -- head="Laksa. Tricorne +3",
-      body="Malignance Tabard",
-      hands="Malignance Gloves", -- hands="Laksa. Gants +3",
-      legs="Malignance Tights",
-      feet="Malignance Boots", -- feet="Laksa. Bottes +3",
+      head="Chasseur's Tricorne +2",
+      body="Chasseur's Frac +2",
+      hands="Chasseur's Gants +2",
+      legs="Chasseur's Culottes +2",
+      feet="Chasseur's Bottes +2",
       neck="Comm. Charm +2",
       left_ear="Dignitary's Earring",
       right_ear="Crepuscular Earring",
@@ -504,27 +503,23 @@ function init_gear_sets()
     }
 
     sets.midcast.CorsairShot['Dark Shot'] = sets.midcast.CorsairShot['Light Shot']
-    sets.midcast.CorsairShot.Enhance = {feet="Chass. Bottes +1"}
+    sets.midcast.CorsairShot.Enhance = {feet="Chass. Bottes +2"}
 
     -- Ranged gear
     sets.midcast.RA = {ammo=gear.RAbullet,
-      -- head="Malignance Chapeau",
       head="Ikenga's hat",
       neck="Iskur Gorget",
       left_ear="Crepuscular Earring",
       right_ear="Telos Earring",
-      body="Ikenga's Vest", -- body="Malignance Tabard",
-      -- hands="Malignance Gloves",
+      body="Ikenga's Vest",
       hands="Ikenga's Gloves",
       ring1="Dingir Ring",
       ring2="Ilabrat Ring",
       back=Cape.RTP,
       waist="Yemaya Belt",
       legs="Ikenga's Trousers",
-      -- legs="Malignance Tights",
       legs="Ikenga's Trousers",
       feet="Ikenga's Clogs",
-      -- feet="Malignance Boots"
     }
 
     sets.midcast.RA.Acc = set_combine(sets.midcast.RA, {ammo=gear.RAccbullet,
@@ -560,7 +555,7 @@ function init_gear_sets()
 
     sets.TripleShot = {
       head="Oshosi Mask +1",
-      body="Chasseur's Frac +1",
+      body="Chasseur's Frac +2",
       hands="Lanun Gants +3",
       legs="Osh. Trousers +1",
       feet="Osh. Leggings +1",
@@ -577,6 +572,7 @@ function init_gear_sets()
 
     sets.TrueShot = {
       legs="Osh. Trousers +1",
+      waist="Tellen Belt"  
     }
 
     ------------------------------------------------------------------------------------------------

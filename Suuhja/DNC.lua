@@ -131,7 +131,7 @@ function user_setup()
     send_command('bind ^numlock input /ja "Reverse Flourish" <me>')
     
     send_command('bind @b send muuhja input /ma "Siren" <me>')
-    send_command('bind @n sat youcommand Muuhja "Carnage Elegy"')
+    send_command('bind @n sat youcommand Zuuhja "Carnage Elegy"')
     send_command('bind @m sat youcommand Muuhja "Mewing Lullaby"')
     send_command('bind @o sat youcommand Muuhja "Shock Squall"')
     -- send_command('bind @o sat youcommand Muuhja "Horde Lullaby"')

@@ -263,7 +263,7 @@ function init_gear_sets()
     ---------------------------------------- Precast Sets ------------------------------------------
     ------------------------------------------------------------------------------------------------
 
-    sets.precast.JA['Triple Shot'] = {body="Chasseur's Frac +1"}
+    sets.precast.JA['Triple Shot'] = {body="Chasseur's Frac +2"}
     sets.precast.JA['Snake Eye'] = {legs="Lanun Trews +1"}
     sets.precast.JA['Wild Card'] = {feet="Lanun Bottes +3"}
     sets.precast.JA['Random Deal'] = {body="Lanun Frac +3"}
@@ -271,7 +271,7 @@ function init_gear_sets()
     sets.precast.CorsairRoll = {
       head="Lanun Tricorne +3",
       body="Malignance Tabard",
-      hands="Chasseur's Gants +1",
+      hands="Chasseur's Gants +2",
       legs="Malignance Tights",
       -- legs="Desultor Tassets",
       feet="Malignance Boots",
@@ -477,7 +477,7 @@ function init_gear_sets()
     sets.midcast.Cure = {}
 
     sets.midcast.CorsairShot = {ammo=gear.QDBullet,
-      head="Nyame Helm",
+      head="Ikenga's Hat",
       body={ name="Lanun Frac +3", augments={'Enhances "Loaded Deck" effect',}},
       hands={ name="Carmine Fin. Ga. +1", augments={'Rng.Atk.+20','"Mag.Atk.Bns."+12','"Store TP"+6',}},
       legs="Nyame Flanchard",
@@ -660,7 +660,7 @@ function init_gear_sets()
       head="Malignance Chapeau",
       body="Malignance Tabard",
       hands="Malignance Gloves",
-      legs="Chas. Culottes +2"
+      legs="Chas. Culottes +2",
       feet="Malignance Boots",
       neck="Iskur Gorget",
       waist="Windbuffet Belt +1",

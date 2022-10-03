@@ -374,7 +374,7 @@ function init_gear_sets()
     sets.midcast.HonorMarch = {range="Marsyas", hands="Fili Manchettes +1"}
 
     sets.midcast.Lullaby = {
-      body="Fili Hongreline +1",
+      body="Fili Hongreline +2",
       hands="Brioso Cuffs +3",
       legs="Inyanga Shalwar +2",
     }
@@ -388,7 +388,7 @@ function init_gear_sets()
     sets.midcast.Mambo = {feet="Mousai Crackows +1"}
     sets.midcast.March = {hands="Fili Manchettes +1"}
     sets.midcast.Minne = {legs="Mousai Seraweels +1"}
-    sets.midcast.Minuet = {body="Fili Hongreline +1"}
+    sets.midcast.Minuet = {body="Fili Hongreline +2"}
     sets.midcast.Paeon = {head="Brioso Roundlet +3"}
     sets.midcast.Threnody = {body="Mou. Manteel +1"}
     sets.midcast['Adventurer\'s Dirge'] = {range="Marsyas"}
@@ -403,7 +403,7 @@ function init_gear_sets()
       sub="Genmei Shield",
       range="Gjallarhorn",
       head="Fili Calot +1",
-      body="Fili Hongreline +1",
+      body="Fili Hongreline +2",
       hands="Fili Manchettes +1",
       legs="Inyanga shalwar +2",
       feet="Brioso Slippers +3",
@@ -422,7 +422,7 @@ function init_gear_sets()
       sub="Ammurapi Shield",
       range="Marsyas",
       head="Brioso Roundlet +3",
-      body="Fili Hongreline +1",
+      body="Fili Hongreline +2",
       hands="Brioso Cuffs +3",
       legs="Inyanga shalwar +2",
       feet="Brioso Slippers +3",
@@ -470,7 +470,7 @@ function init_gear_sets()
       main={ name="Kali", augments={'DMG:+15','CHR+15','Mag. Acc.+15',}},
       range="Daurdabla",
       head="Fili Calot +1",
-      body="Fili Hongreline +1",
+      body="Fili Hongreline +2",
       hands="Fili Manchettes +1",
       legs="Fili Rhingrave +1",
       feet="Fili Cothurnes +1",
@@ -1020,6 +1020,7 @@ function get_lullaby_duration(spell)
     if player.equipment.neck == "Mnbw. Whistle" then mult = mult + 0.2 end
     if player.equipment.neck == "Mnbw. Whistle +1" then mult = mult + 0.3 end
     if player.equipment.body == "Fili Hongreline +1" then mult = mult + 0.12 end
+    if player.equipment.body == "Fili Hongreline +2" then mult = mult + 0.13 end
     if player.equipment.legs == "Inyanga Shalwar +1" then mult = mult + 0.15 end
     if player.equipment.legs == "Inyanga Shalwar +2" then mult = mult + 0.17 end
     if player.equipment.feet == "Brioso Slippers" then mult = mult + 0.1 end

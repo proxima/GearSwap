@@ -125,7 +125,9 @@ function init_gear_sets()
   sets.precast.JA['Cover'] = set_combine(sets.precast.Enmity, {head="Reverence Coronet +1"})
   
   sets.precast.JA['Valiance'] = sets.precast.Enmity
-
+  sets.precast.JA['Vallation'] = sets.precast.Enmity
+  sets.precast.JA['Pflug'] = sets.precast.Enmity
+  
   sets.precast.JA['Chivalry'] = {
     body="Reverence Surcoat +3",
   }

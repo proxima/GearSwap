@@ -121,7 +121,7 @@ function init_gear_sets()
     sets.precast.JA['Accomplice'] = {head="Skulker's Bonnet +1"}
     sets.precast.JA['Flee'] = {feet="Pillager's Poulaines +3"}
     sets.precast.JA['Hide'] = {body="Pillager's Vest +3"}
-    sets.precast.JA['Conspirator'] = {body="Skulker's Vest +1"}
+    sets.precast.JA['Conspirator'] = {body="Skulker's Vest +2"}
     sets.precast.JA['Steal'] = {head="Plunderer's Bonnet +3",hands="Pillager's Armlets +3",legs="Pillager's Culottes +3",feet="Pillager's Poulaines +3"}
     sets.precast.JA['Despoil'] = {legs="Skulker's Culottes +1",feet="Skulker's Poulaines +1"}
     sets.precast.JA['Perfect Dodge'] = {hands="Plunderer's Armlets +1"}
@@ -154,7 +154,7 @@ function init_gear_sets()
     sets.precast.WS = {  
       ammo="Yetshila +1",
       head="Nyame Helm",
-      body="Nyame Mail",
+      body="Skulker's Vest +2",
       hands="Nyame Gauntlets",
       legs="Nyame Flanchard",
       feet="Nyame Sollerets",
@@ -224,7 +224,7 @@ function init_gear_sets()
     sets.precast.WS["Rudra's Storm"] = set_combine(sets.precast.WS, {
       ammo={ name="Seeth. Bomblet +1", augments={'Path: A',}},
       head="Nyame Helm",
-      body="Nyame Mail",
+      body="Skulker's Vest +2",
       hands="Nyame Gauntlets",
       legs="Nyame Flanchard",  
       feet="Nyame Sollerets",
@@ -258,7 +258,7 @@ function init_gear_sets()
       legs="Nyame Flanchard",
       feet="Nyame Sollerets",
       neck="Republican platinum medal",
-      waist={ name="Kentarch Belt +1", augments={'Path: A',}},
+      waist="Sailfi Belt +1",
       left_ear="Ishvara Earring",
       right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
       left_ring="Epaminondas's Ring",
