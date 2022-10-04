@@ -104,7 +104,7 @@ function job_setup()
     no_swap_gear = S{"Warp Ring", "Dim. Ring (Dem)", "Dim. Ring (Holla)", "Dim. Ring (Mea)",
               "Trizek Ring", "Echad Ring", "Facility Ring", "Capacity Ring",
               "Dev. Bul. Pouch", "Chr. Bul. Pouch", "Liv. Bul. Pouch"}
-    elemental_ws = S{"Aeolian Edge", "Leaden Salute", "Wildfire"}
+    elemental_ws = S{"Aeolian Edge", "Hot Shot", "Leaden Salute", "Wildfire"}
     no_shoot_ammo = S{"Animikii Bullet", "Hauksbok Bullet"}
 
     include('Mote-TreasureHunter')
@@ -407,6 +407,12 @@ function init_gear_sets()
       right_ring="Epaminondas's Ring",
       back=Cape.RATK
     }
+
+    sets.precast.WS['Hot Shot'].Acc = set_combine({ammo=gear.RAccbullet,
+      body="Laksa. Frac +3",
+      feet={ name="Nyame Sollerets", augments={'Path: B',}},
+      right_ring="Regal Ring",
+    })
 
     sets.precast.WS['Leaden Salute'] = set_combine(sets.precast.WS['Wildfire'], {
       head="Pixie Hairpin +1",

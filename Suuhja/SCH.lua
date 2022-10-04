@@ -1005,8 +1005,6 @@ function get_sets()
     
     -- Focus on Regen Potency
     sets.midcast.regen.potency = set_combine(sets.midcast.regen.hybrid, {
-      main="Bolelabunga",
-      sub="Ammurapi Shield",
       back=Lugh.ADOULIN
     })
 
