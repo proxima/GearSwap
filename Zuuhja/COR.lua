@@ -561,7 +561,7 @@ function init_gear_sets()
     sets.midcast.RA.Critical = set_combine(sets.midcast.RA, {
       head="Meghanada Visor +2",
       left_ear="Odr Earring",
-      body="Meghanada Cuirie +2",
+      body="Nisroch Jerkin",
       hands="Chasseur's Gants +2",
       legs="Darraigner's Brais",
       feet="Osh. Leggings +1",

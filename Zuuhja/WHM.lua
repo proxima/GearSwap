@@ -332,7 +332,7 @@ function init_gear_sets()
     --sets.midcast.CureMelee = sets.midcast.CureSolace
 
     sets.midcast.StatusRemoval = {
-      main="Gada",
+      main="Yagrush",
       sub="Genmei Shield",
       ammo="Staunch Tathlum +1",
       head={ name="Vanya Hood", augments={'MP+50','"Fast Cast"+10','Haste+2%',}},
@@ -350,7 +350,7 @@ function init_gear_sets()
     }
 
     sets.midcast.Cursna = set_combine(sets.midcast.StatusRemoval, {
-      main="Gada",
+      main="Yagrush",
       sub="Chanter's Shield",
       body="Ebers Bliaut +2",
       head={ name="Vanya Hood", augments={'Healing magic skill +20','"Cure" spellcasting time -7%','Magic dmg. taken -3',}},
@@ -376,7 +376,7 @@ function init_gear_sets()
       body={ name="Telchine Chas.", augments={'Enh. Mag. eff. dur. +10',}},
       hands="Inyanga dastanas +2",
       legs="Piety Pantaloons +3",
-      feet="Ebers duckbills +1",
+      feet="Ebers duckbills +2",
       ring1="Stikini Ring +1",
       ring2="Stikini Ring +1",
       waist="Embla Sash",
@@ -406,7 +406,7 @@ function init_gear_sets()
     })
 
     sets.midcast.RegenDuration = set_combine(sets.midcast.EnhancingDuration, {
-      hands="Ebers Mitts +1",
+      hands="Ebers Mitts +2",
       legs="Th. Pant. +3",
       feet="Theo. Duckbills +3",
     })
@@ -424,7 +424,7 @@ function init_gear_sets()
     })
 
     sets.midcast.Auspice = set_combine(sets.midcast.EnhancingDuration, {
-      feet="Ebers Duckbills +1",
+      feet="Ebers Duckbills +2",
     })
 
     sets.midcast.BarElement = set_combine(sets.midcast['Enhancing Magic'], {
@@ -432,9 +432,9 @@ function init_gear_sets()
       sub="Ammurapi Shield",
       head="Ebers Cap +1",
       body="Ebers Bliaut +2",
-      hands="Ebers Mitts +1",
+      hands="Ebers Mitts +2",
       legs="Piety Pantaloons +3",
-      feet="Ebers Duckbills +1",
+      feet="Ebers Duckbills +2",
       back={ name="Alaunus's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','MND+10','"Fast Cast"+10','Phys. dmg. taken-10%',}},
     })
 
@@ -551,7 +551,7 @@ function init_gear_sets()
       main="Daybreak",
       sub="Genmei Shield",
       ammo="Homiliary",
-      head="Inyanga Tiara +2",
+      head="Bunzi's Hat",
       body="Ebers Bliaut +2",
       hands={ name="Chironic Gloves", augments={'"Blood Boon"+10','"Dual Wield"+3','"Refresh"+2','Accuracy+7 Attack+7','Mag. Acc.+15 "Mag.Atk.Bns."+15',}},
       legs={ name="Chironic Hose", augments={'Enmity-3','Rng.Acc.+11 Rng.Atk.+11','"Refresh"+2','Mag. Acc.+7 "Mag.Atk.Bns."+7',}},
@@ -630,7 +630,7 @@ function init_gear_sets()
     }
 
     -- Buff sets: Gear that needs to be worn to actively enhance a current player buff.
-    sets.buff['Divine Caress'] = {hands="Ebers Mitts +1", back="Mending Cape"}
+    sets.buff['Divine Caress'] = {hands="Ebers Mitts +2", back="Mending Cape"}
     sets.buff['Devotion'] = {head="Piety Cap +1"}
     sets.buff.Sublimation = {waist="Embla Sash"}
 

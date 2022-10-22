@@ -447,8 +447,8 @@ function init_gear_sets()
       waist="Moonbow Belt +1",
       left_ear={ name="Schere Earring", augments={'Path: A',}},
       right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
-      left_ring="Gere Ring",
-      right_ring="Niqmaddu Ring",
+      left_ring="Niqmaddu Ring",
+      right_ring="Gere Ring",
       back=Visucius.MasterDA
     }
 

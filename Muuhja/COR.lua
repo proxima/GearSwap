@@ -132,14 +132,14 @@ function user_setup()
     state.WeaponskillMode:options('Normal', 'Acc')
     state.IdleMode:options('Normal', 'DT', 'Refresh')
 
-    state.WeaponSet = M{['description']='Weapon Set', 'Anarchy', 'Aeolian', 'Rolls'}
+    state.WeaponSet = M{['description']='Weapon Set', 'Anarchy', 'DeathPenalty_M', 'DeathPenalty_R', 'Aeolian', 'Rolls'}
     state.WeaponLock = M(false, 'Weapon Lock')
 
     gear.RAbullet = "Eminent Bullet"
     gear.RAccbullet = "Eminent Bullet"
     gear.WSbullet = "Eminent Bullet"
     gear.MAbullet = "Eminent Bullet"
-    gear.QDbullet = "Hauksbok Bullet"
+    gear.QDbullet = "Eminent Bullet"
     options.ammo_warning_limit = 10
 
     send_command('bind @t gs c cycle treasuremode')
@@ -184,6 +184,13 @@ function user_setup()
     set_lockstyle()
 
     Cape = {}
+    Cape.DW      = {name="Camulus's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dual Wield"+10','Phys. dmg. taken-10%',}}
+
+    Cape.RATK    = {name="Camulus's Mantle", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','AGI+10','Weapon skill damage +10%','Phys. dmg. taken-10%'}}
+    Cape.RCRIT   = {name="Camulus's Mantle", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','AGI+10','Crit.hit rate+10','Phys. dmg. taken-10%',}}
+    Cape.RTP     = {name="Camulus's Mantle", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','Rng.Acc.+10','"Store TP"+10','Phys. dmg. taken-10%',}}
+    Cape.ROLL    = {name="Camulus's Mantle", augments={'INT+20','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','"Snapshot"+10','Mag. Evasion+15',}}
+    Cape.LEADEN  = {name="Camulus's Mantle", augments={'AGI+20','Mag. Acc+20 /Mag. Dmg.+20','AGI+10','Weapon skill damage +10%','Phys. dmg. taken-10%'}}
     Cape.SB      = {name="Camulus's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%','Phys. dmg. taken-10%'}}
     Cape.TP      = {name="Camulus's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}}
     Cape.AEOLIAN = {name="Camulus's Mantle", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}
@@ -264,7 +271,7 @@ function init_gear_sets()
     sets.precast.CorsairRoll = {
       head="Lanun Tricorne",
       body="Malignance Tabard",
-      hands="Chasseur's Gants +1",
+      hands="Chasseur's Gants +2",
       legs="Malignance Tights",
       feet="Malignance Boots",
       neck="Regal Necklace",
@@ -282,7 +289,7 @@ function init_gear_sets()
     sets.precast.CorsairRoll["Courser's Roll"] = set_combine(sets.precast.CorsairRoll, {})
     sets.precast.CorsairRoll["Blitzer's Roll"] = set_combine(sets.precast.CorsairRoll, {})
     sets.precast.CorsairRoll["Tactician's Roll"] = set_combine(sets.precast.CorsairRoll, {})
-    sets.precast.CorsairRoll["Allies' Roll"] = set_combine(sets.precast.CorsairRoll, {hands="Chasseur's Gants +1"})
+    sets.precast.CorsairRoll["Allies' Roll"] = set_combine(sets.precast.CorsairRoll, {hands="Chasseur's Gants +2"})
 
     sets.precast.LuzafRing = {ring1="Luzaf's Ring"}
     sets.precast.FoldDoubleBust = {hands="Commodore gants +2"}
@@ -312,16 +319,51 @@ function init_gear_sets()
     sets.precast.WS['Detonator'] = sets.precast.WS['Last Stand']
     sets.precast.WS['Detonator'].Acc = sets.precast.WS['Last Stand'].Acc
 
-    sets.precast.WS['Wildfire'] = {ammo=gear.MAbullet,
+    sets.precast.WS['Wildfire'] = {ammo=gear.MAbullet, -- 25
+      head="Nyame Helm", 
+      body="Nyame Mail", -- body={ name="Lanun Frac +3", augments={'Enhances "Loaded Deck" effect',}},
+      hands="Nyame Gauntlets",
+      legs="Nyame Flanchard",
+      feet="Nyame Sollerets", -- feet={ name="Lanun Bottes +3", augments={'Enhances "Wild Card" effect',}},
+      neck="Comm. Charm +2",
+      left_ear="Crematio Earring",
+      right_ear="Friomisi Earring",
+      left_ring="Dingir Ring",
+      right_ring="Epaminondas's Ring",
+      back=Cape.LEADEN,
+      waist="Sveltesse gouriz +1",
     }
 
     sets.precast.WS['Hot Shot'] = {ammo=gear.WSbullet,
+      head={ name="Nyame Helm", augments={'Path: B',}},
+      body={ name="Nyame Mail", augments={'Path: B',}},
+      hands={ name="Nyame Gauntlets", augments={'Path: B',}},
+      legs={ name="Nyame Flanchard", augments={'Path: B',}},
+      feet={ name="Lanun Bottes +3", augments={'Enhances "Wild Card" effect',}},
+      neck="Fotia Gorget",
+      waist="Fotia Belt",
+      left_ear="Moonshade Earring",
+      right_ear="Friomisi Earring",
+      left_ring="Dingir Ring",
+      right_ring="Epaminondas's Ring",
+      back=Cape.RATK
     }
 
+    sets.precast.WS['Hot Shot'].Acc = set_combine({ammo=gear.RAccbullet,
+      body="Laksa. Frac +3",
+      feet={ name="Nyame Sollerets", augments={'Path: B',}},
+      right_ring="Regal Ring",
+    })
+
     sets.precast.WS['Leaden Salute'] = set_combine(sets.precast.WS['Wildfire'], {
+      head="Pixie Hairpin +1",
+      left_ear="Moonshade Earring",
+      right_ring="Archon Ring",
     })
 
     sets.precast.WS['Leaden Salute'].Acc = set_combine(sets.precast.WS['Leaden Salute'], {
+      head={ name="Nyame Helm", augments={'Path: B',}},
+      feet={ name="Nyame Sollerets", augments={'Path: B',}}
     })
 
     sets.precast.WS['Evisceration'] = {
@@ -475,7 +517,8 @@ function init_gear_sets()
       hands="Malignance Gloves",
       legs="Malignance Tights",
       feet="Malignance Boots",
-      neck="Loricate Torque +1",
+      neck="Comm. Charm +2",
+      -- neck="Loricate Torque +1",
       waist="Flume belt +1",
       left_ear="Odnowa Earring +1",
       right_ear="Tuisto Earring",
@@ -681,6 +724,18 @@ function init_gear_sets()
 
     sets.Anarchy = {main="Naegling", sub="Gleti's Knife", ranged="Anarchy +2"}
     sets.Anarchy.Acc = sets.Anarchy
+
+    sets.DeathPenalty_M = {main="Tauret", sub="Naegling", ranged="Death Penalty"}
+    sets.DeathPenalty_M.Acc = sets.DeathPenalty_M
+
+    sets.DeathPenalty_R = {main="Tauret", sub="Naegling", ranged="Death Penalty"}
+    sets.DeathPenalty_R.Acc = sets.DeathPenalty_R
+
+    -- sets.DeathPenalty_M = {main=Rostam.B, sub="Tauret", ranged="Death Penalty"}
+    -- sets.DeathPenalty_M.Acc = {main=Rostam.B, sub=Rostam.A, ranged="Death Penalty"}
+
+    -- sets.DeathPenalty_R = {main=Rostam.A, sub="Tauret", ranged="Death Penalty"}
+    -- sets.DeathPenalty_R.Acc = {main=Rostam.A, sub=Rostam.B, ranged="Death Penalty"}
 
     sets.Rolls = {main=empty, sub=empty, ranged="Compensator"}
     sets.Rolls.Acc = sets.Rolls

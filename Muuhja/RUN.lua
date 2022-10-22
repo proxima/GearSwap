@@ -173,7 +173,7 @@ function user_setup()
   AF.Body = "Runeist's Coat +3"
   AF.Hands = "Runeist's Mitons +2"
   AF.Legs = "Rune. Trousers +2"
-  AF.Feet = "Runeist's Boots +2"
+  AF.Feet = "Runeist's Bottes +2"
 
   Relic = {}
   Relic.Head  = "Futhark Bandeau +3"

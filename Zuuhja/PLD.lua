@@ -376,8 +376,8 @@ function init_gear_sets()
   }
 
   sets.idle.Meva = {
-    main="Burtgang",
-    sub="Aegis",
+    main="Malignance Sword",
+    sub="Srivatsa",
     ammo="Staunch Tathlum +1",    --  3
     head="Sakpata's Helm",        --  7
     body="Sakpata's Breastplate", -- 10
@@ -394,7 +394,6 @@ function init_gear_sets()
   }
   
   sets.idle.Block = {
-    -- main=Malev.One,
     main="Burtgang",
     sub="Ochain",
     ammo="Staunch Tathlum +1",      --  3

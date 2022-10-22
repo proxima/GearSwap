@@ -109,32 +109,17 @@ hud_font = 'Impact'
     windower.send_command('bind ^F10 gs c toggle matchsc')      -- CTRL-F10 to change Match SC Mode      	
     windower.send_command('bind !end gs c hud lite')            -- Alt-End to toggle light hud version   
 
-    -- windower.send_command('bind @a sat youcommand Zuuhja Ge input /ma "Indi-Wil" <me>')
     send_command('bind @s sat youcommand Zuuhja Geo-Malaise')
     send_command('bind @a sat youcommand Muuhja "Thunderspark"')
-    -- send_command('bind @s sat youcommand Zuuhja "Bio";input /ma "Luminohelix II" <t>')
-    -- windower.send_command('bind @a sat youcommand Muuhja "Wind Threnody II"')
-    -- windower.send_command('bind @s sat youcommand Zuuhja Silence')
     windower.send_command('bind @d send zuuhja input /ma "Cure" Arklights')
     windower.send_command('bind @z send zuuhja input /ja "Full Circle" <me>')
     windower.send_command('bind @x send zuuhja input /ja "Radial Arcana" <me>')
-    -- windower.send_command('bind @b sat youcommand Zuuhja "Dispel"')
     windower.send_command('bind @b sat youcommand Muuhja "Earth Threnody II"')
     windower.send_command('bind @n sat youcommand Muuhja "Carnage Elegy"')
     windower.send_command('bind @m sat youcommand Muuhja "Pining Nocture"')
     windower.send_command('bind @o sat youcommand Zuuhja "Sleepga"')
     windower.send_command('bind @p sat youcommand Muuhja "Shock Squall"')
-    -- windower.send_command('bind @p send muuhja input /pet "Release" <me>')
     windower.send_command('bind @= send muuhja input /ja "Apogee" <me>')
-    -- windower.send_command('bind @n sat youcommand Muuhja "Level ? Holy"')
-    -- windower.send_command('bind @d sat youcommand Muuhja Deploy')
-    -- windower.send_command('bind @b send muuhja input /ma "Ramuh" <me>')
-    -- windower.send_command('bind @n send Muuhja /input /ja "Mana Cede" <me>')
-    -- windower.send_command('bind @v sat youcommand Muuhja "Volt Strike"')
-    -- windower.send_command('bind @m sat youcommand Muuhja "Shock Squall"')
-    -- windower.send_command('bind @o sat youcommand Muuhja Assault')
-    -- windower.send_command('bind @p send muuhja input /pet "Release" <me>')
-    -- windower.send_command('bind @= send muuhja input /ja "Apogee" <me>')
     
 --[[
     This gets passed in when the Keybinds is turned on.
@@ -376,7 +361,7 @@ function get_sets()
       body="Agwu's Robe",
       hands="Jhakri Cuffs +2",
       legs="Agwu's Slops",
-      feet="Arbatel Loafers +2",
+      feet="Arbatel Loafers +3",
       neck="Quanpur Necklace",
       waist="Orpheus's Sash",
       left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
@@ -405,7 +390,7 @@ function get_sets()
       body="Agwu's Robe",
       hands="Jhakri Cuffs +2",
       legs="Agwu's Slops",
-      feet="Arbatel Loafers +2",
+      feet="Arbatel Loafers +3",
       neck={ name="Argute Stole +2", augments={'Path: A',}},
       waist="Orpheus's Sash",
       left_ear="Regal Earring",
@@ -421,7 +406,7 @@ function get_sets()
       body="Agwu's Robe",
       hands="Jhakri Cuffs +2",
       legs="Agwu's Slops",
-      feet="Arbatel Loafers +2",
+      feet="Arbatel Loafers +3",
       neck={ name="Argute Stole +2", augments={'Path: A',}},
       waist="Hachirin-no-Obi",
       left_ear="Regal Earring",
@@ -430,6 +415,8 @@ function get_sets()
       right_ring="Metamorph Ring +1",
       back=Lugh.MND_WSD
     }
+
+    sets.me["Shining Strike"] = sets.me["Seraph Strike"]
 
     sets.me["Flash Nova"] = sets.me["Seraph Strike"]
     sets.me["Starburst"] = sets.me["Flash Nova"]
@@ -484,7 +471,7 @@ function get_sets()
     sets.buff['Parsimony'] = {}
     sets.buff['Celerity'] = {feet="Pedagogy loafers +3"}
     sets.buff['Alacrity'] = {feet="Pedagogy loafers +3"}
-    sets.buff['Klimaform'] = {feet="Arbatel Loafers +2"}
+    sets.buff['Klimaform'] = {feet="Arbatel Loafers +3"}
     sets.buff['Ebullience'] = {head="Arbatel bonnet +2"}
 
     ---------------
