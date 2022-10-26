@@ -273,7 +273,6 @@ function init_gear_sets()
       body="Malignance Tabard",
       hands="Chasseur's Gants +2",
       legs="Malignance Tights",
-      -- legs="Desultor Tassets",
       feet="Malignance Boots",
       neck="Regal Necklace",
       ear1="Odnowa Earring +1",
@@ -284,7 +283,7 @@ function init_gear_sets()
       waist="Flume Belt +1"
     }
 
-    sets.precast.CorsairRoll.Duration = {main={ name="Rostam", bag="wardrobe 4"}, range="Compensator"}
+    sets.precast.CorsairRoll.Duration = {main=Rostam.C, range="Compensator"}
     sets.precast.CorsairRoll.LowerDelay = {back="Gunslinger's Cape"}
     sets.precast.CorsairRoll["Caster's Roll"] = set_combine(sets.precast.CorsairRoll, {legs="Chas. Culottes +2"})
     sets.precast.CorsairRoll["Courser's Roll"] = set_combine(sets.precast.CorsairRoll, {feet="Chass. Bottes +2"})
@@ -365,7 +364,6 @@ function init_gear_sets()
     })
 
     sets.precast.WS['Detonator'] = set_combine(sets.precast.WS['Last Stand'], {
-      ammo=gear.RAccbullet,
       left_ear="Beyla Earring",
       right_ring="Hajduk Ring +1",
       feet="Nyame Sollerets"

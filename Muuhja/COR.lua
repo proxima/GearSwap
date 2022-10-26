@@ -135,11 +135,11 @@ function user_setup()
     state.WeaponSet = M{['description']='Weapon Set', 'Anarchy', 'DeathPenalty_M', 'DeathPenalty_R', 'Aeolian', 'Rolls'}
     state.WeaponLock = M(false, 'Weapon Lock')
 
-    gear.RAbullet = "Eminent Bullet"
-    gear.RAccbullet = "Eminent Bullet"
-    gear.WSbullet = "Eminent Bullet"
-    gear.MAbullet = "Eminent Bullet"
-    gear.QDbullet = "Eminent Bullet"
+    gear.RAbullet = "Living Bullet"
+    gear.RAccbullet = "Living Bullet"
+    gear.WSbullet = "Living Bullet"
+    gear.MAbullet = "Living Bullet"
+    gear.QDbullet = "Hauksbok Bullet"
     options.ammo_warning_limit = 10
 
     send_command('bind @t gs c cycle treasuremode')
@@ -185,7 +185,6 @@ function user_setup()
 
     Cape = {}
     Cape.DW      = {name="Camulus's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dual Wield"+10','Phys. dmg. taken-10%',}}
-
     Cape.RATK    = {name="Camulus's Mantle", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','AGI+10','Weapon skill damage +10%','Phys. dmg. taken-10%'}}
     Cape.RCRIT   = {name="Camulus's Mantle", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','AGI+10','Crit.hit rate+10','Phys. dmg. taken-10%',}}
     Cape.RTP     = {name="Camulus's Mantle", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','Rng.Acc.+10','"Store TP"+10','Phys. dmg. taken-10%',}}
@@ -196,9 +195,9 @@ function user_setup()
     Cape.AEOLIAN = {name="Camulus's Mantle", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}
 
     Rostam = {}
-    Rostam.A = {name="Rostam", bag="wardrobe2"}
-    Rostam.B = {name="Rostam", bag="wardrobe5"}
-    Rostam.C = {name="Rostam", bag="wardrobe4"}
+    -- Rostam.A = {name="Rostam", bag="wardrobe2"}
+    -- Rostam.B = {name="Rostam", bag="wardrobe5"}
+    Rostam.C = {name="Rostam", bag="wardrobe3"}
     
     send_command('lua l gearinfo')
 
@@ -263,13 +262,13 @@ function init_gear_sets()
     ---------------------------------------- Precast Sets ------------------------------------------
     ------------------------------------------------------------------------------------------------
 
-    sets.precast.JA['Triple Shot'] = {}
-    sets.precast.JA['Snake Eye'] = {legs="Commodore Trews +2"}
-    sets.precast.JA['Wild Card'] = {feet="Commodore Bottes +2"}
-    sets.precast.JA['Random Deal'] = {body="Commodore Frac +2"}
+    sets.precast.JA['Triple Shot'] = {body="Chasseur's Frac +2"}
+    sets.precast.JA['Snake Eye'] = {legs="Lanun Trews +1"}
+    sets.precast.JA['Wild Card'] = {feet="Lanun Bottes +3"}
+    sets.precast.JA['Random Deal'] = {body="Lanun Frac +3"}
 
     sets.precast.CorsairRoll = {
-      head="Lanun Tricorne",
+      head="Lanun Tricorne +1",
       body="Malignance Tabard",
       hands="Chasseur's Gants +2",
       legs="Malignance Tights",
@@ -279,31 +278,57 @@ function init_gear_sets()
       ear2="Etiolation Earring",
       ring1="Gelatinous Ring +1",
       ring2="Defending Ring",
-      back=Cape.SB,
+      back=Cape.ROLL,
       waist="Flume Belt +1"
     }
 
-    sets.precast.CorsairRoll.Duration = {main={ name="Rostam", bag="wardrobe 4"}, range="Compensator"}
+    sets.precast.CorsairRoll.Duration = {main=Rostam.C, range="Compensator"}
     sets.precast.CorsairRoll.LowerDelay = {}
-    sets.precast.CorsairRoll["Caster's Roll"] = set_combine(sets.precast.CorsairRoll, {})
-    sets.precast.CorsairRoll["Courser's Roll"] = set_combine(sets.precast.CorsairRoll, {})
-    sets.precast.CorsairRoll["Blitzer's Roll"] = set_combine(sets.precast.CorsairRoll, {})
-    sets.precast.CorsairRoll["Tactician's Roll"] = set_combine(sets.precast.CorsairRoll, {})
+    sets.precast.CorsairRoll["Caster's Roll"] = set_combine(sets.precast.CorsairRoll, {legs="Chas. Culottes +2"})
+    sets.precast.CorsairRoll["Courser's Roll"] = set_combine(sets.precast.CorsairRoll, {feet="Chass. Bottes +2"})
+    sets.precast.CorsairRoll["Blitzer's Roll"] = set_combine(sets.precast.CorsairRoll, {head="Chass. Tricorne +2"})
+    sets.precast.CorsairRoll["Tactician's Roll"] = set_combine(sets.precast.CorsairRoll, {body="Chasseur's Frac +2"})
     sets.precast.CorsairRoll["Allies' Roll"] = set_combine(sets.precast.CorsairRoll, {hands="Chasseur's Gants +2"})
 
     sets.precast.LuzafRing = {ring1="Luzaf's Ring"}
-    sets.precast.FoldDoubleBust = {hands="Commodore gants +2"}
+    sets.precast.FoldDoubleBust = {hands="Lanun Gants +3"}
 
     sets.precast.Waltz = {}
     sets.precast.Waltz['Healing Waltz'] = {}
 
-    sets.precast.FC = {}
+    sets.precast.FC = {
+      head="Carmine Mask +1",  -- 14
+      neck="Voltsurge Torque", --  4
+      left_ring="Kishar Ring", --  4
+      right_ring="Lebeche Ring",
+      hands="Leyline Gloves",   -- 5
+    }
     sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {})
 
     -- (10% Snapshot from JP Gifts)
-    sets.precast.RA = {}
-    sets.precast.RA.Flurry1 = set_combine(sets.precast.RA, {})
-    sets.precast.RA.Flurry2 = set_combine(sets.precast.RA.Flurry1, {})
+    sets.precast.RA = {
+      ammo=gear.RAbullet,
+      head={ name="Taeon Chapeau", augments={'"Snapshot"+5','"Snapshot"+5',}}, 
+      neck="Comm. Charm +2",
+      body="Laksa. Frac +3",
+      hands="Lanun Gants +3", 
+      legs={ name="Adhemar Kecks +1", augments={'AGI+12','"Rapid Shot"+13','Enmity-6',}},
+      back=Cape.ROLL, -- 10 Snapshot
+      waist="Yemaya Belt",
+      feet="Meg. Jam. +2", 
+      ring1="Crepuscular Ring"
+    }
+
+    sets.precast.RA.Flurry1 = set_combine(sets.precast.RA, {
+      head="Chasseur's Tricorne +2",
+      hands={ name="Carmine Fin. Ga. +1", augments={'Rng.Atk.+20','"Mag.Atk.Bns."+12','"Store TP"+6',}},
+    })
+
+    sets.precast.RA.Flurry2 = set_combine(sets.precast.RA.Flurry1, {
+      feet="Pursuer's Gaiters",
+    })
+
+    sets.precast.RA.Embrava = sets.precast.RA.Flurry2
 
     ------------------------------------------------------------------------------------------------
     ------------------------------------- Weapon Skill Sets ----------------------------------------
@@ -312,19 +337,47 @@ function init_gear_sets()
     sets.precast.WS = {ammo=gear.WSbullet,}
     sets.precast.WS.Acc = set_combine(sets.precast.WS, {ammo=gear.RAccbullet})
 
-    sets.precast.WS['Last Stand'] = {}
-    sets.precast.WS['Last Stand'].Acc = set_combine(sets.precast.WS['Last Stand'], {ammo=gear.RAccbullet
+    sets.precast.WS['Last Stand'] = {ammo=gear.WSbullet,
+      head="Nyame Helm",
+      body="Laksa. Frac +3",
+      hands="Nyame Gauntlets",
+      legs="Nyame Flanchard",
+      feet="Lanun Bottes +3",
+      neck="Fotia Gorget",
+      waist="Fotia Belt",
+      left_ear="Moonshade Earring",
+      right_ear="Telos Earring",
+      left_ring="Regal Ring",
+      right_ring="Epaminondas's Ring",
+      back=Cape.RATK
+    }
+    
+    sets.precast.WS['Last Stand'].Acc = set_combine(sets.precast.WS['Last Stand'], {ammo=gear.RAccbullet,
+      neck="Iskur Gorget",
+      left_ear="Beyla Earring",
+      right_ring="Hajduk Ring +1",
+      waist="K. Kachina Belt +1",
+      feet="Nyame Sollerets"
     })
 
-    sets.precast.WS['Detonator'] = sets.precast.WS['Last Stand']
-    sets.precast.WS['Detonator'].Acc = sets.precast.WS['Last Stand'].Acc
+    sets.precast.WS['Detonator'] = set_combine(sets.precast.WS['Last Stand'], {
+      left_ear="Beyla Earring",
+      right_ring="Hajduk Ring +1",
+      feet="Nyame Sollerets"
+    })
+
+    sets.precast.WS['Detonator'].Acc = set_combine(sets.precast.WS['Detonator'], {ammo=gear.RAccbullet,
+      left_ear="Beyla Earring",
+      right_ring="Hajduk Ring +1",
+      feet="Nyame Sollerets"
+    })
 
     sets.precast.WS['Wildfire'] = {ammo=gear.MAbullet, -- 25
       head="Nyame Helm", 
-      body="Nyame Mail", -- body={ name="Lanun Frac +3", augments={'Enhances "Loaded Deck" effect',}},
+      body={ name="Lanun Frac +3", augments={'Enhances "Loaded Deck" effect',}},
       hands="Nyame Gauntlets",
       legs="Nyame Flanchard",
-      feet="Nyame Sollerets", -- feet={ name="Lanun Bottes +3", augments={'Enhances "Wild Card" effect',}},
+      feet={ name="Lanun Bottes +3", augments={'Enhances "Wild Card" effect',}},
       neck="Comm. Charm +2",
       left_ear="Crematio Earring",
       right_ear="Friomisi Earring",
@@ -409,16 +462,7 @@ function init_gear_sets()
     sets.precast.WS['Requiescat'].Acc = set_combine(sets.precast.WS['Requiescat'], {})
 
     sets.precast.WS['Aeolian Edge'] = set_combine(sets.precast.WS['Wildfire'], {ammo="Hauksbok Bullet",
-      head={ name="Nyame Helm", augments={'Path: B',}},
-      body={ name="Nyame Mail", augments={'Path: B',}},
-      hands={ name="Nyame Gauntlets", augments={'Path: B',}},
-      legs={ name="Nyame Flanchard", augments={'Path: B',}},
-      feet={ name="Nyame Sollerets", augments={'Path: B',}},
-      neck="Sibyl Scarf",
       left_ear="Moonshade Earring",
-      right_ear="Odr Earring",
-      left_ring="Dingir Ring",
-      right_ring="Epaminondas's Ring",
       back=Cape.AEOLIAN,
       waist="Eschan Stone",
     })
@@ -433,18 +477,18 @@ function init_gear_sets()
     sets.midcast.Cure = {}
 
     sets.midcast.CorsairShot = {ammo=gear.QDBullet,
-      head="Malignance Chapeau",
-      body="Malignance Tabard",
-      hands="Malignance Gloves",
-      legs="Malignance Tights",
-      feet="Malignance Boots",
-      neck="Iskur Gorget",
-      left_ear="Crepuscular Earring",
-      right_ear="Telos Earring",
-      left_ring={name="Chirich Ring +1",bag="wardrobe 2"},
-      right_ring={name="Chirich Ring +1",bag="wardrobe 3"},
-      back=Cape.TP,
-      -- waist="Yemaya belt",
+      head="Nyame Helm", --"Ikenga's Hat"
+      body={ name="Lanun Frac +3", augments={'Enhances "Loaded Deck" effect',}},
+      hands={ name="Carmine Fin. Ga. +1", augments={'Rng.Atk.+20','"Mag.Atk.Bns."+12','"Store TP"+6',}},
+      legs="Nyame Flanchard",
+      feet={ name="Lanun Bottes +3", augments={'Enhances "Wild Card" effect',}},
+      neck="Comm. Charm +2",
+      left_ear="Crematio Earring",
+      right_ear="Friomisi Earring",
+      left_ring="Dingir Ring",
+      right_ring="Metamorph Ring +1",
+      back=Cape.LEADEN,
+      waist="Sveltesse gouriz +1",
     }
 
     sets.midcast.CorsairShot.STP = {ammo=gear.RAccbullet,
@@ -459,50 +503,91 @@ function init_gear_sets()
       left_ring={name="Chirich Ring +1",bag="wardrobe 2"},
       right_ring={name="Chirich Ring +1",bag="wardrobe 3"},
       back=Cape.TP,
-      -- waist="Yemaya belt",
+      waist="Yemaya belt",
     }
 
     sets.midcast.CorsairShot['Light Shot'] = {ammo=gear.RAccbullet,
-      head="Malignance Chapeau", -- head="Laksa. Tricorne +3",
-      body="Malignance Tabard",
-      hands="Malignance Gloves", -- hands="Laksa. Gants +3",
-      legs="Malignance Tights",
-      feet="Malignance Boots", -- feet="Laksa. Bottes +3",
-      -- neck="Comm. Charm +2",
+      head="Chasseur's Tricorne +2",
+      body="Chasseur's Frac +2",
+      hands="Chasseur's Gants +2",
+      legs="Chasseur's Culottes +2",
+      feet="Chasseur's Bottes +2",
+      neck="Comm. Charm +2",
       left_ear="Dignitary's earring",
       right_ear="Crepuscular Earring",
       left_ring="Stikini Ring +1",
       right_ring="Metamorph Ring +1",
-      -- back=Cape.LEADEN,
-      -- waist="K. Kachina Belt +1",
+      back=Cape.LEADEN,
+      waist="K. Kachina Belt +1",
     }
 
     sets.midcast.CorsairShot['Dark Shot'] = sets.midcast.CorsairShot['Light Shot']
-    sets.midcast.CorsairShot.Enhance = {}
+    sets.midcast.CorsairShot.Enhance = {feet="Chass. Bottes +2"}
 
     -- Ranged gear
+-- Ranged gear
     sets.midcast.RA = {ammo=gear.RAbullet,
+      head="Malignance Chapeau",
+      neck="Iskur Gorget",
+      left_ear="Crepuscular Earring",
+      right_ear="Telos Earring",
+      body="Malignance Tabard",
+      hands="Malignance Gloves",
+      ring1="Dingir Ring",
+      ring2="Ilabrat Ring",
+      back=Cape.RTP,
+      waist="Yemaya Belt",
+      legs="Malignance Tights",
+      feet="Malignance Boots"
     }
 
     sets.midcast.RA.Acc = set_combine(sets.midcast.RA, {ammo=gear.RAccbullet,
+      left_ear="Beyla Earring",
+      right_ring="Hajduk Ring +1",
     })
 
     sets.midcast.RA.HighAcc = set_combine(sets.midcast.RA.Acc, {
+      neck="Comm. Charm +2",
+      body="Laksa. Frac +3",
+      left_ring="Regal Ring",
+      waist="K. Kachina Belt +1",
     })
 
     sets.midcast.RA.Critical = set_combine(sets.midcast.RA, {
+      head="Meghanada Visor +2",
+      left_ear="Odr Earring",
+      body="Meghanada cuirie +2", -- Nisroch Jerkin
+      hands="Chasseur's Gants +2",
+      legs="Darraigner's Brais",
+      feet="Osh. Leggings +1",
+      left_ring="Begrudging Ring",
+      right_ring="Mummu Ring",
+      back=Cape.RCRIT,
+      waist="K. Kachina Belt +1",
     })
 
     sets.midcast.RA.STP = set_combine(sets.midcast.RA, {
     })
 
     sets.TripleShot = {
+      head="Oshosi Mask +1",
+      body="Chasseur's Frac +2",
+      hands="Lanun Gants +3",
+      legs="Osh. Trousers +1",
+      feet="Osh. Leggings +1",
     }
 
     sets.TripleShotCritical = {
+      head="Meghanada Visor +2",
+      left_ear="Odr Earring",
+      waist="K. Kachina Belt +1",
+      left_ring="Begrudging Ring",
+      right_ring="Mummu Ring",
+      back=Cape.RCRIT,
     }
 
     sets.TrueShot = {
+      legs="Osh. Trousers +1",
     }
 
     ------------------------------------------------------------------------------------------------
@@ -517,8 +602,7 @@ function init_gear_sets()
       hands="Malignance Gloves",
       legs="Malignance Tights",
       feet="Malignance Boots",
-      neck="Comm. Charm +2",
-      -- neck="Loricate Torque +1",
+      neck="Loricate Torque +1",
       waist="Flume belt +1",
       left_ear="Odnowa Earring +1",
       right_ear="Tuisto Earring",
@@ -538,7 +622,7 @@ function init_gear_sets()
     sets.idle.Refresh = set_combine(sets.idle, {
     })
 
-    sets.idle.Town = set_combine(sets.idle, {})
+    sets.idle.Town = set_combine(sets.idle, {legs="Carmine Cuisses +1"})
 
 
     ------------------------------------------------------------------------------------------------
@@ -577,14 +661,14 @@ function init_gear_sets()
       head="Malignance Chapeau",
       body="Malignance Tabard",
       hands="Malignance Gloves",
-      legs="Malignance Tights",
+      legs="Chas. Culottes +2",
       feet="Malignance Boots",
       neck="Iskur Gorget",
       waist="Reiki Yotai",
       left_ear="Crepuscular Earring",
       right_ear="Telos Earring",
-      left_ring="Epona's Ring",
-      right_ring="Defending Ring",
+      left_ring="Petrov Ring",
+      right_ring="Epona's Ring",
       back=Cape.TP
     }
 
@@ -599,8 +683,11 @@ function init_gear_sets()
 
     -- No Magic Haste (74% DW to cap)
     sets.engaged.DW = set_combine(sets.engaged, {
+      -- body="Adhemar Jacket +1",
+      -- left_ear="Suppanomimi",
       right_ear="Eabani Earring",
       waist="Reiki Yotai",
+      -- back=Cape.DW
     })
 
     sets.engaged.DW.LowAcc = set_combine(sets.engaged.DW, {})
@@ -647,11 +734,11 @@ function init_gear_sets()
     ------------------------------------------------------------------------------------------------
 
     sets.engaged.Hybrid = {
-      head="Malignance Chapeau", --6/6
-      body="Malignance Tabard", --9/9
-      hands="Malignance Gloves", --5/5
-      legs="Malignance Tights", --7/7
-      feet="Malignance Boots", --4/4
+      head="Malignance Chapeau",
+      body="Malignance Tabard",
+      hands="Malignance Gloves",
+      legs="Chas. Culottes +2",
+      feet="Malignance Boots",
     }
 
     sets.engaged.DT = set_combine(sets.engaged, sets.engaged.Hybrid)
@@ -715,12 +802,13 @@ function init_gear_sets()
       waist="Gishdubar Sash", -- 10
     }
 
-    sets.FullTP = { --ear1="Crematio Earring"
-    }
-    sets.Obi = { -- waist="Hachirin-no-Obi"
-    }
+    sets.FullTP = { ear1="Crematio Earring" }
+    sets.Obi    = { waist="Hachirin-no-Obi" }
 
-    sets.TreasureHunter = {waist="Chaac Belt"}
+    sets.TreasureHunter = {
+      body={ name="Herculean Vest", augments={'Pet: "Dbl. Atk."+1','Crit. hit damage +1%','"Treasure Hunter"+2','Accuracy+5 Attack+5',}},
+      waist="Chaac Belt"
+    }
 
     sets.Anarchy = {main="Naegling", sub="Gleti's Knife", ranged="Anarchy +2"}
     sets.Anarchy.Acc = sets.Anarchy
@@ -737,7 +825,7 @@ function init_gear_sets()
     -- sets.DeathPenalty_R = {main=Rostam.A, sub="Tauret", ranged="Death Penalty"}
     -- sets.DeathPenalty_R.Acc = {main=Rostam.A, sub=Rostam.B, ranged="Death Penalty"}
 
-    sets.Rolls = {main=empty, sub=empty, ranged="Compensator"}
+    sets.Rolls = {main=Rostam.C, sub="Nusku Shield", ranged="Compensator"}
     sets.Rolls.Acc = sets.Rolls
 
     sets.Aeolian = {main="Tauret", sub="Naegling", ranged="Anarchy +2"}
@@ -789,6 +877,8 @@ function job_post_precast(spell, action, spellMap, eventArgs)
         special_ammo_check()
         if flurry == 2 then
             equip(sets.precast.RA.Flurry2)
+        elseif embrava == 1 then
+            equip(sets.precast.RA.Embrava)
         elseif flurry == 1 then
             equip(sets.precast.RA.Flurry1)
         end
@@ -885,6 +975,18 @@ function job_buff_change(buff,gain)
         if not gain then
             flurry = nil
         end
+        if not midaction() then
+            handle_equipping_gear(player.status)
+        end
+    end
+
+    if S{'embrava'}:contains(buff:lower()) then
+        if gain then
+            embrava = 1
+        else
+            embrava = nil
+        end
+
         if not midaction() then
             handle_equipping_gear(player.status)
         end

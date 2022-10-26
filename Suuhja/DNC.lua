@@ -293,7 +293,7 @@ function init_gear_sets()
       feet="Horos T. Shoes +3"
     }
 
-    sets.precast.Step['Feather Step'] = set_combine(sets.precast.Step, {feet="Macu. Toe shoes +2",})
+    sets.precast.Step['Feather Step'] = set_combine(sets.precast.Step, {feet="Maculele Toe shoes +2",})
     sets.precast.Flourish1 = {}
     sets.precast.Flourish1['Animated Flourish'] = set_combine(sets.Enmity, {
       head={ name="Herculean Helm", augments={'"Store TP"+1','Magic Damage +1','"Treasure Hunter"+2','Accuracy+7 Attack+7',}},
@@ -462,7 +462,7 @@ function init_gear_sets()
       body="Malignance Tabard",
       hands="Malignance Gloves",
       legs="Malignance Tights",
-      feet="Macu. Toe shoes +2",
+      feet="Maculele Toe shoes +2",
       neck={ name="Loricate Torque +1", augments={'Path: A',}},
       waist="Carrier's Sash",
       left_ear="Eabani Earring",
@@ -488,7 +488,7 @@ function init_gear_sets()
       body="Malignance Tabard",
       hands="Malignance Gloves",
       legs="Malignance Tights",
-      feet="Macu. Toe shoes +2",
+      feet="Maculele Toe shoes +2",
       neck={ name="Etoile Gorget +2", augments={'Path: A',}},
       waist="Reiki Yotai",
       left_ear="Sherida Earring",
@@ -593,7 +593,7 @@ function init_gear_sets()
       head="Malignance chapeau",
       hands="Malignance gloves",
       legs="Malignance tights",
-      feet="Macu. Toe shoes +2",
+      feet="Maculele Toe shoes +2",
     })
 
     -- 15% Magic Haste (67% DW to cap)
@@ -629,7 +629,7 @@ function init_gear_sets()
       head="Malignance chapeau",
       hands="Malignance gloves",
       legs="Malignance tights",
-      feet="Macu. Toe shoes +2",
+      feet="Maculele Toe shoes +2",
     })
 
     -- 30% Magic Haste (56% DW to cap)
@@ -665,7 +665,7 @@ function init_gear_sets()
       head="Malignance chapeau",
       hands="Malignance gloves",
       legs="Malignance tights",
-      feet="Macu. Toe shoes +2",
+      feet="Maculele Toe shoes +2",
     })
 
     -- 35% Magic Haste (51% DW to cap)
@@ -701,7 +701,7 @@ function init_gear_sets()
       head="Malignance chapeau",
       hands="Malignance gloves",
       legs="Malignance tights",
-      feet="Macu. Toe shoes +2",
+      feet="Maculele Toe shoes +2",
     })
 
     -- 45% Magic Haste (36% DW to cap)
@@ -737,7 +737,7 @@ function init_gear_sets()
       head="Malignance chapeau",
       hands="Malignance gloves",
       legs="Malignance tights",
-      feet="Macu. Toe shoes +2",
+      feet="Maculele Toe shoes +2",
     })
 
     ------------------------------------------------------------------------------------------------
@@ -758,7 +758,7 @@ function init_gear_sets()
       back={ name="Senuna's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}},  -- 10 PDT
       waist="Windbuffet belt +1",
       legs="Malignance tights", -- 7
-      feet="Macu. Toe shoes +2", -- 9
+      feet="Maculele Toe shoes +2", -- 9
     }
 
     sets.engaged.DT = set_combine(sets.engaged, sets.engaged.Hybrid)

@@ -523,7 +523,6 @@ function init_gear_sets()
       back=Cape.RTP,
       waist="Yemaya Belt",
       legs="Ikenga's Trousers",
-      legs="Ikenga's Trousers",
       feet="Ikenga's Clogs",
     }
 
@@ -542,7 +541,7 @@ function init_gear_sets()
     sets.midcast.RA.Critical = set_combine(sets.midcast.RA, {
       head="Meghanada Visor +2",
       left_ear="Odr Earring",
-      body="Meghanada Cuirie +2",
+      body="Nisroch Jerkin",
       hands="Chasseur's Gants +2",
       legs="Darraigner's Brais",
       feet="Osh. Leggings +1",
@@ -592,7 +591,7 @@ function init_gear_sets()
       hands="Malignance Gloves",
       legs="Malignance Tights",
       feet="Malignance Boots",
-      neck="Commodore Charm +2",
+      neck="Loricate Torque +1",
       waist="Carrier's Sash",
       left_ear="Odnowa Earring +1",
       right_ear="Tuisto Earring",
@@ -819,7 +818,8 @@ function init_gear_sets()
     sets.Fomalhaut_R = {main=Rostam.A, sub=Rostam.B, ranged="Fomalhaut"}
     sets.Fomalhaut_R.Acc = sets.Fomalhaut_R
 
-    sets.Anarchy = {main="Naegling", sub="Gleti's Knife", ranged="Anarchy +2"}
+    -- sets.Anarchy = {main="Naegling", sub="Gleti's Knife", ranged="Anarchy +2"}
+    sets.Anarchy = {main="Naegling", sub=Rostam.A, ranged="Anarchy +2"}
     sets.Anarchy.Acc = {main="Naegling", sub=Rostam.A, ranged="Anarchy +2"}
 
     sets.Rolls = {main=Rostam.C, sub=Rostam.B, ranged="Compensator"}

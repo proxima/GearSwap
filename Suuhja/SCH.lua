@@ -464,15 +464,15 @@ function get_sets()
     -- Buff Sets
     ------------
     -- Gear that needs to be worn to **actively** enhance a current player buff.
-    sets.buff['Rapture'] = {head="Arbatel bonnet +2"}
-    sets.buff['Perpetuance'] = {hands="Arbatel Bracers +2"}
+    sets.buff['Rapture'] = {head="Arbatel bonnet +3"}
+    sets.buff['Perpetuance'] = {hands="Arbatel Bracers +3"}
     sets.buff['Immanence'] = {}
     sets.buff['Penury'] = {}
     sets.buff['Parsimony'] = {}
     sets.buff['Celerity'] = {feet="Pedagogy loafers +3"}
     sets.buff['Alacrity'] = {feet="Pedagogy loafers +3"}
     sets.buff['Klimaform'] = {feet="Arbatel Loafers +3"}
-    sets.buff['Ebullience'] = {head="Arbatel bonnet +2"}
+    sets.buff['Ebullience'] = {head="Arbatel bonnet +3"}
 
     ---------------
     -- Casting Sets
@@ -720,15 +720,15 @@ function get_sets()
    -- used with toggle, default: F10
    -- Pieces to swap from free nuke to Magic Burst    
    sets.midcast.MB.normal = set_combine(sets.midcast.nuking.normal, {
-     main="Bunzi's Rod",
+     main="Bunzi's Rod",                                                                       
      sub="Ammurapi Shield",
      ammo="Ghastly Tathlum +1",
-     head="Pedagogy mortarboard +3",
-     body="Agwu's Robe",
+     head="Pedagogy mortarboard +3",                                                           
+     body="Agwu's Robe",                                                                       
      hands={ name="Amalric Gages +1", augments={'INT+12','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
-     legs="Agwu's Slops",
+     legs="Agwu's Slops",                                                                      
      feet={ name="Amalric Nails +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
-     neck={ name="Argute Stole +2", augments={'Path: A',}},
+     neck={ name="Argute Stole +2", augments={'Path: A',}},                                    
      waist="Sacro Cord",
      left_ear="Regal Earring",
      right_ear="Malignance Earring",
@@ -741,7 +741,7 @@ function get_sets()
    -- Pieces to swap from free nuke to Magic Burst
    sets.midcast.MB.acc = set_combine(sets.midcast.MB.normal, {
      hands="Agwu's Gages",
-     feet="Agwu's Pigaches",
+     feet="Arbatel Loafers +3",
      waist="Acuity Belt +1",
    })
       
@@ -814,8 +814,8 @@ function get_sets()
    })
    
    sets.midcast.SC_Open = {
-      -- main="Malignance Pole", 
-      main="Hvergelmir", -- For when you have low haste buffs during tabula and recast is important
+      main="Malignance Pole", 
+      -- main="Hvergelmir", -- For when you have low haste buffs during tabula and recast is important
       sub="Khonsu",                                                                                       --         4 haste
       ammo="Staunch Tathlum +1",
       head={ name="Vanya Hood", augments={'MP+50','"Fast Cast"+10','Haste+2%',}},                         -- 10 fc,  8 haste
@@ -970,12 +970,12 @@ function get_sets()
     sets.midcast.regen.hybrid = {
       main="Musa",
       sub="Khonsu",
-      head="Arbatel Bonnet +2",
+      head="Arbatel Bonnet +3",
       neck={ name="Argute Stole +2", augments={'Path: A',}},
       right_ear="Mimir Earring",
       left_ear="Regal Earring",
       body="Telchine chas.",
-      hands="Arbatel Bracers +2", -- Tired of this not swapping properly | hands="Telchine Gloves",
+      hands="Arbatel Bracers +3", -- Tired of this not swapping properly | hands="Telchine Gloves",
       left_ring={name="Stikini Ring +1",bag="wardrobe 2"},
       right_ring={name="Stikini Ring +1",bag="wardrobe 3"},
       waist="Embla Sash",

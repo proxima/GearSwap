@@ -98,7 +98,7 @@ function init_gear_sets()
 
     sets.TreasureHunter = {
       hands={ name="Herculean Gloves", augments={'"Conserve MP"+1','Accuracy+21','"Treasure Hunter"+2',}}, 
-      feet="Skulker's poulaines +1"
+      feet="Skulker's poulaines +2"
     }
 
     sets.Kiting = {feet="Pillager's Poulaines +3"}
@@ -123,7 +123,7 @@ function init_gear_sets()
     sets.precast.JA['Hide'] = {body="Pillager's Vest +3"}
     sets.precast.JA['Conspirator'] = {body="Skulker's Vest +2"}
     sets.precast.JA['Steal'] = {head="Plunderer's Bonnet +3",hands="Pillager's Armlets +3",legs="Pillager's Culottes +3",feet="Pillager's Poulaines +3"}
-    sets.precast.JA['Despoil'] = {legs="Skulker's Culottes +1",feet="Skulker's Poulaines +1"}
+    sets.precast.JA['Despoil'] = {legs="Skulker's Culottes +1",feet="Skulker's Poulaines +2"}
     sets.precast.JA['Perfect Dodge'] = {hands="Plunderer's Armlets +1"}
     sets.precast.JA['Feint'] = {legs="Plunderer's Culottes +3"}
 
