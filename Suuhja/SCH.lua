@@ -912,7 +912,7 @@ function get_sets()
       legs="Pedagogy pants +3",
       left_ring="Archon ring",
       right_ring="Evanescence ring",
-      back=Lugh.ADOULIN,
+      back="Aurist's Cape +1",
       feet="Agwu's Pigaches"
     })
 

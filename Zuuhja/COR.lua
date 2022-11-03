@@ -271,7 +271,7 @@ function init_gear_sets()
     sets.precast.CorsairRoll = {
       head="Lanun Tricorne +3",
       body="Malignance Tabard",
-      hands="Chasseur's Gants +2",
+      hands="Chasseur's Gants +3",
       legs="Malignance Tights",
       feet="Malignance Boots",
       neck="Regal Necklace",
@@ -289,7 +289,7 @@ function init_gear_sets()
     sets.precast.CorsairRoll["Courser's Roll"] = set_combine(sets.precast.CorsairRoll, {feet="Chass. Bottes +2"})
     sets.precast.CorsairRoll["Blitzer's Roll"] = set_combine(sets.precast.CorsairRoll, {head="Chass. Tricorne +2"})
     sets.precast.CorsairRoll["Tactician's Roll"] = set_combine(sets.precast.CorsairRoll, {body="Chasseur's Frac +2"})
-    sets.precast.CorsairRoll["Allies' Roll"] = set_combine(sets.precast.CorsairRoll, {hands="Chasseur's Gants +2"})
+    sets.precast.CorsairRoll["Allies' Roll"] = set_combine(sets.precast.CorsairRoll, {hands="Chasseur's Gants +3"})
 
     sets.precast.LuzafRing = {ring1="Luzaf's Ring"}
     sets.precast.FoldDoubleBust = {hands="Lanun Gants +3"}
@@ -343,7 +343,7 @@ function init_gear_sets()
     sets.precast.WS['Last Stand'] = {ammo=gear.WSbullet,
       head="Nyame Helm",
       body="Laksa. Frac +3",
-      hands="Nyame Gauntlets",
+      hands="Chasseur's Gants +3",
       legs="Nyame Flanchard",
       feet="Lanun Bottes +3",
       neck="Fotia Gorget",
@@ -426,7 +426,7 @@ function init_gear_sets()
     sets.precast.WS['Evisceration'] = {ammo=gear.WSbullet,
       head={ name="Nyame Helm", augments={'Path: B',}},
       body={ name="Nyame Mail", augments={'Path: B',}},
-      hands={ name="Nyame Gauntlets", augments={'Path: B',}},
+      hands="Chasseur's Gants +3",
       legs={ name="Nyame Flanchard", augments={'Path: B',}},
       feet="Nyame Sollerets",
       neck="Fotia Gorget",
@@ -560,7 +560,7 @@ function init_gear_sets()
       head="Meghanada Visor +2",
       left_ear="Odr Earring",
       body="Nisroch Jerkin",
-      hands="Chasseur's Gants +2",
+      hands="Chasseur's Gants +3",
       legs="Darraigner's Brais",
       feet="Osh. Leggings +1",
       left_ring="Begrudging Ring",
@@ -590,6 +590,7 @@ function init_gear_sets()
     }
 
     sets.TrueShot = {
+      body="Nisroch Jerkin",
       legs="Osh. Trousers +1",
     }
 

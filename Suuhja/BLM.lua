@@ -808,7 +808,7 @@ function get_sets()
       right_ear="Regal Earring",
       left_ring="Mephitas's Ring",
       right_ring="Archon Ring",
-      back=Taranus.MND_FC_MEVA
+      back=Taranus.MP_FC
     }
 
     sets.precast.Death = sets.midcast.Death

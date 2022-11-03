@@ -260,7 +260,7 @@ function init_gear_sets()
     sets.precast.CorsairRoll = {
       head="Lanun Tricorne +1",
       body="Malignance Tabard",
-      hands="Chasseur's Gants +2",
+      hands="Chasseur's Gants +3",
       legs="Desultor Tassets",
       feet="Malignance Boots",
       neck="Regal Necklace",
@@ -331,7 +331,7 @@ function init_gear_sets()
     sets.precast.WS['Last Stand'] = {ammo=gear.WSbullet,
       head="Nyame Helm",
       body="Laksa. Frac +3",
-      hands="Nyame Gauntlets",
+      hands="Chasseur's Gants +3",
       legs="Nyame Flanchard",
       feet="Nyame Sollerets",
       neck="Fotia Gorget",
@@ -409,7 +409,7 @@ function init_gear_sets()
     sets.precast.WS['Evisceration'] = {
       head="Nyame Helm",
       body="Nyame Mail",
-      hands="Nyame Gauntlets",
+      hands="Chasseur's Gants +3",
       legs="Nyame Flanchard",
       feet="Nyame Sollerets",
       neck="Fotia Gorget",
@@ -542,7 +542,7 @@ function init_gear_sets()
       head="Meghanada Visor +2",
       left_ear="Odr Earring",
       body="Nisroch Jerkin",
-      hands="Chasseur's Gants +2",
+      hands="Chasseur's Gants +3",
       legs="Darraigner's Brais",
       feet="Osh. Leggings +1",
       left_ring="Begrudging Ring",
@@ -575,6 +575,7 @@ function init_gear_sets()
     }
 
     sets.TrueShot = {
+      body="Nisroch Jerkin",
       legs="Osh. Trousers +1",
       waist="Tellen Belt"  
     }
