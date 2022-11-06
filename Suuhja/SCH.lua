@@ -218,7 +218,7 @@ function get_sets()
       ear1="Etiolation earring",
       ear2="Odnowa earring +1",
       neck="Loricate torque +1",
-      body="Arbatel Gown +2",
+      body="Arbatel Gown +3",
       hands="Nyame Gauntlets",
       legs="Agwu's slops",
       left_ring={name="Stikini Ring +1",bag="wardrobe 2"},
@@ -231,7 +231,7 @@ function get_sets()
     -- Your idle Sublimation set combine from refresh or DT depening on mode.
     sets.me.idle.sublimation = set_combine(sets.me.idle.refresh, {
       head="Acad. Mortar. +2",
-      body="Arbatel Gown +2",
+      body="Arbatel Gown +3",
       waist="Embla Sash",
     })
 
@@ -239,7 +239,7 @@ function get_sets()
     sets.me.idle.dt = set_combine(sets.me.idle[refreshType], {
       ammo="Staunch Tathlum +1",
       head="Nyame Helm",
-      body="Arbatel Gown +2",
+      body="Arbatel Gown +3",
       hands="Nyame Gauntlets",
       legs="Nyame Flanchard",
       feet="Nyame Sollerets",
@@ -260,7 +260,7 @@ function get_sets()
       ear1="Lugalbanda earring",
       ear2="Odnowa earring +1",   --  3 DT, 2 MDT
       neck="Warder's charm +1",
-      body="Arbatel Gown +2",     -- 12 DT  
+      body="Arbatel Gown +3",     -- 1? DT  
       hands="Pinga mittens +1",
       legs="Agwu's slops",        --  9 DT
       ring1="Defending ring",     -- 10 DT

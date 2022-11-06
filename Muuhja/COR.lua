@@ -195,8 +195,8 @@ function user_setup()
     Cape.AEOLIAN = {name="Camulus's Mantle", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}
 
     Rostam = {}
-    -- Rostam.A = {name="Rostam", bag="wardrobe2"}
-    -- Rostam.B = {name="Rostam", bag="wardrobe5"}
+    Rostam.A = {name="Rostam", bag="wardrobe2"}
+    Rostam.B = {name="Rostam", bag="wardrobe6"}
     Rostam.C = {name="Rostam", bag="wardrobe3"}
     
     send_command('lua l gearinfo')
