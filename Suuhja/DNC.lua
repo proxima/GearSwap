@@ -321,7 +321,7 @@ function init_gear_sets()
     sets.precast.Flourish2['Reverse Flourish'] = {hands="Maculele Bangles +2", back="Toetapper Mantle"}
     sets.precast.Flourish3 = {}
     sets.precast.Flourish3['Striking Flourish'] = {body="Macu. Casaque +1"}
-    sets.precast.Flourish3['Climactic Flourish'] = {head="Maculele Tiara +2",}
+    sets.precast.Flourish3['Climactic Flourish'] = {head="Maculele Tiara +3",}
 
     sets.precast.FC = {
     }
@@ -341,7 +341,7 @@ function init_gear_sets()
     sets.precast.WS.Acc = set_combine(sets.precast.WS, {
     })
 
-    sets.precast.WS.Critical = {head="Maculele Tiara +2", right_ring="Epaminondas's Ring", ammo="Crepuscular pebble"}
+    sets.precast.WS.Critical = {head="Maculele Tiara +3", right_ring="Epaminondas's Ring", ammo="Crepuscular pebble"}
 
     sets.precast.WS['Pyrrhic Kleos'] = set_combine(sets.precast.WS, {
       ammo="Coiste Bodhar",
@@ -381,7 +381,7 @@ function init_gear_sets()
 
     sets.precast.WS['Rudra\'s Storm'] = set_combine(sets.precast.WS, {
       ammo="Oshasha's Treatise",
-      head="Maculele Tiara +2",
+      head="Maculele Tiara +3",
       body="Nyame Mail",
       hands="Nyame Gauntlets",
       legs="Nyame Flanchard",
@@ -804,7 +804,7 @@ function init_gear_sets()
 
     sets.buff['Saber Dance'] = {}
     sets.buff['Fan Dance'] = {}
-    sets.buff['Climactic Flourish'] = {head="Maculele Tiara +2"}
+    sets.buff['Climactic Flourish'] = {head="Maculele Tiara +3"}
     sets.buff['Closed Position'] = {feet="Horos T. Shoes +3"}
 
     sets.buff.Doom = {

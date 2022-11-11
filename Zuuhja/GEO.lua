@@ -426,13 +426,10 @@ function get_sets()
      sub="Ammurapi shield",
      ammo="Ghastly Tathlum +1",
      head={ name="Bagua Galero +3", augments={'Enhances "Primeval Zeal" effect',}},
-     -- head={ name="Merlinic Hood", augments={'CHR+3','"Mag.Atk.Bns."+23','"Treasure Hunter"+2','Accuracy+8 Attack+8','Mag. Acc.+18 "Mag.Atk.Bns."+18',}},
-     -- body={ name="Amalric Doublet +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
      body="Seidr Cotehardie",
      hands={ name="Amalric Gages +1", augments={'INT+12','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
      legs={ name="Amalric Slops +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
      feet={ name="Amalric Nails +1", augments={'Mag. Acc.+20','"Mag.Atk.Bns."+20','"Conserve MP"+7',}},
-     -- feet={ name="Merlinic Crackows", augments={'Mag. Acc.+17','Weapon skill damage +1%','"Treasure Hunter"+2','Accuracy+8 Attack+8',}},
      neck="Sibyl Scarf",
      waist="Orpheus's Sash",
      left_ear="Malignance Earring",
@@ -445,8 +442,7 @@ function get_sets()
    sets.midcast.MB.normal = set_combine(sets.midcast.nuking.normal, {
      head="Ea Hat +1",
      neck="Mizu. Kubikazari",
-     -- body="Ea Houppe. +1",
-     body="Seidr Cotehardie",
+     body="Ea Houppe. +1",
      legs="Ea Slops +1",
      left_ring="Mujin Band",
    })

@@ -526,7 +526,7 @@ function init_gear_sets()
     }
 
     sets.midcast.CorsairShot['Dark Shot'] = sets.midcast.CorsairShot['Light Shot']
-    sets.midcast.CorsairShot.Enhance = {feet="Chass. Bottes +2"}
+    sets.midcast.CorsairShot.Enhance = {feet="Chass. Bottes +3"}
 
     -- Ranged gear
     sets.midcast.RA = {ammo=gear.RAbullet,
