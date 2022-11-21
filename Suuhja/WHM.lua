@@ -334,7 +334,7 @@ function init_gear_sets()
       sub="Ammurapi Shield",
       ammo="Leisure Musk +1",                               --      4
       head="Kaykaus Mitra +1",                              -- 11      6
-      body="Ebers Bliaut +2",                               --         3       +Solace
+      body="Ebers Bliaut +3",                               --         3       +Solace
       hands="Kaykaus Cuffs +1",                             -- 11   6  3
       legs="Ebers Pant. +2",                                --         5    12
       feet="Kaykaus Boots +1",                              -- 17   6  3
@@ -396,7 +396,7 @@ function init_gear_sets()
       main="Yagrush",
       sub="Gambanteinn",
       head={ name="Vanya Hood", augments={'Healing magic skill +20','"Cure" spellcasting time -7%','Magic dmg. taken -3',}},
-      body="Ebers Bliaut +2",
+      body="Ebers Bliaut +3",
       hands="Fanatic Gloves",
       legs="Th. Pant. +3",
       feet={ name="Vanya Clogs", augments={'Healing magic skill +20','"Cure" spellcasting time -7%','Magic dmg. taken -3',}},
@@ -470,7 +470,7 @@ function init_gear_sets()
       main="Beneficus",
       sub="Ammurapi Shield",
       head="Ebers Cap +1",
-      body="Ebers Bliaut +2",
+      body="Ebers Bliaut +3",
       hands="Ebers Mitts +2",
       legs="Piety Pantaln. +3",
       feet="Ebers Duckbills +2",
@@ -603,7 +603,7 @@ function init_gear_sets()
       neck="Warder's charm +1",
       left_ear="Odnowa earring +1",
       right_ear="Ebers Earring +2",
-      body="Ebers Bliaut +2",
+      body="Ebers Bliaut +3",
       hands="Inyanga Dastanas +2",
       left_ring={name="Stikini Ring +1",bag="wardrobe 2"},
       right_ring={name="Stikini Ring +1",bag="wardrobe 3"},
@@ -618,7 +618,7 @@ function init_gear_sets()
       sub="Ammurapi Shield",
       ammo="Staunch Tathlum +1",
       head="Nyame Helm",
-      body="Ebers Bliaut +2",
+      body="Ebers Bliaut +3",
       hands="Nyame Gauntlets",
       legs="Nyame Flanchard",
       feet="Nyame Sollerets",
@@ -634,7 +634,7 @@ function init_gear_sets()
       main="Asclepius",
       sub="Ammurapi Shield",
       head="Bunzi's Hat",
-      body="Ebers Bliaut +2",
+      body="Ebers Bliaut +3",
       hands="Bunzi's Gloves",
       legs="Ebers pantaloons +2",
       feet="Bunzi's Sabots",

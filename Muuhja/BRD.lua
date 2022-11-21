@@ -354,6 +354,8 @@ function init_gear_sets()
       back=Cape.AEOLIAN
     }
 
+    sets.precast.WS['Sanguine Blade'] = sets.precast.WS['Aeolian Edge']
+
     sets.precast.WS['Rock Crusher'] = set_combine(sets.precast.WS['Aeolian Edge'], {
       head="Nyame Helm",
       body="Nyame Mail",
@@ -418,8 +420,8 @@ function init_gear_sets()
 
     -- For song defbuffs (duration primary, accuracy secondary)
     sets.midcast.SongEnfeeble = {
-      main="Carnwenhan",
-      sub="Ammurapi Shield",
+      -- main="Carnwenhan",
+      -- sub="Ammurapi Shield",
       range="Marsyas",
       head="Brioso Roundlet +3",
       body="Fili Hongreline +2",

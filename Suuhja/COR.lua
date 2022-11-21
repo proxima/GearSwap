@@ -275,8 +275,8 @@ function init_gear_sets()
     sets.precast.CorsairRoll.Duration = {main=Rostam.C, range="Compensator"}
     sets.precast.CorsairRoll.LowerDelay = { --back="Gunslinger's Cape"
     }
-    sets.precast.CorsairRoll["Caster's Roll"] = set_combine(sets.precast.CorsairRoll, {legs="Chas. Culottes +2"})
-    sets.precast.CorsairRoll["Courser's Roll"] = set_combine(sets.precast.CorsairRoll, {feet="Chass. Bottes +2"})
+    sets.precast.CorsairRoll["Caster's Roll"] = set_combine(sets.precast.CorsairRoll, {legs="Chas. Culottes +3"})
+    sets.precast.CorsairRoll["Courser's Roll"] = set_combine(sets.precast.CorsairRoll, {feet="Chass. Bottes +3"})
     sets.precast.CorsairRoll["Blitzer's Roll"] = set_combine(sets.precast.CorsairRoll, {head="Chass. Tricorne +2"})
     sets.precast.CorsairRoll["Tactician's Roll"] = set_combine(sets.precast.CorsairRoll, {body="Chasseur's Frac +2"})
     sets.precast.CorsairRoll["Allies' Roll"] = set_combine(sets.precast.CorsairRoll, {hands="Chasseur's Gants +2"})
@@ -497,7 +497,7 @@ function init_gear_sets()
       body="Chasseur's Frac +2",
       hands="Chasseur's Gants +2",
       legs="Chasseur's Culottes +2",
-      feet="Chasseur's Bottes +2",
+      feet="Chasseur's Bottes +3",
       neck="Comm. Charm +2",
       left_ear="Dignitary's Earring",
       right_ear="Crepuscular Earring",
@@ -508,7 +508,7 @@ function init_gear_sets()
     }
 
     sets.midcast.CorsairShot['Dark Shot'] = sets.midcast.CorsairShot['Light Shot']
-    sets.midcast.CorsairShot.Enhance = {feet="Chass. Bottes +2"}
+    sets.midcast.CorsairShot.Enhance = {feet="Chass. Bottes +3"}
 
     -- Ranged gear
     sets.midcast.RA = {ammo=gear.RAbullet,
@@ -651,7 +651,7 @@ function init_gear_sets()
       head="Malignance Chapeau",
       body="Malignance Tabard",
       hands="Malignance Gloves",
-      legs="Chas. Culottes +2",
+      legs="Chas. Culottes +3",
       feet="Malignance Boots",
       neck="Iskur Gorget",
       waist="Reiki Yotai",
@@ -727,7 +727,7 @@ function init_gear_sets()
       head="Malignance Chapeau",
       body="Malignance Tabard",
       hands="Malignance Gloves",
-      legs="Chas. Culottes +2",
+      legs="Chas. Culottes +3",
       feet="Malignance Boots",
     }
 

@@ -162,6 +162,10 @@ function user_setup()
     send_command('bind @r gs c cycle WeaponSet')
     send_command('bind @w gs c toggle WeaponLock')
 
+    send_command('bind @o sat youcommand Muuhja "Horde Lullaby"')
+    send_command('bind @p sat youcommand Muuhja "Carnage Elegy')
+    send_command('bind @n input /ra <t>')
+
     send_command('bind ^numlock input /ja "Triple Shot" <me>')
 
     if player.sub_job == 'WAR' then
@@ -242,6 +246,10 @@ function user_unload()
     send_command('unbind ^numpad1')
     send_command('unbind ^numpad2')
     send_command('unbind numpad0')
+
+    send_command('unbind @o')
+    send_command('unbind @p')
+    send_command('unbind @n')
 
     send_command('unbind #`')
     send_command('unbind #1')

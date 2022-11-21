@@ -814,8 +814,8 @@ function get_sets()
    })
    
    sets.midcast.SC_Open = {
-      main="Malignance Pole", 
-      -- main="Hvergelmir", -- For when you have low haste buffs during tabula and recast is important
+      -- main="Malignance Pole", 
+      main="Hvergelmir", -- For when you have low haste buffs during tabula and recast is important
       sub="Khonsu",                                                                                       --         4 haste
       ammo="Staunch Tathlum +1",
       head={ name="Vanya Hood", augments={'MP+50','"Fast Cast"+10','Haste+2%',}},                         -- 10 fc,  8 haste
@@ -830,7 +830,7 @@ function get_sets()
       waist="Witful Belt",                                                                                --  3 fc,  3 haste
       legs="Psycloth Lappas",                                                                             --  7 fc,  5 haste
       feet="Acad. Loafers +3",                                                                            --         3 haste
-   }                                                                                                      -- 63 fc, 26 haste
+   }                                                                                               -- 63 fc, 26 haste
    
    sets.midcast["Aero"] = sets.midcast.SC_Open
    sets.midcast["Blizzard"] = sets.midcast.SC_Open
@@ -936,26 +936,27 @@ function get_sets()
 
     sets.midcast.cure = {} -- Leave This Empty
 
-    -- Cure Potency    
+    -- Cure Potency                      -- CP EM  HS DT FC
     sets.midcast.cure.normal = set_combine(sets.midcast.casting, {
-      main="Malignance Pole",                        -- DT up for Ody V20s
-      sub="Khonsu",                      --        4
-      ammo="Leisure Musk +1",            --     4
-      head="Kaykaus mitra +1",           -- 11     6
-      neck="Loricate torque +1",
-      body="Pedagogy gown +3",           --        3
-      hands="Pedagogy bracers +3",       --     7  3
-      legs="Academic's pants +3",        -- 15  6  5
-      feet="Kaykaus boots +1",           -- 17  6  3
+      main="Chatoyant Staff",            -- 10
+      sub="Khonsu",                      --     5   4  6
+      ammo="Leisure Musk +1",            --     4 
+      head="Pinga Crown +1",             -- 10  7        10
+      neck="Loricate torque +1",         --            6
       left_ear="Domesticator's earring", --     5
       right_ear="Mendi. Earring",        --  5
-      left_ring="Lebeche ring",          --  3  5
-      right_ring="Defending Ring",
-      waist="Witful belt",               --        3
-      back=Lugh.DT                       --  0 10  0
+      body="Arbatel Gown +3",            --    28*  3 13
+      hands="Pinga Mittens +1",          --  7  6         7
+      left_ring="Gelatinous Ring +1",    --            7
+      right_ring="Defending Ring",       --           10
+      waist="Witful belt",               --         3
+      back=Lugh.DT,                      --        10 10
+      legs="Pinga Pants +1",             -- 13  8        13
+      feet="Pinga Pumps +1",             --  5  5         5
+
       -- merits                                 5
-      -- totals:                             51 48 27
-    })
+      -- totals:                            50 45* 20 52 35
+    })                                   --    *Much more w/ grimoire
     
     sets.midcast.cure.weather = set_combine(sets.midcast.cure.normal, {
       waist="Hachirin-no-Obi",

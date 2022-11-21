@@ -252,7 +252,7 @@ function init_gear_sets()
     legs="Founder's Hose",       -- 30
     feet="Odyssean Greaves",     -- 20
   }
-  
+ 
   sets.midcast.Flash = set_combine(sets.midcast.Enmity, {
     ear2="Odnowa Earring +1",
     body="Reverence Surcoat +3",
@@ -290,7 +290,7 @@ function init_gear_sets()
     ring2="Vexer Ring +1",
     back=Rud.CURE
   }
-  
+
   sets.midcast.Cure.SIRD = set_combine(sets.midcast.Cure, sets.midcast.SIRD)
   
   sets.midcast.Reprisal = set_combine(sets.precast.FC, {
@@ -376,8 +376,8 @@ function init_gear_sets()
   }
 
   sets.idle.Meva = {
-    main="Malignance Sword",
-    sub="Srivatsa",
+    main="Burtgang",
+    sub="Aegis",
     ammo="Staunch Tathlum +1",    --  3
     head="Sakpata's Helm",        --  7
     body="Sakpata's Breastplate", -- 10
