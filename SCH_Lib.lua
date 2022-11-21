@@ -23,7 +23,8 @@
         gs c toggle idlemode            Toggles between Refresh and DT idle mode. Activating Sublimation JA will auto replace refresh set for sublimation set. DT set will superceed both.        
         gs c toggle regenmode           Toggles between Hybrid, Duration and Potency mode for regen set  
         gs c toggle nukemode            Toggles between Normal and Accuracy mode for midcast Nuking sets (MB included)  
-        gs c toggle matchsc             Toggles auto swapping element to match the last SC that just happenned.
+        gs c toggle matchsc             Toggles auto swapping element to match the last SC that just happened.
+        gs c toggle closehelix          Toggles whether to close immanence macro skillchains with a helix
 
         Casting functions:
         these are to set fewer macros (1 cycle, 5 cast) to save macro space when playing lazily with controler
@@ -168,6 +169,7 @@ useLightMode = M(false)
 hud_bottom = false
 useLightMode = M(false)
 matchsc = M(false)
+closeHelix = M(true)
 
 const_on = "\\cs(32, 255, 32)ON\\cr"
 const_off = "\\cs(255, 32, 32)OFF\\cr"
@@ -197,6 +199,7 @@ hub_options_std = [[ \cs(255, 115, 0)Options: \cr
 hub_job_std = [[ \cs(255, 115, 0)${player_job}: \cr             
 \cs(255, 64, 64)${key_bind_element_cycle} \cs(200, 200, 200)Element:\cr ${element_color|\\cs(0, 204, 204)}${toggle_element_cycle|Ice} \cr           
 \cs(255, 64, 64)${key_bind_sc_level} \cs(200, 200, 200)Skillchain:\cr ${sc_element_color|\\cs(0, 204, 204)}${toggle_sc_level|Induration} 
+\cs(255, 64, 64)${key_bind_close_helix} \cs(200, 200, 200)Close w/ Helix:\cr ${player_close_helix}
 ]]
 
 hub_battle_std = [[ \cs(255, 115, 0)Battle: \cr             
@@ -206,11 +209,8 @@ hub_battle_std = [[ \cs(255, 115, 0)Battle: \cr
 
 -- LITE Mode
 hub_mode_lte = [[ \cs(255, 115, 0) == Modes: \cr              \cs(255, 64, 64)${key_bind_idle} \cs(200, 200, 200)Idle:\cr \cs(125,125,255)${player_current_idle|Refresh              \cs(255, 64, 64)${key_bind_casting} \cs(200, 200, 200)Casting:\cr \cs(125,125,255)${player_current_casting|Normal} ]]
-
 hub_options_lte = [[ \cs(255, 115, 0)== Options: \cr              \cs(255, 64, 64)${key_bind_mburst} \cs(200, 200, 200)Magic Burst:\cr \cs(125,125,255)${player_current_mb|OFF}\cs(255, 64, 64)${key_bind_matchsc}\cs(200, 200, 200)Match SC Element:\cr ${player_match_sc}            \cs(255, 64, 64)${key_bind_lock_weapon} \cs(200, 200, 200)Lock Weapon:\cr ${toggle_lock_weapon}            \cs(255, 64, 64)${key_bind_movespeed_lock}\cs(200, 200, 200)Herald Gaiters Lock:\cr ${toggle_movespeed_lock} ]]
-
-hub_job_lte = [[ \cs(255, 115, 0) == ${player_job}: \cr             \cs(255, 64, 64)${key_bind_element_cycle} \cs(200, 200, 200)Element:\cr ${element_color|\\cs(0, 204, 204)}${toggle_element_cycle|Ice} \cr           \cs(255, 64, 64)${key_bind_sc_level} \cs(200, 200, 200)Skillchain:\cr ${element_color|\\cs(0, 204, 204)}${toggle_sc_level|Induration} ]]
-
+hub_job_lte = [[ \cs(255, 115, 0) == ${player_job}: \cr             \cs(255, 64, 64)${key_bind_element_cycle} \cs(200, 200, 200)Element:\cr ${element_color|\\cs(0, 204, 204)}${toggle_element_cycle|Ice} \cr           \cs(255, 64, 64)${key_bind_sc_level} \cs(200, 200, 200)Skillchain:\cr ${element_color|\\cs(0, 204, 204)}${toggle_sc_level|Induration}\cs(255, 64, 64)${key_bind_close_helix} \cs(200, 200, 200)Close w/ Helix:\cr \cs(125,125,255)${player_close_helix|OFF} ]]
 hub_battle_lte = [[ \cs(255, 115, 0) == Battle: \cr             \cs(200, 200, 200)Last SC:\cr ${last_sc_element_color}${last_sc|No SC yet} \cr             \cs(200, 200, 200)Burst Window:\cr ${last_sc_element_color}${burst_window|0} \cr ]]
 
 
@@ -230,6 +230,7 @@ keybinds_off['key_bind_casting'] = '       '
 keybinds_off['key_bind_mburst'] = '       '
 
 keybinds_off['key_bind_element_cycle'] = '       '
+keybinds_off['key_bind_close_helix'] = '       '
 keybinds_off['key_bind_sc_level'] = '       '
 keybinds_off['key_bind_lock_weapon'] = '       '
 keybinds_off['key_bind_movespeed_lock'] = '        '
@@ -255,11 +256,19 @@ function validateTextInformation()
     else
         main_text_hub.player_current_mb = const_off
     end
+
+    if closeHelix.value then
+        main_text_hub.player_close_helix = const_on
+    else
+        main_text_hub.player_close_helix = const_off
+    end
+
     if matchsc.value then
         main_text_hub.player_match_sc = const_on
     else
         main_text_hub.player_match_sc = const_off
     end
+
     if meleeing.value then
         main_text_hub.toggle_lock_weapon = const_off
     else
@@ -277,6 +286,7 @@ function validateTextInformation()
     else 
         texts.update(main_text_hub, keybinds_off)
     end
+
     main_text_hub.element_color = Colors[elements.current]
     main_text_hub.sc_element_color = scColor
 end
@@ -453,11 +463,30 @@ nukes.t3 = {['Earth']="Stone III",  ['Water']="Water III",  ['Wind']="Aero III",
 nukes.t4 = {['Earth']="Stone IV",   ['Water']="Water IV",   ['Wind']="Aero IV",  ['Fire']="Fire IV", ['Ice']="Blizzard IV",  ['Lightning']="Thunder IV", ['Light']="Thunder IV", ['Dark']="Blizzard IV"}
 nukes.t5 = {['Earth']="Stone V",    ['Water']="Water V",    ['Wind']="Aero V",   ['Fire']="Fire V",  ['Ice']="Blizzard V",   ['Lightning']="Thunder V", ['Light']="Thunder V", ['Dark']="Blizzard V"}
 nukes.helix = {['Earth']="Geohelix II",  ['Water']="Hydrohelix II", ['Wind']="Anemohelix II",['Fire']="Pyrohelix II", ['Ice']="Cryohelix II", ['Lightning']="Ionohelix II",    ['Light']="Luminohelix II", ['Dark']="Noctohelix II"}
--- nukes.helix = {['Earth']="Geohelix",  ['Water']="Hydrohelix", ['Wind']="Anemohelix",['Fire']="Pyrohelix", ['Ice']="Cryohelix", ['Lightning']="Ionohelix",    ['Light']="Luminohelix", ['Dark']="Noctohelix"}
+nukes.scHelix = {['Earth']="Geohelix",  ['Water']="Hydrohelix", ['Wind']="Anemohelix",['Fire']="Pyrohelix", ['Ice']="Cryohelix", ['Lightning']="Ionohelix",    ['Light']="Luminohelix", ['Dark']="Noctohelix"}
 nukes.storm = {['Earth']="Sandstorm II", ['Water']="Rainstorm II",  ['Wind']="Windstorm II", ['Fire']="Firestorm II", ['Ice']="Hailstorm II", ['Lightning']="Thunderstorm II", ['Light']="Aurorastorm II", ['Dark']="Voidstorm II"}
--- nukes.storm = {['Earth']="Sandstorm", ['Water']="Rainstorm",  ['Wind']="Windstorm", ['Fire']="Firestorm", ['Ice']="Hailstorm", ['Lightning']="Thunderstorm", ['Light']="Aurorastorm", ['Dark']="Voidstorm"}
 
 elements =  M('Ice', 'Wind', 'Dark', 'Light', 'Earth', 'Lightning', 'Water', 'Fire')
+
+function skillchainCloser(element, closeWithHelix)
+  if element == "Light" then
+    if closeWithHelix == false then
+      windower.add_to_chat(211, 'Warning: Closing with Helix anyways, no other way to make Light. /heal to cancel.')
+    end
+
+    return "Luminohelix"
+  elseif element == "Dark" then
+    if closeWithHelix == false then
+      windower.add_to_chat(211, 'Warning: Closing with Helix anyways, no other way to make Dark. /heal to cancel.')
+    end
+
+    return "Noctohelix"
+  elseif closeWithHelix then
+    return nukes.scHelix[element]
+  else
+    return nukes.t1[element]
+  end
+end
 
 tier1sc =   {}
 tier1sc['Ice'] = 'Induration'
@@ -774,10 +803,12 @@ function self_command(command)
                 -- You need to toggle prioritisation yourself
                 mBurst:toggle()
                 updateMB(mBurst.value)
+            elseif commandArgs[2] == 'closehelix' then
+                closeHelix:toggle()
+                updateCloseHelix(closeHelix.value)
             elseif commandArgs[2] == 'runspeed' then
                 runspeed:toggle()
                 updateRunspeedGear(runspeed.value) 
-
             elseif commandArgs[2] == 'idlemode' then
                 idleModes:cycle()
                 idle()
@@ -822,7 +853,6 @@ function self_command(command)
         
         if commandArgs[1]:lower() == 'scholar' then
             handle_strategems(commandArgs)
-
         elseif commandArgs[1]:lower() == 'nuke' then
             if not commandArgs[2] then
                 windower.add_to_chat(123,'No element type given.')
@@ -876,34 +906,40 @@ function self_command(command)
             end
 
             if arg == 'castsc' then
-                if wantedSc == 'Scission' then
-                    -- send_command('input /p Opening SC: Scission  MB: Stone; wait .1; input /ja "Immanence" <me>; wait 1.5; input /ma "Fire" <t>; wait 4.0; input /ja "Immanence" <me>; wait 1.5; input /p Closing SC: Scission  MB: Stone; input /ma "Geohelix" <t>')          
-                    send_command('input /p Opening SC: Scission  MB: Stone; wait .1; input /ja "Immanence" <me>; wait 1.5; input /ma "Fire" <t>; wait 4.0; input /ja "Immanence" <me>; wait 1.5; input /p Closing SC: Scission  MB: Stone; input /ma "Stone" <t>')          
+               local closeSpell = function(element)
+                 return skillchainCloser(element, closeHelix.value)
+               end
+
+               if wantedSc == 'Scission' then
+                    send_command('input /p Opening SC: Scission  MB: Stone; wait .1; input /ja "Immanence" <me>; wait 1.5; input /ma "Fire" <t>; wait 4.0; input /ja "Immanence" <me>; wait 1.5; input /p Closing SC: Scission  MB: Stone; input /ma "'..closeSpell("Earth")..'" <t>')
                 elseif wantedSc == 'Reverberation' then
-                    send_command('input /p Opening SC: Reverberation  MB: Water; wait .1; input /ja "Immanence" <me>; wait 1.5; input /ma "Stone" <t>; wait 4.0; input /ja "Immanence" <me>; wait 1.5; input /p Closing SC: Reverberation  MB: Water; input /ma "Hydrohelix" <t>')       
+                    send_command('input /p Opening SC: Reverberation  MB: Water; wait .1; input /ja "Immanence" <me>; wait 1.5; input /ma "Stone" <t>; wait 4.0; input /ja "Immanence" <me>; wait 1.5; input /p Closing SC: Reverberation  MB: Water; input /ma "'..closeSpell("Water")..'" <t>')
                 elseif wantedSc == 'Detonation' then
-                    send_command('input /p Opening SC: Detonation  MB: Wind; wait .1; input /ja "Immanence" <me>; wait 1.5; input /ma "Thunder" <t>; wait 4.0; input /ja "Immanence" <me>; wait 1.5; input /p Closing SC: Detonation  MB: Wind; input /ma "Anemohelix" <t>')    
+                    send_command('input /p Opening SC: Detonation  MB: Wind; wait .1; input /ja "Immanence" <me>; wait 1.5; input /ma "Thunder" <t>; wait 4.0; input /ja "Immanence" <me>; wait 1.5; input /p Closing SC: Detonation  MB: Wind; input /ma "'..closeSpell("Wind")..'" <t>')
                 elseif wantedSc == 'Liquefaction' then
-                    send_command('input /p Opening SC: Liquefaction  MB: Fire; wait .1; input /ja "Immanence" <me>; wait 1.5; input /ma "Thunder" <t>; wait 4.0; input /ja "Immanence" <me>; wait 1.5; input /p Closing SC: Liquefaction  MB: Fire; input /ma "Pyrohelix" <t>')                  
+                    send_command('input /p Opening SC: Liquefaction  MB: Fire; wait .1; input /ja "Immanence" <me>; wait 1.5; input /ma "Thunder" <t>; wait 4.0; input /ja "Immanence" <me>; wait 1.5; input /p Closing SC: Liquefaction  MB: Fire; input /ma "'..closeSpell("Fire")..'" <t>')
                 elseif wantedSc == 'Induration' then
-                    -- send_command('input /p Opening SC: Induration  MB: Ice; wait .1; input /ja "Immanence" <me>; wait 1.5; input /ma "Water" <t>; wait 4.0; input /ja "Immanence" <me>; wait 1.5; input /p Closing SC: Induration  MB: Ice; input /ma "Cryohelix" <t>')
-                    send_command('input /p Opening SC: Induration  MB: Ice; wait .1; input /ja "Immanence" <me>; wait 1.5; input /ma "Water" <t>; wait 4.0; input /ja "Immanence" <me>; wait 1.5; input /p Closing SC: Induration  MB: Ice; input /ma "Blizzard" <t>')
+                    send_command('input /p Opening SC: Induration  MB: Ice; wait .1; input /ja "Immanence" <me>; wait 1.5; input /ma "Water" <t>; wait 4.0; input /ja "Immanence" <me>; wait 1.5; input /p Closing SC: Induration  MB: Ice; input /ma "'..closeSpell("Ice")..'" <t>')
                 elseif wantedSc == 'Impaction' then
-                    send_command('input /p Opening SC: Impaction  MB: Lightning; wait .1; input /ja "Immanence" <me>; wait 1.5; input /ma "Blizzard" <t>; wait 4.0; input /ja "Immanence" <me>; wait 1.5; input /p Closing SC: Impaction  MB: Lightning; input /ma "Ionohelix" <t>')                  
+                    send_command('input /p Opening SC: Impaction  MB: Lightning; wait .1; input /ja "Immanence" <me>; wait 1.5; input /ma "Blizzard" <t>; wait 4.0; input /ja "Immanence" <me>; wait 1.5; input /p Closing SC: Impaction  MB: Lightning; input /ma "'..closeSpell("Lightning")..'" <t>')
                 elseif wantedSc == 'Compression' then
-                    send_command('input /p Opening SC: Compression  MB: Dark; wait .1; input /ja "Immanence" <me>; wait 1.5; input /ma "Blizzard" <t>; wait 4.0; input /ja "Immanence" <me>; wait 1.5; input /p Closing SC: Compression  MB: Dark; input /ma "Noctohelix" <t>')                 
+                    send_command('input /p Opening SC: Compression  MB: Dark; wait .1; input /ja "Immanence" <me>; wait 1.5; input /ma "Blizzard" <t>; wait 4.0; input /ja "Immanence" <me>; wait 1.5; input /p Closing SC: Compression  MB: Dark; input /ma "'..closeSpell("Dark")..'" <t>')
                 elseif wantedSc == 'Distortion' then
-                    send_command('input /p Opening SC: Distortion  MB: Water / Ice; wait .1; input /ja "Immanence" <me>; wait 1.5; input /ma "Luminohelix" <t>; wait 6.0; input /ja "Immanence" <me>; wait 1.5; input /p Closing SC: Distortion  MB: Water / Ice; input /ma "Geohelix" <t>')                   
+                    send_command('input /p Opening SC: Distortion  MB: Water / Ice; wait .1; input /ja "Immanence" <me>; wait 1.5; input /ma "Luminohelix" <t>; wait 6.0; input /ja "Immanence" <me>; wait 1.5; input /p Closing SC: Distortion  MB: Water / Ice; input /ma "'..closeSpell("Earth")..'" <t>')
                 elseif wantedSc == 'Fragmentation' then
-                    send_command('input /p Opening SC: Fragmentation  MB: Lightning / Wind; wait .1; input /ja "Immanence" <me>; wait 1.5; input /ma "Blizzard" <t>; wait 4.0; input /ja "Immanence" <me>; wait 1.5; input /p Closing SC: Fragmentation  MB: Wind / Lightning; input /ma "Hydrohelix" <t>')                  
+                    send_command('input /p Opening SC: Fragmentation  MB: Lightning / Wind; wait .1; input /ja "Immanence" <me>; wait 1.5; input /ma "Blizzard" <t>; wait 4.0; input /ja "Immanence" <me>; wait 1.5; input /p Closing SC: Fragmentation  MB: Wind / Lightning; input /ma "'..closeSpell("Water")..'" <t>')
                 elseif wantedSc == 'LiqueFusion' then
-                    send_command('input /p Opening SC: Liquefaction  MB: Fire; wait .1; input /ja "Immanence" <me>; wait 1.5; input /ma "Stone" <t>; wait 4.0; input /ja "Immanence" <me>; wait 1.5; input /p Continuing SC: Liquefaction  MB: Fire; input /ma "Pyrohelix" <t>; wait 6.5; input /ja "Immanence" <me>; wait 1.5; input /p Closing SC: Fusion  MB: Light / Fire; input /ma "Ionohelix" <t>')             
+                    if closeHelix.value == true then
+                      send_command('input /p Opening SC: Liquefaction  MB: Fire; wait .1; input /ja "Immanence" <me>; wait 1.5; input /ma "Stone" <t>; wait 4.0; input /ja "Immanence" <me>; wait 1.5; input /p Continuing SC: Liquefaction  MB: Fire; input /ma "'..closeSpell("Fire")..'" <t>; wait 6.5; input /ja "Immanence" <me>; wait 1.5; input /p Closing SC: Fusion  MB: Light / Fire; input /ma "'..closeSpell("Lightning")..'" <t>')
+                    else
+                      send_command('input /p Opening SC: Liquefaction  MB: Fire; wait .1; input /ja "Immanence" <me>; wait 1.5; input /ma "Stone" <t>; wait 4.0; input /ja "Immanence" <me>; wait 1.5; input /p Continuing SC: Liquefaction  MB: Fire; input /ma "'..closeSpell("Fire")..'" <t>; wait 6.5; input /ja "Immanence" <me>; wait 1.5; input /p Closing SC: Fusion  MB: Light / Fire; input /ma "'..closeSpell("Lightning")..'" <t>')
+                    end
                 elseif wantedSc == 'Fusion' then
-                    send_command('input /p Opening SC: Fusion  MB: Light / Fire; wait .1; input /ja "Immanence" <me>; wait 1.5; input /ma "Fire" <t>; wait 4.0; input /ja "Immanence" <me>; wait 1.5; input /p Closing SC: Fusion  MB: Light / Fire; input /ma "Ionohelix" <t>')                  
+                    send_command('input /p Opening SC: Fusion  MB: Light / Fire; wait .1; input /ja "Immanence" <me>; wait 1.5; input /ma "Fire" <t>; wait 4.0; input /ja "Immanence" <me>; wait 1.5; input /p Closing SC: Fusion  MB: Light / Fire; input /ma "'..closeSpell("Thunder")..'" <t>')
                 elseif wantedSc == 'Gravitation' then
-                    send_command('input /p Opening SC: Gravitation  MB: Dark / Stone; wait .1; input /ja "Immanence" <me>; wait 1.5; input /ma "Aero" <t>; wait 4.0; input /ja "Immanence" <me>; wait 1.5; input /p Closing SC: Gravitation  MB: Dark / Stone; input /ma "Noctohelix" <t>')                 
+                    send_command('input /p Opening SC: Gravitation  MB: Dark / Stone; wait .1; input /ja "Immanence" <me>; wait 1.5; input /ma "Aero" <t>; wait 4.0; input /ja "Immanence" <me>; wait 1.5; input /p Closing SC: Gravitation  MB: Dark / Stone; input /ma "'..closeSpell("Dark")..'" <t>')
                 elseif wantedSc == 'Transfixion' then
-                    send_command('input /p Opening SC: Transfixion  MB: Light; wait .1; input /ja "Immanence" <me>; wait 1.5; input /ma "Noctohelix" <t>; wait 4.0; input /ja "Immanence" <me>; wait 1.5; input /p Closing SC: Transfixion  MB: Light; input /ma "Luminohelix" <t>')
+                    send_command('input /p Opening SC: Transfixion  MB: Light; wait .1; input /ja "Immanence" <me>; wait 1.5; input /ma "Noctohelix" <t>; wait 4.0; input /ja "Immanence" <me>; wait 1.5; input /p Closing SC: Transfixion  MB: Light; input /ma "'..closeSpell("Light")..'" <t>')
                 end
             end
         end
@@ -941,6 +977,21 @@ function updateMB( mBurst )
     mBurstOldValue = mBurst
 end
 
+function updateCloseHelix( closeHelix )   
+    if closeHelix then
+        if use_UI == true then
+            validateTextInformation()
+        else
+            windower.add_to_chat(8,"----- Close with helix ON -----")
+        end
+    else
+        if use_UI == true then
+            validateTextInformation()
+        else
+            windower.add_to_chat(8,"----- Closing with helix OFF -----")
+        end
+    end
+end
 
 function updateRunspeedGear( runspeed )   
     

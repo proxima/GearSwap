@@ -24,6 +24,7 @@
         gs c toggle regenmode           Toggles between Hybrid, Duration and Potency mode for regen set  
         gs c toggle nukemode            Toggles between Normal and Accuracy mode for midcast Nuking sets (MB included)  
         gs c toggle matchsc             Toggles auto swapping element to match the last SC that just happenned.
+        gs c toggle closehelix          Toggles whether to close immanence macro skillchains with a helix
                 
         Casting functions:
         these are to set fewer macros (1 cycle, 5 cast) to save macro space when playing lazily with controler
@@ -108,6 +109,7 @@ hud_font = 'Impact'
     windower.send_command('bind !f10 gs c toggle nukemode')		-- Alt-F10 to change Nuking Mode
     windower.send_command('bind ^F10 gs c toggle matchsc')      -- CTRL-F10 to change Match SC Mode      	
     windower.send_command('bind !end gs c hud lite')            -- Alt-End to toggle light hud version   
+    windower.send_command('bind ^h gs c toggle closehelix')     -- Ctrl+H to toggle whether you close skillchains with a helix
 
     send_command('bind @s sat youcommand Zuuhja Geo-Malaise')
     send_command('bind @a sat youcommand Muuhja "Thunderspark"')
@@ -131,7 +133,7 @@ keybinds_on['key_bind_idle'] = '(F9)'
 keybinds_on['key_bind_regen'] = '(END)'
 keybinds_on['key_bind_casting'] = '(ALT-F10)'
 keybinds_on['key_bind_mburst'] = '(F10)'
-
+keybinds_on['key_bind_closehelix'] = '(CTRL-H)'
 keybinds_on['key_bind_element_cycle'] = '(INSERT)'
 keybinds_on['key_bind_sc_level'] = '(HOME)'
 keybinds_on['key_bind_lock_weapon'] = '(F12)'
@@ -152,6 +154,7 @@ function user_unload()
     send_command('unbind `f10')
     send_command('unbind !f9')
     send_command('unbind !end')
+    send_command('unbind ^h')
     
     send_command('unbind @a')
     send_command('unbind @s')
