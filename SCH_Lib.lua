@@ -1,4 +1,3 @@
-
 --[[
         Custom commands:
         Shorthand versions for each strategem type that uses the version appropriate for
@@ -931,7 +930,7 @@ function self_command(command)
                 elseif wantedSc == 'LiqueFusion' then
                     send_command('input /p Opening SC: Liquefaction  MB: Fire; wait .1; input /ja "Immanence" <me>; wait 1.5; input /ma "Stone" <t>; wait 4.0; input /ja "Immanence" <me>; wait 1.5; input /p Continuing SC: Liquefaction  MB: Fire; input /ma "'..closeSpell("Fire")..'" <t>; wait 6.5; input /ja "Immanence" <me>; wait 1.5; input /p Closing SC: Fusion  MB: Light / Fire; input /ma "'..closeSpell("Lightning")..'" <t>')
                 elseif wantedSc == 'Fusion' then
-                    send_command('input /p Opening SC: Fusion  MB: Light / Fire; wait .1; input /ja "Immanence" <me>; wait 1.5; input /ma "Fire" <t>; wait 4.0; input /ja "Immanence" <me>; wait 1.5; input /p Closing SC: Fusion  MB: Light / Fire; input /ma "'..closeSpell("Thunder")..'" <t>')
+                    send_command('input /p Opening SC: Fusion  MB: Light / Fire; wait .1; input /ja "Immanence" <me>; wait 1.5; input /ma "Fire" <t>; wait 4.0; input /ja "Immanence" <me>; wait 1.5; input /p Closing SC: Fusion  MB: Light / Fire; input /ma "'..closeSpell("Lightning")..'" <t>')
                 elseif wantedSc == 'Gravitation' then
                     send_command('input /p Opening SC: Gravitation  MB: Dark / Stone; wait .1; input /ja "Immanence" <me>; wait 1.5; input /ma "Aero" <t>; wait 4.0; input /ja "Immanence" <me>; wait 1.5; input /p Closing SC: Gravitation  MB: Dark / Stone; input /ma "'..closeSpell("Dark")..'" <t>')
                 elseif wantedSc == 'Transfixion' then

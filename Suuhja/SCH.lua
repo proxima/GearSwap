@@ -1,4 +1,3 @@
-
 --[[
         Custom commands:
         Shorthand versions for each strategem type that uses the version appropriate for
@@ -521,26 +520,6 @@ function get_sets()
      main="Hvergelmir",
      sub="Khonsu",
    })
-   
-   sets.precast["Modus Veritas"] = {
-     main="Tupsimati",
-     sub="Khonsu",
-     ammo="Pemphredo tathlum",
-     head="Acad. Mortar. +2",
-     body="Acad. Gown +3",
-     hands="Acad. Bracers +3",
-     legs="Acad. Pants +3",
-     feet="Acad. Loafers +3",
-     neck={ name="Argute Stole +2", augments={'Path: A',}},
-     waist="Acuity Belt +1",
-     left_ear="Regal Earring",
-     right_ear="Malignance Earring",
-     left_ring={name="Stikini Ring +1",bag="wardrobe 2"},
-     right_ring={name="Stikini Ring +1",bag="wardrobe 3"},
-     back=Lugh.INT_MAB
-   }
-   
-   sets.midcast["Modus Veritas"] = sets.precast["Modus Veritas"]
 
    -- When spell school is aligned with grimoire, swap relevent pieces -- Can also use Arbatel +2 set here if you value 1% quickcast procs per piece. (2+ pieces)  
    -- Dont set_combine here, as this is the last step of the precast, it will have sorted all the needed pieces already based on type of spell.
@@ -583,7 +562,8 @@ function get_sets()
     -- Pixie in DarkHelix
     -- Belt that isn't Obi.
     -----------------------------------------------------------------------------------------------
-    -- Make sure you have a non weather obi in this set. Helix get bonus naturally no need Obi.	
+    -- Make sure you have a non weather obi in this set. Helix get bonus naturally no need Obi.
+
     sets.midcast.Kaustra = {
       main={ name="Bunzi's Rod", augments={'Path: A',}},       
       sub="Ammurapi Shield",
@@ -608,10 +588,10 @@ function get_sets()
       sub="Culminus",
       ammo="Ghastly Tathlum +1",
       head="Agwu's Cap",
-      body="Agwu's Robe",
-      hands="Agwu's Gages",
-      legs="Agwu's Slops",
-      feet="Agwu's Pigaches",
+      body="Arbatel Gown +3",
+      hands="Arbatel Bracers +3",
+      legs="Arbatel Pants +3",
+      feet="Arbatel Loafers +3",
       neck={ name="Argute Stole +2", augments={'Path: A',}},
       waist="Skrymir Cord +1",
       left_ear="Crematio Earring",
@@ -626,10 +606,10 @@ function get_sets()
       sub="Enki Strap",
       ammo="Ghastly Tathlum +1",
       head="Agwu's Cap",
-      body="Agwu's Robe",
-      hands="Agwu's Gages",
-      legs="Agwu's Slops",
-      feet="Agwu's Pigaches",
+      body="Arbatel Gown +3",
+      hands="Arbatel Bracers +3",
+      legs="Arbatel Pants +3",
+      feet="Arbatel Loafers +3",
       neck={ name="Argute Stole +2", augments={'Path: A',}},
       waist="Skrymir Cord +1",
       left_ear="Crematio Earring",
@@ -644,10 +624,10 @@ function get_sets()
       sub="Culminus",
       ammo="Ghastly Tathlum +1",
       head="Agwu's Cap",
-      body="Agwu's Robe",
-      hands="Agwu's Gages",
-      legs="Agwu's Slops",
-      feet="Agwu's Pigaches",
+      body="Arbatel Gown +3",
+      hands="Arbatel Bracers +3",
+      legs="Arbatel Pants +3",
+      feet="Arbatel Loafers +3",
       neck={ name="Argute Stole +2", augments={'Path: A',}},
       waist="Skrymir Cord +1",
       left_ear="Crematio Earring",
@@ -662,10 +642,10 @@ function get_sets()
       sub="Ammurapi Shield",
       ammo="Ghastly Tathlum +1",
       head="Pixie hairpin +1",
-      body="Agwu's Robe",
-      hands="Agwu's Gages",
-      legs="Agwu's Slops",
-      feet="Agwu's Pigaches",
+      body="Arbatel Gown +3",
+      hands="Arbatel Bracers +3",
+      legs="Arbatel Pants +3",
+      feet="Arbatel Loafers +3",
       neck={ name="Argute Stole +2", augments={'Path: A',}},
       waist="Skrymir Cord +1",
       left_ear="Crematio Earring",
