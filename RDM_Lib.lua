@@ -768,6 +768,24 @@ function self_command(command)
                 else
                     windower.add_to_chat(4,"----- Main Weapon set now: "..tostring(mainWeapon.value))
                 end
+            elseif commandArgs[2] == 'crocea' then
+                mainWeapon:set("Crocea Mors")
+                subWeapon:set("Bunzi's Rod")
+                idle()
+                if use_UI == true then
+                    validateTextInformation()
+                else
+                    windower.add_to_chat(4,"----- Main Weapon set now: "..tostring(mainWeapon.value))
+                end
+            elseif commandArgs[2] == 'naegling' then
+                mainWeapon:set("Naegling")
+                subWeapon:set("Machaera +2")
+                idle()
+                if use_UI == true then
+                    validateTextInformation()
+                else
+                    windower.add_to_chat(4,"----- Main Weapon set now: "..tostring(mainWeapon.value))
+                end
             elseif commandArgs[2] == 'subweapon' then
                 subWeapon:cycle()
                 idle()

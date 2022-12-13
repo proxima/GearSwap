@@ -128,10 +128,13 @@ hud_font = 'Impact'
    windower.send_command('bind @x send zuuhja input /ja "Radial Arcana" <me>')
     
    windower.send_command('bind @b sat youcommand Muuhja "Magic Finale"')
-   windower.send_command('bind @n sat youcommand Muuhja "Carnage Elegy"')
+   -- windower.send_command('bind @n sat youcommand Muuhja "Carnage Elegy"')
    windower.send_command('bind @m sat youcommand Muuhja "Pining Nocturne"')
    windower.send_command('bind @o sat youcommand Muuhja "Horde Lullaby"')
    windower.send_command('bind @p sat youcommand Zuuhja "Sleepga"')
+   
+   windower.send_command('bind @c gs c toggle crocea";trial ws Sanguine Blade')
+   windower.send_command('bind @n gs c toggle naegling;trial ws Savage Blade')
     
    -- windower.send_command('bind @b send muuhja input /ma "Siren" <me>')
    -- windower.send_command('bind @n sat youcommand Muuhja "Hysteric Assault"')
@@ -175,6 +178,7 @@ function user_unload()
     
     send_command('unbind @a')
     send_command('unbind @s')
+    send_command('unbind @c')
     send_command('unbind @d')
     send_command('unbind @z')
     send_command('unbind @x')
@@ -218,8 +222,8 @@ function get_sets()
 
     -- Lethargy
     EMPY.Head  = "Leth. Chappel +1"
-    EMPY.Body  = "Lethargy Sayon +2"
-    EMPY.Hands = "Leth. Gantherots +2"
+    EMPY.Body  = "Lethargy Sayon +3"
+    EMPY.Hands = "Leth. Ganth. +2"
     EMPY.Legs  = "Leth. Fuseau +2"
     EMPY.Feet  = "Leth. Houseaux +2"
 
@@ -778,8 +782,8 @@ function get_sets()
 
     -- Cure Potency
     sets.midcast.cure.normal = set_combine(sets.midcast.casting, {
-      main="Daybreak",
-      sub="Genmei Shield",
+      -- main="Daybreak",
+      -- sub="Genmei Shield",
       ammo="Leisure Musk +1",            --     4
       head="Kaykaus mitra +1",           -- 11     6
       neck="Debilis medallion",          --     3
@@ -797,8 +801,8 @@ function get_sets()
     })
 
     sets.midcast.cure.weather = set_combine(sets.midcast.cure.normal, {
-      main="Chatoyant staff",             -- 10
-      sub="Enki strap",
+      -- main="Chatoyant staff",             -- 10
+      -- sub="Enki strap",
       waist="Hachirin-no-Obi",
     })
 

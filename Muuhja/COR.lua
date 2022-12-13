@@ -389,7 +389,7 @@ function init_gear_sets()
     sets.precast.WS['Hot Shot'] = {ammo=gear.WSbullet,
       head={ name="Nyame Helm", augments={'Path: B',}},
       body={ name="Nyame Mail", augments={'Path: B',}},
-      hands={ name="Nyame Gauntlets", augments={'Path: B',}},
+      hands="Chasseur's Gants +3",
       legs={ name="Nyame Flanchard", augments={'Path: B',}},
       feet={ name="Lanun Bottes +3", augments={'Enhances "Wild Card" effect',}},
       neck="Fotia Gorget",
@@ -463,7 +463,7 @@ function init_gear_sets()
     sets.precast.WS['Aeolian Edge'] = set_combine(sets.precast.WS['Wildfire'], {ammo="Hauksbok Bullet",
       left_ear="Moonshade Earring",
       back=Cape.AEOLIAN,
-      waist="Eschan Stone",
+      waist="Orpheus's Sash",
     })
 
     ------------------------------------------------------------------------------------------------
@@ -533,7 +533,7 @@ function init_gear_sets()
       body="Malignance Tabard",
       hands="Malignance Gloves",
       ring1="Dingir Ring",
-      ring2="Ilabrat Ring",
+      ring2="Crepuscular Ring",
       back=Cape.RTP,
       waist="Yemaya Belt",
       legs="Malignance Tights",
@@ -548,6 +548,7 @@ function init_gear_sets()
     sets.midcast.RA.HighAcc = set_combine(sets.midcast.RA.Acc, {
       neck="Comm. Charm +2",
       body="Laksa. Frac +3",
+      legs="Chasseur's culottes +2",
       left_ring="Regal Ring",
       waist="K. Kachina Belt +1",
     })
@@ -555,7 +556,7 @@ function init_gear_sets()
     sets.midcast.RA.Critical = set_combine(sets.midcast.RA, {
       head="Meghanada Visor +2",
       left_ear="Odr Earring",
-      body="Meghanada cuirie +2", -- Nisroch Jerkin
+      body="Nisroch Jerkin",
       hands="Chasseur's Gants +2",
       legs="Darraigner's Brais",
       feet="Osh. Leggings +1",
@@ -586,6 +587,7 @@ function init_gear_sets()
     }
 
     sets.TrueShot = {
+      body="Nisroch Jerkin",
       legs="Osh. Trousers +1",
     }
 
@@ -812,11 +814,11 @@ function init_gear_sets()
     sets.Anarchy = {main="Naegling", sub="Gleti's Knife", ranged="Anarchy +2"}
     sets.Anarchy.Acc = sets.Anarchy
 
-    sets.DeathPenalty_M = {main="Tauret", sub="Naegling", ranged="Death Penalty"}
-    sets.DeathPenalty_M.Acc = sets.DeathPenalty_M
+    sets.DeathPenalty_M = {main=Rostam.B, sub="Tauret", ranged="Death Penalty"}
+    sets.DeathPenalty_M.Acc = {main=Rostam.B, sub=Rostam.A, ranged="Death Penalty"}
 
-    sets.DeathPenalty_R = {main="Tauret", sub="Naegling", ranged="Death Penalty"}
-    sets.DeathPenalty_R.Acc = sets.DeathPenalty_R
+    sets.DeathPenalty_R = {main=Rostam.A, sub="Tauret", ranged="Death Penalty"}
+    sets.DeathPenalty_R.Acc = {main=Rostam.A, sub=Rostam.B, ranged="Death Penalty"}
 
     -- sets.DeathPenalty_M = {main=Rostam.B, sub="Tauret", ranged="Death Penalty"}
     -- sets.DeathPenalty_M.Acc = {main=Rostam.B, sub=Rostam.A, ranged="Death Penalty"}
@@ -827,7 +829,7 @@ function init_gear_sets()
     sets.Rolls = {main=Rostam.C, sub="Nusku Shield", ranged="Compensator"}
     sets.Rolls.Acc = sets.Rolls
 
-    sets.Aeolian = {main="Tauret", sub="Naegling", ranged="Anarchy +2"}
+    sets.Aeolian = {main=Rostam.B, sub="Tauret", ranged="Anarchy +2"}
     sets.Aeolian.Acc = sets.Aeolian
 
     sets.DefaultShield = {sub="Nusku Shield"}

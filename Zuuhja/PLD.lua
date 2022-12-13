@@ -35,7 +35,8 @@ function user_setup()
   send_command('bind @s sat youcommand Muuhja "Horde Lullaby II"')
   send_command('bind @d sat youcommand Suuhja "Tenebral Crush"')
   send_command('bind @z send Suuhja input /ja "Burst Affinity" <me>')
-  
+  send_command('bind @v sat youcommand Suuhja "Silence"')
+
   send_command('bind @f12 gs c cycle CastingMode')
   send_command('bind ^f11 gs c cycle MagicalDefenseMode')
   send_command('bind !f11 gs c cycle ExtraDefenseMode')
@@ -50,6 +51,7 @@ function user_unload()
   send_command('unbind @a')
   send_command('unbind @s')
   send_command('unbind @d')
+  send_command('unbind @v')  
   send_command('unbind ^f11')
   send_command('unbind !f11')
   send_command('unbind @f10')
@@ -181,9 +183,38 @@ function init_gear_sets()
   sets.precast.WS['Requiescat'] = {}
   sets.precast.WS['Requiescat'].Acc = {}
   
-  sets.precast.WS['Chant du Cygne'] = {}
+  sets.precast.WS['Chant du Cygne'] = {
+    head="Blistering sallet +1",
+    neck="Fotia gorget",
+    left_ear="Dominance earring +1",
+    right_ear="Mache earring +1",
+    body="Hjarrandi breastplate",
+    hands="Flamma manopolas +2",
+    left_ring="Regal ring",
+    right_ring="Flamma ring",
+    back=Rud.SB,
+    waist="Fotia belt",
+    legs="Nyame flanchard",
+    feet="Nyame sollerets"
+  }
+
   sets.precast.WS['Chant du Cygne'].Acc = {}
-  sets.precast.WS['Sanguine Blade'] = {}
+  
+  sets.precast.WS['Sanguine Blade'] = {
+    ammo={ name="Ghastly Tathlum +1", augments={'Path: A',}},
+    head={ name="Nyame Helm", augments={'Path: B',}},
+    body={ name="Nyame Mail", augments={'Path: B',}},
+    hands={ name="Nyame Gauntlets", augments={'Path: B',}},
+    legs={ name="Nyame Flanchard", augments={'Path: B',}},
+    feet={ name="Nyame Sollerets", augments={'Path: B',}},
+    neck="Sibyl Scarf",
+    waist="Orpheus's Sash",
+    left_ear="Crematio Earring",
+    right_ear="Friomisi Earring",
+    left_ring={ name="Metamor. Ring +1", augments={'Path: A',}},
+    right_ring="Defending Ring",
+    back=Rud.AEOLIAN
+  }
     
   sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS, {
     ammo="Crepuscular Pebble",
@@ -195,7 +226,7 @@ function init_gear_sets()
     hands="Nyame Gauntlets",
     legs="Nyame Flanchard",
     feet="Nyame Sollerets",
-    ring1=MR.One,
+    ring1="Regal Ring",
     ring2="Shukuyu Ring",
     back=Rud.SB
   })
@@ -359,7 +390,7 @@ function init_gear_sets()
   -- Idle sets
   sets.idle = {
     main="Burtgang",
-    sub="Srivatsa",               --  8
+    sub="Srivatsa",
     ammo="Staunch Tathlum +1",    --  3
     head="Sakpata's Helm",        --  7
     body="Sakpata's Breastplate", -- 10
@@ -368,9 +399,9 @@ function init_gear_sets()
     feet="Sakpata's Leggings",    --  6
     neck="Unmoving collar +1",
     waist="Asklepian Belt",
-    ear1="Cryptic Earring",
+    ear1="Odnowa Earring +1",     --  3
     ear2="Tuisto Earring",
-    left_ring=MR.One,
+    left_ring=MR.One,             --  5
     right_ring="Shneddick Ring +1",
     back=Rud.BLOCK,
   }
@@ -395,7 +426,7 @@ function init_gear_sets()
   
   sets.idle.Block = {
     main="Burtgang",
-    sub="Ochain",
+    sub="Duban",
     ammo="Staunch Tathlum +1",      --  3
     head="Sakpata's Helm",          --  7
     neck="Agelast Torque",          -- Combatant's Torque
@@ -430,7 +461,7 @@ function init_gear_sets()
     
   -- If EquipShield toggle is on (Win+F10 or Win+F11), equip the weapon/shield combos here
   -- when activating or changing defense mode:
-  sets.PhysicalShield = {main="Burtgang", sub="Ochain"}
+  sets.PhysicalShield = {main="Burtgang", sub="Duban"}
   sets.MagicalShield  = {main="Burtgang", sub="Aegis"}
 
   -- Basic defense sets.      
@@ -629,7 +660,7 @@ function update_defense_mode()
   
   if player.sub_job == 'NIN' or player.sub_job == 'DNC' then
     if player.equipment.sub and not player.equipment.sub:contains('Shield') and
-       player.equipment.sub ~= 'Aegis' and player.equipment.sub ~= 'Ochain' then
+       player.equipment.sub ~= 'Aegis' and player.equipment.sub ~= 'Ochain' and player.equipment.sub ~= "Duban" then
       state.CombatForm:set('DW')
     else
       state.CombatForm:reset()

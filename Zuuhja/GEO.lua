@@ -217,7 +217,6 @@ function get_sets()
 
    -- This is when you have a Luopan out but want to sacrifice some slot for master DT, put those slots in.
    sets.pan.idle.dt = set_combine(sets.pan.idle.normal, {
-     head="Nyame Helm",
      body="Nyame Mail",
      legs="Nyame Flanchard",
      feet="Nyame Sollerets",
@@ -240,7 +239,7 @@ function get_sets()
     ammo="Staunch Tathlum +1",
     head={ name="Blistering Sallet +1", augments={'Path: A',}},
     body={ name="Nyame Mail", augments={'Path: B',}},
-    hands={ name="Gazu Bracelet +1", augments={'Path: A',}},
+    hands={ name="Gazu Bracelets +1", augments={'Path: A',}},
     legs={ name="Nyame Flanchard", augments={'Path: B',}},
     feet={ name="Nyame Sollerets", augments={'Path: B',}},
     neck="Sanctity Necklace",
@@ -385,7 +384,7 @@ function get_sets()
      range={ name="Dunna", augments={'MP+20','Mag. Acc.+10','"Fast Cast"+3',}},                              -- Only item needed for 900 combined
      head="Bagua Galero +3",                                                                                 -- 600 hp
      body="Vedic Coat",                                                                                      -- 10 Conserve
-     hands="Azimuth Gloves +1",                                                                              -- Occasionally Free
+     hands="Azimuth Gloves +2",                                                                              -- Occasionally Free
      legs={ name="Vanya Slops", augments={'MND+10','Spell interruption rate down +15%','"Conserve MP"+6',}}, -- 12 Conserve
      feet="Azimuth Gaiters +2",                                                                              -- Occasionally Free
      neck={ name="Bagua Charm +2", augments={'Path: A',}},                                                   -- 25% Duration
@@ -404,7 +403,7 @@ function get_sets()
      range={ name="Dunna", augments={'MP+20','Mag. Acc.+10','"Fast Cast"+3',}}, 
      head={ name="Vanya Hood", augments={'MND+10','Spell interruption rate down +15%','"Conserve MP"+6',}},  -- 12 Conserve
      body="Vedic Coat",                                                                                      -- 10 Conserve
-     hands="Azimuth Gloves +1",                                                                              -- Occasionally Free
+     hands="Azimuth Gloves +2",                                                                              -- Occasionally Free
      legs={ name="Bagua Pants +3", augments={'Enhances "Mending Halation" effect',}},                        -- 21 Duration
      feet="Azimuth Gaiters +2",                                                                              -- Occasionally Free, 25 Duration
      neck="Loricate Torque +1",
@@ -448,13 +447,19 @@ function get_sets()
    })
 
    sets.midcast.nuking.acc = set_combine(sets.midcast.nuking.normal, {
+     body="Azimuth Coat +2",
      hands="Agwu's Gages",
+     legs="Azimuth Tights +2",
      feet="Agwu's Pigaches",
      waist="Acuity belt +1",
      left_ring="Metamorph Ring +1",
    })
 
    sets.midcast.MB.acc = set_combine(sets.midcast.MB.normal, {
+     head="Ea Hat +1",   
+     body="Azimuth Coat +2", 
+     hands="Agwu's Gages",
+     legs="Azimuth Tights +2",
      hands="Agwu's Gages",
      feet="Agwu's Pigaches",
      waist="Acuity belt +1",
@@ -539,7 +544,7 @@ function get_sets()
      main="Rubicundity",
      sub="Ammurapi Shield",
      left_ring="Evanescence ring",
-     legs="Azimuth tights +1",
+     legs="Azimuth tights +2",
      head="Bagua Galero +3",
      feet="Agwu's Pigaches",
    })

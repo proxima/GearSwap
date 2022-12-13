@@ -670,7 +670,7 @@ function init_gear_sets()
       ammo="Staunch Tathlum +1",
       head={ name="Blistering Sallet +1", augments={'Path: A',}},
       body="Nyame Mail",
-      hands={ name="Gazu Bracelet +1", augments={'Path: A',}},
+      hands={ name="Gazu Bracelets +1", augments={'Path: A',}},
       legs="Nyame Flanchard",
       feet="Nyame Sollerets",
       neck="Lissome necklace",

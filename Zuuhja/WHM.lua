@@ -617,7 +617,7 @@ function init_gear_sets()
       ammo="Vanir Battery",
       head={ name="Blistering Sallet +1", augments={'Path: A',}},
       body={ name="Nyame Mail", augments={'Path: B',}},
-      hands={ name="Gazu Bracelet +1", augments={'Path: A',}},
+      hands={ name="Gazu Bracelets +1", augments={'Path: A',}},
       legs={ name="Nyame Flanchard", augments={'Path: B',}},
       feet={ name="Nyame Sollerets", augments={'Path: B',}},
       neck={ name="Loricate Torque +1", augments={'Path: A',}},

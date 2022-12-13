@@ -252,7 +252,7 @@ function init_gear_sets()
     ---------------------------------------- Precast Sets ------------------------------------------
     ------------------------------------------------------------------------------------------------
 
-    sets.precast.JA['Triple Shot'] = {body="Chasseur's Frac +2"}
+    sets.precast.JA['Triple Shot'] = {body="Chasseur's Frac +3"}
     sets.precast.JA['Snake Eye'] = {legs="Lanun Trews +1"}
     sets.precast.JA['Wild Card'] = {feet="Lanun Bottes +3"}
     sets.precast.JA['Random Deal'] = {body="Lanun Frac +3"}
@@ -273,13 +273,13 @@ function init_gear_sets()
     }
 
     sets.precast.CorsairRoll.Duration = {main=Rostam.C, range="Compensator"}
-    sets.precast.CorsairRoll.LowerDelay = { --back="Gunslinger's Cape"
+    sets.precast.CorsairRoll.LowerDelay = { --back="Gunslinger's Cape" 
     }
     sets.precast.CorsairRoll["Caster's Roll"] = set_combine(sets.precast.CorsairRoll, {legs="Chas. Culottes +3"})
     sets.precast.CorsairRoll["Courser's Roll"] = set_combine(sets.precast.CorsairRoll, {feet="Chass. Bottes +3"})
-    sets.precast.CorsairRoll["Blitzer's Roll"] = set_combine(sets.precast.CorsairRoll, {head="Chass. Tricorne +2"})
-    sets.precast.CorsairRoll["Tactician's Roll"] = set_combine(sets.precast.CorsairRoll, {body="Chasseur's Frac +2"})
-    sets.precast.CorsairRoll["Allies' Roll"] = set_combine(sets.precast.CorsairRoll, {hands="Chasseur's Gants +2"})
+    sets.precast.CorsairRoll["Blitzer's Roll"] = set_combine(sets.precast.CorsairRoll, {head="Chass. Tricorne +3"})
+    sets.precast.CorsairRoll["Tactician's Roll"] = set_combine(sets.precast.CorsairRoll, {body="Chasseur's Frac +3"})
+    sets.precast.CorsairRoll["Allies' Roll"] = set_combine(sets.precast.CorsairRoll, {hands="Chasseur's Gants +3"})
 
     sets.precast.LuzafRing = {ring1="Luzaf's Ring"}
     sets.precast.FoldDoubleBust = {hands="Lanun Gants +3"}
@@ -311,7 +311,7 @@ function init_gear_sets()
     }
 
     sets.precast.RA.Flurry1 = set_combine(sets.precast.RA, {
-      head="Chasseur's Tricorne +2",
+      head="Chasseur's Tricorne +3",
       hands={ name="Carmine Fin. Ga. +1", augments={'Rng.Atk.+20','"Mag.Atk.Bns."+12','"Store TP"+6',}},
     })
 
@@ -377,7 +377,7 @@ function init_gear_sets()
     sets.precast.WS['Hot Shot'] = {ammo=gear.WSbullet,
       head={ name="Nyame Helm", augments={'Path: B',}},
       body={ name="Nyame Mail", augments={'Path: B',}},
-      hands={ name="Nyame Gauntlets", augments={'Path: B',}},
+      hands="Chasseur's Gants +3",
       legs={ name="Nyame Flanchard", augments={'Path: B',}},
       feet={ name="Lanun Bottes +3", augments={'Enhances "Wild Card" effect',}},
       neck="Fotia Gorget",
@@ -481,7 +481,7 @@ function init_gear_sets()
       head="Malignance Chapeau",
       body="Malignance Tabard",
       hands="Malignance Gloves",
-      legs="Malignance Tights",
+      legs="Chasseur's Culottes +3",
       feet="Malignance Boots",
       neck="Iskur Gorget",
       left_ear="Crepuscular Earring",
@@ -493,10 +493,10 @@ function init_gear_sets()
     }
 
     sets.midcast.CorsairShot['Light Shot'] = {ammo=gear.RAccbullet,
-      head="Chasseur's Tricorne +2",
-      body="Chasseur's Frac +2",
-      hands="Chasseur's Gants +2",
-      legs="Chasseur's Culottes +2",
+      head="Chasseur's Tricorne +3",
+      body="Chasseur's Frac +3",
+      hands="Chasseur's Gants +3",
+      legs="Chasseur's Culottes +3",
       feet="Chasseur's Bottes +3",
       neck="Comm. Charm +2",
       left_ear="Dignitary's Earring",
@@ -519,7 +519,7 @@ function init_gear_sets()
       body="Ikenga's Vest",
       hands="Ikenga's Gloves",
       ring1="Dingir Ring",
-      ring2="Ilabrat Ring",
+      ring2="Crepuscular Ring",
       back=Cape.RTP,
       waist="Yemaya Belt",
       legs="Ikenga's Trousers",
@@ -531,9 +531,11 @@ function init_gear_sets()
       right_ring="Hajduk Ring +1",
     })
 
+    -- 1648 racc w/ grape daifuku, arma, 2x rostam
     sets.midcast.RA.HighAcc = set_combine(sets.midcast.RA.Acc, {
       neck="Comm. Charm +2",
       body="Laksa. Frac +3",
+      legs="Chasseur's culottes +3",
       left_ring="Regal Ring",
       waist="K. Kachina Belt +1",
     })
@@ -559,7 +561,7 @@ function init_gear_sets()
 
     sets.TripleShot = {
       head="Oshosi Mask +1",
-      body="Chasseur's Frac +2",
+      body="Chasseur's Frac +3",
       hands="Lanun Gants +3",
       legs="Osh. Trousers +1",
       feet="Osh. Leggings +1",

@@ -169,11 +169,11 @@ function user_setup()
   moving = false
   
   AF = {}
-  AF.Head = "Rune. Bandeau +3"
-  AF.Body = "Runeist's Coat +3"
-  AF.Hands = "Runeist's Mitons +2"
-  AF.Legs = "Rune. Trousers +2"
-  AF.Feet = "Runeist's Bottes +2"
+  AF.Head = "Runeist Bandeau +3"
+  AF.Body = "Runeist Coat +3"
+  AF.Hands = "Runeist Mitons +2"
+  AF.Legs = "Runeist Trousers +2"
+  AF.Feet = "Runeist Bottes +2"
 
   Relic = {}
   Relic.Head  = "Futhark Bandeau +3"
@@ -320,7 +320,7 @@ function init_gear_sets()
     right_ear="Crematio Earring",
     body="Agwu's Robe",
     hands="Agwu's Gages",
-    left_ring="Metamorph Ring =1",
+    left_ring="Metamorph Ring +1",
     right_ring={name="Stikini Ring +1", bag="wardrobe5"},
     waist="Orpheus's Sash",
     legs="Agwu's Slops",

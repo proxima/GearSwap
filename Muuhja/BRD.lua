@@ -420,8 +420,8 @@ function init_gear_sets()
 
     -- For song defbuffs (duration primary, accuracy secondary)
     sets.midcast.SongEnfeeble = {
-      -- main="Carnwenhan",
-      -- sub="Ammurapi Shield",
+      main="Carnwenhan",
+      sub="Ammurapi Shield",
       range="Marsyas",
       head="Brioso Roundlet +3",
       body="Fili Hongreline +2",
@@ -830,7 +830,6 @@ function job_buff_change(buff,gain)
             handle_equipping_gear(player.status)
         end
     end
-
 end
 
 -- Handle notifications of general user state change.

@@ -293,7 +293,7 @@ function init_gear_sets()
 
     sets.precast.CorsairRoll.Duration = {main=Rostam.C, range="Compensator"}
     sets.precast.CorsairRoll.LowerDelay = {back="Gunslinger's Cape"}
-    sets.precast.CorsairRoll["Caster's Roll"] = set_combine(sets.precast.CorsairRoll, {legs="Chas. Culottes +2"})
+    sets.precast.CorsairRoll["Caster's Roll"] = set_combine(sets.precast.CorsairRoll, {legs="Chas. Culottes +3"})
     sets.precast.CorsairRoll["Courser's Roll"] = set_combine(sets.precast.CorsairRoll, {feet="Chass. Bottes +2"})
     sets.precast.CorsairRoll["Blitzer's Roll"] = set_combine(sets.precast.CorsairRoll, {head="Chass. Tricorne +2"})
     sets.precast.CorsairRoll["Tactician's Roll"] = set_combine(sets.precast.CorsairRoll, {body="Chasseur's Frac +2"})
@@ -358,7 +358,7 @@ function init_gear_sets()
       waist="Fotia Belt",
       left_ear="Moonshade Earring",
       right_ear="Telos Earring",
-      left_ring="Dingir Ring",
+      left_ring="Regal Ring",
       right_ring="Epaminondas's Ring",
       back=Cape.RATK
     }
@@ -402,7 +402,7 @@ function init_gear_sets()
     sets.precast.WS['Hot Shot'] = {ammo=gear.WSbullet,
       head={ name="Nyame Helm", augments={'Path: B',}},
       body={ name="Nyame Mail", augments={'Path: B',}},
-      hands={ name="Nyame Gauntlets", augments={'Path: B',}},
+      hands="Chasseur's Gants +3",
       legs={ name="Nyame Flanchard", augments={'Path: B',}},
       feet={ name="Lanun Bottes +3", augments={'Enhances "Wild Card" effect',}},
       neck="Fotia Gorget",
@@ -441,7 +441,7 @@ function init_gear_sets()
       waist="Fotia Belt",
       left_ear="Moonshade Earring",
       right_ear="Telos Earring",
-      left_ring="Begrudging Ring",
+      left_ring="Regal Ring",
       right_ring="Epaminondas's Ring",
       back=Cape.SB
     }
@@ -459,7 +459,7 @@ function init_gear_sets()
       left_ear="Ishvara Earring",
       right_ear={ name="Moonshade Earring", augments={'"Mag.Atk.Bns."+4','TP Bonus +250',}},
       left_ring="Epaminondas's Ring",
-      right_ring="Shukuyu Ring", -- Regal Ring
+      right_ring="Regal Ring",
       back=Cape.SB
     }
 
@@ -545,7 +545,7 @@ function init_gear_sets()
       body="Malignance Tabard",
       hands="Malignance Gloves",
       ring1="Dingir Ring",
-      ring2="Ilabrat Ring",
+      ring2="Crepuscular Ring",
       back=Cape.RTP,
       waist="Yemaya Belt",
       legs="Ikenga's Trousers",
@@ -560,6 +560,7 @@ function init_gear_sets()
     sets.midcast.RA.HighAcc = set_combine(sets.midcast.RA.Acc, {
       neck="Comm. Charm +2",
       body="Laksa. Frac +3",
+      legs="Chasseur's culottes +3",
       left_ring="Regal Ring",
       waist="K. Kachina Belt +1",
     })
@@ -673,7 +674,7 @@ function init_gear_sets()
       head="Malignance Chapeau",
       body="Malignance Tabard",
       hands="Malignance Gloves",
-      legs="Chas. Culottes +2",
+      legs="Chas. Culottes +3",
       feet="Malignance Boots",
       neck="Iskur Gorget",
       waist="Windbuffet Belt +1",

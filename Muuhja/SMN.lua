@@ -4,7 +4,7 @@
 -- DT: A mix of refresh, PDT, and MDT to help when you can't avoid AOE.
 -- PetDT: Sacrifice refresh to reduce avatar's damage taken. WARNING: Selenian Cap drops you below 119, use with caution!
 -- DD: When melee mode is on and you're engaged, uses TP gear. Otherwise, avatar melee gear.
--- Favor: Uses Beckoner's Horn +2 and max smn skill to boost the favor effect.
+-- Favor: Uses Beckoner's Horn +3 and max smn skill to boost the favor effect.
 
 -- Additional Bindings:
 -- F9 - Toggles between a subset of IdleModes (Refresh > DT > PetDT)
@@ -67,7 +67,7 @@ function get_sets()
       legs="Inyanga Shalwar +2",
       sub="Elan Strap +1",
       ammo="Epitaph",
-      head="Beckoner's Horn +2",
+      head="Beckoner's Horn +3",
       body="Inyanga Jubbah +2",
       feet="Inyan. Crackows +2",
       neck={ name="Smn. Collar +2", augments={'Path: A',}},
@@ -108,7 +108,7 @@ function get_sets()
       main={ name="Espiritus", augments={'Summoning magic skill +15','Pet: Mag. Acc.+30','Pet: Damage taken -4%',}},
       sub="Vox Grip",
       ammo="Sancus Sachet +1",
-      head="Beckoner's Horn +2",
+      head="Beckoner's Horn +3",
       body="Baayami Robe",
       hands="Baayami Cuffs",
       legs="Baayami Slops",
@@ -127,7 +127,7 @@ function get_sets()
       main={ name="Espiritus", augments={'Summoning magic skill +15','Pet: Mag. Acc.+30','Pet: Damage taken -4%',}},
       sub="Vox Grip",
       ammo="Sancus Sachet +1",
-      head="Beckoner's Horn +2",
+      head="Beckoner's Horn +3",
       body="Baayami Robe",
       hands="Baayami Cuffs",
       legs="Baayami Slops",
@@ -364,7 +364,7 @@ function get_sets()
       main={ name="Espiritus", augments={'Summoning magic skill +15','Pet: Mag. Acc.+30','Pet: Damage taken -4%',}},
       sub="Vox Grip",
       ammo="Epitaph",
-      head="Beckoner's Horn +2",
+      head="Beckoner's Horn +3",
       body="Baayami Robe", -- + 1 if you're rich
       hands="Baayami Cuffs", -- + 1 if you're rich
       legs="Baayami Slops", -- + 1 if you're rich
@@ -424,7 +424,7 @@ function get_sets()
       main="Nirvana",            -- 8 perp, can use jse
       sub="Khonsu",              -- 
       ammo="Epitaph",
-      head="Beckoner's horn +2", -- 4 favor, 3 refresh
+      head="Beckoner's Horn +3", -- 4 favor, 3 refresh
       neck="Caller's Pendant",   -- 1 perp sometimes
       ear1="Cath Palug Earring", -- 1 refresh
       ear2="Evans earring",      -- 2 perp
@@ -454,7 +454,7 @@ function get_sets()
     })
    
     sets.aftercast.Perp_Favor = set_combine(sets.aftercast.Perp_Refresh, {
-      head="Beckoner's Horn +2",
+      head="Beckoner's Horn +3",
       ear2="Lodurr Earring",
       ring1="Stikini Ring +1",
       ring2="Evoker's Ring",
