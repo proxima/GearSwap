@@ -185,7 +185,7 @@ function user_setup()
   Empy = {}
   Empy.Head  = "Erilaz Galea +2"
   Empy.Body  = "Erilaz Surcoat +2"
-  Empy.Hands = "Erilaz Gauntlets +1"
+  Empy.Hands = "Erilaz Gauntlets +2"
   Empy.Legs  = "Erilaz Leg Guards +2"
   Empy.Feet  = "Erilaz Greaves +2"
   
@@ -197,10 +197,10 @@ function user_setup()
   Cape.Parry  = { name="Ogma's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','"Store TP"+10','Parrying rate+5%',}}
 
   TaeonPhalanx = {}
-  TaeonPhalanx.Body = { name="Taeon Tabard", augments={'Mag. Evasion+20','Spell interruption rate down -10%','Phalanx +3',}}
+  TaeonPhalanx.Body =  {name="Herculean Vest", augments={'Crit.hit rate+4','MND+1','Phalanx +5','Accuracy+16 Attack+16','Mag. Acc.+18 "Mag.Atk.Bns."+18',}}
   TaeonPhalanx.Hands = {name="Taeon Gloves", augments={'Mag. Evasion+20','Phalanx +3',}}
-  TaeonPhalanx.Legs = {name="Taeon Tights", augments={'Mag. Evasion+20','Phalanx +3',}}
-  TaeonPhalanx.Feet = {name="Taeon Boots", augments={'Mag. Evasion+20','Spell interruption rate down -10%','Phalanx +3',}}
+  TaeonPhalanx.Legs =  {name="Taeon Tights", augments={'Mag. Evasion+20','Phalanx +3',}}
+  TaeonPhalanx.Feet =  {name="Taeon Boots", augments={'Mag. Evasion+20','Spell interruption rate down -10%','Phalanx +3',}}
   
   MR = {}
   MR.One = {name="Moonlight Ring",bag="Wardrobe 3"}
@@ -286,8 +286,8 @@ function init_gear_sets()
 
   sets.Enmity.SIRD = {
     ammo="Staunch Tathlum +1",
-    head="Agwu's Cap",  
-    body="Nyame Mail",   
+    head=Empy.Head,
+    body="Nyame Mail",
     hands="Rawhide Gloves",
     legs="Carmine Cuisses +1",
     feet=TaeonPhalanx.Feet,
@@ -493,7 +493,7 @@ function init_gear_sets()
  
   sets.midcast.Phalanx = set_combine(sets.midcast['Enhancing Magic'], {
     head="Fu. Bandeau +3",
-    body={name="Herculean Vest", augments={'Crit.hit rate+4','MND+1','Phalanx +5','Accuracy+16 Attack+16','Mag. Acc.+18 "Mag.Atk.Bns."+18',}},
+    body=TaeonPhalanx.Body,
     hands=TaeonPhalanx.Hands,
     legs=TaeonPhalanx.Legs,
     feet=TaeonPhalanx.Feet

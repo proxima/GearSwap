@@ -405,7 +405,7 @@ function init_gear_sets()
       feet="Gleti's Boots",
       neck="Mirage Stole +2",
       left_ear="Odr Earring",
-      right_ear="Mache Earring +1",
+      right_ear="Hashi. Earring +2",
       ring1="Ilabrat Ring",
       ring2="Epona's Ring",
     })
@@ -419,7 +419,8 @@ function init_gear_sets()
     sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS, {
       neck="Mirage Stole +2",
       body="Gleti's Cuirass",
-      right_ring={ name="Metamor. Ring +1", augments={'Path: A',}},
+      right_ring="Sroda Ring",
+      right_ear="Hashi. Earring +2",
       waist={ name="Kentarch Belt +1", augments={'Path: A',}},
       back=Cape.STR_WSD
     })
@@ -462,7 +463,6 @@ function init_gear_sets()
     sets.precast.WS['Judgment'].Acc = sets.precast.WS['True Strike'].Acc
 
     sets.precast.WS['Black Halo'] = set_combine(sets.precast.WS['Savage Blade'], {
-       right_ear="Regal Earring",
     })
 
     sets.precast.WS['Black Halo'].Acc = set_combine(sets.precast.WS['Black Halo'], {
@@ -504,6 +504,7 @@ function init_gear_sets()
       head="Luhlaza Keffiyeh +1",
       body="Assimilator's Jubbah +1",
       left_ear="Njordr Earring",
+      right_ear="Hashi. Earring +2",
       left_ring={name="Stikini Ring +1",bag="wardrobe 2"},
       right_ring={name="Stikini Ring +1",bag="wardrobe 3"},
       back="Cornflower Cape",
@@ -587,15 +588,15 @@ function init_gear_sets()
       head="Assim. Keffiyeh +3",
       neck="Mirage Stole +2",
       left_ear="Regal Earring",
-      right_ear="Digni. Earring",
+      right_ear="Hashi. Earring +2",
       body="Hashishin mintan +2",
       hands="Hashishin Bazubands +2",
       left_ring={name="Stikini Ring +1",bag="wardrobe 2"},
       right_ring="Metamorph Ring +1",
       back="Aurist's Cape +1",
       waist="Acuity Belt +1",
-      legs="Assim. Shalwar +3",
-      feet="Hashishin Tayt +2"
+      legs="Hashishin Tayt +2",
+      feet="Hashishin Basmak +2"
     }
 
     sets.midcast['Blue Magic'].Breath = set_combine(sets.midcast['Blue Magic'].Magical, {head="Luh. Keffiyeh +1"})
@@ -605,7 +606,7 @@ function init_gear_sets()
        head="Hashishin Kavuk +2",
        neck="Mirage Stole +2",
        left_ear="Digni. Earring",
-       right_ear="Crepuscular Earring", 
+       right_ear="Hashi. Earring +2",
        body="Hashishin Mintan +2",
        hands="Hashishin Bazubands +2",
        left_ring={name="Stikini Ring +1", bag="wardrobe 2"},
@@ -648,7 +649,6 @@ function init_gear_sets()
 
     sets.midcast['Blue Magic']['Occultation'] = set_combine(sets.midcast['Blue Magic'], {
       hands="Hashi. Bazu. +2",
-      ear1="Njordr Earring",
     })
 
     sets.midcast['Blue Magic']['Carcharian Verve'] = set_combine(sets.midcast['Blue Magic'].Buff, {
@@ -802,14 +802,13 @@ function init_gear_sets()
       ammo={ name="Coiste Bodhar", augments={'Path: A',}},
       head={ name="Adhemar Bonnet +1", augments={'STR+12','DEX+12','Attack+20',}},
       body={ name="Adhemar Jacket +1", augments={'STR+12','DEX+12','Attack+20',}},
-      hands="Assim. Bazu. +2",
-      -- hands={ name="Adhemar Wrist. +1", augments={'STR+12','DEX+12','Attack+20',}},
+      hands={ name="Adhemar Wrist. +1", augments={'STR+12','DEX+12','Attack+20',}},
       legs={ name="Samnuha Tights", augments={'STR+9','DEX+8','"Dbl.Atk."+2','"Triple Atk."+2',}},
       feet={ name="Herculean Boots", augments={'"Triple Atk."+3','Rng.Atk.+13','Quadruple Attack +3','Accuracy+13 Attack+13','Mag. Acc.+4 "Mag.Atk.Bns."+4',}},
       neck="Mirage Stole +2",
       waist="Windbuffet belt +1",
-      left_ear="Dedition Earring",
-      right_ear="Suppanomimi",
+      left_ear="Suppanomimi",
+      right_ear="Hashi. Earring +2",
       left_ring="Epona's Ring",
       right_ring="Chirich Ring +1",
       back=Cape.TP_STP
@@ -859,7 +858,7 @@ function init_gear_sets()
       head="Malignance Chapeau",
       neck="Mirage Stole +2",
       left_ear="Cessance Earring",
-      right_ear="Telos Earring",
+      right_ear="Hashi. Earring +2",
       body="Malignance Tabard",
       hands={ name="Adhemar Wrist. +1", augments={'STR+12','DEX+12','Attack+20',}},
       left_ring="Epona's Ring",

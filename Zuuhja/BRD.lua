@@ -339,7 +339,7 @@ function init_gear_sets()
       waist="Sailfi Belt +1",
       left_ear="Moonshade Earring",
       right_ear="Ishvara Earring",
-      left_ring="Metamorph Ring +1",
+      left_ring="Sroda Ring",
       right_ring="Epaminondas's Ring",
       back=Cape.WSD
     })

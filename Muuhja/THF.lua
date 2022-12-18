@@ -265,9 +265,10 @@ function init_gear_sets()
     })
 
     sets.precast.WS["Savage Blade"].Mod = set_combine(sets.precast.WS["Savage Blade"], {
+      ammo="Yetshila +1",
       head="Pillager's bonnet +3",
       body="Gleti's Cuirass",
-      ammo="Yetshila +1",
+      right_ring="Sroda Ring",
     })
 
     sets.precast.WS["Savage Blade"].SA = set_combine(sets.precast.WS["Savage Blade"].Mod, {})
@@ -415,7 +416,6 @@ function init_gear_sets()
     }
 
     sets.engaged.Acc.PDT = {}
-
 end
 
 

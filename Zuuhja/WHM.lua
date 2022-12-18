@@ -376,9 +376,10 @@ function init_gear_sets()
       body={ name="Telchine Chas.", augments={'Enh. Mag. eff. dur. +10',}},
       hands="Inyanga dastanas +2",
       legs="Piety Pantaloons +3",
-      feet="Ebers duckbills +2",
-      ring1="Stikini Ring +1",
-      ring2="Stikini Ring +1",
+      feet="Theophany duckbills +3",
+      left_ring={name="Stikini Ring +1",bag="wardrobe"},
+      right_ring={name="Stikini Ring +1",bag="wardrobe5"},
+      left_ear="Mimir earring",
       waist="Embla Sash",
       back="Mending cape",
     }
@@ -390,10 +391,11 @@ function init_gear_sets()
       body={ name="Telchine Chas.", augments={'Enh. Mag. eff. dur. +10',}},
       hands={ name="Telchine Gloves", augments={'Enh. Mag. eff. dur. +10',}},
       legs={ name="Telchine Braconi", augments={'Enh. Mag. eff. dur. +10',}},
-      feet={ name="Telchine Pigaches", augments={'Enh. Mag. eff. dur. +10',}},
+      feet="Theophany duckbills +3",
       waist="Embla Sash",
-      ring1="Stikini Ring +1",
-      ring2="Stikini Ring +1",
+      left_ear="Mimir earring",
+      left_ring={name="Stikini Ring +1",bag="wardrobe"},
+      right_ring={name="Stikini Ring +1",bag="wardrobe5"},
       back="Mending cape",
     }
 

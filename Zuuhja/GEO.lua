@@ -460,7 +460,6 @@ function get_sets()
      body="Azimuth Coat +2", 
      hands="Agwu's Gages",
      legs="Azimuth Tights +2",
-     hands="Agwu's Gages",
      feet="Agwu's Pigaches",
      waist="Acuity belt +1",
      left_ring="Metamorph Ring +1",   
