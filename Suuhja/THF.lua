@@ -335,7 +335,7 @@ function init_gear_sets()
       body="Malignance Tabard",
       hands={ name="Herculean Gloves", augments={'"Conserve MP"+1','Accuracy+21','"Treasure Hunter"+2',}},
       legs="Malignance Tights",
-      feet="Skulk. Poulaines +1",
+      feet="Skulk. Poulaines +2",
       neck="Sanctity Necklace",
       waist="Skrymir Cord +1",
       left_ear="Sherida Earring",

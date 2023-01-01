@@ -526,7 +526,6 @@ function init_gear_sets()
     sets.midcast.CorsairShot.Enhance = {feet="Chass. Bottes +2"}
 
     -- Ranged gear
--- Ranged gear
     sets.midcast.RA = {ammo=gear.RAbullet,
       head="Malignance Chapeau",
       neck="Iskur Gorget",

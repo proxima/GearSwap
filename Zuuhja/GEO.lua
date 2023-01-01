@@ -155,8 +155,8 @@ function get_sets()
      main="Idris",
      sub="Genmei Shield",
      ammo="Staunch Tathlum +1",
-     head={ name="Bagua Galero +3", augments={'Enhances "Primeval Zeal" effect',}},
-     body="Mallquis Saio +2",
+     head="Azimuth Hood +2",
+     body="Azimuth Coat +3",
      hands="Bagua Mitaines +3",
      legs={ name="Merlinic Shalwar", augments={'DEX+5','INT+4','"Refresh"+2','Accuracy+1 Attack+1',}},
      feet="Geo. Sandals +3",
@@ -182,6 +182,10 @@ function get_sets()
    })
 
    sets.me.idle.mdt = set_combine(sets.me.idle.dt, {
+     neck="Warder's Charm +1",
+     head="Azimuth Hood +2",
+     hands="Azimuth Gloves +2",
+     feet="Azimuth Gaiters +2", 
    })
 
    -- Your MP Recovered Whilst Resting Set
@@ -254,7 +258,6 @@ function get_sets()
    sets.pan.melee = sets.me.melee
     
    -- Weapon Skill sets
-   -- Example:
    sets.me["Flash Nova"] = {
    }
 
@@ -264,6 +267,20 @@ function get_sets()
    sets.me["Exudation"] = {
    }
 
+   sets.me["Judgment"] = { -- No cape, ammo defined atm
+    head={ name="Nyame Helm", augments={'Path: B',}},
+    body={ name="Nyame Mail", augments={'Path: B',}},
+    hands={ name="Nyame Gauntlets", augments={'Path: B',}},
+    legs={ name="Nyame Flanchard", augments={'Path: B',}},
+    feet={ name="Nyame Sollerets", augments={'Path: B',}},
+    neck="Rep. Plat. Medal",
+    waist="Grunfeld Rope",
+    left_ear="Regal Earring",
+    right_ear="Ishvara Earring",
+    left_ring="Shukuyu Ring",
+    right_ring="Epaminondas's Ring",
+   }
+   
    sets.me["Cataclysm"] = {
      ammo={ name="Ghastly Tathlum +1", augments={'Path: A',}},
      head="Pixie Hairpin +1",
@@ -447,9 +464,9 @@ function get_sets()
    })
 
    sets.midcast.nuking.acc = set_combine(sets.midcast.nuking.normal, {
-     body="Azimuth Coat +2",
+     body="Azimuth Coat +3",
      hands="Agwu's Gages",
-     legs="Azimuth Tights +2",
+     legs="Azimuth Tights +3",
      feet="Agwu's Pigaches",
      waist="Acuity belt +1",
      left_ring="Metamorph Ring +1",
@@ -457,9 +474,9 @@ function get_sets()
 
    sets.midcast.MB.acc = set_combine(sets.midcast.MB.normal, {
      head="Ea Hat +1",   
-     body="Azimuth Coat +2", 
+     body="Azimuth Coat +3", 
      hands="Agwu's Gages",
-     legs="Azimuth Tights +2",
+     legs="Azimuth Tights +3",
      feet="Agwu's Pigaches",
      waist="Acuity belt +1",
      left_ring="Metamorph Ring +1",   
@@ -543,8 +560,8 @@ function get_sets()
      main="Rubicundity",
      sub="Ammurapi Shield",
      left_ring="Evanescence ring",
-     legs="Azimuth tights +2",
      head="Bagua Galero +3",
+     legs="Azimuth tights +3",
      feet="Agwu's Pigaches",
    })
 

@@ -184,7 +184,7 @@ function get_sets()
       sub="Ammurapi Shield"
     })
  
-    sets.midcast["Mana Cede"] = { hands="Beckoner's Bracers +1" } 
+    sets.midcast["Mana Cede"]   = { hands="Beckoner's Bracers +2" } 
     sets.midcast["Astral Flow"] = { head="Glyphic Horn" }
    
     -- ===================================================================================================================
@@ -201,7 +201,7 @@ function get_sets()
       ring1="Freke Ring",
       ring2="Metamorph Ring +1",
       back={ name="Campestres's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','"Fast Cast"+10',}},
-      waist="Eschan Stone",
+      waist="Orpheus's Sash",
       legs="Nyame Flanchard",
       feet="Nyame Sollerets"
     }

@@ -250,40 +250,50 @@ function init_gear_sets()
 
     -- (10% Snapshot, 5% Rapid from Merits)
     sets.precast.RA = {
-        head={name="Taeon Chapeau", augments={'"Snapshot"+5','"Snapshot"+5',}}, -- 10
-        body="Amini Caban +2",
-        hands="Carmine Fin. Ga. +1", -- 8 / 11
-        legs="Orion Braccae +3", -- 15 / 0
-        feet="Meg. Jam. +2", -- 10 / 0
-        neck="Scout's Gorget +2", -- 4 / 0
-        back=Cape.SNAPSHOT, -- 10 / 0
-        waist="Yemaya Belt", -- 0 / 5
-        left_ring="Crepuscular Ring", -- 3 / 0
-    } -- 60 / 16
+      head="Orion Beret +3",                                                            --  0 / 18
+      body="Oshosi Vest +1",                                                            -- 14 /  0
+      hands="Carmine Fin. Ga. +1",                                                      --  8 / 11
+      legs={name="Adhemar Kecks +1", augments={'AGI+12','"Rapid Shot"+13','Enmity-6'}}, -- 10 / 13
+      feet="Meg. Jam. +2",                                                              -- 10 /  0
+      neck="Scout's Gorget +2",                                                         --  4 /  0
+      back=Cape.SNAPSHOT,                                                               -- 10 /  0
+      waist="Impulse Belt",                                                             --  3 /  0
+      left_ring="Crepuscular Ring",                                                     --  3 /  0
+    } -- 62 / 42
 
     sets.precast.RA.Flurry1 = set_combine(sets.precast.RA, {
-        head="Orion Beret +3", -- 0 / 18
-        legs={name="Adhemar Kecks +1", augments={'AGI+12','"Rapid Shot"+13','Enmity-6'}}, -- 10 / 13
-    }) -- 45 / 47
+      body="Arcadian Jerkin +3",                                                        --  0 / 16
+      waist="Yemaya Belt",                                                              --  0 /  5
+    }) -- 45 / 63
 
     sets.precast.RA.Flurry2 = set_combine(sets.precast.RA.Flurry1, {
-        feet="Arcadian Socks +3", -- 0 / 10
-    }) -- 32 / 57
+      feet="Arcadian Socks +3",                                                         --  0 / 10
+    }) -- 31 / 73 ignoring neck
 
-    sets.precast.RA.Embrava = sets.precast.RA.Flurry2
+    sets.precast.RA.Embrava = sets.precast.RA.Flurry2 -- 35 / 73
 
-    --[[
     sets.precast.RA.Gastra = {
-        head="Orion Beret +3", --15/0
-        }
+      head="Orion Beret +3",                                                            --  0 / 18
+      body="Oshosi Vest +1",                                                            -- 14 /  0
+      hands="Carmine Fin. Ga. +1",                                                      --  8 / 11
+      legs={name="Adhemar Kecks +1", augments={'AGI+12','"Rapid Shot"+13','Enmity-6'}}, -- 10 / 13
+      feet="Arcadian Socks +3",                                                         --  0 / 10
+      neck="Scout's Gorget +2",                                                         --  4 /  0
+      back=Cape.SNAPSHOT,                                                               -- 10 /  0
+      waist="Impulse Belt",                                                             --  3 /  0
+      left_ring="Crepuscular Ring",                                                     --  3 /  0
+    } -- 52 / 52
+
     sets.precast.RA.Gastra.Flurry1 = set_combine(sets.precast.RA.Gastra, {
-        feet="Arcadian Socks +3", --0/10
-        })
+      body="Arcadian Jerkin +3",                                                        --  0 / 16
+      waist="Yemaya Belt",                                                              --  0 /  5  
+    }) -- 35 / 73
+
     sets.precast.RA.Gastra.Flurry2 = set_combine(sets.precast.RA.Gastra.Flurry1, {
-        legs="Pursuer's Pants", --0/19
-        })
+      legs="Pursuer's Pants",                                                           --  0 / 19
+    }) -- 25 / 79
+
     sets.precast.RA.Gastra.Embrava = sets.precast.RA.Gastra.Flurry2
-    ]]--
 
 
     ------------------------------------------------------------------------------------------------
@@ -329,6 +339,18 @@ function init_gear_sets()
     })
 
     sets.precast.WS["Last Stand"] = set_combine(sets.precast.WS, {
+      head="Orion Beret +3",
+      body={ name="Ikenga's Vest", augments={'Path: A',}},
+      hands={ name="Nyame Gauntlets", augments={'Path: B',}},
+      legs={ name="Arc. Braccae +3", augments={'Enhances "Eagle Eye Shot" effect',}},
+      feet="Amini Bottillons +2",
+      neck={ name="Scout's Gorget +2", augments={'Path: A',}},
+      waist="Fotia Belt",
+      left_ear={ name="Moonshade Earring", augments={'"Mag.Atk.Bns."+4','TP Bonus +250',}},
+      right_ear="Ishvara Earring",
+      left_ring="Regal Ring",
+      right_ring="Dingir Ring",
+      back=Cape.RATK
     })
 
     sets.precast.WS['Last Stand'].Acc = set_combine(sets.precast.WS['Last Stand'], {
@@ -347,21 +369,21 @@ function init_gear_sets()
     })
 
     sets.precast.WS["Trueflight"] = {
-        body="Cohort Cloak +1",
-        hands={ name="Nyame Gauntlets", augments={'Path: B',}},
-        legs={ name="Nyame Flanchard", augments={'Path: B',}},
-        feet={ name="Nyame Sollerets", augments={'Path: B',}},
-        neck="Scout's Gorget +2",
-        waist="Sveltesse gouriz +1",
-        left_ear="Moonshade Earring",
-        right_ear="Friomisi Earring",
-        ring2="Epaminondas's Ring",
-        ring1="Dingir Ring",
-        back=Cape.TRUEFLIGHT
+      body="Cohort Cloak +1",
+      hands={ name="Nyame Gauntlets", augments={'Path: B',}},
+      legs={ name="Nyame Flanchard", augments={'Path: B',}},
+      feet={ name="Nyame Sollerets", augments={'Path: B',}},
+      neck="Scout's Gorget +2",
+      waist="Sveltesse gouriz +1",
+      left_ear="Moonshade Earring",
+      right_ear="Friomisi Earring",
+      ring2="Epaminondas's Ring",
+      ring1="Dingir Ring",
+      back=Cape.TRUEFLIGHT
     }
 
     sets.precast.WS["Wildfire"] = set_combine(sets.precast.WS["Trueflight"], {
-        left_ear="Crematio Earring",
+      left_ear="Crematio Earring",
     })
 
     sets.precast.WS['Evisceration'] = {
@@ -388,18 +410,18 @@ function init_gear_sets()
 
     -- Ranged sets
     sets.midcast.RA = {
-        head="Arcadian Beret +3",
-        neck="Iskur Gorget",
-        left_ear="Telos Earring",
-        right_ear="Crepuscular Earring",
-        body="Ikenga's Vest",
-        hands="Malignance Gloves",
-        left_ring="Crepuscular Ring",
-        right_ring="Ilabrat Ring",
-        back=Cape.RTP,
-        waist="Tellen Belt",
-        legs="Ikenga's Trousers",
-        feet="Malignance Boots"
+      head="Arcadian Beret +3",
+      neck="Iskur Gorget",
+      left_ear="Telos Earring",
+      right_ear="Crepuscular Earring",
+      body="Ikenga's Vest",
+      hands="Malignance Gloves",
+      left_ring="Crepuscular Ring",
+      right_ring="Ilabrat Ring",
+      back=Cape.RTP,
+      waist="Tellen Belt",
+      legs="Ikenga's Trousers",
+      feet="Malignance Boots"
     }
 
     sets.midcast.RA.Acc = set_combine(sets.midcast.RA, {
@@ -427,20 +449,20 @@ function init_gear_sets()
     })
 
     sets.DoubleShot = {
-        head="Oshosi Mask +1",
-        body="Arcadian Jerkin +3",
-        hands="Oshosi Gloves +1",
-        legs="Osh. Trousers +1",
-        feet="Osh. Leggings +1"
+      head="Oshosi Mask +1",
+      body="Arcadian Jerkin +3",
+      hands="Oshosi Gloves +1",
+      legs="Osh. Trousers +1",
+      feet="Osh. Leggings +1"
     }
 
     sets.DoubleShot.Critical = {
-        hands="Mummu Wrists +2"
+      hands="Mummu Wrists +2"
     }
 
     sets.TrueShot = {
-        body="Nisroch Jerkin",
-        legs="Osh. Trousers +1",
+      body="Nisroch Jerkin",
+      legs="Osh. Trousers +1",
     }
 
     ------------------------------------------------------------------------------------------------

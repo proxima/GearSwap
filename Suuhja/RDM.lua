@@ -223,9 +223,9 @@ function get_sets()
     -- Lethargy
     EMPY.Head  = "Leth. Chappel +1"
     EMPY.Body  = "Lethargy Sayon +3"
-    EMPY.Hands = "Leth. Ganth. +2"
-    EMPY.Legs  = "Leth. Fuseau +2"
-    EMPY.Feet  = "Leth. Houseaux +2"
+    EMPY.Hands = "Leth. Ganth. +3"
+    EMPY.Legs  = "Leth. Fuseau +3"
+    EMPY.Feet  = "Leth. Houseaux +3"
 
     -- Capes:
     -- Sucellos's And such, add your own.
@@ -388,7 +388,7 @@ function get_sets()
       neck="Fotia Gorget",
       left_ear="Sherida Earring",
       right_ear="Mache Earring +1",
-      body="Ayanmo Corazza +2",
+      body=EMPY.Body,
       hands="Bunzi's Gloves",
       left_ring="Begrudging Ring",
       right_ring="Ilabrat Ring",
@@ -401,11 +401,11 @@ function get_sets()
     sets.me["Evisceration"] = sets.me["Chant du Cygne"]
 
     sets.me["Sanguine Blade"] = {
-      ammo="Pemphredo Tathlum",
+      ammo="Sroda Tathlum",
       head="Pixie Hairpin +1",
       body="Nyame Mail",
       hands="Jhakri Cuffs +2",
-      legs="Amalric Slops +1",
+      legs=EMPY.Legs,
       feet=EMPY.Feet,
       neck="Sibyl Scarf",
       waist="Orpheus's Sash",
@@ -417,11 +417,11 @@ function get_sets()
     }
 
     sets.me["Red Lotus Blade"] = {
-      ammo="Pemphredo Tathlum",
+      ammo="Sroda Tathlum",
       head="Nyame Helm",
       body="Nyame Mail",
       hands="Jhakri Cuffs +2",
-      legs="Amalric Slops +1",
+      legs=EMPY.Legs,
       feet=EMPY.Feet,
       neck="Sibyl Scarf",
       waist="Orpheus's Sash",
@@ -442,15 +442,15 @@ function get_sets()
     sets.me["Seraph Strike"] = sets.me["Seraph Blade"]
     
     sets.me["Aeolian Edge"] = {
-      ammo={ name="Ghastly Tathlum +1", augments={'Path: A',}},
+      ammo="Sroda Tathlum",
       head="Nyame Helm",
       body="Nyame Mail",
       hands="Jhakri Cuffs +2",
-      legs="Amalric Slops +1",
+      legs=EMPY.Legs,
       feet=EMPY.Feet,
       neck="Sibyl Scarf",
       waist="Orpheus's Sash",
-      left_ear="Regal Earring",
+      left_ear="Moonshade Earring",
       right_ear="Malignance Earring",
       left_ring="Freke Ring",
       right_ring="Epaminondas's Ring",
@@ -496,12 +496,10 @@ function get_sets()
 
     -- Enhancing Magic, eg. Siegal Sash, etc
     sets.precast.enhancing = set_combine(sets.precast.casting, {
-
     })
   
     -- Stoneskin casting time -, works off of enhancing -
     sets.precast.stoneskin = set_combine(sets.precast.enhancing, {
-
     })
       
     -- Curing Precast, Cure Spell Casting time -
@@ -695,7 +693,8 @@ function get_sets()
       waist="Embla Sash",
       left_ring={name="Stikini Ring +1",bag="wardrobe 2"},
       right_ring={name="Stikini Ring +1",bag="wardrobe 3"},
-      right_ear="Mimir Earring",
+      left_ear="Mimir Earring",
+      right_ear="Lethargy earring +1",
     }
     
     -- For Potency spells like Temper and Enspells

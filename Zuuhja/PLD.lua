@@ -35,7 +35,7 @@ function user_setup()
   send_command('bind @s sat youcommand Muuhja "Horde Lullaby II"')
   send_command('bind @d sat youcommand Suuhja "Tenebral Crush"')
   send_command('bind @z send Suuhja input /ja "Burst Affinity" <me>')
-  send_command('bind @v sat youcommand Suuhja "Silence"')
+  send_command('bind @v sat youcommand Muuhja "Wind Threnody II"; sat youcommand Suuhja "Silence"')
 
   send_command('bind @f12 gs c cycle CastingMode')
   send_command('bind ^f11 gs c cycle MagicalDefenseMode')

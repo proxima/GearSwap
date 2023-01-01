@@ -187,7 +187,7 @@ function user_setup()
   Empy.Body  = "Erilaz Surcoat +2"
   Empy.Hands = "Erilaz Gauntlets +2"
   Empy.Legs  = "Erilaz Leg Guards +2"
-  Empy.Feet  = "Erilaz Greaves +2"
+  Empy.Feet  = "Erilaz Greaves +3"
   
   Cape = {}
   Cape.Reive  = { name="Evasionist's Cape", augments={'Enmity+1','"Embolden"+15','"Dbl.Atk."+1',}}
@@ -641,9 +641,9 @@ function init_gear_sets()
     ammo="Vanir Battery",
     head={ name="Nyame Helm", augments={'Path: B',}},
     body={ name="Nyame Mail", augments={'Path: B',}},
-    hands={ name="Nyame Gauntlets", augments={'Path: B',}},
-    legs={ name="Nyame Flanchard", augments={'Path: B',}},
-    feet={ name="Nyame Sollerets", augments={'Path: B',}},
+    hands="Turms mittens +1",
+    legs=Empy.Legs,
+    feet=Empy.Feet,
     neck="Inq. Bead Necklace",
     waist="Engraved Belt",
     left_ear="Tuisto Earring",
@@ -653,7 +653,7 @@ function init_gear_sets()
     back=Cape.Enmity
   }
 
-  -- sets.engaged = sets.Hybrid
+  sets.engaged = sets.Hybrid
   sets.engaged.Aftermath = sets.engaged
   sets.engaged.Parry = sets.defense.Parry  
  

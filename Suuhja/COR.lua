@@ -421,6 +421,8 @@ function init_gear_sets()
       back=Cape.SB
     }
 
+    sets.precast.WS['Viper Bite'] = sets.precast.WS.Evisceration
+
     sets.precast.WS['Evisceration'].Acc = set_combine(sets.precast.WS['Evisceration'], {})
 
     sets.precast.WS['Savage Blade'] = {
