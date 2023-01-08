@@ -555,7 +555,7 @@ function get_sets()
       main="Bunzi's Rod",
       sub="Ammurapi Shield",
       ammo="Ghastly Tathlum +1",
-      head={ name="Merlinic Hood", augments={'Mag. Acc.+24 "Mag.Atk.Bns."+24','Magic burst dmg.+10%','INT+5','Mag. Acc.+3','"Mag.Atk.Bns."+9',}},
+      head="Cath Palug Crown",
       body={ name="Amalric Doublet +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
       hands={ name="Amalric Gages +1", augments={'INT+12','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
       legs={ name="Amalric Slops +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
@@ -569,28 +569,39 @@ function get_sets()
       back=RDMCape.Aeolian
     }
 
+    sets.midcast.nuking.acc = set_combine(sets.midcast.nuking.normal, {
+      waist="Acuity Belt +1",
+      right_ring={ name="Metamor. Ring +1", augments={'Path: A',}},
+      feet=EMPY.Feet,   
+    })
+
     -- used with toggle, default: F10
     -- Pieces to swap from freen nuke to Magic Burst
     sets.midcast.MB.normal = set_combine(sets.midcast.nuking.normal, {
+      main="Bunzi's Rod",
+      sub="Ammurapi Shield",
+      ammo="Ghastly Tathlum +1",
       head="Ea Hat +1",
       body="Ea Houppe. +1",
-      legs="Ea Slops +1",
       hands={ name="Amalric Gages +1", augments={'INT+12','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
-      right_ring="Mujin Band",
-    })
-
-    sets.midcast.nuking.acc = {
-      waist="Acuity Belt +1",
+      legs="Ea Slops +1",
+      feet={ name="Amalric Nails +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
+      neck="Dls. Torque +2",
+      waist="Sacro Cord",
+      left_ear="Regal Earring",
+      right_ear="Malignance Earring",
+      left_ring="Freke Ring",
       right_ring={ name="Metamor. Ring +1", augments={'Path: A',}},
-      feet="Jhakri Pigaches +2",    
-    }
+      back=RDMCape.Aeolian
+    })
 
     -- used with toggle, default: F10
     -- Pieces to swap from freen nuke to Magic Burst
-    sets.midcast.MB.acc = set_combine(sets.midcast.nuking.acc, {
+    sets.midcast.MB.acc = set_combine(sets.midcast.MB.normal, {
       waist="Acuity Belt +1",
-      right_ring={ name="Metamor. Ring +1", augments={'Path: A',}},	
-      feet="Jhakri Pigaches +2",
+      right_ring={ name="Metamor. Ring +1", augments={'Path: A',}},
+      legs=EMPY.Legs,
+      feet=EMPY.Feet,
     })
 
     -- Enfeebling

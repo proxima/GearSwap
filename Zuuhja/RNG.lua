@@ -15,7 +15,6 @@
 --              [ F12 ]             Update Current Gear / Report Current Status
 --              [ CTRL+F12 ]        Cycle Idle Modes
 --              [ ALT+F12 ]         Cancel Emergency -PDT/-MDT Mode
---              [ WIN+C ]           Toggle Capacity Points Mode
 --
 --  Abilities:  [ CTRL+NumLock ]    Double Shot
 --              [ CTRL+Numpad/ ]    Berserk/Meditate
@@ -61,7 +60,10 @@ function job_setup()
     -- Whether a warning has been given for low ammo
     state.warned = M(false)
 
+    state.WeaponLock = false
+
     elemental_ws = S{'Aeolian Edge', 'Trueflight', 'Wildfire'}
+    no_shoot_ammo = S{"Animikii Bullet", "Hauksbok Bullet", "Hauksbok Arrow"}
 
     no_swap_gear = S{"Warp Ring", "Dim. Ring (Dem)", "Dim. Ring (Holla)", "Dim. Ring (Mea)",
               "Trizek Ring", "Echad Ring", "Facility Ring", "Capacity Ring",
@@ -83,8 +85,7 @@ function user_setup()
     state.WeaponskillMode:options('Normal', 'Acc', 'Enmity')
     state.IdleMode:options('Normal', 'DT')
 
-    state.WeaponSet = M{['description']='Weapon Set', 'Annihilator', 'Fomalhaut', 'Armageddon'}
-    state.CP = M(false, "Capacity Points Mode")
+    state.WeaponSet = M{['description']='Weapon Set', 'Armageddon_M', 'Fomalhaut_M', 'Gastraphetes_M'}
 
     DefaultAmmo = {
         ['Yoichinoyumi'] = "Chrono Arrow",
@@ -94,7 +95,6 @@ function user_setup()
         ['Armageddon'] = "Chrono Bullet",
         ['Gastraphetes'] = "Quelling Bolt",
         ['Fomalhaut'] = "Chrono Bullet",
-        ['Sparrowhawk'] = "Stone Arrow",
     }
 
     AccAmmo = {    
@@ -105,7 +105,6 @@ function user_setup()
         ['Armageddon'] = "Eradicating Bullet",
         ['Gastraphetes'] = "Quelling Bolt",
         ['Fomalhaut'] = "Devastating Bullet",
-        ['Sparrowhawk'] = "Stone Arrow",
     }
 
     WSAmmo = {     
@@ -116,7 +115,6 @@ function user_setup()
         ['Armageddon'] = "Chrono Bullet",
         ['Gastraphetes'] = "Quelling Bolt",
         ['Fomalhaut'] = "Chrono Bullet",
-        ['Sparrowhawk'] = "Stone Arrow",
     }
 
     MagicAmmo = {
@@ -127,13 +125,19 @@ function user_setup()
         ['Armageddon'] = "Devastating Bullet",
         ['Gastraphetes'] = "Quelling Bolt",
         ['Fomalhaut'] = "Devastating Bullet",
-        ['Sparrowhawk'] = "Stone Arrow",
     }
 
     Cape = {}
-    Cape.SNAPSHOT = {name="Belenus's Cape", augments={'INT+20','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','"Snapshot"+10','Mag. Evasion+15',}}
-    Cape.DW       = {name="Belenus's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dual Wield"+10','Phys. dmg. taken-10%',}}
-    Cape.RATK     = {name="Belenus's Cape", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','AGI+10','Weapon skill damage +10%','Phys. dmg. taken-10%'}}
+    Cape.SNAPSHOT   = {name="Belenus's Cape", augments={'INT+20','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','"Snapshot"+10','Mag. Evasion+15',}}
+    Cape.DW         = {name="Belenus's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dual Wield"+10','Phys. dmg. taken-10%',}}
+    Cape.RATK       = {name="Belenus's Cape", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','AGI+10','Weapon skill damage +10%','Phys. dmg. taken-10%'}}
+    Cape.TRUEFLIGHT = {name="Belenus's Cape", augments={'AGI+20','Mag. Acc+20 /Mag. Dmg.+20','AGI+10','Weapon skill damage +10%','Phys. dmg. taken-10%'}}
+    Cape.RTP        = {name="Belenus's Cape", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','Rng.Acc.+10','"Store TP"+10','Phys. dmg. taken-10%',}}
+    Cape.AEOLIAN    = {name="Belenus's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}
+
+    Malev = {}
+    Malev.ONE = {name="Malevolence", bag="wardrobe5"}
+    Malev.TWO = {name="Malevolence", bag="wardrobe6"}
 
     -- Additional local binds
     send_command('bind ^` input /ja "Velocity Shot" <me>')
@@ -290,7 +294,7 @@ function init_gear_sets()
     }) -- 35 / 73
 
     sets.precast.RA.Gastra.Flurry2 = set_combine(sets.precast.RA.Gastra.Flurry1, {
-      legs="Pursuer's Pants",                                                           --  0 / 19
+      legs="Pursuer's Gaiters",                                                           --  0 / 19
     }) -- 25 / 79
 
     sets.precast.RA.Gastra.Embrava = sets.precast.RA.Gastra.Flurry2
@@ -339,11 +343,6 @@ function init_gear_sets()
     })
 
     sets.precast.WS["Last Stand"] = set_combine(sets.precast.WS, {
-      head="Orion Beret +3",
-      body={ name="Ikenga's Vest", augments={'Path: A',}},
-      hands={ name="Nyame Gauntlets", augments={'Path: B',}},
-      legs={ name="Arc. Braccae +3", augments={'Enhances "Eagle Eye Shot" effect',}},
-      feet="Amini Bottillons +2",
       neck={ name="Scout's Gorget +2", augments={'Path: A',}},
       waist="Fotia Belt",
       left_ear={ name="Moonshade Earring", augments={'"Mag.Atk.Bns."+4','TP Bonus +250',}},
@@ -369,7 +368,8 @@ function init_gear_sets()
     })
 
     sets.precast.WS["Trueflight"] = {
-      body="Cohort Cloak +1",
+      head="Nyame Helm",
+      body="Nyame Mail",
       hands={ name="Nyame Gauntlets", augments={'Path: B',}},
       legs={ name="Nyame Flanchard", augments={'Path: B',}},
       feet={ name="Nyame Sollerets", augments={'Path: B',}},
@@ -384,6 +384,13 @@ function init_gear_sets()
 
     sets.precast.WS["Wildfire"] = set_combine(sets.precast.WS["Trueflight"], {
       left_ear="Crematio Earring",
+    })
+
+    sets.precast.WS["Hot Shot"] =  set_combine(sets.precast.WS['Wildfire'], {
+      neck="Fotia Gorget",
+      ear1="Moonshade Earring",
+      back=Cape.RATK,
+      waist="Fotia Belt"
     })
 
     sets.precast.WS['Evisceration'] = {
@@ -408,7 +415,7 @@ function init_gear_sets()
 
     sets.midcast.Utsusemi = sets.midcast.SpellInterrupt
 
-    -- Ranged sets
+    -- 1478 w/ Malevolance
     sets.midcast.RA = {
       head="Arcadian Beret +3",
       neck="Iskur Gorget",
@@ -419,30 +426,35 @@ function init_gear_sets()
       left_ring="Crepuscular Ring",
       right_ring="Ilabrat Ring",
       back=Cape.RTP,
-      waist="Tellen Belt",
-      legs="Ikenga's Trousers",
+      waist="Yemaya Belt",
+      legs="Amini Bragues +2",
       feet="Malignance Boots"
     }
 
+    -- 1509
     sets.midcast.RA.Acc = set_combine(sets.midcast.RA, {
+      neck={ name="Scout's Gorget +2", augments={'Path: A',}},
+      right_ear="Beyla Earring",
+      right_ring="Regal Ring",
     })
 
+    -- 1557
     sets.midcast.RA.HighAcc = set_combine(sets.midcast.RA.Acc, {
     })
 
     sets.midcast.RA.Critical = set_combine(sets.midcast.RA, {
-       head="Meghanada Visor +2",
-       neck="Iskur Gorget",
-       ear1="Odr Earring",
-       ear2="Telos Earring",
-       body="Nisroch jerkin",
-       hands="Mummu Wrists +2",
-       ring1="Begrudging Ring",
-       ring2="Mummu Ring",
-       back=Cape.RCRIT,
-       waist="K. Kachina Belt +1",
-       legs="Amini Bragues +2",
-       feet="Osh. Leggings +1"
+      head="Meghanada Visor +2",
+      neck="Iskur Gorget",
+      ear1="Odr Earring",
+      ear2="Telos Earring",
+      body="Nisroch jerkin",
+      hands="Mummu Wrists +2",
+      ring1="Begrudging Ring",
+      ring2="Mummu Ring",
+      back=Cape.RCRIT,
+      waist="K. Kachina Belt +1",
+      legs="Amini Bragues +2",
+      feet="Osh. Leggings +1"
     })
 
     sets.midcast.RA.STP = set_combine(sets.midcast.RA, {
@@ -473,25 +485,25 @@ function init_gear_sets()
 
     -- Idle sets
     sets.idle = {
-        head="Nyame Helm",
-        body="Nyame Mail",
-        hands="Nyame Gauntlets",
-        legs="Nyame Flanchard",
-        feet="Nyame Sollerets",
-        neck="Loricate Torque +1",
-        waist="Carrier's Sash",
-        left_ear="Odnowa earring +1",
-        right_ear="Tuisto earring",
-        left_ring="Defending Ring",
-        right_ring="Gelatinous Ring +1",
-        back=Cape.SNAPSHOT,
+      head="Nyame Helm",
+      body="Nyame Mail",
+      hands="Nyame Gauntlets",
+      legs="Nyame Flanchard",
+      feet="Nyame Sollerets",
+      neck="Loricate Torque +1",
+      waist="Carrier's Sash",
+      left_ear="Odnowa earring +1",
+      right_ear="Tuisto earring",
+      left_ring="Defending Ring",
+      right_ring="Gelatinous Ring +1",
+      back=Cape.SNAPSHOT,
     }
 
     sets.idle.DT = set_combine(sets.idle, {
     })
 
     sets.idle.Town = set_combine(sets.idle, {
-        left_ring="Shneddick Ring +1"
+      left_ring="Shneddick Ring +1"
     })
 
     ------------------------------------------------------------------------------------------------
@@ -681,24 +693,24 @@ function init_gear_sets()
     ------------------------------------------------------------------------------------------------
 
     sets.buff.Barrage = {hands="Orion Bracers +3"}
-    sets.buff['Velocity Shot'] = set_combine(sets.midcast.RA, {body="Amini Caban +2", back=gear.RNG_TP_Cape})
+    sets.buff['Velocity Shot'] = set_combine(sets.midcast.RA, {body="Amini Caban +2", back=Cape.RATK})
     sets.buff.Camouflage = {body="Orion Jerkin +3"}
 
     sets.buff.Doom = {
-        neck="Nicander's Necklace", -- 20
-        ring1={name="Eshmun's Ring", bag="wardrobe3"}, -- 20
-        ring2={name="Eshmun's Ring", bag="wardrobe5"}, -- 20
-        waist="Gishdubar Sash", --10
+      neck="Nicander's Necklace", -- 20
+      ring1={name="Eshmun's Ring", bag="wardrobe3"}, -- 20
+      ring2={name="Eshmun's Ring", bag="wardrobe5"}, -- 20
+      waist="Gishdubar Sash", --10
     }
 
     sets.FullTP = {ear1="Crematio Earring"}
     sets.Obi = {waist="Hachirin-no-Obi"}
-    sets.CP = {back="Mecisto. Mantle"}
 
     -- sets.Annihilator = {main="Perun +1", sub="Blurred Knife +1", ranged="Annihilator"}
-    sets.Fomalhaut = {main="Perun +1", sub="Gleti's Knife", ranged="Fomalhaut"}
-    sets.Armageddon = {main="Perun +1", sub="Malevolence", ranged="Armageddon"}
-    -- sets.Gastraphetes = {main="Malevolence", sub="Malevolence", ranged="Gastraphetes"}
+
+    sets.Fomalhaut_M    = {main="Perun +1", sub="Gleti's Knife", ranged="Fomalhaut"}
+    sets.Armageddon_M   = {main=Malev.ONE,  sub=Malev.TWO,       ranged="Armageddon"}
+    sets.Gastraphetes_M = {main=Malev.ONE,  sub=Malev.TWO,       ranged="Gastraphetes"}
 
     sets.DefaultShield = {sub="Nusku Shield"}
 
@@ -731,58 +743,63 @@ function job_precast(spell, action, spellMap, eventArgs)
 end
 
 function job_post_precast(spell, action, spellMap, eventArgs)
-    if spell.action_type == 'Ranged Attack' then
-        if spell.action_type == 'Ranged Attack' then
-            if player.equipment.ranged == "Gastraphetes" then
-                if flurry == 2 then
-                    equip(sets.precast.RA.Gastra.Flurry2)
-                elseif embrava == 1 then
-                    equip(sets.precast.RA.Gastra.Embrava)
-                elseif flurry == 1 then
-                    equip(sets.precast.RA.Gastra.Flurry1)
-                else
-                    equip(sets.precast.RA.Gastra)
-                end
-            else
-                if flurry == 2 then
-                    equip(sets.precast.RA.Flurry2)
-                elseif embrava == 1 then
-                    equip(sets.precast.RA.Embrava)
-                elseif flurry == 1 then
-                    equip(sets.precast.RA.Flurry1)
-                else
-                    equip(sets.precast.RA)
-                end
-            end
-            if player.equipment.main == "Perun +1" then
-                equip({waist="Yemaya Belt"})
-            end
+  if spell.action_type == 'Ranged Attack' then
+    special_ammo_check()
+    
+    if player.equipment.ranged == "Gastraphetes" then
+        if flurry == 2 then
+            equip(sets.precast.RA.Gastra.Flurry2)
+        elseif embrava == 1 then
+            equip(sets.precast.RA.Gastra.Embrava)
+        elseif flurry == 1 then
+            equip(sets.precast.RA.Gastra.Flurry1)
+        else
+            equip(sets.precast.RA.Gastra)
         end
-      elseif spell.type == 'WeaponSkill' then
-        -- Replace TP-bonus gear if not needed.
-        if spell.english == 'Trueflight' or spell.english == 'Aeolian Edge' and player.tp > 2900 then
-            equip(sets.FullTP)
-        end
-        -- Equip obi if weather/day matches for WS.
-        if elemental_ws:contains(spell.name) then
-            -- Matching double weather (w/o day conflict).
-            if spell.element == world.weather_element and (get_weather_intensity() == 2 and spell.element ~= elements.weak_to[world.day_element]) then
-                equip({waist="Hachirin-no-Obi"})
-            -- Target distance under 1.7 yalms.
-            elseif spell.target.distance < (1.7 + spell.target.model_size) then
-                equip({waist="Orpheus's Sash"})
-            -- Matching day and weather.
-            elseif spell.element == world.day_element and spell.element == world.weather_element then
-                equip({waist="Hachirin-no-Obi"})
-            -- Target distance under 8 yalms.
-            elseif spell.target.distance < (8 + spell.target.model_size) then
-                equip({waist="Orpheus's Sash"})
-            -- Match day or weather.
-            elseif spell.element == world.day_element or spell.element == world.weather_element then
-                equip({waist="Hachirin-no-Obi"})
-            end
+    else
+        if flurry == 2 then
+            equip(sets.precast.RA.Flurry2)
+        elseif embrava == 1 then
+            equip(sets.precast.RA.Embrava)
+        elseif flurry == 1 then
+            equip(sets.precast.RA.Flurry1)
+        else
+            equip(sets.precast.RA)
         end
     end
+
+    if player.equipment.main == "Perun +1" then
+        equip({waist="Yemaya Belt"})
+    end
+  elseif spell.type == 'WeaponSkill' then
+      if spell.skill == 'Marksmanship' or spell.skill == "Archery" then
+        special_ammo_check()
+      end  
+  
+      -- Replace TP-bonus gear if not needed.
+      if spell.english == 'Trueflight' or spell.english == 'Aeolian Edge' and player.tp > 2900 then
+          equip(sets.FullTP)
+      end
+      -- Equip obi if weather/day matches for WS.
+      if elemental_ws:contains(spell.name) then
+          -- Matching double weather (w/o day conflict).
+          if spell.element == world.weather_element and (get_weather_intensity() == 2 and spell.element ~= elements.weak_to[world.day_element]) then
+              equip({waist="Hachirin-no-Obi"})
+          -- Target distance under 1.7 yalms.
+          elseif spell.target.distance < (1.7 + spell.target.model_size) then
+              equip({waist="Orpheus's Sash"})
+          -- Matching day and weather.
+          elseif spell.element == world.day_element and spell.element == world.weather_element then
+              equip({waist="Hachirin-no-Obi"})
+          -- Target distance under 8 yalms.
+          elseif spell.target.distance < (8 + spell.target.model_size) then
+              equip({waist="Orpheus's Sash"})
+          -- Match day or weather.
+          elseif spell.element == world.day_element or spell.element == world.weather_element then
+              equip({waist="Hachirin-no-Obi"})
+          end
+      end
+  end
 end
 
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
@@ -817,9 +834,9 @@ function job_aftercast(spell, action, spellMap, eventArgs)
         send_command('@timers c "Shadowbind ['..spell.target.name..']" 42 down abilities/00122.png')
     end
 
-    -- if player.status ~= 'Engaged' and state.WeaponLock.value == false then
-    --     check_weaponset()
-    -- end
+    if player.status ~= 'Engaged' and state.WeaponLock == false then
+        check_weaponset()
+    end
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -876,12 +893,6 @@ function job_buff_change(buff,gain)
 end
 
 function job_state_change(stateField, newValue, oldValue)
-    -- if state.WeaponLock.value == true then
-    --     disable('ranged')
-    -- else
-    --     enable('ranged')
-    -- end
-
     check_weaponset()
 end
 
@@ -934,13 +945,6 @@ function get_custom_wsmode(spell, action, spellMap)
 end
 
 function customize_idle_set(idleSet)
-    if state.CP.current == 'on' then
-        equip(sets.CP)
-        disable('back')
-    else
-        enable('back')
-    end
-
     if state.Auto_Kite.value == true then
        idleSet = set_combine(idleSet, sets.Kiting)
     end
@@ -1066,13 +1070,23 @@ function gearinfo(cmdParams, eventArgs)
     end
 end
 
+function special_ammo_check()
+    -- Stop if Animikii/Hauksbok equipped
+    if no_shoot_ammo:contains(player.equipment.ammo) then
+        cancel_spell()
+        add_to_chat(123, '** Action Canceled: [ '.. player.equipment.ammo .. ' equipped!! ] **')
+        return
+    end
+end
+
+
 -- Check for proper ammo when shooting or weaponskilling
 function check_ammo(spell, action, spellMap, eventArgs)
     if spell.action_type == 'Ranged Attack' then
         if player.equipment.ammo == 'empty' or player.equipment.ammo ~= DefaultAmmo[player.equipment.range] then
             if DefaultAmmo[player.equipment.range] then
                 if player.inventory[DefaultAmmo[player.equipment.range]] then
-                    --add_to_chat(3,"Using Default Ammo")
+                    add_to_chat(3,"Using Default Ammo")
                     equip({ammo=DefaultAmmo[player.equipment.range]})
                 else
                     add_to_chat(3,"Default ammo unavailable.  Leaving empty.")
@@ -1082,7 +1096,6 @@ function check_ammo(spell, action, spellMap, eventArgs)
             end
         end
     elseif spell.type == 'WeaponSkill' then
-        -- magical weaponskills
         if elemental_ws:contains(spell.english) then
             if player.inventory[MagicAmmo[player.equipment.range]] then
                 equip({ammo=MagicAmmo[player.equipment.range]})
@@ -1090,7 +1103,6 @@ function check_ammo(spell, action, spellMap, eventArgs)
                 add_to_chat(3,"Magic ammo unavailable.  Using default ammo.")
                 equip({ammo=DefaultAmmo[player.equipment.range]})
             end
-        --physical weaponskills
         else
             if state.RangedMode.value == 'Acc' then
                 if player.inventory[AccAmmo[player.equipment.range]] then
@@ -1133,7 +1145,6 @@ function check_moving()
 end
 
 function check_gear()
-    --[[
     if no_swap_gear:contains(player.equipment.left_ring) then
         disable("ring1")
     else
@@ -1149,7 +1160,6 @@ function check_gear()
     else
         enable("waist")
     end
-    ]]--
 end
 
 function check_weaponset()

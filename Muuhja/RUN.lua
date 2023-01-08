@@ -186,7 +186,7 @@ function user_setup()
   Empy.Head  = "Erilaz Galea +2"
   Empy.Body  = "Erilaz Surcoat +2"
   Empy.Hands = "Erilaz Gauntlets +2"
-  Empy.Legs  = "Erilaz Leg Guards +2"
+  Empy.Legs  = "Erilaz Leg Guards +3"
   Empy.Feet  = "Erilaz Greaves +3"
   
   Cape = {}

@@ -869,94 +869,97 @@ end
 function job_post_precast(spell, action, spellMap, eventArgs)
     if (spell.type == 'CorsairRoll' or spell.english == "Double-Up") then
         if player.status ~= 'Engaged' and state.WeaponLock.value == false then
-            equip(sets.precast.CorsairRoll.Duration)
+          equip(sets.precast.CorsairRoll.Duration)
         end
+
         if state.LuzafRing.value then
-            equip(sets.precast.LuzafRing)
+          equip(sets.precast.LuzafRing)
         end
     end
     if spell.action_type == 'Ranged Attack' then
         special_ammo_check()
         if flurry == 2 then
-            equip(sets.precast.RA.Flurry2)
+          equip(sets.precast.RA.Flurry2)
         elseif embrava == 1 then
-            equip(sets.precast.RA.Embrava)
+          equip(sets.precast.RA.Embrava)
         elseif flurry == 1 then
-            equip(sets.precast.RA.Flurry1)
+          equip(sets.precast.RA.Flurry1)
         end
     elseif spell.type == 'WeaponSkill' then
         if spell.skill == 'Marksmanship' then
-            special_ammo_check()
+          special_ammo_check()
         end
+
         -- Replace TP-bonus gear if not needed.
         if spell.english == 'Leaden Salute' or spell.english == 'Aeolian Edge' and player.tp > 2900 then
-            equip(sets.FullTP)
+          equip(sets.FullTP)
         end
+
         if elemental_ws:contains(spell.name) then
             -- Matching double weather (w/o day conflict).
             if spell.element == world.weather_element and (get_weather_intensity() == 2 and spell.element ~= elements.weak_to[world.day_element]) then
-                equip({waist="Hachirin-no-Obi"})
+              equip({waist="Hachirin-no-Obi"})
             -- Target distance under 1.7 yalms.
             elseif spell.target.distance < (1.7 + spell.target.model_size) then
-                equip({waist="Orpheus's Sash"})
+              equip({waist="Orpheus's Sash"})
             -- Matching day and weather.
             elseif spell.element == world.day_element and spell.element == world.weather_element then
-                equip({waist="Hachirin-no-Obi"})
+              equip({waist="Hachirin-no-Obi"})
             -- Target distance under 8 yalms.
             elseif spell.target.distance < (8 + spell.target.model_size) then
-                equip({waist="Orpheus's Sash"})
+              equip({waist="Orpheus's Sash"})
             -- Match day or weather.
             elseif spell.element == world.day_element or spell.element == world.weather_element then
-                equip({waist="Hachirin-no-Obi"})
+              equip({waist="Hachirin-no-Obi"})
             end
         end
     end
 end
 
 function job_post_midcast(spell, action, spellMap, eventArgs)
-    if spell.type == 'CorsairShot' then
-        if (spell.english ~= 'Light Shot' and spell.english ~= 'Dark Shot') then
-            -- Matching double weather (w/o day conflict).
-            if spell.element == world.weather_element and (get_weather_intensity() == 2 and spell.element ~= elements.weak_to[world.day_element]) then
-                equip({waist="Hachirin-no-Obi"})
-            -- Target distance under 1.7 yalms.
-            elseif spell.target.distance < (1.7 + spell.target.model_size) then
-                equip({waist="Orpheus's Sash"})
-            -- Matching day and weather.
-            elseif spell.element == world.day_element and spell.element == world.weather_element then
-                equip({waist="Hachirin-no-Obi"})
-            -- Target distance under 8 yalms.
-            elseif spell.target.distance < (8 + spell.target.model_size) then
-                equip({waist="Orpheus's Sash"})
-            -- Match day or weather.
-            elseif spell.element == world.day_element or spell.element == world.weather_element then
-                equip({waist="Hachirin-no-Obi"})
-            end
-            if state.QDMode.value == 'Enhance' then
-                equip(sets.midcast.CorsairShot.Enhance)
-            elseif state.QDMode.value == 'TH' then
-                equip(sets.midcast.CorsairShot)
-                equip(sets.TreasureHunter)
-            elseif state.QDMode.value == 'STP' then
-                equip(sets.midcast.CorsairShot.STP)
-            end
-        end
-    elseif spell.action_type == 'Ranged Attack' then
-        if buffactive['Triple Shot'] then
-            equip(sets.TripleShot)
-            if buffactive['Aftermath: Lv.3'] and player.equipment.ranged == "Armageddon" then
-                equip(sets.TripleShotCritical)
-                if (spell.target.distance < (7 + spell.target.model_size)) and (spell.target.distance > (5 + spell.target.model_size)) then
-                    equip(sets.TrueShot)
-                end
-            end
-        elseif buffactive['Aftermath: Lv.3'] and player.equipment.ranged == "Armageddon" then
-            equip(sets.midcast.RA.Critical)
-            if (spell.target.distance < (7 + spell.target.model_size)) and (spell.target.distance > (5 + spell.target.model_size)) then
-                equip(sets.TrueShot)
-            end
-        end
-    end
+  if spell.type == 'CorsairShot' then
+      if (spell.english ~= 'Light Shot' and spell.english ~= 'Dark Shot') then
+          -- Matching double weather (w/o day conflict).
+          if spell.element == world.weather_element and (get_weather_intensity() == 2 and spell.element ~= elements.weak_to[world.day_element]) then
+              equip({waist="Hachirin-no-Obi"})
+          -- Target distance under 1.7 yalms.
+          elseif spell.target.distance < (1.7 + spell.target.model_size) then
+              equip({waist="Orpheus's Sash"})
+          -- Matching day and weather.
+          elseif spell.element == world.day_element and spell.element == world.weather_element then
+              equip({waist="Hachirin-no-Obi"})
+          -- Target distance under 8 yalms.
+          elseif spell.target.distance < (8 + spell.target.model_size) then
+              equip({waist="Orpheus's Sash"})
+          -- Match day or weather.
+          elseif spell.element == world.day_element or spell.element == world.weather_element then
+              equip({waist="Hachirin-no-Obi"})
+          end
+          if state.QDMode.value == 'Enhance' then
+              equip(sets.midcast.CorsairShot.Enhance)
+          elseif state.QDMode.value == 'TH' then
+              equip(sets.midcast.CorsairShot)
+              equip(sets.TreasureHunter)
+          elseif state.QDMode.value == 'STP' then
+              equip(sets.midcast.CorsairShot.STP)
+          end
+      end
+  elseif spell.action_type == 'Ranged Attack' then
+      if buffactive['Triple Shot'] then
+          equip(sets.TripleShot)
+          if buffactive['Aftermath: Lv.3'] and player.equipment.ranged == "Armageddon" then
+              equip(sets.TripleShotCritical)
+              if (spell.target.distance < (7 + spell.target.model_size)) and (spell.target.distance > (5 + spell.target.model_size)) then
+                  equip(sets.TrueShot)
+              end
+          end
+      elseif buffactive['Aftermath: Lv.3'] and player.equipment.ranged == "Armageddon" then
+          equip(sets.midcast.RA.Critical)
+          if (spell.target.distance < (7 + spell.target.model_size)) and (spell.target.distance > (5 + spell.target.model_size)) then
+              equip(sets.TrueShot)
+          end
+      end
+  end
 end
 
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.

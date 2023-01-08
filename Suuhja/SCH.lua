@@ -340,11 +340,11 @@ function get_sets()
     
     sets.me["Shell Crusher"] = {
       ammo="Amar Cluster",
-      head={ name="Nyame Helm", augments={'Path: B',}},
-      body={ name="Agwu's Robe", augments={'Path: A',}},
-      hands={ name="Gazu Bracelets +1", augments={'Path: A',}},
-      legs={ name="Nyame Flanchard", augments={'Path: B',}},
-      feet={ name="Nyame Sollerets", augments={'Path: B',}},
+      head="Arbatel Bonnet +3",
+      body="Arbatel Gown +3",
+      hands="Arbatel Bracers +3",
+      legs="Arbatel Pants +3",
+      feet="Arbatel Loafers +3",
       neck="Lissome Necklace",
       waist="Grunfeld Rope",
       left_ear="Mache Earring +1",
@@ -358,11 +358,11 @@ function get_sets()
     sets.me["Spirit Taker"] = sets.me["Heavy Swing"]
 
     sets.me["Earth Crusher"] = {
-      ammo="Ghastly Tathlum +1",
+      ammo="Sroda Tathlum",
       head="Agwu's Cap",
-      body="Agwu's Robe",
+      body="Nyame Mail",
       hands="Jhakri Cuffs +2",
-      legs="Agwu's Slops",
+      legs="Nyame Flanchard",
       feet="Arbatel Loafers +3",
       neck="Quanpur Necklace",
       waist="Orpheus's Sash",
@@ -376,38 +376,36 @@ function get_sets()
     sets.me["Rock Crusher"] = sets.me["Earth Crusher"]
 
     sets.me["Aeolian Edge"] = set_combine(sets.me["Earth Crusher"], {
-      neck="Argute Stole +2",
+      neck="Sibyl Scarf",
     })
     
     sets.me["Cataclysm"] = set_combine(sets.me["Aeolian Edge"], {
-      ammo="Ghastly Tathlum +1",
       head="Pixie hairpin +1",
-      neck={ name="Argute Stole +2", augments={'Path: A',}},
       left_ring="Archon Ring",
     })
 
     sets.me["Omniscience"] = {
-      ammo="Ghastly Tathlum +1",
+      ammo="Sroda Tathlum",
       head="Pixie hairpin +1",
-      body="Agwu's Robe",
-      hands="Jhakri Cuffs +2",
-      legs="Agwu's Slops",
+      body="Arbatel Gown +3",
+      hands="Arbatel Bracers +3",
+      legs="Nyame Flanchard",
       feet="Arbatel Loafers +3",
       neck={ name="Argute Stole +2", augments={'Path: A',}},
       waist="Orpheus's Sash",
       left_ear="Regal Earring",
-      right_ear="Malignance Earring",
+      right_ear="Malignance Earring", -- JSE +2 Earring
       left_ring="Archon Ring",
       right_ring="Metamorph Ring +1",
       back=Lugh.MND_WSD
     }
 
     sets.me["Seraph Strike"] = {
-      ammo="Pemphredo Tathlum",
+      ammo="Sroda Tathlum",
       head="Agwu's Cap",
-      body="Agwu's Robe",
+      body="Nyame Mail",
       hands="Jhakri Cuffs +2",
-      legs="Agwu's Slops",
+      legs="Nyame Flanchard",
       feet="Arbatel Loafers +3",
       neck={ name="Argute Stole +2", augments={'Path: A',}},
       waist="Hachirin-no-Obi",
@@ -419,7 +417,6 @@ function get_sets()
     }
 
     sets.me["Shining Strike"] = sets.me["Seraph Strike"]
-
     sets.me["Flash Nova"] = sets.me["Seraph Strike"]
     sets.me["Starburst"] = sets.me["Flash Nova"]
     

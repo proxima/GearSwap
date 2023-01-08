@@ -299,8 +299,10 @@ function init_gear_sets()
   sets.midcast['Enlight II'] = sets.midcast.Enlight
   
   sets.midcast.Banish = sets.precast.JA['Provoke']
+  sets.midcast.Banish.SIRD = set_combine(sets.midcast.Banish, sets.midcast.SIRD)
   
   sets.midcast['Banish II'] = sets.midcast.Banish
+  sets.midcast['Banish II'].SIRD = set_combine(sets.midcast['Banish II'], sets.midcast.SIRD)  
   
   sets.midcast.Holy = sets.precast.JA['Provoke']
 
@@ -340,7 +342,11 @@ function init_gear_sets()
 
   sets.midcast.Crusade.SIRD = set_combine(sets.midcast.Crusade, sets.midcast.SIRD)
   
-  sets.midcast['Enhancing Magic'] = {}
+  sets.midcast['Enhancing Magic'] = {
+    left_ear="Mimir Earring",
+    left_ring={name="Stikini Ring +1",bag="wardrobe"},
+    right_ring={name="Stikini Ring +1",bag="wardrobe5"},
+  }
 
   sets.midcast.Phalanx = {
     main="Sakpata's Sword",

@@ -271,7 +271,7 @@ function init_gear_sets()
     ---------------------------------------- Precast Sets ------------------------------------------
     ------------------------------------------------------------------------------------------------
 
-    sets.precast.JA['Triple Shot'] = {body="Chasseur's Frac +2"}
+    sets.precast.JA['Triple Shot'] = {body="Chasseur's Frac +3"}
     sets.precast.JA['Snake Eye'] = {legs="Lanun Trews +1"}
     sets.precast.JA['Wild Card'] = {feet="Lanun Bottes +3"}
     sets.precast.JA['Random Deal'] = {body="Lanun Frac +3"}
@@ -296,7 +296,7 @@ function init_gear_sets()
     sets.precast.CorsairRoll["Caster's Roll"] = set_combine(sets.precast.CorsairRoll, {legs="Chas. Culottes +3"})
     sets.precast.CorsairRoll["Courser's Roll"] = set_combine(sets.precast.CorsairRoll, {feet="Chass. Bottes +2"})
     sets.precast.CorsairRoll["Blitzer's Roll"] = set_combine(sets.precast.CorsairRoll, {head="Chass. Tricorne +2"})
-    sets.precast.CorsairRoll["Tactician's Roll"] = set_combine(sets.precast.CorsairRoll, {body="Chasseur's Frac +2"})
+    sets.precast.CorsairRoll["Tactician's Roll"] = set_combine(sets.precast.CorsairRoll, {body="Chasseur's Frac +3"})
     sets.precast.CorsairRoll["Allies' Roll"] = set_combine(sets.precast.CorsairRoll, {hands="Chasseur's Gants +3"})
 
     sets.precast.LuzafRing = {ring1="Luzaf's Ring"}
@@ -330,7 +330,7 @@ function init_gear_sets()
     }
 
     sets.precast.RA.Flurry1 = set_combine(sets.precast.RA, {
-      head="Chasseur's Tricorne +2",
+      head="Chasseur's Tricorne +3",
       hands={ name="Carmine Fin. Ga. +1", augments={'Rng.Atk.+20','"Mag.Atk.Bns."+12','"Store TP"+6',}},
     })
 
@@ -399,10 +399,10 @@ function init_gear_sets()
       waist="Sveltesse gouriz +1",
     }
 
-    sets.precast.WS['Hot Shot'] = {ammo=gear.WSbullet,
+    sets.precast.WS['Hot Shot'] = {ammo=gear.MAbullet,
       head={ name="Nyame Helm", augments={'Path: B',}},
       body={ name="Nyame Mail", augments={'Path: B',}},
-      hands="Chasseur's Gants +3",
+      hands="Nyame Gauntlets",
       legs={ name="Nyame Flanchard", augments={'Path: B',}},
       feet={ name="Lanun Bottes +3", augments={'Enhances "Wild Card" effect',}},
       neck="Fotia Gorget",
@@ -411,7 +411,7 @@ function init_gear_sets()
       right_ear="Friomisi Earring",
       left_ring="Dingir Ring",
       right_ring="Epaminondas's Ring",
-      back=Cape.RATK
+      back=Cape.LEADEN
     }
 
     sets.precast.WS['Hot Shot'].Acc = set_combine({ammo=gear.RAccbullet,
@@ -464,7 +464,9 @@ function init_gear_sets()
     }
 
     sets.precast.WS['Savage Blade'].Acc = set_combine(sets.precast.WS['Savage Blade'], {
-      body="Ikenga's Vest"
+      body="Ikenga's Vest",
+      hands="Chasseur's Gants +3",
+      right_ring="Sroda Ring",
     })
 
     sets.precast.WS['Swift Blade'] = set_combine(sets.precast.WS, {})
@@ -583,7 +585,7 @@ function init_gear_sets()
 
     sets.TripleShot = {
       head="Oshosi Mask +1",
-      body="Chasseur's Frac +2",
+      body="Chasseur's Frac +3",
       hands="Lanun Gants +3",
       legs="Osh. Trousers +1",
       feet="Osh. Leggings +1",

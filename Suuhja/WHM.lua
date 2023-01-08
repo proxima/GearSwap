@@ -250,7 +250,7 @@ function init_gear_sets()
     })
 
     sets.precast.FC.Cure = set_combine(sets.precast.FC, {
-      legs="Ebers pantaloons +2",     -- 13, 5
+      legs="Ebers pantaloons +3",     -- 13, 5
     })
 
     sets.precast.FC.Curaga = sets.precast.FC.Cure
@@ -336,7 +336,7 @@ function init_gear_sets()
       head="Kaykaus Mitra +1",                              -- 11      6
       body="Ebers Bliaut +3",                               --         3       +Solace
       hands="Kaykaus Cuffs +1",                             -- 11   6  3
-      legs="Ebers Pant. +2",                                --         5    12
+      legs="Ebers Pant. +3",                                --         5    12
       feet="Kaykaus Boots +1",                              -- 17   6  3
       neck={ name="Clr. Torque +1", augments={'Path: A',}}, --  7  20     8
       waist="Luminary Sash",
@@ -463,7 +463,7 @@ function init_gear_sets()
     })
 
     sets.midcast.Auspice = set_combine(sets.midcast.EnhancingDuration, {
-      feet="Ebers Duckbills +1",
+      feet="Ebers Duckbills +2",
     })
 
     sets.midcast.BarElement = set_combine(sets.midcast['Enhancing Magic'], {
@@ -609,7 +609,7 @@ function init_gear_sets()
       right_ring={name="Stikini Ring +1",bag="wardrobe 3"},
       waist="Carrier's Sash",
       back={ name="Alaunus's Cape", augments={'MND+20','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Haste+10','Mag. Evasion+15',}},
-      legs="Ebers pantaloons +2",
+      legs="Ebers pantaloons +3",
       feet="Inyan. Crackows +2",
     }
 
@@ -636,7 +636,7 @@ function init_gear_sets()
       head="Bunzi's Hat",
       body="Ebers Bliaut +3",
       hands="Bunzi's Gloves",
-      legs="Ebers pantaloons +2",
+      legs="Ebers pantaloons +3",
       feet="Bunzi's Sabots",
       left_ring="Defending Ring",
       right_ring="Inyanga Ring",
