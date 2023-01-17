@@ -495,7 +495,7 @@ function init_gear_sets()
       body={ name="Lanun Frac +3", augments={'Enhances "Loaded Deck" effect',}},
       hands={ name="Carmine Fin. Ga. +1", augments={'Rng.Atk.+20','"Mag.Atk.Bns."+12','"Store TP"+6',}},
       legs="Nyame Flanchard",
-      feet={ name="Lanun Bottes +3", augments={'Enhances "Wild Card" effect',}},
+      feet="Chasseur's Bottes +3",
       neck="Comm. Charm +2",
       left_ear="Crematio Earring",
       right_ear="Friomisi Earring",
@@ -676,7 +676,7 @@ function init_gear_sets()
       head="Malignance Chapeau",
       body="Malignance Tabard",
       hands="Malignance Gloves",
-      legs="Chas. Culottes +3",
+      legs="Malignance Tights",
       feet="Malignance Boots",
       neck="Iskur Gorget",
       waist="Windbuffet Belt +1",
@@ -1014,10 +1014,34 @@ end
 
 -- Handle notifications of general user state change.
 function job_state_change(stateField, newValue, oldValue)
-    if state.WeaponLock.value == true then
-        disable('ranged')
-    else
-        enable('ranged')
+    if stateField == "Weapon Set" and newValue ~= oldValue then
+        if state.WeaponSet.value == "Rolls" then
+            send_command("trial stop")
+        elseif state.WeaponSet.value == "DeathPenalty_M" then
+            send_command("trial ws leaden salute;trial tp 1000")
+        elseif state.WeaponSet.value == "DeathPenalty_R" then
+            send_command("trial stop")
+        elseif state.WeaponSet.value == "Armageddon_M" then
+            send_command("trial ws wildfire;trial tp 1000")
+        elseif state.WeaponSet.value == "Armageddon_R" then
+            send_command("trial stop")
+        elseif state.WeaponSet.value == "Fomalhaut_M" then
+            send_command("trial ws hot shot;trial tp 1500")
+        elseif state.WeaponSet.value == "Fomalhaut_R" then
+            send_command("trial stop")
+        elseif state.WeaponSet.value == "Anarchy" then
+            send_command("trial ws savage blade;trial tp 1000")
+        elseif state.WeaponSet.value == "Aeolian" then
+            send_command("trial ws aeolian edge;trial tp 1000")
+        end
+    end
+
+    if stateField == "Weapon Lock" then
+        if state.WeaponLock.value == true then
+            disable('ranged')
+        else
+            enable('ranged')
+        end
     end
 
     check_weaponset()

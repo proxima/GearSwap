@@ -125,7 +125,6 @@ function user_setup()
     state.WeaponskillMode:options('Normal', 'Acc')
     state.IdleMode:options('Normal', 'DT', 'Refresh')
 
-    -- state.WeaponSet = M{['description']='Weapon Set', 'Armageddon_R', 'Fomalhaut_R', 'Rolls'}
     state.WeaponSet = M{['description']='Weapon Set', 'DeathPenalty_M', 'DeathPenalty_R', 'Armageddon_M', 'Armageddon_R', 'Fomalhaut_M', 'Fomalhaut_R', 'Anarchy', 'Aeolian', 'Rolls'}
     state.WeaponLock = M(false, 'Weapon Lock')
 
@@ -345,17 +344,34 @@ function init_gear_sets()
     
     sets.precast.WS['Last Stand'].Acc = set_combine(sets.precast.WS['Last Stand'], {ammo=gear.RAccbullet,
       neck="Iskur Gorget",
+      body="Laksa. Frac +3",  
       left_ear="Beyla Earring",
       right_ring="Hajduk Ring +1",
       waist="K. Kachina Belt +1",
       feet="Nyame Sollerets"
     })
 
-    sets.precast.WS['Detonator'] = set_combine(sets.precast.WS['Last Stand'], {
-    })
+    sets.precast.WS['Detonator'] = {ammo=gear.WSbullet,
+      head="Nyame Helm",
+      body="Nyame Mail",
+      hands="Chasseur's Gants +3",
+      legs="Nyame Flanchard",
+      feet="Nyame Sollerets",
+      neck="Comm. Charm +2",
+      waist="Fotia Belt",
+      left_ear="Moonshade Earring",
+      right_ear="Ishvara Earring",
+      left_ring="Sroda Ring",
+      right_ring="Epaminondas's Ring",
+      back=Cape.RATK
+    }
 
     sets.precast.WS['Detonator'].Acc = set_combine(sets.precast.WS['Detonator'], {ammo=gear.RAccbullet,
+      body="Laksa. Frac +3",
+      neck="Fotia Gorget",
       left_ear="Beyla Earring",
+      right_ear="Telos Earring",  
+      left_ring="Regal Ring",
       right_ring="Hajduk Ring +1",
     })
 
@@ -436,7 +452,7 @@ function init_gear_sets()
       left_ear="Ishvara Earring",
       right_ear="Moonshade Earring",
       left_ring="Epaminondas's Ring",
-      right_ring="Regal Ring",
+      right_ring="Sroda Ring",
       back=Cape.SB
     }
 
@@ -469,7 +485,7 @@ function init_gear_sets()
       body={ name="Lanun Frac +3", augments={'Enhances "Loaded Deck" effect',}},
       hands={ name="Carmine Fin. Ga. +1", augments={'Rng.Atk.+20','"Mag.Atk.Bns."+12','"Store TP"+6',}},
       legs="Nyame Flanchard",
-      feet={ name="Lanun Bottes +3", augments={'Enhances "Wild Card" effect',}},
+      feet="Chasseur's Bottes +3",
       neck="Comm. Charm +2",
       left_ear="Crematio Earring",
       right_ear="Friomisi Earring",
@@ -655,7 +671,7 @@ function init_gear_sets()
       head="Malignance Chapeau",
       body="Malignance Tabard",
       hands="Malignance Gloves",
-      legs="Chas. Culottes +3",
+      legs="Malignance Tights",
       feet="Malignance Boots",
       neck="Iskur Gorget",
       waist="Reiki Yotai",
@@ -1007,10 +1023,34 @@ end
 
 -- Handle notifications of general user state change.
 function job_state_change(stateField, newValue, oldValue)
-    if state.WeaponLock.value == true then
-        disable('ranged')
-    else
-        enable('ranged')
+    if stateField == "Weapon Set" and newValue ~= oldValue then
+        if state.WeaponSet.value == "Rolls" then
+            send_command("trial stop")
+        elseif state.WeaponSet.value == "DeathPenalty_M" then
+            send_command("trial ws leaden salute;trial tp 1000")
+        elseif state.WeaponSet.value == "DeathPenalty_R" then
+            send_command("trial stop")
+        elseif state.WeaponSet.value == "Armageddon_M" then
+            send_command("trial ws wildfire;trial tp 1000")
+        elseif state.WeaponSet.value == "Armageddon_R" then
+            send_command("trial stop")
+        elseif state.WeaponSet.value == "Fomalhaut_M" then
+            send_command("trial ws hot shot;trial tp 1500")
+        elseif state.WeaponSet.value == "Fomalhaut_R" then
+            send_command("trial stop")
+        elseif state.WeaponSet.value == "Anarchy" then
+            send_command("trial ws savage blade;trial tp 1000")
+        elseif state.WeaponSet.value == "Aeolian" then
+            send_command("trial ws aeolian edge;trial tp 1000")
+        end
+    end
+
+    if stateField == "Weapon Lock" then
+        if state.WeaponLock.value == true then
+            disable('ranged')
+        else
+            enable('ranged')
+        end
     end
 
     check_weaponset()

@@ -85,7 +85,7 @@ function user_setup()
     state.WeaponskillMode:options('Normal', 'Acc', 'Enmity')
     state.IdleMode:options('Normal', 'DT')
 
-    state.WeaponSet = M{['description']='Weapon Set', 'Armageddon_M', 'Fomalhaut_M', 'Gastraphetes_M'}
+    state.WeaponSet = M{['description']='Weapon Set', 'Armageddon_M', 'Fomalhaut_M', 'Gastraphetes_M', 'Naegling'}
 
     DefaultAmmo = {
         ['Yoichinoyumi'] = "Chrono Arrow",
@@ -132,8 +132,9 @@ function user_setup()
     Cape.DW         = {name="Belenus's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dual Wield"+10','Phys. dmg. taken-10%',}}
     Cape.RATK       = {name="Belenus's Cape", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','AGI+10','Weapon skill damage +10%','Phys. dmg. taken-10%'}}
     Cape.TRUEFLIGHT = {name="Belenus's Cape", augments={'AGI+20','Mag. Acc+20 /Mag. Dmg.+20','AGI+10','Weapon skill damage +10%','Phys. dmg. taken-10%'}}
-    Cape.RTP        = {name="Belenus's Cape", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','Rng.Acc.+10','"Store TP"+10','Phys. dmg. taken-10%',}}
+    Cape.RTP        = {name="Belenus's Cape", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','AGI+10','"Store TP"+10','Phys. dmg. taken-10%',}}
     Cape.AEOLIAN    = {name="Belenus's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}
+    Cape.SB         = {name="Belenus's Cape", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%','Phys. dmg. taken-10%'}}
 
     Malev = {}
     Malev.ONE = {name="Malevolence", bag="wardrobe5"}
@@ -319,6 +320,21 @@ function init_gear_sets()
       back=Cape.RATK
     }
 
+    sets.precast.WS['Savage Blade'] = {ammo="Hauksbok Arrow",
+      head={ name="Nyame Helm", augments={'Path: B',}},
+      body={ name="Ikenga's Vest", augments={'Path: A',}},
+      hands={ name="Nyame Gauntlets", augments={'Path: B',}},
+      legs={ name="Nyame Flanchard", augments={'Path: B',}},
+      feet={ name="Nyame Sollerets", augments={'Path: B',}},
+      neck="Rep. Plat. Medal",
+      waist="Sailfi Belt +1",
+      left_ear={ name="Moonshade Earring", augments={'"Mag.Atk.Bns."+4','TP Bonus +250',}},
+      right_ear="Ishvara Earring",
+      left_ring="Sroda Ring",
+      right_ring="Epaminondas's Ring",
+      back={ name="Belenus's Cape", augments={'INT+20','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','"Snapshot"+10','Mag. Evasion+15',}},
+    }
+
     sets.precast.WS.Acc = set_combine(sets.precast.WS, {
     })
 
@@ -415,7 +431,9 @@ function init_gear_sets()
 
     sets.midcast.Utsusemi = sets.midcast.SpellInterrupt
 
-    -- 1478 w/ Malevolance
+    -- RA Sets assume: ML20, Malevolance, Nusku, Gastra r15, Quelling bolt
+
+    -- 1505 racc
     sets.midcast.RA = {
       head="Arcadian Beret +3",
       neck="Iskur Gorget",
@@ -427,24 +445,27 @@ function init_gear_sets()
       right_ring="Ilabrat Ring",
       back=Cape.RTP,
       waist="Yemaya Belt",
-      legs="Amini Bragues +2",
+      legs="Amini Bragues +3",
       feet="Malignance Boots"
     }
 
-    -- 1509
+    -- 1550 racc
     sets.midcast.RA.Acc = set_combine(sets.midcast.RA, {
       neck={ name="Scout's Gorget +2", augments={'Path: A',}},
-      right_ear="Beyla Earring",
+      body="Orion jerkin +3",
       right_ring="Regal Ring",
     })
 
-    -- 1557
+    -- 1597 racc
     sets.midcast.RA.HighAcc = set_combine(sets.midcast.RA.Acc, {
+      right_ear="Beyla Earring",
+      waist="K. Kachina Belt +1",
+      feet="Amini bottillons +2",
     })
 
     sets.midcast.RA.Critical = set_combine(sets.midcast.RA, {
       head="Meghanada Visor +2",
-      neck="Iskur Gorget",
+      neck={ name="Scout's Gorget +2", augments={'Path: A',}},
       ear1="Odr Earring",
       ear2="Telos Earring",
       body="Nisroch jerkin",
@@ -453,7 +474,7 @@ function init_gear_sets()
       ring2="Mummu Ring",
       back=Cape.RCRIT,
       waist="K. Kachina Belt +1",
-      legs="Amini Bragues +2",
+      legs="Amini Bragues +3",
       feet="Osh. Leggings +1"
     })
 
@@ -474,7 +495,9 @@ function init_gear_sets()
 
     sets.TrueShot = {
       body="Nisroch Jerkin",
+      waist="Tellen belt",
       legs="Osh. Trousers +1",
+      -- feet="Ikenga's Clogs"
     }
 
     ------------------------------------------------------------------------------------------------
@@ -693,7 +716,7 @@ function init_gear_sets()
     ------------------------------------------------------------------------------------------------
 
     sets.buff.Barrage = {hands="Orion Bracers +3"}
-    sets.buff['Velocity Shot'] = set_combine(sets.midcast.RA, {body="Amini Caban +2", back=Cape.RATK})
+    sets.buff['Velocity Shot'] = set_combine(sets.midcast.RA, {body="Amini Caban +3", back=Cape.RATK})
     sets.buff.Camouflage = {body="Orion Jerkin +3"}
 
     sets.buff.Doom = {
@@ -711,6 +734,7 @@ function init_gear_sets()
     sets.Fomalhaut_M    = {main="Perun +1", sub="Gleti's Knife", ranged="Fomalhaut"}
     sets.Armageddon_M   = {main=Malev.ONE,  sub=Malev.TWO,       ranged="Armageddon"}
     sets.Gastraphetes_M = {main=Malev.ONE,  sub=Malev.TWO,       ranged="Gastraphetes"}
+    sets.Naegling       = {main="Naegling", sub="Gleti's Knife", ranged="Sparrowhawk +2"}
 
     sets.DefaultShield = {sub="Nusku Shield"}
 

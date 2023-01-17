@@ -255,8 +255,10 @@ function user_setup()
     send_command('bind ^numpad1 input /ws "Sanguine Blade" <t>')
     send_command('bind ^numpad2 input /ws "Black Halo" <t>')
 
-    send_command('bind @o sat youcommand Muuhja "Horde Lullaby"')
+    send_command('bind @a sat youcommand Muuhja "Thunderspark"')
+    send_command('bind @o sat youcommand Muuhja "Sleepga"')
     send_command('bind @p sat youcommand Zuuhja "Sleepga"')
+    send_command('bind @v sat youcommand Muuhja "Volt Strike"')
 
     Cape = {}
     Cape.REIVE      = { name="Cornflower Cape", augments={'MP+17','DEX+4','Accuracy+1','Blue Magic skill +10',}}
@@ -325,6 +327,8 @@ function user_unload()
 
     send_command('unbind @o')
     send_command('unbind @p')
+    send_command('unbind @a')
+    send_command('unbind @v')
 
     send_command('lua u azureSets')
     send_command('lua u gearinfo')
@@ -421,8 +425,7 @@ function init_gear_sets()
       body="Gleti's Cuirass",
       right_ring="Sroda Ring",
       right_ear="Hashi. Earring +2",
-      waist={ name="Kentarch Belt +1", augments={'Path: A',}},
-      back=Cape.STR_WSD
+      waist="Sailfi Belt +1"
     })
 
     sets.precast.WS['Savage Blade'].Acc = set_combine(sets.precast.WS['Savage Blade'], {
@@ -539,7 +542,7 @@ function init_gear_sets()
     sets.midcast['Blue Magic'].Magical = {
       ammo={ name="Ghastly Tathlum +1", augments={'Path: A',}},
       body={ name="Cohort Cloak +1", augments={'Path: A',}},
-      hands="Hashishin bazubands +2",
+      hands="Hashishin bazubands +3",
       legs={ name="Luhlaza Shalwar +3", augments={'Enhances "Assimilation" effect',}},
       feet="Hashishin basmak +2",
       neck="Sibyl Scarf",
@@ -590,7 +593,7 @@ function init_gear_sets()
       left_ear="Regal Earring",
       right_ear="Hashi. Earring +2",
       body="Hashishin mintan +2",
-      hands="Hashishin Bazubands +2",
+      hands="Hashishin Bazubands +3",
       left_ring={name="Stikini Ring +1",bag="wardrobe 2"},
       right_ring="Metamorph Ring +1",
       back="Aurist's Cape +1",
@@ -608,7 +611,7 @@ function init_gear_sets()
        left_ear="Digni. Earring",
        right_ear="Hashi. Earring +2",
        body="Hashishin Mintan +2",
-       hands="Hashishin Bazubands +2",
+       hands="Hashishin Bazubands +3",
        left_ring={name="Stikini Ring +1", bag="wardrobe 2"},
        right_ring={name="Stikini Ring +1", bag="wardrobe 3"},
        back="Aurist's Cape +1",

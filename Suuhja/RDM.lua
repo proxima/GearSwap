@@ -707,6 +707,15 @@ function get_sets()
       left_ear="Mimir Earring",
       right_ear="Lethargy earring +1",
     }
+
+    -- This is used when casting under Composure but enhancing someone else other than yourself. 
+    sets.midcast.enhancing.composure = set_combine(sets.midcast.enhancing.duration, {
+      head=EMPY.Head,
+      body=EMPY.Body,
+      hands="Atrophy Gloves +3",
+      legs=EMPY.Legs,
+      feet=EMPY.Feet,
+    })
     
     -- For Potency spells like Temper and Enspells
     sets.midcast.enhancing.potency = set_combine(sets.midcast.enhancing.duration, {
@@ -726,6 +735,8 @@ function get_sets()
 
     -- Phalanx
     sets.midcast.phalanx =  set_combine(sets.midcast.enhancing.duration, {
+      main="Sakpata's Sword",
+      sub="Sacro Bulwark",
       head={ name="Taeon Chapeau", augments={'Phalanx +3',}},
       body={ name="Taeon Tabard", augments={'Spell interruption rate down -10%','Phalanx +3',}},
       hands={ name="Taeon Gloves", augments={'Phalanx +3',}},

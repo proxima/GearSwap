@@ -415,7 +415,7 @@ function init_gear_sets()
       neck="Assassin's Gorget +2",
       waist="Reiki Yotai",
       left_ear="Sherida Earring",
-      right_ear="Telos Earring",
+      right_ear="Skulker's earring +1",
       left_ring="Gere Ring",
       right_ring="Hetairoi ring",
       back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10','Phys. dmg. taken-10%',}}
@@ -442,7 +442,7 @@ function init_gear_sets()
       neck="Assassin's Gorget +2",
       waist="Reiki yotai",
       left_ear="Sherida Earring",
-      right_ear="Telos Earring",
+      right_ear="Skulker's earring +1",
       right_ring="Hetairoi ring",
       left_ring="Gere Ring",
       back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10','Phys. dmg. taken-10%',}},

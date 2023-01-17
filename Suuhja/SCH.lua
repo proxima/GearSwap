@@ -361,7 +361,7 @@ function get_sets()
       ammo="Sroda Tathlum",
       head="Agwu's Cap",
       body="Nyame Mail",
-      hands="Jhakri Cuffs +2",
+      hands="Agwu's Gages",
       legs="Nyame Flanchard",
       feet="Arbatel Loafers +3",
       neck="Quanpur Necklace",
@@ -376,11 +376,15 @@ function get_sets()
     sets.me["Rock Crusher"] = sets.me["Earth Crusher"]
 
     sets.me["Aeolian Edge"] = set_combine(sets.me["Earth Crusher"], {
-      neck="Sibyl Scarf",
+      neck="Fotia Gorget",
+      body="Arbatel Gown +3",
+      hands="Jhakri Cuffs +2",  
     })
     
-    sets.me["Cataclysm"] = set_combine(sets.me["Aeolian Edge"], {
+    sets.me["Cataclysm"] = set_combine(sets.me["Earth Crusher"], {
       head="Pixie hairpin +1",
+      body="Arbatel Gown +3",
+      neck="Sibyl Scarf",
       left_ring="Archon Ring",
     })
 
@@ -404,7 +408,7 @@ function get_sets()
       ammo="Sroda Tathlum",
       head="Agwu's Cap",
       body="Nyame Mail",
-      hands="Jhakri Cuffs +2",
+      hands="Nyame Gauntlets",
       legs="Nyame Flanchard",
       feet="Arbatel Loafers +3",
       neck={ name="Argute Stole +2", augments={'Path: A',}},
@@ -412,7 +416,7 @@ function get_sets()
       left_ear="Regal Earring",
       right_ear="Malignance Earring",
       left_ring="Epaminondas's Ring",
-      right_ring="Metamorph Ring +1",
+      right_ring="Freke Ring",
       back=Lugh.MND_WSD
     }
 
@@ -455,8 +459,9 @@ function get_sets()
     sets.me["Realmrazer"] = set_combine(sets.me["Black Halo"], {
       neck="Fotia Gorget",
       waist="Fotia Belt",
+      right_ear="Malignance Earring",  
       left_ring="Rufescent Ring",
-      right_ring={name="Chirich Ring +1",bag="wardrobe 4"},
+      right_ring="Metamorph ring +1"
     })
 
     ------------

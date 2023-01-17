@@ -834,10 +834,32 @@ end
 
 -- Handle notifications of general user state change.
 function job_state_change(stateField, newValue, oldValue)
-    if state.WeaponLock.value == true then
-        disable('main','sub')
-    else
-        enable('main','sub')
+    if stateField == "Weapon Set" and newValue ~= oldValue then
+        if state.WeaponSet.value == "Carnwenhan" then
+            send_command("trial ws mordant rime;trial tp 1000")
+        elseif state.WeaponSet.value == "Twashtar" then
+            send_command("trial ws rudra's storm;trial tp 1000")
+        elseif state.WeaponSet.value == "NaeglingDW" then
+            send_command("trial ws savage blade;trial tp 1000")
+        elseif state.WeaponSet.value == "NaeglingSW" then
+            send_command("trial ws savage blade;trial tp 1000")
+        elseif state.WeaponSet.value == "Tauret" then
+            send_command("trial ws evisceration;trial tp 1000")
+        elseif state.WeaponSet.value == "Aeneas" then
+            send_command("trial ws rudra's storm;trial tp 1000")
+        elseif state.WeaponSet.value == "Aeolian" then
+            send_command("trial ws aeolian edge;trial tp 1000")
+        elseif state.WeaponSet.value == "Staff" then
+            send_command("trial ws cataclysm;trial tp 1750")
+        end
+    end
+
+    if stateField == "Weapon Lock" then
+        if state.WeaponLock.value == true then
+            disable('main','sub')
+        else
+            enable('main','sub')
+        end
     end
 end
 

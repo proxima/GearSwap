@@ -537,7 +537,7 @@ function init_gear_sets()
       neck="Etoile gorget +2",
       waist="Windbuffet belt +1",
       left_ear="Sherida Earring",
-      right_ear="Mache Earring +1",
+      right_ear="Maculele Earring +1",
       left_ring="Gere Ring",
       right_ring="Epona's Ring",
       back={ name="Senuna's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}},
@@ -679,7 +679,7 @@ function init_gear_sets()
       neck="Etoile gorget +2",
       waist="Reiki yotai",
       left_ear="Sherida Earring",
-      right_ear="Mache Earring +1",
+      right_ear="Maculele Earring +1",
       left_ring="Epona's Ring",
       right_ring="Gere Ring",
       back={ name="Senuna's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dual Wield"+10','Phys. dmg. taken-10%',}}, -- 10
@@ -715,7 +715,7 @@ function init_gear_sets()
       neck="Etoile gorget +2",
       waist="Windbuffet belt +1",
       left_ear="Sherida Earring",
-      right_ear="Mache Earring +1",
+      right_ear="Maculele Earring +1",
       left_ring="Epona's Ring",
       right_ring="Gere Ring",
       back={ name="Senuna's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}},   
@@ -750,7 +750,7 @@ function init_gear_sets()
       head="Malignance chapeau", -- 6
       neck="Etoile gorget +2",
       left_ear="Sherida Earring",
-      right_ear="Mache Earring +1",
+      right_ear="Maculele Earring +1",
       body="Gleti's Cuirass", -- 9 PDT
       hands="Malignance gloves", -- 5
       left_ring={name="Moonlight Ring",bag="wardrobe 6"}, -- 5

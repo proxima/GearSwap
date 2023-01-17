@@ -185,7 +185,7 @@ function user_setup()
   Empy = {}
   Empy.Head  = "Erilaz Galea +2"
   Empy.Body  = "Erilaz Surcoat +2"
-  Empy.Hands = "Erilaz Gauntlets +2"
+  Empy.Hands = "Erilaz Gauntlets +3"
   Empy.Legs  = "Erilaz Leg Guards +3"
   Empy.Feet  = "Erilaz Greaves +3"
   
@@ -474,7 +474,21 @@ function init_gear_sets()
  
   sets.midcast.Utsusemi = sets.midcast.SpellInterrupt
  
-  sets.midcast.Cure = {}
+  sets.midcast.Cure = {
+    ammo="Sapience Orb",
+    head={ name="Nyame Helm", augments={'Path: B',}},
+    body={ name="Nyame Mail", augments={'Path: B',}},
+    hands=Empy.Hands,
+    legs=Empy.Legs,
+    feet=Empy.Feet,
+    neck="Sacro Gorget",
+    waist="Sroda Belt",
+    left_ear="Cryptic Earring",
+    right_ear={ name="Odnowa Earring +1", augments={'Path: A',}},
+    left_ring="Moonlight Ring",
+    right_ring="Eihwaz Ring",
+    back=Cape.Parry
+  }
  
   sets.midcast['Enhancing Magic'] = set_combine(sets.midcast.SpellInterrupt, {
     head=Empy.Head,
@@ -510,7 +524,11 @@ function init_gear_sets()
     legs="Carmine cuisses +1",
   })
  
-  sets.midcast.Regen = set_combine(sets.midcast['Enhancing Magic'], {head=AF.Head, neck="Sacro Gorget"})
+  sets.midcast.Regen = set_combine(sets.midcast['Enhancing Magic'], {head=AF.Head, 
+    waist="Sroda Belt",
+    neck="Sacro Gorget"
+  })
+
   sets.midcast.Refresh = set_combine(sets.midcast['Enhancing Magic'], {head=Empy.Head, waist="Gishdubar Sash"})
   sets.midcast.Stoneskin = set_combine(sets.midcast['Enhancing Magic'], {waist="Siegel Sash"})
   sets.midcast.Protect = set_combine(sets.midcast['Enhancing Magic'], {ring2="Sheltered Ring"})
@@ -593,7 +611,7 @@ function init_gear_sets()
     right_ear="Odnowa earring +1",
     body=AF.Body,
     hands={ name="Nyame Gauntlets", augments={'Path: B',}},
-    left_ring="Vengeful ring",
+    left_ring="Shadow ring",
     right_Ring="Vexer ring +1",
     back=Cape.Enmity,
     waist="Engraved Belt",
@@ -637,7 +655,12 @@ function init_gear_sets()
     feet={ name="Nyame Sollerets", augments={'Path: B',}},  
   }
 
-  sets.Hybrid = {
+  sets.Hybrid = set_combine(sets.defense.MDT, {
+    body=Empy.Body,
+    hands="Turms mittens +1",
+  })
+
+  --[[ {
     ammo="Vanir Battery",
     head={ name="Nyame Helm", augments={'Path: B',}},
     body={ name="Nyame Mail", augments={'Path: B',}},
@@ -651,7 +674,7 @@ function init_gear_sets()
     left_ring="Defending Ring",
     right_ring="Lunette Ring +1",
     back=Cape.Enmity
-  }
+  } ]]--
 
   sets.engaged = sets.Hybrid
   sets.engaged.Aftermath = sets.engaged

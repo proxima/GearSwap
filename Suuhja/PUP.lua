@@ -471,11 +471,11 @@ function init_gear_sets()
     }
 
     sets.precast.WS["Shijin Spiral"] = {
-      head="Malignance Chapeau",
-      body="Tali'ah Manteel +2",
-      hands="Malignance Gloves",
-      legs={ name="Samnuha Tights", augments={'STR+9','DEX+8','"Dbl.Atk."+2','"Triple Atk."+2',}},
-      feet={ name="Herculean Boots", augments={'"Triple Atk."+3','Rng.Atk.+13','Quadruple Attack +3','Accuracy+13 Attack+13','Mag. Acc.+4 "Mag.Atk.Bns."+4',}},
+      head="Mpaca's Cap",
+      body="Mpaca's Doublet",
+      hands="Mpaca's Gloves",
+      legs="Mpaca's Hose",
+      feet="Mpaca's Boots",
       neck="Fotia Gorget",
       waist="Moonbow Belt +1",
       left_ear={ name="Schere Earring", augments={'Path: A',}},

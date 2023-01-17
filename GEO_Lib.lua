@@ -92,7 +92,7 @@ local geo_maths = require 'GEO_Maths' -- Vectors and Maths
 Colors = {
     ["Fire"] = "\\cs(204, 0, 0)", 
     ["Water"] = "\\cs(0, 102, 204)", 
-    ["Air"] = "\\cs(51, 102, 0)", 
+    ["Wind"] = "\\cs(51, 102, 0)", 
     ["Light"] = "\\cs(255, 255, 255)", 
     ["Earth"] = "\\cs(139, 139, 19)", 
     ["Ice"] = "\\cs(0, 204, 204)", 
@@ -397,17 +397,17 @@ end
 
 -- Required variables and  their initial value
 nukes = {}
-nukes.t1 = {['Earth']="Stone",      ['Water']="Water",      ['Air']="Aero",     ['Fire']="Fire",    ['Ice']="Blizzard",     ['Lightning']="Thunder", ['Light']="Thunder", ['Dark']="Blizzard"}
-nukes.t2 = {['Earth']="Stone II",   ['Water']="Water II",   ['Air']="Aero II",  ['Fire']="Fire II", ['Ice']="Blizzard II",  ['Lightning']="Thunder II", ['Light']="Thunder II", ['Dark']="Blizzard II"}
-nukes.t3 = {['Earth']="Stone III",  ['Water']="Water III",  ['Air']="Aero III", ['Fire']="Fire III",['Ice']="Blizzard III", ['Lightning']="Thunder III", ['Light']="Thunder III", ['Dark']="Blizzard III"}
-nukes.t4 = {['Earth']="Stone IV",   ['Water']="Water IV",   ['Air']="Aero IV",  ['Fire']="Fire IV", ['Ice']="Blizzard IV",  ['Lightning']="Thunder IV", ['Light']="Thunder IV", ['Dark']="Blizzard IV"}
-nukes.t5 = {['Earth']="Stone V",    ['Water']="Water V",    ['Air']="Aero V",   ['Fire']="Fire V",  ['Ice']="Blizzard V",   ['Lightning']="Thunder V", ['Light']="Thunder V", ['Dark']="Blizzard V"}
+nukes.t1 = {['Earth']="Stone",      ['Water']="Water",      ['Wind']="Aero",     ['Fire']="Fire",    ['Ice']="Blizzard",     ['Lightning']="Thunder", ['Light']="Thunder", ['Dark']="Blizzard"}
+nukes.t2 = {['Earth']="Stone II",   ['Water']="Water II",   ['Wind']="Aero II",  ['Fire']="Fire II", ['Ice']="Blizzard II",  ['Lightning']="Thunder II", ['Light']="Thunder II", ['Dark']="Blizzard II"}
+nukes.t3 = {['Earth']="Stone III",  ['Water']="Water III",  ['Wind']="Aero III", ['Fire']="Fire III",['Ice']="Blizzard III", ['Lightning']="Thunder III", ['Light']="Thunder III", ['Dark']="Blizzard III"}
+nukes.t4 = {['Earth']="Stone IV",   ['Water']="Water IV",   ['Wind']="Aero IV",  ['Fire']="Fire IV", ['Ice']="Blizzard IV",  ['Lightning']="Thunder IV", ['Light']="Thunder IV", ['Dark']="Blizzard IV"}
+nukes.t5 = {['Earth']="Stone V",    ['Water']="Water V",    ['Wind']="Aero V",   ['Fire']="Fire V",  ['Ice']="Blizzard V",   ['Lightning']="Thunder V", ['Light']="Thunder V", ['Dark']="Blizzard V"}
 
-nukes.ra1 = {['Earth']="Stonera",    ['Water']="Watera",    ['Air']="Aera",    ['Fire']="Fira",    ['Ice']="Blizzara",    ['Lightning']="Thundara",    ['Light']="Thundara",    ['Dark']="Blizzara"}
-nukes.ra2 = {['Earth']="Stonera II", ['Water']="Watera II", ['Air']="Aera II", ['Fire']="Fira II", ['Ice']="Blizzara II", ['Lightning']="Thundara II", ['Light']="Thundara II", ['Dark']="Blizzara II"}
-nukes.ra3 = {['Earth']="Stonera III",['Water']="Watera III",['Air']="Aera III",['Fire']="Fira III",['Ice']="Blizzara III",['Lightning']="Thundara III",['Light']="Thundara III",['Dark']="Blizzara III"}
+nukes.ra1 = {['Earth']="Stonera",    ['Water']="Watera",    ['Wind']="Aera",    ['Fire']="Fira",    ['Ice']="Blizzara",    ['Lightning']="Thundara",    ['Light']="Thundara",    ['Dark']="Blizzara"}
+nukes.ra2 = {['Earth']="Stonera II", ['Water']="Watera II", ['Wind']="Aera II", ['Fire']="Fira II", ['Ice']="Blizzara II", ['Lightning']="Thundara II", ['Light']="Thundara II", ['Dark']="Blizzara II"}
+nukes.ra3 = {['Earth']="Stonera III",['Water']="Watera III",['Wind']="Aera III",['Fire']="Fira III",['Ice']="Blizzara III",['Lightning']="Thundara III",['Light']="Thundara III",['Dark']="Blizzara III"}
 
-elements =  M('Ice', 'Air', 'Dark', 'Light', 'Earth', 'Lightning', 'Water', 'Fire')
+elements =  M('Ice', 'Wind', 'Dark', 'Light', 'Earth', 'Lightning', 'Water', 'Fire')
 
 geomancy = M('Geo-Acumen', 'Geo-Attunement', 'Geo-Barrier', 'Geo-STR', 'Geo-DEX', 'Geo-VIT', 'Geo-AGI', 'Geo-INT', 'Geo-MND', 'Geo-CHR', 'Geo-Fade',
              'Geo-Fend', 'Geo-Focus', 'Geo-Frailty', 'Geo-Fury', 'Geo-Gravity', 'Geo-Haste', 'Geo-Languor', 'Geo-Malaise', 'Geo-Paralysis', 
@@ -540,10 +540,10 @@ function midcast(spell)
     end
     
     -- Obi up for matching weather / day
-    if spell.element == world.weather_element and spellMap ~= 'Helix'then
+    if spell.element == world.weather_element and spellMap ~= 'Helix' then
         equip(sets.midcast.Obi)
     end
-    if spell.element == world.day_element and spellMap ~= 'Helix'then
+    if spell.element == world.day_element and spellMap ~= 'Helix' then
         equip(sets.midcast.Obi)
     end
     -- This needs to be here for if you cast stoneskin on earthsday if doesnt swap to obi --___--;
@@ -730,7 +730,7 @@ function self_command(command)
                     windower.add_to_chat(211,'Nuke now set to element type: '..tostring(elements.current))
                 end   
 
-            elseif (nuke == 'air' or nuke == 'ice' or nuke == 'fire' or nuke == 'water' or nuke == 'lightning' or nuke == 'earth' or nuke == 'light' or nuke == 'dark') then
+            elseif (nuke == 'wind' or nuke == 'ice' or nuke == 'fire' or nuke == 'water' or nuke == 'lightning' or nuke == 'earth' or nuke == 'light' or nuke == 'dark') then
                 local newType = commandArgs[2]
                 elements:set(newType)
                 if use_UI == true then                    
@@ -851,15 +851,15 @@ function selectSCElement()
     -- Tier 3 SC we favor element already chosen, then day (our weather likely match our set element as a sch) then swap for bad day. 
     if last_skillchain.english == "Light" then
         -- First we always prefer the selected element if that element can burst, if not we move on.
-        if elements.current == "Fire" or elements.current == "Lightning" or elements.current == "Air" then
+        if elements.current == "Fire" or elements.current == "Lightning" or elements.current == "Wind" then
             return
         -- Favor Fire if its Fire's Day or Earth's day (thunder weak on E-Day)
         elseif world.day_element == "Fire" or world.day_element == "Earth" then
             selectedElement = "Fire"
             elements:set(selectedElement)
         -- Favor Wind if its Wind's Day or Earth's day (thunder weak on E-Day)
-        elseif world.day_element == "Air" or world.day_element == "Earth" then
-            selectedElement = "Air"
+        elseif world.day_element == "Wind" or world.day_element == "Earth" then
+            selectedElement = "Wind"
             elements:set(selectedElement)
         else
             selectedElement = "Lightning"
@@ -891,11 +891,11 @@ function selectSCElement()
         selectedElement = "Fire"
         elements:set(selectedElement)
     elseif last_skillchain.english == "Fragmentation" then
-        if elements.current == "Lightning" or elements.current == "Air" then
+        if elements.current == "Lightning" or elements.current == "Wind" then
             return
         -- Favor Wind if its Wind's Day or Earth's day (thunder weak on E-Day)
-        elseif world.day_element == "Air" or world.day_element == "Earth" then
-            selectedElement = "Air"
+        elseif world.day_element == "Wind" or world.day_element == "Earth" then
+            selectedElement = "Wind"
             elements:set(selectedElement)
         else
             selectedElement = "Lightning"
@@ -912,7 +912,7 @@ function selectSCElement()
             selectedElement = "Ice"
             elements:set(selectedElement)
         end
-    -- Tier 1 SC we go straight to Busrt Element
+    -- Tier 1 SC we go straight to Burst Element
     elseif last_skillchain.english == "Compression" then
         selectedElement = "Dark"
         elements:set(selectedElement)
@@ -932,7 +932,7 @@ function selectSCElement()
         selectedElement = "Earth"
         elements:set(selectedElement)
     elseif last_skillchain.english == "Detonation" then
-        selectedElement = "Air"
+        selectedElement = "Wind"
         elements:set(selectedElement)
     elseif last_skillchain.english == "Impaction" then
         selectedElement = "Lightning"

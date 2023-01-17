@@ -497,7 +497,7 @@ function get_sets()
      left_ear="Regal Earring",
      right_ear="Malignance Earring",
      left_ring="Freke Ring",
-     right_ring="Mallquis Ring",
+     right_ring="Metamorph Ring +1",
      back={ name="Nantosuelta's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Phys. dmg. taken-10%',}},
    })
 

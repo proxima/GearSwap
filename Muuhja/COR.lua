@@ -132,12 +132,12 @@ function user_setup()
     state.WeaponskillMode:options('Normal', 'Acc')
     state.IdleMode:options('Normal', 'DT', 'Refresh')
 
-    state.WeaponSet = M{['description']='Weapon Set', 'Anarchy', 'DeathPenalty_M', 'DeathPenalty_R', 'Aeolian', 'Rolls'}
+    state.WeaponSet = M{['description']='Weapon Set', 'Anarchy', 'DeathPenalty_M', 'DeathPenalty_R', 'Armageddon_M', 'Aeolian', 'Rolls'}
     state.WeaponLock = M(false, 'Weapon Lock')
 
-    gear.RAbullet = "Living Bullet"
-    gear.RAccbullet = "Living Bullet"
-    gear.WSbullet = "Living Bullet"
+    gear.RAbullet = "Devastating Bullet"
+    gear.RAccbullet = "Devastating Bullet"
+    gear.WSbullet = "Devastating Bullet"
     gear.MAbullet = "Living Bullet"
     gear.QDbullet = "Hauksbok Bullet"
     options.ammo_warning_limit = 10
@@ -663,7 +663,7 @@ function init_gear_sets()
       head="Malignance Chapeau",
       body="Malignance Tabard",
       hands="Malignance Gloves",
-      legs="Chas. Culottes +2",
+      legs="Malignance Tights",
       feet="Malignance Boots",
       neck="Iskur Gorget",
       waist="Reiki Yotai",
@@ -821,11 +821,8 @@ function init_gear_sets()
     sets.DeathPenalty_R = {main=Rostam.A, sub="Tauret", ranged="Death Penalty"}
     sets.DeathPenalty_R.Acc = {main=Rostam.A, sub=Rostam.B, ranged="Death Penalty"}
 
-    -- sets.DeathPenalty_M = {main=Rostam.B, sub="Tauret", ranged="Death Penalty"}
-    -- sets.DeathPenalty_M.Acc = {main=Rostam.B, sub=Rostam.A, ranged="Death Penalty"}
-
-    -- sets.DeathPenalty_R = {main=Rostam.A, sub="Tauret", ranged="Death Penalty"}
-    -- sets.DeathPenalty_R.Acc = {main=Rostam.A, sub=Rostam.B, ranged="Death Penalty"}
+    sets.Armageddon_M = {main=Rostam.B, sub="Tauret", ranged="Armageddon"}
+    sets.Armageddon_M.Acc = {main=Rostam.B, sub=Rostam.A, ranged="Armageddon"}
 
     sets.Rolls = {main=Rostam.C, sub="Nusku Shield", ranged="Compensator"}
     sets.Rolls.Acc = sets.Rolls
@@ -1012,10 +1009,34 @@ end
 
 -- Handle notifications of general user state change.
 function job_state_change(stateField, newValue, oldValue)
-    if state.WeaponLock.value == true then
-        disable('ranged')
-    else
-        enable('ranged')
+    if stateField == "Weapon Set" and newValue ~= oldValue then
+        if state.WeaponSet.value == "Rolls" then
+            send_command("trial stop")
+        elseif state.WeaponSet.value == "DeathPenalty_M" then
+            send_command("trial ws leaden salute;trial tp 1000")
+        elseif state.WeaponSet.value == "DeathPenalty_R" then
+            send_command("trial stop")
+        elseif state.WeaponSet.value == "Armageddon_M" then
+            send_command("trial ws wildfire;trial tp 1000")
+        elseif state.WeaponSet.value == "Armageddon_R" then
+            send_command("trial stop")
+        elseif state.WeaponSet.value == "Fomalhaut_M" then
+            send_command("trial ws hot shot;trial tp 1500")
+        elseif state.WeaponSet.value == "Fomalhaut_R" then
+            send_command("trial stop")
+        elseif state.WeaponSet.value == "Anarchy" then
+            send_command("trial ws savage blade;trial tp 1000")
+        elseif state.WeaponSet.value == "Aeolian" then
+            send_command("trial ws aeolian edge;trial tp 1000")
+        end
+    end
+
+    if stateField == "Weapon Lock" then
+        if state.WeaponLock.value == true then
+            disable('ranged')
+        else
+            enable('ranged')
+        end
     end
 
     check_weaponset()
