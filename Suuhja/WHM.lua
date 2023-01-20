@@ -329,6 +329,8 @@ function init_gear_sets()
     }
 
     -- Cure sets
+
+    --[[
     sets.midcast.CureSolace = {                             -- CP ENM HA FC DT
       main="Asclepius",                                     --              15                               
       sub="Ammurapi Shield",
@@ -345,6 +347,25 @@ function init_gear_sets()
       left_ring="Gelatinous Ring +1",                       --               7
       right_ring="Defending Ring",                          --              10
       back={ name="Alaunus's Cape", augments={'MND+20','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Haste+10','Mag. Evasion+15',}},
+    } ]]--
+
+    -- Cure sets
+    sets.midcast.CureSolace = {                             -- CP ENM HA FC DT
+      main="Daybreak",                                      -- 30                              
+      sub="Genmei Shield",                                  --              10
+      ammo="Staunch Tathlum +1",                            --               3
+      head="Nyame Helm",                                    --               7
+      body="Ebers Bliaut +3",                               --         3       +Solace
+      hands="Pinga mittens +1",                             --  7
+      legs="Ebers Pant. +3",                                --         5    12
+      feet="Ebers Duckbills +3",                            --              11
+      neck={ name="Clr. Torque +1", augments={'Path: A',}}, --  7  20     8
+      waist="Emphatikos rope",
+      left_ear="Magnetic Earring",                          --
+      right_ear="Mendicant's earring",                      --  5
+      left_ring="Defending Ring",                           --              10
+      right_ring="Gelatinous Ring +1",                      --               7
+      back={ name="Alaunus's Cape", augments={'MND+20','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Haste+10','Mag. Evasion+15',}},
     }
 
     sets.midcast.CureSolaceWeather = set_combine(sets.midcast.CureSolace, {
@@ -360,14 +381,15 @@ function init_gear_sets()
       waist="Hachirin-no-Obi",
     })
 
-    sets.midcast.CuragaNormal = set_combine(sets.midcast.CureNormal, {
+    sets.midcast.CuragaNormal = sets.midcast.CureSolace
+    --[[ set_combine(sets.midcast.CureNormal, {
       main="Daybreak",
       sub="Ammurapi Shield",
       head="Bunzi's Hat",
       body="Bunzi's Robe",
       hands="Bunzi's Gloves",
       feet="Bunzi's Sabots",  
-    })
+    }) ]]--
 
     sets.midcast.CuragaWeather = set_combine(sets.midcast.CuragaNormal, {
       back="Twilight Cape",

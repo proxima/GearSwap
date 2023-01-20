@@ -375,6 +375,21 @@ function init_gear_sets()
       right_ring="Hajduk Ring +1",
     })
 
+    sets.precast.WS['Slug Shot'] = {ammo=gear.WSbullet,
+      head="Nyame Helm",
+      body="Nyame Mail",
+      hands="Chasseur's Gants +3",
+      legs="Nyame Flanchard",
+      feet="Nyame Sollerets",
+      neck="Comm. Charm +2",
+      waist="Fotia Belt",
+      left_ear="Telos Earring",
+      right_ear="Ishvara Earring",
+      left_ring="Dingir Ring",
+      right_ring="Epaminondas's Ring",
+      back=Cape.RATK
+    }
+
     sets.precast.WS['Wildfire'] = {ammo=gear.MAbullet, -- 25
       head="Nyame Helm", 
       body={ name="Lanun Frac +3", augments={'Enhances "Loaded Deck" effect',}},

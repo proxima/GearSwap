@@ -346,7 +346,7 @@ function init_gear_sets()
     sets.Enmity = {}
     sets.precast.JA['Provoke'] = sets.Enmity
 
-    sets.buff['Burst Affinity'] = {legs="Assim. Shalwar +3", feet="Hashi. Basmak +2"}
+    sets.buff['Burst Affinity'] = {legs="Assim. Shalwar +3", feet="Hashi. Basmak +3"}
     sets.buff['Diffusion'] = {feet="Luhlaza Charuqs +1"}
     sets.buff['Efflux'] = {legs="Hashishin Tayt +2"}
 
@@ -383,7 +383,7 @@ function init_gear_sets()
 
     sets.precast.WS = {
       ammo="Coiste Bodhar",
-      head="Nyame Helm",
+      head="Hashishin Kavuk +3",
       neck="Fotia Gorget",
       left_ear="Moonshade Earring",
       right_ear="Ishvara Earring",
@@ -422,7 +422,6 @@ function init_gear_sets()
   
     sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS, {
       neck="Mirage Stole +2",
-      body="Gleti's Cuirass",
       right_ring="Sroda Ring",
       right_ear="Hashi. Earring +2",
       waist="Sailfi Belt +1"
@@ -446,14 +445,14 @@ function init_gear_sets()
     -- Need cape
     sets.precast.WS['Sanguine Blade'] = {
       ammo="Ghastly Tathlum +1",
-      head="Pixie Hairpin +1",
+      head="Hashishin Kavuk +3",
       neck="Sibyl Scarf",
       left_ear="Friomisi Earring",
       right_ear="Regal Earring",
-      body="Amalric Doublet +1",
+      body="Nyame Mail",
       hands="Jhakri Cuffs +2",
       legs="Luhlaza Shalwar +3",
-      feet="Amalric Nails +1",
+      feet="Hashishin basmak +3",
       left_ring="Epaminondas's Ring",
       right_ring="Archon Ring",
       back=Cape.INT_MAB,
@@ -475,7 +474,7 @@ function init_gear_sets()
     sets.precast.WS['Realmrazer'].Acc = sets.precast.WS['Requiescat'].Acc
 
     sets.precast.WS['Flash Nova'] = set_combine(sets.precast.WS['Sanguine Blade'], {
-      head="Nyame Helm",
+      head="Hashishin Kavuk +3",
       right_ring="Metamorph Ring +1"
     })
 
@@ -544,7 +543,7 @@ function init_gear_sets()
       body={ name="Cohort Cloak +1", augments={'Path: A',}},
       hands="Hashishin bazubands +3",
       legs={ name="Luhlaza Shalwar +3", augments={'Enhances "Assimilation" effect',}},
-      feet="Hashishin basmak +2",
+      feet="Hashishin basmak +3",
       neck="Sibyl Scarf",
       waist="Orpheus's Sash",
       left_ear="Regal Earring",
@@ -599,14 +598,14 @@ function init_gear_sets()
       back="Aurist's Cape +1",
       waist="Acuity Belt +1",
       legs="Hashishin Tayt +2",
-      feet="Hashishin Basmak +2"
+      feet="Hashishin Basmak +3"
     }
 
     sets.midcast['Blue Magic'].Breath = set_combine(sets.midcast['Blue Magic'].Magical, {head="Luh. Keffiyeh +1"})
 
     sets.midcast['Blue Magic'].StunPhysical = {
        ammo="Voluspa Tathlum",
-       head="Hashishin Kavuk +2",
+       head="Hashishin Kavuk +3",
        neck="Mirage Stole +2",
        left_ear="Digni. Earring",
        right_ear="Hashi. Earring +2",
@@ -617,7 +616,7 @@ function init_gear_sets()
        back="Aurist's Cape +1",
        waist="Eschan Stone",
        legs="Hashishin Tayt +2",
-       feet="Hashishin Basmak +2"
+       feet="Hashishin Basmak +3"
      }
 
     sets.midcast['Blue Magic'].StunMagical = sets.midcast['Blue Magic'].MagicAccuracy
@@ -651,7 +650,7 @@ function init_gear_sets()
     sets.midcast['Blue Magic'].SkillBasedBuff = sets.midcast['Blue Magic']
 
     sets.midcast['Blue Magic']['Occultation'] = set_combine(sets.midcast['Blue Magic'], {
-      hands="Hashi. Bazu. +2",
+      hands="Hashi. Bazu. +3",
     })
 
     sets.midcast['Blue Magic']['Carcharian Verve'] = set_combine(sets.midcast['Blue Magic'].Buff, {
