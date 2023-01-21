@@ -294,8 +294,8 @@ function init_gear_sets()
     sets.precast.CorsairRoll.Duration = {main=Rostam.C, range="Compensator"}
     sets.precast.CorsairRoll.LowerDelay = {back="Gunslinger's Cape"}
     sets.precast.CorsairRoll["Caster's Roll"] = set_combine(sets.precast.CorsairRoll, {legs="Chas. Culottes +3"})
-    sets.precast.CorsairRoll["Courser's Roll"] = set_combine(sets.precast.CorsairRoll, {feet="Chass. Bottes +2"})
-    sets.precast.CorsairRoll["Blitzer's Roll"] = set_combine(sets.precast.CorsairRoll, {head="Chass. Tricorne +2"})
+    sets.precast.CorsairRoll["Courser's Roll"] = set_combine(sets.precast.CorsairRoll, {feet="Chass. Bottes +3"})
+    sets.precast.CorsairRoll["Blitzer's Roll"] = set_combine(sets.precast.CorsairRoll, {head="Chass. Tricorne +3"})
     sets.precast.CorsairRoll["Tactician's Roll"] = set_combine(sets.precast.CorsairRoll, {body="Chasseur's Frac +3"})
     sets.precast.CorsairRoll["Allies' Roll"] = set_combine(sets.precast.CorsairRoll, {hands="Chasseur's Gants +3"})
 
@@ -371,18 +371,44 @@ function init_gear_sets()
       feet="Nyame Sollerets"
     })
 
-    sets.precast.WS['Detonator'] = set_combine(sets.precast.WS['Last Stand'], {
+    sets.precast.WS['Detonator'] = {ammo=gear.WSbullet,
+      head="Nyame Helm",
+      body="Nyame Mail",
+      hands="Chasseur's Gants +3",
+      legs="Nyame Flanchard",
+      feet="Nyame Sollerets",
+      neck="Comm. Charm +2",
+      waist="Fotia Belt",
+      left_ear="Moonshade Earring",
+      right_ear="Ishvara Earring",
+      left_ring="Sroda Ring",
+      right_ring="Epaminondas's Ring",
+      back=Cape.RATK
+    }
+
+    sets.precast.WS['Detonator'].Acc = set_combine(sets.precast.WS['Detonator'], {ammo=gear.RAccbullet,
+      body="Laksa. Frac +3",
+      neck="Fotia Gorget",
       left_ear="Beyla Earring",
+      right_ear="Telos Earring",  
+      left_ring="Regal Ring",
       right_ring="Hajduk Ring +1",
-      feet="Nyame Sollerets"
     })
 
-    sets.precast.WS['Detonator'].Acc = set_combine(sets.precast.WS['Detonator'], {
-      ammo=gear.RAccbullet,
-      left_ear="Beyla Earring",
-      right_ring="Hajduk Ring +1",
-      feet="Nyame Sollerets"
-    })
+    sets.precast.WS['Slug Shot'] = {ammo=gear.WSbullet,
+      head="Nyame Helm",
+      body="Nyame Mail",
+      hands="Chasseur's Gants +3",
+      legs="Nyame Flanchard",
+      feet="Nyame Sollerets",
+      neck="Comm. Charm +2",
+      waist="Fotia Belt",
+      left_ear="Telos Earring",
+      right_ear="Ishvara Earring",
+      left_ring="Dingir Ring",
+      right_ring="Epaminondas's Ring",
+      back=Cape.RATK
+    }
 
     sets.precast.WS['Wildfire'] = {ammo=gear.MAbullet, -- 25
       head="Nyame Helm", 
@@ -746,11 +772,18 @@ function init_gear_sets()
     ------------------------------------------------------------------------------------------------
 
     sets.engaged.Hybrid = {
-      head="Malignance Chapeau", --6/6
-      body="Malignance Tabard", --9/9
-      hands="Malignance Gloves", --5/5
-      legs="Malignance Tights", --7/7
-      feet="Malignance Boots", --4/4
+      head={ name="Nyame Helm", augments={'Path: B',}},
+      body={ name="Nyame Mail", augments={'Path: B',}},
+      hands={ name="Nyame Gauntlets", augments={'Path: B',}},
+      legs="Chas. Culottes +3",
+      feet={ name="Nyame Sollerets", augments={'Path: B',}},
+      neck="Iskur Gorget",
+      waist={ name="Sailfi Belt +1", augments={'Path: A',}},
+      left_ear="Crepuscular Earring",
+      right_ear="Telos Earring",
+      left_ring={name="Chirich ring +1",bag="Wardrobe 2"},
+      right_ring={name="Chirich ring +1",bag="Wardrobe 4"},
+      back=Cape.TP
     }
 
     sets.engaged.DT = set_combine(sets.engaged, sets.engaged.Hybrid)

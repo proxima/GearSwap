@@ -692,6 +692,19 @@ function init_gear_sets()
     ------------------------------------------------------------------------------------------------
 
     sets.engaged.Hybrid = {
+      range=Linos.TP,
+      head="Bunzi's Hat",           -- 7, 6
+      body="Nyame Mail",        -- 9, 4
+      hands="Bunzi's Gloves",       -- 8, 3
+      legs="Nyame Flanchard",
+      feet="Nyame Sollerets",       -- 7, 3
+      neck="Bard's Charm +2",
+      ear1="Brutal Earring",
+      ear2="Dignitary's Earring",
+      left_ring=MR.One,
+      right_ring=MR.Two,
+      back=Cape.TP,                 --   10
+      waist="Sailfi Belt +1"
     }
 
     sets.engaged.DT = set_combine(sets.engaged, sets.engaged.Hybrid)

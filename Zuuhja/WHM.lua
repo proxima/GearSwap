@@ -285,14 +285,14 @@ function init_gear_sets()
 
     -- Cure sets
     sets.midcast.CureSolace = {
-      main="Malignance Pole",
-      sub="Enki Strap",
+      main="Daybreak",                                      -- 30                              
+      sub="Genmei Shield",                                  --              10
       ammo="Staunch Tathlum +1",
-      head={ name="Vanya Hood", augments={'MP+50','"Fast Cast"+10','Haste+2%',}},
-      body="Ebers Bliaut +2",                               --       3
-      hands="Theophany Mitts +2",                           --     6 3
-      legs="Ebers Pant. +2",                                --       5
-      feet={ name="Vanya Clogs", augments={'"Cure" potency +5%','"Cure" spellcasting time -15%','"Conserve MP"+6',}},
+      head="Nyame Helm",                                    --               7
+      body="Ebers Bliaut +2",                               --         3       +Solace
+      hands="Nyame Gauntlets",                              -- 
+      legs="Ebers Pant. +2",                                --         5    12
+      feet="Ebers Duckbills +2",                            --              11
       neck="Cleric's Torque +1",
       waist="Luminary Sash",
       left_ear="Glorious Earring",
@@ -307,7 +307,6 @@ function init_gear_sets()
     })
 
     sets.midcast.CureNormal = set_combine(sets.midcast.CureSolace, {
-      body="Theo. Bliaut +2",
     })
 
     sets.midcast.CureWeather = set_combine(sets.midcast.CureNormal, {
@@ -316,12 +315,6 @@ function init_gear_sets()
     })
 
     sets.midcast.CuragaNormal = set_combine(sets.midcast.CureNormal, {
-      main="Daybreak",
-      sub="Ammurapi Shield",
-      head="Bunzi's Hat",
-      body="Bunzi's Robe",
-      hands="Bunzi's Gloves",
-      feet="Bunzi's Sabots",  
     })
 
     sets.midcast.CuragaWeather = set_combine(sets.midcast.CuragaNormal, {

@@ -203,9 +203,6 @@ function get_sets()
     Lugh.MND_WSD     = { name="Lugh's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','MND+10','Weapon skill damage +10%',}}
     Lugh.MP_FC       = { name="Lugh's Cape", augments={'MP+60','MP+20','"Fast Cast"+10','Phys. dmg. taken-10%',}}
     Lugh.ADOULIN     = { name="Bookworm's Cape", augments={'INT+1','MND+2','Helix eff. dur. +20','"Regen" potency+10',}}
-
-    -- My formatting is very easy to follow. All sets that pertain to my character doing things are under 'me'.
-    -- All sets that are equipped to faciliate my avatar's behaviour or abilities are under 'avatar', eg, Perpetuation, Blood Pacts, etc
       
     sets.me = {}       -- leave this empty
     sets.buff = {}     -- leave this empty
@@ -571,15 +568,15 @@ function get_sets()
       sub="Ammurapi Shield",
       ammo={ name="Ghastly Tathlum +1", augments={'Path: A',}},
       head="Agwu's Cap",
-      body={ name="Agwu's Robe", augments={'Path: A',}},       
-      hands="Agwu's Gages",                                    
-      legs="Agwu's Slops",                                     
-      feet="Agwu's Pigaches",                                  
+      body="Arbatel Gown +3",
+      hands="Arbatel Bracers +3",
+      legs="Agwu's Slops",    
+      feet="Arbatel Loafers +3",
       neck={ name="Argute Stole +2", augments={'Path: A',}},   
       waist={ name="Acuity Belt +1", augments={'Path: A',}},
       left_ear="Regal Earring",
       right_ear="Malignance Earring",
-      left_ring="Freke Ring",
+      left_ring="Archon Ring",
       right_ring={ name="Metamor. Ring +1", augments={'Path: A',}},
       back=Lugh.INT_MAB
     }
@@ -592,14 +589,14 @@ function get_sets()
       head="Agwu's Cap",
       body="Arbatel Gown +3",
       hands="Arbatel Bracers +3",
-      legs="Arbatel Pants +3",
+      legs="Agwu's Slops",    
       feet="Arbatel Loafers +3",
       neck={ name="Argute Stole +2", augments={'Path: A',}},
       waist="Skrymir Cord +1",
-      left_ear="Crematio Earring",
+      left_ear="Regal Earring",
       right_ear="Malignance Earring",
-      left_ring="Mallquis Ring",
-      right_ring="Freke Ring",
+      left_ring="Freke Ring",
+      right_ring={ name="Metamor. Ring +1", augments={'Path: A',}},
       back=Lugh.ADOULIN     
     }
     
@@ -608,16 +605,16 @@ function get_sets()
       sub="Enki Strap",
       ammo="Ghastly Tathlum +1",
       head="Agwu's Cap",
-      body="Arbatel Gown +3",
+      body="Agwu's Robe",
       hands="Arbatel Bracers +3",
-      legs="Arbatel Pants +3",
+      legs="Agwu's Slops",    
       feet="Arbatel Loafers +3",
       neck={ name="Argute Stole +2", augments={'Path: A',}},
       waist="Skrymir Cord +1",
-      left_ear="Crematio Earring",
+      left_ear="Regal Earring",
       right_ear="Malignance Earring",
-      left_ring="Mallquis Ring",
-      right_ring="Freke Ring",
+      left_ring="Freke Ring",
+      right_ring={ name="Metamor. Ring +1", augments={'Path: A',}},
       back=Lugh.ADOULIN
     }
     
@@ -628,14 +625,14 @@ function get_sets()
       head="Agwu's Cap",
       body="Arbatel Gown +3",
       hands="Arbatel Bracers +3",
-      legs="Arbatel Pants +3",
+      legs="Agwu's Slops",    
       feet="Arbatel Loafers +3",
       neck={ name="Argute Stole +2", augments={'Path: A',}},
       waist="Skrymir Cord +1",
-      left_ear="Crematio Earring",
+      left_ear="Regal Earring",
       right_ear="Malignance Earring",
-      left_ring="Mallquis Ring",
-      right_ring="Freke Ring",
+      left_ring="Freke Ring",
+      right_ring={ name="Metamor. Ring +1", augments={'Path: A',}},
       back=Lugh.INT_MAB -- Damage > Duration
     }
 
@@ -643,17 +640,17 @@ function get_sets()
       main={ name="Bunzi's Rod", augments={'Path: A',}},
       sub="Ammurapi Shield",
       ammo="Ghastly Tathlum +1",
-      head="Pixie hairpin +1",
+      head="Agwu's Cap",
       body="Arbatel Gown +3",
       hands="Arbatel Bracers +3",
       legs="Arbatel Pants +3",
       feet="Arbatel Loafers +3",
       neck={ name="Argute Stole +2", augments={'Path: A',}},
       waist="Skrymir Cord +1",
-      left_ear="Crematio Earring",
+      left_ear="Regal Earring",
       right_ear="Malignance Earring",
-      left_ring="Archon ring",
-      right_ring="Freke Ring",
+      left_ring="Archon Ring",
+      right_ring={ name="Metamor. Ring +1", augments={'Path: A',}},
       back=Lugh.ADOULIN 
     }
 
