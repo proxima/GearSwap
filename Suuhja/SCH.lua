@@ -229,7 +229,7 @@ function get_sets()
 
     -- Your idle Sublimation set combine from refresh or DT depening on mode.
     sets.me.idle.sublimation = set_combine(sets.me.idle.refresh, {
-      head="Acad. Mortar. +2",
+      head="Acad. Mortar. +3",
       body="Arbatel Gown +3",
       waist="Embla Sash",
     })
@@ -748,31 +748,33 @@ function get_sets()
 
     -- Enfeebling
    sets.midcast["Stun"] = {
-     main="Hvergelmir",
-     sub="Khonsu",             -- 4
+     main="Hvergelmir",        --    50
+     sub="Khonsu",             --  4
      ammo="Pemphredo tathlum",
-     head="Acad. Mortar. +2",  -- 6
-     body="Acad. Gown +3",     -- 3
-     hands="Acad. Bracers +3", -- 3
-     legs="Acad. Pants +3",    -- 5
-     feet="Acad. Loafers +3",  -- 3
+     head="Acad. Mortar. +3",  --  6  8
+     body="Acad. Gown +3",     --  3
+     hands="Acad. Bracers +3", --  3  9
+     legs="Arbatel Pants +3",  --  5
+     feet="Acad. Loafers +3",  --  3
      neck={ name="Argute Stole +2", augments={'Path: A',}},
      waist="Acuity Belt +1",
      left_ear="Regal Earring",
      right_ear="Malignance Earring",
      left_ring={name="Stikini Ring +1",bag="wardrobe 2"},
      right_ring={name="Stikini Ring +1",bag="wardrobe 3"},
-     back=Lugh.MND_HASTE
+     back="Aurist's Cape +1"
    }
+   
+   sets.midcast["Absorb-TP"] = set_combine(sets.midcast.Stun, {})
 
    sets.midcast.IntEnfeebling = {
      main="Tupsimati",
      sub="Khonsu",
      ammo="Pemphredo tathlum",
-     head="Acad. Mortar. +2",
+     head="Acad. Mortar. +3",
      body="Acad. Gown +3",
      hands="Kaykaus Cuffs +1",
-     legs="Acad. Pants +3",
+     legs="Arbatel Pants +3",
      feet="Acad. Loafers +3",
      neck={ name="Argute Stole +2", augments={'Path: A',}},
      waist="Obstinate Sash",
@@ -796,22 +798,22 @@ function get_sets()
    })
    
    sets.midcast.SC_Open = {
-      -- main="Malignance Pole", 
-      main="Hvergelmir", -- For when you have low haste buffs during tabula and recast is important
-      sub="Khonsu",                                                                                       --         4 haste
-      ammo="Staunch Tathlum +1",
-      head={ name="Vanya Hood", augments={'MP+50','"Fast Cast"+10','Haste+2%',}},                         -- 10 fc,  8 haste
-      neck="Voltsurge Torque",                                                                            --  4 fc
-      left_ear="Etiolation Earring",                                                                      --  1 fc
-      right_ear={ name="Odnowa Earring +1", augments={'Path: A',}},
-      body="Pinga Tunic +1",                                                                              -- 15 fc
-      hands="Acad. Bracers +3",                                                                           --  9 fc,  3 haste
-      left_ring="Defending Ring",
-      right_ring="Kishar Ring",                                                                           --  4 fc
-      back=Lugh.MP_FC,                                                                                    -- 10 fc
-      waist="Witful Belt",                                                                                --  3 fc,  3 haste
-      legs="Psycloth Lappas",                                                                             --  7 fc,  5 haste
-      feet="Acad. Loafers +3",                                                                            --         3 haste
+     -- main="Malignance Pole", 
+     main="Hvergelmir", -- For when you have low haste buffs during tabula and recast is important
+     sub="Khonsu",                                                                                       --         4 haste
+     ammo="Staunch Tathlum +1",
+     head={ name="Vanya Hood", augments={'MP+50','"Fast Cast"+10','Haste+2%',}},                         -- 10 fc,  8 haste
+     neck="Voltsurge Torque",                                                                            --  4 fc
+     left_ear="Etiolation Earring",                                                                      --  1 fc
+     right_ear={ name="Odnowa Earring +1", augments={'Path: A',}},
+     body="Pinga Tunic +1",                                                                              -- 15 fc
+     hands="Acad. Bracers +3",                                                                           --  9 fc,  3 haste
+     left_ring="Defending Ring",
+     right_ring="Kishar Ring",                                                                           --  4 fc
+     back=Lugh.MP_FC,                                                                                    -- 10 fc
+     waist="Witful Belt",                                                                                --  3 fc,  3 haste
+     legs="Psycloth Lappas",                                                                             --  7 fc,  5 haste
+     feet="Acad. Loafers +3",                                                                            --         3 haste
    }                                                                                               -- 63 fc, 26 haste
    
    sets.midcast["Aero"] = sets.midcast.SC_Open
@@ -899,7 +901,6 @@ function get_sets()
     })
 
     sets.midcast["Aspir"] = sets.midcast["Drain"]
-    sets.midcast["Absorb-MND"] = sets.midcast["Aspir"]
     
     sets.midcast["Cursna"] = {
       head={ name="Vanya Hood", augments={'Healing magic skill +20','"Cure" spellcasting time -7%','Magic dmg. taken -3',}},
@@ -949,7 +950,6 @@ function get_sets()
     ------------
     sets.midcast.regen = {}    -- leave this empty
     
-    -- Normal hybrid well rounded Regen
     sets.midcast.regen.hybrid = {
       main="Musa",
       sub="Khonsu",
@@ -967,13 +967,11 @@ function get_sets()
       feet="Telchine Pigaches",
     }
     
-    -- Focus on Regen Duration
     sets.midcast.regen.duration = set_combine(sets.midcast.regen.hybrid, {
       head="Telchine Cap",
       back=Lugh.DT
     })
     
-    -- Focus on Regen Potency
     sets.midcast.regen.potency = set_combine(sets.midcast.regen.hybrid, {
       back=Lugh.ADOULIN
     })

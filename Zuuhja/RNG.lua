@@ -85,7 +85,7 @@ function user_setup()
     state.WeaponskillMode:options('Normal', 'Acc', 'Enmity')
     state.IdleMode:options('Normal', 'DT')
 
-    state.WeaponSet = M{['description']='Weapon Set', 'Armageddon_M', 'Armageddon_R', 'Fomalhaut_M', 'Fomalhaut_R', 'Gastraphetes_M', 'Naegling'}
+    state.WeaponSet = M{['description']='Weapon Set', 'Annihilator', 'Armageddon_M', 'Armageddon_R', 'Fomalhaut_M', 'Fomalhaut_R', 'Gastraphetes_M', 'Naegling'}
 
     DefaultAmmo = {
         ['Yoichinoyumi'] = "Chrono Arrow",
@@ -381,7 +381,19 @@ function init_gear_sets()
     sets.precast.WS['Last Stand'].Enmity = set_combine(sets.precast.WS['Last Stand'], {
     })
 
-    sets.precast.WS["Coronach"] = set_combine(sets.precast.WS['Last Stand'], {
+    sets.precast.WS["Coronach"] = {
+      head="Orion Beret +3",
+      body="Amini Caban +3",
+      hands="Nyame Gauntlets",
+      legs="Nyame Flanchard",
+      feet="Amini Bottillons +3",
+      neck={ name="Scout's Gorget +2", augments={'Path: A',}},
+      waist="Fotia Belt",
+      left_ear="Ishvara Earring",
+      right_ear="Telos Earring",
+      left_ring="Regal Ring",
+      right_ring="Epaminondas's Ring",
+      back=Cape.RATK
     })
 
     sets.precast.WS["Coronach"].Acc = set_combine(sets.precast.WS['Coronach'], {
@@ -764,10 +776,9 @@ function init_gear_sets()
     sets.FullTP = {ear1="Crematio Earring"}
     sets.Obi = {waist="Hachirin-no-Obi"}
 
-    -- sets.Annihilator = {main="Perun +1", sub="Blurred Knife +1", ranged="Annihilator"}
-
     sets.Fomalhaut_M    = {main="Perun +1",   sub="Gleti's Knife", ranged="Fomalhaut"}
     sets.Fomalhaut_R    = {main="Perun +1",   sub="Kustawi +1",    ranged="Fomalhaut"}
+    sets.Annihilator    = {main="Perun +1",   sub="Kustawi +1",    ranged="Annihilator"}
     sets.Armageddon_M   = {main=Malev.ONE,    sub=Malev.TWO,       ranged="Armageddon"}
     sets.Armageddon_R   = {main="Perun +1",   sub="Kustawi +1",    ranged="Armageddon"}
     sets.Gastraphetes_M = {main=Malev.ONE,    sub=Malev.TWO,       ranged="Gastraphetes"}
