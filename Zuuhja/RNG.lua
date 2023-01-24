@@ -237,7 +237,7 @@ function init_gear_sets()
 
     -- Precast sets to enhance JAs
     sets.precast.JA['Eagle Eye Shot'] = {legs="Arc. Braccae +3"}
-    sets.precast.JA['Bounty Shot'] = {hands="Amini Glove. +2"}
+    sets.precast.JA['Bounty Shot'] = {hands="Amini Glove. +3"}
     sets.precast.JA['Camouflage'] = {body="Orion Jerkin +3"}
     sets.precast.JA['Double Shot'] = {back=Cape.SNAPSHOT}
     sets.precast.JA['Scavenge'] = {feet="Orion Socks +3"}
@@ -394,7 +394,7 @@ function init_gear_sets()
       left_ring="Regal Ring",
       right_ring="Epaminondas's Ring",
       back=Cape.RATK
-    })
+    }
 
     sets.precast.WS["Coronach"].Acc = set_combine(sets.precast.WS['Coronach'], {
     })
@@ -480,6 +480,7 @@ function init_gear_sets()
     -- 1598 racc
     sets.midcast.RA.HighAcc = set_combine(sets.midcast.RA.Acc, {
       right_ear="Beyla Earring",
+      hands="Amini Glovelettes +3",
       waist="K. Kachina Belt +1",
       feet="Amini bottillons +3",
     })
