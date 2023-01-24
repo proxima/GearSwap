@@ -83,7 +83,7 @@ function user_setup()
     state.OffenseMode:options('Normal', 'Acc')
     state.HybridMode:options('Normal', 'DT')
     state.WeaponskillMode:options('Normal', 'Acc')
-    state.CastingMode:options('Normal', 'Resistant')
+    state.CastingMode:options('Normal', 'Resistant', 'Evasion')
     state.IdleMode:options('Normal', 'DT', 'Evasion', 'MEva')
 
     Linos = {}
@@ -249,6 +249,21 @@ function init_gear_sets()
       back=Cape.FC                                                                                         -- 10
     }
 
+    sets.precast.FC.BardSong.Evasion = {
+      head="Bunzi's Hat",        --  7  DT, 10  FC 
+      body="Inyanga Jubbah +2",  -- 14  FC
+      hands="Nyame Gauntlets",   --  7  DT
+      legs="Aya. Cosciales +2",  --  5  DT,  6  FC
+      feet="Bihu Slippers +3",   --  5 PDT, 10 SCT
+      neck="Loricate Torque +1", --  6  DT    
+      ear1="Loquacious Earring", --  2  FC
+      ear2="Etiolation Earring", --  1  FC            
+      ring1="Kishar Ring",       --  4  FC
+      ring2="Defending Ring",    -- 10  DT
+      back={ name="Intarabus's Cape", augments={'AGI+20','Eva.+20 /Mag. Eva.+20','Evasion+10','"Fast Cast"+10','Phys. dmg. taken-10%',}}, --10 FC, 10 PDT
+      waist="Witful Belt", --3/(3)
+    } --50 PDT / 35 MDT, 49 FC + 10 Song Cast
+
     sets.precast.FC.SongPlaceholder = set_combine(sets.precast.FC.BardSong, {range=info.ExtraSongInstrument})
 
     sets.precast.FC.Dispelga = set_combine(sets.precast.FC, {main="Daybreak", sub="Ammurapi Shield"})
@@ -379,6 +394,23 @@ function init_gear_sets()
       body="Fili Hongreline +2",
       hands="Brioso Cuffs +3",
       legs="Inyanga Shalwar +2",
+    }
+
+    sets.midcast.Lullaby.Evasion = {
+      main="Carnwenhan",
+      sub="Genmei Shield",       -- 10
+      head="Nyame Helm",         --  7
+      body="Nyame Mail",         --  9
+      hands="Nyame Gauntlets",   --  7
+      legs="Inyanga Shalwar +2", 
+      feet="Brioso Slippers +3",
+      neck="Mnbw. Whistle +1",
+      ear1="Regal Earring",
+      ear2="Eabani Earring",
+      ring1={name="Stikini Ring +1", bag="wardrobe5"},
+      ring2="Defending Ring",    -- 10
+      waist="Sveltesse Gouriz +1",
+      back=Cape.FC   
     }
 
     sets.TreasureHunter = {
@@ -572,13 +604,13 @@ function init_gear_sets()
       body="Nyame Mail",
       hands="Nyame Gauntlets",
       legs="Nyame Flanchard",
-      feet="Nyame Sollerets",
+      feet="Hippomenes Socks +1",
       neck="Bathy Choker +1",
       waist="Kasiri Belt",
       left_ear="Infused Earring",
       right_ear="Eabani Earring",
       left_ring="Vengeful Ring",
-      right_ring="Gelatinous Ring +1",
+      right_ring="Defending Ring",
       back=Cape.ENMITY_EVA,
     }
 
@@ -608,7 +640,7 @@ function init_gear_sets()
     sets.defense.PDT = sets.idle.Evasion
     sets.defense.MDT = sets.idle.MEva
 
-    sets.Kiting = {feet="Fili Cothurnes +1"}
+    sets.Kiting = {feet="Hippomenes socks +1"}
     sets.latent_refresh = {} --waist="Fucho-no-obi"
 
     ------------------------------------------------------------------------------------------------
@@ -758,6 +790,7 @@ function job_precast(spell, action, spellMap, eventArgs)
         if spell.name == 'Honor March' then
             equip({range="Marsyas"})
         end
+
         if string.find(spell.name,'Lullaby') then
             if state.LullabyMode.value == 'Harp' and spell.english:contains('Horde') then
                 equip({range="Daurdabla"})
@@ -772,6 +805,7 @@ function job_precast(spell, action, spellMap, eventArgs)
             end
         end
     end
+
     if spellMap == 'Utsusemi' then
         if buffactive['Copy Image (3)'] or buffactive['Copy Image (4+)'] then
             cancel_spell()
@@ -789,15 +823,18 @@ function job_midcast(spell, action, spellMap, eventArgs)
     if spell.type == 'BardSong' then
         -- layer general gear on first, then let default handler add song-specific gear.
         local generalClass = get_song_class(spell)
+
         if generalClass and sets.midcast[generalClass] then
             equip(sets.midcast[generalClass])
             if generalClass == 'SongEnmity' then
                 eventArgs.handled = true
             end
         end
+
         if spell.name == 'Honor March' then
             equip({range="Marsyas"})
         end
+
         if string.find(spell.name,'Lullaby') then
             if state.LullabyMode.value == 'Harp' and spell.english:contains('Horde') then
                 equip({range="Daurdabla"})
@@ -1057,6 +1094,7 @@ function get_lullaby_duration(spell)
     if player.equipment.neck == "Mnbw. Whistle +1" then mult = mult + 0.3 end
     if player.equipment.body == "Fili Hongreline +1" then mult = mult + 0.12 end
     if player.equipment.body == "Fili Hongreline +2" then mult = mult + 0.13 end
+    if player.equipment.body == "Fili Hongreline +3" then mult = mult + 0.14 end
     if player.equipment.legs == "Inyanga Shalwar +1" then mult = mult + 0.15 end
     if player.equipment.legs == "Inyanga Shalwar +2" then mult = mult + 0.17 end
     if player.equipment.feet == "Brioso Slippers" then mult = mult + 0.1 end
@@ -1164,7 +1202,7 @@ function gearinfo(cmdParams, eventArgs)
 end
 
 function check_moving()
-    if state.DefenseMode.value == 'None'  and state.Kiting.value == false then
+    if state.DefenseMode.value == 'None' and state.Kiting.value == false then
         if state.Auto_Kite.value == false and moving then
             state.Auto_Kite:set(true)
         elseif state.Auto_Kite.value == true and moving == false then
