@@ -404,7 +404,7 @@ function init_gear_sets()
     sets.precast.WS['Hot Shot'] = {ammo=gear.WSbullet,
       head={ name="Nyame Helm", augments={'Path: B',}},
       body={ name="Nyame Mail", augments={'Path: B',}},
-      hands="Chasseur's Gants +3",
+      hands="Chasseur's Gants +2",
       legs={ name="Nyame Flanchard", augments={'Path: B',}},
       feet={ name="Lanun Bottes +3", augments={'Enhances "Wild Card" effect',}},
       neck="Fotia Gorget",

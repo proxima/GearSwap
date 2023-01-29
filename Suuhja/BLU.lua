@@ -256,7 +256,7 @@ function user_setup()
     send_command('bind ^numpad2 input /ws "Black Halo" <t>')
 
     send_command('bind @a sat youcommand Muuhja "Thunderspark"')
-    send_command('bind @o sat youcommand Muuhja "Horde Lullaby"')
+    send_command('bind @o sat youcommand Muuhja "Sleepga"')
     send_command('bind @p sat youcommand Zuuhja "Sleepga"')
     send_command('bind @v sat youcommand Muuhja "Volt Strike"')
 
@@ -348,7 +348,7 @@ function init_gear_sets()
 
     sets.buff['Burst Affinity'] = {legs="Assim. Shalwar +3", feet="Hashi. Basmak +3"}
     sets.buff['Diffusion'] = {feet="Luhlaza Charuqs +1"}
-    sets.buff['Efflux'] = {legs="Hashishin Tayt +2"}
+    sets.buff['Efflux'] = {legs="Hashishin Tayt +3"}
 
     sets.precast.JA['Azure Lore'] = {hands="Luh. Bazubands +1"}
     sets.precast.JA['Chain Affinity'] = {feet="Assim. Charuqs +1"}
@@ -510,7 +510,7 @@ function init_gear_sets()
       left_ring={name="Stikini Ring +1",bag="wardrobe 2"},
       right_ring={name="Stikini Ring +1",bag="wardrobe 3"},
       back="Cornflower Cape",
-      legs="Hashishin Tayt +2",
+      legs="Hashishin Tayt +3",
       feet="Luhlaza Charuqs +1"
     }
 
@@ -540,9 +540,10 @@ function init_gear_sets()
 
     sets.midcast['Blue Magic'].Magical = {
       ammo={ name="Ghastly Tathlum +1", augments={'Path: A',}},
-      body={ name="Cohort Cloak +1", augments={'Path: A',}},
+      head="Hashishin kavuk +3",
+      body="Hashishin mintan +3",
       hands="Hashishin bazubands +3",
-      legs={ name="Luhlaza Shalwar +3", augments={'Enhances "Assimilation" effect',}},
+      legs="Hashishin tayt +3",
       feet="Hashishin basmak +3",
       neck="Sibyl Scarf",
       waist="Orpheus's Sash",
@@ -591,13 +592,13 @@ function init_gear_sets()
       neck="Mirage Stole +2",
       left_ear="Regal Earring",
       right_ear="Hashi. Earring +2",
-      body="Hashishin mintan +2",
+      body="Hashishin mintan +3",
       hands="Hashishin Bazubands +3",
       left_ring={name="Stikini Ring +1",bag="wardrobe 2"},
       right_ring="Metamorph Ring +1",
       back="Aurist's Cape +1",
       waist="Acuity Belt +1",
-      legs="Hashishin Tayt +2",
+      legs="Hashishin Tayt +3",
       feet="Hashishin Basmak +3"
     }
 
@@ -609,13 +610,13 @@ function init_gear_sets()
        neck="Mirage Stole +2",
        left_ear="Digni. Earring",
        right_ear="Hashi. Earring +2",
-       body="Hashishin Mintan +2",
+       body="Hashishin Mintan +3",
        hands="Hashishin Bazubands +3",
        left_ring={name="Stikini Ring +1", bag="wardrobe 2"},
        right_ring={name="Stikini Ring +1", bag="wardrobe 3"},
        back="Aurist's Cape +1",
        waist="Eschan Stone",
-       legs="Hashishin Tayt +2",
+       legs="Hashishin Tayt +3",
        feet="Hashishin Basmak +3"
      }
 
@@ -693,19 +694,19 @@ function init_gear_sets()
     })
 
     sets.midcast.Aquaveil = {
-      ammo="Staunch Tathlum +1",
+      ammo="Staunch Tathlum +1",                                                                 -- 11
       head="Amalric Coif +1",
-      body={ name="Taeon Tabard", augments={'Spell interruption rate down -10%','Phalanx +3',}},
+      body={ name="Taeon Tabard", augments={'Spell interruption rate down -10%','Phalanx +3',}}, -- 10
       hands="Regal Cuffs",
-      legs="Assim. Shalwar +3",
-      feet={ name="Amalric Nails +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
+      legs="Assim. Shalwar +3",                                                                  -- 24
+      feet={ name="Amalric Nails +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},   -- 16
       neck={ name="Loricate Torque +1", augments={'Path: A',}},
-      waist="Emphatikos Rope",
-      left_ear="Magnetic Earring",
+      waist="Emphatikos Rope",                                                                   -- 12
+      left_ear="Magnetic Earring",                                                               --  8
       right_ear={ name="Odnowa Earring +1", augments={'Path: A',}},
-      left_ring="Evanescence Ring",
+      left_ring="Evanescence Ring",                                                              --  5
       right_ring="Defending Ring",
-      back={ name="Fi Follet Cape +1", augments={'Path: A',}},
+      back={ name="Fi Follet Cape +1", augments={'Path: A',}},                                   --  5
     }
 
     sets.midcast.Protect = set_combine(sets.midcast.EnhancingDuration, {ring1="Sheltered Ring"})
@@ -734,7 +735,7 @@ function init_gear_sets()
     sets.idle = {
       ammo="Amar Cluster",
       head={ name="Nyame Helm", augments={'Path: B',}},
-      body="Hashishin mintan +2",
+      body="Hashishin mintan +3",
       hands={ name="Nyame Gauntlets", augments={'Path: B',}},
       legs={ name="Nyame Flanchard", augments={'Path: B',}},
       feet={ name="Nyame Sollerets", augments={'Path: B',}},
@@ -756,7 +757,6 @@ function init_gear_sets()
     })
 
     sets.idle.Refresh = set_combine(sets.idle, {      
-      body="Hashishin mintan +2",
       left_ring={name="Stikini Ring +1",bag="wardrobe 2"},
       right_ring={name="Stikini Ring +1",bag="wardrobe 3"},
     })

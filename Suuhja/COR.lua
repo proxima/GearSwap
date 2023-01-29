@@ -759,11 +759,18 @@ function init_gear_sets()
     ------------------------------------------------------------------------------------------------
 
     sets.engaged.Hybrid = {
-      head="Malignance Chapeau",
-      body="Malignance Tabard",
-      hands="Malignance Gloves",
+      head={ name="Nyame Helm", augments={'Path: B',}},
+      body={ name="Nyame Mail", augments={'Path: B',}},
+      hands={ name="Nyame Gauntlets", augments={'Path: B',}},
       legs="Chas. Culottes +3",
-      feet="Malignance Boots",
+      feet={ name="Nyame Sollerets", augments={'Path: B',}},
+      neck="Iskur Gorget",
+      waist={ name="Sailfi Belt +1", augments={'Path: A',}},
+      left_ear="Crepuscular Earring",
+      right_ear="Telos Earring",
+      left_ring={name="Chirich ring +1",bag="Wardrobe 2"},
+      right_ring={name="Chirich ring +1",bag="Wardrobe 4"},
+      back=Cape.TP
     }
 
     sets.engaged.DT = set_combine(sets.engaged, sets.engaged.Hybrid)

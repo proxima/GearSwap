@@ -388,6 +388,7 @@ function get_sets()
     sets.me["Omniscience"] = {
       ammo="Sroda Tathlum",
       head="Pixie hairpin +1",
+      -- head="Arbatel Bonnet +3",
       body="Arbatel Gown +3",
       hands="Arbatel Bracers +3",
       legs="Nyame Flanchard",

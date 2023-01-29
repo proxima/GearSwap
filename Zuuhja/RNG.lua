@@ -293,7 +293,7 @@ function init_gear_sets()
     }) -- 35 / 54
 
     sets.precast.RA.Gastra.Flurry2 = set_combine(sets.precast.RA.Gastra.Flurry1, {
-      legs="Pursuer's Gaiters",                                                         --  0 / 19
+      feet="Pursuer's Gaiters",                                                         --  0 / 19
     }) -- 25 / 73
 
     sets.precast.RA.Gastra.Embrava = sets.precast.RA.Gastra.Flurry2
