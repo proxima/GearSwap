@@ -71,7 +71,7 @@ mab_ready_moves = S{
      'Venom Spray','Bubble Shower',
      'Fireball','Plague Breath',
      'Snow Cloud','Acid Spray','Silence Gas','Dark Spore',
-     'Charged Whisker','Purulent Ooze','Aqua Breath','Stink Bomb',
+     'Charged Whisker','Aqua Breath','Stink Bomb',
      'Nectarous Deluge','Nepenthic Plunge','Foul Waters','Dust Cloud','Sheep Song','Scream','Dream Flower','Roar','Gloeosuccus','Palsy Pollen',
      'Soporific','Geist Wall','Numbing Noise','Spoil','Hi-Freq Field',
      'Sandpit','Sandblast','Filamented Hold',
@@ -80,9 +80,9 @@ mab_ready_moves = S{
      'Corrosive Ooze','Molting Plumage','Swooping Frenzy',
      'Pestilent Plume',}
      
- macc_ready_moves = S{
-  'TP Drainkiss'
- }
+macc_ready_moves = S{
+  'Purulent Ooze', 'TP Drainkiss'
+}
  
  function file_unload()
     if binds_on_unload then
@@ -250,7 +250,7 @@ function init_gear_sets()
       body="Nyame Mail",
       hands="Nukumi Manoplas +1", -- if tp matters, otherwise more nyame
       legs="Nyame Flanchard",
-      feet="Nyame Sollerets",
+      feet="Gleti's Boots",
       left_ear="Handler's Earring +1",
       right_ear="Enmerkar Earring",
       left_ring="Tali'ah Ring",
@@ -284,7 +284,7 @@ function init_gear_sets()
       back={ name="Artio's Mantle", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Eva.+20 /Mag. Eva.+20','Pet: Attack+10 Pet: Rng.Atk.+10','Pet: "Regen"+10','Pet: Damage taken -5%',}},
     } 
            
-    sets.idle.Reraise = set_combine(sets.idle, {head="Twilight Helm",body="Twilight Mail"})
+    sets.idle.Reraise = set_combine(sets.idle, {head="Crepuscular Helm",body="Crepuscular Mail"})
 
     -- Idle Set that equips when you have a pet out and not fighting an enemy.
     sets.idle.Pet = set_combine(sets.idle, {

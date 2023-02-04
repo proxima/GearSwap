@@ -194,7 +194,6 @@ function get_sets()
 
    sets.me.latent_refresh = {waist="Fucho-no-obi"}
 
-
    -----------------------
    -- Luopan Perpetuation
    -----------------------

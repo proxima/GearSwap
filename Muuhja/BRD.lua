@@ -640,7 +640,7 @@ function init_gear_sets()
     sets.defense.PDT = sets.idle.Evasion
     sets.defense.MDT = sets.idle.MEva
 
-    sets.Kiting = {feet="Hippomenes socks +1"}
+    sets.Kiting = {feet="Fili cothurnes +1"}
     sets.latent_refresh = {} --waist="Fucho-no-obi"
 
     ------------------------------------------------------------------------------------------------

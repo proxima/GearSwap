@@ -437,53 +437,20 @@ function init_gear_sets()
     }
 
     -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
-    sets.precast.WS["Stringing Pummel"] = {
-      head={ name="Blistering Sallet +1", augments={'Path: A',}},
-      body="Mpaca's Doublet",
-      hands="Mpaca's Gloves",
-      legs="Mpaca's Hose",
-      feet="Mpaca's Boots",
-      neck="Fotia Gorget",
-      waist="Moonbow Belt +1",
-      left_ear={ name="Schere Earring", augments={'Path: A',}},
-      right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
-      left_ring="Niqmaddu Ring",
-      right_ring="Gere Ring",
-      back=Visucius.MasterDA
-    }
-
-    sets.precast.WS["Stringing Pummel"].Mod = set_combine(sets.precast.WS["Stringing Pummel"], {
+    sets.precast.WS["Stringing Pummel"] = set_combine(sets.precast.WS, {
+      waist="Fotia Belt",
+      right_ear="Mache Earring +1",
     })
 
-    sets.precast.WS["Victory Smite"] = {
-      head={ name="Blistering Sallet +1", augments={'Path: A',}},
-      body="Mpaca's Doublet",
-      hands="Mpaca's Gloves",
-      legs="Mpaca's Hose",
-      feet="Mpaca's Boots",
-      neck="Fotia Gorget",
-      waist="Moonbow Belt +1",
-      left_ear={ name="Schere Earring", augments={'Path: A',}},
-      right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
-      left_ring="Gere Ring",
-      right_ring="Niqmaddu Ring",
-      back=Visucius.MasterDA
-    }
+    sets.precast.WS["Raging Fists"] = set_combine(sets.precast.WS, {})
+    sets.precast.WS["Shijin Spiral"] = set_combine(sets.precast.WS, {})
+    sets.precast.WS["Victory Smite"] = set_combine(sets.precast.WS, {})
 
-    sets.precast.WS["Shijin Spiral"] = {
-      head="Mpaca's Cap",
-      body="Mpaca's Doublet",
-      hands="Mpaca's Gloves",
-      legs="Mpaca's Hose",
-      feet="Mpaca's Boots",
-      neck="Fotia Gorget",
-      waist="Moonbow Belt +1",
-      left_ear={ name="Schere Earring", augments={'Path: A',}},
-      right_ear="Mache Earring +1",
-      left_ring="Gere Ring",
-      right_ring="Niqmaddu Ring",
-      back=Visucius.MasterDA
-    }
+    sets.precast.WS["Asuran Fists"] = set_combine(sets.precast.WS, {
+      waist="Fotia Belt",
+      left_ring="Regal Ring",
+      right_ring="Sroda Ring",  
+    })
 
     sets.precast.WS["Howling Fist"] = {
       head="Mpaca's Cap",

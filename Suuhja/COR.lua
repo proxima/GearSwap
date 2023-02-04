@@ -1,4 +1,4 @@
--- Original: Motenten / Modified: Arislan
+-- Original: Motenten / Modified: Arislan`
 -- Haste/DW Detection Requires Gearinfo Addon
 
 -------------------------------------------------------------------------------------------------------------------
@@ -129,7 +129,7 @@ function user_setup()
     state.WeaponLock = M(false, 'Weapon Lock')
 
     gear.RAbullet = "Chrono Bullet"
-    gear.RAccbullet = "Chrono Bullet"
+    gear.RAccbullet = "Devastating Bullet"
     gear.WSbullet = "Chrono Bullet"
     gear.MAbullet = "Living Bullet"
     gear.QDbullet = "Hauksbok Bullet"
@@ -329,7 +329,8 @@ function init_gear_sets()
 
     sets.precast.WS['Last Stand'] = {ammo=gear.WSbullet,
       head="Nyame Helm",
-      body="Laksa. Frac +3",
+      -- body="Laksa. Frac +3",
+      body="Ikenga's Vest",  
       hands="Chasseur's Gants +3",
       legs="Nyame Flanchard",
       feet="Nyame Sollerets",
@@ -576,7 +577,8 @@ function init_gear_sets()
     sets.midcast.RA.Critical = set_combine(sets.midcast.RA, {
       head="Meghanada Visor +2",
       left_ear="Odr Earring",
-      body="Nisroch Jerkin",
+      body="Meghanada cuirie +2",
+      -- body="Nisroch Jerkin",
       hands="Chasseur's Gants +3",
       legs="Darraigner's Brais",
       feet="Osh. Leggings +1",
@@ -988,9 +990,9 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
                 end
             end
         elseif buffactive['Aftermath: Lv.3'] and player.equipment.ranged == "Armageddon" then
-            equip(sets.midcast.RA.Critical)
+            -- equip(sets.midcast.RA.Critical)
             if (spell.target.distance < (7 + spell.target.model_size)) and (spell.target.distance > (5 + spell.target.model_size)) then
-                equip(sets.TrueShot)
+                -- equip(sets.TrueShot)
             end
         end
     end

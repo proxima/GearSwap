@@ -703,13 +703,13 @@ function get_sets()
    -- used with toggle, default: F10
    -- Pieces to swap from free nuke to Magic Burst    
    sets.midcast.MB.normal = set_combine(sets.midcast.nuking.normal, {
-     main="Bunzi's Rod",                                                                       
+     main="Bunzi's Rod",
      sub="Ammurapi Shield",
      ammo="Ghastly Tathlum +1",
-     head="Pedagogy mortarboard +3",                                                           
-     body="Agwu's Robe",                                                                       
+     head="Pedagogy mortarboard +3",
+     body="Agwu's Robe",
      hands={ name="Amalric Gages +1", augments={'INT+12','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
-     legs="Agwu's Slops",                                                                      
+     legs="Agwu's Slops",
      feet={ name="Amalric Nails +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
      neck={ name="Argute Stole +2", augments={'Path: A',}},                                    
      waist="Sacro Cord",

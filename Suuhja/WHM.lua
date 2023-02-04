@@ -354,11 +354,11 @@ function init_gear_sets()
       main="Daybreak",                                      -- 30                              
       sub="Genmei Shield",                                  --              10
       ammo="Staunch Tathlum +1",                            --               3
-      head="Nyame Helm",                                    --               7
+      head="Nyame Helm",                                    --         6     7
       body="Ebers Bliaut +3",                               --         3       +Solace
       hands="Pinga mittens +1",                             --  7
       legs="Ebers Pant. +3",                                --         5    12
-      feet="Ebers Duckbills +3",                            --              11
+      feet="Ebers Duckbills +3",                            --         3    11
       neck={ name="Clr. Torque +1", augments={'Path: A',}}, --  7  20     8
       waist="Emphatikos rope",
       left_ear="Magnetic Earring",                          --

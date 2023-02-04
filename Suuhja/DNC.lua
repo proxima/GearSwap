@@ -284,7 +284,7 @@ function init_gear_sets()
       left_ear="Mache Earring +1",
       right_ear="Telos Earring",
       body="Malignance tabard",
-      hands="Malignance gloves",
+      hands="Maculele Bangles +3",
       left_ring="Chirich Ring +1",
       right_ring="Regal Ring",
       back={ name="Senuna's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}},
@@ -293,7 +293,7 @@ function init_gear_sets()
       feet="Horos T. Shoes +3"
     }
 
-    sets.precast.Step['Feather Step'] = set_combine(sets.precast.Step, {feet="Maculele Toe shoes +2",})
+    sets.precast.Step['Feather Step'] = set_combine(sets.precast.Step, {feet="Maculele Toe shoes +3",})
     sets.precast.Flourish1 = {}
     sets.precast.Flourish1['Animated Flourish'] = set_combine(sets.Enmity, {
       head={ name="Herculean Helm", augments={'"Store TP"+1','Magic Damage +1','"Treasure Hunter"+2','Accuracy+7 Attack+7',}},
@@ -303,11 +303,11 @@ function init_gear_sets()
     sets.precast.Flourish1['Violent Flourish'] = {
       ammo="Yamarang",
       neck="Etoile Gorget +2",
-      head="Malignance chapeau",
+      hands="Maculele Tiara +3",
       body="Horos Casaque +3",
-      hands="Malignance gloves",
+      hands="Maculele Bangles +3",
       legs="Malignance tights",
-      feet="Malignance boots",
+      hands="Maculele Toe Shoes +3",
       left_ear="Digni. Earring",
       left_ring={name="Stikini Ring +1",bag="wardrobe 2"},
       right_ring={name="Stikini Ring +1",bag="wardrobe 3"},
@@ -318,7 +318,7 @@ function init_gear_sets()
     } -- Accuracy
 
     sets.precast.Flourish2 = {}
-    sets.precast.Flourish2['Reverse Flourish'] = {hands="Maculele Bangles +2", back="Toetapper Mantle"}
+    sets.precast.Flourish2['Reverse Flourish'] = {hands="Maculele Bangles +3", back="Toetapper Mantle"}
     sets.precast.Flourish3 = {}
     sets.precast.Flourish3['Striking Flourish'] = {body="Macu. Casaque +1"}
     sets.precast.Flourish3['Climactic Flourish'] = {head="Maculele Tiara +3",}
@@ -363,16 +363,33 @@ function init_gear_sets()
       ammo="Coiste Bodhar",
       head="Maculele Tiara +3",
       body="Nyame Mail",
-      hands="Gleti's Gauntlets",
+      hands="Maculele Bangles +3",
       legs="Nyame Flanchard",
       feet="Gleti's Boots",
       neck="Fotia Gorget",
       waist="Fotia Belt",
       left_ear="Sherida Earring",
-      right_ear="Odnorwa Earring +1",
+      right_ear="Odnowa Earring +1",
       left_ring="Gere Ring",
       right_ring="Regal Ring",
       back={ name="Senuna's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}},
+    })
+
+    sets.precast.WS['Combo'] = set_combine(sets.precast.WS['Asuran Fists'], {
+      body="Nyame Mail",
+      hands="Nyame Gauntlets",
+      legs="Nyame Flanchard",
+      feet="Nyame Sollerets",
+      right_ear="Moonshade Earring",
+      right_ring="Epona's Ring",
+      waist="Sailfi Belt +1",  
+    })
+
+    sets.precast.WS['Tornado Kick'] = set_combine(sets.precast.WS['Combo'], {})
+
+    sets.precast.WS['Raging Fists'] = set_combine(sets.precast.WS['Combo'], {
+      body="Horos Casaque +3",
+      hands={ name="Adhemar Wrist. +1", augments={'STR+12','DEX+12','Attack+20',}},
     })
 
     sets.precast.WS['Pyrrhic Kleos'].Acc = set_combine(sets.precast.WS['Pyrrhic Kleos'], {
@@ -396,10 +413,10 @@ function init_gear_sets()
     })
 
     sets.precast.WS['Rudra\'s Storm'] = set_combine(sets.precast.WS, {
-      ammo="Oshasha's Treatise",
+      ammo="Coiste Bodhar",
       head="Maculele Tiara +3",
       body="Nyame Mail",
-      hands="Nyame Gauntlets",
+      hands="Maxixi Bangles +3",
       legs="Nyame Flanchard",
       feet="Nyame Sollerets",
       neck="Etoile Gorget +2",
@@ -412,7 +429,13 @@ function init_gear_sets()
     })
     
     sets.precast.WS['Dancing Edge'] = sets.precast.WS['Rudra\'s Storm']
-    sets.precast.WS['Shark Bite'] = sets.precast.WS['Rudra\'s Storm']
+
+    sets.precast.WS['Shark Bite'] = set_combine(sets.precast.WS['Rudra\'s Storm'], {
+      ammo="Cath Palug Stone",
+      left_ear="Sherida Earring",
+      waist="Sailfi Belt +1", 
+      hands="Maxixi Bangles +3",
+    })
 
     sets.precast.WS['Aeolian Edge'] = {
       ammo={ name="Ghastly Tathlum +1", augments={'Path: A',}},
@@ -432,14 +455,14 @@ function init_gear_sets()
     
     sets.precast.WS['Exenterator'] = {
       ammo="C. Palug Stone",
-      head="Nyame Helm",
+      hands="Maculele Tiara +3",
       neck="Fotia Gorget",
       right_ear="Brutal Earring",
       left_ear="Sherida Earring",
       body="Horos Casaque +3",
-      hands="Nyame Gauntlets",
+      hands="Maculele Bangles +3",
       left_ring="Regal Ring",
-      right_ring="Ilabrat Ring",
+      right_ring="Gere Ring",
       back={ name="Senuna's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%','Phys. dmg. taken-10%'}},
       waist="Fotia Belt",
       legs="Nyame Flanchard",
@@ -478,7 +501,7 @@ function init_gear_sets()
       body="Malignance Tabard",
       hands="Malignance Gloves",
       legs="Malignance Tights",
-      feet="Maculele Toe shoes +2",
+      feet="Maculele Toe shoes +3",
       neck={ name="Loricate Torque +1", augments={'Path: A',}},
       waist="Carrier's Sash",
       left_ear="Eabani Earring",
@@ -499,19 +522,19 @@ function init_gear_sets()
     sets.idle.Town = set_combine(sets.idle, {
       main={ name="Terpsichore", augments={'Path: A',}},
       sub="Twashtar",
-      ammo="Yamarang",
-      head="Malignance Chapeau",
-      body="Malignance Tabard",
-      hands="Malignance Gloves",
-      legs="Malignance Tights",
-      feet="Maculele Toe shoes +2",
+      ammo="Coiste Bodhar",
+      head="Maculele Tiara +3",
+      body="Gleti's Cuirass",
+      hands="Maculele Bangles +3",
+      legs="Gleti's Breeches",
+      feet="Maculele Toe shoes +3",
       neck={ name="Etoile Gorget +2", augments={'Path: A',}},
       waist="Reiki Yotai",
       left_ear="Sherida Earring",
-      right_ear="Eabani Earring",
-      left_ring={name="Chirich Ring +1",bag="wardrobe 2"},
-      right_ring={name="Chirich Ring +1",bag="wardrobe 4"},
-      back={ name="Senuna's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dual Wield"+10','Phys. dmg. taken-10%',}},    
+      right_ear="Maculele Earring +1",
+      left_ring={name="Moonlight Ring",bag="wardrobe 6"}, -- 5
+      right_ring={name="Moonlight Ring",bag="wardrobe 8"}, -- 5
+      back={ name="Senuna's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}},  
     })
 
     sets.idle.Weak = sets.idle.DT
@@ -609,7 +632,7 @@ function init_gear_sets()
       head="Malignance chapeau",
       hands="Malignance gloves",
       legs="Malignance tights",
-      feet="Maculele Toe shoes +2",
+      feet="Maculele Toe shoes +3",
     })
 
     -- 15% Magic Haste (67% DW to cap)
@@ -645,7 +668,7 @@ function init_gear_sets()
       head="Malignance chapeau",
       hands="Malignance gloves",
       legs="Malignance tights",
-      feet="Maculele Toe shoes +2",
+      feet="Maculele Toe shoes +3",
     })
 
     -- 30% Magic Haste (56% DW to cap)
@@ -681,7 +704,7 @@ function init_gear_sets()
       head="Malignance chapeau",
       hands="Malignance gloves",
       legs="Malignance tights",
-      feet="Maculele Toe shoes +2",
+      feet="Maculele Toe shoes +3",
     })
 
     -- 35% Magic Haste (51% DW to cap)
@@ -717,7 +740,7 @@ function init_gear_sets()
       head="Malignance chapeau",
       hands="Malignance gloves",
       legs="Malignance tights",
-      feet="Maculele Toe shoes +2",
+      feet="Maculele Toe shoes +3",
     })
 
     -- 45% Magic Haste (36% DW to cap)
@@ -753,7 +776,7 @@ function init_gear_sets()
       head="Malignance chapeau",
       hands="Malignance gloves",
       legs="Malignance tights",
-      feet="Maculele Toe shoes +2",
+      feet="Maculele Toe shoes +3",
     })
 
     ------------------------------------------------------------------------------------------------
@@ -775,7 +798,7 @@ function init_gear_sets()
       back={ name="Senuna's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}},  -- 10 PDT
       waist="Windbuffet belt +1",
       legs="Malignance tights", -- 7
-      feet="Maculele Toe shoes +2", -- 9
+      feet="Maculele Toe shoes +3", -- 10
     }
 
     sets.engaged.DT = set_combine(sets.engaged, sets.engaged.Hybrid)
