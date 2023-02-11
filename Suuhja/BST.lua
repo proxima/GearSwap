@@ -1,84 +1,76 @@
 -------------------------------------------------------------------------------------------------------------------
--- ctrl+F12 cycles Idle modes
- 
- 
+-- ctrl+F12 cycles Idle modes 
 -------------------------------------------------------------------------------------------------------------------
-                            -- THE STUFF YOU CARE ABOUT STARTS AFTER LINE 101 --
-                            -- THE STUFF YOU CARE ABOUT STARTS AFTER LINE 101 --
-                            -- THE STUFF YOU CARE ABOUT STARTS AFTER LINE 101 --
-                            -- THE STUFF YOU CARE ABOUT STARTS AFTER LINE 101 --
-                            -- THE STUFF YOU CARE ABOUT STARTS AFTER LINE 101 --
-                            -- THE STUFF YOU CARE ABOUT STARTS AFTER LINE 101 --
-                            -- THE STUFF YOU CARE ABOUT STARTS AFTER LINE 101 --
-                            -- THE STUFF YOU CARE ABOUT STARTS AFTER LINE 101 --
-                            -- THE STUFF YOU CARE ABOUT STARTS AFTER LINE 101 --
+
 -------------------------------------------------------------------------------------------------------------------
 -- Initialization function that defines sets and variables to be used.
 -------------------------------------------------------------------------------------------------------------------
- 
--- IMPORTANT: Make sure to also get the Mote-Include.lua file (and its supplementary files) to go with this.
- 
+  
 -- Initialization function for this job file.
 function get_sets()
-    mote_include_version = 2
- 
-    -- Load and initialize the include file.
-    include('Mote-Include.lua')
+  mote_include_version = 2
+
+  -- Load and initialize the include file.
+  include('Mote-Include.lua')
 end
  
 function job_setup()
-    get_combat_form() 
+  get_combat_form() 
 end
  
- 
 function user_setup()
-    state.IdleMode:options('Normal', 'Reraise')
-    state.OffenseMode:options('Normal', 'PetDT')
-    state.CorrelationMode = M{['description']='Correlation Mode', 'Neutral', 'HighAcc', 'MaxAcc',}
-    send_command('bind ^f8 gs c cycle CorrelationMode')
-    select_default_macro_book()
-    
-    send_command('bind @o sat youcommand Muuhja "Horde Lullaby II"')
-    send_command('bind @p sat youcommand Zuuhja "Sleepga"')
-    send_command('bind @n sat youcommand Muuhja "Carnage Elegy"')
-    send_command('bind @1 send Zuuhja input /ma "Cure IV" Aller')
-    send_command('bind @2 send Zuuhja input /ma "Curaga III" Aller')
-    send_command('bind !1 send Zuuhja input /ma "Cure IV" Slibby')
-    send_command('bind !2 send Zuuhja input /ma "Curaga III" Slibby')
- end
+  state.IdleMode:options('Normal', 'Reraise')
+  state.OffenseMode:options('Normal', 'PetDT')
+  state.CorrelationMode = M{['description']='Correlation Mode', 'Neutral', 'HighAcc', 'MaxAcc',}
+  send_command('bind ^f8 gs c cycle CorrelationMode')
+  select_default_macro_book()
+
+  Cape = {}
+  Cape.STP     = { name="Artio's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Store TP"+10','Phys. dmg. taken-10%',}}
+  Cape.PET     = { name="Artio's Mantle", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Eva.+20 /Mag. Eva.+20','Pet: Attack+10 Pet: Rng.Atk.+10','Pet: "Regen"+10','Pet: Damage taken -5%',}}
+  Cape.STR_DA  = { name="Artio's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}}
+  Cape.STR_WSD = { name="Artio's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}
+  Cape.REND    = { name="Artio's Mantle", augments={'CHR+20','Mag. Acc+20 /Mag. Dmg.+20','CHR+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}
+
+  send_command('bind @o sat youcommand Muuhja "Horde Lullaby II"')
+  send_command('bind @p sat youcommand Zuuhja "Sleepga"')
+  send_command('bind @n sat youcommand Muuhja "Carnage Elegy"')
+  send_command('bind @1 send Zuuhja input /ma "Cure IV" Aller')
+  send_command('bind @2 send Zuuhja input /ma "Curaga III" Aller')
+  send_command('bind !1 send Zuuhja input /ma "Cure IV" Slibby')
+  send_command('bind !2 send Zuuhja input /ma "Curaga III" Slibby')
+end
  
--- Complete list of Ready moves to use with Sic & Ready Recast -5 Desultor Tassets.
 ready_moves_to_check = S{'Sic','Whirl Claws','Dust Cloud','Foot Kick','Sheep Song','Sheep Charge','Lamb Chop',
-    'Rage','Head Butt','Scream','Dream Flower','Wild Oats','Leaf Dagger','Claw Cyclone','Razor Fang',
-    'Roar','Gloeosuccus','Palsy Pollen','Soporific','Cursed Sphere','Venom','Geist Wall','Toxic Spit',
-    'Numbing Noise','Nimble Snap','Cyclotail','Spoil','Rhino Guard','Rhino Attack','Power Attack',
-    'Hi-Freq Field','Sandpit','Sandblast','Venom Spray','Mandibular Bite','Metallic Body','Bubble Shower',
-    'Bubble Curtain','Scissor Guard','Big Scissors','Grapple','Spinning Top','Double Claw','Filamented Hold',
-    'Frog Kick','Queasyshroom','Silence Gas','Numbshroom','Spore','Dark Spore','Shakeshroom','Blockhead',
-    'Secretion','Fireball','Tail Blow','Plague Breath','Brain Crush','Infrasonics','??? Needles',
-    'Needleshot','Chaotic Eye','Blaster','Scythe Tail','Ripper Fang','Chomp Rush','Intimidate','Recoil Dive',
-    'Water Wall','Snow Cloud','Wild Carrot','Sudden Lunge','Spiral Spin','Noisome Powder','Wing Slap',
-    'Beak Lunge','Suction','Drainkiss','Acid Mist','TP Drainkiss','Back Heel','Jettatura','Choke Breath',
-    'Fantod','Charged Whisker','Purulent Ooze','Corrosive Ooze','Tortoise Stomp','Harden Shell','Aqua Breath',
-    'Sensilla Blades','Tegmina Buffet','Molting Plumage','Swooping Frenzy','Pentapeck','Sweeping Gouge',
-    'Zealous Snort','Somersault ','Tickling Tendrils','Stink Bomb','Nectarous Deluge','Nepenthic Plunge',
-    'Pecking Flurry','Pestilent Plume','Foul Waters','Spider Web','Sickle Slash','Frogkick','Ripper Fang',
-	'Scythe Tail','Chomp Rush','Fluid Toss','Fluid Spread','Digest'}
- 
+  'Rage','Head Butt','Scream','Dream Flower','Wild Oats','Leaf Dagger','Claw Cyclone','Razor Fang',
+  'Roar','Gloeosuccus','Palsy Pollen','Soporific','Cursed Sphere','Venom','Geist Wall','Toxic Spit',
+  'Numbing Noise','Nimble Snap','Cyclotail','Spoil','Rhino Guard','Rhino Attack','Power Attack',
+  'Hi-Freq Field','Sandpit','Sandblast','Venom Spray','Mandibular Bite','Metallic Body','Bubble Shower',
+  'Bubble Curtain','Scissor Guard','Big Scissors','Grapple','Spinning Top','Double Claw','Filamented Hold',
+  'Frog Kick','Queasyshroom','Silence Gas','Numbshroom','Spore','Dark Spore','Shakeshroom','Blockhead',
+  'Secretion','Fireball','Tail Blow','Plague Breath','Brain Crush','Infrasonics','??? Needles',
+  'Needleshot','Chaotic Eye','Blaster','Scythe Tail','Ripper Fang','Chomp Rush','Intimidate','Recoil Dive',
+  'Water Wall','Snow Cloud','Wild Carrot','Sudden Lunge','Spiral Spin','Noisome Powder','Wing Slap',
+  'Beak Lunge','Suction','Drainkiss','Acid Mist','TP Drainkiss','Back Heel','Jettatura','Choke Breath',
+  'Fantod','Charged Whisker','Purulent Ooze','Corrosive Ooze','Tortoise Stomp','Harden Shell','Aqua Breath',
+  'Sensilla Blades','Tegmina Buffet','Molting Plumage','Swooping Frenzy','Pentapeck','Sweeping Gouge',
+  'Zealous Snort','Somersault ','Tickling Tendrils','Stink Bomb','Nectarous Deluge','Nepenthic Plunge',
+  'Pecking Flurry','Pestilent Plume','Foul Waters','Spider Web','Sickle Slash','Frogkick','Ripper Fang',
+  'Scythe Tail','Chomp Rush','Fluid Toss','Fluid Spread','Digest'}
        
 mab_ready_moves = S{
-     'Cursed Sphere','Venom','Toxic Spit',
-     'Venom Spray','Bubble Shower',
-     'Fireball','Plague Breath',
-     'Snow Cloud','Acid Spray','Silence Gas','Dark Spore',
-     'Charged Whisker','Aqua Breath','Stink Bomb',
-     'Nectarous Deluge','Nepenthic Plunge','Foul Waters','Dust Cloud','Sheep Song','Scream','Dream Flower','Roar','Gloeosuccus','Palsy Pollen',
-     'Soporific','Geist Wall','Numbing Noise','Spoil','Hi-Freq Field',
-     'Sandpit','Sandblast','Filamented Hold',
-     'Spore','Infrasonics','Chaotic Eye',
-     'Blaster','Intimidate','Noisome Powder','Jettatura','Spider Web',
-     'Corrosive Ooze','Molting Plumage','Swooping Frenzy',
-     'Pestilent Plume',}
+  'Cursed Sphere','Venom','Toxic Spit',
+  'Venom Spray','Bubble Shower',
+  'Fireball','Plague Breath',
+  'Snow Cloud','Acid Spray','Silence Gas','Dark Spore',
+  'Charged Whisker','Aqua Breath','Stink Bomb',
+  'Nectarous Deluge','Nepenthic Plunge','Foul Waters','Dust Cloud','Sheep Song','Scream','Dream Flower','Roar','Gloeosuccus','Palsy Pollen',
+  'Soporific','Geist Wall','Numbing Noise','Spoil','Hi-Freq Field',
+  'Sandpit','Sandblast','Filamented Hold',
+  'Spore','Infrasonics','Chaotic Eye',
+  'Blaster','Intimidate','Noisome Powder','Jettatura','Spider Web',
+  'Corrosive Ooze','Molting Plumage','Swooping Frenzy',
+  'Pestilent Plume',}
      
 macc_ready_moves = S{
   'Purulent Ooze', 'TP Drainkiss'
@@ -111,38 +103,23 @@ end
 function select_default_macro_book()
   set_macro_page(6, 5)
 end 
-
--- HERE IS THE BEGINNING OF THE GEARSWAP AS FAR AS YOU SHOULD BE CONCERNED FOR EDITING GEAR --
--- HERE IS THE BEGINNING OF THE GEARSWAP AS FAR AS YOU SHOULD BE CONCERNED FOR EDITING GEAR --
--- HERE IS THE BEGINNING OF THE GEARSWAP AS FAR AS YOU SHOULD BE CONCERNED FOR EDITING GEAR --
--- HERE IS THE BEGINNING OF THE GEARSWAP AS FAR AS YOU SHOULD BE CONCERNED FOR EDITING GEAR --
--- HERE IS THE BEGINNING OF THE GEARSWAP AS FAR AS YOU SHOULD BE CONCERNED FOR EDITING GEAR --
--- HERE IS THE BEGINNING OF THE GEARSWAP AS FAR AS YOU SHOULD BE CONCERNED FOR EDITING GEAR --
--- HERE IS THE BEGINNING OF THE GEARSWAP AS FAR AS YOU SHOULD BE CONCERNED FOR EDITING GEAR --
--- HERE IS THE BEGINNING OF THE GEARSWAP AS FAR AS YOU SHOULD BE CONCERNED FOR EDITING GEAR --
--- HERE IS THE BEGINNING OF THE GEARSWAP AS FAR AS YOU SHOULD BE CONCERNED FOR EDITING GEAR --
--- HERE IS THE BEGINNING OF THE GEARSWAP AS FAR AS YOU SHOULD BE CONCERNED FOR EDITING GEAR --       
  
--- BST gearsets
 function init_gear_sets()
-    -- PRECAST SETS
     sets.precast.JA['Killer Instinct'] = {head="Ankusa Helm +2"}
     sets.precast.JA['Bestial Loyalty'] = {hands="Ankusa Gloves"}
-    sets.precast.JA['Call Beast'] = sets.precast.JA['Bestial Loyalty']
-    sets.precast.JA.Familiar = {legs="Ankusa Trousers"}     
-    sets.precast.JA.Tame = {head="Totemic Helm +1",}   
-    sets.precast.JA.Spur = {feet="Nukumi Ocreae +1"}
-       
-    --This is what will equip when you use Reward.  No need to manually equip Pet Food Theta.
+    sets.precast.JA['Call Beast']      = sets.precast.JA['Bestial Loyalty']
+    sets.precast.JA.Familiar           = {legs="Ankusa Trousers"}
+    sets.precast.JA.Tame               = {head="Totemic Helm +1",}
+    sets.precast.JA.Spur               = {feet="Nukumi Ocreae +2"}
+
     sets.precast.JA.Reward = {
       ammo="Pet Food Theta",
       body="Totemic Jackcoat +1",
-      back="Pastoralist's Mantle",
+      back=Cape.PET,
       legs="Ankusa Trousers",
       feet="Totemic gaiters +1"
     }
  
-    --This is your base FastCast set that equips during precast for all spells/magic.
     sets.precast.FC = {
     }
            
@@ -153,46 +130,61 @@ function init_gear_sets()
     sets.precast.WS = {
     }
  
-    -- Specific weaponskill sets.
-    sets.precast.WS['Ruinator'] = {
-    }
-    
     sets.precast.WS['Decimation'] = {
-      ammo="Floestone",
-      head="Gleti's Mask",
-      body="Gleti's Cuirass",
-      hands="Gleti's Gauntlets",
-      legs="Gleti's Breeches",
-      feet="Gleti's Boots",
-      neck="Fotia Gorget",
-      waist="Fotia Belt",
-      left_ear="Brutal Earring",
-      right_ear="Sherida Earring",
-      left_ring="Gere Ring",
-      right_ring="Epona's Ring",
-      back={ name="Artio's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+5','"Dbl.Atk."+10','Phys. dmg. taken-10%',}},
-    }
-
-    sets.precast.WS['Savage Blade'] = {
-      ammo="Floestone",
-      ammo="Voluspa Tathlum",
+      ammo="Coiste Bodhar",
       head="Nyame Helm",
-      body="Nyame Mail",
+      body="Nukumi Gausape +3",
       hands="Nyame Gauntlets",
       legs="Nyame Flanchard",
+      feet="Nukumi Ocreae +2",
       neck="Fotia Gorget",
-      waist="Fotia Belt",
-      left_ear="Brutal Earring",
+      waist="Sailfi Belt +1",
+      left_ear="Sroda Earring",
       right_ear="Sherida Earring",
       left_ring="Gere Ring",
-      right_ring="Epona's Ring",
-      back={ name="Artio's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+5','"Dbl.Atk."+10','Phys. dmg. taken-10%',}},
+      right_ring="Sroda Ring",
+      back=Cape.STR_DA
     }
+
+    sets.precast.WS['Ruinator'] = set_combine(sets.precast.WS['Decimation'], {
+      right_ring="Regal Ring",
+    })
+
+    sets.precast.WS['Savage Blade'] = {
+      ammo="Coiste Bodhar",
+      head="Nyame Helm",
+      body="Nukumi Gausape +3",
+      hands="Nyame Gauntlets",
+      legs="Nyame Flanchard",
+      neck="Republican platinum medal",
+      waist="Sailfi Belt +1",
+      left_ear="Moonshade Earring",
+      right_ear="Thrud Earring",
+      left_ring="Regal Ring",
+      right_ring="Epaminondas's Ring",
+      back=Cape.STR_WSD
+    }
+
+    sets.precast.WS['Calamity'] = set_combine(sets.precast.WS['Savage Blade'], {})
+    sets.precast.WS['Mistral Axe'] = set_combine(sets.precast.WS['Savage Blade'], {})
 
     sets.precast.WS['Onslaught'] = {
     }
        
     sets.precast.WS['Primal Rend'] = {
+      ammo="Oshasha's Treatise",
+      head="Nyame Helm",
+      neck="Sanctity Necklace",
+      left_ear="Moonshade Earring",
+      right_ear="Friomisi Earring",
+      body="Nyame Mail",
+      hands="Nyame Gauntlets",
+      left_ring="Metamorph Ring +1",
+      right_ring="Epaminondas's Ring",
+      back=Cape.REND,
+      waist="Orpheus's Sash",
+      legs="Nyame Flanchard",
+      feet="Nyame Sollerets"  
     }
     
     sets.precast.WS['Cloudsplitter'] = {
@@ -207,7 +199,7 @@ function init_gear_sets()
       ammo="Voluspa Tathlum",
       head={ name="Emicho Coronet +1", augments={'Pet: Accuracy+20','Pet: Attack+20','Pet: "Dbl. Atk."+4',}},
       body={ name="Taeon Tabard", augments={'Pet: Accuracy+21 Pet: Rng. Acc.+21','Pet: "Dbl. Atk."+5','Pet: Damage taken -4%',}},
-      hands="Nukumi Manoplas +1",
+      hands="Nukumi Manoplas +3",
       legs={ name="Taeon Tights", augments={'Pet: Accuracy+23 Pet: Rng. Acc.+23','Pet: "Dbl. Atk."+5','Pet: Damage taken -4%',}},
       feet="Gleti's Boots",
       neck="Shulmanu Collar",
@@ -216,7 +208,7 @@ function init_gear_sets()
       right_ear="Enmerkar Earring",
       left_ring="Thur. Ring +1",
       right_ring="C. Palug Ring",
-      back={ name="Artio's Mantle", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Eva.+20 /Mag. Eva.+20','Pet: Attack+10 Pet: Rng.Atk.+10','Pet: "Regen"+10','Pet: Damage taken -5%',}},
+      back=Cape.PET
     }
 
     sets.midcast.Pet.Neutral = set_combine(sets.midcast.Pet.WS, {})           
@@ -230,7 +222,7 @@ function init_gear_sets()
       ammo="Voluspa Tathlum",
       head={ name="Valorous Mask", augments={'Pet: "Mag.Atk.Bns."+27','Pet: INT+14','Pet: Accuracy+12 Pet: Rng. Acc.+12','Pet: Attack+7 Pet: Rng.Atk.+7',}},
       body="Udug Jacket",
-      hands="Nukumi Manoplas +1",
+      hands="Nukumi Manoplas +3",
       legs={ name="Valorous Hose", augments={'Pet: "Mag.Atk.Bns."+28','Pet: Haste+3','Pet: INT+12','Pet: Accuracy+14 Pet: Rng. Acc.+14','Pet: Attack+13 Pet: Rng.Atk.+13',}},
       feet={ name="Valorous Greaves", augments={'Pet: "Mag.Atk.Bns."+29','Pet: INT+13','Pet: Accuracy+4 Pet: Rng. Acc.+4','Pet: Attack+10 Pet: Rng.Atk.+10',}},
       neck="Adad Amulet",
@@ -247,8 +239,8 @@ function init_gear_sets()
       sub="Sacro Bulwark",
       ammo="Voluspa Tathlum",
       head="Nyame Helm",
-      body="Nyame Mail",
-      hands="Nukumi Manoplas +1", -- if tp matters, otherwise more nyame
+      body="Nukumi Gausape +3",
+      hands="Nukumi Manoplas +3",
       legs="Nyame Flanchard",
       feet="Gleti's Boots",
       left_ear="Handler's Earring +1",
@@ -259,16 +251,14 @@ function init_gear_sets()
       neck="Adad Amulet", -- jse neck is 5 macc better
       back="Argocham. Mantle", -- make ambu cape
     })
-   
-    sets.midcast.Pet.TPBonus = {hands="Nukumi Manoplas +1",}
+    
+    sets.midcast.Pet.TPBonus = {hands="Nukumi Manoplas +3",}
     sets.midcast.Pet.ReadyRecast = {legs="Gleti's Breeches"}
         
     -- IDLE SETS (TOGGLE between RERAISE and NORMAL with CTRL+F12)
    
     -- Base Idle Set (when you do NOT have a pet out)
     sets.idle = {
-      main="Agwu's Axe",
-      sub="Sacro Bulwark",
       ammo="Staunch Tathlum +1",
       head="Malignance Chapeau",
       body="Sacro Breastplate",
@@ -281,7 +271,7 @@ function init_gear_sets()
       right_ear="Etiolation Earring",
       left_ring="Defending Ring",
       right_ring="C. Palug Ring",
-      back={ name="Artio's Mantle", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Eva.+20 /Mag. Eva.+20','Pet: Attack+10 Pet: Rng.Atk.+10','Pet: "Regen"+10','Pet: Damage taken -5%',}},
+      back=Cape.PET
     } 
            
     sets.idle.Reraise = set_combine(sets.idle, {head="Crepuscular Helm",body="Crepuscular Mail"})
@@ -292,8 +282,6 @@ function init_gear_sets()
        
     -- Idle set that equips when you have a pet out and ARE fighting an enemy.
     sets.idle.Pet.Engaged = set_combine(sets.idle, {
-      main="Agwu's Axe",
-      sub="Sacro Bulwark",
       ammo="Staunch Tathlum +1",
       head={ name="Anwig Salade", augments={'Attack+3','Pet: Damage taken -10%','Attack+3','Pet: "Regen"+1',}},
       body={ name="Taeon Tabard", augments={'Pet: Mag. Evasion+22','Pet: "Regen"+3','Pet: Damage taken -4%',}},
@@ -306,16 +294,14 @@ function init_gear_sets()
       right_ear="Enmerkar Earring",
       left_ring="Thur. Ring +1",
       right_ring="Defending Ring",
-      back={ name="Artio's Mantle", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Eva.+20 /Mag. Eva.+20','Pet: Attack+10 Pet: Rng.Atk.+10','Pet: "Regen"+10','Pet: Damage taken -5%',}},
+      back=Cape.PET
     })
    
     -- MELEE (SINGLE-WIELD) SETS   
     sets.engaged = {
-      main="Dolichenus",
-      sub="Sacro Bulwark",
-      ammo="Staunch Tathlum +1",
+      ammo="Coiste Bodhar",
       head="Malignance Chapeau",
-      body="Tali'ah Manteel +2",
+      body="Gleti's Cuirass",
       hands="Malignance Gloves",
       legs="Malignance Tights",
       feet="Malignance Boots",
@@ -325,12 +311,10 @@ function init_gear_sets()
       right_ear="Sherida Earring",
       left_ring={name="Chirich Ring +1",bag="wardrobe 2"},
       right_ring={name="Chirich Ring +1",bag="wardrobe 4"},
-      back={ name="Artio's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+5','"Dual Wield"+10','Phys. dmg. taken-10%',}},
+      back=Cape.STP
     }
     
     sets.engaged.PetDT = {
-      main="Agwu's Axe",
-      sub="Sacro Bulwark",
       ammo="Staunch Tathlum +1",
       head={ name="Anwig Salade", augments={'Attack+3','Pet: Damage taken -10%','Attack+3','Pet: "Regen"+1',}},
       body={ name="Taeon Tabard", augments={'Pet: Mag. Evasion+22','Pet: "Regen"+3','Pet: Damage taken -4%',}},
@@ -343,13 +327,11 @@ function init_gear_sets()
       right_ear="Enmerkar Earring",
       left_ring="Thur. Ring +1",
       right_ring="Defending Ring",
-      back={ name="Artio's Mantle", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Eva.+20 /Mag. Eva.+20','Pet: Attack+10 Pet: Rng.Atk.+10','Pet: "Regen"+10','Pet: Damage taken -5%',}},
+      back=Cape.PET
     }
                
     -- MELEE (DUAL-WIELD) SETS FOR DNC AND NIN SUBJOB   
     sets.engaged.DW = {
-      main="Dolichenus",
-      sub="Agwu's Axe",
       ammo="Staunch Tathlum +1",
       head="Malignance Chapeau",
       body="Malignance Tabard",
@@ -362,7 +344,7 @@ function init_gear_sets()
       right_ear="Sherida Earring",
       left_ring="Epona's Ring",
       right_ring="Gere Ring",
-      back={ name="Artio's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+5','"Dual Wield"+10','Phys. dmg. taken-10%',}},    
+      back=Cape.STP 
     }
            
     sets.engaged.DW.PetDT = {
@@ -375,8 +357,6 @@ function init_gear_sets()
       legs={ name="Taeon Tights", augments={'Phalanx +3',}},
       feet={ name="Taeon Boots", augments={'Phalanx +3',}},
     }
-
-  -- THIS IS THE END OF THE GEARSWAP AS FAR AS YOU SHOULD BE CONCERNED --
 end
  
 -------------------------------------------------------------------------------------------------------------------

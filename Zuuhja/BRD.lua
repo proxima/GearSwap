@@ -622,7 +622,7 @@ function init_gear_sets()
     sets.engaged = {
       range=Linos.TP,
       head="Bunzi's Hat",
-      body="Nyame Mail",
+      body="Ashera Harness",
       hands="Bunzi's Gloves",
       legs="Nyame Flanchard", 
       feet="Nyame Sollerets",
@@ -645,7 +645,7 @@ function init_gear_sets()
     sets.engaged.DW = {
       range=Linos.TP,
       head="Bunzi's Hat",    
-      body="Nyame Mail",
+      body="Ashera Harness",
       hands="Bunzi's Gloves",
       legs="Nyame Flanchard", 
       feet="Nyame Sollerets",

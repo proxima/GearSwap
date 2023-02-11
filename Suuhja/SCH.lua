@@ -585,7 +585,7 @@ function get_sets()
     -- Make sure you have a non weather obi in this set. Helix get bonus naturally no need Obi.
     sets.midcast.Helix = {
       main="Bunzi's Rod",
-      sub="Culminus",
+      sub="Ammurapi Shield", -- sub="Culminus",
       ammo="Ghastly Tathlum +1",
       head="Agwu's Cap",
       body="Arbatel Gown +3",
@@ -706,7 +706,7 @@ function get_sets()
      main="Bunzi's Rod",
      sub="Ammurapi Shield",
      ammo="Ghastly Tathlum +1",
-     head="Pedagogy mortarboard +3",
+     head="Agwu's Cap",
      body="Agwu's Robe",
      hands={ name="Amalric Gages +1", augments={'INT+12','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
      legs="Agwu's Slops",
@@ -722,7 +722,7 @@ function get_sets()
 
    -- used with toggle, default: F10
    -- Pieces to swap from free nuke to Magic Burst
-   sets.midcast.MB.acc = set_combine(sets.midcast.MB.normal, {
+   sets.midcast.MB.acc = set_combine(sets.midcast.MB.normal, {   
      hands="Agwu's Gages",
      feet="Arbatel Loafers +3",
      waist="Acuity Belt +1",

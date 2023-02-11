@@ -789,7 +789,6 @@ function init_gear_sets()
       head="Malignance chapeau", -- 6
       neck="Etoile gorget +2",
       left_ear="Sherida Earring",
-      -- right_ear="Mache Earring +1",  
       right_ear="Maculele Earring +1",
       body="Gleti's Cuirass", -- 9 PDT
       hands="Malignance gloves", -- 5

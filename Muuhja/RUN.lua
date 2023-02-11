@@ -612,7 +612,6 @@ function init_gear_sets()
     body=AF.Body,
     hands={ name="Nyame Gauntlets", augments={'Path: B',}},
     left_ring="Shadow ring",
-    right_Ring="Vexer ring +1",
     back=Cape.Enmity,
     waist="Engraved Belt",
     legs=Empy.Legs,
@@ -657,32 +656,13 @@ function init_gear_sets()
 
   sets.Hybrid = set_combine(sets.defense.MDT, {
     body=Empy.Body,
-    hands="Turms mittens +1",
+    right_ring="Moonlight Ring",
   })
 
-  --[[ {
-    ammo="Vanir Battery",
-    head={ name="Nyame Helm", augments={'Path: B',}},
-    body={ name="Nyame Mail", augments={'Path: B',}},
-    hands="Turms mittens +1",
-    legs=Empy.Legs,
-    feet=Empy.Feet,
-    neck="Inq. Bead Necklace",
-    waist="Engraved Belt",
-    left_ear="Tuisto Earring",
-    right_ear={ name="Odnowa Earring +1", augments={'Path: A',}},
-    left_ring="Defending Ring",
-    right_ring="Lunette Ring +1",
-    back=Cape.Enmity
-  } ]]--
-
-  -- sets.engaged = sets.Hybrid
-  sets.engaged.Aftermath = sets.engaged
-  sets.engaged.Parry = sets.defense.Parry  
- 
-  sets.engaged.DT = sets.engaged.Parry
- 
-  sets.engaged.Aftermath.DT = sets.engaged
+  sets.engaged.Aftermath = sets.Hybrid
+  sets.engaged.Parry = sets.defense.Parry
+  sets.engaged.DT = sets.Hybrid 
+  sets.engaged.Aftermath.DT = sets.Hybrid
  
   ------------------------------------------------------------------------------------------------
   ---------------------------------------- Special Sets ------------------------------------------

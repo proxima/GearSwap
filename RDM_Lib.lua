@@ -1052,7 +1052,7 @@ if player and player.index and windower.ffxi.get_mob_by_index(player.index) then
     end
     moving = false
 
-    windower.raw_register_event('prerender',function()
+    --[[ windower.raw_register_event('prerender',function()
         mov.counter = mov.counter + 1;
         if mov.counter>30 then
             local pl = windower.ffxi.get_mob_by_index(player.index)
@@ -1075,8 +1075,9 @@ if player and player.index and windower.ffxi.get_mob_by_index(player.index) then
             mov.counter = 0
         end
     end)
+    ]]--
 
-    windower.register_event('prerender', function()
+    --[[ windower.register_event('prerender', function()
         --Items we want to check every second
         if os.time() > time_start then
             time_start = os.time()
@@ -1095,6 +1096,7 @@ if player and player.index and windower.ffxi.get_mob_by_index(player.index) then
             end
         end
     end)
+	]]--
 
     function movingCheck()
         pSpeed = (player.x+player.y) - (pX+pY)
