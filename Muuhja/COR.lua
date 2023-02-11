@@ -135,9 +135,9 @@ function user_setup()
     state.WeaponSet = M{['description']='Weapon Set', 'Anarchy', 'DeathPenalty_M', 'DeathPenalty_R', 'Armageddon_M', 'Aeolian', 'Rolls'}
     state.WeaponLock = M(false, 'Weapon Lock')
 
-    gear.RAbullet = "Devastating Bullet"
+    gear.RAbullet = "Chrono Bullet"
     gear.RAccbullet = "Devastating Bullet"
-    gear.WSbullet = "Devastating Bullet"
+    gear.WSbullet = "Chrono Bullet"
     gear.MAbullet = "Living Bullet"
     gear.QDbullet = "Hauksbok Bullet"
     options.ammo_warning_limit = 10
@@ -317,6 +317,12 @@ function init_gear_sets()
       feet="Meg. Jam. +2", 
       ring1="Crepuscular Ring"
     }
+
+    sets.precast.RA.Acc = set_combine(sets.precast.RA, {
+      ammo=gear.RAccbullet
+    })
+
+    sets.precast.RA.HighAcc = set_combine(sets.precast.RA.Acc, {})
 
     sets.precast.RA.Flurry1 = set_combine(sets.precast.RA, {
       head="Chasseur's Tricorne +2",
@@ -541,7 +547,7 @@ function init_gear_sets()
     sets.midcast.CorsairShot.Enhance = {feet="Chass. Bottes +2"}
 
     -- Ranged gear
-    sets.midcast.RA = {ammo=gear.RAbullet,
+    sets.midcast.RA = {
       head="Malignance Chapeau",
       neck="Iskur Gorget",
       left_ear="Crepuscular Earring",
@@ -556,7 +562,7 @@ function init_gear_sets()
       feet="Malignance Boots"
     }
 
-    sets.midcast.RA.Acc = set_combine(sets.midcast.RA, {ammo=gear.RAccbullet,
+    sets.midcast.RA.Acc = set_combine(sets.midcast.RA, {
       left_ear="Beyla Earring",
       right_ring="Hajduk Ring +1",
     })
@@ -613,7 +619,7 @@ function init_gear_sets()
 
     sets.resting = {}
 
-    sets.idle = {ammo=gear.RAbullet,
+    sets.idle = {
       head="Malignance Chapeau",
       body="Malignance Tabard",
       hands="Malignance Gloves",
@@ -890,6 +896,7 @@ function job_post_precast(spell, action, spellMap, eventArgs)
     end
     if spell.action_type == 'Ranged Attack' then
         special_ammo_check()
+        
         if flurry == 2 then
           equip(sets.precast.RA.Flurry2)
         elseif embrava == 1 then
@@ -1337,7 +1344,11 @@ function do_bullet_checks(spell, spellMap, eventArgs)
     elseif spell.type == 'CorsairShot' then
         bullet_name = gear.QDbullet
     elseif spell.action_type == 'Ranged Attack' then
-        bullet_name = gear.RAbullet
+        if state.RangedMode.value == 'Acc' or state.RangedMode.value == 'HighAcc' then
+            bullet_name = gear.RAccbullet
+        else
+            bullet_name = gear.RAbullet
+        end
         if buffactive['Triple Shot'] then
             bullet_min_count = 3
         end

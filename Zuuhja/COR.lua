@@ -317,7 +317,8 @@ function init_gear_sets()
     })
 
     -- (10% Snapshot from JP Gifts)
-    sets.precast.RA = {ammo=gear.RAbullet,
+    sets.precast.RA = {
+      ammo=gear.RAbullet,
       head={ name="Taeon Chapeau", augments={'"Snapshot"+5','"Snapshot"+5',}}, 
       neck="Comm. Charm +2",
       body="Laksa. Frac +3",
@@ -329,11 +330,16 @@ function init_gear_sets()
       ring1="Crepuscular Ring"
     }
 
+    sets.precast.RA.Acc = set_combine(sets.precast.RA, {
+      ammo=gear.RAccbullet
+    })
+
+    sets.precast.RA.HighAcc = set_combine(sets.precast.RA.Acc, {})
+
     sets.precast.RA.Flurry1 = set_combine(sets.precast.RA, {
       head="Chasseur's Tricorne +3",
       hands={ name="Carmine Fin. Ga. +1", augments={'Rng.Atk.+20','"Mag.Atk.Bns."+12','"Store TP"+6',}},
     })
-
 
     sets.precast.RA.Flurry2 = set_combine(sets.precast.RA.Flurry1, {
       feet="Pursuer's Gaiters",
@@ -637,7 +643,7 @@ function init_gear_sets()
 
     sets.resting = {}
 
-    sets.idle = {ammo=gear.RAbullet,
+    sets.idle = {
       head="Malignance Chapeau",
       body="Malignance Tabard",
       hands="Malignance Gloves",
@@ -1360,7 +1366,11 @@ function do_bullet_checks(spell, spellMap, eventArgs)
     elseif spell.type == 'CorsairShot' then
         bullet_name = gear.QDbullet
     elseif spell.action_type == 'Ranged Attack' then
-        bullet_name = gear.RAbullet
+        if state.RangedMode.value == 'Acc' or state.RangedMode.value == 'HighAcc' then
+            bullet_name = gear.RAccbullet
+        else
+            bullet_name = gear.RAbullet
+        end
         if buffactive['Triple Shot'] then
             bullet_min_count = 3
         end
