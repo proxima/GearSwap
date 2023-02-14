@@ -1177,7 +1177,7 @@ function check_ammo(spell, action, spellMap, eventArgs)
                 equip({ammo=DefaultAmmo[player.equipment.range]})
             end
         else
-            if state.RangedMode.value == 'Acc' then
+            if state.RangedMode.value == 'Acc' or state.RangedMode.value == 'HighAcc' then
                 if player.inventory[AccAmmo[player.equipment.range]] then
                     equip({ammo=AccAmmo[player.equipment.range]})
                 else

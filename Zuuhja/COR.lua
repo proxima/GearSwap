@@ -704,7 +704,7 @@ function init_gear_sets()
     -- If you create a set with both offense and defense modes, the offense mode should be first.
     -- EG: sets.engaged.Dagger.Accuracy.Evasion
 
-    sets.engaged = {ammo=gear.RAbullet,
+    sets.engaged = {
       head="Malignance Chapeau",
       body="Malignance Tabard",
       hands="Malignance Gloves",
@@ -1453,7 +1453,7 @@ function check_moving()
 end
 
 function check_gear()
-    if no_swap_gear:contains(player.equipment.left_ring) then
+	if no_swap_gear:contains(player.equipment.left_ring) then
         disable("ring1")
     else
         enable("ring1")

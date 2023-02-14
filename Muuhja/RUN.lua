@@ -112,6 +112,9 @@ function user_setup()
 
   state.Runes = M{['description']='Runes', 'Ignis', 'Gelus', 'Flabra', 'Tellus', 'Sulpor', 'Unda', 'Lux', 'Tenebrae'}
 
+  send_command('bind @v send Zuuhja ara start')
+  send_command('bind @b sat youcommand Zuuhja Wildfire;wait 2;send Zuuhja ara start')
+  
   send_command('bind ^` input //gs c rune')
   send_command('bind !` input /ja "Vivacious Pulse" <me>')
   send_command('bind ^insert gs c cycleback Runes')
@@ -243,6 +246,9 @@ function user_unload()
   send_command('unbind #8')
   send_command('unbind #9')
   send_command('unbind #0')
+
+  send_command('unbind @v')
+  send_command('unbind @b') 
 end
 
 -- Define sets and vars used by this job file.

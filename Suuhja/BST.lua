@@ -105,19 +105,20 @@ function select_default_macro_book()
 end 
  
 function init_gear_sets()
-    sets.precast.JA['Killer Instinct'] = {head="Ankusa Helm +2"}
+    sets.precast.JA['Killer Instinct'] = {head="Ankusa Helm +3"}
     sets.precast.JA['Bestial Loyalty'] = {hands="Ankusa Gloves"}
     sets.precast.JA['Call Beast']      = sets.precast.JA['Bestial Loyalty']
-    sets.precast.JA.Familiar           = {legs="Ankusa Trousers"}
-    sets.precast.JA.Tame               = {head="Totemic Helm +1",}
-    sets.precast.JA.Spur               = {feet="Nukumi Ocreae +2"}
+    sets.precast.JA.Familiar           = {legs="Ankusa Trousers +1"}
+    sets.precast.JA.Tame               = {head="Totemic Helm +1"}
+    sets.precast.JA.Spur               = {feet="Nukumi Ocreae +3"}
 
     sets.precast.JA.Reward = {
       ammo="Pet Food Theta",
-      body="Totemic Jackcoat +1",
+      head="Stout Bonnet",	
+      body="Totemic Jackcoat +3",
       back=Cape.PET,
-      legs="Ankusa Trousers",
-      feet="Totemic gaiters +1"
+      legs="Ankusa Trousers +1", -- Ankusa Trousers +3
+      feet="Totemic gaiters +1" -- Ankusa Gaiters +3
     }
  
     sets.precast.FC = {
@@ -136,7 +137,7 @@ function init_gear_sets()
       body="Nukumi Gausape +3",
       hands="Nyame Gauntlets",
       legs="Nyame Flanchard",
-      feet="Nukumi Ocreae +2",
+      feet="Nukumi Ocreae +3",
       neck="Fotia Gorget",
       waist="Sailfi Belt +1",
       left_ear="Sroda Earring",
@@ -152,10 +153,11 @@ function init_gear_sets()
 
     sets.precast.WS['Savage Blade'] = {
       ammo="Coiste Bodhar",
-      head="Nyame Helm",
+      head="Ankusa Helm +3",
       body="Nukumi Gausape +3",
       hands="Nyame Gauntlets",
       legs="Nyame Flanchard",
+      feet="Nyame Sollerets",
       neck="Republican platinum medal",
       waist="Sailfi Belt +1",
       left_ear="Moonshade Earring",
@@ -168,8 +170,8 @@ function init_gear_sets()
     sets.precast.WS['Calamity'] = set_combine(sets.precast.WS['Savage Blade'], {})
     sets.precast.WS['Mistral Axe'] = set_combine(sets.precast.WS['Savage Blade'], {})
 
-    sets.precast.WS['Onslaught'] = {
-    }
+    sets.precast.WS['Onslaught'] = set_combine(sets.precast.WS['Savage Blade'], {
+	})
        
     sets.precast.WS['Primal Rend'] = {
       ammo="Oshasha's Treatise",
@@ -217,8 +219,8 @@ function init_gear_sets()
  
     -- This will equip for Magical Ready moves like Fireball
     sets.midcast.Pet.MabReady = set_combine(sets.midcast.Pet.WS, {
-      main={ name="Kumbhakarna", augments={'Pet: "Mag.Atk.Bns."+19','Pet: TP Bonus+200',}},
-      sub={ name="Kumbhakarna", augments={'Pet: "Mag.Atk.Bns."+19','Pet: TP Bonus+200',}},
+      main={ name="Kumbhakarna", augments={'Pet: "Mag.Atk.Bns."+19','Pet: TP Bonus+200',}, bag="wardrobe 5"},
+      sub={ name="Kumbhakarna", augments={'Pet: "Mag.Atk.Bns."+19','Pet: TP Bonus+200',}, bag="wardrobe 6"},
       ammo="Voluspa Tathlum",
       head={ name="Valorous Mask", augments={'Pet: "Mag.Atk.Bns."+27','Pet: INT+14','Pet: Accuracy+12 Pet: Rng. Acc.+12','Pet: Attack+7 Pet: Rng.Atk.+7',}},
       body="Udug Jacket",
@@ -248,7 +250,7 @@ function init_gear_sets()
       left_ring="Tali'ah Ring",
       right_ring="C. Palug Ring",
       waist="Incarnation Sash",
-      neck="Adad Amulet", -- jse neck is 5 macc better
+      neck="Beastmaster collar +2",
       back="Argocham. Mantle", -- make ambu cape
     })
     
@@ -277,7 +279,8 @@ function init_gear_sets()
     sets.idle.Reraise = set_combine(sets.idle, {head="Crepuscular Helm",body="Crepuscular Mail"})
 
     -- Idle Set that equips when you have a pet out and not fighting an enemy.
-    sets.idle.Pet = set_combine(sets.idle, {
+    sets.idle.Pet = set_combine(sets.idle, { 
+      body="Totemic Jackcoat +3",
     })
        
     -- Idle set that equips when you have a pet out and ARE fighting an enemy.
@@ -317,7 +320,7 @@ function init_gear_sets()
     sets.engaged.PetDT = {
       ammo="Staunch Tathlum +1",
       head={ name="Anwig Salade", augments={'Attack+3','Pet: Damage taken -10%','Attack+3','Pet: "Regen"+1',}},
-      body={ name="Taeon Tabard", augments={'Pet: Mag. Evasion+22','Pet: "Regen"+3','Pet: Damage taken -4%',}},
+      body="Totemic Jackcoat +3",
       hands="Gleti's Gauntlets",
       legs={ name="Taeon Tights", augments={'Pet: Mag. Evasion+23','Pet: "Regen"+3','Pet: Damage taken -4%',}},
       feet={ name="Taeon Boots", augments={'Pet: Mag. Evasion+24','Pet: "Regen"+3','Pet: Damage taken -4%',}},

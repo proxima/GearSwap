@@ -80,6 +80,8 @@ hud_transparency = 200 -- a value of 0 (invisible) to 255 (no transparency at al
 hud_font = 'Impact'
 
 -- Setup your Key Bindings here:  
+    send_command('bind @o sat youcommand Muuhja "Sleepga"')
+
     windower.send_command('bind insert gs c nuke cycle')            -- insert Cycles Nuke element
     windower.send_command('bind delete gs c nuke cycledown')        -- delete Cycles Nuke element in reverse order   
     windower.send_command('bind home gs c geo geocycle') 	    -- home Cycles Geomancy Spell
@@ -123,6 +125,8 @@ function user_unload()
     send_command('unbind f12')
     send_command('unbind f9')
     send_command('unbind !f9')
+	
+	send_command('unbind @o')
 end
 
 --------------------------------------------------------------------------------------------------------------

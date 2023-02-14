@@ -691,7 +691,7 @@ function init_gear_sets()
     -- If you create a set with both offense and defense modes, the offense mode should be first.
     -- EG: sets.engaged.Dagger.Accuracy.Evasion
 
-    sets.engaged = {ammo=gear.RAbullet,
+    sets.engaged = {
       head="Malignance Chapeau",
       body="Malignance Tabard",
       hands="Malignance Gloves",
