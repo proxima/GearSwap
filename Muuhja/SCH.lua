@@ -168,14 +168,14 @@ function get_sets()
     -- DEX_DW  - DW melee
 
     Lugh = {}
-    Lugh.DT          = { name="Lugh's Cape", augments={'MND+20','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Haste+10','Phys. dmg. taken-10%',}},           -- X
-    Lugh.STR_WSD     = { name="Lugh's Cape", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}     -- X
-    Lugh.INT_MAB     = { name="Lugh's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Phys. dmg. taken-10%',}}        -- X
-    Lugh.INT_STP     = { name="Lugh's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Store TP"+10','Phys. dmg. taken-10%',}}            -- X
-    Lugh.INT_WSD     = { name="Lugh's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}} -- X
-    Lugh.DEX_DA      = { name="Lugh's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}},
-    Lugh.MND_WSD     = { name="Lugh's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','MND+10','Weapon skill damage +10%',}}                        -- X
-    Lugh.MP_FC       = { name="Lugh's Cape", augments={'MP+60','MP+20','"Fast Cast"+10','Phys. dmg. taken-10%',}
+    Lugh.DT          = { name="Lugh's Cape", augments={'MND+20','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Haste+10','Phys. dmg. taken-10%',}}
+    Lugh.STR_WSD     = { name="Lugh's Cape", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}
+    Lugh.INT_MAB     = { name="Lugh's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Phys. dmg. taken-10%',}}
+    Lugh.INT_STP     = { name="Lugh's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Store TP"+10','Phys. dmg. taken-10%',}}
+    Lugh.INT_WSD     = { name="Lugh's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}
+    Lugh.DEX_DA      = { name="Lugh's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}}
+    Lugh.MND_WSD     = { name="Lugh's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','MND+10','Weapon skill damage +10%',}}
+    Lugh.MP_FC       = { name="Lugh's Cape", augments={'MP+60','MP+20','"Fast Cast"+10','Phys. dmg. taken-10%',}}
     Lugh.ADOULIN     = { name="Bookworm's Cape", augments={'INT+1','MND+1','Helix eff. dur. +18','"Regen" potency+9',}}
 
     sets.me = {}       -- leave this empty
