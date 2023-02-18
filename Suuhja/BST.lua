@@ -158,7 +158,7 @@ function init_gear_sets()
       hands="Nyame Gauntlets",
       legs="Nyame Flanchard",
       feet="Nyame Sollerets",
-      neck="Republican platinum medal",
+      neck="Beastmaster collar +2",
       waist="Sailfi Belt +1",
       left_ear="Moonshade Earring",
       right_ear="Thrud Earring",
@@ -240,10 +240,10 @@ function init_gear_sets()
       main="Agwu's Axe",
       sub="Sacro Bulwark",
       ammo="Voluspa Tathlum",
-      head="Nyame Helm",
+      head="Nukumi Cabasset +2",
       body="Nukumi Gausape +3",
       hands="Nukumi Manoplas +3",
-      legs="Nyame Flanchard",
+      legs="Nukumi Ocreae +3",
       feet="Gleti's Boots",
       left_ear="Handler's Earring +1",
       right_ear="Enmerkar Earring",
@@ -281,6 +281,7 @@ function init_gear_sets()
     -- Idle Set that equips when you have a pet out and not fighting an enemy.
     sets.idle.Pet = set_combine(sets.idle, { 
       body="Totemic Jackcoat +3",
+      legs="Nukimu Quijotes +3",
     })
        
     -- Idle set that equips when you have a pet out and ARE fighting an enemy.

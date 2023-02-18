@@ -329,27 +329,6 @@ function init_gear_sets()
     }
 
     -- Cure sets
-
-    --[[
-    sets.midcast.CureSolace = {                             -- CP ENM HA FC DT
-      main="Asclepius",                                     --              15                               
-      sub="Ammurapi Shield",
-      ammo="Leisure Musk +1",                               --      4
-      head="Kaykaus Mitra +1",                              -- 11      6
-      body="Ebers Bliaut +3",                               --         3       +Solace
-      hands="Kaykaus Cuffs +1",                             -- 11   6  3
-      legs="Ebers Pant. +3",                                --         5    12
-      feet="Kaykaus Boots +1",                              -- 17   6  3
-      neck={ name="Clr. Torque +1", augments={'Path: A',}}, --  7  20     8
-      waist="Luminary Sash",
-      left_ear="Mendi. Earring",                            --  5
-      right_ear="Ebers Earring +2",                         --      9        6
-      left_ring="Gelatinous Ring +1",                       --               7
-      right_ring="Defending Ring",                          --              10
-      back={ name="Alaunus's Cape", augments={'MND+20','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Haste+10','Mag. Evasion+15',}},
-    } ]]--
-
-    -- Cure sets
     sets.midcast.CureSolace = {                             -- CP ENM HA FC DT
       main="Daybreak",                                      -- 30                              
       sub="Genmei Shield",                                  --              10
@@ -382,19 +361,16 @@ function init_gear_sets()
     })
 
     sets.midcast.CuragaNormal = sets.midcast.CureSolace
-    --[[ set_combine(sets.midcast.CureNormal, {
-      main="Daybreak",
-      sub="Ammurapi Shield",
-      head="Bunzi's Hat",
-      body="Bunzi's Robe",
-      hands="Bunzi's Gloves",
-      feet="Bunzi's Sabots",  
-    }) ]]--
 
     sets.midcast.CuragaWeather = set_combine(sets.midcast.CuragaNormal, {
       back="Twilight Cape",
       waist="Hachirin-no-Obi",
     })
+	
+    sets.midcast.Esuna = set_combine(sets.midcast.CureSolace, {
+	  main="Asclepius", 
+	  sub="Genmei Shield"
+	})
 
     --sets.midcast.CureMelee = sets.midcast.CureSolace
 
@@ -413,7 +389,7 @@ function init_gear_sets()
       right_ring="Haoma's Ring",
       back="Mending Cape",
     }
-
+	
     sets.midcast.Cursna = set_combine(sets.midcast.StatusRemoval, {
       main="Yagrush",
       sub="Gambanteinn",

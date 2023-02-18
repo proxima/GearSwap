@@ -686,6 +686,7 @@ function init_gear_sets()
     sets.midcast.Stoneskin = set_combine(sets.midcast.EnhancingDuration, {})
 
     sets.midcast.Phalanx = set_combine(sets.midcast.EnhancingDuration, {
+      main="Sakpata's Sword",
       head={ name="Taeon Chapeau", augments={'Phalanx +3',}},
       body={ name="Taeon Tabard", augments={'Spell interruption rate down -10%','Phalanx +3',}},
       hands={ name="Taeon Gloves", augments={'Phalanx +3',}},

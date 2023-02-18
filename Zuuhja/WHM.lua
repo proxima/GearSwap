@@ -321,6 +321,11 @@ function init_gear_sets()
       back="Twilight Cape",
       waist="Hachirin-no-Obi",
     })
+	
+    sets.midcast.Esuna = set_combine(sets.midcast.CureSolace, {
+	  main="Asclepius", 
+	  sub="Genmei Shield"
+	})	
 
     --sets.midcast.CureMelee = sets.midcast.CureSolace
 

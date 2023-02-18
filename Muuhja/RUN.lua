@@ -186,7 +186,7 @@ function user_setup()
   Relic.Feet  = "Futhark Boots +1"
   
   Empy = {}
-  Empy.Head  = "Erilaz Galea +2"
+  Empy.Head  = "Erilaz Galea +3"
   Empy.Body  = "Erilaz Surcoat +3"
   Empy.Hands = "Erilaz Gauntlets +3"
   Empy.Legs  = "Erilaz Leg Guards +3"

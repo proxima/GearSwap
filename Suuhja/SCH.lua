@@ -563,19 +563,19 @@ function get_sets()
     -- Make sure you have a non weather obi in this set. Helix get bonus naturally no need Obi.
 
     sets.midcast.Kaustra = {
-      main={ name="Bunzi's Rod", augments={'Path: A',}},       
+      main={ name="Bunzi's Rod", augments={'Path: A',}}, 
       sub="Ammurapi Shield",
       ammo={ name="Ghastly Tathlum +1", augments={'Path: A',}},
-      head="Agwu's Cap",
-      body="Arbatel Gown +3",
-      hands="Arbatel Bracers +3",
-      legs="Agwu's Slops",    
+      head="Arbatel bonnet +3",               -- assume ebullience
+      body="Agwu's Robe",
+      hands="Agwu's Gages",
+      legs="Agwu's Slops",
       feet="Arbatel Loafers +3",
-      neck={ name="Argute Stole +2", augments={'Path: A',}},   
-      waist={ name="Acuity Belt +1", augments={'Path: A',}},
+      neck={ name="Argute Stole +2", augments={'Path: A',}},
+      waist="Hachirin-no-Obi",                -- assume weather
       left_ear="Regal Earring",
       right_ear="Malignance Earring",
-      left_ring="Archon Ring",
+      left_ring="Freke Ring",
       right_ring={ name="Metamor. Ring +1", augments={'Path: A',}},
       back=Lugh.INT_MAB
     }
