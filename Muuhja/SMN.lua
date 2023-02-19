@@ -1,82 +1,113 @@
+-- Summoner Gearswap Lua by Pergatory - http://pastebin.com/u/pergatory
 -- IdleMode determines the set used after casting. You change it with "/console gs c <IdleMode>"
--- The modes are:
+-- The out-of-the-box modes are:
 -- Refresh: Uses the most refresh available.
 -- DT: A mix of refresh, PDT, and MDT to help when you can't avoid AOE.
--- PetDT: Sacrifice refresh to reduce avatar's damage taken. WARNING: Selenian Cap drops you below 119, use with caution!
--- DD: When melee mode is on and you're engaged, uses TP gear. Otherwise, avatar melee gear.
--- Favor: Uses Beckoner's Horn +3 and max smn skill to boost the favor effect.
-
+-- Favor: Uses Beckoner's Horn and max smn skill to boost the favor effect.
+ 
+-- You can add your own modes in the IdleModes list, just make sure to add corresponding sets as well.
+ 
 -- Additional Bindings:
--- F9 - Toggles between a subset of IdleModes (Refresh > DT > PetDT)
--- F10 - Toggles MeleeMode (When enabled, equips Nirvana and Elan+1, then disables those 2 slots from swapping)
+-- F9 - Toggles between a subset of IdleModes (Refresh > Favor > DT)
+-- F10 - Toggles WeaponLock (When enabled, equips Nirvana and Elan+1, then disables those 2 slots from swapping)
 --       NOTE: If you don't already have the Nirvana & Elan+1 equipped, YOU WILL LOSE TP
  
 -- Additional Commands:
 -- /console gs c AccMode - Toggles high-accuracy sets to be used where appropriate.
 -- /console gs c ImpactMode - Toggles between using normal magic BP set for Fenrir's Impact or a custom high-skill set for debuffs.
--- /console gs c ForceIlvl - I have this set up to override a few specific slots where I normally use non-ilvl pieces.
+-- /console gs c TH - Treasure Hunter toggle. By default, this is only used for Dia, Dia II, and Diaga.
 -- /console gs c LagMode - Used to help BPs land in the right gear in high-lag situations.
---                          Sets a timer to swap gear 0.2s after the BP is used rather than waiting for server response.
+--                          Sets a timer to swap gear 0.5s after the BP is used rather than waiting for server response.
  
 function file_unload()
     send_command('unbind f9')
-    send_command('unbind f10')
+    send_command('unbind f11')
+    send_command('unbind ^f9')
     send_command('unbind ^f10')
+    enable("main","sub","range","ammo","head","neck","ear1","ear2","body","hands","ring1","ring2","back","waist","legs","feet")
 end
  
 function get_sets()
-    send_command('bind f9 gs c ToggleIdle')
-    send_command('bind f10 gs c MeleeMode')
-    send_command('bind ^f10 gs c ForceIlvl')
-    send_command('bind f12 input /ws "Garland of Bliss" <t>')
-
-    send_command('bind @n input /pet "Thunderspark" <t>')
-    send_command('bind @m input /pet "Volt Strike" <t>')
-    send_command('bind @o input /pet "Shock Squall" <t>')
-    send_command('bind @p input /pet "Thunderstorm" <t>')
+    send_command('bind f9 gs c ToggleIdle')  -- F9 = Cycle through commonly used idle modes
+    send_command('bind ^f9 gs c WeaponLock') -- F10 = Toggle Melee Mode
+    send_command('bind ^f10 gs c TH')        -- Ctrl+F10 = Treasure Hunter toggle
  
-    -- Set your merits here. This is used in deciding between Enticer's Pants or Apogee Slacks +1.
-    -- To change in-game, "/console gs c MeteorStrike3" will change Meteor Strike to 3/5 merits.
-    -- The damage difference is very minor unless you're over 2400 TP.
-    -- It's ok to just always use Enticer's Pants and ignore this section.
-    MeteorStrike = 5
+    MeteorStrike = 1
     HeavenlyStrike = 1
     WindBlade = 1
-    Geocrush = 1
+    Geocrush = 5
     Thunderstorm = 1
     GrandFall = 1
- 
+
     StartLockStyle = '1'
     IdleMode = 'DT'
     AccMode = false
     ImpactDebuff = false
-    MeleeMode = false
-    ForceIlvl = false
+    WeaponLock = false
+    TreasureHunter = false
+    THSpells = S{"Dia","Dia II","Diaga"} -- If you want Treasure Hunter gear to swap for a spell/ability, add it here.
     LagMode = true -- Default LagMode. If you have a lot of lag issues, change to "true".
+                   -- Warning: LagMode can cause problems if you spam BPs during Conduit because it doesn't trust server packets to say whether the BP is readying or not.
+    SacTorque = true -- If you have Sacrifice Torque, this will auto-equip it when slept in order to wake up.
     AutoRemedy = false -- Auto Remedy when using an ability while Paralyzed.
-    AutoEcho = false -- Auto Echo Drop when using an ability while Silenced.
-    
+    AutoEcho = false   -- Auto Echo Drop when using an ability while Silenced.
+ 
+    -- Add idle modes here if you need more options for your sets
+    IdleModes = {'Refresh', 'Favor', 'DT'}
+
+	MerlHands = {}
+	MerlHands.PHYS    = { name="Merlinic Dastanas", augments={'Pet: Attack+28 Pet: Rng.Atk.+28','Blood Pact Dmg.+9','Pet: STR+4','Pet: Mag. Acc.+7',}}
+	MerlHands.MAG     = { name="Merlinic Dastanas", augments={'Pet: Mag. Acc.+25 Pet: "Mag.Atk.Bns."+25','Blood Pact Dmg.+9','Pet: DEX+3','Pet: Mag. Acc.+11',}}
+    MerlHands.REFRESH = { name="Merlinic Dastanas", augments={'Pet: Crit.hit rate +2','"Mag.Atk.Bns."+25','"Refresh"+2','Mag. Acc.+10 "Mag.Atk.Bns."+10',}}
+	-- MerlHands.TH      = { name="Merlinic Dastanas", augments={'Magic dmg. taken -2%','Pet: Phys. dmg. taken -2%','"Treasure Hunter"+2','Mag. Acc.+14 "Mag.Atk.Bns."+14',}}      
+	MerlHands.FC      = { name="Merlinic Dastanas", augments={'MND+5','Pet: DEX+3','"Fast Cast"+8','Mag. Acc.+6 "Mag.Atk.Bns."+6',}}
+	  
     -- ===================================================================================================================
     --      Sets
     -- ===================================================================================================================
  
-    -- Base Damage Taken Set - Mainly used when IdleMode is "DT"
-    sets.DT_Base = {
-      main="Nirvana",
-      hands="Inyan. Dastanas +2",
-      legs="Inyanga Shalwar +2",
-      sub="Elan Strap +1",
+     sets.idle = {}
+ 
+     sets.idle.Refresh = {
+      main="Nirvana",            -- 8 perp, can use jse
+      sub="Khonsu",              -- 
       ammo="Epitaph",
+      head="Beckoner's Horn +3", -- 4 favor, 3 refresh
+      neck="Caller's Pendant",   -- 1 perp sometimes
+      ear1="Cath Palug Earring", -- 1 refresh
+      ear2="Evans earring",      -- 2 perp
+      body="Apo. Dalmatica +1",  -- 4 refresh
+      hands={ name="Merlinic Dastanas", augments={'Weapon skill damage +1%','"Avatar perpetuation cost" -1','"Refresh"+2','Accuracy+9 Attack+9','Mag. Acc.+14 "Mag.Atk.Bns."+14',}}, -- 2 refresh 1 perp
+      ring1="Stikini Ring +1", -- 1 refresh
+      ring2="Evoker's Ring", -- 1 refresh
+      legs={ name="Merlinic Shalwar", augments={'Mag. Acc.+15','Attack+2','"Refresh"+2','Accuracy+10 Attack+10',}}, -- 2 refresh
+      feet="Baayami Sabots +1", -- 3 refresh
+      waist="Lucidity Sash", -- 2 perp
+      back={ name="Campestres's Cape", augments={'Pet: M.Acc.+20 Pet: M.Dmg.+20','Pet: Magic Damage+10','Damage taken-5%',}}, -- avatar level
+    }
+
+    sets.idle.Favor = set_combine(sets.idle.Refresh, {
       head="Beckoner's Horn +3",
-      body="Inyanga Jubbah +2",
-      feet="Inyan. Crackows +2",
-      neck={ name="Smn. Collar +2", augments={'Path: A',}},
-      waist="Carrier's Sash",
-      left_ear="Lugalbanda Earring",
-      right_ear="Odnowa Earring +1",
-      left_ring="Gelatinous Ring +1",
-      right_ring="Defending Ring",
-      back={ name="Campestres's Cape", augments={'Pet: M.Acc.+20 Pet: M.Dmg.+20','Pet: Magic Damage+10','Damage taken-5%',}},
+      ear2="Lodurr Earring",
+	  hands="Baayami Cuffs",
+      legs="Baayami Slops",
+      feet="Baayami Sabots +1",
+	  back="Conveyance cape",
+	})
+	
+    sets.idle.DT = set_combine(sets.idle.Refresh, {
+      neck="Loricate Torque +1",
+      body="Bunzi's Robe",
+      hands="Bunzi's Gloves",
+      legs="Bunzi's Pants",
+      feet="Bunzi's Sabots",
+	})
+	
+    -- Treasure Hunter set. Don't put anything in here except TH+ gear.
+    -- It overwrites slots in other sets when TH toggle is on (Ctrl+F10).
+    sets.TH = {
+      -- hands=MerlHands.TH,
+	  waist="Chaac Belt",
     }
  
     sets.precast = {}
@@ -85,8 +116,8 @@ function get_sets()
     sets.precast.FC = {
       head={ name="Merlinic Hood", augments={'"Mag.Atk.Bns."+10','"Fast Cast"+7','INT+8','Mag. Acc.+13',}}, -- 15
       body="Inyanga Jubbah +2", -- 14
-      hands={ name="Merlinic Dastanas", augments={'MND+5','Pet: DEX+3','"Fast Cast"+8','Mag. Acc.+6 "Mag.Atk.Bns."+6',}}, -- 8
-      legs={ name="Merlinic Shalwar", augments={'Mag. Acc.+15','"Fast Cast"+7','CHR+8','"Mag.Atk.Bns."+4',}}, -- 7
+      hands=MerlHands.FC, -- 8
+	  legs={ name="Merlinic Shalwar", augments={'Mag. Acc.+15','"Fast Cast"+7','CHR+8','"Mag.Atk.Bns."+4',}}, -- 7
       feet={ name="Merlinic Crackows", augments={'"Fast Cast"+7','MND+10','"Mag.Atk.Bns."+4',}}, -- 12
       waist="Embla Sash", -- 5
       left_ear="Malignance Earring", -- 4
@@ -104,6 +135,8 @@ function get_sets()
     sets.midcast = {}
  
     -- BP Timer Gear
+    -- Use BP Recast Reduction here, along with Avatar's Favor gear.
+    -- Avatar's Favor skill tiers are 512 / 575 / 670.
     sets.midcast.BP = {
       main={ name="Espiritus", augments={'Summoning magic skill +15','Pet: Mag. Acc.+30','Pet: Damage taken -4%',}},
       sub="Vox Grip",
@@ -122,7 +155,7 @@ function get_sets()
       back={ name="Conveyance Cape", augments={'Summoning magic skill +5','Blood Pact Dmg.+1','Blood Pact ab. del. II -3',}},
     }
  
-    -- Elemental Siphon sets. Zodiac Ring is affected by day, Chatoyant Staff by weather, and Twilight Cape by both.
+    -- Elemental Siphon sets. Chatoyant Staff by weather, and Twilight Cape by both.
     sets.midcast.Siphon = {
       main={ name="Espiritus", augments={'Summoning magic skill +15','Pet: Mag. Acc.+30','Pet: Damage taken -4%',}},
       sub="Vox Grip",
@@ -140,30 +173,48 @@ function get_sets()
       right_ring="Evoker's Ring",
       back={ name="Conveyance Cape", augments={'Summoning magic skill +5','Blood Pact Dmg.+1','Blood Pact ab. del. II -3',}},
     }
- 
-    sets.midcast.SiphonZodiac = set_combine(sets.midcast.Siphon, { ring1="Zodiac Ring" })
+  
     sets.midcast.SiphonWeather = set_combine(sets.midcast.Siphon, { main="Chatoyant Staff" })
-    sets.midcast.SiphonWeatherZodiac = set_combine(sets.midcast.SiphonZodiac, { main="Chatoyant Staff" })
- 
+     
     -- Summoning Midcast, cap spell interruption if possible (Baayami Robe gives 100, need 2 more)
     -- PDT isn't a bad idea either, so don't overwrite a lot from the DT set it inherits from.
-    sets.midcast.Summon = set_combine(sets.DT_Base, {
-      body="Baayami Robe",
+    sets.midcast.Summon = set_combine(sets.idle.DT, {
+      body="Baayami Robe"
     })
  
     -- If you ever lock your weapon, keep that in mind when building cure potency set.
     sets.midcast.Cure = {
+      head={ name="Vanya Hood", augments={'Healing magic skill +20','"Cure" spellcasting time -7%','Magic dmg. taken -3',}},
+      body="Bunzi's Robe",
+      hands="Inyan. Dastanas +2",
+      legs="Bunzi's Pants",
+      feet={ name="Vanya Clogs", augments={'Healing magic skill +20','"Cure" spellcasting time -7%','Magic dmg. taken -3',}},
+      neck="Warder's Charm +1",
+      waist="Bishop's Sash",
+      left_ear="Meili Earring",
+      right_ear="Mendi. Earring",
+      left_ring="Stikini Ring +1",
+      right_ring="Stikini Ring +1",
+      back={ name="Campestres's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','"Fast Cast"+10',}},
     }
  
-    sets.midcast.Cursna = set_combine(sets.precast.FC, {
+    sets.midcast.Cursna = set_combine(sets.midcast.Cure, {
+      neck="Debilis medallion",
+	  left_ring="Menelaus's ring",
+	  right_ring="Haoma's ring",
     })
-   
+    
+    -- Just a standard set for spells that have no set
     sets.midcast.EnmityRecast = set_combine(sets.precast.FC, {
     })
  
+    -- Strong alternatives: Daybreak and Ammurapi Shield, Cath Crown, Gwati Earring
     sets.midcast.Enfeeble = {
     }
-    
+
+    sets.midcast.Enfeeble.INT = set_combine(sets.midcast.Enfeeble, {
+    })
+ 
     sets.midcast.Enhancing = {
     }
  
@@ -174,9 +225,13 @@ function get_sets()
     }
  
     sets.midcast["Refresh"] = set_combine(sets.midcast.Enhancing, {
+	  head="Amalric coif +1",
+	  waist="Gishdubar sash"
     })
  
     sets.midcast["Aquaveil"] = set_combine(sets.midcast.Enhancing, {
+       head="Amalric coif +1",
+       waist="Emphatikos rope",
     })
  
     sets.midcast["Dispelga"] = set_combine(sets.midcast.Enfeeble, {
@@ -184,13 +239,15 @@ function get_sets()
       sub="Ammurapi Shield"
     })
  
-    sets.midcast["Mana Cede"]   = { hands="Beckoner's Bracers +2" } 
+    sets.midcast["Mana Cede"] = { hands="Beckoner's Bracers +2" }
     sets.midcast["Astral Flow"] = { head="Glyphic Horn" }
-   
+    
     -- ===================================================================================================================
     --  Weaponskills
     -- ===================================================================================================================
  
+    -- Magic accuracy can be nice here to land the defense down effect. Also keep in mind big damage Garland can make it
+    -- harder for multiple people to get AM3 on trash mobs before popping an NM.
     sets.midcast["Garland of Bliss"] = {
       head="Nyame Helm",
       neck="Sanctity Necklace",
@@ -221,19 +278,23 @@ function get_sets()
     }
  
     sets.midcast["Cataclysm"] = sets.midcast.Nuke
+    
+    sets.midcast["Shell Crusher"] = sets.midcast["Garland of Bliss"]
  
     sets.pet_midcast = {}
  
     -- Main physical pact set (Volt Strike, Pred Claws, etc.)
-    -- Prioritize BP Damage & Pet: DA
+    -- Prioritize BP Damage & Pet: Double Attack
+    -- Strong Alternatives:
+    -- Gridarvor, Apogee Crown, Apogee Pumps, Convoker's Doublet, Apogee Dalmatica, Shulmanu Collar (equal to ~R15 Collar), Gelos Earring, Regal Belt
     sets.pet_midcast.Physical_BP = {
       main="Nirvana",
       sub="Elan Strap +1",
       ammo="Epitaph",
       head={ name="Helios Band", augments={'Pet: Accuracy+29 Pet: Rng. Acc.+29','Pet: "Dbl. Atk."+8','Blood Pact Dmg.+7',}},
       body="Glyphic Doublet +3",
-      hands={ name="Merlinic Dastanas", augments={'Pet: Attack+22 Pet: Rng.Atk.+22','Blood Pact Dmg.+9','Pet: VIT+2','Pet: Mag. Acc.+5',}},
-      legs={ name="Apogee Slacks +1", augments={'Pet: STR+20','Blood Pact Dmg.+14','Pet: "Dbl. Atk."+4',}},
+      hands=MerlHands.PHYS,
+	  legs={ name="Apogee Slacks +1", augments={'Pet: STR+20','Blood Pact Dmg.+14','Pet: "Dbl. Atk."+4',}},
       feet={ name="Helios Boots", augments={'Pet: Accuracy+28 Pet: Rng. Acc.+28','Pet: "Dbl. Atk."+8','Blood Pact Dmg.+7',}},
       neck={ name="Smn. Collar +2", augments={'Path: A',}},
       waist="Incarnation Sash",
@@ -247,12 +308,12 @@ function get_sets()
     -- Physical Pact AM3 set, less emphasis on Pet:DA
     sets.pet_midcast.Physical_BP_AM3 = set_combine(sets.pet_midcast.Physical_BP, {
       left_ear="Gelos Earring",
-      body="Glyphic Doublet +3",
+      body="Convoker's Doublet +3",
       right_ring="Varar Ring +1",
       feet={ name="Apogee Pumps +1", augments={'MP+80','Pet: Attack+35','Blood Pact Dmg.+8',}}
     })
  
-    -- Physical pacts which benefit more from TP than Pet:DA (like single-hit BP)
+    -- Physical pacts which benefit more from TP than Pet:DA (like Spinning Dive and other pacts you never use except that one time)
     sets.pet_midcast.Physical_BP_TP = set_combine(sets.pet_midcast.Physical_BP, {
       head={ name="Apogee Crown +1", augments={'MP+80','Pet: Attack+35','Blood Pact Dmg.+8',}},
       ear2="Gelos Earring",
@@ -273,14 +334,16 @@ function get_sets()
  
     -- Base magic pact set
     -- Prioritize BP Damage & Pet:MAB
+    -- Strong Alternatives:
+    -- Espiritus, Apogee Crown, Adad Amulet (equal to ~R12 Collar)
     sets.pet_midcast.Magic_BP_Base = {
       main="Grioavolr", -- or Espiritus
       sub="Elan Strap +1",
       ammo="Epitaph",
       head="C. Palug Crown",
       body={ name="Apo. Dalmatica +1", augments={'MP+80','Pet: "Mag.Atk.Bns."+35','Blood Pact Dmg.+8',}},
-      hands={ name="Merlinic Dastanas", augments={'Pet: Mag. Acc.+20 Pet: "Mag.Atk.Bns."+20','Blood Pact Dmg.+10','Pet: Mag. Acc.+2',}},
-      legs={ name="Apogee Slacks +1", augments={'MP+80','Pet: "Mag.Atk.Bns."+35','Blood Pact Dmg.+8',}},
+      hands=MerlHands.MAG,
+	  legs={ name="Apogee Slacks +1", augments={'MP+80','Pet: "Mag.Atk.Bns."+35','Blood Pact Dmg.+8',}},
       feet={ name="Apogee Pumps +1", augments={'MP+80','Pet: "Mag.Atk.Bns."+35','Blood Pact Dmg.+8',}},
       neck={ name="Smn. Collar +2", augments={'Path: A',}},
       waist="Regal Belt",
@@ -290,7 +353,7 @@ function get_sets()
       right_ring={name="Varar Ring +1", bag="wardrobe5"},
       back={ name="Campestres's Cape", augments={'Pet: M.Acc.+20 Pet: M.Dmg.+20','Pet: Magic Damage+10','Damage taken-5%',}},
     }
-   
+    
     -- Some magic pacts benefit more from TP than others.
     -- Note: This set will only be used on merit pacts if you have less than 4 merits.
     --       Make sure to update your merit values at the top of this Lua.
@@ -305,23 +368,25 @@ function get_sets()
  
     sets.pet_midcast.Magic_BP_TP_Acc = set_combine(sets.pet_midcast.Magic_BP_TP, {
       body="Convoker's Doublet +3",
-      hands={ name="Merlinic Dastanas", augments={'Pet: Mag. Acc.+20 Pet: "Mag.Atk.Bns."+20','Blood Pact Dmg.+10','Pet: Mag. Acc.+2',}},	
+      hands=MerlHands.MAG
     })
  
     sets.pet_midcast.Magic_BP_NoTP_Acc = set_combine(sets.pet_midcast.Magic_BP_NoTP, {
       body="Convoker's Doublet +3",
-      hands={ name="Merlinic Dastanas", augments={'Pet: Mag. Acc.+20 Pet: "Mag.Atk.Bns."+20','Blood Pact Dmg.+10','Pet: Mag. Acc.+2',}},
+      hands=MerlHands.MAG
     })
  
     -- Favor BP Damage above all. Pet:MAB also very strong.
     -- Pet: Accuracy, Attack, Magic Accuracy moderately important.
+    -- Strong Alternatives:
+    -- Keraunos, Grioavolr, Espiritus, Was, Apogee Crown, Apogee Dalmatica, Adad Amulet
     sets.pet_midcast.FlamingCrush = {
       main="Nirvana",
       sub="Elan Strap +1",
       ammo="Epitaph",
       head="C. Palug Crown",
       body={ name="Apo. Dalmatica +1", augments={'MP+80','Pet: "Mag.Atk.Bns."+35','Blood Pact Dmg.+8',}},
-      hands={ name="Merlinic Dastanas", augments={'Pet: Mag. Acc.+20 Pet: "Mag.Atk.Bns."+20','Blood Pact Dmg.+10','Pet: Mag. Acc.+2',}},
+      hands=MerlHands.MAG,
       legs={ name="Apogee Slacks +1", augments={'MP+80','Pet: "Mag.Atk.Bns."+35','Blood Pact Dmg.+8',}},
       feet={ name="Apogee Pumps +1", augments={'MP+80','Pet: "Mag.Atk.Bns."+35','Blood Pact Dmg.+8',}},
       neck={ name="Smn. Collar +2", augments={'Path: A',}},
@@ -360,6 +425,8 @@ function get_sets()
     sets.pet_midcast.Debuff_Rage = sets.pet_midcast.MagicAcc_BP
  
     -- Pure summoning magic set, mainly used for buffs like Hastega II.
+    -- Strong Alternatives:
+    -- Andoaa Earring, Summoning Earring, Lamassu Mitts +1, Caller's Pendant
     sets.pet_midcast.SummoningMagic = {
       main={ name="Espiritus", augments={'Summoning magic skill +15','Pet: Mag. Acc.+30','Pet: Damage taken -4%',}},
       sub="Vox Grip",
@@ -379,128 +446,30 @@ function get_sets()
     }
  
     sets.pet_midcast.Buff = sets.pet_midcast.SummoningMagic
-   
-    -- Used for Wind's Blessing. Here you can sacrifice summoning skill for Pet:MND to increase potency.
+    
+    -- Wind's Blessing set. Pet:MND increases potency.
     sets.pet_midcast.Buff_MND = set_combine(sets.pet_midcast.Buff, {
-        main="Nirvana",
-        sub="Vox Grip",
-        neck="Summoner's Collar +2",
-        back={ name="Campestres's Cape", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Eva.+20 /Mag. Eva.+20','Pet: Attack+10 Pet: Rng.Atk.+10','Pet: "Regen"+10','Pet: Damage taken -5%',}},
+      main="Nirvana",
+      sub="Vox Grip",
+      neck="Summoner's Collar +2",
     })
  
     -- Don't drop Avatar level in this set if you can help it.
     -- You can use Avatar:HP+ gear to increase the HP recovered, but most of it will decrease your own max HP.
     sets.pet_midcast.Buff_Healing = set_combine(sets.pet_midcast.Buff, {
-        main="Nirvana",
-        back={ name="Campestres's Cape", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Eva.+20 /Mag. Eva.+20','Pet: Attack+10 Pet: Rng.Atk.+10','Pet: "Regen"+10','Pet: Damage taken -5%',}},
+      main="Nirvana",
     })
  
-    -- This set is used for certain blood pacts when ImpactDebuff mode is ON. (/console gs c ImpactDebuff)
-    -- These pacts are normally used as nukes, but they're also strong debuffs which are enhanced by smn skill.
+    -- This set is used for certain blood pacts when ImpactDebuff mode is turned ON. (/console gs c ImpactDebuff)
+    -- These pacts are normally used with magic damage gear, but they're also strong debuffs when enhanced by summoning skill.
+    -- This set is safe to ignore.
     sets.pet_midcast.Impact = set_combine(sets.pet_midcast.SummoningMagic, {
       main="Nirvana",
       head="Convoker's Horn +2",
       ear1="Lugalbanda Earring",
       ear2="Enmerkar Earring"
     })
- 
-    sets.aftercast = {}
- 
-    -- Idle set with no avatar out.
-    sets.aftercast.Idle = sets.DT_Base
-   
-    -- Idle set used when ForceIlvl is ON. Use this mode to avoid Gaiters dropping ilvl.
-    sets.aftercast.Idle_Ilvl = set_combine(sets.aftercast.Idle, {
-        feet="Baayami Sabots +1"
-    })
-   
-    sets.aftercast.DT = sets.DT_Base
- 
-    -- Many idle sets inherit from this set.
-    -- Put common items here so you don't have to repeat them over and over.
-    -- Strong Alternatives:
-    -- Asteria Mitts, Shomonjijoe
-    sets.aftercast.Perp_Base = {
-      main="Nirvana",            -- 8 perp, can use jse
-      sub="Khonsu",              -- 
-      ammo="Epitaph",
-      head="Beckoner's Horn +3", -- 4 favor, 3 refresh
-      neck="Caller's Pendant",   -- 1 perp sometimes
-      ear1="Cath Palug Earring", -- 1 refresh
-      ear2="Evans earring",      -- 2 perp
-      body="Apo. Dalmatica +1",  -- 4 refresh
-      hands={ name="Merlinic Dastanas", augments={'Weapon skill damage +1%','"Avatar perpetuation cost" -1','"Refresh"+2','Accuracy+9 Attack+9','Mag. Acc.+14 "Mag.Atk.Bns."+14',}}, -- 2 refresh 1 perp
-      ring1="Stikini Ring +1", -- 1 refresh
-      ring2="Evoker's Ring", -- 1 refresh
-      legs={ name="Merlinic Shalwar", augments={'Mag. Acc.+15','Attack+2','"Refresh"+2','Accuracy+10 Attack+10',}}, -- 2 refresh
-      feet="Baayami Sabots +1", -- 3 refresh
-      waist="Lucidity Sash", -- 2 perp
-      back={ name="Campestres's Cape", augments={'Pet: M.Acc.+20 Pet: M.Dmg.+20','Pet: Magic Damage+10','Damage taken-5%',}}, -- avatar level
-    }
- 
-    -- Avatar Melee set. Equipped when IdleMode is "DD" and MeleeMode is OFF.
-    -- You really don't need this set. It's only here because I can't bring myself to throw it away.
-    sets.aftercast.Perp_DD = set_combine(sets.aftercast.Perp_Base, {
-    })
- 
-    -- Refresh set with avatar out. Equipped when IdleMode is "Refresh".
-    sets.aftercast.Perp_Refresh = set_combine(sets.aftercast.Perp_Base, {
-      body="Apo. Dalmatica +1",
-    })
- 
-    -- Refresh set when MP is under 50%
-    sets.aftercast.Perp_RefreshSub50 = set_combine(sets.aftercast.Perp_Refresh, {
-      waist="Fucho-no-obi"
-    })
-   
-    sets.aftercast.Perp_Favor = set_combine(sets.aftercast.Perp_Refresh, {
-      head="Beckoner's Horn +3",
-      ear2="Lodurr Earring",
-      ring1="Stikini Ring +1",
-      ring2="Evoker's Ring",
-      legs="Baayami Slops",
-      feet="Baayami Sabots +1"
-    })
- 
-    -- TP set. Equipped when IdleMode is "DD" and MeleeMode is ON.
-    sets.aftercast.Perp_Melee = set_combine(sets.aftercast.Perp_Refresh, {
-    })
- 
-    -- Pet:DT build. Equipped when IdleMode is "PetDT".
-    sets.aftercast.Avatar_DT = {
-    }
- 
-    -- Perp down set used when ForceIlvl is ON. If you use Selenian Cap for Pet:DT, you can make another set here without it.
-    sets.aftercast.Avatar_DT_Ilvl = set_combine(sets.aftercast.Avatar_DT, {
-    })
- 
-    -- DT build with avatar out. Equipped when IdleMode is "DT".
-    sets.aftercast.Perp_DT = set_combine(sets.aftercast.Perp_Base, {
-      neck="Loricate Torque +1",
-      body="Bunzi's Robe",
-      hands="Bunzi's Gloves",
-      legs="Bunzi's Pants",
-      feet="Bunzi's Sabots",
-    })
- 
-    sets.aftercast.Spirit = {
-      main="Nirvana",
-      sub="Vox Grip",
-      ammo="Epitaph",
-      head="Convoker's Horn +2",
-      neck="Caller's Pendant",
-      ear1="Cath Palug Earring",
-      ear2="Evans Earring",
-      body="Baayami Robe",
-      hands="Baayami Cuffs",
-      ring1="Stikini Ring +1",
-      ring2="Evoker's Ring",
-      back={ name="Conveyance Cape", augments={'Summoning magic skill +5','Blood Pact Dmg.+1','Blood Pact ab. del. II -3',}},
-      waist="Lucidity Sash",
-      legs="Baayami Slops",
-      feet="Baayami Sabots +1"
-    }
- 
+  
     -- ===================================================================================================================
     --      End of Sets
     -- ===================================================================================================================
@@ -514,50 +483,12 @@ function get_sets()
     Magic_BPs_NoTP = S{'Holy Mist','Nether Blast','Aerial Blast','Searing Light','Diamond Dust','Earthen Fury','Zantetsuken','Tidal Wave','Judgment Bolt','Inferno','Howling Moon','Ruinous Omen','Night Terror','Thunderspark','Tornado II','Sonic Buffet'}
     Magic_BPs_TP = S{'Impact','Conflag Strike','Level ? Holy','Lunar Bay'}
     Merit_BPs = S{'Meteor Strike','Geocrush','Grand Fall','Wind Blade','Heavenly Strike','Thunderstorm'}
-    Physical_BPs_TP = S{'Rock Buster','Mountain Buster','Crescent Fang','Spinning Dive'}
-   
-    ZodiacElements = S{'Fire','Earth','Water','Wind','Ice','Lightning'}
- 
-    --TownIdle = S{"windurst woods","windurst waters","windurst walls","port windurst","bastok markets","bastok mines","port bastok","southern san d'oria","northern san d'oria","port san d'oria","upper jeuno","lower jeuno","port jeuno","ru'lude gardens","norg","kazham","tavnazian safehold","rabao","selbina","mhaura","aht urhgan whitegate","al zahbi","nashmau","western adoulin","eastern adoulin"}
-    --Salvage = S{"Bhaflau Remnants","Zhayolm Remnants","Arrapago Remnants","Silver Sea Remnants"}
- 
-    -- Select initial macro set and set lockstyle
-    -- This section likely requires changes or removal if you aren't Pergatory
-    if pet.isvalid then
-        if pet.name=='Fenrir' then
-            send_command('input /macro book 10;wait .1;input /macro set 2;wait 3;input /lockstyleset '..StartLockStyle)
-        elseif pet.name=='Ifrit' then
-            send_command('input /macro book 10;wait .1;input /macro set 3;wait 3;input /lockstyleset '..StartLockStyle)
-        elseif pet.name=='Titan' then
-            send_command('input /macro book 10;wait .1;input /macro set 4;wait 3;input /lockstyleset '..StartLockStyle)
-        elseif pet.name=='Leviathan' then
-            send_command('input /macro book 10;wait .1;input /macro set 5;wait 3;input /lockstyleset '..StartLockStyle)
-        elseif pet.name=='Garuda' then
-            send_command('input /macro book 10;wait .1;input /macro set 6;wait 3;input /lockstyleset '..StartLockStyle)
-        elseif pet.name=='Shiva' then
-            send_command('input /macro book 10;wait .1;input /macro set 7;wait 3;input /lockstyleset '..StartLockStyle)
-        elseif pet.name=='Ramuh' then
-            send_command('input /macro book 10;wait .1;input /macro set 8;wait 3;input /lockstyleset '..StartLockStyle)
-        elseif pet.name=='Diabolos' then
-            send_command('input /macro book 10;wait .1;input /macro set 9;wait 3;input /lockstyleset '..StartLockStyle)
-        elseif pet.name=='Cait Sith' then
-            send_command('input /macro book 11;wait .1;input /macro set 2;wait 3;input /lockstyleset '..StartLockStyle)
-        elseif pet.name=='Siren' then
-            send_command('input /macro book 11;wait .1;input /macro set 4;wait 3;input /lockstyleset '..StartLockStyle)
-        end
-    else
-        send_command('input /macro book 10;wait .1;input /macro set 1;wait 3;input /lockstyleset '..StartLockStyle)
-    end
-    -- End macro set / lockstyle section
+    Physical_BPs_TP = S{'Rock Buster','Mountain Buster','Crescent Fang','Spinning Dive','Roundhouse'}
 end
  
 -- ===================================================================================================================
 --      Gearswap rules below this point - Modify at your own peril
 -- ===================================================================================================================
- 
-function pet_change(pet,gain)
-    idle()
-end
  
 function pretarget(spell,action)
     if not buffactive['Muddle'] then
@@ -577,7 +508,9 @@ function pretarget(spell,action)
 end
  
 function precast(spell)
-    if (pet.isvalid and pet_midaction()) or spell.type=="Item" then
+    if (pet.isvalid and pet_midaction() and not spell.type=="SummonerPact") or spell.type=="Item" then
+        -- Do not swap if pet is mid-action. I added the type=SummonerPact check because sometimes when the avatar
+        -- dies mid-BP, pet.isvalid and pet_midaction() continue to return true for a brief time.
         return
     end
     -- Spell fast cast
@@ -609,41 +542,31 @@ function midcast(spell)
     elseif sets.midcast[spell.english] then
         equip(sets.midcast[spell.english])
     elseif spell.name=="Elemental Siphon" then
-        if pet.element==world.day_element and ZodiacElements:contains(pet.element) then
-            if pet.element==world.weather_element then
-                equip(sets.midcast.SiphonWeatherZodiac)
-            else
-                equip(sets.midcast.SiphonZodiac)
-            end
+        if pet.element==world.weather_element then
+            equip(sets.midcast.SiphonWeather)
         else
-            if pet.element==world.weather_element then
-                equip(sets.midcast.SiphonWeather)
-            else
-                equip(sets.midcast.Siphon)
-            end
+            equip(sets.midcast.Siphon)
         end
     elseif spell.type=="SummonerPact" then
         equip(sets.midcast.Summon)
-    elseif spell.type=="WhiteMagic" then
-        if string.find(spell.name,"Cure") or string.find(spell.name,"Curaga") then
-            equip(sets.midcast.Cure)
-        elseif string.find(spell.name,"Protect") or string.find(spell.name,"Shell") then
-            equip(sets.midcast.Enhancing,{ring2="Sheltered Ring"})
-        elseif spell.skill=="Enfeebling Magic" then
-            equip(sets.midcast.Enfeeble)
-        elseif spell.skill=="Enhancing Magic" then
-            equip(sets.midcast.Enhancing)
-        else
-            idle()
-        end
-    elseif spell.type=="BlackMagic" then
-        if spell.skill=="Elemental Magic" then
-            equip(sets.midcast.Nuke)
-        end
+    elseif string.find(spell.name,"Cure") or string.find(spell.name,"Curaga") then
+        equip(sets.midcast.Cure)
+    elseif string.find(spell.name,"Protect") or string.find(spell.name,"Shell") then
+        equip(sets.midcast.Enhancing,{ring2="Sheltered Ring"})
+    elseif spell.skill=="Enfeebling Magic" then
+        equip(sets.midcast.Enfeeble)
+    elseif spell.skill=="Enhancing Magic" then
+        equip(sets.midcast.Enhancing)
+    elseif spell.skill=="Elemental Magic" then
+        equip(sets.midcast.Nuke)
     elseif spell.action_type=="Magic" then
         equip(sets.midcast.EnmityRecast)
     else
         idle()
+    end
+    -- Treasure Hunter
+    if TreasureHunter and THSpells:contains(spell.name) then
+        equip(sets.TH)
     end
     -- Auto-cancel existing buffs
     if spell.name=="Stoneskin" and buffactive["Stoneskin"] then
@@ -664,15 +587,34 @@ function aftercast(spell)
     end
 end
  
+function pet_change(pet,gain)
+    if (not (gain and pet_midaction())) then
+        idle()
+    end
+end
+ 
 function status_change(new,old)
-    if new=="Idle" then
+    if not midaction() and not pet_midaction() then
         idle()
     end
 end
  
 function buff_change(name,gain)
-    if name=="Quickening" then
+    if name=="quickening" and not pet_midaction() then
         idle()
+    end
+
+    if SacTorque and name=="sleep" and gain and pet.isvalid then
+        equip({neck="Sacrifice Torque"})
+
+        disable("neck")
+
+        if buffactive["Stoneskin"] then
+            windower.send_command('cancel 37;')
+        end
+    end
+    if SacTorque and name=="sleep" and not gain then
+        enable("neck")
     end
 end
  
@@ -748,14 +690,17 @@ function equipBPGear(spell)
             equip(sets.pet_midcast.Physical_BP)
         end
     end
+    -- Custom Timers
+    if spell=="Mewing Lullaby" and string.find(world.area,"Walk of Echoes [P") then
+        send_command('timers create "Mewing Resist" 60 down') -- In Gaol, underperforms if used every 20s. 30s wait is better. 60s is full potency.
+    end
 end
  
 -- This command is called whenever you input "gs c <command>"
 function self_command(command)
-    IdleModeCommands = {'DD','Refresh','DT','Favor','PetDT'}
-    is_valid = false
-   
-    for _, v in ipairs(IdleModeCommands) do
+    is_valid = command:lower()=="idle"
+    
+    for _, v in ipairs(IdleModes) do
         if command:lower()==v:lower() then
             IdleMode = v
             send_command('console_echo "Idle Mode: ['..IdleMode..']"')
@@ -774,35 +719,32 @@ function self_command(command)
         ImpactDebuff = ImpactDebuff==false
         is_valid = true
         send_command('console_echo "Impact Debuff: '..tostring(ImpactDebuff)..'"')
-    elseif command:lower()=="forceilvl" then
-        ForceIlvl = ForceIlvl==false
-        is_valid = true
-        send_command('console_echo "Force iLVL: '..tostring(ForceIlvl)..'"')
     elseif command:lower()=="lagmode" then
         LagMode = LagMode==false
         is_valid = true
         send_command('console_echo "Lag Compensation Mode: '..tostring(LagMode)..'"')
-    elseif command:lower()=="meleemode" then
-        if MeleeMode then
-            MeleeMode = false
+    elseif command:lower()=="th" then
+        TreasureHunter = TreasureHunter==false
+        is_valid = true
+        send_command('console_echo "Treasure Hunter Mode: '..tostring(TreasureHunter)..'"')
+    elseif command:lower()=="weaponlock" then
+        if WeaponLock then
             enable("main","sub")
-            send_command('console_echo "Melee Mode: false"')
+            WeaponLock = false
         else
-            MeleeMode = true
             equip({main="Nirvana",sub="Elan Strap +1"})
             disable("main","sub")
-            send_command('console_echo "Melee Mode: true"')
+            WeaponLock = true
         end
         is_valid = true
+        send_command('console_echo "Weapon Lock: '..tostring(WeaponLock)..'"')
     elseif command=="ToggleIdle" then
         is_valid = true
         -- If you want to change the sets cycled with F9, this is where you do it
         if IdleMode=="Refresh" then
+            IdleMode = "Favor"
+		elseif IdleMode=="Favor" then
             IdleMode = "DT"
-        elseif IdleMode=="DT" then
-            IdleMode = "PetDT"
-        elseif IdleMode=="PetDT" then
-            IdleMode = "DD"
         else
             IdleMode = "Refresh"
         end
@@ -811,84 +753,33 @@ function self_command(command)
         -- Use for "Cure 500 HP" objectives in Omen
         equip({head="Apogee Crown +1",body={ name="Apo. Dalmatica +1", augments={'MP+80','Pet: "Mag.Atk.Bns."+35','Blood Pact Dmg.+8',}},legs="Apogee Slacks +1",feet="Apogee Pumps +1",back="Campestres's Cape"})
         return
-    elseif string.sub(command:lower(),1,12)=="meteorstrike" then
-        MeteorStrike = string.sub(command,13,13)
-        send_command('console_echo "Meteor Strike: '..MeteorStrike..'/5"')
-        is_valid = true
-    elseif string.sub(command:lower(),1,8)=="geocrush" then
-        Geocrush = string.sub(command,9,9)
-        send_command('console_echo "Geocrush: '..Geocrush..'/5"')
-        is_valid = true
-    elseif string.sub(command:lower(),1,9)=="grandfall" then
-        GrandFall = string.sub(command,10,10)
-        send_command('console_echo "Grand Fall: '..GrandFall..'/5"')
-        is_valid = true
-    elseif string.sub(command:lower(),1,9)=="windblade" then
-        WindBlade = +string.sub(command,10,10)
-        send_command('console_echo "Wind Blade: '..WindBlade..'/5"')
-        is_valid = true
-    elseif string.sub(command:lower(),1,14)=="heavenlystrike" then
-        HeavenlyStrike = string.sub(command,15,15)
-        send_command('console_echo "Heavenly Strike: '..HeavenlyStrike..'/5"')
-        is_valid = true
-    elseif string.sub(command:lower(),1,12)=="thunderstorm" then
-        Thunderstorm = string.sub(command,13,13)
-        send_command('console_echo "Thunderstorm: '..Thunderstorm..'/5"')
-        is_valid = true
-    elseif command=="TestMode" then
-        Test = Test + 1
-        if Test==3 then
-            Test = 0
-        end
-        is_valid = true
-        send_command('console_echo "Test Mode: '..tostring(Test)..'"')
     end
  
-    if not is_valid then
-        send_command('console_echo "gs c {Refresh|DT|DD|PetDT|Favor} {AccMode} {ImpactMode} {MeleeMode}"')
+    if is_valid then
+        if not midaction() and not pet_midaction() then
+            idle()
+        end
+    else
+        sanitized = command:gsub("\"", "")
+        send_command('console_echo "Invalid self_command: '..sanitized..'"') -- Note: If you use Gearinfo, comment out this line
     end
-    idle()
 end
  
 -- This function is for returning to aftercast gear after an action/event.
 function idle()
-    if pet.isvalid then
-        if IdleMode=='DT' then
-            equip(sets.aftercast.Perp_DT)
-        elseif string.find(pet.name,'Spirit') then
-            equip(sets.aftercast.Spirit)
-        elseif IdleMode=='PetDT' then
-            if ForceIlvl then
-                equip(sets.aftercast.Avatar_DT_Ilvl)
-            else
-                equip(sets.aftercast.Avatar_DT)
-            end
-        elseif IdleMode=='Refresh' then
-            if player.mpp < 50 then
-                equip(sets.aftercast.Perp_RefreshSub50)
-            else
-                equip(sets.aftercast.Perp_Refresh)
-            end
-        elseif IdleMode=='Favor' then
-            equip(sets.aftercast.Perp_Favor)
-        elseif MeleeMode then
-            equip(sets.aftercast.Perp_Melee)
-        elseif IdleMode=='DD' then
-            equip(sets.aftercast.Perp_DD)
-        end
-        -- Gaiters if Fleet Wind is up
-        if buffactive['Quickening'] and IdleMode~='DT' and not ForceIlvl then
-            equip({feet="Herald's Gaiters"})
-        end
-    else
-        if IdleMode=='DT' then
-            equip(sets.aftercast.DT)
-        elseif MeleeMode and IdleMode=='DD' then
-            equip(sets.aftercast.Perp_Melee)
-        elseif ForceIlvl then
-            equip(sets.aftercast.Idle_Ilvl)
-        else
-            equip(sets.aftercast.Idle)
-        end
+    equipSet = sets.idle
+
+    if equipSet[IdleMode] then
+        equipSet = equipSet[IdleMode]
+    end
+
+    if equipSet[player.status] then
+        equipSet = equipSet[player.status]
+    end
+
+    equip(equipSet)
+ 
+    if buffactive['Quickening'] and IdleMode~='DT' then
+        equip({feet="Herald's Gaiters"})
     end
 end

@@ -391,8 +391,8 @@ function init_gear_sets()
     }
 	
     sets.midcast.Cursna = set_combine(sets.midcast.StatusRemoval, {
-      main="Yagrush",
-      sub="Gambanteinn",
+      main="Gambanteinn",
+      --main="Yagrush",
       head={ name="Vanya Hood", augments={'Healing magic skill +20','"Cure" spellcasting time -7%','Magic dmg. taken -3',}},
       body="Ebers Bliaut +3",
       hands="Fanatic Gloves",

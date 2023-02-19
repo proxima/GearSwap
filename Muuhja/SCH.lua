@@ -652,8 +652,8 @@ function get_sets()
    sets.midcast["Tabula Rasa"] = { legs="Pedagogy Pants +1" }
    
    sets.midcast.nuking.normal = {
-     main="Bunzi's Rod",
-     sub="Ammurapi Shield",
+     main="Marin staff +1",
+     sub="Khonsu",
      ammo="Ghastly Tathlum +1",
      head="Agwu's Cap",
      body="Agwu's Robe",
@@ -705,7 +705,7 @@ function get_sets()
 
     -- Enfeebling
    sets.midcast["Stun"] = {
-     main="Hvergelmir",        --    50
+     main="Marin staff +1", -- main="Hvergelmir",        --    50
      sub="Khonsu",             --  4
      ammo="Pemphredo tathlum",
      head="Acad. Mortar. +2",  --  6  8
@@ -748,7 +748,7 @@ function get_sets()
    })
    
    sets.midcast.Impact = set_combine(sets.midcast.IntEnfeebling, {
-     main="Hvergelmir",
+     main="Marin staff +1", -- main="Hvergelmir",
      sub="Khonsu",
      head=empty, 
      body="Crepuscular Cloak"
