@@ -542,8 +542,8 @@ function get_sets()
    -- Ability Precasting
    ---------------------
 
-    sets.precast["Tabula Rasa"] = {legs="Pedagogy Pants +3"}
-    sets.precast["Enlightenment"] = {body="Pedagogy Gown +3"} 
+    sets.precast["Tabula Rasa"]   = { legs="Pedagogy Pants +3" }
+    sets.precast["Enlightenment"] = { body="Pedagogy Gown +3" } 
     sets.precast["Sublimation"] = {}
 
     ----------
@@ -563,15 +563,15 @@ function get_sets()
     -- Make sure you have a non weather obi in this set. Helix get bonus naturally no need Obi.
 
     sets.midcast.Kaustra = {
-      main={ name="Bunzi's Rod", augments={'Path: A',}}, 
+      main={ name="Bunzi's Rod", augments={'Path: A',}},              -- 10
       sub="Ammurapi Shield",
       ammo={ name="Ghastly Tathlum +1", augments={'Path: A',}},
-      head="Arbatel bonnet +3",               -- assume ebullience
+      head="Arbatel bonnet +3",               -- assume ebullience    
       body="Agwu's Robe",
-      hands="Agwu's Gages",
-      legs="Agwu's Slops",
-      feet="Arbatel Loafers +3",
-      neck={ name="Argute Stole +2", augments={'Path: A',}},
+      hands="Agwu's Gages",                                           --  8, 6
+      legs="Agwu's Slops",                                            --  9
+      feet="Arbatel Loafers +3",                                      --  0, 5
+      neck={ name="Argute Stole +2", augments={'Path: A',}},          -- 10
       waist="Hachirin-no-Obi",                -- assume weather
       left_ear="Regal Earring",
       right_ear="Malignance Earring",
@@ -642,13 +642,13 @@ function get_sets()
       head="Agwu's Cap",
       body="Arbatel Gown +3",
       hands="Arbatel Bracers +3",
-      legs="Arbatel Pants +3",
+      legs="Agwu's Slops",    
       feet="Arbatel Loafers +3",
       neck={ name="Argute Stole +2", augments={'Path: A',}},
       waist="Skrymir Cord +1",
       left_ear="Regal Earring",
       right_ear="Malignance Earring",
-      left_ring="Archon Ring",
+      left_ring="Freke Ring",
       right_ring={ name="Metamor. Ring +1", augments={'Path: A',}},
       back=Lugh.ADOULIN 
     }
@@ -670,8 +670,9 @@ function get_sets()
      feet={ name="Merlinic Crackows", augments={'Attack+22','"Fast Cast"+7',}}, -- 12 fc, 3 haste
    }
 
-   sets.midcast["Sublimation"] = {}
-   sets.midcast["Tabula Rasa"] = { legs="Pedagogy Pants +3" }
+   sets.midcast["Sublimation"]   = {}
+   sets.midcast["Tabula Rasa"]   = { legs="Pedagogy Pants +3" }
+   sets.midcast["Enlightenment"] = { body="Pedagogy Gown +3" } 
    
    sets.midcast.nuking.normal = {
      main="Bunzi's Rod",
@@ -793,12 +794,12 @@ function get_sets()
      main="Hvergelmir",
      sub="Khonsu",
      head=empty, 
-     body="Crepuscular Cloak"
+     body="Crepuscular Cloak",
+	 hands="Academic's bracers +3",
    })
    
    sets.midcast.SC_Open = {
-     -- main="Malignance Pole", 
-     main="Hvergelmir", -- For when you have low haste buffs during tabula and recast is important
+     main="Malignance Pole", 
      sub="Khonsu",                                                                                       --         4 haste
      ammo="Staunch Tathlum +1",
      head={ name="Vanya Hood", augments={'MP+50','"Fast Cast"+10','Haste+2%',}},                         -- 10 fc,  8 haste
@@ -825,7 +826,7 @@ function get_sets()
    sets.midcast["Hydrohelix"] = sets.midcast.SC_Open
    sets.midcast["Ionohelix"] = sets.midcast.SC_Open
    sets.midcast["Noctohelix"] = sets.midcast.SC_Open
-   -- sets.midcast["Luminohelix"] = sets.midcast.SC_Open
+   sets.midcast["Luminohelix"] = sets.midcast.SC_Open
    sets.midcast["Anemohelix"] = sets.midcast.SC_Open
    sets.midcast["Geohelix"] = sets.midcast.SC_Open
    sets.midcast["Pyrohelix"] = sets.midcast.SC_Open
