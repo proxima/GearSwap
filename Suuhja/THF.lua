@@ -121,7 +121,7 @@ function init_gear_sets()
     sets.precast.JA['Accomplice'] = {head="Skulker's Bonnet +1"}
     sets.precast.JA['Flee'] = {feet="Pillager's Poulaines +3"}
     sets.precast.JA['Hide'] = {body="Pillager's Vest +3"}
-    sets.precast.JA['Conspirator'] = {body="Skulker's Vest +2"}
+    sets.precast.JA['Conspirator'] = {body="Skulker's Vest +3"}
     sets.precast.JA['Steal'] = {head="Plunderer's Bonnet +3",hands="Pillager's Armlets +3",legs="Pillager's Culottes +3",feet="Pillager's Poulaines +3"}
     sets.precast.JA['Despoil'] = {legs="Skulker's Culottes +1",feet="Skulker's Poulaines +2"}
     sets.precast.JA['Perfect Dodge'] = {hands="Plunderer's Armlets +1"}
@@ -154,7 +154,7 @@ function init_gear_sets()
     sets.precast.WS = {  
       ammo="Yetshila +1",
       head="Nyame Helm",
-      body="Skulker's Vest +2",
+      body="Skulker's Vest +3",
       hands="Nyame Gauntlets",
       legs="Nyame Flanchard",
       feet="Nyame Sollerets",
@@ -224,7 +224,7 @@ function init_gear_sets()
     sets.precast.WS["Rudra's Storm"] = set_combine(sets.precast.WS, {
       ammo={ name="Seeth. Bomblet +1", augments={'Path: A',}},
       head="Nyame Helm",
-      body="Skulker's Vest +2",
+      body="Skulker's Vest +3",
       hands="Nyame Gauntlets",
       legs="Nyame Flanchard",  
       feet="Nyame Sollerets",
@@ -241,7 +241,6 @@ function init_gear_sets()
     sets.precast.WS["Rudra's Storm"].Mod = set_combine(sets.precast.WS["Rudra's Storm"], {
       ammo="Yetshila +1",
       head="Pillager's bonnet +3",
-      body="Gleti's Cuirass",
       left_ring="Epaminondas's ring",
       left_ear="Odr Earring",
     })
@@ -262,14 +261,13 @@ function init_gear_sets()
       left_ear="Ishvara Earring",
       right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
       left_ring="Epaminondas's Ring",
-      right_ring="Regal Ring",
+      right_ring="Sroda Ring",
       back={ name="Toutatis's Cape", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}},
     })
 
     sets.precast.WS["Savage Blade"].Acc = set_combine(sets.precast.WS["Savage Blade"], {})
     sets.precast.WS["Savage Blade"].Mod = set_combine(sets.precast.WS["Savage Blade"], {
       head="Pillager's bonnet +3",
-      body="Gleti's Cuirass",
       ammo="Yetshila +1",
     })
 

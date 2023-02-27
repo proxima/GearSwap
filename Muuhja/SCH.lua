@@ -315,7 +315,7 @@ function get_sets()
       body="Arbatel Gown +2",
       hands="Arbatel Bracers +2",
       legs="Arbatel Pants +2",
-      feet="Arbatel Loafers +2",
+      feet="Arbatel Loafers +3",
       neck="Lissome Necklace",
       waist="Grunfeld Rope",
       left_ear="Mache Earring +1",
@@ -334,7 +334,7 @@ function get_sets()
       body="Nyame Mail",
       hands="Agwu's Gages",
       legs="Nyame Flanchard",
-      feet="Arbatel Loafers +2",
+      feet="Arbatel Loafers +3",
       neck="Quanpur Necklace",
       waist="Orpheus's Sash",
       left_ear="Moonshade Earring",
@@ -366,7 +366,7 @@ function get_sets()
       body="Arbatel Gown +2",
       hands="Arbatel Bracers +2",
       legs="Nyame Flanchard",
-      feet="Arbatel Loafers +2",
+      feet="Arbatel Loafers +3",
       neck={ name="Argute Stole +2", augments={'Path: A',}},
       waist="Orpheus's Sash",
       left_ear="Regal Earring",
@@ -382,7 +382,7 @@ function get_sets()
       body="Nyame Mail",
       hands="Nyame Gauntlets",
       legs="Nyame Flanchard",
-      feet="Arbatel Loafers +2",
+      feet="Arbatel Loafers +3",
       neck={ name="Argute Stole +2", augments={'Path: A',}},
       waist="Hachirin-no-Obi",
       left_ear="Regal Earring",
@@ -409,7 +409,7 @@ function get_sets()
       back=Lugh.MP_FC,
       waist="Luminary sash",
       legs="Arbatel pants +2",
-	  feet="Arbatel loafers +2",
+	  feet="Arbatel loafers +3",
     }
 
     sets.me["Black Halo"] = {
@@ -448,7 +448,7 @@ function get_sets()
     sets.buff['Parsimony'] = {}
     sets.buff['Celerity'] = {feet="Pedagogy loafers +1"}
     sets.buff['Alacrity'] = {feet="Pedagogy loafers +1"}
-    sets.buff['Klimaform'] = {feet="Arbatel Loafers +2"}
+    sets.buff['Klimaform'] = {feet="Arbatel Loafers +3"}
     sets.buff['Ebullience'] = {head="Arbatel bonnet +2"}
 
     ---------------
@@ -548,7 +548,7 @@ function get_sets()
       body="Agwu's Robe",
       hands="Agwu's Gages",
       legs="Agwu's Slops",
-      feet="Arbatel Loafers +2",
+      feet="Arbatel Loafers +3",
       neck={ name="Argute Stole +2", augments={'Path: A',}},
       waist="Hachirin-no-Obi",                -- assume weather
       left_ear="Regal Earring",
@@ -567,7 +567,7 @@ function get_sets()
       body="Arbatel Gown +2",
       hands="Arbatel Bracers +2",
       legs="Agwu's Slops",    
-      feet="Arbatel Loafers +2",
+      feet="Arbatel Loafers +3",
       neck={ name="Argute Stole +2", augments={'Path: A',}},
       waist="Skrymir Cord +1",
       left_ear="Regal Earring",
@@ -585,7 +585,7 @@ function get_sets()
       body="Agwu's Robe",
       hands="Arbatel Bracers +2",
       legs="Agwu's Slops",    
-      feet="Arbatel Loafers +2",
+      feet="Arbatel Loafers +3",
       neck={ name="Argute Stole +2", augments={'Path: A',}},
       waist="Skrymir Cord +1",
       left_ear="Regal Earring",
@@ -603,7 +603,7 @@ function get_sets()
       body="Arbatel Gown +2",
       hands="Arbatel Bracers +2",
       legs="Agwu's Slops",    
-      feet="Arbatel Loafers +2",
+      feet="Arbatel Loafers +3",
       neck={ name="Argute Stole +2", augments={'Path: A',}},
       waist="Skrymir Cord +1",
       left_ear="Regal Earring",
@@ -621,7 +621,7 @@ function get_sets()
       body="Arbatel Gown +2",
       hands="Arbatel Bracers +2",
       legs="Arbatel Pants +2",
-      feet="Arbatel Loafers +2",
+      feet="Arbatel Loafers +3",
       neck={ name="Argute Stole +2", augments={'Path: A',}},
       waist="Skrymir Cord +1",
       left_ear="Regal Earring",
@@ -680,7 +680,7 @@ function get_sets()
    -- used with toggle, default: F10
    -- Pieces to swap from free nuke to Magic Burst
    sets.midcast.MB.acc = set_combine(sets.midcast.MB.normal, {   
-     feet="Arbatel Loafers +2",
+     feet="Arbatel Loafers +3",
      waist="Acuity Belt +1",
    })
       

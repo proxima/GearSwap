@@ -26,11 +26,12 @@ function user_setup()
   select_default_macro_book()
 
   Cape = {}
-  Cape.STP     = { name="Artio's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Store TP"+10','Phys. dmg. taken-10%',}}
-  Cape.PET     = { name="Artio's Mantle", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Eva.+20 /Mag. Eva.+20','Pet: Attack+10 Pet: Rng.Atk.+10','Pet: "Regen"+10','Pet: Damage taken -5%',}}
-  Cape.STR_DA  = { name="Artio's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}}
-  Cape.STR_WSD = { name="Artio's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}
-  Cape.REND    = { name="Artio's Mantle", augments={'CHR+20','Mag. Acc+20 /Mag. Dmg.+20','CHR+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}
+  Cape.STP      = { name="Artio's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Store TP"+10','Phys. dmg. taken-10%',}}
+  Cape.PET_PHYS = { name="Artio's Mantle", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Eva.+20 /Mag. Eva.+20','Pet: Attack+10 Pet: Rng.Atk.+10','Pet: "Regen"+10','Pet: Damage taken -5%',}}
+  Cape.PET_MACC = { name="Artio's Mantle", augments={'Pet: M.Acc.+20 Pet: M.Dmg.+20','Eva.+20 /Mag. Eva.+20','Pet: Mag. Acc.+10','"Fast Cast"+10','Phys. dmg. taken-10%',}}
+  Cape.STR_DA   = { name="Artio's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}}
+  Cape.STR_WSD  = { name="Artio's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}
+  Cape.REND     = { name="Artio's Mantle", augments={'CHR+20','Mag. Acc+20 /Mag. Dmg.+20','CHR+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}
 
   send_command('bind @o sat youcommand Muuhja "Horde Lullaby II"')
   send_command('bind @p sat youcommand Zuuhja "Sleepga"')
@@ -105,6 +106,8 @@ function select_default_macro_book()
 end 
  
 function init_gear_sets()
+    sets.precast.Sheep = { ammo="Lyrical Broth" }
+
     sets.precast.JA['Killer Instinct'] = {head="Ankusa Helm +3"}
     sets.precast.JA['Bestial Loyalty'] = {hands="Ankusa Gloves"}
     sets.precast.JA['Call Beast']      = sets.precast.JA['Bestial Loyalty']
@@ -116,7 +119,7 @@ function init_gear_sets()
       ammo="Pet Food Theta",
       head="Stout Bonnet",	
       body="Totemic Jackcoat +3",
-      back=Cape.PET,
+      back=Cape.PET_PHYS,
       legs="Ankusa Trousers +1", -- Ankusa Trousers +3
       feet="Totemic gaiters +1" -- Ankusa Gaiters +3
     }
@@ -130,7 +133,7 @@ function init_gear_sets()
                
     sets.precast.WS = {
     }
- 
+  
     sets.precast.WS['Decimation'] = {
       ammo="Coiste Bodhar",
       head="Nyame Helm",
@@ -210,7 +213,7 @@ function init_gear_sets()
       right_ear="Enmerkar Earring",
       left_ring="Thur. Ring +1",
       right_ring="C. Palug Ring",
-      back=Cape.PET
+      back=Cape.PET_PHYS
     }
 
     sets.midcast.Pet.Neutral = set_combine(sets.midcast.Pet.WS, {})           
@@ -236,14 +239,14 @@ function init_gear_sets()
       back="Argocham. Mantle",
     })
     
-    sets.midcast.Pet.MaccReady = set_combine(sets.midcast.Pet.WS, {
+    sets.midcast.Pet.MaccReady = {
       main="Agwu's Axe",
       sub="Sacro Bulwark",
       ammo="Voluspa Tathlum",
       head="Nukumi Cabasset +2",
       body="Nukumi Gausape +3",
       hands="Nukumi Manoplas +3",
-      legs="Nukumi Ocreae +3",
+      legs="Nukumi Quijotes +3",
       feet="Gleti's Boots",
       left_ear="Handler's Earring +1",
       right_ear="Enmerkar Earring",
@@ -251,8 +254,8 @@ function init_gear_sets()
       right_ring="C. Palug Ring",
       waist="Incarnation Sash",
       neck="Beastmaster collar +2",
-      back="Argocham. Mantle", -- make ambu cape
-    })
+      back=Cape.PET_MACC
+    }
     
     sets.midcast.Pet.TPBonus = {hands="Nukumi Manoplas +3",}
     sets.midcast.Pet.ReadyRecast = {legs="Gleti's Breeches"}
@@ -273,7 +276,7 @@ function init_gear_sets()
       right_ear="Etiolation Earring",
       left_ring="Defending Ring",
       right_ring="C. Palug Ring",
-      back=Cape.PET
+      back=Cape.PET_PHYS
     } 
            
     sets.idle.Reraise = set_combine(sets.idle, {head="Crepuscular Helm",body="Crepuscular Mail"})
@@ -281,7 +284,7 @@ function init_gear_sets()
     -- Idle Set that equips when you have a pet out and not fighting an enemy.
     sets.idle.Pet = set_combine(sets.idle, { 
       body="Totemic Jackcoat +3",
-      legs="Nukimu Quijotes +3",
+      legs="Nukumi Quijotes +3",
     })
        
     -- Idle set that equips when you have a pet out and ARE fighting an enemy.
@@ -298,23 +301,25 @@ function init_gear_sets()
       right_ear="Enmerkar Earring",
       left_ring="Thur. Ring +1",
       right_ring="Defending Ring",
-      back=Cape.PET
+      back=Cape.PET_PHYS
     })
    
     -- MELEE (SINGLE-WIELD) SETS   
     sets.engaged = {
+	  main="Ikenga's Axe",
+	  sub="Sacro Bulwark",
       ammo="Coiste Bodhar",
       head="Malignance Chapeau",
       body="Gleti's Cuirass",
       hands="Malignance Gloves",
-      legs="Malignance Tights",
+      legs="Gleti's Breeches",
       feet="Malignance Boots",
-      neck="Anu Torque",
-      waist="Windbuffet Belt +1",
+      neck="Lissome Necklace",
+      waist="Sailfi Belt +1",
       left_ear="Brutal Earring",
       right_ear="Sherida Earring",
-      left_ring={name="Chirich Ring +1",bag="wardrobe 2"},
-      right_ring={name="Chirich Ring +1",bag="wardrobe 4"},
+      left_ring={name="Moonlight Ring",bag="wardrobe 6"},
+      right_ring={name="Moonlight Ring",bag="wardrobe 8"},
       back=Cape.STP
     }
     
@@ -331,7 +336,7 @@ function init_gear_sets()
       right_ear="Enmerkar Earring",
       left_ring="Thur. Ring +1",
       right_ring="Defending Ring",
-      back=Cape.PET
+      back=Cape.PET_PHYS
     }
                
     -- MELEE (DUAL-WIELD) SETS FOR DNC AND NIN SUBJOB   

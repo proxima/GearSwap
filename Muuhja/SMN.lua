@@ -691,9 +691,9 @@ function equipBPGear(spell)
         end
     end
     -- Custom Timers
-    if spell=="Mewing Lullaby" and string.find(world.area,"Walk of Echoes [P") then
-        send_command('timers create "Mewing Resist" 60 down') -- In Gaol, underperforms if used every 20s. 30s wait is better. 60s is full potency.
-    end
+    -- if spell=="Mewing Lullaby" and string.find(world.area,"Walk of Echoes [P") then
+    --     send_command('timers create "Mewing Resist" 60 down') -- In Gaol, underperforms if used every 20s. 30s wait is better. 60s is full potency.
+    -- end
 end
  
 -- This command is called whenever you input "gs c <command>"

@@ -336,7 +336,6 @@ function init_gear_sets()
 
     sets.precast.WS['Last Stand'] = {ammo=gear.WSbullet,
       head="Nyame Helm",
-      -- body="Laksa. Frac +3",
       body="Ikenga's Vest",  
       hands="Chasseur's Gants +3",
       legs="Nyame Flanchard",

@@ -143,7 +143,7 @@ function user_setup()
     info.ExtraSongs = 2
 
     send_command('bind ^` gs c cycle SongMode')
-    send_command('bind !` input /ma "Chocobo Mazurka" <me>')
+    send_command('bind !` gs c cycle SongMode')
     send_command('bind !p input /ja "Pianissimo" <me>')
 
     send_command('bind ^backspace gs c cycle SongTier')
@@ -726,7 +726,7 @@ function init_gear_sets()
     sets.engaged.Hybrid = {
       range=Linos.TP,
       head="Bunzi's Hat",           -- 7, 6
-      body="Nyame Mail",        -- 9, 4
+      body="Nyame Mail",            -- 9, 4
       hands="Bunzi's Gloves",       -- 8, 3
       legs="Nyame Flanchard",
       feet="Nyame Sollerets",       -- 7, 3

@@ -566,13 +566,13 @@ function get_sets()
       main={ name="Bunzi's Rod", augments={'Path: A',}},              -- 10
       sub="Ammurapi Shield",
       ammo={ name="Ghastly Tathlum +1", augments={'Path: A',}},
-      head="Arbatel bonnet +3",               -- assume ebullience    
-      body="Agwu's Robe",
+      head="Arbatel bonnet +3",                                       -- assume ebullience    
+      body="Nyame Mail",                                              --  6, 4
       hands="Agwu's Gages",                                           --  8, 6
-      legs="Agwu's Slops",                                            --  9
-      feet="Arbatel Loafers +3",                                      --  0, 5
+      legs="Nyame Flanchard",                                         --  7, 5
+      feet="Arbatel Loafers +3",                                      --     5
       neck={ name="Argute Stole +2", augments={'Path: A',}},          -- 10
-      waist="Hachirin-no-Obi",                -- assume weather
+      waist="Hachirin-no-Obi",                                        -- assume weather
       left_ear="Regal Earring",
       right_ear="Malignance Earring",
       left_ring="Freke Ring",
@@ -638,11 +638,11 @@ function get_sets()
     sets.midcast.DarkHelix = {
       main={ name="Bunzi's Rod", augments={'Path: A',}},
       sub="Ammurapi Shield",
-      ammo="Ghastly Tathlum +1",
-      head="Agwu's Cap",
+	  ammo="Ghastly Tathlum +1",
+      head="Arbatel bonnet +3",               -- assume ebullience    
       body="Arbatel Gown +3",
       hands="Arbatel Bracers +3",
-      legs="Agwu's Slops",    
+      legs="Arbatel Pants +3",
       feet="Arbatel Loafers +3",
       neck={ name="Argute Stole +2", augments={'Path: A',}},
       waist="Skrymir Cord +1",
@@ -706,9 +706,9 @@ function get_sets()
      sub="Ammurapi Shield",
      ammo="Ghastly Tathlum +1",
      head="Agwu's Cap",
-     body="Agwu's Robe",
+     body="Nyame Nail",
      hands={ name="Amalric Gages +1", augments={'INT+12','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
-     legs="Agwu's Slops",
+     legs="Nyame Flanchard",
      feet={ name="Amalric Nails +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
      neck={ name="Argute Stole +2", augments={'Path: A',}},                                    
      waist="Sacro Cord",
@@ -808,13 +808,13 @@ function get_sets()
      right_ear={ name="Odnowa Earring +1", augments={'Path: A',}},
      body="Pinga Tunic +1",                                                                              -- 15 fc
      hands="Acad. Bracers +3",                                                                           --  9 fc,  3 haste
-     left_ring="Defending Ring",
-     right_ring="Kishar Ring",                                                                           --  4 fc
+     left_ring={name="Chirich Ring +1",bag="wardrobe 2"},
+     right_ring={name="Chirich Ring +1",bag="wardrobe 4"},
      back=Lugh.MP_FC,                                                                                    -- 10 fc
      waist="Witful Belt",                                                                                --  3 fc,  3 haste
      legs="Psycloth Lappas",                                                                             --  7 fc,  5 haste
      feet="Acad. Loafers +3",                                                                            --         3 haste
-   }                                                                                               -- 63 fc, 26 haste
+   }                                                                                                     -- 59 fc, 26 haste
    
    sets.midcast["Aero"] = sets.midcast.SC_Open
    sets.midcast["Blizzard"] = sets.midcast.SC_Open
