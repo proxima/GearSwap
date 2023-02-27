@@ -276,7 +276,7 @@ function get_sets()
       
     -- Weapon Skills sets just add them by name.
     sets.me["Heavy Swing"] = {
-      ammo="Floestone",
+      ammo="Crepuscular Pebble",
       head="Nyame Helm",
       body="Nyame Mail",
       hands="Nyame Gauntlets",
@@ -413,7 +413,7 @@ function get_sets()
     }
 
     sets.me["Black Halo"] = {
-      ammo="Floestone",
+      ammo="Crepuscular Pebble",
       head="Nyame Helm",
       body="Nyame Mail",
       hands="Nyame Gauntlets",
@@ -476,7 +476,7 @@ function get_sets()
       back=Lugh.MP_FC,           -- 10 fc
       waist="Embla sash",        -- 5 fc
 	  legs="Pinga Pants +1",     -- 13 fc
-      feet={ name="Merlinic Crackows", augments={'Attack+22','"Fast Cast"+7',}}, -- 12 fc, 3 haste
+      feet={ name="Merlinic Crackows", augments={'"Fast Cast"+7','MND+10','"Mag.Atk.Bns."+4',}}, -- 12 fc, 3 haste
     }
 
    sets.precast["Dispelga"] = set_combine(sets.precast.casting, {
@@ -645,7 +645,7 @@ function get_sets()
      back=Lugh.DT,
      waist="Witful Belt",
 	 legs={ name="Merlinic Shalwar", augments={'Mag. Acc.+15','"Fast Cast"+7','CHR+8','"Mag.Atk.Bns."+4',}}, -- 7 fc (Pinga pants +1)
-     feet={ name="Merlinic Crackows", augments={'Attack+22','"Fast Cast"+7',}}, -- 12 fc, 3 haste
+     feet={ name="Merlinic Crackows", augments={'"Fast Cast"+7','MND+10','"Mag.Atk.Bns."+4',}}, -- 12 fc, 3 haste
    }
 
    sets.midcast["Sublimation"] = {}
@@ -756,7 +756,6 @@ function get_sets()
    
    sets.midcast.SC_Open = {
      main="Malignance Pole", 
-     -- main="Hvergelmir", -- For when you have low haste buffs during tabula and recast is important
      sub="Khonsu",                                                                                       --         4 haste
      ammo="Staunch Tathlum +1",
      head={ name="Vanya Hood", augments={'MP+50','"Fast Cast"+10','Haste+2%',}},                         -- 10 fc,  8 haste
