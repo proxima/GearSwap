@@ -311,7 +311,7 @@ function get_sets()
     
     sets.me["Shell Crusher"] = {
       ammo="Pemphredo Tathlum",
-      head="Arbatel Bonnet +2",
+      head="Arbatel Bonnet +3",
       body="Arbatel Gown +2",
       hands="Arbatel Bracers +2",
       legs="Arbatel Pants +2",
@@ -362,7 +362,7 @@ function get_sets()
     sets.me["Omniscience"] = {
       ammo="Sroda Tathlum",
       head="Pixie hairpin +1",
-      -- head="Arbatel Bonnet +2",
+      -- head="Arbatel Bonnet +3",
       body="Arbatel Gown +2",
       hands="Arbatel Bracers +2",
       legs="Nyame Flanchard",
@@ -441,7 +441,7 @@ function get_sets()
     -- Buff Sets
     ------------
     -- Gear that needs to be worn to **actively** enhance a current player buff.
-    sets.buff['Rapture'] = {head="Arbatel bonnet +2"}
+    sets.buff['Rapture'] = {head="Arbatel bonnet +3"}
     sets.buff['Perpetuance'] = {hands="Arbatel Bracers +2"}
     sets.buff['Immanence'] = {}
     sets.buff['Penury'] = {}
@@ -449,7 +449,7 @@ function get_sets()
     sets.buff['Celerity'] = {feet="Pedagogy loafers +1"}
     sets.buff['Alacrity'] = {feet="Pedagogy loafers +1"}
     sets.buff['Klimaform'] = {feet="Arbatel Loafers +3"}
-    sets.buff['Ebullience'] = {head="Arbatel bonnet +2"}
+    sets.buff['Ebullience'] = {head="Arbatel bonnet +3"}
 
     ---------------
     -- Casting Sets
@@ -544,7 +544,7 @@ function get_sets()
       main={ name="Bunzi's Rod", augments={'Path: A',}}, 
       sub="Ammurapi Shield",
       ammo={ name="Ghastly Tathlum +1", augments={'Path: A',}},
-      head="Arbatel bonnet +2",               -- assume ebullience
+      head="Arbatel bonnet +3",               -- assume ebullience
       body="Agwu's Robe",
       hands="Agwu's Gages",
       legs="Agwu's Slops",
@@ -910,7 +910,7 @@ function get_sets()
     sets.midcast.regen.hybrid = {
       main="Musa",
       sub="Khonsu",
-      head="Arbatel Bonnet +2",
+      head="Arbatel Bonnet +3",
       neck="Melic torque",
       right_ear="Mimir Earring",
       left_ear="Regal Earring",

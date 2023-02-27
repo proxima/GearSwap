@@ -142,7 +142,7 @@ function user_setup()
     -- How many extra songs we can keep from Daurdabla/Terpander
     info.ExtraSongs = 2
 
-    send_command('bind ^` gs c cycle SongMode')
+    send_command('bind ^` input /ma "Chocobo Mazurka" <me>')
     send_command('bind !` gs c cycle SongMode')
     send_command('bind !p input /ja "Pianissimo" <me>')
 
