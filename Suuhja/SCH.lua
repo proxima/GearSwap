@@ -384,8 +384,8 @@ function get_sets()
 
     sets.me["Omniscience"] = {
       ammo="Sroda Tathlum",
-      head="Pixie hairpin +1",
-      -- head="Arbatel Bonnet +3",
+      -- head="Pixie hairpin +1",
+      head="Arbatel Bonnet +3",
       body="Arbatel Gown +3",
       hands="Arbatel Bracers +3",
       legs="Nyame Flanchard",
@@ -638,7 +638,7 @@ function get_sets()
     sets.midcast.DarkHelix = {
       main={ name="Bunzi's Rod", augments={'Path: A',}},
       sub="Ammurapi Shield",
-	  ammo="Ghastly Tathlum +1",
+      ammo="Ghastly Tathlum +1",
       head="Arbatel bonnet +3",               -- assume ebullience    
       body="Arbatel Gown +3",
       hands="Arbatel Bracers +3",
@@ -698,6 +698,23 @@ function get_sets()
      legs="Agwu's Slops",
      feet="Agwu's Pigaches",
    })
+
+   sets.midcast.nuking.DivineMagic = {
+     main="Daybreak",
+     sub="Ammurapi Shield",
+     ammo="Pemphredo Tathlum",
+     head="Arbatel Bonnet +3",
+     body="Nyame Mail",
+     hands="Agwu's Gages",
+     legs="Nyame Flanchard",
+     feet="Arbatel Loafers +3",
+     waist="Sacro Cord",	 
+     left_ear="Regal Earring",
+     right_ear="Malignance Earring",
+     left_ring="Metamorph ring +1",
+     right_ring="Freke Ring",
+     back=Lugh.MND_WSD
+   }
    
    -- used with toggle, default: F10
    -- Pieces to swap from free nuke to Magic Burst    
@@ -706,10 +723,10 @@ function get_sets()
      sub="Ammurapi Shield",
      ammo="Ghastly Tathlum +1",
      head="Agwu's Cap",
-     body="Nyame Nail",
-     hands={ name="Amalric Gages +1", augments={'INT+12','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
+     body="Nyame Mail",
+     hands="Agwu's Gages",
      legs="Nyame Flanchard",
-     feet={ name="Amalric Nails +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
+     feet="Arbatel Loafers +3",
      neck={ name="Argute Stole +2", augments={'Path: A',}},                                    
      waist="Sacro Cord",
      left_ear="Regal Earring",
@@ -721,12 +738,12 @@ function get_sets()
 
    -- used with toggle, default: F10
    -- Pieces to swap from free nuke to Magic Burst
-   sets.midcast.MB.acc = set_combine(sets.midcast.MB.normal, {   
-     hands="Agwu's Gages",
-     feet="Arbatel Loafers +3",
+   sets.midcast.MB.acc = set_combine(sets.midcast.MB.normal, {
+     body="Agwu's Robe",
+     legs="Agwu's Slops",
      waist="Acuity Belt +1",
    })
-      
+           
    sets.midcast.nuking.occult = set_combine(sets.midcast.nuking.normal, { 
      ammo="Seraphic Ampulla",
      head="Mall. Chapeau +2",
@@ -795,7 +812,7 @@ function get_sets()
      sub="Khonsu",
      head=empty, 
      body="Crepuscular Cloak",
-	 hands="Academic's bracers +3",
+     hands="Academic's bracers +3",
    })
    
    sets.midcast.SC_Open = {

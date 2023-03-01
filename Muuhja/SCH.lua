@@ -434,7 +434,7 @@ function get_sets()
       right_ear="Malignance Earring",  
       left_ring="Rufescent Ring",
       right_ring="Metamorph ring +1",
-	  back=Lugh.MND_WSD
+      back=Lugh.MND_WSD
     })
 
     ------------
@@ -475,7 +475,7 @@ function get_sets()
       ring2="Kishar ring",       -- 4 fc
       back=Lugh.MP_FC,           -- 10 fc
       waist="Embla sash",        -- 5 fc
-	  legs="Pinga Pants +1",     -- 13 fc
+      legs="Pinga Pants +1",     -- 13 fc
       feet={ name="Merlinic Crackows", augments={'"Fast Cast"+7','MND+10','"Mag.Atk.Bns."+4',}}, -- 12 fc, 3 haste
     }
 
@@ -644,7 +644,7 @@ function get_sets()
      ring2="Kishar ring",       -- 4 fc
      back=Lugh.DT,
      waist="Witful Belt",
-	 legs={ name="Merlinic Shalwar", augments={'Mag. Acc.+15','"Fast Cast"+7','CHR+8','"Mag.Atk.Bns."+4',}}, -- 7 fc (Pinga pants +1)
+     legs={ name="Merlinic Shalwar", augments={'Mag. Acc.+15','"Fast Cast"+7','CHR+8','"Mag.Atk.Bns."+4',}}, -- 7 fc (Pinga pants +1)
      feet={ name="Merlinic Crackows", augments={'"Fast Cast"+7','MND+10','"Mag.Atk.Bns."+4',}}, -- 12 fc, 3 haste
    }
 
@@ -657,9 +657,9 @@ function get_sets()
      ammo="Ghastly Tathlum +1",
      head="Agwu's Cap",
      body="Agwu's Robe",
-	 hands="Agwu's Gages",
-	 legs="Agwu's Slops",
-	 feet="Agwu's Pigaches",
+     hands="Agwu's Gages",
+     legs="Agwu's Slops",
+     feet="Agwu's Pigaches",
      neck={ name="Argute Stole +2", augments={'Path: A',}},
      waist="Sacro Cord",
      left_ear="Regal Earring",
@@ -671,6 +671,23 @@ function get_sets()
 
    sets.midcast.nuking.acc = set_combine(sets.midcast.nuking.normal, {
    })
+
+   sets.midcast.nuking.DivineMagic = {
+     main="Daybreak",
+     sub="Ammurapi Shield",
+     ammo="Pemphredo Tathlum",
+     head="Arbatel Bonnet +3",
+     body="Agwu's Robe",
+     hands="Agwu's Gages",
+    legs="Agwu's Slops",
+     feet="Arbatel Loafers +3",
+     waist="Sacro Cord",	 
+     left_ear="Regal Earring",
+     right_ear="Malignance Earring",
+     left_ring="Metamorph ring +1",
+     right_ring="Freke Ring",
+    back=Lugh.MND_WSD
+   }
    
    -- used with toggle, default: F10
    -- Pieces to swap from free nuke to Magic Burst    
@@ -770,7 +787,7 @@ function get_sets()
      waist="Witful Belt",                                                                                --  3 fc,  3 haste
      legs="Psycloth Lappas",                                                                             --  7 fc,  5 haste
      feet="Acad. Loafers +3",                                                                            --         3 haste
-   }                                                                                               -- 63 fc, 26 haste
+   }                                                                                                     -- 63 fc, 26 haste
    
    sets.midcast["Aero"] = sets.midcast.SC_Open
    sets.midcast["Blizzard"] = sets.midcast.SC_Open

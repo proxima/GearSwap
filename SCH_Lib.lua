@@ -667,6 +667,8 @@ function midcast(spell)
         equip(sets.midcast.IntEnfeebling)
     elseif spell.skill == 'Enfeebling Magic' and spell.type == 'WhiteMagic' then -- to do: better rule for this.
         equip(sets.midcast.MndEnfeebling)
+    elseif spell.skill == 'Divine Magic' then
+        equip(sets.midcast.nuking.DivineMagic)
     elseif spell.type == 'BlackMagic' then
         if mBurst.value == true then
             equip(sets.midcast.MB[nukeModes.current])
@@ -1033,9 +1035,17 @@ function apply_grimoire_bonuses(spell, action, spellMap)
     if Buff['Perpetuance'] and spell.type =='WhiteMagic' and spell.skill == 'Enhancing Magic' then
         equip(sets.buff['Perpetuance'])
     end
-    if Buff['Rapture'] and (spellMap == 'Cure' or spellMap == 'Curaga') then
-        equip(sets.buff['Rapture'])
+
+    if spellMap == 'Cure' or spellMap == 'Curaga' or spellMap == 'Holy' or spellMap == 'Banish' then
+        if Buff['Rapture'] then
+            equip(sets.buff['Rapture'])
+        end
+		
+        if Buff['Klimaform'] and spell.element == world.weather_element then
+            equip(sets.buff['Klimaform'])
+        end		 
     end
+		
     if spell.skill == 'Elemental Magic' and spellMap ~= 'ElementalEnfeeble' then
         if Buff['Ebullience'] and spell.english ~= 'Impact' then
             equip(sets.buff['Ebullience'])
