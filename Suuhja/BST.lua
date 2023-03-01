@@ -25,6 +25,7 @@ function user_setup()
   send_command('bind ^f8 gs c cycle CorrelationMode')
   select_default_macro_book()
 
+  
   Cape = {}
   Cape.STP      = { name="Artio's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Store TP"+10','Phys. dmg. taken-10%',}}
   Cape.PET_PHYS = { name="Artio's Mantle", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Eva.+20 /Mag. Eva.+20','Pet: Attack+10 Pet: Rng.Atk.+10','Pet: "Regen"+10','Pet: Damage taken -5%',}}
@@ -33,7 +34,7 @@ function user_setup()
   Cape.STR_WSD  = { name="Artio's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}
   Cape.REND     = { name="Artio's Mantle", augments={'CHR+20','Mag. Acc+20 /Mag. Dmg.+20','CHR+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}
 
-  send_command('bind @o sat youcommand Muuhja "Horde Lullaby II"')
+  send_command('bind @o sat youcommand Muuhja "Sleepga"')
   send_command('bind @p sat youcommand Zuuhja "Sleepga"')
   send_command('bind @n sat youcommand Muuhja "Carnage Elegy"')
   send_command('bind @1 send Zuuhja input /ma "Cure IV" Aller')
@@ -98,6 +99,9 @@ macc_ready_moves = S{
     send_command('unbind @2')
     send_command('unbind !1')
     send_command('unbind !2')    
+
+    send_command('unbind @o')
+    send_command('unbind @p')
 end
  
 -- Select default macro book on initial load or subjob change.
