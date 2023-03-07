@@ -735,11 +735,11 @@ function init_gear_sets()
     -- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
     sets.idle = {
       ammo="Amar Cluster",
-      head={ name="Nyame Helm", augments={'Path: B',}},
+      head="Nyame Helm",
       body="Hashishin mintan +3",
-      hands={ name="Nyame Gauntlets", augments={'Path: B',}},
-      legs={ name="Nyame Flanchard", augments={'Path: B',}},
-      feet={ name="Nyame Sollerets", augments={'Path: B',}},
+      hands="Nyame Gauntlets",
+      legs="Nyame Flanchard",
+      feet="Nyame Sollerets",
       neck={ name="Bathy Choker +1", augments={'Path: A',}},
       waist="Svelt. Gouriz +1",
       left_ear="Eabani Earring",

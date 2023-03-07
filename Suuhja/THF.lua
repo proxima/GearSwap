@@ -96,10 +96,7 @@ function init_gear_sets()
     -- Special sets (required by rules)
     --------------------------------------
 
-    sets.TreasureHunter = {
-      hands={ name="Herculean Gloves", augments={'"Conserve MP"+1','Accuracy+21','"Treasure Hunter"+2',}}, 
-      feet="Skulker's poulaines +2"
-    }
+    sets.TreasureHunter = { feet="Skulker's poulaines +3" }
 
     sets.Kiting = {feet="Pillager's Poulaines +3"}
 
@@ -117,13 +114,13 @@ function init_gear_sets()
     --------------------------------------
 
     -- Precast sets to enhance JAs
-    sets.precast.JA['Collaborator'] = {head="Skulker's Bonnet +1"}
-    sets.precast.JA['Accomplice'] = {head="Skulker's Bonnet +1"}
+    sets.precast.JA['Collaborator'] = {head="Skulker's Bonnet +2"}
+    sets.precast.JA['Accomplice'] = {head="Skulker's Bonnet +2"}
     sets.precast.JA['Flee'] = {feet="Pillager's Poulaines +3"}
     sets.precast.JA['Hide'] = {body="Pillager's Vest +3"}
     sets.precast.JA['Conspirator'] = {body="Skulker's Vest +3"}
     sets.precast.JA['Steal'] = {head="Plunderer's Bonnet +3",hands="Pillager's Armlets +3",legs="Pillager's Culottes +3",feet="Pillager's Poulaines +3"}
-    sets.precast.JA['Despoil'] = {legs="Skulker's Culottes +1",feet="Skulker's Poulaines +2"}
+    sets.precast.JA['Despoil'] = {legs="Skulker's Culottes +2",feet="Skulker's Poulaines +3"}
     sets.precast.JA['Perfect Dodge'] = {hands="Plunderer's Armlets +1"}
     sets.precast.JA['Feint'] = {legs="Plunderer's Culottes +3"}
 
@@ -156,7 +153,7 @@ function init_gear_sets()
       head="Nyame Helm",
       body="Skulker's Vest +3",
       hands="Nyame Gauntlets",
-      legs="Nyame Flanchard",
+      legs="Plunderer's culottes +3",
       feet="Nyame Sollerets",
       neck="Fotia Gorget",
       waist="Fotia Belt",
@@ -181,7 +178,7 @@ function init_gear_sets()
       left_ring="Regal Ring",
       right_ring="Ilabrat Ring",
       waist="Fotia Belt",
-      legs="Meghanada Chausses +2",
+      legs="Gleti's Breeches",
       feet="Plunderer's Poulaines +3",
       back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}, -- Make AGI/DA cape
     })
@@ -226,7 +223,7 @@ function init_gear_sets()
       head="Nyame Helm",
       body="Skulker's Vest +3",
       hands="Nyame Gauntlets",
-      legs="Nyame Flanchard",  
+      legs="Plunderer's Culottes +3",
       feet="Nyame Sollerets",
       neck="Assassin's Gorget +2",
       waist="Kentarch Belt +1",
@@ -252,9 +249,9 @@ function init_gear_sets()
     sets.precast.WS["Savage Blade"] = set_combine(sets.precast.WS, {
       ammo={ name="Seeth. Bomblet +1", augments={'Path: A',}},
       head="Nyame Helm",
-      body="Nyame Mail",
+      body="Skulker's Vest +3",
       hands="Nyame Gauntlets",
-      legs="Nyame Flanchard",
+      legs="Plunderer's Culottes +3",
       feet="Nyame Sollerets",
       neck="Republican platinum medal",
       waist="Sailfi Belt +1",
@@ -329,14 +326,14 @@ function init_gear_sets()
     
     sets.midcast["Sleepga"] = {
       ammo="Pemphredo Tathlum",
-      head="Malignance Chapeau",
-      body="Malignance Tabard",
-      hands={ name="Herculean Gloves", augments={'"Conserve MP"+1','Accuracy+21','"Treasure Hunter"+2',}},
-      legs="Malignance Tights",
-      feet="Skulk. Poulaines +2",
-      neck="Sanctity Necklace",
+      head="Skulker's Bonnet +2",
+      body="Skulker's Vest +3",
+      hands="Skulker's Armlets +2",
+      legs="Skulker's Culottes +2",
+      feet="Skulk. Poulaines +3",
+      neck="Assassin's gorget +2",
       waist="Skrymir Cord +1",
-      left_ear="Sherida Earring",
+      left_ear="Skulker's earring +1",
       right_ear="Telos Earring",
       left_ring={ name="Metamor. Ring +1", augments={'Path: A',}},
       right_ring="Stikini Ring +1",

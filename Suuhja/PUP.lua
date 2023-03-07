@@ -516,7 +516,7 @@ function init_gear_sets()
         neck="Shulmanu Collar",
         waist="Moonbow Belt +1",
         left_ear={name="Mache Earring +1",bag="wardrobe 4"},
-        right_ear={name="Mache Earring +1",bag="wardrobe 5"},
+        right_ear="Karagoz earring +1",
         left_ring="Niqmaddu Ring",
         right_ring="Gere Ring",
         back=Visucius.MasterDA

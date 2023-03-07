@@ -413,10 +413,10 @@ function init_gear_sets()
     }
 
     sets.precast.WS['Hot Shot'] = {ammo=gear.WSbullet,
-      head={ name="Nyame Helm", augments={'Path: B',}},
-      body={ name="Nyame Mail", augments={'Path: B',}},
+      head="Nyame Helm",
+      body="Laksa. Frac +3",
       hands="Chasseur's Gants +3",
-      legs={ name="Nyame Flanchard", augments={'Path: B',}},
+      legs="Nyame Flanchard",
       feet={ name="Lanun Bottes +3", augments={'Enhances "Wild Card" effect',}},
       neck="Fotia Gorget",
       waist="Fotia Belt",
@@ -428,8 +428,8 @@ function init_gear_sets()
     }
 
     sets.precast.WS['Hot Shot'].Acc = set_combine({ammo=gear.RAccbullet,
-      body="Laksa. Frac +3",
-      feet={ name="Nyame Sollerets", augments={'Path: B',}},
+      legs="Ikenga's Trousers",
+      feet="Nyame Sollerets",
       right_ring="Regal Ring",
     })
 
@@ -440,8 +440,8 @@ function init_gear_sets()
     })
 
     sets.precast.WS['Leaden Salute'].Acc = set_combine(sets.precast.WS['Leaden Salute'], {
-      head={ name="Nyame Helm", augments={'Path: B',}},
-      feet={ name="Nyame Sollerets", augments={'Path: B',}}
+      head="Nyame Helm",
+      feet="Nyame Sollerets",
     })
 
     sets.precast.WS['Evisceration'] = {
@@ -465,9 +465,9 @@ function init_gear_sets()
 
     sets.precast.WS['Savage Blade'] = {
       head="Nyame Helm",
-      body="Nyame Mail",
+      body="Ikenga's Vest",
       hands="Nyame Gauntlets",
-      legs="Nyame Flanchard",
+      legs="Chasseur's Culottes +3",
       feet="Nyame Sollerets",
       neck="Republican platinum medal",
       waist={ name="Sailfi Belt +1", augments={'Path: A',}},
@@ -767,11 +767,11 @@ function init_gear_sets()
     ------------------------------------------------------------------------------------------------
 
     sets.engaged.Hybrid = {
-      head={ name="Nyame Helm", augments={'Path: B',}},
-      body={ name="Nyame Mail", augments={'Path: B',}},
-      hands={ name="Nyame Gauntlets", augments={'Path: B',}},
+      head="Nyame Helm",
+      body="Nyame Mail",
+      hands="Nyame Gauntlets",
       legs="Chas. Culottes +3",
-      feet={ name="Nyame Sollerets", augments={'Path: B',}},
+      feet="Nyame Sollerets",
       neck="Iskur Gorget",
       waist={ name="Sailfi Belt +1", augments={'Path: A',}},
       left_ear="Crepuscular Earring",

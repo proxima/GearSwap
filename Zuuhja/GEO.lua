@@ -503,6 +503,8 @@ function get_sets()
      right_ring="Metamorph Ring +1",
      back={ name="Nantosuelta's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Phys. dmg. taken-10%',}},
    })
+   
+   sets.midcast.Absorb = sets.midcast.IntEnfeebling
 
    sets.midcast.Dispelga = set_combine(sets.midcast.IntEnfeebling, {
      main="Daybreak",

@@ -782,7 +782,7 @@ function get_sets()
      back="Aurist's Cape +1"
    }
    
-   sets.midcast["Absorb-TP"] = set_combine(sets.midcast.Stun, {})
+   sets.midcast.Absorb = set_combine(sets.midcast.Stun, {})
 
    sets.midcast.IntEnfeebling = {
      main="Tupsimati",

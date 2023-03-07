@@ -350,9 +350,9 @@ function get_sets()
     sets.me["Savage Blade"] = {
       ammo="Coiste Bodhar",
       head="Nyame Helm",
-      body="Nyame Mail",
+      body="Bunzi's Robe",
       hands="Nyame Gauntlets",
-      legs="Nyame Flanchard",
+      legs=EMPY.Legs,
       feet="Nyame Sollerets",
       neck="Republican platinum medal",
       waist="Sailfi Belt +1",
@@ -366,9 +366,9 @@ function get_sets()
     sets.me["Black Halo"] = {
       ammo="Regal Gem",
       head="Nyame Helm",
-      body="Nyame Mail",
+      body="Bunzi's Robe",
       hands="Nyame Gauntlets",
-      legs="Nyame Flanchard",
+      legs=EMPY.Legs,
       feet="Nyame Sollerets",
       neck="Republican platinum medal",
       waist="Kentarch Belt +1",
@@ -394,7 +394,7 @@ function get_sets()
       right_ring="Ilabrat Ring",
       back=RDMCape.BlackHalo, -- Make cape
       waist="Fotia Belt",
-      legs="Nyame Flanchard", -- "Zoar Subligar +1",
+      legs=EMPY.Legs,
       feet="Thereoid Greaves",
     }
     
@@ -446,7 +446,7 @@ function get_sets()
       head="Nyame Helm",
       body="Nyame Mail",
       hands="Jhakri Cuffs +2",
-      legs=EMPY.Legs,
+      legs="Nyame Flanchard",
       feet=EMPY.Feet,
       neck="Sibyl Scarf",
       waist="Orpheus's Sash",

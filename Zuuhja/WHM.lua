@@ -321,11 +321,11 @@ function init_gear_sets()
       back="Twilight Cape",
       waist="Hachirin-no-Obi",
     })
-	
+
     sets.midcast.Esuna = set_combine(sets.midcast.CureSolace, {
-	  main="Asclepius", 
-	  sub="Genmei Shield"
-	})	
+      main="Asclepius", 
+      sub="Genmei Shield"
+    })
 
     --sets.midcast.CureMelee = sets.midcast.CureSolace
 
@@ -406,7 +406,7 @@ function init_gear_sets()
     })
 
     sets.midcast.RegenDuration = set_combine(sets.midcast.EnhancingDuration, {
-      hands="Ebers Mitts +2",
+      hands="Ebers Mitts +3",
       legs="Th. Pant. +3",
       feet="Theo. Duckbills +3",
     })
@@ -432,7 +432,7 @@ function init_gear_sets()
       sub="Ammurapi Shield",
       head="Ebers Cap +1",
       body="Ebers Bliaut +3",
-      hands="Ebers Mitts +2",
+      hands="Ebers Mitts +3",
       legs="Piety Pantaloons +3",
       feet="Ebers Duckbills +3",
       back={ name="Alaunus's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','MND+10','"Fast Cast"+10','Phys. dmg. taken-10%',}},
@@ -502,9 +502,9 @@ function init_gear_sets()
     }
 
     sets.midcast.MndEnfeebles = {
-      main="Daybreak",
+      main="Asclepius",
       sub="Ammurapi Shield",
-      ammo="Hydrocera",
+      ammo="Pemphredo Tathlum",
       head=empty, 
       body="Cohort Cloak +1",
       hands="Kaykaus Cuffs +1",
@@ -566,12 +566,12 @@ function init_gear_sets()
     }
 
     sets.idle.DT = set_combine(sets.idle, {
-      main="Malignance pole",
-      sub="Enki Strap",
+      main="Asclepius",
+      sub="Genmei Shield",
       neck="Loricate Torque +1",
       ammo="Staunch Tathlum +1",
       head="Nyame Helm",
-      body="Ebers Bliaut +3",
+      body="Nyame Mail",
       hands="Nyame Gauntlets",
       legs="Nyame Flanchard",
       feet="Nyame Sollerets",
@@ -586,12 +586,16 @@ function init_gear_sets()
       ammo="Staunch Tathlum +1",
       head="Bunzi's Hat",
       body="Ebers Bliaut +3",
-      hands="Bunzi's Gloves",
+      hands="Ebers Mitts +3",
       legs="Ebers Pantaloons +3",
       feet="Ebers Duckbills +3",
-      right_ring="Inyanga ring",
-      right_ear="Etiolation earring",      
-    })
+      neck="Warder's Charm +1",
+      waist="Carrier's Sash",
+      left_ear="Sanare Earring",
+      right_ear="Etiolation Earring",
+      left_ring="Inyanga Ring",
+      right_ring="Shadow Ring",
+  })
 
     sets.idle.Town = set_combine(sets.idle.MEva, {
       right_ring="Shneddick Ring +1"
@@ -630,7 +634,7 @@ function init_gear_sets()
     }
 
     -- Buff sets: Gear that needs to be worn to actively enhance a current player buff.
-    sets.buff['Divine Caress'] = {hands="Ebers Mitts +2", back="Mending Cape"}
+    sets.buff['Divine Caress'] = {hands="Ebers Mitts +3", back="Mending Cape"}
     sets.buff['Devotion'] = {head="Piety Cap +1"}
     sets.buff.Sublimation = {waist="Embla Sash"}
 

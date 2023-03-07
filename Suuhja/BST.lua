@@ -141,9 +141,9 @@ function init_gear_sets()
     sets.precast.WS['Decimation'] = {
       ammo="Coiste Bodhar",
       head="Nyame Helm",
-      body="Nukumi Gausape +3",
+      body="Gleti's Cuirass",
       hands="Nyame Gauntlets",
-      legs="Nyame Flanchard",
+      legs="Gleti's Breeches",
       feet="Nukumi Ocreae +3",
       neck="Fotia Gorget",
       waist="Sailfi Belt +1",
@@ -163,7 +163,7 @@ function init_gear_sets()
       head="Ankusa Helm +3",
       body="Nukumi Gausape +3",
       hands="Nyame Gauntlets",
-      legs="Nyame Flanchard",
+      legs="Gleti's Breeches",
       feet="Nyame Sollerets",
       neck="Beastmaster collar +2",
       waist="Sailfi Belt +1",
@@ -178,7 +178,7 @@ function init_gear_sets()
     sets.precast.WS['Mistral Axe'] = set_combine(sets.precast.WS['Savage Blade'], {})
 
     sets.precast.WS['Onslaught'] = set_combine(sets.precast.WS['Savage Blade'], {
-	})
+    })
        
     sets.precast.WS['Primal Rend'] = {
       ammo="Oshasha's Treatise",
@@ -247,7 +247,7 @@ function init_gear_sets()
       main="Agwu's Axe",
       sub="Sacro Bulwark",
       ammo="Voluspa Tathlum",
-      head="Nukumi Cabasset +2",
+      head="Nukumi Cabasset +3",
       body="Nukumi Gausape +3",
       hands="Nukumi Manoplas +3",
       legs="Nukumi Quijotes +3",
