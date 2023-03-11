@@ -584,7 +584,11 @@ function init_gear_sets()
       back="Aurist's Cape +1",
     }
 
-    sets.midcast['Absorb-TP'] = set_combine(sets.midcast.Impact, {})
+    sets.midcast['Absorb-TP'] = set_combine(sets.midcast.Impact, {
+      head={ name="Bunzi's Hat", augments={'Path: A',}},
+      body="Ebers Bliaut +3",
+      back={ name="Alaunus's Cape", augments={'MND+20','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Haste+10','Mag. Evasion+15',}},  
+    })
 
     -- Initializes trusts at iLvl 119
     sets.midcast.Trust = sets.precast.FC
@@ -624,7 +628,7 @@ function init_gear_sets()
       body="Nyame Mail",
       hands="Nyame Gauntlets",
       legs="Nyame Flanchard",
-      feet="Nyame Sollerets",,
+      feet="Nyame Sollerets",
       neck={ name="Loricate Torque +1", augments={'Path: A',}},
       waist="Carrier's Sash",
       left_ear="Tuisto Earring",

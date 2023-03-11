@@ -37,7 +37,7 @@
         gs c nuke t5                    Cast tier 5 nuke of saved element 
         gs c nuke helix                 Cast helix2 nuke of saved element 
         gs c nuke storm                 Cast Storm II buff of saved element  
-                    
+
         gs c sc tier                    Cycles SC Tier (1 & 2)
         gs c sc castsc                  Cast All the stuff to create a SC burstable by the nuke element set with '/console gs c nuke element'.
 
@@ -313,7 +313,7 @@ function get_sets()
       ammo="Pemphredo Tathlum",
       head="Arbatel Bonnet +3",
       body="Arbatel Gown +2",
-      hands="Arbatel Bracers +2",
+      hands="Arbatel Bracers +3",
       legs="Arbatel Pants +2",
       feet="Arbatel Loafers +3",
       neck="Lissome Necklace",
@@ -361,10 +361,9 @@ function get_sets()
 
     sets.me["Omniscience"] = {
       ammo="Sroda Tathlum",
-      head="Pixie hairpin +1",
-      -- head="Arbatel Bonnet +3",
+      head="Arbatel Bonnet +3",
       body="Arbatel Gown +2",
-      hands="Arbatel Bracers +2",
+      hands="Arbatel Bracers +3",
       legs="Nyame Flanchard",
       feet="Arbatel Loafers +3",
       neck={ name="Argute Stole +2", augments={'Path: A',}},
@@ -442,7 +441,7 @@ function get_sets()
     ------------
     -- Gear that needs to be worn to **actively** enhance a current player buff.
     sets.buff['Rapture'] = {head="Arbatel bonnet +3"}
-    sets.buff['Perpetuance'] = {hands="Arbatel Bracers +2"}
+    sets.buff['Perpetuance'] = {hands="Arbatel Bracers +3"}
     sets.buff['Immanence'] = {}
     sets.buff['Penury'] = {}
     sets.buff['Parsimony'] = {}
@@ -565,7 +564,7 @@ function get_sets()
       ammo="Ghastly Tathlum +1",
       head="Agwu's Cap",
       body="Arbatel Gown +2",
-      hands="Arbatel Bracers +2",
+      hands="Arbatel Bracers +3",
       legs="Agwu's Slops",    
       feet="Arbatel Loafers +3",
       neck={ name="Argute Stole +2", augments={'Path: A',}},
@@ -583,7 +582,7 @@ function get_sets()
       ammo="Ghastly Tathlum +1",
       head="Agwu's Cap",
       body="Agwu's Robe",
-      hands="Arbatel Bracers +2",
+      hands="Arbatel Bracers +3",
       legs="Agwu's Slops",    
       feet="Arbatel Loafers +3",
       neck={ name="Argute Stole +2", augments={'Path: A',}},
@@ -601,7 +600,7 @@ function get_sets()
       ammo="Ghastly Tathlum +1",
       head="Agwu's Cap",
       body="Arbatel Gown +2",
-      hands="Arbatel Bracers +2",
+      hands="Arbatel Bracers +3",
       legs="Agwu's Slops",    
       feet="Arbatel Loafers +3",
       neck={ name="Argute Stole +2", augments={'Path: A',}},
@@ -619,7 +618,7 @@ function get_sets()
       ammo="Ghastly Tathlum +1",
       head="Agwu's Cap",
       body="Arbatel Gown +2",
-      hands="Arbatel Bracers +2",
+      hands="Arbatel Bracers +3",
       legs="Arbatel Pants +2",
       feet="Arbatel Loafers +3",
       neck={ name="Argute Stole +2", augments={'Path: A',}},
@@ -931,7 +930,7 @@ function get_sets()
       right_ear="Mimir Earring",
       left_ear="Regal Earring",
       body="Telchine chas.",
-      hands="Arbatel Bracers +2", -- Tired of this not swapping properly | hands="Telchine Gloves",
+      hands="Arbatel Bracers +3", -- Tired of this not swapping properly | hands="Telchine Gloves",
       left_ring={name="Stikini Ring +1",bag="wardrobe"},
       right_ring={name="Stikini Ring +1",bag="wardrobe 5"},
       waist="Embla Sash",

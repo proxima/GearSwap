@@ -572,7 +572,7 @@ function get_sets()
       legs="Nyame Flanchard",                                         --  7, 5
       feet="Arbatel Loafers +3",                                      --     5
       neck={ name="Argute Stole +2", augments={'Path: A',}},          -- 10
-      waist="Hachirin-no-Obi",                                        -- assume weather
+      waist="Anrin Obi",                                              -- assume weather, avoid lightsday penalty
       left_ear="Regal Earring",
       right_ear="Malignance Earring",
       left_ring="Freke Ring",
@@ -708,7 +708,7 @@ function get_sets()
      hands="Agwu's Gages",
      legs="Nyame Flanchard",
      feet="Arbatel Loafers +3",
-     waist="Sacro Cord",	 
+     waist="Hachirin-no-Obi",
      left_ear="Regal Earring",
      right_ear="Malignance Earring",
      left_ring="Metamorph ring +1",
@@ -902,7 +902,7 @@ function get_sets()
     })
 
     sets.midcast["Drain"] = set_combine(sets.midcast.nuking.normal, {
-      main="Tupsimati",
+      main="Hvergelmir",
       sub="Khonsu",
       ammo="Pemphredo tathlum",
       head="Pixie hairpin +1",

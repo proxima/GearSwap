@@ -364,7 +364,7 @@ function init_gear_sets()
       head="Maculele Tiara +3",
       body="Nyame Mail",
       hands="Maculele Bangles +3",
-      legs="Nyame Flanchard",
+      legs="Horos Tights +3",
       feet="Gleti's Boots",
       neck="Fotia Gorget",
       waist="Fotia Belt",
@@ -378,7 +378,7 @@ function init_gear_sets()
     sets.precast.WS['Combo'] = set_combine(sets.precast.WS['Asuran Fists'], {
       body="Nyame Mail",
       hands="Nyame Gauntlets",
-      legs="Nyame Flanchard",
+      legs="Horos Tights +3",
       feet="Nyame Sollerets",
       right_ear="Moonshade Earring",
       right_ring="Epona's Ring",
@@ -405,7 +405,7 @@ function init_gear_sets()
       feet={ name="Herculean Boots", augments={'Accuracy+20 Attack+20','Crit. hit damage +4%','STR+8',}},
       neck="Fotia Gorget",
       waist="Fotia Belt",
-      left_ear="Moonshade Earring",
+      left_ear="Sherida Earring",
       right_ear="Odr Earring",
       left_ring="Regal Ring",
       right_ring="Ilabrat Ring",
@@ -415,9 +415,9 @@ function init_gear_sets()
     sets.precast.WS['Rudra\'s Storm'] = set_combine(sets.precast.WS, {
       ammo="Coiste Bodhar",
       head="Maculele Tiara +3",
-      body="Nyame Mail",
+      body="Maculele Casaque +2",
       hands="Maxixi Bangles +3",
-      legs="Nyame Flanchard",
+      legs="Horos Tights +3",
       feet="Nyame Sollerets",
       neck="Etoile Gorget +2",
       waist="Kentarch Belt +1",
@@ -465,12 +465,12 @@ function init_gear_sets()
       right_ring="Gere Ring",
       back={ name="Senuna's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%','Phys. dmg. taken-10%'}},
       waist="Fotia Belt",
-      legs="Nyame Flanchard",
-      feet="Nyame Sollerets" 
+      legs="Horos Tights +3",
+      feet="Nyame Sollerets"
     }
 
     sets.precast.Skillchain = {
-      -- hands="Macu. Bangles +2",
+      -- hands="Macu. Bangles +3",
     }
 
     ------------------------------------------------------------------------------------------------

@@ -703,7 +703,6 @@ function midcast(spell)
         equip(sets.midcast.stoneskin)
     end
 
-    -- Dark based Helix gets "pixie hairpin +1"
     if spellMap == 'DarkHelix' then
         equip(sets.midcast.DarkHelix)
     end

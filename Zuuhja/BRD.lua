@@ -519,11 +519,13 @@ function init_gear_sets()
       neck="Mnbw. Whistle +1",
       ear1="Digni. Earring",
       ear2="Regal Earring",
-      ring1="Stikini Ring +1",
-      ring2="Metamor. Ring +1",
+      left_ring={name="Stikini Ring +1", bag="wardrobe"},
+      right_ring={name="Stikini Ring +1", bag="wardrobe5"},
       waist="Acuity Belt +1",
       back=Cape.FC
     }
+
+    sets.midcast['Dark Magic'] = set_combine(sets.midcast['Enfeebling Magic'], {})
 
     sets.midcast.Dispelga = set_combine(sets.midcast['Enfeebling Magic'], {main="Daybreak", sub="Ammurapi Shield"})
 
