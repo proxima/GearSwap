@@ -460,7 +460,6 @@ function init_gear_sets()
     sets.midcast.Aquaveil = set_combine(sets.midcast.EnhancingDuration, {
       hands="Regal Cuffs",
       waist="Emphatikos Rope",
-
     })
 
     sets.midcast.Auspice = set_combine(sets.midcast.EnhancingDuration, {

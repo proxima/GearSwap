@@ -150,7 +150,7 @@ function init_gear_sets()
     legs=Ody.FC_LEGS,               --  6
     feet=Ody.FC_FEET,               -- 11
     neck="Voltsurge Torque",        --  4
-    waist="Creed Baudrier",
+    waist={name="Platinum moogle belt", priority=15},
     ear1="Tuisto Earring",
     ear2="Etiolation Earring",      --  1
     ring1=MR.One,

@@ -55,13 +55,13 @@ function get_sets()
     -- Add idle modes here if you need more options for your sets
     IdleModes = {'Refresh', 'Favor', 'DT'}
 
-	MerlHands = {}
-	MerlHands.PHYS    = { name="Merlinic Dastanas", augments={'Pet: Attack+28 Pet: Rng.Atk.+28','Blood Pact Dmg.+9','Pet: STR+4','Pet: Mag. Acc.+7',}}
-	MerlHands.MAG     = { name="Merlinic Dastanas", augments={'Pet: Mag. Acc.+25 Pet: "Mag.Atk.Bns."+25','Blood Pact Dmg.+9','Pet: DEX+3','Pet: Mag. Acc.+11',}}
+    MerlHands = {}
+    MerlHands.PHYS    = { name="Merlinic Dastanas", augments={'Pet: Attack+28 Pet: Rng.Atk.+28','Blood Pact Dmg.+9','Pet: STR+4','Pet: Mag. Acc.+7',}}
+    MerlHands.MAG     = { name="Merlinic Dastanas", augments={'Pet: Mag. Acc.+25 Pet: "Mag.Atk.Bns."+25','Blood Pact Dmg.+9','Pet: DEX+3','Pet: Mag. Acc.+11',}}
     MerlHands.REFRESH = { name="Merlinic Dastanas", augments={'Pet: Crit.hit rate +2','"Mag.Atk.Bns."+25','"Refresh"+2','Mag. Acc.+10 "Mag.Atk.Bns."+10',}}
-	-- MerlHands.TH      = { name="Merlinic Dastanas", augments={'Magic dmg. taken -2%','Pet: Phys. dmg. taken -2%','"Treasure Hunter"+2','Mag. Acc.+14 "Mag.Atk.Bns."+14',}}      
-	MerlHands.FC      = { name="Merlinic Dastanas", augments={'MND+5','Pet: DEX+3','"Fast Cast"+8','Mag. Acc.+6 "Mag.Atk.Bns."+6',}}
-	  
+    -- MerlHands.TH      = { name="Merlinic Dastanas", augments={'Magic dmg. taken -2%','Pet: Phys. dmg. taken -2%','"Treasure Hunter"+2','Mag. Acc.+14 "Mag.Atk.Bns."+14',}}      
+    MerlHands.FC      = { name="Merlinic Dastanas", augments={'MND+5','Pet: DEX+3','"Fast Cast"+8','Mag. Acc.+6 "Mag.Atk.Bns."+6',}}
+      
     -- ===================================================================================================================
     --      Sets
     -- ===================================================================================================================
@@ -69,32 +69,32 @@ function get_sets()
      sets.idle = {}
  
      sets.idle.Refresh = {
-      main="Nirvana",            -- 8 perp, can use jse
-      sub="Khonsu",              -- 
+      main="Nirvana",               -- 8 perp, can use jse
+      sub="Khonsu",                 -- 
       ammo="Epitaph",
-      head="Beckoner's Horn +3", -- 4 favor, 3 refresh
-      neck="Caller's Pendant",   -- 1 perp sometimes
-      ear1="Cath Palug Earring", -- 1 refresh
-      ear2="Evans earring",      -- 2 perp
-      body="Apo. Dalmatica +1",  -- 4 refresh
+      head="Beckoner's Horn +3",    -- 4 favor, 3 refresh
+      neck="Caller's Pendant",      -- 1 perp sometimes
+      ear1="Evans earring",         -- 2 perp
+      ear2="Beckoner's earring +1", -- 2 refresh
+      body="Apo. Dalmatica +1",     -- 4 refresh
       hands={ name="Merlinic Dastanas", augments={'Weapon skill damage +1%','"Avatar perpetuation cost" -1','"Refresh"+2','Accuracy+9 Attack+9','Mag. Acc.+14 "Mag.Atk.Bns."+14',}}, -- 2 refresh 1 perp
-      ring1="Stikini Ring +1", -- 1 refresh
-      ring2="Evoker's Ring", -- 1 refresh
+      ring1="Stikini Ring +1",      -- 1 refresh
+      ring2="Evoker's Ring",        -- 1 refresh
       legs={ name="Merlinic Shalwar", augments={'Mag. Acc.+15','Attack+2','"Refresh"+2','Accuracy+10 Attack+10',}}, -- 2 refresh
-      feet="Baayami Sabots +1", -- 3 refresh
-      waist="Lucidity Sash", -- 2 perp
+      feet="Baayami Sabots +1",     -- 3 refresh
+      waist="Lucidity Sash",        -- 2 perp
       back={ name="Campestres's Cape", augments={'Pet: M.Acc.+20 Pet: M.Dmg.+20','Pet: Magic Damage+10','Damage taken-5%',}}, -- avatar level
     }
 
     sets.idle.Favor = set_combine(sets.idle.Refresh, {
       head="Beckoner's Horn +3",
       ear2="Lodurr Earring",
-	  hands="Baayami Cuffs",
+      hands="Baayami Cuffs",
       legs="Baayami Slops",
       feet="Baayami Sabots +1",
-	  back="Conveyance cape",
-	})
-	
+      back="Conveyance cape",
+    })
+
     sets.idle.DT = set_combine(sets.idle.Refresh, {
       neck="Loricate Torque +1",
       body="Bunzi's Robe",
@@ -294,12 +294,12 @@ function get_sets()
       head={ name="Helios Band", augments={'Pet: Accuracy+29 Pet: Rng. Acc.+29','Pet: "Dbl. Atk."+8','Blood Pact Dmg.+7',}},
       body="Glyphic Doublet +3",
       hands=MerlHands.PHYS,
-	  legs={ name="Apogee Slacks +1", augments={'Pet: STR+20','Blood Pact Dmg.+14','Pet: "Dbl. Atk."+4',}},
+      legs={ name="Apogee Slacks +1", augments={'Pet: STR+20','Blood Pact Dmg.+14','Pet: "Dbl. Atk."+4',}},
       feet={ name="Helios Boots", augments={'Pet: Accuracy+28 Pet: Rng. Acc.+28','Pet: "Dbl. Atk."+8','Blood Pact Dmg.+7',}},
       neck={ name="Smn. Collar +2", augments={'Path: A',}},
       waist="Incarnation Sash",
-      right_ear="Kyrene's Earring",
       left_ear="Lugalbanda Earring",
+      right_ear="Sroda Earring",
       left_ring="Varar Ring +1",
       right_ring="Cath Palug Ring",
       back={ name="Campestres's Cape", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Pet: Accuracy+10 Pet: Rng. Acc.+10',}},
@@ -307,7 +307,7 @@ function get_sets()
  
     -- Physical Pact AM3 set, less emphasis on Pet:DA
     sets.pet_midcast.Physical_BP_AM3 = set_combine(sets.pet_midcast.Physical_BP, {
-      left_ear="Gelos Earring",
+      right_ear="Beckoner's earring +1",
       body="Convoker's Doublet +3",
       right_ring="Varar Ring +1",
       feet={ name="Apogee Pumps +1", augments={'MP+80','Pet: Attack+35','Blood Pact Dmg.+8',}}
@@ -316,7 +316,7 @@ function get_sets()
     -- Physical pacts which benefit more from TP than Pet:DA (like Spinning Dive and other pacts you never use except that one time)
     sets.pet_midcast.Physical_BP_TP = set_combine(sets.pet_midcast.Physical_BP, {
       head={ name="Apogee Crown +1", augments={'MP+80','Pet: Attack+35','Blood Pact Dmg.+8',}},
-      ear2="Gelos Earring",
+      right_ear="Beckoner's earring +1",
       body="Convoker's Doublet +3",
       right_ring="Varar Ring +1",
       waist="Regal Belt",
@@ -327,6 +327,7 @@ function get_sets()
     -- Used for all physical pacts when AccMode is true
     sets.pet_midcast.Physical_BP_Acc = set_combine(sets.pet_midcast.Physical_BP, {
       head={ name="Apogee Crown +1", augments={'MP+80','Pet: Attack+35','Blood Pact Dmg.+8',}},
+      right_ear="Beckoner's earring +1",
       right_ring="Varar Ring +1",
       body="Convoker's Doublet +3",
       hands="Convoker's Bracers +3",
@@ -343,12 +344,12 @@ function get_sets()
       head="C. Palug Crown",
       body={ name="Apo. Dalmatica +1", augments={'MP+80','Pet: "Mag.Atk.Bns."+35','Blood Pact Dmg.+8',}},
       hands=MerlHands.MAG,
-	  legs={ name="Apogee Slacks +1", augments={'MP+80','Pet: "Mag.Atk.Bns."+35','Blood Pact Dmg.+8',}},
+      legs={ name="Apogee Slacks +1", augments={'MP+80','Pet: "Mag.Atk.Bns."+35','Blood Pact Dmg.+8',}},
       feet={ name="Apogee Pumps +1", augments={'MP+80','Pet: "Mag.Atk.Bns."+35','Blood Pact Dmg.+8',}},
       neck={ name="Smn. Collar +2", augments={'Path: A',}},
       waist="Regal Belt",
       left_ear="Lugalbanda Earring",
-      right_ear="Gelos Earring",
+      right_ear="Beckoner's earring +1",
       left_ring={name="Varar Ring +1", bag="wardrobe"},
       right_ring={name="Varar Ring +1", bag="wardrobe5"},
       back={ name="Campestres's Cape", augments={'Pet: M.Acc.+20 Pet: M.Dmg.+20','Pet: Magic Damage+10','Damage taken-5%',}},
@@ -392,14 +393,13 @@ function get_sets()
       neck={ name="Smn. Collar +2", augments={'Path: A',}},
       waist="Regal Belt",
       left_ear="Lugalbanda Earring",
-      right_ear="Gelos Earring",
+      right_ear="Beckoner's earring +1",
       left_ring={name="Varar Ring +1", bag="wardrobe"},
       right_ring={name="Varar Ring +1", bag="wardrobe5"},
       back={ name="Campestres's Cape", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Pet: Accuracy+10 Pet: Rng. Acc.+10',}},
     }
  
     sets.pet_midcast.FlamingCrush_Acc = set_combine(sets.pet_midcast.FlamingCrush, {
-      right_ear="Kyrene's Earring",
       body="Convoker's Doublet +3",
     })
  
