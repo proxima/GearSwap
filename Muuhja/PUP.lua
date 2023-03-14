@@ -233,48 +233,48 @@ function init_gear_sets()
     --Adjust to your reforge level
     --Sets up a Key, Value Pair
     Artifact_Foire = {}
-    Artifact_Foire.Head_PRegen = "Foire Taj +1"
-    Artifact_Foire.Body_WSD_PTank = "Foire Tobe +3"
+    Artifact_Foire.Head_PRegen         = "Foire Taj +1"
+    Artifact_Foire.Body_WSD_PTank      = "Foire Tobe +3"
     Artifact_Foire.Hands_Mane_Overload = "Foire Dastanas +2"
-    Artifact_Foire.Legs_PCure = "Foire Churidars +1"
-    Artifact_Foire.Feet_Repair_PMagic = "Foire Babouches +1"
+    Artifact_Foire.Legs_PCure          = "Foire Churidars +1"
+    Artifact_Foire.Feet_Repair_PMagic  = "Foire Babouches +1"
 
     Relic_Pitre = {}
-    Relic_Pitre.Head_PRegen = "Pitre Taj +3" --Enhances Optimization
-    Relic_Pitre.Body_PTP = "Pitre Tobe +3" --Enhances Overdrive
-    Relic_Pitre.Hands_WSD = "Pitre Dastanas +3" --Enhances Fine-Tuning
-    Relic_Pitre.Legs_PMagic = "Pitre Churidars +3" --Enhances Ventriloquy
-    Relic_Pitre.Feet_PMagic = "Pitre Babouches +3" --Role Reversal
+    Relic_Pitre.Head_PRegen = "Pitre Taj +3"       -- Enhances Optimization
+    Relic_Pitre.Body_PTP    = "Pitre Tobe +3"      -- Enhances Overdrive
+    Relic_Pitre.Hands_WSD   = "Pitre Dastanas +3"  -- Enhances Fine-Tuning
+    Relic_Pitre.Legs_PMagic = "Pitre Churidars +3" -- Enhances Ventriloquy
+    Relic_Pitre.Feet_PMagic = "Pitre Babouches +3" -- Role Reversal
 
     Empy_Karagoz = {}
     Empy_Karagoz.Head_PTPBonus = "Karagoz Capello +2"
     Empy_Karagoz.Body_Overload = "Karagoz Farsetto"
-    Empy_Karagoz.Hands = "Karagoz Guanti +1"
-    Empy_Karagoz.Legs_Combat = "Karagoz Pantaloni +2"
+    Empy_Karagoz.Hands         = "Karagoz Guanti +1"
+    Empy_Karagoz.Legs_Combat   = "Karagoz Pantaloni +2"
     Empy_Karagoz.Feet_Tactical = "Karagoz Scarpe +1"
 
     Visucius = {}
     
     Visucius.PetDT = {
-        name = "Visucius's Mantle",
-        augments = {
-            'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20',
-            'Accuracy+20 Attack+20',
-            'Pet: Attack+10 Pet: Rng.Atk.+10','Pet: Haste+10',
-            'System: 1 ID: 1247 Val: 4'
-        }
+      name = "Visucius's Mantle",
+      augments = {
+        'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20',
+        'Accuracy+20 Attack+20',
+        'Pet: Attack+10 Pet: Rng.Atk.+10','Pet: Haste+10',
+        'System: 1 ID: 1247 Val: 4'
+      }
     }
 
     Visucius.MasterDA = {
-        name = "Visucius's Mantle",
-        augments={
-            'STR+20',
-            'Accuracy+20 Attack+20',
-            'STR+10',
-            '"Dbl.Atk."+10',
-            'Phys. dmg. taken-10%'
-        }
-     }
+      name = "Visucius's Mantle",
+      augments={
+          'STR+20',
+          'Accuracy+20 Attack+20',
+          'STR+10',
+          '"Dbl.Atk."+10',
+          'Phys. dmg. taken-10%'
+      }
+    }
 
     --------------------------------------------------------------------------------
     --  __  __           _               ____        _          _____      _
@@ -389,10 +389,9 @@ function init_gear_sets()
     }
 
     sets.precast.WS["Shijin Spiral"] =
-        set_combine(
-        sets.precast.WS, {
-        }
-
+      set_combine(
+      sets.precast.WS, {
+      }
     )
 
     sets.precast.WS["Howling Fist"] = {
@@ -707,18 +706,18 @@ function init_gear_sets()
         WSNoFTP is the default weaponskill set used
     ]]
     sets.midcast.Pet.WSNoFTP = {
-        head=Relic_Pitre.Head_PRegen,
-        body= Relic_Pitre.Body_PTP,
-        hands="Mpaca's Gloves",   
-        legs=Empy_Karagoz.Legs_Combat,
-        feet="Mpaca's Boots",
-        neck="Shulmanu Collar",
-        waist="Incarnation Sash",
-        left_ear="Enmerkar earring",
-        right_ear="Rimeice earring",
-        left_ring="Thurandaut Ring +1",
-        right_ring="C. Palug Ring",
-        back=Visucius.PetDT
+      head=Relic_Pitre.Head_PRegen,
+      body= Relic_Pitre.Body_PTP,
+      hands="Mpaca's Gloves",   
+      legs=Empy_Karagoz.Legs_Combat,
+      feet="Mpaca's Boots",
+      neck="Shulmanu Collar",
+      waist="Incarnation Sash",
+      left_ear="Enmerkar earring",
+      right_ear="Rimeice earring",
+      left_ring="Thurandaut Ring +1",
+      right_ring="C. Palug Ring",
+      back=Visucius.PetDT
     }
 
     --[[
@@ -726,9 +725,9 @@ function init_gear_sets()
         then this set will be equipped
     ]]
     sets.midcast.Pet.WSFTP = set_combine(sets.midcast.Pet.WSNoFTP, {
-        head=Empy_Karagoz.Head_PTPBonus,
-        back="Dispersal Mantle",
-        waist="Klouskap sash +1",
+      head=Empy_Karagoz.Head_PTPBonus,
+      back="Dispersal Mantle",
+      waist="Klouskap sash +1",
     })
 
     --[[
@@ -764,10 +763,10 @@ function init_gear_sets()
 
     -- Arcuballista, Daze
     sets.midcast.Pet.WS["DEXFTP"] =
-        set_combine(
-        sets.midcast.Pet.WSFTP,
-        {
-        }
+      set_combine(
+      sets.midcast.Pet.WSFTP,
+      {
+      }
     )
 
     ---------------------------------------------
@@ -780,21 +779,21 @@ function init_gear_sets()
     ---------------------------------------------
     -- Town Set
     sets.idle.Town = {
-        main={ name="Xiucoatl", augments={'Path: C',}},
-        range="Animator P +1",
-        ammo="Automat. Oil +3",
-        head="Foire Taj +1",
-        body="Udug Jacket",
-        hands="Malignance Gloves",
-        legs="Heyoka Subligar +1",
-        feet="Hermes' Sandals",
-        neck="Shulmanu Collar",
-        waist="Moonbow Belt +1",
-        left_ear="Mache Earring +1",
-        right_ear="Rimeice Earring",
-        left_ring="Niqmaddu Ring",
-        right_ring="Epona's Ring",
-        back=Visucius.MasterCritWS
+      main={ name="Xiucoatl", augments={'Path: C',}},
+      range="Animator P +1",
+      ammo="Automat. Oil +3",
+      head="Foire Taj +1",
+      body="Udug Jacket",
+      hands="Malignance Gloves",
+      legs="Heyoka Subligar +1",
+      feet="Hermes' Sandals",
+      neck="Shulmanu Collar",
+      waist="Moonbow Belt +1",
+      left_ear="Mache Earring +1",
+      right_ear="Rimeice Earring",
+      left_ring="Niqmaddu Ring",
+      right_ring="Epona's Ring",
+      back=Visucius.MasterCritWS
     }
 
     sets.midcast.Phalanx = {
@@ -806,7 +805,6 @@ function init_gear_sets()
  
     -- Resting sets
     sets.resting = {
-       -- Add your set here
     }
 
     sets.defense.MasterDT = sets.idle.MasterDT
@@ -820,4 +818,3 @@ end
 function select_default_macro_book()
     set_macro_page(2, 2)
 end
-

@@ -418,6 +418,19 @@ function init_gear_sets()
   })
  
   sets.precast.WS['Dimidiation'].Acc = set_combine(sets.precast.WS['Dimidiation'], {
+    ammo="C. Palug Stone",
+    head="Erilaz Galea +3",
+    body="Runeist Coat +3",
+    hands="Erilaz Gauntlets +3",
+    legs="Eri. Leg Guards +3",
+    feet="Erilaz Greaves +3",
+    neck="Sanctity Necklace",
+    waist={ name="Kentarch Belt +1", augments={'Path: A',}},
+    left_ear="Mache Earring +1",
+    right_ear="Crep. Earring",
+    left_ring={name="Chirich Ring +1",bag="wardrobe 2"},
+    right_ring={name="Chirich Ring +1",bag="wardrobe 3"},
+    back=Cape.WSD
   })
  
   sets.precast.WS['Dimidiation'].Uncapped = set_combine(sets.precast.WS['Dimidiation'], {

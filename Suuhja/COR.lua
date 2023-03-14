@@ -125,7 +125,7 @@ function user_setup()
     state.WeaponskillMode:options('Normal', 'Acc')
     state.IdleMode:options('Normal', 'DT', 'Refresh')
 
-    state.WeaponSet = M{['description']='Weapon Set', 'DeathPenalty_M', 'DeathPenalty_R', 'Armageddon_M', 'Armageddon_R', 'Fomalhaut_M', 'Fomalhaut_R', 'Anarchy', 'Aeolian', 'Rolls'}
+    state.WeaponSet = M{['description']='Weapon Set', 'DeathPenalty_M', 'DeathPenalty_R', 'Armageddon_M', 'Armageddon_R', 'Fomalhaut_M', 'Fomalhaut_R', 'Aeolian', 'Anarchy', 'Rolls'}
     state.WeaponLock = M(false, 'Weapon Lock')
 
     gear.RAbullet = "Chrono Bullet"
@@ -1069,7 +1069,7 @@ function job_state_change(stateField, newValue, oldValue)
         elseif state.WeaponSet.value == "Fomalhaut_R" then
             send_command("trial stop")
         elseif state.WeaponSet.value == "Anarchy" then
-            send_command("trial ws savage blade;trial tp 1000")
+            send_command("trial ws savage blade;trial tp 1000;trial start")
         elseif state.WeaponSet.value == "Aeolian" then
             send_command("trial ws aeolian edge;trial tp 1000")
         end

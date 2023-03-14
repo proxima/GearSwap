@@ -46,11 +46,11 @@ function get_sets()
     WeaponLock = false
     TreasureHunter = false
     THSpells = S{"Dia","Dia II","Diaga"} -- If you want Treasure Hunter gear to swap for a spell/ability, add it here.
-    LagMode = true -- Default LagMode. If you have a lot of lag issues, change to "true".
-                   -- Warning: LagMode can cause problems if you spam BPs during Conduit because it doesn't trust server packets to say whether the BP is readying or not.
-    SacTorque = true -- If you have Sacrifice Torque, this will auto-equip it when slept in order to wake up.
-    AutoRemedy = false -- Auto Remedy when using an ability while Paralyzed.
-    AutoEcho = false   -- Auto Echo Drop when using an ability while Silenced.
+    LagMode = true                       -- Default LagMode. If you have a lot of lag issues, change to "true".
+                                         -- Warning: LagMode can cause problems if you spam BPs during Conduit because it doesn't trust server packets to say whether the BP is readying or not.
+    SacTorque = true                     -- If you have Sacrifice Torque, this will auto-equip it when slept in order to wake up.
+    AutoRemedy = false                   -- Auto Remedy when using an ability while Paralyzed.
+    AutoEcho = false                     -- Auto Echo Drop when using an ability while Silenced.
  
     -- Add idle modes here if you need more options for your sets
     IdleModes = {'Refresh', 'Favor', 'DT'}
@@ -58,10 +58,12 @@ function get_sets()
     MerlHands = {}
     MerlHands.PHYS    = { name="Merlinic Dastanas", augments={'Pet: Attack+28 Pet: Rng.Atk.+28','Blood Pact Dmg.+9','Pet: STR+4','Pet: Mag. Acc.+7',}}
     MerlHands.MAG     = { name="Merlinic Dastanas", augments={'Pet: Mag. Acc.+25 Pet: "Mag.Atk.Bns."+25','Blood Pact Dmg.+9','Pet: DEX+3','Pet: Mag. Acc.+11',}}
-    MerlHands.REFRESH = { name="Merlinic Dastanas", augments={'Pet: Crit.hit rate +2','"Mag.Atk.Bns."+25','"Refresh"+2','Mag. Acc.+10 "Mag.Atk.Bns."+10',}}
+    MerlHands.REFRESH = { name="Merlinic Dastanas", augments={'Weapon skill damage +1%','"Avatar perpetuation cost" -1','"Refresh"+2','Accuracy+9 Attack+9','Mag. Acc.+14 "Mag.Atk.Bns."+14',}}
     -- MerlHands.TH      = { name="Merlinic Dastanas", augments={'Magic dmg. taken -2%','Pet: Phys. dmg. taken -2%','"Treasure Hunter"+2','Mag. Acc.+14 "Mag.Atk.Bns."+14',}}      
     MerlHands.FC      = { name="Merlinic Dastanas", augments={'MND+5','Pet: DEX+3','"Fast Cast"+8','Mag. Acc.+6 "Mag.Atk.Bns."+6',}}
-      
+
+    MerlLegs = {}
+    MerlLegs.REFRESH = { name="Merlinic Shalwar", augments={'Mag. Acc.+15','Attack+2','"Refresh"+2','Accuracy+10 Attack+10',}}
     -- ===================================================================================================================
     --      Sets
     -- ===================================================================================================================
@@ -77,10 +79,10 @@ function get_sets()
       ear1="Evans earring",         -- 2 perp
       ear2="Beckoner's earring +1", -- 2 refresh
       body="Apo. Dalmatica +1",     -- 4 refresh
-      hands={ name="Merlinic Dastanas", augments={'Weapon skill damage +1%','"Avatar perpetuation cost" -1','"Refresh"+2','Accuracy+9 Attack+9','Mag. Acc.+14 "Mag.Atk.Bns."+14',}}, -- 2 refresh 1 perp
+      hands=MerlHands.REFRESH,      -- 2 refresh 1 perp
       ring1="Stikini Ring +1",      -- 1 refresh
       ring2="Evoker's Ring",        -- 1 refresh
-      legs={ name="Merlinic Shalwar", augments={'Mag. Acc.+15','Attack+2','"Refresh"+2','Accuracy+10 Attack+10',}}, -- 2 refresh
+      legs=MerlLegs.REFRESH,        -- 2 refresh
       feet="Baayami Sabots +1",     -- 3 refresh
       waist="Lucidity Sash",        -- 2 perp
       back={ name="Campestres's Cape", augments={'Pet: M.Acc.+20 Pet: M.Dmg.+20','Pet: Magic Damage+10','Damage taken-5%',}}, -- avatar level
@@ -101,13 +103,13 @@ function get_sets()
       hands="Bunzi's Gloves",
       legs="Bunzi's Pants",
       feet="Bunzi's Sabots",
-	})
-	
+    })
+
     -- Treasure Hunter set. Don't put anything in here except TH+ gear.
     -- It overwrites slots in other sets when TH toggle is on (Ctrl+F10).
     sets.TH = {
       -- hands=MerlHands.TH,
-	  waist="Chaac Belt",
+      waist="Chaac Belt",
     }
  
     sets.precast = {}
@@ -117,7 +119,7 @@ function get_sets()
       head={ name="Merlinic Hood", augments={'"Mag.Atk.Bns."+10','"Fast Cast"+7','INT+8','Mag. Acc.+13',}}, -- 15
       body="Inyanga Jubbah +2", -- 14
       hands=MerlHands.FC, -- 8
-	  legs={ name="Merlinic Shalwar", augments={'Mag. Acc.+15','"Fast Cast"+7','CHR+8','"Mag.Atk.Bns."+4',}}, -- 7
+      legs={ name="Merlinic Shalwar", augments={'Mag. Acc.+15','"Fast Cast"+7','CHR+8','"Mag.Atk.Bns."+4',}}, -- 7
       feet={ name="Merlinic Crackows", augments={'"Fast Cast"+7','MND+10','"Mag.Atk.Bns."+4',}}, -- 12
       waist="Embla Sash", -- 5
       left_ear="Malignance Earring", -- 4
@@ -200,8 +202,8 @@ function get_sets()
  
     sets.midcast.Cursna = set_combine(sets.midcast.Cure, {
       neck="Debilis medallion",
-	  left_ring="Menelaus's ring",
-	  right_ring="Haoma's ring",
+      left_ring="Menelaus's ring",
+      right_ring="Haoma's ring",
     })
     
     -- Just a standard set for spells that have no set
@@ -419,7 +421,7 @@ function get_sets()
       back={ name="Campestres's Cape", augments={'Pet: M.Acc.+20 Pet: M.Dmg.+20','Pet: Magic Damage+10','Damage taken-5%',}},
       waist="Regal Belt",
       legs="Convoker's Spats +2",
-      feet="Convoker's Pigaches +2"
+      feet="Bunzi's sabots"
     }
  
     sets.pet_midcast.Debuff_Rage = sets.pet_midcast.MagicAcc_BP
@@ -432,9 +434,9 @@ function get_sets()
       sub="Vox Grip",
       ammo="Epitaph",
       head="Beckoner's Horn +3",
-      body="Baayami Robe", -- + 1 if you're rich
-      hands="Baayami Cuffs", -- + 1 if you're rich
-      legs="Baayami Slops", -- + 1 if you're rich
+      body="Baayami Robe",     -- + 1 if you're rich
+      hands="Baayami Cuffs",   -- + 1 if you're rich
+      legs="Baayami Slops",    -- + 1 if you're rich
       feet="Baaya. Sabots +1",
       neck="Caller's Pendant",
       waist="Lucidity Sash",
@@ -743,7 +745,7 @@ function self_command(command)
         -- If you want to change the sets cycled with F9, this is where you do it
         if IdleMode=="Refresh" then
             IdleMode = "Favor"
-		elseif IdleMode=="Favor" then
+    elseif IdleMode=="Favor" then
             IdleMode = "DT"
         else
             IdleMode = "Refresh"

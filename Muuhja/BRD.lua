@@ -373,8 +373,6 @@ function init_gear_sets()
     sets.precast.WS['Sanguine Blade'] = sets.precast.WS['Aeolian Edge']
 
     sets.precast.WS['Rock Crusher'] = set_combine(sets.precast.WS['Aeolian Edge'], {
-      head="Nyame Helm",
-      body="Nyame Mail",
       neck="Quanpur Necklace"
     })
 

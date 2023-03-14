@@ -224,9 +224,9 @@ function get_sets()
     sets.me.melee = {
       ammo="Staunch Tathlum +1",
       head={ name="Nyame Helm", augments={'Path: B',}},
-      body={ name="Nyame Mail", augments={'Path: B',}},
+      body="Nyame Mail",
       hands={ name="Gazu Bracelets +1", augments={'Path: A',}},
-      legs={ name="Nyame Flanchard", augments={'Path: B',}},
+      legs="Nyame Flanchard",
       feet={ name="Nyame Sollerets", augments={'Path: B',}},
       neck="Lissome Necklace",
       waist="Grunfeld Rope",
@@ -283,7 +283,7 @@ function get_sets()
       head={ name="Nyame Helm", augments={'Path: B',}},
       body={ name="Agwu's Robe", augments={'Path: A',}},
       hands={ name="Gazu Bracelets +1", augments={'Path: A',}},
-      legs={ name="Nyame Flanchard", augments={'Path: B',}},
+      legs="Nyame Flanchard",
       feet={ name="Nyame Sollerets", augments={'Path: B',}},
       neck="Lissome Necklace",
       waist="Grunfeld Rope",
@@ -618,41 +618,43 @@ function get_sets()
    -- used with toggle, default: F10
    -- Pieces to swap from free nuke to Magic Burst    
    sets.midcast.MB.normal = set_combine(sets.midcast.nuking.normal, {
-      ammo="Ghastly Tathlum +1",
-      head="Ea Hat +1",
-      neck="Sorcerer's Stole +2",
-      left_ear="Regal Earring",
-      right_ear="Malignance Earring",
-      body="Ea Houppe. +1",
-      hands="Agwu's Gages",
-      left_ring="Metamorph Ring +1",
-      right_ring="Mujin Band",
-      back=Taranus.INT_MAB,
-      waist="Acuity Belt +1",
-      legs="Ea Slops +1",
-      feet="Agwu's Pigaches",
+     ammo="Ghastly Tathlum +1",
+     head="Ea Hat +1",
+     neck="Sorcerer's Stole +2",
+     left_ear="Regal Earring",
+     right_ear="Malignance Earring",
+     body="Nyame Mail",
+     hands="Agwu's Gages",
+     left_ring="Metamorph Ring +1",
+     right_ring="Mujin Band",
+     back=Taranus.INT_MAB,
+     waist="Acuity Belt +1",
+     legs="Nyame Flanchard",
+     feet="Agwu's Pigaches",
    })
 
    -- used with toggle, default: F10
    -- Pieces to swap from free nuke to Magic Burst
    sets.midcast.MB.acc = set_combine(sets.midcast.MB.normal, {
+     body="Agwu's Robe",
+     legs="Agwu's Slops",
      right_ring="Freke Ring",
    })
       
    sets.midcast.nuking.occult = set_combine(sets.midcast.nuking.normal, { 
-      ammo="Seraphic Ampulla",
-      head="Mall. Chapeau +2",
-      body="Spaekona's Coat +3",
-      hands={ name="Merlinic Dastanas", augments={'"Occult Acumen"+11','INT+10','Mag. Acc.+6',}},
-      legs="Perdition Slops",
-      feet={ name="Merlinic Crackows", augments={'"Mag.Atk.Bns."+2','"Occult Acumen"+11','MND+9','Mag. Acc.+15',}},
-      neck="Lissome Necklace",
-      waist="Oneiros Rope",
-      left_ear="Dedition Earring",
-      right_ear="Telos Earring",
-      left_ring={name="Chirich Ring +1",bag="wardrobe 2"},
-      right_ring={name="Chirich Ring +1",bag="wardrobe 4"},
-      back=Taranus.INT_STP
+     ammo="Seraphic Ampulla",
+     head="Mall. Chapeau +2",
+     body="Spaekona's Coat +3",
+     hands={ name="Merlinic Dastanas", augments={'"Occult Acumen"+11','INT+10','Mag. Acc.+6',}},
+     legs="Perdition Slops",
+     feet={ name="Merlinic Crackows", augments={'"Mag.Atk.Bns."+2','"Occult Acumen"+11','MND+9','Mag. Acc.+15',}},
+     neck="Lissome Necklace",
+     waist="Oneiros Rope",
+     left_ear="Dedition Earring",
+     right_ear="Telos Earring",
+     left_ring={name="Chirich Ring +1",bag="wardrobe 2"},
+     right_ring={name="Chirich Ring +1",bag="wardrobe 4"},
+     back=Taranus.INT_STP
    })
 
    sets.midcast.MB.occult = set_combine(sets.midcast.MB.normal, {
@@ -660,28 +662,28 @@ function get_sets()
    
     -- Enfeebling
    sets.midcast.IntEnfeebling = {
-      ammo="Pemphredo tathlum",
-      head="Befouled Crown",
-      body="Spaekona's Coat +3",
-      hands="Regal Cuffs",
-      legs="Archmage's Tonban +3",
-      feet="Archmage's Sabots +3",
-      neck="Sorcerer's Stole +2",
-      waist="Acuity Belt +1",
-      left_ear="Regal Earring",
-      right_ear="Malignance Earring",
-      left_ring="Kishar Ring",
-      right_ring="Metamorph Ring +1",
-      back="Aurist's Cape +1",
+     ammo="Pemphredo tathlum",
+     head="Befouled Crown",
+     body="Spaekona's Coat +3",
+     hands="Regal Cuffs",
+     legs="Archmage's Tonban +3",
+     feet="Archmage's Sabots +3",
+     neck="Sorcerer's Stole +2",
+     waist="Acuity Belt +1",
+     left_ear="Regal Earring",
+     right_ear="Malignance Earring",
+     left_ring="Kishar Ring",
+     right_ring="Metamorph Ring +1",
+     back="Aurist's Cape +1",
    }
    
    sets.midcast["Stun"] = sets.midcast.IntEnfeebling
 
    sets.midcast.ElementalEnfeeble = set_combine(sets.midcast.IntEnfeebling, {
-      head="Wicce Petasos +2",
-      legs="Archmage's tonban +3",
-      feet="Archmage's sabots +3",
-    })   
+     head="Wicce Petasos +2",
+     legs="Archmage's tonban +3",
+     feet="Archmage's sabots +3",
+   })   
    
    sets.midcast.Dispelga = set_combine(sets.midcast.IntEnfeebling, {
      main="Daybreak",

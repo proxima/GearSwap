@@ -226,6 +226,67 @@ function init_gear_sets()
     -- Start defining the sets
     --------------------------------------
 
+    -- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
+    sets.idle = {
+      main="Daybreak",
+      sub="Genmei Shield",
+      ammo="Staunch Tathlum +1",
+      head={ name="Bunzi's Hat", augments={'Path: A',}},
+      body="Ebers Bliaut +3",
+      hands="Pinga Mittens +1",
+      legs="Ebers Pant. +3",
+      feet="Ebers Duckbills +3",
+      neck="Warder's Charm +1",
+      waist="Carrier's Sash",
+      left_ear="Tuisto Earring",
+      right_ear="Etiolation Earring",
+      left_ring="Stikini Ring +1",
+      right_ring="Stikini Ring +1",
+      back={ name="Alaunus's Cape", augments={'MND+20','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Haste+10','Mag. Evasion+15',}},
+    }
+
+    sets.idle.DT = set_combine(sets.idle, {
+      main="Daybreak",
+      sub="Genmei Shield",
+      ammo="Staunch Tathlum +1",
+      head="Nyame Helm",
+      body="Ebers Bliaut +3",
+      hands="Nyame Gauntlets",
+      legs="Nyame Flanchard",
+      feet="Nyame Sollerets",
+      neck={ name="Loricate Torque +1", augments={'Path: A',}},
+      waist="Carrier's Sash",
+      left_ear={ name="Odnowa Earring +1", augments={'Path: A',}},
+      right_ear="Ebers Earring +2",
+      left_ring="Stikini Ring +1",
+      right_ring={ name="Gelatinous Ring +1", augments={'Path: A',}},
+      back={ name="Alaunus's Cape", augments={'VIT+20','Eva.+20 /Mag. Eva.+20','VIT+10','Enmity-10','DEF+50',}},
+    })
+
+    sets.idle.MEva = set_combine(sets.idle, {
+      main="Daybreak",
+      sub="Genmei Shield",
+      ammo="Staunch Tathlum +1",
+      head={ name="Bunzi's Hat", augments={'Path: A',}},
+      body="Ebers Bliaut +3",
+      hands="Pinga Mittens +1",
+      legs="Ebers Pant. +3",
+      feet="Ebers Duckbills +3",
+      neck="Warder's Charm +1",
+      waist="Carrier's Sash",
+      left_ear="Sanare Earring",
+      right_ear="Etiolation Earring",
+      left_ring="Inyanga Ring",
+      right_ring="Shadow Ring",
+      back={ name="Alaunus's Cape", augments={'MND+20','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Haste+10','Mag. Evasion+15',}},
+    })
+
+    sets.idle.Town = set_combine(sets.idle.MEva, {
+      main="Gambanteinn",
+      hands="Ebers Mitts +3",
+      right_ring={ name="Gelatinous Ring +1", augments={'Path: A',}},
+    })
+
     -- Precast Sets
 
     -- Fast cast sets for spells
@@ -329,22 +390,22 @@ function init_gear_sets()
     }
 
     -- Cure sets
-    sets.midcast.CureSolace = {                             -- CP ENM HA FC DT
-      main="Daybreak",                                      -- 30                              
-      sub="Genmei Shield",                                  --              10
-      ammo="Staunch Tathlum +1",                            --               3
-      head="Nyame Helm",                                    --         6     7
-      body="Ebers Bliaut +3",                               --         3       +Solace
-      hands="Pinga mittens +1",                             --  7
-      legs="Ebers Pant. +3",                                --         5    12
-      feet="Ebers Duckbills +3",                            --         3    11
-      neck={ name="Clr. Torque +1", augments={'Path: A',}}, --  7  20     8
-      waist="Emphatikos rope",
-      left_ear="Magnetic Earring",                          --
-      right_ear="Mendicant's earring",                      --  5
-      left_ring="Defending Ring",                           --              10
-      right_ring="Gelatinous Ring +1",                      --               7
-      back={ name="Alaunus's Cape", augments={'MND+20','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Haste+10','Mag. Evasion+15',}},
+    sets.midcast.CureSolace = {                             -- ENM  DT CP CP2
+      main="Raetic rod +1",                                 --         23  10 +50Cure
+      sub="Genmei Shield",                                  --      10
+      ammo="Staunch Tathlum +1",                            --       3        +11SIRD
+      head="Ebers Cap +2",                                  --         22
+      body="Ebers Bliaut +3",                               --                +Solace
+      hands="Ebers mitts +3",                               --   12 11
+      legs="Ebers Pant. +3",                                --      12        +MP Return
+      feet="Nyame sollerets",                               --       7
+      neck={ name="Clr. Torque +1", augments={'Path: A',}}, --   20     7
+      waist="Emphatikos rope",                              --                +12SIRD
+      left_ear="Magnetic Earring",                          --                + 8SIRD, +5Conserve
+      right_ear="Ebers earring +2",                         --    9  6
+      left_ring="Shadow Ring",                              --
+      right_ring="Gelatinous Ring +1",                      --       7
+      back={ name="Alaunus's Cape", augments={'VIT+20','Eva.+20 /Mag. Eva.+20','VIT+10','Enmity-10','DEF+50',}},
     }
 
     sets.midcast.CureSolaceWeather = set_combine(sets.midcast.CureSolace, {
@@ -374,22 +435,11 @@ function init_gear_sets()
 
     --sets.midcast.CureMelee = sets.midcast.CureSolace
 
-    sets.midcast.StatusRemoval = {
+    sets.midcast.StatusRemoval = set_combine(sets.idle.DT, {
       main="Yagrush",
-      head={ name="Vanya Hood", augments={'Healing magic skill +20','"Cure" spellcasting time -7%','Magic dmg. taken -3',}},
-      body="Inyanga Jubbah +2",
-      hands="Fanatic Gloves",
-      legs="Aya. Cosciales +2",
-      feet={ name="Vanya Clogs", augments={'Healing magic skill +20','"Cure" spellcasting time -7%','Magic dmg. taken -3',}},
-      neck="Debilis Medallion",
-      waist="Bishop's Sash",
-      right_ear="Ebers Earring +2",
-      left_ear="Meili Earring",
-      left_ring="Menelaus's Ring",
-      right_ring="Haoma's Ring",
-      back="Mending Cape",
-    }
-	
+      sub="Genmei Shield",
+    })
+
     sets.midcast.Cursna = set_combine(sets.midcast.StatusRemoval, {
       main="Gambanteinn",
       --main="Yagrush",
@@ -469,7 +519,7 @@ function init_gear_sets()
     sets.midcast.BarElement = set_combine(sets.midcast['Enhancing Magic'], {
       main="Beneficus",
       sub="Ammurapi Shield",
-      head="Ebers Cap +1",
+      head="Ebers Cap +2",
       body="Ebers Bliaut +3",
       hands="Ebers Mitts +3",
       legs="Piety Pantaln. +3",
@@ -599,67 +649,6 @@ function init_gear_sets()
       main="Chatoyant Staff",
       waist="Shinjutsu-no-Obi",
     }
-
-    -- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
-    sets.idle = {
-      main="Daybreak",
-      sub="Genmei Shield",
-      ammo="Staunch Tathlum +1",
-      head={ name="Bunzi's Hat", augments={'Path: A',}},
-      body="Ebers Bliaut +3",
-      hands="Pinga Mittens +1",
-      legs="Ebers Pant. +3",
-      feet="Ebers Duckbills +3",
-      neck="Warder's Charm +1",
-      waist="Carrier's Sash",
-      left_ear="Tuisto Earring",
-      right_ear="Etiolation Earring",
-      left_ring="Stikini Ring +1",
-      right_ring="Stikini Ring +1",
-      back={ name="Alaunus's Cape", augments={'MND+20','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Haste+10','Mag. Evasion+15',}},
-    }
-
-    sets.idle.DT = set_combine(sets.idle, {
-      main="Asclepius",
-      sub="Genmei Shield",
-      ammo="Staunch Tathlum +1",
-      head="Nyame Helm",
-      body="Nyame Mail",
-      hands="Nyame Gauntlets",
-      legs="Nyame Flanchard",
-      feet="Nyame Sollerets",
-      neck={ name="Loricate Torque +1", augments={'Path: A',}},
-      waist="Carrier's Sash",
-      left_ear="Tuisto Earring",
-      right_ear={ name="Odnowa Earring +1", augments={'Path: A',}},
-      left_ring="Stikini Ring +1",
-      right_ring={ name="Gelatinous Ring +1", augments={'Path: A',}},
-      back={ name="Alaunus's Cape", augments={'MND+20','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Haste+10','Mag. Evasion+15',}},
-    })
-
-    sets.idle.MEva = set_combine(sets.idle, {
-      main="Daybreak",
-      sub="Genmei Shield",
-      ammo="Staunch Tathlum +1",
-      head={ name="Bunzi's Hat", augments={'Path: A',}},
-      body="Ebers Bliaut +3",
-      hands="Pinga Mittens +1",
-      legs="Ebers Pant. +3",
-      feet="Ebers Duckbills +3",
-      neck="Warder's Charm +1",
-      waist="Carrier's Sash",
-      left_ear="Sanare Earring",
-      right_ear="Etiolation Earring",
-      left_ring="Inyanga Ring",
-      right_ring="Shadow Ring",
-      back={ name="Alaunus's Cape", augments={'MND+20','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Haste+10','Mag. Evasion+15',}},
-    })
-
-    sets.idle.Town = set_combine(sets.idle.MEva, {
-      main="Gambanteinn",
-      hands="Ebers Mitts +3",
-      right_ring={ name="Gelatinous Ring +1", augments={'Path: A',}},
-    })
 
     -- Defense sets
 
