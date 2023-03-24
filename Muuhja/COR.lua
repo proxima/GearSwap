@@ -284,7 +284,7 @@ function init_gear_sets()
 
     sets.precast.CorsairRoll.Duration = {main=Rostam.C, range="Compensator"}
     sets.precast.CorsairRoll.LowerDelay = {}
-    sets.precast.CorsairRoll["Caster's Roll"] = set_combine(sets.precast.CorsairRoll, {legs="Chas. Culottes +2"})
+    sets.precast.CorsairRoll["Caster's Roll"] = set_combine(sets.precast.CorsairRoll, {legs="Chas. Culottes +3"})
     sets.precast.CorsairRoll["Courser's Roll"] = set_combine(sets.precast.CorsairRoll, {feet="Chass. Bottes +2"})
     sets.precast.CorsairRoll["Blitzer's Roll"] = set_combine(sets.precast.CorsairRoll, {head="Chass. Tricorne +2"})
     sets.precast.CorsairRoll["Tactician's Roll"] = set_combine(sets.precast.CorsairRoll, {body="Chasseur's Frac +2"})
@@ -532,7 +532,7 @@ function init_gear_sets()
       head="Chasseur's Tricorne +2",
       body="Chasseur's Frac +2",
       hands="Chasseur's Gants +2",
-      legs="Chasseur's Culottes +2",
+      legs="Chasseur's Culottes +3",
       feet="Chasseur's Bottes +2",
       neck="Comm. Charm +2",
       left_ear="Dignitary's earring",
@@ -570,7 +570,7 @@ function init_gear_sets()
     sets.midcast.RA.HighAcc = set_combine(sets.midcast.RA.Acc, {
       neck="Comm. Charm +2",
       body="Laksa. Frac +3",
-      legs="Chasseur's culottes +2",
+      legs="Chasseur's culottes +3",
       left_ring="Regal Ring",
       waist="K. Kachina Belt +1",
     })
@@ -760,7 +760,7 @@ function init_gear_sets()
       head="Malignance Chapeau",
       body="Malignance Tabard",
       hands="Malignance Gloves",
-      legs="Chas. Culottes +2",
+      legs="Chas. Culottes +3",
       feet="Malignance Boots",
     }
 

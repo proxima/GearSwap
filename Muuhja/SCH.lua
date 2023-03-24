@@ -191,7 +191,7 @@ function get_sets()
       ear1="Etiolation earring",
       ear2="Odnowa earring +1",
       neck="Loricate torque +1",
-      body="Arbatel Gown +2",
+      body="Arbatel Gown +3",
       hands="Nyame Gauntlets",
       legs="Agwu's slops",
       left_ring={name="Stikini Ring +1",bag="wardrobe"},
@@ -204,7 +204,7 @@ function get_sets()
     -- Your idle Sublimation set combine from refresh or DT depening on mode.
     sets.me.idle.sublimation = set_combine(sets.me.idle.refresh, {
       head="Acad. Mortar. +2",
-      body="Arbatel Gown +2",
+      body="Arbatel Gown +3",
       waist="Embla Sash",
     })
 
@@ -233,7 +233,7 @@ function get_sets()
       ear1="Lugalbanda earring",
       ear2="Odnowa earring +1",   --  3 DT, 2 MDT
       neck="Warder's charm +1",
-      body="Arbatel Gown +2",     -- 1? DT  
+      body="Arbatel Gown +3",     -- 1? DT  
       hands="Pinga mittens +1",
       legs="Agwu's slops",        --  9 DT
       ring1="Defending ring",     -- 10 DT
@@ -312,7 +312,7 @@ function get_sets()
     sets.me["Shell Crusher"] = {
       ammo="Pemphredo Tathlum",
       head="Arbatel Bonnet +3",
-      body="Arbatel Gown +2",
+      body="Arbatel Gown +3",
       hands="Arbatel Bracers +3",
       legs="Arbatel Pants +2",
       feet="Arbatel Loafers +3",
@@ -348,13 +348,13 @@ function get_sets()
 
     sets.me["Aeolian Edge"] = set_combine(sets.me["Earth Crusher"], {
       neck="Fotia Gorget",
-      body="Arbatel Gown +2",
+      body="Arbatel Gown +3",
       hands="Jhakri Cuffs +2",  
     })
     
     sets.me["Cataclysm"] = set_combine(sets.me["Earth Crusher"], {
       head="Pixie hairpin +1",
-      body="Arbatel Gown +2",
+      body="Arbatel Gown +3",
       neck="Sibyl Scarf",
       left_ring="Archon Ring",
     })
@@ -362,7 +362,7 @@ function get_sets()
     sets.me["Omniscience"] = {
       ammo="Sroda Tathlum",
       head="Arbatel Bonnet +3",
-      body="Arbatel Gown +2",
+      body="Arbatel Gown +3",
       hands="Arbatel Bracers +3",
       legs="Nyame Flanchard",
       feet="Arbatel Loafers +3",
@@ -563,7 +563,7 @@ function get_sets()
       sub="Ammurapi Shield",
       ammo="Ghastly Tathlum +1",
       head="Agwu's Cap",
-      body="Arbatel Gown +2",
+      body="Arbatel Gown +3",
       hands="Arbatel Bracers +3",
       legs="Agwu's Slops",    
       feet="Arbatel Loafers +3",
@@ -599,7 +599,7 @@ function get_sets()
       sub="Ammurapi Shield",
       ammo="Ghastly Tathlum +1",
       head="Agwu's Cap",
-      body="Arbatel Gown +2",
+      body="Arbatel Gown +3",
       hands="Arbatel Bracers +3",
       legs="Agwu's Slops",    
       feet="Arbatel Loafers +3",
@@ -617,7 +617,7 @@ function get_sets()
       sub="Ammurapi Shield",
       ammo="Ghastly Tathlum +1",
       head="Agwu's Cap",
-      body="Arbatel Gown +2",
+      body="Arbatel Gown +3",
       hands="Arbatel Bracers +3",
       legs="Arbatel Pants +2",
       feet="Arbatel Loafers +3",
@@ -900,7 +900,7 @@ function get_sets()
       neck="Loricate torque +1",         --            6
       left_ear="Domesticator's earring", --     5
       right_ear="Mendi. Earring",        --  5
-      body="Arbatel Gown +2",            --    28*  3 13
+      body="Arbatel Gown +3",            --    28*  3 13
       hands="Pinga Mittens +1",          --  7  6         7
       left_ring="Gelatinous Ring +1",    --            7
       right_ring="Defending Ring",       --           10
@@ -908,7 +908,6 @@ function get_sets()
       back=Lugh.DT,                      --        10 10
       legs="Pinga Pants +1",             -- 13  8        13
       feet="Pinga Pumps +1",             --  5  5         5
-
       -- merits                                 5
       -- totals:                            50 45* 20 52 35
     })                                   --    *Much more w/ grimoire

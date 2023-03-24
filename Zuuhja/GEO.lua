@@ -159,7 +159,7 @@ function get_sets()
      main="Idris",
      sub="Genmei Shield",
      ammo="Staunch Tathlum +1",
-     head="Azimuth Hood +2",
+     head="Azimuth Hood +3",
      body="Azimuth Coat +3",
      hands="Bagua Mitaines +3",
      legs={ name="Merlinic Shalwar", augments={'DEX+5','INT+4','"Refresh"+2','Accuracy+1 Attack+1',}},
@@ -187,7 +187,7 @@ function get_sets()
 
    sets.me.idle.mdt = set_combine(sets.me.idle.dt, {
      neck="Warder's Charm +1",
-     head="Azimuth Hood +2",
+     head="Azimuth Hood +3",
      hands="Azimuth Gloves +2",
      feet="Azimuth Gaiters +2", 
    })
@@ -208,7 +208,7 @@ function get_sets()
      main="Idris",
      sub="Genmei shield", -- 10 pdt
      ammo="Staunch Tathlum +1", -- 3 dt
-     head="Azimuth Hood +2",
+     head="Azimuth Hood +3",
      left_ear="Odnowa earring +1", -- 3 dt, 2 mdt
      right_ear="Etiolation Earring", -- 3 mdt
      body={ name="Telchine Chas.", augments={'Pet: "Regen"+3','Pet: Damage taken -4%',}},
@@ -288,7 +288,7 @@ function get_sets()
      ammo={ name="Ghastly Tathlum +1", augments={'Path: A',}},
      head="Pixie Hairpin +1",
      body={ name="Amalric Doublet +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
-     hands="Jhakri Cuffs +2",
+     hands={ name="Nyame Gauntlets", augments={'Path: B',}},
      legs={ name="Amalric Slops +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
      feet={ name="Agwu's Pigaches", augments={'Path: A',}},
      neck="Sibyl Scarf",
@@ -319,15 +319,15 @@ function get_sets()
      head={ name="Merlinic Hood", augments={'"Mag.Atk.Bns."+11','"Fast Cast"+6','INT+5','Mag. Acc.+9',}}, -- 14
      neck="Voltsurge Torque",                                                                             --  4
      right_ear="Malignance earring",                                                                      --  4
-     left_ear="Etiolation earring",                                                                       --  1
-     body="Merlinic jubbah",                                                                              --  6
-     hands="Bagua mitaines +3",                                                                           -- 14 (elemental only.)
+     left_ear="Loquacious earring",                                                                       --  2
+     body="Agwu's Robe",                                                                                  --  8
+     hands="Agwu's Gages",                                                                                --  6
      left_ring="Kishar Ring",                                                                             --  4
      right_ring="Prolix ring",                                                                            --  2
      back="Lifestream Cape",                                                                              --  7
      waist="Embla sash",                                                                                  --  5
      legs="Geomancy Pants +3",                                                                            -- 15
-     feet="Merlinic crackows"                                                                             -- 11
+     feet={ name="Merlinic Crackows", augments={'"Fast Cast"+6','CHR+2','Mag. Acc.+11',}},                -- 11
    }
 
    sets.precast.geomancy = set_combine(sets.precast.casting, {
@@ -369,7 +369,7 @@ function get_sets()
    }  
    
    sets.precast["Full Circle"] = {
-      head = "Azimuth Hood +2",
+      head = "Azimuth Hood +3",
    }  
    
    sets.precast["Curative Recantation"] = {

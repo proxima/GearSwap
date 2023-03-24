@@ -517,6 +517,18 @@ function init_gear_sets()
 
     -- Other general spells and classes.
     sets.midcast.Cure = {
+      main="Daybreak",
+      sub="Genmei Shield",
+      head={ name="Vanya Hood", augments={'MP+50','"Fast Cast"+10','Haste+2%',}},
+      body="Bunzi's Robe",
+      hands="Inyanga dastanas +2",
+      legs="Bunzi's pants",
+      feet="Bunzi's sabots",
+      waist="Luminary Sash",
+      left_ear="Mendi. Earring",
+      right_ear="Meili Earring",
+      left_ring="Stikini Ring +1",
+      right_ring="Lebeche Ring",  
     }
 
     sets.midcast.Curaga = set_combine(sets.midcast.Cure, {

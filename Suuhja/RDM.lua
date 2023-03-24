@@ -572,7 +572,7 @@ function get_sets()
     sets.midcast.nuking.acc = set_combine(sets.midcast.nuking.normal, {
       waist="Acuity Belt +1",
       right_ring={ name="Metamor. Ring +1", augments={'Path: A',}},
-      feet=EMPY.Feet,   
+      feet=EMPY.Feet,
     })
 
     -- used with toggle, default: F10
@@ -582,9 +582,9 @@ function get_sets()
       sub="Ammurapi Shield",
       ammo="Ghastly Tathlum +1",
       head="Ea Hat +1",
-      body="Ea Houppe. +1",
+      body="Nyame Mail",
       hands={ name="Amalric Gages +1", augments={'INT+12','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
-      legs="Ea Slops +1",
+      legs="Nyame Flanchard",
       feet={ name="Amalric Nails +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
       neck="Dls. Torque +2",
       waist="Sacro Cord",
@@ -599,6 +599,7 @@ function get_sets()
     -- Pieces to swap from freen nuke to Magic Burst
     sets.midcast.MB.acc = set_combine(sets.midcast.MB.normal, {
       waist="Acuity Belt +1",
+      hands="Bunzi's Gloves",
       right_ring={ name="Metamor. Ring +1", augments={'Path: A',}},
       legs=EMPY.Legs,
       feet=EMPY.Feet,
@@ -633,7 +634,6 @@ function get_sets()
       head="Vitiation Chapeau +3",
       body=EMPY.Body,
       left_ring="Metamorph Ring +1",
-      waist="Luminary Sash",
     })
 
     -- Type C-potency from: Int & "Enfeeb Potency" gear
@@ -660,7 +660,7 @@ function get_sets()
       legs={ name="Psycloth Lappas", augments={'MP+80','Mag. Acc.+15','"Fast Cast"+7',}},
       feet={ name="Vitiation Boots +3", augments={'Immunobreak Chance',}},
       neck={ name="Dls. Torque +2", augments={'Path: A',}},
-      waist="Luminary Sash",
+      waist="Obstinate Sash", 
       left_ear="Snotra Earring",
       right_ear="Vor Earring",
       left_ring="Stikini Ring +1",
@@ -675,18 +675,39 @@ function get_sets()
       left_ring="Kishar ring",
     })
 
-    sets.midcast["Dispelga"] = set_combine(sets.midcast.Enfeebling.macc, {
+    sets.midcast.MACC = {
+      main="Crocea Mors",          -- Murgleis
+      sub="Ammurapi Shield",
+      ranged={name="Ullr", priority=10},
+      ammo=empty,
+      head="Atrophy Chapeau +3",
+      neck="Dls. Torque +2",
+      left_ear="Lethargy earring +1",
+      right_ear="Regal Earring",
+      body="Atrophy Tabard +3",
+      hands=EMPY.Hands,
+      left_ring={name="Stikini Ring +1",bag="wardrobe 2"},
+      right_ring={name="Stikini Ring +1",bag="wardrobe 3"},
+      back="Aurist's Cape +1",
+      waist="Obstinate Sash", 
+      legs=EMPY.Legs,
+      feet=EMPY.Feet
+    }
+
+    sets.midcast["Dispelga"] = set_combine(sets.midcast.MACC, {
       main="Daybreak",
-      sub="Ammurapi Shield"
+      sub="Ammurapi Shield",
     })
 
-    sets.midcast["Stun"] = set_combine(sets.midcast.Enfeebling.macc, {
+    sets.midcast["Stun"] = set_combine(sets.midcast.MACC, {
     })
 
-    sets.midcast.Impact = set_combine(sets.midcast.Enfeebling.macc, {
+    sets.midcast.Impact = set_combine(sets.midcast.MACC, {
       head=empty, 
       body="Crepuscular Cloak",
-      feet=EMPY.Feet  
+    })
+
+    sets.midcast.Absorb = set_combine(sets.midcast.MACC, {
     })
 
     -- Enhancing yourself 

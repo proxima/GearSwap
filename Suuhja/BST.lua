@@ -244,7 +244,7 @@ function init_gear_sets()
     })
     
     sets.midcast.Pet.MaccReady = {
-      main="Agwu's Axe",
+      main="Aymur",
       sub="Sacro Bulwark",
       ammo="Voluspa Tathlum",
       head="Nukumi Cabasset +3",

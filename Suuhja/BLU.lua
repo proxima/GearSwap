@@ -387,13 +387,13 @@ function init_gear_sets()
     neck="Fotia Gorget",
     left_ear="Moonshade Earring",
     right_ear="Ishvara Earring",
-    body="Nyame Mail",
+    body="Assimilator's Jubbah +3",
     hands="Nyame Gauntlets",
     left_ring="Epaminondas's Ring",
     right_ring="Ilabrat Ring",
     back=Cape.STR_WSD,
     waist="Fotia Belt",
-    legs="Nyame Flanchard",
+    legs="Luhlaza Shalwar +3",
     feet="Nyame Sollerets"
   }
 
@@ -474,7 +474,6 @@ function init_gear_sets()
   sets.precast.WS['Realmrazer'].Acc = sets.precast.WS['Requiescat'].Acc
 
   sets.precast.WS['Flash Nova'] = set_combine(sets.precast.WS['Sanguine Blade'], {
-    head="Hashishin Kavuk +3",
     right_ring="Metamorph Ring +1"
   })
 
@@ -504,7 +503,7 @@ function init_gear_sets()
 
   sets.midcast['Blue Magic'] = {
     head="Luhlaza Keffiyeh +1",
-    body="Assimilator's Jubbah +1",
+    body="Assimilator's Jubbah +3",
     left_ear="Njordr Earring",
     right_ear="Hashi. Earring +2",
     left_ring={name="Stikini Ring +1",bag="wardrobe 2"},
@@ -542,10 +541,8 @@ function init_gear_sets()
     ammo={ name="Ghastly Tathlum +1", augments={'Path: A',}},
     head="Hashishin kavuk +3",
     body="Hashishin mintan +3",
-    -- body="Nyame Mail",
     hands="Hashishin bazubands +3",
     legs="Hashishin tayt +3",
-    -- legs="Nyame Flanchard",
     feet="Hashishin basmak +3",
     neck="Sibyl Scarf",
     waist="Orpheus's Sash",
@@ -629,6 +626,7 @@ function init_gear_sets()
     hands="Pinga Mittens +1", 
     legs="Pinga Pants +1",
     feet="Pinga Pumps +1",
+    waist="Platinum moogle belt",
   }
 
   sets.midcast['Blue Magic'].HealingSelf = set_combine(sets.midcast['Blue Magic'].Healing, {
