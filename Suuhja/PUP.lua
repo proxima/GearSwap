@@ -329,9 +329,9 @@ function init_gear_sets()
     ]]
     sets.idle = {
       head={ name="Nyame Helm", augments={'Path: B',}},
-      body={ name="Nyame Mail", augments={'Path: B',}},
+      body="Nyame Mail",
       hands={ name="Nyame Gauntlets", augments={'Path: B',}},
-      legs={ name="Nyame Flanchard", augments={'Path: B',}},
+      legs="Nyame Flanchard",
       feet={ name="Nyame Sollerets", augments={'Path: B',}},
       neck="Bathy Choker +1",
       waist="Moonbow Belt +1",
@@ -353,7 +353,7 @@ function init_gear_sets()
       left_ear="Eabani Earring",
       right_ear="Etiolation Earring",
       left_ring="C. Palug Ring",
-      right_ring="Thur. Ring +1",
+      right_ring="Archon ring",
       back=Visucius.PetDT
     }
 
@@ -457,7 +457,7 @@ function init_gear_sets()
       neck={ name="Pup. Collar +2", augments={'Path: A',}},
       left_ear={ name="Schere Earring", augments={'Path: A',}},
       right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
-      body="Nyame Mail",
+      body="Mpaca's Doublet",
       hands="Nyame Gauntlets",
       left_ring="Gere Ring",
       right_ring="Niqmaddu Ring",
@@ -469,9 +469,9 @@ function init_gear_sets()
 
     sets.precast.WS["Aeolian Edge"] = {
       head={ name="Nyame Helm", augments={'Path: B',}},
-      body={ name="Nyame Mail", augments={'Path: B',}},
+      body={ name="Nyame Mail", augments={'Path: C',}},
       hands={ name="Nyame Gauntlets", augments={'Path: B',}},
-      legs={ name="Nyame Flanchard", augments={'Path: B',}},
+      legs={ name="Nyame Flanchard", augments={'Path: C',}},
       feet={ name="Nyame Sollerets", augments={'Path: B',}},
       neck="Sibyl Scarf",
       waist="Orpheus's Sash",
@@ -488,18 +488,18 @@ function init_gear_sets()
         Idle Mode = MasterDT
     ]]
     sets.idle.MasterDT = {
-        head="Malignance Chapeau",
-        body="Malignance Tabard",
-        hands="Malignance Gloves",
-        legs="Malignance Tights",
-        feet="Malignance Boots",
-        neck="Loricate Torque +1",
-        waist="Moonbow Belt +1",
-        left_ear="Etiolation Earring",
-        right_ear="Odnowa Earring +1",
-        left_ring="Gelatinous Ring +1",
-        right_ring="Defending Ring",
-        back=Visucius.PetDT
+      head="Malignance Chapeau",
+      body="Malignance Tabard",
+      hands="Malignance Gloves",
+      legs="Malignance Tights",
+      feet="Malignance Boots",
+      neck="Loricate Torque +1",
+      waist="Moonbow Belt +1",
+      left_ear="Etiolation Earring",
+      right_ear="Odnowa Earring +1",
+      left_ring="Gelatinous Ring +1",
+      right_ring="Defending Ring",
+      back=Visucius.PetDT
     }
 
     -------------------------------------
@@ -508,18 +508,18 @@ function init_gear_sets()
         Hybrid Mode = Normal
     ]]
     sets.engaged.Master = {
-        head={ name="Ryuo Somen +1", augments={'HP+65','"Store TP"+5','"Subtle Blow"+8',}},
-        body="Mpaca's Doublet",
-        hands="Mpaca's Gloves",
-        legs={ name="Ryuo Hakama +1", augments={'Accuracy+25','"Store TP"+5','Phys. dmg. taken -4',}},
-        feet={ name="Herculean Boots", augments={'"Triple Atk."+3','Rng.Atk.+13','Quadruple Attack +3','Accuracy+13 Attack+13','Mag. Acc.+4 "Mag.Atk.Bns."+4',}},
-        neck="Shulmanu Collar",
-        waist="Moonbow Belt +1",
-        left_ear={name="Mache Earring +1",bag="wardrobe 4"},
-        right_ear="Karagoz earring +1",
-        left_ring="Niqmaddu Ring",
-        right_ring="Gere Ring",
-        back=Visucius.MasterDA
+      head={ name="Ryuo Somen +1", augments={'HP+65','"Store TP"+5','"Subtle Blow"+8',}},
+      body="Mpaca's Doublet",
+      hands="Mpaca's Gloves",
+      legs={ name="Ryuo Hakama +1", augments={'Accuracy+25','"Store TP"+5','Phys. dmg. taken -4',}},
+      feet={ name="Herculean Boots", augments={'"Triple Atk."+3','Rng.Atk.+13','Quadruple Attack +3','Accuracy+13 Attack+13','Mag. Acc.+4 "Mag.Atk.Bns."+4',}},
+      neck="Shulmanu Collar",
+      waist="Moonbow Belt +1",
+      left_ear={name="Mache Earring +1",bag="wardrobe 4"},
+      right_ear="Karagoz earring +1",
+      left_ring="Niqmaddu Ring",
+      right_ring="Gere Ring",
+      back=Visucius.MasterDA
     }
 
     -------------------------------------DW
@@ -713,19 +713,16 @@ function init_gear_sets()
     ]]
     sets.pet.EmergencyDT = {
       head="Anwig Salade",
-      -- head={ name="Rao Kabuto +1", augments={'Pet: HP+125','Pet: Accuracy+20','Pet: Damage taken -4%',}},       --  4
       body={ name="Rao Togi +1", augments={'Pet: HP+125','Pet: Accuracy+20','Pet: Damage taken -4%',}},         --  4
       hands={ name="Rao Kote +1", augments={'Pet: HP+125','Pet: Accuracy+20','Pet: Damage taken -4%',}},        --  4
       legs={ name="Rao Haidate +1", augments={'Pet: HP+125','Pet: Accuracy+20','Pet: Damage taken -4%',}},      --  4
       feet={ name="Rao sune-ate +1", augments={'Pet: HP+125','Pet: Accuracy+20','Pet: Damage taken -4%',}},     --  4
       neck="Shulmanu Collar",
-      -- waist="Klouskap sash +1",
       waist="Isa Belt",                                                                                         --  3
       left_ear="Enmerkar earring",                                                                              --  3
-      right_ear="Rimeice Earring",                                                                              --  1
-      left_ring="Thurandaut Ring +1",                                                                           --  4
-      right_ring="C. Palug Ring",
-    --right_ring="Overbearing Ring",
+      right_ear="Handler's Earring +1",                                                                         --  4
+      left_ring="C. Palug Ring",
+      right_ring="Overbearing Ring",
       back=Visucius.PetDT                                                                                       --  5
     }
 
@@ -752,7 +749,7 @@ function init_gear_sets()
         waist="Klouskap sash +1",
         left_ear="Enmerkar earring",
         right_ear="Rimeice Earring",
-        left_ring="Thurandaut Ring +1",
+        left_ring="Varar Ring +1",
         right_ring="C. Palug Ring",
         back=Visucius.PetDT
     }
@@ -772,8 +769,8 @@ function init_gear_sets()
         waist="Klouskap sash +1",
         left_ear="Enmerkar Earring",
         right_ear="Rimeice Earring",
-        left_ring="Thurandaut Ring +1",
-        right_ring="Varar Ring +1",
+        left_ring="Varar Ring +1",
+        right_ring="C. Palug Ring",
         back=Visucius.PetDT
     }
 
@@ -783,7 +780,6 @@ function init_gear_sets()
     ]]
     sets.idle.Pet.Engaged.TP = {
       head={ name="Taeon Chapeau", augments={'Pet: Accuracy+23 Pet: Rng. Acc.+23','Pet: "Dbl. Atk."+5','Pet: Damage taken -4%',}},
-      -- body={ name="Pitre Tobe +3", augments={'Enhances "Overdrive" effect',}},
       body={ name="Taeon Tabard", augments={'Pet: Accuracy+21 Pet: Rng. Acc.+21','Pet: "Dbl. Atk."+5','Pet: Damage taken -4%',}},
       hands={ name="Taeon Gloves", augments={'Pet: Accuracy+23 Pet: Rng. Acc.+23','Pet: "Dbl. Atk."+5','Pet: Damage taken -4%',}},
       legs={ name="Taeon Tights", augments={'Pet: Accuracy+23 Pet: Rng. Acc.+23','Pet: "Dbl. Atk."+5','Pet: Damage taken -4%',}},
@@ -792,7 +788,7 @@ function init_gear_sets()
       waist="Klouskap Sash +1",
       left_ear="Enmerkar Earring",
       right_ear="Domesticator's Earring",
-      left_ring="Thurandaut Ring +1",
+      left_ring="Varar Ring +1",
       right_ring="C. Palug Ring",
       back=Visucius.PetDT
     }
@@ -803,7 +799,6 @@ function init_gear_sets()
     ]]
     sets.idle.Pet.Engaged.DT = {
       head="Anwig Salade",
-      -- head={ name="Rao Kabuto +1", augments={'Pet: HP+125','Pet: Accuracy+20','Pet: Damage taken -4%',}},       --  4
       body={ name="Rao Togi +1", augments={'Pet: HP+125','Pet: Accuracy+20','Pet: Damage taken -4%',}},         --  4
       hands={ name="Rao Kote +1", augments={'Pet: HP+125','Pet: Accuracy+20','Pet: Damage taken -4%',}},        --  4
       legs={ name="Rao Haidate +1", augments={'Pet: HP+125','Pet: Accuracy+20','Pet: Damage taken -4%',}},      --  4
@@ -811,10 +806,10 @@ function init_gear_sets()
       neck="Shulmanu Collar",
       waist="Isa Belt",                                                                                         --  3
       left_ear="Enmerkar earring",                                                                              --  3
-      right_ear="Rimeice Earring",                                                                              --  1
-      left_ring="Thurandaut Ring +1",                                                                           --  4
-      right_ring="Overbearing Ring",
-      back=Visucius.PetDT                                                                                       --  5
+      right_ear="Handler's Earring +1",                                                                         --  4
+      left_ring="Varar Ring +1",
+      right_ring="C. Palug Ring",
+      back=Visucius.PetDT                                                                                       --  10 MDT
     }
 
     --[[
@@ -845,11 +840,11 @@ function init_gear_sets()
         Hybrid Mode = Ranged
     ]]
     sets.idle.Pet.Engaged.Ranged =
-        set_combine(
-        sets.idle.Pet.Engaged,
-        {
-            legs=Empy_Karagoz.Legs_Combat
-        }
+      set_combine(
+      sets.idle.Pet.Engaged,
+      {
+          legs=Empy_Karagoz.Legs_Combat
+      }
     )
 
     -------------------------------------WS
@@ -857,18 +852,18 @@ function init_gear_sets()
         WSNoFTP is the default weaponskill set used
     ]]
     sets.midcast.Pet.WSNoFTP = {
-        head=Relic_Pitre.Head_PRegen,
-        body= Relic_Pitre.Body_PTP,
-        hands="Mpaca's Gloves",   
-        legs=Empy_Karagoz.Legs_Combat,
-        feet="Mpaca's Boots",
-        neck="Shulmanu Collar",
-        waist="Incarnation Sash",
-        left_ear="Enmerkar earring",
-        right_ear="Burana earring",
-        left_ring="Thurandaut Ring +1",
-        right_ring="C. Palug Ring",
-        back=Visucius.PetDT
+      head=Relic_Pitre.Head_PRegen,
+      body= Relic_Pitre.Body_PTP,
+      hands="Mpaca's Gloves",   
+      legs=Empy_Karagoz.Legs_Combat,
+      feet="Mpaca's Boots",
+      neck="Shulmanu Collar",
+      waist="Incarnation Sash",
+      left_ear="Enmerkar earring",
+      right_ear="Burana earring",
+      left_ring="Varar Ring +1",
+      right_ring="C. Palug Ring",
+      back=Visucius.PetDT
     }
 
     --[[
@@ -876,9 +871,9 @@ function init_gear_sets()
         then this set will be equipped
     ]]
     sets.midcast.Pet.WSFTP = set_combine(sets.midcast.Pet.WSNoFTP, {
-        head=Empy_Karagoz.Head_PTPBonus,
-        back="Dispersal Mantle",
-        waist="Klouskap sash +1",
+      head=Empy_Karagoz.Head_PTPBonus,
+      back="Dispersal Mantle",
+      waist="Klouskap sash +1",
     })
 
     --[[
@@ -901,7 +896,7 @@ function init_gear_sets()
       waist="Incarnation Sash",
       left_ear="Burana earring",
       right_ear="Domesticator's earring",
-      left_ring="Thurandaut Ring +1",
+      left_ring="Varar Ring +1",
       right_ring="C. Palug Ring",
       back=Visucius.PetDT
     }
@@ -914,10 +909,10 @@ function init_gear_sets()
 
     -- Arcuballista, Daze
     sets.midcast.Pet.WS["DEXFTP"] =
-        set_combine(
-        sets.midcast.Pet.WSFTP,
-        {
-        }
+      set_combine(
+      sets.midcast.Pet.WSFTP,
+      {
+      }
     )
 
     ---------------------------------------------
@@ -930,20 +925,20 @@ function init_gear_sets()
     ---------------------------------------------
     -- Town Set
     sets.idle.Town = {
-        range="Animator P +1",
-        ammo="Automat. Oil +3",
-        head="Pitre Taj +3",
-        body="Udug Jacket",
-        hands="Malignance Gloves",
-        legs="Heyoka Subligar +1",
-        feet="Hermes' Sandals",
-        neck="Shulmanu Collar",
-        waist="Moonbow Belt +1",
-        left_ear="Mache Earring +1",
-        right_ear="Brutal Earring",
-        left_ring="Niqmaddu Ring",
-        right_ring="Gere Ring",
-        back=Visucius.MasterDA
+      range="Animator P +1",
+      ammo="Automat. Oil +3",
+      head="Pitre Taj +3",
+      body="Udug Jacket",
+      hands="Malignance Gloves",
+      legs="Heyoka Subligar +1",
+      feet="Hermes' Sandals",
+      neck="Shulmanu Collar",
+      waist="Moonbow Belt +1",
+      left_ear="Mache Earring +1",
+      right_ear="Brutal Earring",
+      left_ring="Niqmaddu Ring",
+      right_ring="Gere Ring",
+      back=Visucius.MasterDA
     }
 
     sets.midcast.Phalanx = {

@@ -113,7 +113,7 @@ function job_setup()
   blue_magic_maps.Magical = S{'Anvil Lightning','Blastbomb','Blazing Bound','Bomb Toss','Cursed Sphere',
       'Droning Whirlwind','Embalming Earth','Firespit','Foul Waters','Ice Break','Leafstorm',
       'Maelstrom','Molting Plumage','Nectarous Deluge','Regurgitation','Rending Deluge','Scouring Spate',
-      'Silent Storm','Spectral Floe','Subduction','Tem. Upheaval','Water Bomb'}
+      'Silent Storm','Spectral Floe','Subduction','Tem. Upheaval','Water Bomb','Searing Tempest'}
 
   blue_magic_maps.MagicalDark = S{'Dark Orb','Death Ray','Eyes On Me','Evryone. Grudge','Palling Salvo',
       'Tenebral Crush'}
@@ -356,7 +356,7 @@ function init_gear_sets()
   sets.precast.JA['Enchainment'] = {body="Luhlaza Jubbah +1"}
 
   sets.precast.FC = {
-    ammo="Staunch Tathlum +1",
+    ammo="Impatiens",
     head="Carmine Mask +1",                                       -- 14
     body="Pinga Tunic +1",                                        -- 15
     hands="Pinga Mittens +1",                                     --  7
