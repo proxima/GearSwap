@@ -158,13 +158,13 @@ function get_sets()
     -- Your idle set
     sets.me.idle.refresh = {
       ammo="Staunch Tathlum +1",
-      head="Nyame Helm",
+      head="Agwu's Cap",
       ear1="Etiolation earring",
       ear2="Odnowa earring +1",
       neck="Loricate torque +1",
-      body="Agwu's Robe",
-      hands="Nyame Gauntlets",
-      legs="Agwu's slops",
+      body="Nyame Mail",
+      hands="Agwu's Gages",
+      legs="Nyame Flanchard",
       left_ring={name="Stikini Ring +1",bag="wardrobe 2"},
       right_ring={name="Stikini Ring +1",bag="wardrobe 3"},
       feet="Wicce Sabots +2",

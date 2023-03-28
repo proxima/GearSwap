@@ -820,18 +820,18 @@ function get_sets()
      sub="Khonsu",                                                                                       --         4 haste
      ammo="Staunch Tathlum +1",
      head={ name="Vanya Hood", augments={'MP+50','"Fast Cast"+10','Haste+2%',}},                         -- 10 fc,  8 haste
-     neck="Voltsurge Torque",                                                                            --  4 fc
+     neck="Bathy choker +1",                                                                             --                  11 sb
      left_ear="Etiolation Earring",                                                                      --  1 fc
-     right_ear={ name="Odnowa Earring +1", augments={'Path: A',}},
+     right_ear="Dignitary's Earring",                                                                    --                   5 sb
      body="Pinga Tunic +1",                                                                              -- 15 fc
      hands="Acad. Bracers +3",                                                                           --  9 fc,  3 haste
-     left_ring={name="Chirich Ring +1",bag="wardrobe 2"},
-     right_ring={name="Chirich Ring +1",bag="wardrobe 4"},
+     left_ring={name="Chirich Ring +1",bag="wardrobe 2"},                                                --                  10 sb
+     right_ring={name="Chirich Ring +1",bag="wardrobe 4"},                                               --                  10 sb
      back=Lugh.MP_FC,                                                                                    -- 10 fc
      waist="Witful Belt",                                                                                --  3 fc,  3 haste
      legs="Psycloth Lappas",                                                                             --  7 fc,  5 haste
      feet="Acad. Loafers +3",                                                                            --         3 haste
-   }                                                                                                     -- 59 fc, 26 haste
+   }                                                                                                     -- 55 fc, 26 haste, 36 sb
    
    sets.midcast["Aero"] = sets.midcast.SC_Open
    sets.midcast["Blizzard"] = sets.midcast.SC_Open
