@@ -489,16 +489,16 @@ function get_sets()
     sets.precast.casting = {
       ammo="Impatiens",
       head={ name="Merlinic Hood", augments={'"Fast Cast"+7','"Mag.Atk.Bns."+14',}}, -- 15 fc
-      neck="Voltsurge Torque",   -- 4 fc
-      ear1="Etiolation earring", -- 1 fc
-      ear2="Malignance earring", -- 4 fc
-      body="Pinga tunic +1",     -- 15 fc
-      hands="Acad. Bracers +3",  -- 9 fc
-      ring1="Lebeche ring",      -- 
-      ring2="Kishar ring",       -- 4 fc
+      neck="Voltsurge Torque",      -- 4 fc
+      ear1="Etiolation earring",    -- 1 fc
+      ear2="Malignance earring",    -- 4 fc
+      body="Pinga tunic +1",        -- 15 fc
+      hands="Acad. Bracers +3",     -- 9 fc
+      left_ring="Lebeche ring",          -- 
+      right_ring="Weatherspoon ring +1", -- 6 fc
       back=Lugh.MP_FC,
-      waist="Embla sash",        -- 5 fc
-      legs="Pinga pants +1",     -- 13 fc
+      waist="Witful belt",          -- 3 fc
+      legs="Pinga pants +1",        -- 13 fc
       feet={ name="Merlinic Crackows", augments={'Attack+22','"Fast Cast"+7',}}, -- 12 fc, 3 haste
     }
 
@@ -631,7 +631,7 @@ function get_sets()
       left_ear="Regal Earring",
       right_ear="Malignance Earring",
       left_ring="Freke Ring",
-      right_ring={ name="Metamor. Ring +1", augments={'Path: A',}},
+      right_ring="Weatherspoon ring +1",
       back=Lugh.INT_MAB -- Damage > Duration
     }
 
@@ -711,8 +711,8 @@ function get_sets()
      waist="Hachirin-no-Obi",
      left_ear="Regal Earring",
      right_ear="Malignance Earring",
-     left_ring="Metamorph ring +1",
-     right_ring="Freke Ring",
+     left_ring="Freke Ring",
+     right_ring="Weatherspoon ring +1",
      back=Lugh.MND_WSD
    }
    

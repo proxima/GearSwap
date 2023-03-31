@@ -347,7 +347,7 @@ function init_gear_sets()
       main="Raetic rod +1",                                 --         23  10 +50Cure
       sub="Genmei Shield",                                  --      10
       ammo="Staunch Tathlum +1",                            --       3        +11SIRD
-      head="Ebers Cap +2",                                  --         22
+      head="Ebers Cap +3",                                  --         22
       body="Ebers Bliaut +3",                               --                +Solace
       hands="Ebers mitts +3",                               --   12 11
       legs="Ebers Pant. +3",                                --      12        +MP Return
@@ -477,7 +477,7 @@ function init_gear_sets()
     sets.midcast.BarElement = set_combine(sets.midcast['Enhancing Magic'], {
       main="Beneficus",
       sub="Ammurapi Shield",
-      head="Ebers Cap +2",
+      head="Ebers Cap +3",
       body="Ebers Bliaut +3",
       hands="Ebers Mitts +3",
       legs="Piety Pantaloons +3",

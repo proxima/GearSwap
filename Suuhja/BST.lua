@@ -129,9 +129,9 @@ function init_gear_sets()
     }
  
     sets.precast.FC = {
+      right_ring="Weatherspoon ring +1"
     }
-           
-                   
+                              
     sets.midcast.Stoneskin = {
     }
                
@@ -188,7 +188,7 @@ function init_gear_sets()
       right_ear="Friomisi Earring",
       body="Nyame Mail",
       hands="Nyame Gauntlets",
-      left_ring="Metamorph Ring +1",
+      left_ring="Weatherspoon ring +1",
       right_ring="Epaminondas's Ring",
       back=Cape.REND,
       waist="Orpheus's Sash",

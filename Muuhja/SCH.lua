@@ -203,7 +203,7 @@ function get_sets()
 
     -- Your idle Sublimation set combine from refresh or DT depening on mode.
     sets.me.idle.sublimation = set_combine(sets.me.idle.refresh, {
-      head="Acad. Mortar. +2",
+      head="Acad. Mortar. +3",
       body="Arbatel Gown +3",
       waist="Embla Sash",
     })
@@ -212,7 +212,7 @@ function get_sets()
     sets.me.idle.dt = set_combine(sets.me.idle[refreshType], {
       ammo="Staunch Tathlum +1",
       head="Nyame Helm",
-      body="Arbatel Gown +2",
+      body="Arbatel Gown +3",
       hands="Nyame Gauntlets",
       legs="Nyame Flanchard",
       feet="Nyame Sollerets",
@@ -401,14 +401,14 @@ function get_sets()
       neck="Voltsurge Torque",
       left_ear="Moonshade Earring",
       right_ear="Etiolation Earring",
-      body="Acad. Gown +2",
+      body="Acad. Gown +3",
       hands="Pinga mittens +1",
       left_ring="Mephitas's Ring",
       right_ring="Metamorph ring +1",
       back=Lugh.MP_FC,
       waist="Luminary sash",
       legs="Arbatel pants +2",
-	  feet="Arbatel loafers +3",
+      feet="Arbatel loafers +3",
     }
 
     sets.me["Black Halo"] = {
@@ -469,7 +469,7 @@ function get_sets()
       ear1="Etiolation earring", -- 1 fc
       ear2="Malignance earring", -- 4 fc
       body="Pinga Tunic +1",     -- 15 fc
-      hands="Acad. Bracers +2",  -- 9 fc
+      hands="Acad. Bracers +3",  -- 9 fc
       ring1="Lebeche ring",      -- 
       ring2="Kishar ring",       -- 4 fc
       back=Lugh.MP_FC,           -- 10 fc
@@ -638,7 +638,7 @@ function get_sets()
      ear1="Etiolation earring", -- 1 fc
      ear2="Malignance earring", -- 4 fc
      body="Agwu's Robe",        -- 8 fc -- Pinga Tunic +1
-     hands={ name="Merlinic Dastanas", augments={'MND+5','Pet: DEX+3','"Fast Cast"+8','Mag. Acc.+6 "Mag.Atk.Bns."+6',}}, -- 8 fc hands="Acad. Bracers +3") 9 fc
+     hands="Acad. Bracers +3",  -- 9 fc
      ring1="Defending ring", 
      ring2="Kishar ring",       -- 4 fc
      back=Lugh.DT,
@@ -724,9 +724,9 @@ function get_sets()
      main="Bunzi's rod",
      sub="Ammurapi shield",
      ammo="Pemphredo tathlum",
-     head="Acad. Mortar. +2",  --  6  8
-     body="Acad. Gown +2",     --  3
-     hands="Acad. Bracers +2", --  3  9
+     head="Acad. Mortar. +3",  --  6  8
+     body="Acad. Gown +3",     --  3
+     hands="Acad. Bracers +3", --  3  9
      legs="Arbatel Pants +2",  --  5
      feet="Acad. Loafers +3",  --  3
      neck={ name="Argute Stole +2", augments={'Path: A',}},
@@ -744,9 +744,9 @@ function get_sets()
      main="Bunzi's rod",
      sub="Ammurapi shield",
      ammo="Pemphredo tathlum",
-     head="Acad. Mortar. +2",
-     body="Acad. Gown +2",
-     hands="Acad. Bracers +2",
+     head="Acad. Mortar. +3",
+     body="Acad. Gown +3",
+     hands="Acad. Bracers +3",
      legs="Arbatel Pants +2",
      feet="Acad. Loafers +3",
      neck={ name="Argute Stole +2", augments={'Path: A',}},
@@ -810,7 +810,7 @@ function get_sets()
      ammo="Pemphredo tathlum",
      head=empty,
      body="Cohort Cloak +1",
-     hands="Acad. Bracers +2",
+     hands="Acad. Bracers +3",
      legs={ name="Chironic Hose", augments={'Mag. Acc.+22 "Mag.Atk.Bns."+22','"Fast Cast"+4','INT+9','Mag. Acc.+10',}},
      feet="Acad. Loafers +3",
      neck={ name="Argute Stole +2", augments={'Path: A',}},
@@ -862,8 +862,8 @@ function get_sets()
       ammo="Pemphredo tathlum",
       head="Pixie hairpin +1",
       neck="Erra pendant",
-      body="Acad. Gown +2",
-      hands="Academic's bracers +2",
+      body="Acad. Gown +3",
+      hands="Academic's bracers +3",
       waist="Fucho-no-Obi",
       legs="Pedagogy pants +1",
       left_ring="Archon ring",
@@ -878,7 +878,7 @@ function get_sets()
       head={ name="Vanya Hood", augments={'Healing magic skill +20','"Cure" spellcasting time -7%','Magic dmg. taken -3',}},
       body="Pedagogy Gown +1",
       hands="Pedagogy bracers +1",
-      legs="Academic's Pants +2",
+      legs="Academic's Pants +3",
       feet={ name="Vanya Clogs", augments={'Healing magic skill +20','"Cure" spellcasting time -7%','Magic dmg. taken -3',}},
       neck="Debilis Medallion",
       waist="Bishop's Sash",

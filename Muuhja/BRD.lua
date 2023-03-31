@@ -1093,7 +1093,7 @@ function get_lullaby_duration(spell)
 
     local mult = 1
 
-    if player.equipment.range == 'Daurdabla' then mult = mult + 0.3 end -- change to 0.25 with 90 Daur
+    if player.equipment.range == "Daurdabla" then mult = mult + 0.3 end -- change to 0.25 with 90 Daur
     if player.equipment.range == "Gjallarhorn" then mult = mult + 0.4 end -- change to 0.3 with 95 Gjall
     if player.equipment.range == "Marsyas" then mult = mult + 0.5 end
 
@@ -1114,9 +1114,9 @@ function get_lullaby_duration(spell)
     if player.equipment.feet == "Brioso Slippers +1" then mult = mult + 0.11 end
     if player.equipment.feet == "Brioso Slippers +2" then mult = mult + 0.13 end
     if player.equipment.feet == "Brioso Slippers +3" then mult = mult + 0.15 end
-    if player.equipment.hands == 'Brioso Cuffs +1' then mult = mult + 0.1 end
-    if player.equipment.hands == 'Brioso Cuffs +2' then mult = mult + 0.1 end
-    if player.equipment.hands == 'Brioso Cuffs +3' then mult = mult + 0.2 end
+    if player.equipment.hands == "Brioso Cuffs +1" then mult = mult + 0.1 end
+    if player.equipment.hands == "Brioso Cuffs +2" then mult = mult + 0.1 end
+    if player.equipment.hands == "Brioso Cuffs +3" then mult = mult + 0.2 end
 
     -- JP Duration Gift
     if self.job_points.brd.jp_spent >= 1200 then

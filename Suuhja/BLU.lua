@@ -365,12 +365,12 @@ function init_gear_sets()
     neck="Voltsurge Torque",                                      --  4
     waist="Witful Belt",                                          --  3
     back="Fi Follet Cape +1",                                     -- 10
-    left_ear="Etiolation Earring",                                --  1
-    right_ear={ name="Odnowa Earring +1", augments={'Path: A',}},
+    left_ear="Odnowa earring +1",                                
+    right_ear="Tuisto earring",
     left_ring="Kishar Ring",                                      --  4
-    right_ring="Gelatinous Ring +1",
+    right_ring="Weatherspoon ring +1",                            --  6
   }                                                               -- --
-                                                                  -- 76
+                                                                  -- 81
 
   sets.precast.FC['Blue Magic'] = set_combine(sets.precast.FC, {})
   sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, {})
@@ -548,8 +548,8 @@ function init_gear_sets()
     waist="Orpheus's Sash",
     left_ear="Regal Earring",
     right_ear="Friomisi Earring",
-    left_ring="Shiva Ring +1",
-    right_ring={ name="Metamor. Ring +1", augments={'Path: A',}},
+    left_ring={ name="Metamor. Ring +1", augments={'Path: A',}},
+    right_ring="Shiva Ring +1",
     back=Cape.INT_MAB
   }
 
@@ -562,6 +562,7 @@ function init_gear_sets()
   })
 
   sets.midcast['Blue Magic'].MagicalLight = set_combine(sets.midcast['Blue Magic'].Magical, {
+    right_ring="Weatherspoon ring +1",
   })
 
   sets.midcast['Blue Magic'].MagicalEarth = set_combine(sets.midcast['Blue Magic'].Magical, {

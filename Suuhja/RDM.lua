@@ -398,7 +398,7 @@ function get_sets()
       feet="Thereoid Greaves",
     }
     
-    sets.me["Evisceration"] = sets.me["Chant du Cygne"]
+    sets.me["Evisceration"] = set_combine(sets.me["Chant du Cygne"], {})
 
     sets.me["Sanguine Blade"] = {
       ammo="Sroda Tathlum",
@@ -432,14 +432,16 @@ function get_sets()
       back=RDMCape.MND_WSD
     }
 
-    sets.me["Burning Blade"] = sets.me["Red Lotus Blade"]
-    sets.me["Shining Blade"] = sets.me["Red Lotus Blade"]
+    sets.me["Burning Blade"] = set_combine(sets.me["Red Lotus Blade"], {})
+    sets.me["Shining Blade"] = set_combine(sets.me["Red Lotus Blade"], {})
 
     sets.me["Seraph Blade"] = set_combine(sets.me["Red Lotus Blade"], {
       ammo="Regal Gem",
+      left_ring="Weatherspoon ring +1",
     })
 
-    sets.me["Seraph Strike"] = sets.me["Seraph Blade"]
+    sets.me["Seraph Strike"] = set_combine(sets.me["Seraph Blade"], {})
+    sets.me["Flash Nova"]    = set_combine(sets.me["Seraph Blade"], {})
     
     sets.me["Aeolian Edge"] = {
       ammo="Sroda Tathlum",
@@ -537,8 +539,8 @@ function get_sets()
     -----------------------------------------------------------------------------------------------
     -- Make sure you have a non weather obi in this set. Helix get bonus naturally no need Obi.	
     sets.midcast.DarkHelix = {
-      head = "Pixie Hairpin +1",
-      left_ring = "Archon Ring",
+      head="Pixie Hairpin +1",
+      left_ring="Archon Ring",
       waist="Skrymir Cord +1",
     }
     

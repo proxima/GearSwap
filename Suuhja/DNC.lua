@@ -324,6 +324,7 @@ function init_gear_sets()
     sets.precast.Flourish3['Climactic Flourish'] = {head="Maculele Tiara +3",}
 
     sets.precast.FC = {
+      right_ring="Weatherspoon ring +1",
     }
 
     sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {

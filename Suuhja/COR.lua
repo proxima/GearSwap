@@ -291,10 +291,10 @@ function init_gear_sets()
     sets.precast.Waltz['Healing Waltz'] = {}
 
     sets.precast.FC = {
-      head="Carmine Mask +1",  -- 14
-      neck="Voltsurge Torque", --  4
-      left_ring="Kishar Ring", --  4
-      right_ring="Lebeche Ring",
+      head="Carmine Mask +1",            -- 14
+      neck="Voltsurge Torque",           --  4
+      left_ring="Kishar Ring",           --  4
+      right_ring="Weatherspoon ring +1", --  6
     }
 
     sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {

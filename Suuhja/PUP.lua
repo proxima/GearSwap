@@ -359,6 +359,7 @@ function init_gear_sets()
 
     -------------------------------------Fastcast
     sets.precast.FC = {
+      right_ring="Weatherspoon ring +1",
     }
 
     -------------------------------------Midcast

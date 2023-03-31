@@ -440,12 +440,12 @@ function get_sets()
       legs="Agwu's Slops",                                                           --  7
       feet={ name="Merlinic Crackows", augments={'Attack+22','"Fast Cast"+7',}},     -- 12
       neck="Voltsurge Torque",                                                       --  4
-      waist="Embla Sash",                                                            --  5
+      waist="Witful belt",                                                           --  3
       left_ear="Malignance Earring",                                                 --  4
       right_ear="Etiolation Earring",                                                --  1
-      left_ring="Mallquis Ring",                                                     --  3~
+      left_ring="Weatherspoon ring +1",                                              --  6
       right_ring="Kishar Ring",                                                      --  4
-      back=Taranus.MND_FC_MEVA
+      back=Taranus.MND_FC_MEVA                                                       -- 10
     }
 
    sets.precast["Dispelga"] = set_combine(sets.precast.casting, {
@@ -556,7 +556,7 @@ function get_sets()
       left_ear="Crematio Earring",
       right_ear="Malignance Earring",
       left_ring="Mallquis Ring",
-      right_ring="Freke Ring",
+      right_ring="Weatherspoon ring +1",
       back=Taranus.INT_MAB -- Damage > Duration
     }
 
@@ -596,19 +596,19 @@ function get_sets()
    }
    
    sets.midcast.nuking.normal = {
-      ammo="Ghastly Tathlum +1",
-      head="Agwu's Cap",
-      body="Agwu's Robe",
-      hands="Agwu's Gages",
-      legs="Agwu's Slops",
-      feet="Agwu's Pigaches",
-      neck="Sorcerer's Stole +2",
-      waist="Sacro Cord",
-      left_ear="Regal Earring",
-      right_ear="Malignance Earring",
-      left_ring="Metamorph Ring +1",
-      right_ring="Freke Ring",
-      back=Taranus.INT_MAB
+     ammo="Ghastly Tathlum +1",
+     head="Agwu's Cap",
+     body="Agwu's Robe",
+     hands="Agwu's Gages",
+     legs="Agwu's Slops",
+     feet="Agwu's Pigaches",
+     neck="Sorcerer's Stole +2",
+     waist="Sacro Cord",
+     left_ear="Regal Earring",
+     right_ear="Malignance Earring",
+     left_ring="Metamorph Ring +1",
+     right_ring="Freke Ring",
+     back=Taranus.INT_MAB
    }
 
    sets.midcast.nuking.acc = set_combine(sets.midcast.nuking.normal, {
@@ -663,11 +663,11 @@ function get_sets()
     -- Enfeebling
    sets.midcast.IntEnfeebling = {
      ammo="Pemphredo tathlum",
-     head="Befouled Crown",
+     head="Spaekona's Petasos +3",
      body="Spaekona's Coat +3",
-     hands="Regal Cuffs",
-     legs="Archmage's Tonban +3",
-     feet="Archmage's Sabots +3",
+     hands="Spaekons's Gloves +3",
+     legs="Spaekona's Tonban +2",
+     feet="Spaekona's Sabots +2",
      neck="Sorcerer's Stole +2",
      waist="Acuity Belt +1",
      left_ear="Regal Earring",
@@ -683,7 +683,7 @@ function get_sets()
      head="Wicce Petasos +2",
      legs="Archmage's tonban +3",
      feet="Archmage's sabots +3",
-   })   
+   })
    
    sets.midcast.Dispelga = set_combine(sets.midcast.IntEnfeebling, {
      main="Daybreak",
@@ -748,10 +748,10 @@ function get_sets()
       ammo="Pemphredo tathlum",
       head="Pixie hairpin +1",
       neck="Erra pendant",
-      body={ name="Amalric Doublet +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
+      body="Spaekona's Coat +3",
       hands={ name="Merlinic Dastanas", augments={'"Mag.Atk.Bns."+11','"Drain" and "Aspir" potency +10','MND+6',}},
       waist="Fucho-no-Obi",
-      legs="Agwu's Slops",
+      legs="Spaekona's Tonban +2",
       left_ring="Archon ring",
       right_ring="Evanescence ring",
       back=Taranus.INT_MAB,

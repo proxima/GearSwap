@@ -95,7 +95,7 @@ function user_setup()
     Linos.AEOLIAN = { name="Linos", augments={'"Mag.Atk.Bns."+15','Weapon skill damage +3%','INT+8',}} -- Can get 20 MAB w/ Snowdim +2
 
     Cape = {}
-    Cape.TP         = { name="Intarabus's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dual Wield"+10','Phys. dmg. taken-10%',}} -- '"Store TP"+10'
+    Cape.TP         = { name="Intarabus's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Store TP"+10','Phys. dmg. taken-10%',}}
     Cape.MEVA       = { name="Intarabus's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity-10','Phys. dmg. taken-10%',}}
     Cape.FC         = { name="Intarabus's Cape", augments={'CHR+20','Mag. Acc+20 /Mag. Dmg.+20','CHR+10','"Fast Cast"+10','Phys. dmg. taken-10%',}}
     Cape.WSD        = { name="Intarabus's Cape", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}
@@ -376,8 +376,8 @@ function init_gear_sets()
     sets.midcast.HonorMarch = {range="Marsyas", hands="Fili Manchettes +1"}
 
     sets.midcast.Lullaby = {
-      body="Fili Hongreline +1",
-      hands="Brioso Cuffs +2",
+      body="Fili Hongreline +2",
+      hands="Brioso Cuffs +3",
       legs="Inyanga Shalwar +2",
     }
 
@@ -406,8 +406,8 @@ function init_gear_sets()
     sets.midcast.Mambo = {feet="Mousai Crackows +1"}
     sets.midcast.March = {hands="Fili Manchettes +1"}
     sets.midcast.Minne = {legs="Mousai Seraweels +1"}
-    sets.midcast.Minuet = {body="Fili Hongreline +1"}
-    sets.midcast.Paeon = {head="Brioso Roundlet +2"}
+    sets.midcast.Minuet = {body="Fili Hongreline +2"}
+    sets.midcast.Paeon = {head="Brioso Roundlet +3"}
     sets.midcast.Threnody = {body="Mou. Manteel +1"}
     sets.midcast['Adventurer\'s Dirge'] = {range="Marsyas"}
     sets.midcast['Foe Sirvente'] = {}
@@ -421,7 +421,7 @@ function init_gear_sets()
       sub="Genmei Shield",
       range="Gjallarhorn",
       head="Fili Calot +1",
-      body="Fili Hongreline +1",
+      body="Fili Hongreline +2",
       hands="Fili Manchettes +1",
       legs="Inyanga shalwar +2",
       feet="Brioso Slippers +3",
@@ -439,9 +439,9 @@ function init_gear_sets()
       main="Carnwenhan",
       sub="Ammurapi Shield",
       range="Marsyas",
-      head="Brioso Roundlet +2",
-      body="Fili Hongreline +1",
-      hands="Brioso Cuffs +2",
+      head="Brioso Roundlet +3",
+      body="Fili Hongreline +2",
+      hands="Brioso Cuffs +3",
       legs="Inyanga shalwar +2",
       feet="Brioso Slippers +3",
       neck="Mnbw. Whistle +1",
@@ -455,8 +455,8 @@ function init_gear_sets()
 
     -- For song defbuffs (accuracy primary, duration secondary)
     sets.midcast.SongEnfeebleAcc = set_combine(sets.midcast.SongEnfeeble, {
-      body="Brioso Justau. +2",
-      legs="Brioso Cannions +2",
+      body="Brioso Justau. +3",
+      legs="Brioso Cannions +3",
     })
 
     -- For Horde Lullaby maximum AOE range.
@@ -470,7 +470,7 @@ function init_gear_sets()
       main=Kali.PH,
       range="Daurdabla",
       head="Fili Calot +1",
-      body="Fili Hongreline +1",
+      body="Fili Hongreline +2",
       hands="Fili Manchettes +1",
       legs="Fili Rhingrave +1",
       feet="Fili Cothurnes +1",
@@ -512,10 +512,10 @@ function init_gear_sets()
       main="Carnwenhan",
       sub="Ammurapi Shield",
       range="Gjallarhorn",
-      head="Brioso Roundlet +2",
-      body="Brioso Justau. +2",
+      head="Brioso Roundlet +3",
+      body="Brioso Justau. +3",
       hands="Inyanga Dastanas +2",
-      legs="Brioso Cannions +2",
+      legs="Brioso Cannions +3",
       feet="Brioso Slippers +3",
       neck="Mnbw. Whistle +1",
       ear1="Digni. Earring",
@@ -624,11 +624,11 @@ function init_gear_sets()
 
     sets.engaged = {
       range=Linos.TP,
-      head="Bunzi's Hat",
-      body="Ashera Harness",
-      hands="Bunzi's Gloves",
-      legs="Nyame Flanchard", 
-      feet="Nyame Sollerets",
+      head="Bunzi's Hat",           -- 7, 6
+      body="Ashera Harness",        -- 9, 4
+      hands="Bunzi's Gloves",       -- 8, 3
+      legs="Volte Tights",          --    9
+      feet="Nyame Sollerets",       -- 7, 3
       neck="Bard's Charm +2",
       ear1="Brutal Earring",
       ear2="Dignitary's Earring",
@@ -647,20 +647,19 @@ function init_gear_sets()
     -- No Magic Haste (74% DW to cap)
     sets.engaged.DW = {
       range=Linos.TP,
-      head="Bunzi's Hat",    
-      body="Ashera Harness",
-      hands="Bunzi's Gloves",
-      legs="Nyame Flanchard", 
-      feet="Nyame Sollerets",
+      head="Bunzi's Hat",           -- 7, 6
+      body="Ashera Harness",        -- 9, 4
+      hands="Bunzi's Gloves",       -- 8, 3
+      legs="Volte Tights",          --    9
+      feet="Nyame Sollerets",       -- 7, 3
       neck="Bard's Charm +2",
-      ear1="Crepuscular Earring",
+      ear1="Eabani Earring",
       ear2="Telos Earring",
       left_ring=MR.One,
       right_ring=MR.Two,
-      back=Cape.TP,
-      waist="Sailfi Belt +1"
-      -- ear1="Eabani Earring",
-      -- waist="Reiki Yotai"
+      back=Cape.TP,                 --   10
+      waist="Reiki Yotai"
+
     }
 
     sets.engaged.DW.Acc = set_combine(sets.engaged.DW, {
@@ -692,6 +691,19 @@ function init_gear_sets()
     ------------------------------------------------------------------------------------------------
 
     sets.engaged.Hybrid = {
+      range=Linos.TP,
+      head="Bunzi's Hat",           -- 7, 6
+      body="Nyame Mail",            -- 9, 4
+      hands="Bunzi's Gloves",       -- 8, 3
+      legs="Nyame Flanchard",
+      feet="Nyame Sollerets",       -- 7, 3
+      neck="Bard's Charm +2",
+      ear1="Brutal Earring",
+      ear2="Dignitary's Earring",
+      left_ring=MR.One,
+      right_ring=MR.Two,
+      back=Cape.TP,                 --   10
+      waist="Sailfi Belt +1"
     }
 
     sets.engaged.DT = set_combine(sets.engaged, sets.engaged.Hybrid)
@@ -1036,7 +1048,7 @@ function get_lullaby_duration(spell)
 
     local mult = 1
 
-    if player.equipment.range == 'Daurdabla' then mult = mult + 0.3 end -- change to 0.25 with 90 Daur
+    if player.equipment.range == "Daurdabla" then mult = mult + 0.3 end -- change to 0.25 with 90 Daur
     if player.equipment.range == "Gjallarhorn" then mult = mult + 0.4 end -- change to 0.3 with 95 Gjall
     if player.equipment.range == "Marsyas" then mult = mult + 0.5 end
 
@@ -1049,15 +1061,17 @@ function get_lullaby_duration(spell)
     if player.equipment.neck == "Mnbw. Whistle" then mult = mult + 0.2 end
     if player.equipment.neck == "Mnbw. Whistle +1" then mult = mult + 0.3 end
     if player.equipment.body == "Fili Hongreline +1" then mult = mult + 0.12 end
+    if player.equipment.body == "Fili Hongreline +2" then mult = mult + 0.13 end
+    if player.equipment.body == "Fili Hongreline +3" then mult = mult + 0.14 end
     if player.equipment.legs == "Inyanga Shalwar +1" then mult = mult + 0.15 end
     if player.equipment.legs == "Inyanga Shalwar +2" then mult = mult + 0.17 end
     if player.equipment.feet == "Brioso Slippers" then mult = mult + 0.1 end
     if player.equipment.feet == "Brioso Slippers +1" then mult = mult + 0.11 end
     if player.equipment.feet == "Brioso Slippers +2" then mult = mult + 0.13 end
     if player.equipment.feet == "Brioso Slippers +3" then mult = mult + 0.15 end
-    if player.equipment.hands == 'Brioso Cuffs +1' then mult = mult + 0.1 end
-    if player.equipment.hands == 'Brioso Cuffs +2' then mult = mult + 0.1 end
-    if player.equipment.hands == 'Brioso Cuffs +3' then mult = mult + 0.2 end
+    if player.equipment.hands == "Brioso Cuffs +1" then mult = mult + 0.1 end
+    if player.equipment.hands == "Brioso Cuffs +2" then mult = mult + 0.1 end
+    if player.equipment.hands == "Brioso Cuffs +3" then mult = mult + 0.2 end
 
     -- JP Duration Gift
     if self.job_points.brd.jp_spent >= 1200 then

@@ -108,14 +108,13 @@ function init_gear_sets()
     sets.precast.Flourish1 = sets.TreasureHunter
     sets.precast.JA.Provoke = sets.TreasureHunter
 
-
     --------------------------------------
     -- Precast sets
     --------------------------------------
 
     -- Precast sets to enhance JAs
-    sets.precast.JA['Collaborator'] = {head="Skulker's Bonnet +2"}
-    sets.precast.JA['Accomplice'] = {head="Skulker's Bonnet +2"}
+    sets.precast.JA['Collaborator'] = {head="Skulker's Bonnet +3"}
+    sets.precast.JA['Accomplice'] = {head="Skulker's Bonnet +3"}
     sets.precast.JA['Flee'] = {feet="Pillager's Poulaines +3"}
     sets.precast.JA['Hide'] = {body="Pillager's Vest +3"}
     sets.precast.JA['Conspirator'] = {body="Skulker's Vest +3"}
@@ -136,7 +135,7 @@ function init_gear_sets()
 
 
     -- Fast cast sets for spells
-    sets.precast.FC = {}
+    sets.precast.FC = {right_ring="Weatherspoon ring +1"}
 
     sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {neck="Magoraga Beads"})
 
@@ -326,7 +325,7 @@ function init_gear_sets()
     
     sets.midcast["Sleepga"] = {
       ammo="Pemphredo Tathlum",
-      head="Skulker's Bonnet +2",
+      head="Skulker's Bonnet +3",
       body="Skulker's Vest +3",
       hands="Skulker's Armlets +2",
       legs="Skulker's Culottes +2",

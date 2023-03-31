@@ -301,8 +301,8 @@ function init_gear_sets()
       waist="Witful Belt",
       left_ear="Etiolation Earring",
       right_ear="Malignance Earring",
-      left_ring="Kishar Ring",
-      right_ring="Lebeche Ring",
+      left_ring="Lebeche Ring",
+      right_ring="Weatherspoon ring +1",
       back={ name="Alaunus's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','MND+10','"Fast Cast"+10','Phys. dmg. taken-10%',}},
     }
 
@@ -357,8 +357,6 @@ function init_gear_sets()
       waist="Fotia Belt",
       right_ear="Ebers Earring +2",
     })
-
-    sets.precast.WS['Flash Nova'] = set_combine(sets.precast.WS, {})
     
     sets.precast.WS['Cataclysm'] = set_combine(sets.precast.WS, {
       ammo="Ghastly Tathlum +1",
@@ -374,6 +372,15 @@ function init_gear_sets()
       ring2="Archon Ring",
       back={ name="Alaunus's Cape", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}},
       waist="Orpheus's Sash",
+    })
+
+    sets.precast.WS['Flash Nova'] = set_combine(sets.precast.WS['Cataclysm'], {
+      ammo="Oshasha's Treatise",
+      head="Nyame helm",  
+      left_ring="Epaminondas's Ring",
+      right_ring="Weatherspoon ring +1",
+      waist="Orpheus's sash",
+      back={ name="Alaunus's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','MND+10','"Fast Cast"+10','Phys. dmg. taken-10%',}},
     })
 
     sets.precast.WS['Rock Crusher'] = set_combine(sets.precast.WS['Cataclysm'],  {
@@ -394,7 +401,7 @@ function init_gear_sets()
       main="Raetic rod +1",                                 --         23  10 +50Cure
       sub="Genmei Shield",                                  --      10
       ammo="Staunch Tathlum +1",                            --       3        +11SIRD
-      head="Ebers Cap +2",                                  --         22
+      head="Ebers Cap +3",                                  --         22
       body="Ebers Bliaut +3",                               --                +Solace
       hands="Ebers mitts +3",                               --   12 11
       legs="Ebers Pant. +3",                                --      12        +MP Return
@@ -519,7 +526,7 @@ function init_gear_sets()
     sets.midcast.BarElement = set_combine(sets.midcast['Enhancing Magic'], {
       main="Beneficus",
       sub="Ammurapi Shield",
-      head="Ebers Cap +2",
+      head="Ebers Cap +3",
       body="Ebers Bliaut +3",
       hands="Ebers Mitts +3",
       legs="Piety Pantaln. +3",
@@ -557,19 +564,20 @@ function init_gear_sets()
       sub="Ammurapi Shield",
       ammo="Pemphredo Tathlum",
       head="Bunzi's Hat",
-      body="Bunzi's Robe",
+      body="Nyame Mail",
       hands="Bunzi's Gloves",
-      legs="Bunzi's Pants",
+      legs="Nyame Flanchard",
       feet="Bunzi's Sabots",
       neck="Saevus Pendant +1",
       left_ear="Malignance Earring",
       right_ear="Regal Earring",
       left_ring="Freke Ring",
+      right_ring="Weatherspoon ring +1",
       back={ name="Alaunus's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','MND+10','"Fast Cast"+10','Phys. dmg. taken-10%',}},
       waist="Skrymir Cord +1",
     }
     
-    sets.midcast['Elemental Magic'] = sets.midcast['Divine Magic']
+    sets.midcast['Elemental Magic'] = set_combine(sets.midcast['Divine Magic'], {main="Bunzi's rod"})
 
     sets.midcast.Banish = sets.midcast['Divine Magic']
     sets.midcast.Holy = sets.midcast.Banish
