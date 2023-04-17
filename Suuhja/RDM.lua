@@ -233,7 +233,7 @@ function get_sets()
     RDMCape.TP        = { name="Sucellos's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dual Wield"+10','Phys. dmg. taken-10%',}}
     RDMCape.MND_WSD   = { name="Sucellos's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','MND+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}
     RDMCape.Aeolian   = { name="Sucellos's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}
-    RDMCape.BlackHalo = { name="Sucellos's Cape", augments={'MND+20','Accuracy+20 Attack+20','MND+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}
+    RDMCape.BlackHalo = { name="Sucellos's Cape", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}
 
     -- SETS
      
@@ -358,7 +358,7 @@ function get_sets()
       waist="Sailfi Belt +1",
       left_ear="Moonshade Earring",
       right_ear="Regal Earring",
-      left_ring={ name="Metamor. Ring +1", augments={'Path: A',}},
+      left_ring="Sroda ring",
       right_ring="Epaminondas's Ring",
       back=RDMCape.BlackHalo
     }
@@ -374,7 +374,7 @@ function get_sets()
       waist="Kentarch Belt +1",
       left_ear="Regal Earring",
       right_ear="Sherida Earring",
-      left_ring={ name="Metamor. Ring +1", augments={'Path: A',}},
+      left_ring="Sroda ring",
       right_ring="Epaminondas's Ring",
       back=RDMCape.BlackHalo
     }

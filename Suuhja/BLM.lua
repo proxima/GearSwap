@@ -665,7 +665,7 @@ function get_sets()
      ammo="Pemphredo tathlum",
      head="Spaekona's Petasos +3",
      body="Spaekona's Coat +3",
-     hands="Spaekons's Gloves +3",
+     hands="Spaekona's Gloves +3",
      legs="Spaekona's Tonban +2",
      feet="Spaekona's Sabots +2",
      neck="Sorcerer's Stole +2",

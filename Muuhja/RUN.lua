@@ -20,13 +20,8 @@
 --              [ WIN+C ]           Toggle Capacity Points Mode
 --
 --  Abilities:  [ CTRL+` ]          Use current Rune
---              [ CTRL+- ]          Rune element cycle forward.
---              [ CTRL+= ]          Rune element cycle backward.
---              [ CTRL+` ]          Use current Rune
---
---              [ CTRL+Numpad/ ]    Berserk/Meditate/Souleater
---              [ CTRL+Numpad* ]    Warcry/Sekkanoki/Arcane Circle
---              [ CTRL+Numpad- ]    Aggressor/Third Eye/Weapon Bash
+--              [ CTRL+Insert ]     Rune element cycle forward.
+--              [ CTRL+Delete ]     Rune element cycle backward.
 --
 --  Spells:     [ WIN+, ]           Utsusemi: Ichi
 --              [ WIN+. ]           Utsusemi: Ni
@@ -51,11 +46,9 @@
 --  Custom Commands (preface with /console to use these in macros)
 -------------------------------------------------------------------------------------------------------------------
 
-
 --  gs c rune                       Uses current rune
 --  gs c cycle Runes                Cycles forward through rune elements
 --  gs c cycleback Runes            Cycles backward through rune elements
-
 
 -------------------------------------------------------------------------------------------------------------------
 -- Setup functions for this job.  Generally should not be modified.
@@ -106,7 +99,7 @@ function user_setup()
 
   state.Knockback = M(false, 'Knockback')
 
-  state.WeaponSet = M{['description']='Weapon Set', 'Epeolatry', 'EpeolatryTank', 'Aettir', 'Lycurgos', 'Malignance'}
+  state.WeaponSet = M{['description']='Weapon Set', 'Epeolatry', 'EpeolatryTank', 'EpeolatryIrenic', 'Aettir', 'Lycurgos', 'Malignance'}
   state.AttackMode = M{['description']='Attack', 'Uncapped', 'Capped'}
   state.WeaponLock = M(false, 'Weapon Lock')
 
@@ -141,20 +134,6 @@ function user_setup()
   send_command('bind !p input /ma "Shock Spikes" <me>')
 
   send_command('bind @w gs c toggle WeaponLock')
-
-  if player.sub_job == 'WAR' then
-    send_command('bind ^numpad/ input /ja "Berserk" <me>')
-    send_command('bind ^numpad* input /ja "Warcry" <me>')
-    send_command('bind ^numpad- input /ja "Aggressor" <me>')
-  elseif player.sub_job == 'DRK' then
-    send_command('bind ^numpad/ input /ja "Souleater" <me>')
-    send_command('bind ^numpad* input /ja "Arcane Circle" <me>')
-    send_command('bind ^numpad- input /ja "Weapon Bash" <me>')
-  elseif player.sub_job == 'SAM' then
-    send_command('bind ^numpad/ input /ja "Meditate" <me>')
-    send_command('bind ^numpad* input /ja "Sekkanoki" <me>')
-    send_command('bind ^numpad- input /ja "Third Eye" <me>')
-  end
 
   send_command('bind ^numpad7 input /ws "Resolution" <t>')
   send_command('bind ^numpad8 input /ws "Upheaval" <t>')
@@ -198,10 +177,11 @@ function user_setup()
   Cape.FC     = { name="Ogma's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','HP+20','"Fast Cast"+10','Phys. dmg. taken-10%',}}
   Cape.WSD    = { name="Ogma's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}
   Cape.Parry  = { name="Ogma's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','"Store TP"+10','Parrying rate+5%',}}
+  Cape.Nuke   = { name="Ogma's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Phys. dmg. taken-10%',}}
 
   TaeonPhalanx = {}
   TaeonPhalanx.Body =  {name="Herculean Vest", augments={'Crit.hit rate+4','MND+1','Phalanx +5','Accuracy+16 Attack+16','Mag. Acc.+18 "Mag.Atk.Bns."+18',}}
-  TaeonPhalanx.Hands = {name="Taeon Gloves", augments={'Mag. Evasion+20','Phalanx +3',}}
+  TaeonPhalanx.Hands = {name="Herculean Gloves", augments={'Enmity+3','DEX+6','Phalanx +4',}}
   TaeonPhalanx.Legs =  {name="Taeon Tights", augments={'Mag. Evasion+20','Phalanx +3',}}
   TaeonPhalanx.Feet =  {name="Taeon Boots", augments={'Mag. Evasion+20','Spell interruption rate down -10%','Phalanx +3',}}
   
@@ -226,9 +206,6 @@ function user_unload()
   send_command('unbind !p')
   send_command('unbind ^,')
   send_command('unbind @w')
-  send_command('unbind ^numpad/')
-  send_command('unbind ^numpad*')
-  send_command('unbind ^numpad-')
   send_command('unbind ^numpad7')
   send_command('unbind ^numpad9')
   send_command('unbind ^numpad5')
@@ -317,7 +294,6 @@ function init_gear_sets()
   sets.precast.JA['Battuta'] = set_combine(sets.Enmity, {head=Relic.Head})
   sets.precast.JA['Liement'] = set_combine(sets.Enmity, {body=Relic.Body})
  
-  -- Need cape
   sets.precast.JA['Lunge'] = {
     ammo="Seething Bomblet +1",
     head="Agwu's Cap",
@@ -329,6 +305,7 @@ function init_gear_sets()
     left_ring="Metamorph Ring +1",
     right_ring={name="Stikini Ring +1", bag="wardrobe5"},
     waist="Orpheus's Sash",
+    back=Cape.Nuke,
     legs="Agwu's Slops",
     feet="Agwu's Pigaches",
   }
@@ -397,6 +374,19 @@ function init_gear_sets()
   }
  
   sets.precast.WS.Acc = set_combine(sets.precast.WS, {
+    ammo="C. Palug Stone",
+    head=Empy.Head,
+    body=Empy.Body,
+    hands=Empy.Hands,
+    legs=Empy.Legs,
+    feet=Empy.Feet,
+    neck="Sanctity Necklace",
+    waist={ name="Kentarch Belt +1", augments={'Path: A',}},
+    left_ear="Mache Earring +1",
+    right_ear="Crep. Earring",
+    left_ring={name="Chirich Ring +1",bag="wardrobe 2"},
+    right_ring={name="Chirich Ring +1",bag="wardrobe 3"},
+    back=Cape.WSD
   })
  
   sets.precast.WS.Uncapped = set_combine(sets.precast.WS, {
@@ -418,19 +408,6 @@ function init_gear_sets()
   })
  
   sets.precast.WS['Dimidiation'].Acc = set_combine(sets.precast.WS['Dimidiation'], {
-    ammo="C. Palug Stone",
-    head="Erilaz Galea +3",
-    body="Runeist Coat +3",
-    hands="Erilaz Gauntlets +3",
-    legs="Eri. Leg Guards +3",
-    feet="Erilaz Greaves +3",
-    neck="Sanctity Necklace",
-    waist={ name="Kentarch Belt +1", augments={'Path: A',}},
-    left_ear="Mache Earring +1",
-    right_ear="Crep. Earring",
-    left_ring={name="Chirich Ring +1",bag="wardrobe 2"},
-    right_ring={name="Chirich Ring +1",bag="wardrobe 3"},
-    back=Cape.WSD
   })
  
   sets.precast.WS['Dimidiation'].Uncapped = set_combine(sets.precast.WS['Dimidiation'], {
@@ -477,7 +454,7 @@ function init_gear_sets()
  
   sets.midcast.SpellInterrupt = {
     ammo="Staunch Tathlum +1",   -- 11
-    head="Agwu's Cap",           -- 10
+    head=Empy.Head,              -- 20
     neck="Moonlight Necklace",   -- 15
     left_ear="Odnowa Earring +1",
     right_ear="Cryptic Earring",
@@ -537,7 +514,7 @@ function init_gear_sets()
     legs=Relic.Legs,
   })
  
-  sets.midcast['Aquaveil'] = sets.midcast.SpellInterrupt
+  sets.midcast['Aquaveil'] = set_combine(sets.midcast.SpellInterrupt, {})
  
   sets.midcast.Temper = set_combine(sets.midcast['Enhancing Magic'], {
     legs="Carmine cuisses +1",
@@ -555,7 +532,25 @@ function init_gear_sets()
  
   sets.midcast['Divine Magic'] = sets.Enmity
   sets.midcast['Enfeebling Magic'] = {}
- 
+
+  sets.midcast['Elemental Magic'] = {
+    main="Nandaka",
+    sub="Khonsu",
+    ammo="Ghastly tathlum +1",
+    head="Agwu's Cap",
+    neck="Sibyl Scarf",
+    left_ear="Friomisi Earring",
+    right_ear="Crematio Earring",
+    body="Agwu's Robe",
+    hands="Agwu's Gages",
+    left_ring="Metamorph Ring +1",
+    right_ring="Mujin band",
+    waist="Skrymir cord +1",
+    back=Cape.Nuke,
+    legs="Agwu's Slops",
+    feet="Agwu's Pigaches",
+  }
+  
   sets.midcast.Flash = sets.Enmity
   sets.midcast.Foil = sets.Enmity
   sets.midcast.Stun = sets.Enmity
@@ -592,6 +587,7 @@ function init_gear_sets()
     body=AF.Body,
     left_ring={name="Stikini Ring +1", bag="wardrobe"},
     right_ring={name="Stikini Ring +1", bag="wardrobe5"},
+    waist="Platinum moogle belt",
     legs="Carmine Cuisses +1",
   })
  
@@ -623,18 +619,19 @@ function init_gear_sets()
   }
  
   sets.defense.MDT = {
-    ammo="Staunch Tathlum +1",
+    ammo="Vanir Battery",
     head={ name="Nyame Helm", augments={'Path: B',}},
-    neck="Warder's Charm +1",
-    left_ear="Sanare earring",
-    right_ear="Odnowa earring +1",
-    body=AF.Body,
-    hands={ name="Nyame Gauntlets", augments={'Path: B',}},
-    left_ring="Shadow ring",
-    back=Cape.Enmity,
+    body="Runeist Coat +3",
+    hands="Erilaz Gauntlets +3",
+    legs="Eri. Leg Guards +3",
+    feet="Erilaz Greaves +3",
+    neck="Inq. Bead Necklace",
     waist="Engraved Belt",
-    legs=Empy.Legs,
-    feet=Empy.Feet
+    left_ear="Sanare Earring",
+    right_ear="Odnowa earring +1",
+    left_ring="Shadow Ring",
+    right_ring="Lunette Ring +1",
+    back=Cape.Enmity
   }
   
   sets.defense.Parry = {
@@ -673,10 +670,21 @@ function init_gear_sets()
     feet={ name="Nyame Sollerets", augments={'Path: B',}},  
   }
 
-  sets.Hybrid = set_combine(sets.defense.MDT, {
+  sets.Hybrid = {
+    ammo="Staunch Tathlum +1",
+    head={ name="Nyame Helm", augments={'Path: B',}},
+    neck="Warder's Charm +1",
+    left_ear="Sanare earring",
+    right_ear="Odnowa earring +1",
     body=Empy.Body,
+    hands=Empy.Hands,
+    left_ring="Shadow ring",
     right_ring="Moonlight Ring",
-  })
+    back=Cape.Enmity,
+    waist="Engraved Belt",
+    legs=Empy.Legs,
+    feet=Empy.Feet
+  }
 
   sets.engaged.Aftermath = sets.Hybrid
   sets.engaged.Parry = sets.defense.Parry
@@ -700,7 +708,8 @@ function init_gear_sets()
   
   sets.Epeolatry = {main="Epeolatry", sub="Utu Grip"}
   sets.EpeolatryTank = {main="Epeolatry", sub="Refined Grip +1"}
-  sets.Aettir = {main="Aettir", sub="Khonsu"}
+  sets.EpeolatryIrenic = {main="Epeolatry", sub="Irenic Strap +1"}
+  sets.Aettir = {main="Aettir", sub="Irenic Strap +1"}
   sets.Lycurgos = {main="Lycurgos", sub="Utu Grip"}
   sets.Malignance = {main="Malignance Sword", sub=empty}  
 end

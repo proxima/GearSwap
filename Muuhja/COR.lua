@@ -132,7 +132,7 @@ function user_setup()
     state.WeaponskillMode:options('Normal', 'Acc')
     state.IdleMode:options('Normal', 'DT', 'Refresh')
 
-    state.WeaponSet = M{['description']='Weapon Set', 'Anarchy', 'DeathPenalty_M', 'DeathPenalty_R', 'Armageddon_M', 'Aeolian', 'Rolls'}
+    state.WeaponSet = M{['description']='Weapon Set', 'Anarchy', 'DeathPenalty_M', 'DeathPenalty_R', 'Armageddon_M', 'Fomalhaut_M', 'Fomalhaut_R', 'Aeolian', 'Rolls'}
     state.WeaponLock = M(false, 'Weapon Lock')
 
     gear.RAbullet = "Chrono Bullet"
@@ -270,7 +270,7 @@ function init_gear_sets()
     sets.precast.CorsairRoll = {
       head="Lanun Tricorne +1",
       body="Malignance Tabard",
-      hands="Chasseur's Gants +2",
+      hands="Chasseur's Gants +3",
       legs="Malignance Tights",
       feet="Malignance Boots",
       neck="Regal Necklace",
@@ -285,10 +285,10 @@ function init_gear_sets()
     sets.precast.CorsairRoll.Duration = {main=Rostam.C, range="Compensator"}
     sets.precast.CorsairRoll.LowerDelay = {}
     sets.precast.CorsairRoll["Caster's Roll"] = set_combine(sets.precast.CorsairRoll, {legs="Chas. Culottes +3"})
-    sets.precast.CorsairRoll["Courser's Roll"] = set_combine(sets.precast.CorsairRoll, {feet="Chass. Bottes +2"})
+    sets.precast.CorsairRoll["Courser's Roll"] = set_combine(sets.precast.CorsairRoll, {feet="Chass. Bottes +3"})
     sets.precast.CorsairRoll["Blitzer's Roll"] = set_combine(sets.precast.CorsairRoll, {head="Chass. Tricorne +2"})
     sets.precast.CorsairRoll["Tactician's Roll"] = set_combine(sets.precast.CorsairRoll, {body="Chasseur's Frac +2"})
-    sets.precast.CorsairRoll["Allies' Roll"] = set_combine(sets.precast.CorsairRoll, {hands="Chasseur's Gants +2"})
+    sets.precast.CorsairRoll["Allies' Roll"] = set_combine(sets.precast.CorsairRoll, {hands="Chasseur's Gants +3"})
 
     sets.precast.LuzafRing = {ring1="Luzaf's Ring"}
     sets.precast.FoldDoubleBust = {hands="Lanun Gants +3"}
@@ -345,7 +345,7 @@ function init_gear_sets()
     sets.precast.WS['Last Stand'] = {ammo=gear.WSbullet,
       head="Nyame Helm",
       body="Laksa. Frac +3",
-      hands="Nyame Gauntlets",
+      hands="Chasseur's Gants +3",
       legs="Nyame Flanchard",
       feet="Lanun Bottes +3",
       neck="Fotia Gorget",
@@ -365,22 +365,34 @@ function init_gear_sets()
       feet="Nyame Sollerets"
     })
 
-    sets.precast.WS['Detonator'] = set_combine(sets.precast.WS['Last Stand'], {
-      left_ear="Beyla Earring",
-      right_ring="Hajduk Ring +1",
-      feet="Nyame Sollerets"
-    })
+    sets.precast.WS['Detonator'] = {ammo=gear.WSbullet,
+      head="Nyame Helm",
+      body="Nyame Mail",
+      hands="Chasseur's Gants +3",
+      legs="Nyame Flanchard",
+      feet="Nyame Sollerets",
+      neck="Comm. Charm +2",
+      waist="Fotia Belt",
+      left_ear="Moonshade Earring",
+      right_ear="Ishvara Earring",
+      left_ring="Sroda Ring",
+      right_ring="Epaminondas's Ring",
+      back=Cape.RATK
+    }
 
     sets.precast.WS['Detonator'].Acc = set_combine(sets.precast.WS['Detonator'], {ammo=gear.RAccbullet,
+      body="Laksa. Frac +3",
+      neck="Fotia Gorget",
       left_ear="Beyla Earring",
+      right_ear="Telos Earring",  
+      left_ring="Regal Ring",
       right_ring="Hajduk Ring +1",
-      feet="Nyame Sollerets"
     })
 
     sets.precast.WS['Slug Shot'] = {ammo=gear.WSbullet,
       head="Nyame Helm",
       body="Nyame Mail",
-      hands="Nyame Mail",
+      hands="Chasseur's Gants +3",
       legs="Nyame Flanchard",
       feet="Nyame Sollerets",
       neck="Comm. Charm +2",
@@ -442,7 +454,7 @@ function init_gear_sets()
     sets.precast.WS['Evisceration'] = {
       head="Nyame Helm",
       body="Nyame Mail",
-      hands="Nyame Gauntlets",
+      hands="Chasseur's Gants +3",
       legs="Nyame Flanchard",
       feet="Nyame Sollerets",
       neck="Fotia Gorget",
@@ -474,7 +486,9 @@ function init_gear_sets()
     }
 
     sets.precast.WS['Savage Blade'].Acc = set_combine(sets.precast.WS['Savage Blade'], {
-      -- body="Ikenga's Vest"
+      body="Ikenga's Vest",
+      hands="Chasseur's Gants +3",
+      right_ring="Sroda Ring",
     })
 
     sets.precast.WS['Swift Blade'] = set_combine(sets.precast.WS, {})
@@ -503,7 +517,7 @@ function init_gear_sets()
       body={ name="Lanun Frac +3", augments={'Enhances "Loaded Deck" effect',}},
       hands={ name="Carmine Fin. Ga. +1", augments={'Rng.Atk.+20','"Mag.Atk.Bns."+12','"Store TP"+6',}},
       legs="Nyame Flanchard",
-      feet={ name="Lanun Bottes +3", augments={'Enhances "Wild Card" effect',}},
+      feet="Chass. Bottes +3",
       neck="Comm. Charm +2",
       left_ear="Crematio Earring",
       right_ear="Friomisi Earring",
@@ -533,7 +547,7 @@ function init_gear_sets()
       body="Chasseur's Frac +2",
       hands="Chasseur's Gants +2",
       legs="Chasseur's Culottes +3",
-      feet="Chasseur's Bottes +2",
+      feet="Chasseur's Bottes +3",
       neck="Comm. Charm +2",
       left_ear="Dignitary's earring",
       right_ear="Crepuscular Earring",
@@ -544,7 +558,7 @@ function init_gear_sets()
     }
 
     sets.midcast.CorsairShot['Dark Shot'] = sets.midcast.CorsairShot['Light Shot']
-    sets.midcast.CorsairShot.Enhance = {feet="Chass. Bottes +2"}
+    sets.midcast.CorsairShot.Enhance = {feet="Chass. Bottes +3"}
 
     -- Ranged gear
     sets.midcast.RA = {
@@ -579,7 +593,7 @@ function init_gear_sets()
       head="Meghanada Visor +2",
       left_ear="Odr Earring",
       body="Nisroch Jerkin",
-      hands="Chasseur's Gants +2",
+      hands="Chasseur's Gants +3",
       legs="Darraigner's Brais",
       feet="Osh. Leggings +1",
       left_ring="Begrudging Ring",
@@ -767,7 +781,7 @@ function init_gear_sets()
       left_ear="Crepuscular Earring",
       right_ear="Telos Earring",
       left_ring={name="Chirich ring +1",bag="Wardrobe 2"},
-      right_ring={name="Chirich ring +1",bag="Wardrobe 4"},
+      right_ring={name="Chirich ring +1",bag="Wardrobe 3"},
       back=Cape.TP    
     }
 
@@ -851,6 +865,12 @@ function init_gear_sets()
 
     sets.Armageddon_M = {main=Rostam.B, sub="Tauret", ranged="Armageddon"}
     sets.Armageddon_M.Acc = {main=Rostam.B, sub=Rostam.A, ranged="Armageddon"}
+
+    sets.Fomalhaut_M = {main=Rostam.B, sub=Rostam.A, ranged="Fomalhaut"}
+    sets.Fomalhaut_M.Acc = sets.Fomalhaut_M
+    
+    sets.Fomalhaut_R = {main=Rostam.A, sub=Rostam.B, ranged="Fomalhaut"}
+    sets.Fomalhaut_R.Acc = sets.Fomalhaut_R
 
     sets.Rolls = {main=Rostam.C, sub="Nusku Shield", ranged="Compensator"}
     sets.Rolls.Acc = sets.Rolls

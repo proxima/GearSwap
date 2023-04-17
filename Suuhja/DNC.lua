@@ -283,7 +283,7 @@ function init_gear_sets()
       neck="Etoile gorget +2",
       left_ear="Mache Earring +1",
       right_ear="Telos Earring",
-      body="Malignance tabard",
+      body="Maculele Casaque +3",
       hands="Maculele Bangles +3",
       left_ring="Chirich Ring +1",
       right_ring="Regal Ring",
@@ -363,7 +363,7 @@ function init_gear_sets()
     sets.precast.WS['Asuran Fists'] = set_combine(sets.precast.WS, {
       ammo="Coiste Bodhar",
       head="Maculele Tiara +3",
-      body="Nyame Mail",
+      body="Maculele Casaque +3",
       hands="Maculele Bangles +3",
       legs="Horos Tights +3",
       feet="Gleti's Boots",
@@ -377,7 +377,6 @@ function init_gear_sets()
     })
 
     sets.precast.WS['Combo'] = set_combine(sets.precast.WS['Asuran Fists'], {
-      body="Nyame Mail",
       hands="Nyame Gauntlets",
       legs="Horos Tights +3",
       feet="Nyame Sollerets",
@@ -416,7 +415,7 @@ function init_gear_sets()
     sets.precast.WS['Rudra\'s Storm'] = set_combine(sets.precast.WS, {
       ammo="Coiste Bodhar",
       head="Maculele Tiara +3",
-      body="Maculele Casaque +2",
+      body="Maculele Casaque +3",
       hands="Maxixi Bangles +3",
       legs="Horos Tights +3",
       feet="Nyame Sollerets",

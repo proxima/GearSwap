@@ -390,7 +390,7 @@ function init_gear_sets()
     sets.midcast.HonorMarch = {range="Marsyas", hands="Fili Manchettes +1"}
 
     sets.midcast.Lullaby = {
-      body="Fili Hongreline +2",
+      body="Fili Hongreline +3",
       hands="Brioso Cuffs +3",
       legs="Inyanga Shalwar +2",
     }
@@ -421,7 +421,7 @@ function init_gear_sets()
     sets.midcast.Mambo = {feet="Mousai Crackows +1"}
     sets.midcast.March = {hands="Fili Manchettes +1"}
     sets.midcast.Minne = {legs="Mousai Seraweels +1"}
-    sets.midcast.Minuet = {body="Fili Hongreline +2"}
+    sets.midcast.Minuet = {body="Fili Hongreline +3"}
     sets.midcast.Paeon = {head="Brioso Roundlet +3"}
     sets.midcast.Threnody = {body="Mou. Manteel +1"}
     sets.midcast['Adventurer\'s Dirge'] = {range="Marsyas"}
@@ -436,7 +436,7 @@ function init_gear_sets()
       sub="Genmei Shield",
       range="Gjallarhorn",
       head="Fili Calot +1",
-      body="Fili Hongreline +2",
+      body="Fili Hongreline +3",
       hands="Fili Manchettes +1",
       legs="Inyanga shalwar +2",
       feet="Brioso Slippers +3",
@@ -455,7 +455,7 @@ function init_gear_sets()
       sub="Ammurapi Shield",
       range="Marsyas",
       head="Brioso Roundlet +3",
-      body="Fili Hongreline +2",
+      body="Fili Hongreline +3",
       hands="Brioso Cuffs +3",
       legs="Inyanga shalwar +2",
       feet="Brioso Slippers +3",
@@ -503,7 +503,7 @@ function init_gear_sets()
       main={ name="Kali", augments={'DMG:+15','CHR+15','Mag. Acc.+15',}},
       range="Daurdabla",
       head="Fili Calot +1",
-      body="Fili Hongreline +2",
+      body="Fili Hongreline +3",
       hands="Fili Manchettes +1",
       legs="Fili Rhingrave +1",
       feet="Fili Cothurnes +1",
@@ -738,15 +738,15 @@ function init_gear_sets()
 
     sets.engaged.Hybrid = {
       range=Linos.TP,
-      head="Bunzi's Hat",           -- 7, 6
-      body="Nyame Mail",            -- 9, 4
-      hands="Bunzi's Gloves",       -- 8, 3
-      legs="Nyame Flanchard",
-      feet="Nyame Sollerets",       -- 7, 3
+      head="Bunzi's Hat",           -- 7
+      body="Nyame Mail",            -- 9
+      hands="Bunzi's Gloves",       -- 8
+      legs="Nyame Flanchard",       -- 8
+      feet="Nyame Sollerets",       -- 7
       neck="Bard's Charm +2",
       ear1="Brutal Earring",
       ear2="Dignitary's Earring",
-      left_ring=MR.One,
+      left_ring={name="Chirich ring +1",bag="Wardrobe 2"},
       right_ring=MR.Two,
       back=Cape.TP,                 --   10
       waist="Sailfi Belt +1"

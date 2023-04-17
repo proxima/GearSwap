@@ -1,4 +1,3 @@
-
 --[[
         Custom commands:
     
@@ -10,12 +9,12 @@
         gs c toggle regenmode           Toggles between Hybrid, Duration and Potency mode for regen set  
         gs c toggle nukemode            Toggles between Normal and Accuracy mode for midcast Nuking sets (MB included)  
         gs c toggle matchsc             Toggles auto swapping element to match the last SC that just happenned.
-		
+
         Casting functions:
         these are to set fewer macros (2 cycle, 5 cast) to save macro space when playing lazily with controler
         
-        gs c nuke cycle              	Cycles element type for nuking & SC
-        gs c nuke cycledown		Cycles element type for nuking & SC	in reverse order
+        gs c nuke cycle                 Cycles element type for nuking & SC
+        gs c nuke cycledown             Cycles element type for nuking & SC	in reverse order
         gs c nuke t1                    Cast tier 1 nuke of saved element 
         gs c nuke t2                    Cast tier 2 nuke of saved element 
         gs c nuke t3                    Cast tier 3 nuke of saved element 
@@ -24,13 +23,13 @@
         gs c nuke ra1                   Cast tier 1 -ra nuke of saved element 
         gs c nuke ra2                   Cast tier 2 -ra nuke of saved element 
         gs c nuke ra3                   Cast tier 3 -ra nuke of saved element 	
-		
-        gs c geo geocycle		Cycles Geomancy Spell
-        gs c geo geocycledown		Cycles Geomancy Spell in reverse order
-        gs c geo indicycle		Cycles IndiColure Spell
-        gs c geo indicycledown		Cycles IndiColure Spell in reverse order
-        gs c geo geo			Cast saved Geo Spell
-        gs c geo indi			Cast saved Indi Spell
+
+        gs c geo geocycle               Cycles Geomancy Spell
+        gs c geo geocycledown           Cycles Geomancy Spell in reverse order
+        gs c geo indicycle              Cycles IndiColure Spell
+        gs c geo indicycledown          Cycles IndiColure Spell in reverse order
+        gs c geo geo                    Cast saved Geo Spell
+        gs c geo indi                   Cast saved Indi Spell
 
         HUD Functions:
         gs c hud hide                   Toggles the Hud entirely on or off
@@ -98,7 +97,7 @@ hud_font = 'Impact'
     This gets passed in when the Keybinds is turned on.
     Each one matches to a given variable within the text object
     IF you changed the Default Keybind above, Edit the ones below so it can be reflected in the hud using "//gs c hud keybinds" command
-]]																	-- or between Full Pet Regen+DT or Hybrid PetDT and MasterDT when a Luopan is out
+]]                                                    -- or between Full Pet Regen+DT or Hybrid PetDT and MasterDT when a Luopan is out
 keybinds_on = {}
 keybinds_on['key_bind_idle'] = '(F9)'
 keybinds_on['key_bind_regen'] = '(END)'
@@ -112,7 +111,6 @@ keybinds_on['key_bind_indi_cycle'] = '(End + PgDOWN)'
 keybinds_on['key_bind_lock_weapon'] = '(F12)'
 keybinds_on['key_bind_movespeed_lock'] = '(ALT-F9)'
 
-
 -- Remember to unbind your keybinds on job change.
 function user_unload()
     send_command('unbind insert')
@@ -125,8 +123,8 @@ function user_unload()
     send_command('unbind f12')
     send_command('unbind f9')
     send_command('unbind !f9')
-	
-	send_command('unbind @o')
+
+    send_command('unbind @o')
 end
 
 --------------------------------------------------------------------------------------------------------------
@@ -490,13 +488,13 @@ function get_sets()
      main="Idris",
      sub="Ammurapi Shield",
      range={ name="Dunna", augments={'MP+20','Mag. Acc.+10','"Fast Cast"+3',}},
-     head="Geo. Galero +2",
-     body="Geomancy Tunic +2",
+     head="Geo. Galero +3",
+     body="Geomancy Tunic +3",
      legs="Geomancy Pants +3",
      hands="Geo. Mitaines +3",
      feet="Geo. Sandals +3",
      neck={ name="Bagua Charm +2", augments={'Path: A',}},
-     waist="Luminary Sash",
+     waist="Acuity Belt +1",
      left_ear="Regal Earring",
      right_ear="Malignance Earring",
      left_ring="Freke Ring",
@@ -504,7 +502,10 @@ function get_sets()
      back={ name="Nantosuelta's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Phys. dmg. taken-10%',}},
    })
    
-   sets.midcast.Absorb = sets.midcast.IntEnfeebling
+   sets.midcast.Absorb = set_combine(sets.midcast.IntEnfeebling, {
+     left_ring={name="Stikini Ring +1",bag="wardrobe"},
+     right_ring={name="Stikini Ring +1",bag="wardrobe5"}
+   })
 
    sets.midcast.Dispelga = set_combine(sets.midcast.IntEnfeebling, {
      main="Daybreak",
@@ -516,8 +517,8 @@ function get_sets()
      main="Daybreak",
      sub="Ammurapi Shield",
      range={ name="Dunna", augments={'MP+20','Mag. Acc.+10','"Fast Cast"+3',}},
-     head="Geo. Galero +2",
-     body="Geomancy Tunic +2",
+     head="Geo. Galero +3",
+     body="Geomancy Tunic +3",
      legs="Geomancy Pants +3",
      hands="Geo. Mitaines +3",
      feet="Geo. Sandals +3",

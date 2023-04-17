@@ -376,7 +376,7 @@ function init_gear_sets()
     sets.midcast.HonorMarch = {range="Marsyas", hands="Fili Manchettes +1"}
 
     sets.midcast.Lullaby = {
-      body="Fili Hongreline +2",
+      body="Fili Hongreline +3",
       hands="Brioso Cuffs +3",
       legs="Inyanga Shalwar +2",
     }
@@ -406,7 +406,7 @@ function init_gear_sets()
     sets.midcast.Mambo = {feet="Mousai Crackows +1"}
     sets.midcast.March = {hands="Fili Manchettes +1"}
     sets.midcast.Minne = {legs="Mousai Seraweels +1"}
-    sets.midcast.Minuet = {body="Fili Hongreline +2"}
+    sets.midcast.Minuet = {body="Fili Hongreline +3"}
     sets.midcast.Paeon = {head="Brioso Roundlet +3"}
     sets.midcast.Threnody = {body="Mou. Manteel +1"}
     sets.midcast['Adventurer\'s Dirge'] = {range="Marsyas"}
@@ -421,7 +421,7 @@ function init_gear_sets()
       sub="Genmei Shield",
       range="Gjallarhorn",
       head="Fili Calot +1",
-      body="Fili Hongreline +2",
+      body="Fili Hongreline +3",
       hands="Fili Manchettes +1",
       legs="Inyanga shalwar +2",
       feet="Brioso Slippers +3",
@@ -440,7 +440,7 @@ function init_gear_sets()
       sub="Ammurapi Shield",
       range="Marsyas",
       head="Brioso Roundlet +3",
-      body="Fili Hongreline +2",
+      body="Fili Hongreline +3",
       hands="Brioso Cuffs +3",
       legs="Inyanga shalwar +2",
       feet="Brioso Slippers +3",
@@ -470,7 +470,7 @@ function init_gear_sets()
       main=Kali.PH,
       range="Daurdabla",
       head="Fili Calot +1",
-      body="Fili Hongreline +2",
+      body="Fili Hongreline +3",
       hands="Fili Manchettes +1",
       legs="Fili Rhingrave +1",
       feet="Fili Cothurnes +1",
