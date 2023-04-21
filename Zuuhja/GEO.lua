@@ -187,7 +187,7 @@ function get_sets()
      neck="Warder's Charm +1",
      head="Azimuth Hood +3",
      hands="Azimuth Gloves +2",
-     feet="Azimuth Gaiters +2", 
+     feet="Azimuth Gaiters +3", 
    })
 
    -- Your MP Recovered Whilst Resting Set
@@ -404,7 +404,7 @@ function get_sets()
      body="Vedic Coat",                                                                                      -- 10 Conserve
      hands="Azimuth Gloves +2",                                                                              -- Occasionally Free
      legs={ name="Vanya Slops", augments={'MND+10','Spell interruption rate down +15%','"Conserve MP"+6',}}, -- 12 Conserve
-     feet="Azimuth Gaiters +2",                                                                              -- Occasionally Free
+     feet="Azimuth Gaiters +3",                                                                              -- Occasionally Free
      neck={ name="Bagua Charm +2", augments={'Path: A',}},                                                   -- 25% Duration
      waist={ name="Shinjutsu-no-Obi +1", augments={'Path: A',}},                                             -- 15 Conserve
      left_ear="Mendi. Earring",                                                                              --  2 Conserve
@@ -423,7 +423,7 @@ function get_sets()
      body="Vedic Coat",                                                                                      -- 10 Conserve
      hands="Azimuth Gloves +2",                                                                              -- Occasionally Free
      legs={ name="Bagua Pants +3", augments={'Enhances "Mending Halation" effect',}},                        -- 21 Duration
-     feet="Azimuth Gaiters +2",                                                                              -- Occasionally Free, 25 Duration
+     feet="Azimuth Gaiters +3",                                                                              -- Occasionally Free, 30 Duration
      neck="Loricate Torque +1",
      waist={ name="Shinjutsu-no-Obi +1", augments={'Path: A',}},                                             -- 15 Conserve
      left_ear="Mendi. Earring",                                                                              --  2 Conserve

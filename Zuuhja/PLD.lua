@@ -498,7 +498,7 @@ function init_gear_sets()
   -- Engaged sets
   --------------------------------------
   sets.engaged = {
-    main="Naegling",
+    main="Burtgang",
     sub="Aegis",
     ammo="Staunch Tathlum +1",      --  3
     head="Hjarrandi Helm",          -- 10

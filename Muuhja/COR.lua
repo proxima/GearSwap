@@ -262,7 +262,7 @@ function init_gear_sets()
     ---------------------------------------- Precast Sets ------------------------------------------
     ------------------------------------------------------------------------------------------------
 
-    sets.precast.JA['Triple Shot'] = {body="Chasseur's Frac +2"}
+    sets.precast.JA['Triple Shot'] = {body="Chasseur's Frac +3"}
     sets.precast.JA['Snake Eye'] = {legs="Lanun Trews +1"}
     sets.precast.JA['Wild Card'] = {feet="Lanun Bottes +3"}
     sets.precast.JA['Random Deal'] = {body="Lanun Frac +3"}
@@ -287,7 +287,7 @@ function init_gear_sets()
     sets.precast.CorsairRoll["Caster's Roll"] = set_combine(sets.precast.CorsairRoll, {legs="Chas. Culottes +3"})
     sets.precast.CorsairRoll["Courser's Roll"] = set_combine(sets.precast.CorsairRoll, {feet="Chass. Bottes +3"})
     sets.precast.CorsairRoll["Blitzer's Roll"] = set_combine(sets.precast.CorsairRoll, {head="Chass. Tricorne +2"})
-    sets.precast.CorsairRoll["Tactician's Roll"] = set_combine(sets.precast.CorsairRoll, {body="Chasseur's Frac +2"})
+    sets.precast.CorsairRoll["Tactician's Roll"] = set_combine(sets.precast.CorsairRoll, {body="Chasseur's Frac +3"})
     sets.precast.CorsairRoll["Allies' Roll"] = set_combine(sets.precast.CorsairRoll, {hands="Chasseur's Gants +3"})
 
     sets.precast.LuzafRing = {ring1="Luzaf's Ring"}
@@ -544,7 +544,7 @@ function init_gear_sets()
 
     sets.midcast.CorsairShot['Light Shot'] = {ammo=gear.RAccbullet,
       head="Chasseur's Tricorne +2",
-      body="Chasseur's Frac +2",
+      body="Chasseur's Frac +3",
       hands="Chasseur's Gants +2",
       legs="Chasseur's Culottes +3",
       feet="Chasseur's Bottes +3",
@@ -607,7 +607,7 @@ function init_gear_sets()
 
     sets.TripleShot = {
       head="Oshosi Mask +1",
-      body="Chasseur's Frac +2",
+      body="Chasseur's Frac +3",
       hands="Lanun Gants +3",
       legs="Osh. Trousers +1",
       feet="Osh. Leggings +1",

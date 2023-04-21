@@ -497,7 +497,7 @@ function get_sets()
     sets.midcast.Obi             = { waist="Hachirin-no-Obi"   }
     sets.midcast.Orpheus         = { waist="Orpheus's Sash"    }
     sets.midcast.MPReturn        = { body="Spaekona's Coat +3" }
-    sets.midcast.JaSpellDuration = { legs="Wicce Chausses +2"  }
+    sets.midcast.JaSpellDuration = { legs="Wicce Chausses +3"  }
 
     -----------------------------------------------------------------------------------------------
     -- Helix sets automatically derives from casting sets. SO DONT PUT ANYTHING IN THEM other than:
