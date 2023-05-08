@@ -80,10 +80,7 @@ function init_gear_sets()
     -- Special sets (required by rules)
     --------------------------------------
 
-    sets.TreasureHunter = {
-      hands="Plunderer's Armlets +1",
-      feet="Skulker's poulaines +2"
-    }
+    sets.TreasureHunter = { feet="Skulker's poulaines +3" }
 
     sets.Kiting = {feet="Pillager's Poulaines +3"}
 
@@ -105,7 +102,7 @@ function init_gear_sets()
     sets.precast.JA['Accomplice'] = {head="Skulker's Bonnet +2"}
     sets.precast.JA['Flee'] = {feet="Pillager's Poulaines +3"}
     sets.precast.JA['Hide'] = {body="Pillager's Vest +3"}
-    sets.precast.JA['Conspirator'] = {body="Skulker's Vest +2"}
+    sets.precast.JA['Conspirator'] = {body="Skulker's Vest +3"}
     sets.precast.JA['Steal'] = {head="Plunderer's Bonnet +3",hands="Pillager's Armlets +3",legs="Pillager's Culottes +3",feet="Pillager's Poulaines +3"}
     sets.precast.JA['Despoil'] = {legs="Skulker's Culottes +2",feet="Skulker's Poulaines +2"}
     sets.precast.JA['Perfect Dodge'] = {hands="Plunderer's Armlets +1"}
@@ -208,7 +205,7 @@ function init_gear_sets()
     sets.precast.WS["Rudra's Storm"] = set_combine(sets.precast.WS, {
       ammo={ name="Seeth. Bomblet +1", augments={'Path: A',}},
       head="Nyame Helm",
-      body="Skulker's Vest +2",
+      body="Skulker's Vest +3",
       hands="Nyame Gauntlets",
       legs="Nyame Flanchard",  
       feet="Nyame Sollerets",
@@ -234,16 +231,22 @@ function init_gear_sets()
     sets.precast.WS["Rudra's Storm"].TA = set_combine(sets.precast.WS["Rudra's Storm"].Mod, {})
     sets.precast.WS["Rudra's Storm"].SATA = set_combine(sets.precast.WS["Rudra's Storm"].Mod, {})
 
-    sets.precast.WS["Shark Bite"] = sets.precast.WS["Rudra's Storm"]
+    sets.precast.WS["Shark Bite"] = set_combine(sets.precast.WS["Rudra's Storm"], {})
     sets.precast.WS['Shark Bite'].Acc = set_combine(sets.precast.WS['Shark Bite'], {})
     sets.precast.WS['Shark Bite'].Mod = set_combine(sets.precast.WS['Shark Bite'], {})
     sets.precast.WS['Shark Bite'].SA = set_combine(sets.precast.WS['Shark Bite'].Mod, {})
     sets.precast.WS['Shark Bite'].TA = set_combine(sets.precast.WS['Shark Bite'].Mod, {})
     sets.precast.WS['Shark Bite'].SATA = set_combine(sets.precast.WS['Shark Bite'].Mod, {})
 
-    sets.precast.WS['Mandalic Stab'] = set_combine(sets.precast.WS, {})
+    sets.precast.WS['Mandalic Stab'] = set_combine(sets.precast.WS["Rudra's Storm"], {})
     sets.precast.WS['Mandalic Stab'].Acc = set_combine(sets.precast.WS['Mandalic Stab'], {})
-    sets.precast.WS['Mandalic Stab'].Mod = set_combine(sets.precast.WS['Mandalic Stab'], {})
+    sets.precast.WS['Mandalic Stab'].Mod = set_combine(sets.precast.WS["Mandalic Stab"], {
+      ammo="Yetshila +1",
+      head="Pillager's bonnet +3",
+      body="Gleti's Cuirass",
+      left_ring="Epaminondas's ring",
+      left_ear="Odr Earring",
+    })
     sets.precast.WS['Mandalic Stab'].SA = set_combine(sets.precast.WS['Mandalic Stab'].Mod, {})
     sets.precast.WS['Mandalic Stab'].TA = set_combine(sets.precast.WS['Mandalic Stab'].Mod, {})
     sets.precast.WS['Mandalic Stab'].SATA = set_combine(sets.precast.WS['Mandalic Stab'].Mod, {})
@@ -312,10 +315,10 @@ function init_gear_sets()
     
     sets.midcast["Sleepga"] = {
       head="Malignance Chapeau",
-      body="Malignance Tabard",
-      hands="Plunderer's Armlets +1",
+      body="Skulker's vest +3",
+      hands="Malignance gloves",
       legs="Malignance Tights",
-      feet="Skulker's poulaines +2"   
+      feet="Skulker's poulaines +3"
     }
 
     --------------------------------------

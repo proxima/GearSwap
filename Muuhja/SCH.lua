@@ -314,7 +314,7 @@ function get_sets()
       head="Arbatel Bonnet +3",
       body="Arbatel Gown +3",
       hands="Arbatel Bracers +3",
-      legs="Arbatel Pants +2",
+      legs="Arbatel Pants +3",
       feet="Arbatel Loafers +3",
       neck="Lissome Necklace",
       waist="Grunfeld Rope",
@@ -407,7 +407,7 @@ function get_sets()
       right_ring="Metamorph ring +1",
       back=Lugh.MP_FC,
       waist="Luminary sash",
-      legs="Arbatel pants +2",
+      legs="Arbatel pants +3",
       feet="Arbatel loafers +3",
     }
 
@@ -619,7 +619,7 @@ function get_sets()
       head="Agwu's Cap",
       body="Arbatel Gown +3",
       hands="Arbatel Bracers +3",
-      legs="Arbatel Pants +2",
+      legs="Arbatel Pants +3",
       feet="Arbatel Loafers +3",
       neck={ name="Argute Stole +2", augments={'Path: A',}},
       waist="Skrymir Cord +1",
@@ -658,9 +658,9 @@ function get_sets()
      body="Agwu's Robe",
      hands="Agwu's Gages",
      legs="Agwu's Slops",
-     feet="Agwu's Pigaches",
+     feet="Arbatel Loafers +3",
      neck={ name="Argute Stole +2", augments={'Path: A',}},
-     waist="Sacro Cord",
+     waist="Acuity Belt +1",
      left_ear="Regal Earring",
      right_ear="Malignance Earring",
      left_ring="Metamorph ring +1",
@@ -678,14 +678,14 @@ function get_sets()
      head="Arbatel Bonnet +3",
      body="Agwu's Robe",
      hands="Agwu's Gages",
-    legs="Agwu's Slops",
+     legs="Agwu's Slops",
      feet="Arbatel Loafers +3",
-     waist="Sacro Cord",	 
+     waist="Hachirin-no-Obi",
      left_ear="Regal Earring",
      right_ear="Malignance Earring",
      left_ring="Metamorph ring +1",
      right_ring="Freke Ring",
-    back=Lugh.MND_WSD
+     back=Lugh.MND_WSD
    }
    
    -- used with toggle, default: F10
@@ -696,16 +696,14 @@ function get_sets()
    -- used with toggle, default: F10
    -- Pieces to swap from free nuke to Magic Burst
    sets.midcast.MB.acc = set_combine(sets.midcast.MB.normal, {   
-     feet="Arbatel Loafers +3",
-     waist="Acuity Belt +1",
    })
-      
+ 
    sets.midcast.nuking.occult = set_combine(sets.midcast.nuking.normal, { 
      ammo="Seraphic Ampulla",
      head="Mall. Chapeau +2",
-     body={ name="Merlinic Jubbah", augments={'"Occult Acumen"+11','INT+6','"Mag.Atk.Bns."+4',}},	
+     body={ name="Merlinic Jubbah", augments={'"Occult Acumen"+11','INT+6','"Mag.Atk.Bns."+4',}},
      hands={ name="Merlinic Dastanas", augments={'"Occult Acumen"+11','INT+4','Mag. Acc.+5','"Mag.Atk.Bns."+9',}},
-     feet={ name="Merlinic Crackows", augments={'"Occult Acumen"+11','CHR+4','Mag. Acc.+7','"Mag.Atk.Bns."+2',}},	
+     feet={ name="Merlinic Crackows", augments={'"Occult Acumen"+11','CHR+4','Mag. Acc.+7','"Mag.Atk.Bns."+2',}},
      legs="Perdition Slops",
      neck="Lissome Necklace",
      waist="Oneiros Rope",
@@ -727,7 +725,7 @@ function get_sets()
      head="Acad. Mortar. +3",  --  6  8
      body="Acad. Gown +3",     --  3
      hands="Acad. Bracers +3", --  3  9
-     legs="Arbatel Pants +2",  --  5
+     legs="Arbatel Pants +3",  --  5
      feet="Acad. Loafers +3",  --  3
      neck={ name="Argute Stole +2", augments={'Path: A',}},
      waist="Acuity Belt +1",
@@ -747,7 +745,7 @@ function get_sets()
      head="Acad. Mortar. +3",
      body="Acad. Gown +3",
      hands="Acad. Bracers +3",
-     legs="Arbatel Pants +2",
+     legs="Arbatel Pants +3",
      feet="Acad. Loafers +3",
      neck={ name="Argute Stole +2", augments={'Path: A',}},
      waist="Obstinate Sash",

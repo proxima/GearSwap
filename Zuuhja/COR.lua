@@ -422,13 +422,15 @@ function init_gear_sets()
       hands="Nyame Gauntlets",
       legs="Nyame Flanchard",
       feet={ name="Lanun Bottes +3", augments={'Enhances "Wild Card" effect',}},
-      neck="Comm. Charm +2",
+      -- neck="Comm. Charm +2",
       left_ear="Crematio Earring",
       right_ear="Friomisi Earring",
       left_ring="Dingir Ring",
       right_ring="Epaminondas's Ring",
       back=Cape.LEADEN,
-      waist="Sveltesse gouriz +1",
+      -- waist="Sveltesse gouriz +1",
+      neck="Fotia Gorget",
+      waist="Fotia belt",
     }
 
     sets.precast.WS['Hot Shot'] = {ammo=gear.MAbullet,
@@ -523,7 +525,20 @@ function init_gear_sets()
     sets.midcast.Cure = {}
 
     sets.midcast.CorsairShot = {ammo=gear.QDBullet,
-      head="Ikenga's Hat",
+      head="Malignance Chapeau",
+      body="Malignance Tabard",
+      hands="Malignance Gloves",
+      legs="Chas. Culottes +3",
+      feet="Malignance Boots",
+      neck="Iskur Gorget",
+      left_ear="Crepuscular Earring",
+      right_ear="Telos Earring",
+      left_ring={name="Chirich ring +1",bag="Wardrobe 2"},
+      right_ring={name="Chirich ring +1",bag="Wardrobe 4"},
+      back=Cape.RTP,
+      waist="Tellen belt",
+      
+      --[[ head="Ikenga's Hat",
       body={ name="Lanun Frac +3", augments={'Enhances "Loaded Deck" effect',}},
       hands={ name="Carmine Fin. Ga. +1", augments={'Rng.Atk.+20','"Mag.Atk.Bns."+12','"Store TP"+6',}},
       legs="Nyame Flanchard",
@@ -534,7 +549,7 @@ function init_gear_sets()
       left_ring="Dingir Ring",
       right_ring="Metamorph Ring +1",
       back=Cape.LEADEN,
-      waist="Sveltesse gouriz +1",
+      waist="Sveltesse gouriz +1", ]]--
     }
 
     sets.midcast.CorsairShot.STP = {ammo=gear.RAccbullet,
@@ -546,8 +561,8 @@ function init_gear_sets()
       neck="Iskur Gorget",
       left_ear="Crepuscular Earring",
       right_ear="Telos Earring",
-      left_ring="Ilabrat Ring",
-      right_ring="Rajas Ring",
+      left_ring={name="Chirich ring +1",bag="Wardrobe 2"},
+      right_ring={name="Chirich ring +1",bag="Wardrobe 4"},
       back=Cape.RTP,
       waist="Yemaya belt",
     }
@@ -649,7 +664,7 @@ function init_gear_sets()
       hands="Malignance Gloves",
       legs="Malignance Tights",
       feet="Malignance Boots",
-      neck="Commodore Charm +2",
+      neck="Republican platinum medal",
       waist="Flume belt +1",
       left_ear="Odnowa Earring +1",
       right_ear="Tuisto Earring",

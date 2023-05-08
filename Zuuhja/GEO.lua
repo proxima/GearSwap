@@ -474,7 +474,8 @@ function get_sets()
    })
 
    sets.midcast.MB.acc = set_combine(sets.midcast.MB.normal, {
-     head="Ea Hat +1",   
+     head="Agwu's Cap",
+     neck="Sibyl Scarf",
      body="Azimuth Coat +3", 
      hands="Agwu's Gages",
      legs="Azimuth Tights +3",

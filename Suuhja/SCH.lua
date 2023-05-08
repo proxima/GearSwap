@@ -207,7 +207,7 @@ function get_sets()
 
     -- Your idle set
     sets.me.idle.refresh = {
-      main="Daybreak",
+      main="Bunzi's Rod",
       sub="Ammurapi Shield",
       ammo="Homiliary",
       head="Nyame Helm",
@@ -347,6 +347,8 @@ function get_sets()
       right_ring={name="Chirich Ring +1",bag="wardrobe 4"},
       back=Lugh.INT_WSD
     }
+    
+    sets.me["True Strike"] = sets.me["Shell Crusher"]
     
     sets.me["Full Swing"] = sets.me["Heavy Swing"]
     sets.me["Spirit Taker"] = sets.me["Heavy Swing"]
@@ -682,9 +684,9 @@ function get_sets()
      body={ name="Amalric Doublet +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
      hands={ name="Amalric Gages +1", augments={'INT+12','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
      legs={ name="Amalric Slops +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
-     feet={ name="Amalric Nails +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
+     feet="Arbatel Loafers +3",
      neck={ name="Argute Stole +2", augments={'Path: A',}},
-     waist="Sacro Cord",
+     waist="Acuity Belt +1",
      left_ear="Regal Earring",
      right_ear="Malignance Earring",
      left_ring="Metamorph ring +1",
@@ -696,7 +698,6 @@ function get_sets()
      body="Agwu's Robe",
      hands="Agwu's Gages",
      legs="Agwu's Slops",
-     feet="Agwu's Pigaches",
    })
 
    sets.midcast.nuking.DivineMagic = {
@@ -719,21 +720,9 @@ function get_sets()
    -- used with toggle, default: F10
    -- Pieces to swap from free nuke to Magic Burst    
    sets.midcast.MB.normal = set_combine(sets.midcast.nuking.normal, {
-     main="Bunzi's Rod",
-     sub="Ammurapi Shield",
-     ammo="Ghastly Tathlum +1",
-     head="Agwu's Cap",
-     body="Nyame Mail",
      hands="Agwu's Gages",
+     body="Nyame Mail",
      legs="Nyame Flanchard",
-     feet="Arbatel Loafers +3",
-     neck={ name="Argute Stole +2", augments={'Path: A',}},                                    
-     waist="Sacro Cord",
-     left_ear="Regal Earring",
-     right_ear="Malignance Earring",
-     left_ring="Metamorph Ring +1",
-     right_ring="Freke Ring",
-     back=Lugh.INT_MAB
    })
 
    -- used with toggle, default: F10
@@ -741,7 +730,6 @@ function get_sets()
    sets.midcast.MB.acc = set_combine(sets.midcast.MB.normal, {
      body="Agwu's Robe",
      legs="Agwu's Slops",
-     waist="Acuity Belt +1",
    })
            
    sets.midcast.nuking.occult = set_combine(sets.midcast.nuking.normal, { 
@@ -765,20 +753,20 @@ function get_sets()
 
     -- Enfeebling
    sets.midcast["Stun"] = {
-     main="Hvergelmir",        --    50
-     sub="Khonsu",             --  4
-     ammo="Pemphredo tathlum",
-     head="Acad. Mortar. +3",  --  6  8
-     body="Acad. Gown +3",     --  3
-     hands="Acad. Bracers +3", --  3  9
-     legs="Arbatel Pants +3",  --  5
-     feet="Acad. Loafers +3",  --  3
+     main="Hvergelmir",                 --    50
+     sub="Khonsu",                      --  4
+     ammo="Pemphredo tathlum",          
+     head="Acad. Mortar. +3",           --  6  8
+     body="Acad. Gown +3",              --  3
+     hands="Acad. Bracers +3",          --  3  9
+     legs="Arbatel Pants +3",           --  5
+     feet="Acad. Loafers +3",           --  3
      neck={ name="Argute Stole +2", augments={'Path: A',}},
      waist="Acuity Belt +1",
      left_ear="Regal Earring",
-     right_ear="Malignance Earring",
+     right_ear="Malignance Earring",    -- 4
      left_ring={name="Stikini Ring +1",bag="wardrobe 2"},
-     right_ring={name="Stikini Ring +1",bag="wardrobe 3"},
+     right_ring="Weatherspoon ring +1", -- 6
      back="Aurist's Cape +1"
    }
    

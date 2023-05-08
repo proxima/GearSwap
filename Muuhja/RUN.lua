@@ -625,7 +625,7 @@ function init_gear_sets()
     hands="Erilaz Gauntlets +3",
     legs="Eri. Leg Guards +3",
     feet="Erilaz Greaves +3",
-    neck="Inq. Bead Necklace",
+    neck="Futhark Torque +2",
     waist="Engraved Belt",
     left_ear="Sanare Earring",
     right_ear="Odnowa earring +1",

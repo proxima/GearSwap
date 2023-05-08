@@ -402,17 +402,18 @@ function init_gear_sets()
     }
 
     sets.precast.WS['Wildfire'] = {ammo=gear.MAbullet, -- 25
-      head="Nyame Helm", 
+      head="Nyame Helm",
       body={ name="Lanun Frac +3", augments={'Enhances "Loaded Deck" effect',}},
       hands="Nyame Gauntlets",
       legs="Nyame Flanchard",
       feet={ name="Lanun Bottes +3", augments={'Enhances "Wild Card" effect',}},
       neck="Comm. Charm +2",
-      left_ear="Crematio Earring",
-      right_ear="Friomisi Earring",
+      left_ear="Friomisi Earring",
+      right_ear="Chasseur's Earring +1",
       left_ring="Dingir Ring",
       right_ring="Epaminondas's Ring",
-      back=Cape.LEADEN,
+      -- back=Cape.LEADEN,
+      back="Gunslinger's Cape",
       waist="Skrymir Cord +1",
     }
 
@@ -559,17 +560,20 @@ function init_gear_sets()
       head="Ikenga's hat",
       neck="Iskur Gorget",
       left_ear="Crepuscular Earring",
-      right_ear="Telos Earring",
-      body="Ikenga's Vest",
+      -- right_ear="Telos Earring",
+      right_ear="Chasseur's earring +1",
+      -- body="Ikenga's Vest",
+      body="Laksamana's frac +3",
       hands="Ikenga's Gloves",
       ring1="Dingir Ring",
       ring2="Crepuscular Ring",
-      back=Cape.RTP,
+      back="Gunslinger's Cape",
+      -- back=Cape.RTP,
       waist="Yemaya Belt",
       legs="Ikenga's Trousers",
       feet="Ikenga's Clogs",
     }
-
+    
     sets.midcast.RA.Acc = set_combine(sets.midcast.RA, {ammo=gear.RAccbullet,
       left_ear="Beyla Earring",
       right_ring="Hajduk Ring +1",

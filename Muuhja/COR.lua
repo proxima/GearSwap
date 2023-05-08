@@ -132,7 +132,7 @@ function user_setup()
     state.WeaponskillMode:options('Normal', 'Acc')
     state.IdleMode:options('Normal', 'DT', 'Refresh')
 
-    state.WeaponSet = M{['description']='Weapon Set', 'Anarchy', 'DeathPenalty_M', 'DeathPenalty_R', 'Armageddon_M', 'Fomalhaut_M', 'Fomalhaut_R', 'Aeolian', 'Rolls'}
+    state.WeaponSet = M{['description']='Weapon Set', 'Rolls', 'Anarchy', 'DeathPenalty_M', 'DeathPenalty_R', 'Armageddon_M', 'Armageddon_R', 'Fomalhaut_M', 'Fomalhaut_R', 'Aeolian'}
     state.WeaponLock = M(false, 'Weapon Lock')
 
     gear.RAbullet = "Chrono Bullet"
@@ -410,13 +410,15 @@ function init_gear_sets()
       hands="Nyame Gauntlets",
       legs="Nyame Flanchard",
       feet={ name="Lanun Bottes +3", augments={'Enhances "Wild Card" effect',}},
-      neck="Comm. Charm +2",
+      -- neck="Comm. Charm +2",
       left_ear="Crematio Earring",
       right_ear="Friomisi Earring",
       left_ring="Dingir Ring",
       right_ring="Epaminondas's Ring",
       back=Cape.LEADEN,
-      waist="Sveltesse gouriz +1",
+      -- waist="Sveltesse gouriz +1",
+      neck="Fotia Gorget",
+      waist="Fotia belt",
     }
 
     sets.precast.WS['Hot Shot'] = {ammo=gear.WSbullet,
@@ -513,7 +515,19 @@ function init_gear_sets()
     sets.midcast.Cure = {}
 
     sets.midcast.CorsairShot = {ammo=gear.QDBullet,
-      head="Nyame Helm", --"Ikenga's Hat"
+      head="Malignance Chapeau",
+      body="Malignance Tabard",
+      hands="Malignance Gloves",
+      legs="Chas. Culottes +3",
+      feet="Malignance Boots",
+      neck="Iskur Gorget",
+      left_ear="Crepuscular Earring",
+      right_ear="Telos Earring",
+      left_ring={name="Chirich ring +1",bag="Wardrobe 2"},
+      right_ring={name="Chirich ring +1",bag="Wardrobe 3"},
+      back=Cape.RTP,
+      waist="Tellen belt",
+    --[[ head="Nyame Helm", --"Ikenga's Hat"
       body={ name="Lanun Frac +3", augments={'Enhances "Loaded Deck" effect',}},
       hands={ name="Carmine Fin. Ga. +1", augments={'Rng.Atk.+20','"Mag.Atk.Bns."+12','"Store TP"+6',}},
       legs="Nyame Flanchard",
@@ -524,7 +538,7 @@ function init_gear_sets()
       left_ring="Dingir Ring",
       right_ring="Metamorph Ring +1",
       back=Cape.LEADEN,
-      waist="Sveltesse gouriz +1",
+      waist="Sveltesse gouriz +1", ]]--
     }
 
     sets.midcast.CorsairShot.STP = {ammo=gear.RAccbullet,
@@ -639,7 +653,7 @@ function init_gear_sets()
       hands="Malignance Gloves",
       legs="Malignance Tights",
       feet="Malignance Boots",
-      neck="Loricate Torque +1",
+      neck="Republican platinum medal",
       waist="Flume belt +1",
       left_ear="Odnowa Earring +1",
       right_ear="Tuisto Earring",
@@ -854,9 +868,6 @@ function init_gear_sets()
       waist="Chaac Belt"
     }
 
-    sets.Anarchy = {main="Naegling", sub="Gleti's Knife", ranged="Anarchy +2"}
-    sets.Anarchy.Acc = sets.Anarchy
-
     sets.DeathPenalty_M = {main=Rostam.B, sub="Tauret", ranged="Death Penalty"}
     sets.DeathPenalty_M.Acc = {main=Rostam.B, sub=Rostam.A, ranged="Death Penalty"}
 
@@ -866,17 +877,23 @@ function init_gear_sets()
     sets.Armageddon_M = {main=Rostam.B, sub="Tauret", ranged="Armageddon"}
     sets.Armageddon_M.Acc = {main=Rostam.B, sub=Rostam.A, ranged="Armageddon"}
 
+    sets.Armageddon_R = {main=Rostam.A, sub=Rostam.B, ranged="Armageddon"}
+    sets.Armageddon_R.Acc = sets.Armageddon_R
+
     sets.Fomalhaut_M = {main=Rostam.B, sub=Rostam.A, ranged="Fomalhaut"}
     sets.Fomalhaut_M.Acc = sets.Fomalhaut_M
     
     sets.Fomalhaut_R = {main=Rostam.A, sub=Rostam.B, ranged="Fomalhaut"}
     sets.Fomalhaut_R.Acc = sets.Fomalhaut_R
 
-    sets.Rolls = {main=Rostam.C, sub="Nusku Shield", ranged="Compensator"}
+    sets.Anarchy = {main="Naegling", sub="Gleti's Knife", ranged="Anarchy +2"}
+    sets.Anarchy.Acc = {main="Naegling", sub=Rostam.A, ranged="Anarchy +2"}
+
+    sets.Rolls = {main=Rostam.C, sub=Rostam.B, ranged="Compensator"}
     sets.Rolls.Acc = sets.Rolls
 
     sets.Aeolian = {main=Rostam.B, sub="Tauret", ranged="Anarchy +2"}
-    sets.Aeolian.Acc = sets.Aeolian
+    sets.Aeolian.Acc = {main=Rostam.B, sub=Rostam.A, ranged="Anarchy +2"}
 
     sets.DefaultShield = {sub="Nusku Shield"}
 end

@@ -727,7 +727,7 @@ function init_gear_sets()
   ----------------------------------------- Idle Sets --------------------------------------------
   ------------------------------------------------------------------------------------------------
 
-  sets.Learning = {hands="Assim. Bazu. +2"}
+  sets.Learning = {hands="Assim. Bazu. +3"}
 
   -- Resting sets
   sets.resting = {}
