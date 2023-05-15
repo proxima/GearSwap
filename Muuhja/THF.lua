@@ -98,13 +98,13 @@ function init_gear_sets()
     --------------------------------------
 
     -- Precast sets to enhance JAs
-    sets.precast.JA['Collaborator'] = {head="Skulker's Bonnet +2"}
-    sets.precast.JA['Accomplice'] = {head="Skulker's Bonnet +2"}
+    sets.precast.JA['Collaborator'] = {head="Skulker's Bonnet +3"}
+    sets.precast.JA['Accomplice'] = {head="Skulker's Bonnet +3"}
     sets.precast.JA['Flee'] = {feet="Pillager's Poulaines +3"}
     sets.precast.JA['Hide'] = {body="Pillager's Vest +3"}
     sets.precast.JA['Conspirator'] = {body="Skulker's Vest +3"}
     sets.precast.JA['Steal'] = {head="Plunderer's Bonnet +3",hands="Pillager's Armlets +3",legs="Pillager's Culottes +3",feet="Pillager's Poulaines +3"}
-    sets.precast.JA['Despoil'] = {legs="Skulker's Culottes +2",feet="Skulker's Poulaines +2"}
+    sets.precast.JA['Despoil'] = {legs="Skulker's Culottes +2",feet="Skulker's Poulaines +3"}
     sets.precast.JA['Perfect Dodge'] = {hands="Plunderer's Armlets +1"}
     sets.precast.JA['Feint'] = {legs="Plunderer's Culottes +3"}
 
@@ -314,11 +314,18 @@ function init_gear_sets()
     sets.midcast.RA.Acc = {}
     
     sets.midcast["Sleepga"] = {
-      head="Malignance Chapeau",
-      body="Skulker's vest +3",
+      ammo="Pemphredo Tathlum",
+      head="Skulker's Bonnet +3",
+      body="Skulker's Vest +3",
       hands="Malignance gloves",
-      legs="Malignance Tights",
-      feet="Skulker's poulaines +3"
+      legs="Skulker's Culottes +2",
+      feet="Skulk. Poulaines +3",
+      neck="Assassin's gorget +2",
+      waist="Skrymir Cord +1",
+      left_ear="Skulker's earring +1",
+      right_ear="Telos Earring",
+      left_ring={ name="Metamor. Ring +1", augments={'Path: A',}},
+      right_ring="Stikini Ring +1",
     }
 
     --------------------------------------
@@ -380,15 +387,15 @@ function init_gear_sets()
     -- Normal melee group
     sets.engaged = {
       ammo="Coiste Bodhar",
-      head="Adhemar Bonnet +1",
+      head="Skulker's Bonnet +3",
       body="Pillager's Vest +3",
-      hands="Adhemar Wrist. +1",
+      hands="Gleti's gauntlets",
       legs="Pillager's Culottes +3",
-      feet="Plunderer's Poulaines +3",
+      feet="Plunderer's Poulaines +3",      
       neck="Assassin's Gorget +2",
       waist="Reiki Yotai",
       left_ear="Sherida Earring",
-      right_ear="Telos Earring",
+      right_ear="Skulker's earring +1",
       left_ring="Gere Ring",
       right_ring="Hetairoi ring",
       back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10','Phys. dmg. taken-10%',}}

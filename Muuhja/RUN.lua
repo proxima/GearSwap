@@ -120,6 +120,11 @@ function user_setup()
   send_command('bind @k gs c toggle Knockback')
   send_command('bind !q input /ma "Temper" <me>')
 
+  send_command('bind @e sat youcommand Suuhja "Entomb"')
+  send_command('bind @d sat youcommand Suuhja "Silent Storm"')
+  send_command('bind @z send Suuhja input /ja "Burst Affinity" <me>')
+  
+  
   if player.sub_job == 'BLU' then
     send_command('bind !w input /ma "Cocoon" <me>')
   elseif player.sub_job == 'WAR' then

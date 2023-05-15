@@ -341,7 +341,7 @@ function init_gear_sets()
     sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS, {
       range=Linos.WSD,
       head="Nyame Helm",
-      body={ name="Bihu Jstcorps. +3", augments={'Enhances "Troubadour" effect',}},
+      body="Nyame Mail",
       hands="Nyame Gauntlets",
       legs="Nyame Flanchard",
       feet="Nyame Sollerets",
@@ -494,8 +494,8 @@ function init_gear_sets()
 
     -- For Horde Lullaby maximum AOE range.
     sets.midcast.SongStringSkill = {
-      ear1="Darkside Earring",
-      ear2="Gersemi Earring"
+      -- ear1="Darkside Earring",
+      -- ear2="Gersemi Earring"
     }
 
     -- Placeholder song; minimize duration to make it easy to overwrite.

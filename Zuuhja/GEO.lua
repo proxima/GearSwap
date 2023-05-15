@@ -186,7 +186,7 @@ function get_sets()
    sets.me.idle.mdt = set_combine(sets.me.idle.dt, {
      neck="Warder's Charm +1",
      head="Azimuth Hood +3",
-     hands="Azimuth Gloves +2",
+     hands="Azimuth Gloves +3",
      feet="Azimuth Gaiters +3", 
    })
 
@@ -402,7 +402,7 @@ function get_sets()
      range={ name="Dunna", augments={'MP+20','Mag. Acc.+10','"Fast Cast"+3',}},                              -- Only item needed for 900 combined
      head="Bagua Galero +3",                                                                                 -- 600 hp
      body="Vedic Coat",                                                                                      -- 10 Conserve
-     hands="Azimuth Gloves +2",                                                                              -- Occasionally Free
+     hands="Azimuth Gloves +3",                                                                              -- Occasionally Free
      legs={ name="Vanya Slops", augments={'MND+10','Spell interruption rate down +15%','"Conserve MP"+6',}}, -- 12 Conserve
      feet="Azimuth Gaiters +3",                                                                              -- Occasionally Free
      neck={ name="Bagua Charm +2", augments={'Path: A',}},                                                   -- 25% Duration
@@ -421,7 +421,7 @@ function get_sets()
      range={ name="Dunna", augments={'MP+20','Mag. Acc.+10','"Fast Cast"+3',}}, 
      head={ name="Vanya Hood", augments={'MND+10','Spell interruption rate down +15%','"Conserve MP"+6',}},  -- 12 Conserve
      body="Vedic Coat",                                                                                      -- 10 Conserve
-     hands="Azimuth Gloves +2",                                                                              -- Occasionally Free
+     hands="Azimuth Gloves +3",                                                                              -- Occasionally Free
      legs={ name="Bagua Pants +3", augments={'Enhances "Mending Halation" effect',}},                        -- 21 Duration
      feet="Azimuth Gaiters +3",                                                                              -- Occasionally Free, 30 Duration
      neck="Loricate Torque +1",
