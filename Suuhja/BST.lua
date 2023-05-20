@@ -33,14 +33,6 @@ function user_setup()
   Cape.STR_DA   = { name="Artio's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}}
   Cape.STR_WSD  = { name="Artio's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}
   Cape.REND     = { name="Artio's Mantle", augments={'CHR+20','Mag. Acc+20 /Mag. Dmg.+20','CHR+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}
-
-  send_command('bind @o sat youcommand Muuhja "Sleepga"')
-  send_command('bind @p sat youcommand Zuuhja "Sleepga"')
-  send_command('bind @n sat youcommand Muuhja "Carnage Elegy"')
-  send_command('bind @1 send Zuuhja input /ma "Cure IV" Aller')
-  send_command('bind @2 send Zuuhja input /ma "Curaga III" Aller')
-  send_command('bind !1 send Zuuhja input /ma "Cure IV" Slibby')
-  send_command('bind !2 send Zuuhja input /ma "Curaga III" Slibby')
 end
  
 ready_moves_to_check = S{'Sic','Whirl Claws','Dust Cloud','Foot Kick','Sheep Song','Sheep Charge','Lamb Chop',
@@ -51,15 +43,17 @@ ready_moves_to_check = S{'Sic','Whirl Claws','Dust Cloud','Foot Kick','Sheep Son
   'Bubble Curtain','Scissor Guard','Big Scissors','Grapple','Spinning Top','Double Claw','Filamented Hold',
   'Frog Kick','Queasyshroom','Silence Gas','Numbshroom','Spore','Dark Spore','Shakeshroom','Blockhead',
   'Secretion','Fireball','Tail Blow','Plague Breath','Brain Crush','Infrasonics','??? Needles',
-  'Needleshot','Chaotic Eye','Blaster','Scythe Tail','Ripper Fang','Chomp Rush','Intimidate','Recoil Dive',
-  'Water Wall','Snow Cloud','Wild Carrot','Sudden Lunge','Spiral Spin','Noisome Powder','Wing Slap',
+  'Needleshot','Chaotic Eye','Blaster','Scythe Tail','Ripper Fang','Intimidate','Recoil Dive',
+  'Water Wall','Snow Cloud','Wild Carrot','Sudden Lunge','Spiral Spin','Noisome Powder',
   'Beak Lunge','Suction','Drainkiss','Acid Mist','TP Drainkiss','Back Heel','Jettatura','Choke Breath',
   'Fantod','Charged Whisker','Purulent Ooze','Corrosive Ooze','Tortoise Stomp','Harden Shell','Aqua Breath',
-  'Sensilla Blades','Tegmina Buffet','Molting Plumage','Swooping Frenzy','Pentapeck','Sweeping Gouge',
-  'Zealous Snort','Somersault ','Tickling Tendrils','Stink Bomb','Nectarous Deluge','Nepenthic Plunge',
-  'Pecking Flurry','Pestilent Plume','Foul Waters','Spider Web','Sickle Slash','Frogkick','Ripper Fang',
+  'Sensilla Blades','Tegmina Buffet','Molting Plumage','Swooping Frenzy',
+  'Zealous Snort','Somersault','Stink Bomb','Nectarous Deluge','Nepenthic Plunge',
+  'Pestilent Plume','Foul Waters','Spider Web','Sickle Slash','Frogkick','Ripper Fang',
   'Scythe Tail','Chomp Rush','Fluid Toss','Fluid Spread','Digest'}
        
+multihit_ready_moves = S{'Sweeping Gouge', 'Tickling Tendrils', 'Chomp Rush', 'Pentapeck', 'Wing Slap', 'Pecking Flurry'}
+      
 mab_ready_moves = S{
   'Cursed Sphere','Venom','Toxic Spit',
   'Venom Spray','Bubble Shower',
@@ -90,18 +84,6 @@ macc_ready_moves = S{
     send_command('unbind ^f8')
     send_command('unbind @f8')
     send_command('unbind ^f11')
-    
-    send_command('unbind @o')
-    send_command('unbind @p')
-    send_command('unbind @n')
-    
-    send_command('unbind @1')
-    send_command('unbind @2')
-    send_command('unbind !1')
-    send_command('unbind !2')    
-
-    send_command('unbind @o')
-    send_command('unbind @p')
 end
  
 -- Select default macro book on initial load or subjob change.
@@ -193,7 +175,7 @@ function init_gear_sets()
       back=Cape.REND,
       waist="Orpheus's Sash",
       legs="Nyame Flanchard",
-      feet="Nyame Sollerets"  
+      feet="Nyame Sollerets"
     }
     
     sets.precast.WS['Cloudsplitter'] = {
@@ -203,8 +185,8 @@ function init_gear_sets()
   
     -- This is your base Ready move set, activating for physical Ready moves. Merlin/D.Tassets are accounted for already.
     sets.midcast.Pet.WS = {
-      main="Agwu's Axe",
-      sub={ name="Kumbhakarna", augments={'Pet: Attack+19 Pet: Rng.Atk.+19','Pet: TP Bonus+200',}},
+      main="Aymur",
+      sub="Agwu's Axe",      
       ammo="Voluspa Tathlum",
       head={ name="Emicho Coronet +1", augments={'Pet: Accuracy+20','Pet: Attack+20','Pet: "Dbl. Atk."+4',}},
       body={ name="Taeon Tabard", augments={'Pet: Accuracy+21 Pet: Rng. Acc.+21','Pet: "Dbl. Atk."+5','Pet: Damage taken -4%',}},
@@ -213,8 +195,8 @@ function init_gear_sets()
       feet="Gleti's Boots",
       neck="Shulmanu Collar",
       waist="Incarnation Sash",
-      left_ear="Domes. Earring",
-      right_ear="Enmerkar Earring",
+      left_ear="Sroda Earring",
+      right_ear="Nukumi Earring +1",
       left_ring="Thur. Ring +1",
       right_ring="C. Palug Ring",
       back=Cape.PET_PHYS
@@ -223,9 +205,14 @@ function init_gear_sets()
     sets.midcast.Pet.Neutral = set_combine(sets.midcast.Pet.WS, {})           
     sets.midcast.Pet.HighAcc =  set_combine(sets.midcast.Pet.WS, {})
     sets.midcast.Pet.MaxAcc =  set_combine(sets.midcast.Pet.WS, {})
+    
+    sets.midcast.Pet.Multihit = set_combine(sets.midcast.Pet.WS, {
+      neck="Beastmaster collar +2",
+      legs={ name="Emicho Hose +1", augments={'Pet: Accuracy+20','Pet: Attack+20','Pet: "Dbl. Atk."+4',}},
+    })
  
     -- This will equip for Magical Ready moves like Fireball
-    sets.midcast.Pet.MabReady = set_combine(sets.midcast.Pet.WS, {
+    sets.midcast.Pet.MabReady = {
       main={ name="Kumbhakarna", augments={'Pet: "Mag.Atk.Bns."+19','Pet: TP Bonus+200',}, bag="wardrobe 5"},
       sub={ name="Kumbhakarna", augments={'Pet: "Mag.Atk.Bns."+19','Pet: TP Bonus+200',}, bag="wardrobe 6"},
       ammo="Voluspa Tathlum",
@@ -236,12 +223,12 @@ function init_gear_sets()
       feet={ name="Valorous Greaves", augments={'Pet: "Mag.Atk.Bns."+29','Pet: INT+13','Pet: Accuracy+4 Pet: Rng. Acc.+4','Pet: Attack+10 Pet: Rng.Atk.+10',}},
       neck="Adad Amulet",
       waist="Incarnation Sash",
-      left_ear={ name="Odnowa Earring +1", augments={'Path: A',}},
-      right_ear="Enmerkar Earring",
+      left_ear="Enmerkar Earring",
+      right_ear="Nukumi Earring +1",
       left_ring="Tali'ah Ring",
       right_ring="C. Palug Ring",
       back="Argocham. Mantle",
-    })
+    }
     
     sets.midcast.Pet.MaccReady = {
       main="Aymur",
@@ -253,7 +240,7 @@ function init_gear_sets()
       legs="Nukumi Quijotes +3",
       feet="Gleti's Boots",
       left_ear="Handler's Earring +1",
-      right_ear="Enmerkar Earring",
+      right_ear="Nukumi Earring +1",
       left_ring="Tali'ah Ring",
       right_ring="C. Palug Ring",
       waist="Incarnation Sash",
@@ -310,8 +297,8 @@ function init_gear_sets()
    
     -- MELEE (SINGLE-WIELD) SETS   
     sets.engaged = {
-	  main="Ikenga's Axe",
-	  sub="Sacro Bulwark",
+      main="Ikenga's Axe",
+      sub="Sacro Bulwark",
       ammo="Coiste Bodhar",
       head="Malignance Chapeau",
       body="Gleti's Cuirass",
@@ -400,12 +387,12 @@ function job_aftercast(spell, action, spellMap, eventArgs)
     if mab_ready_moves:contains(spell.english) and pet.status == 'Engaged' then
       equip(sets.midcast.Pet.MabReady)
     elseif macc_ready_moves:contains(spell.english) and pet.status == 'Engaged' then
-      equip(sets.midcast.Pet.MaccReady)      
+      equip(sets.midcast.Pet.MaccReady)
+    elseif multihit_ready_moves:contains(spell.english) and pet.status == 'Engaged' then
+      equip(sets.midcast.Pet.Multihit)
     end
  
     if buffactive['Unleash'] then
-      -- main="Arktoi"
-      -- hands={ name="Taeon Gloves", augments={'Pet: Accuracy+23 Pet: Rng. Acc.+23','Pet: "Dbl. Atk."+5','Pet: Damage taken -4%',}}
     end
     
     eventArgs.handled = true
