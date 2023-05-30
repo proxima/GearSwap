@@ -902,12 +902,12 @@ function self_command(command)
             end
 
             if arg == 'castsc' then
-               local closeSpell = function(element)
-                 return skillchainCloser(element, closeHelix.value)
-               end
-
-               if wantedSc == 'Scission' then
-                    send_command('input /p Opening SC: Scission  MB: Stone; wait .1; input /ja "Immanence" <me>; wait 1.5; input /ma "Fire" <t>; wait 4.0; input /ja "Immanence" <me>; wait 1.5; input /p Closing SC: Scission  MB: Stone; input /ma "'..closeSpell("Earth")..'" <t>')
+                local closeSpell = function(element)
+                  return skillchainCloser(element, closeHelix.value)
+                end
+                
+                if wantedSc == 'Scission' then
+                     send_command('input /p Opening SC: Scission  MB: Stone; wait .1; input /ja "Immanence" <me>; wait 1.5; input /ma "Fire" <t>; wait 4.0; input /ja "Immanence" <me>; wait 1.5; input /p Closing SC: Scission  MB: Stone; input /ma "'..closeSpell("Earth")..'" <t>')
                 elseif wantedSc == 'Reverberation' then
                     send_command('input /p Opening SC: Reverberation  MB: Water; wait .1; input /ja "Immanence" <me>; wait 1.5; input /ma "Stone" <t>; wait 4.0; input /ja "Immanence" <me>; wait 1.5; input /p Closing SC: Reverberation  MB: Water; input /ma "'..closeSpell("Water")..'" <t>')
                 elseif wantedSc == 'Detonation' then
@@ -925,7 +925,7 @@ function self_command(command)
                 elseif wantedSc == 'Fragmentation' then
                     send_command('input /p Opening SC: Fragmentation  MB: Lightning / Wind; wait .1; input /ja "Immanence" <me>; wait 1.5; input /ma "Blizzard" <t>; wait 4.0; input /ja "Immanence" <me>; wait 1.5; input /p Closing SC: Fragmentation  MB: Wind / Lightning; input /ma "'..closeSpell("Water")..'" <t>')
                 elseif wantedSc == 'LiqueFusion' then
-                    send_command('input /p Opening SC: Liquefaction  MB: Fire; wait .1; input /ja "Immanence" <me>; wait 1.5; input /ma "Stone" <t>; wait 4.0; input /ja "Immanence" <me>; wait 1.5; input /p Continuing SC: Liquefaction  MB: Fire; input /ma "'..closeSpell("Fire")..'" <t>; wait 6.5; input /ja "Immanence" <me>; wait 1.5; input /p Closing SC: Fusion  MB: Light / Fire; input /ma "'..closeSpell("Lightning")..'" <t>')
+                    send_command('input /p Opening SC: Liquefaction  MB: Fire; wait .1; input /ja "Immanence" <me>; wait 1.5; input /ma "Stone" <t>; wait 4.0; input /ja "Immanence" <me>; wait 1.5; input /p Continuing SC: Liquefaction  MB: Fire; input /ma "Pyrohelix" <t>; wait 8.5; input /ja "Immanence" <me>; wait 1.5; input /p Closing SC: Fusion  MB: Light / Fire; input /ma "Ionohelix" <t>')
                 elseif wantedSc == 'Fusion' then
                     send_command('input /p Opening SC: Fusion  MB: Light / Fire; wait .1; input /ja "Immanence" <me>; wait 1.5; input /ma "Fire" <t>; wait 4.0; input /ja "Immanence" <me>; wait 1.5; input /p Closing SC: Fusion  MB: Light / Fire; input /ma "'..closeSpell("Lightning")..'" <t>')
                 elseif wantedSc == 'Gravitation' then
