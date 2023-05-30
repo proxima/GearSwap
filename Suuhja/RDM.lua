@@ -405,7 +405,7 @@ function get_sets()
       head="Pixie Hairpin +1",
       body="Nyame Mail",
       hands="Jhakri Cuffs +2",
-      legs=EMPY.Legs,
+      legs="Nyame Flanchard",
       feet=EMPY.Feet,
       neck="Sibyl Scarf",
       waist="Orpheus's Sash",

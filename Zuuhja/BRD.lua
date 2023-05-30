@@ -83,7 +83,7 @@ function user_setup()
     state.OffenseMode:options('Normal', 'Acc')
     state.HybridMode:options('Normal', 'DT')
     state.WeaponskillMode:options('Normal', 'Acc')
-    state.CastingMode:options('Normal', 'Resistant')
+    state.CastingMode:options('Normal', 'Resistant', 'Evasion')
     state.IdleMode:options('Normal', 'DT', 'Evasion', 'MEva')
 
     Linos = {}
@@ -101,9 +101,9 @@ function user_setup()
     Cape.WSD        = { name="Intarabus's Cape", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}
     Cape.AEOLIAN    = { name="Intarabus's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}
     Cape.MORDANT    = { name="Intarabus's Cape", augments={'CHR+20','Accuracy+20 Attack+20','CHR+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}
+    Cape.RUDRA      = { name="Intarabus's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}
 
     Cape.ENMITY_EVA = { name="Intarabus's Cape", augments={'AGI+20','Eva.+20 /Mag. Eva.+20','Evasion+10','Enmity+10','Evasion+15',}} -- Not made
-    Cape.RUDRA      = { name="Intarabus's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}} -- Not made
 
     MR = {}
     MR.One = {name="Moonlight Ring",bag="Wardrobe 2"}
@@ -134,8 +134,9 @@ function user_setup()
         'Spirited Etude', 'Logical Etude', 'Enchanting Etude', 'Bewitching Etude'
     }
 
-    state.WeaponSet = M{['description']='Weapon Set', 'Carnwenhan', 'NaeglingDW', 'NaeglingSW', 'Tauret', 'Aeolian', 'Free'}
-    -- 'Twashtar', 'Aeneas', 'NibiruShield', 'NibiruDW',
+    state.WeaponSet = M{['description']='Weapon Set', 'Carnwenhan', 'Twashtar', 'NaeglingDW', 'NaeglingSW', 'Tauret', 'Aeolian', 'NibiruShield', 'NibiruDW', 'Staff', 'Free'}
+    -- Aeneas
+
     state.WeaponLock = M(false, 'Weapon Lock')
     state.CP = M(false, "Capacity Points Mode")
 
@@ -253,6 +254,21 @@ function init_gear_sets()
       right_ear="Etiolation earring",                                                                      --  1
       back=Cape.FC                                                                                         -- 10
     }
+    
+    sets.precast.FC.BardSong.Evasion = {
+      head="Bunzi's Hat",        --  7  DT, 10  FC 
+      body="Inyanga Jubbah +2",  -- 14  FC
+      hands="Nyame Gauntlets",   --  7  DT
+      legs="Aya. Cosciales +2",  --  5  DT,  6  FC
+      feet="Bihu Slippers +3",   --  5 PDT, 10 SCT
+      neck="Loricate Torque +1", --  6  DT    
+      ear1="Loquacious Earring", --  2  FC
+      ear2="Etiolation Earring", --  1  FC            
+      ring1="Kishar Ring",       --  4  FC
+      ring2="Defending Ring",    -- 10  DT
+      back={ name="Intarabus's Cape", augments={'AGI+20','Eva.+20 /Mag. Eva.+20','Evasion+10','"Fast Cast"+10','Phys. dmg. taken-10%',}}, --10 FC, 10 PDT
+      waist="Witful Belt", --3/(3)
+    } --50 PDT / 35 MDT, 49 FC + 10 Song Cast    
 
     sets.precast.FC.SongPlaceholder = set_combine(sets.precast.FC.BardSong, {range=info.ExtraSongInstrument})
 
@@ -304,12 +320,12 @@ function init_gear_sets()
       legs="Nyame Flanchard",
       feet="Nyame Sollerets",
       neck={ name="Bard's Charm +2", augments={'Path: A',}},
-      waist="Grunfeld Rope", -- waist="Kentarch Belt +1",
+      waist="Kentarch Belt +1",
       left_ear="Regal Earring",
       right_ear="Ishvara Earring",
       left_ring="Metamorph Ring +1",
       right_ring="Epaminondas's Ring",
-      back=Cape.WSD -- Cape.MORDANT
+      back=Cape.MORDANT
     })
 
     sets.precast.WS['Rudra\'s Storm'] = set_combine(sets.precast.WS, {
@@ -320,7 +336,7 @@ function init_gear_sets()
       legs="Nyame Flanchard",
       feet="Nyame Sollerets",
       neck={ name="Bard's Charm +2", augments={'Path: A',}},
-      waist="Grunfeld Rope", -- waist="Kentarch Belt +1",
+      waist="Kentarch Belt +1",
       left_ear="Moonshade Earring",
       right_ear="Mache earring +1",
       left_ring="Ilabrat Ring",
@@ -380,23 +396,24 @@ function init_gear_sets()
       hands="Brioso Cuffs +3",
       legs="Inyanga Shalwar +2",
     }
-
-    sets.midcast.Enmity = {
-      -- range=Linos.EVA,
-      -- head="Halitus Helm",
-      -- neck="Unmoving Collar +1",
-      -- left_ear="Cryptic Earring",
-      -- right_ear="Trux Earring",
-      -- body="Emet Harness +1",
-      -- hands="Nyame Gauntlets",
-      -- left_ring="Supershear Ring",
-      -- right_ring="Eihwaz Ring",
-      -- back=Cape.ENMITY_EVA,
-      -- waist="Goading Belt",
-      -- legs="Zoar Subligar", -- legs="Zoar Subligar +1",
-      -- feet="Nyame Sollerets",
+    
+    sets.midcast.Lullaby.Evasion = {
+      main="Carnwenhan",
+      sub="Genmei Shield",       -- 10
+      head="Nyame Helm",         --  7
+      body="Nyame Mail",         --  9
+      hands="Nyame Gauntlets",   --  7
+      legs="Inyanga Shalwar +2", 
+      feet="Brioso Slippers +3",
+      neck="Mnbw. Whistle +1",
+      ear1="Regal Earring",
+      ear2="Eabani Earring",
+      ring1={name="Stikini Ring +1", bag="wardrobe5"},
+      ring2="Defending Ring",    -- 10
+      waist="Sveltesse Gouriz +1",
+      back=Cape.FC   
     }
-
+    
     sets.TreasureHunter = {
       head={ name="Chironic Hat", augments={'Accuracy+1 Attack+1','Rng.Acc.+30','"Treasure Hunter"+2','Mag. Acc.+17 "Mag.Atk.Bns."+17',}},
       feet={ name="Chironic Slippers", augments={'MND+9','Potency of "Cure" effect received+6%','"Treasure Hunter"+2','Mag. Acc.+20 "Mag.Atk.Bns."+20',}},
@@ -448,7 +465,7 @@ function init_gear_sets()
       ear1="Digni. Earring",
       ear2="Regal Earring",
       left_ring={name="Stikini Ring +1", bag="wardrobe"},
-      right_ring="Metamorph Ring +1",
+      right_ring={name="Stikini Ring +1", bag="wardrobe5"},
       waist="Acuity Belt +1",
       back=Cape.FC
     }
@@ -484,6 +501,18 @@ function init_gear_sets()
 
     -- Other general spells and classes.
     sets.midcast.Cure = {
+      main="Daybreak",
+      sub="Genmei Shield",
+      head={ name="Vanya Hood", augments={'MP+50','"Fast Cast"+10','Haste+2%',}},
+      body="Bunzi's Robe",
+      hands="Inyanga dastanas +2",
+      legs="Bunzi's pants",
+      feet="Bunzi's sabots",
+      waist="Luminary Sash",
+      left_ear="Mendi. Earring",
+      right_ear="Meili Earring",
+      left_ring="Stikini Ring +1",
+      right_ring="Lebeche Ring",  
     }
 
     sets.midcast.Curaga = set_combine(sets.midcast.Cure, {
@@ -583,18 +612,18 @@ function init_gear_sets()
     }
 
     sets.idle.Evasion = {
-      -- range=Linos.EVA,
-      -- head="Nyame Helm",
-      -- body="Nyame Mail",
-      -- hands="Nyame Gauntlets",
-      -- legs="Nyame Flanchard",
+      range=Linos.EVA,
+      head="Nyame Helm",
+      body="Nyame Mail",
+      hands="Nyame Gauntlets",
+      legs="Nyame Flanchard",
       -- feet="Hippomenes Socks +1",
       -- neck="Bathy Choker +1",
-      -- waist="Svelt. Gouriz +1",
-      -- left_ear="Infused Earring",
-      -- right_ear="Eabani Earring",
-      -- left_ring="Vengeful Ring",
-      -- right_ring="Defending Ring",
+      waist="Kasiri Belt",
+      left_ear="Infused Earring",
+      right_ear="Eabani Earring",
+      left_ring="Vengeful Ring",
+      right_ring="Defending Ring",
       -- back=Cape.ENMITY_EVA,
     }
 
@@ -639,6 +668,8 @@ function init_gear_sets()
     }
 
     sets.engaged.Acc = set_combine(sets.engaged, {
+      ear1="Telos Earring",
+      waist="Kentarch Belt +1",    
     })
 
     -- * DNC Subjob DW Trait: +15%
@@ -659,7 +690,6 @@ function init_gear_sets()
       right_ring=MR.Two,
       back=Cape.TP,                 --   10
       waist="Reiki Yotai"
-
     }
 
     sets.engaged.DW.Acc = set_combine(sets.engaged.DW, {
@@ -756,6 +786,7 @@ function job_precast(spell, action, spellMap, eventArgs)
         if spell.name == 'Honor March' then
             equip({range="Marsyas"})
         end
+
         if string.find(spell.name,'Lullaby') then
             if state.LullabyMode.value == 'Harp' and spell.english:contains('Horde') then
                 equip({range="Daurdabla"})
@@ -770,6 +801,7 @@ function job_precast(spell, action, spellMap, eventArgs)
             end
         end
     end
+
     if spellMap == 'Utsusemi' then
         if buffactive['Copy Image (3)'] or buffactive['Copy Image (4+)'] then
             cancel_spell()
@@ -787,12 +819,18 @@ function job_midcast(spell, action, spellMap, eventArgs)
     if spell.type == 'BardSong' then
         -- layer general gear on first, then let default handler add song-specific gear.
         local generalClass = get_song_class(spell)
+
         if generalClass and sets.midcast[generalClass] then
             equip(sets.midcast[generalClass])
+            if generalClass == 'SongEnmity' then
+                eventArgs.handled = true
+            end
         end
+
         if spell.name == 'Honor March' then
             equip({range="Marsyas"})
         end
+
         if string.find(spell.name,'Lullaby') then
             if state.LullabyMode.value == 'Harp' and spell.english:contains('Horde') then
                 equip({range="Daurdabla"})
@@ -802,8 +840,8 @@ function job_midcast(spell, action, spellMap, eventArgs)
                 equip(sets.TreasureHunter)
                 eventArgs.handled = true
             elseif state.LullabyMode.value == 'Enmity' then
-                equip(sets.midcast.Enmity)
-                eventArgs.handled = true
+               equip(sets.midcast.SongEnmity)
+               eventArgs.handled = true
             elseif buffactive.Troubadour then
                 equip({range="Marsyas"})
             else
@@ -928,7 +966,7 @@ end
 -- Modify the default melee set after it was constructed.
 function customize_melee_set(meleeSet)
     if state.WeaponSet.value == "Carnwenhan" then
-        equip({main="Carnwenhan",sub="Gleti's Knife"})
+        equip({main="Carnwenhan",sub="Crepuscular knife"})
     elseif state.WeaponSet.value == "Twashtar" then
         equip({main="Twashtar",sub="Fusetto +2"})
     elseif state.WeaponSet.value == "NaeglingDW" then
@@ -941,6 +979,8 @@ function customize_melee_set(meleeSet)
         equip({main="Aeneas",sub="Twashtar"})
     elseif state.WeaponSet.value == "Aeolian" then
         equip({main="Tauret",sub="Daybreak"})
+    elseif state.WeaponSet.value == "Staff" then
+        equip({main="Mpaca's Staff",sub="Enki Strap"})
     end
     if buffactive['Aftermath: Lv.3'] and player.equipment.main == "Carnwenhan" then
         meleeSet = set_combine(meleeSet, sets.engaged.Aftermath)
@@ -1017,17 +1057,21 @@ end
 
 -- Determine the custom class to use for the given song.
 function get_song_class(spell)
-    -- Can't use spell.targets:contains() because this is being pulled from resources
+   -- Can't use spell.targets:contains() because this is being pulled from resources
     if set.contains(spell.targets, 'Enemy') then
-        if state.CastingMode.value == 'Resistant' then
-            return 'SongEnfeebleAcc'
-        else
-            return 'SongEnfeeble'
-        end
+       if spell.english:contains('Threnody') and spell.english:sub(-2) ~= "II" then
+         return 'SongEnmity'
+       elseif spell.english:contains('Requiem') then 
+         return 'SongEnmity'
+       elseif state.CastingMode.value == 'Resistant' then
+         return 'SongEnfeebleAcc'
+       else
+         return 'SongEnfeeble'
+       end
     elseif state.SongMode.value == 'Placeholder' then
-        return 'SongPlaceholder'
+      return 'SongPlaceholder'
     else
-        return 'SongEnhancing'
+      return 'SongEnhancing'
     end
 end
 

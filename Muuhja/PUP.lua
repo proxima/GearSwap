@@ -250,7 +250,7 @@ function init_gear_sets()
     Empy_Karagoz.Head_PTPBonus = "Karagoz Capello +2"
     Empy_Karagoz.Body_Overload = "Karagoz Farsetto"
     Empy_Karagoz.Hands         = "Karagoz Guanti +1"
-    Empy_Karagoz.Legs_Combat   = "Karagoz Pantaloni +2"
+    Empy_Karagoz.Legs_Combat   = "Karagoz Pantaloni +3"
     Empy_Karagoz.Feet_Tactical = "Karagoz Scarpe +1"
 
     Visucius = {}

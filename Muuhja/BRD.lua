@@ -130,7 +130,7 @@ function user_setup()
         'Spirited Etude', 'Logical Etude', 'Enchanting Etude', 'Bewitching Etude'
     }
 
-    state.WeaponSet = M{['description']='Weapon Set', 'Carnwenhan', 'Twashtar', 'NaeglingDW', 'NaeglingSW', 'Aeneas', 'Tauret', 'Aeolian', 'NibiruShield', 'NibiruDW', 'Staff', 'Free'}
+    state.WeaponSet = M{['description']='Weapon Set', 'Carnwenhan', 'Twashtar', 'Prime', 'NaeglingDW', 'NaeglingSW', 'Aeneas', 'Tauret', 'Aeolian', 'NibiruShield', 'NibiruDW', 'Staff', 'Free'}
     state.WeaponLock = M(false, 'Weapon Lock')
     state.CP = M(false, "Capacity Points Mode")
 
@@ -902,6 +902,8 @@ function job_state_change(stateField, newValue, oldValue)
             send_command("trial ws mordant rime;trial tp 1000")
         elseif state.WeaponSet.value == "Twashtar" then
             send_command("trial ws rudra's storm;trial tp 1000")
+        elseif state.WeaponSet.value == "Prime" then
+            send_command("trial ws rudra's storm;trial tp 1000")            
         elseif state.WeaponSet.value == "NaeglingDW" then
             send_command("trial ws savage blade;trial tp 1000")
         elseif state.WeaponSet.value == "NaeglingSW" then
@@ -970,6 +972,8 @@ function customize_melee_set(meleeSet)
         equip({main="Carnwenhan",sub="Crepuscular knife"})
     elseif state.WeaponSet.value == "Twashtar" then
         equip({main="Twashtar",sub="Fusetto +2"})
+    elseif state.WeaponSet.value == "Prime" then
+        equip({main="Mpu Gandring",sub="Gleti's Knife"})
     elseif state.WeaponSet.value == "NaeglingDW" then
         equip({main="Naegling",sub="Fusetto +2"})
     elseif state.WeaponSet.value == "NaeglingSW" then
