@@ -326,11 +326,20 @@ function init_gear_sets()
 
   sets.midcast.Cure.SIRD = set_combine(sets.midcast.Cure, sets.midcast.SIRD)
   
-  sets.midcast.Reprisal = set_combine(sets.precast.FC, {
+  sets.midcast.Reprisal = {
+    head="Chev. Armet +3",
+    neck="Voltsurge Torque",
+    left_ear="Loquac. Earring",
+    right_ear="Chev. Earring +1",
     body="Shabti Cuirass +1",
+    hands="Regal Gauntlets",
     left_ring="Kishar Ring",
-    right_ring="Prolix Ring",
-  })
+    right_ring="Gelatinous Ring +1",
+    back=Rud.FC,
+    waist="Plat. Mog. Belt",
+    legs="Chev. Cuisses +3",
+    feet="Chev. Sabatons +3"
+  }
   
   sets.midcast.Reprisal.SIRD = set_combine(sets.midcast.Reprisal, sets.midcast.SIRD)
   
@@ -344,6 +353,8 @@ function init_gear_sets()
   
   sets.midcast['Enhancing Magic'] = {
     left_ear="Mimir Earring",
+    body="Shabti Cuirass +1",
+    hands="Regal gauntlets",
     left_ring={name="Stikini Ring +1",bag="wardrobe"},
     right_ring={name="Stikini Ring +1",bag="wardrobe5"},
   }
@@ -369,8 +380,8 @@ function init_gear_sets()
   
   sets.midcast.Phalanx.SIRD = set_combine(sets.midcast.Phalanx, sets.midcast.SIRD)
 
-  sets.midcast.Protect = {sub= "Srivatsa", body="Shabti Cuirass +1", ring1="Sheltered Ring"}
-  sets.midcast.Shell = {ring1="Sheltered Ring", body="Shabti Cuirass +1"}
+  sets.midcast.Protect = {sub="Srivatsa", hands="Regal gauntlets", body="Shabti Cuirass +1", ring1="Sheltered Ring"}
+  sets.midcast.Shell = {ring1="Sheltered Ring", hands="Regal gauntlets", body="Shabti Cuirass +1"}
 
   sets.midcast['Geist Wall']     = set_combine(sets.midcast.Enmity, sets.midcast.SIRD)  
   sets.midcast.Refueling         = set_combine(sets.midcast.Enmity, sets.midcast.SIRD)
@@ -389,7 +400,7 @@ function init_gear_sets()
   -- Idle/resting/defense/etc sets
   --------------------------------------
 
-  sets.Reraise = {head="Twilight Helm", body="Twilight Mail"}
+  sets.Reraise = {head="Crepuscular Helm", body="Crepuscular Mail"}
     
   sets.resting = {
   }

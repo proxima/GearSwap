@@ -302,7 +302,7 @@ function get_sets()
       waist="Incarnation Sash",
       left_ear="Lugalbanda Earring",
       right_ear="Sroda Earring",
-      left_ring="Varar Ring +1",
+      left_ring="Fickblix's Ring",
       right_ring="Cath Palug Ring",
       back={ name="Campestres's Cape", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Pet: Accuracy+10 Pet: Rng. Acc.+10',}},
     }
@@ -352,7 +352,7 @@ function get_sets()
       waist="Regal Belt",
       left_ear="Lugalbanda Earring",
       right_ear="Beckoner's earring +1",
-      left_ring={name="Varar Ring +1", bag="wardrobe"},
+      left_ring="Fickblix's Ring",
       right_ring={name="Varar Ring +1", bag="wardrobe5"},
       back={ name="Campestres's Cape", augments={'Pet: M.Acc.+20 Pet: M.Dmg.+20','Pet: Magic Damage+10','Damage taken-5%',}},
     }
@@ -397,7 +397,7 @@ function get_sets()
       left_ear="Lugalbanda Earring",
       right_ear="Beckoner's earring +1",
       left_ring={name="Varar Ring +1", bag="wardrobe"},
-      right_ring={name="Varar Ring +1", bag="wardrobe5"},
+      right_ring="Fickblix's Ring",
       back={ name="Campestres's Cape", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Pet: Accuracy+10 Pet: Rng. Acc.+10',}},
     }
  
