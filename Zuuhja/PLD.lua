@@ -437,9 +437,9 @@ function init_gear_sets()
     waist="Carrier's Sash",
     ear1="Eabani Earring",
     ear2="Tuisto Earring", 
-    ring1="Vexer ring +1",
+    ring1="Gurebu's Ring",
     ring2="Apeile Ring +1",
-    back=Rud.ENMITY               -- 10
+    back=Rud.ENMITY                   -- 10
   }
   
   sets.idle.Block = {

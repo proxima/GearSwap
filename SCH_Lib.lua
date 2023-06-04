@@ -689,15 +689,6 @@ function midcast(spell)
     elseif sets.me[spell.name] then
         equip(sets.me[spell.name])
     end
-    
-    -- Obi up for matching weather / day
-    if spell.element == world.weather_element and spellMap ~= 'Helix' then
-        equip(sets.midcast.Obi)
-    end
-
-    if spell.element == world.day_element and spellMap ~= 'Helix' then
-        equip(sets.midcast.Obi)
-    end
 
     if spell.name:match('Stoneskin') then
         equip(sets.midcast.stoneskin)
@@ -727,6 +718,15 @@ function midcast(spell)
     if sets.midcast[spell.name] then
         equip(sets.midcast[spell.name])
     end
+    
+    -- Obi up for matching weather / day
+    if spell.element == world.weather_element and spellMap ~= 'Helix' then
+        equip(sets.midcast.Obi)
+    end
+    
+    if spell.element == world.day_element and spellMap ~= 'Helix' then
+        equip(sets.midcast.Obi)
+    end    
 end
  
 function aftercast(spell) 

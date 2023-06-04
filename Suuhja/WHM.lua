@@ -241,7 +241,7 @@ function init_gear_sets()
       left_ear="Tuisto Earring",
       right_ear="Etiolation Earring",
       left_ring="Stikini Ring +1",
-      right_ring="Stikini Ring +1",
+      right_ring="Gurebu's Ring",
       back={ name="Alaunus's Cape", augments={'MND+20','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Haste+10','Mag. Evasion+15',}},
     }
 
@@ -258,8 +258,8 @@ function init_gear_sets()
       waist="Carrier's Sash",
       left_ear={ name="Odnowa Earring +1", augments={'Path: A',}},
       right_ear="Ebers Earring +2",
-      left_ring="Stikini Ring +1",
-      right_ring={ name="Gelatinous Ring +1", augments={'Path: A',}},
+      left_ring={ name="Gelatinous Ring +1", augments={'Path: A',}},
+      right_ring="Gurebu's Ring",
       back={ name="Alaunus's Cape", augments={'VIT+20','Eva.+20 /Mag. Eva.+20','VIT+10','Enmity-10','DEF+50',}},
     })
 
@@ -276,15 +276,14 @@ function init_gear_sets()
       waist="Carrier's Sash",
       left_ear="Sanare Earring",
       right_ear="Etiolation Earring",
-      left_ring="Inyanga Ring",
-      right_ring="Shadow Ring",
+      left_ring="Shadow Ring",
+      right_ring="Gurebu's Ring",
       back={ name="Alaunus's Cape", augments={'MND+20','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Haste+10','Mag. Evasion+15',}},
     })
 
     sets.idle.Town = set_combine(sets.idle.MEva, {
       main="Gambanteinn",
       hands="Ebers Mitts +3",
-      right_ring={ name="Gelatinous Ring +1", augments={'Path: A',}},
     })
 
     -- Precast Sets
@@ -681,7 +680,7 @@ function init_gear_sets()
       head={ name="Blistering Sallet +1", augments={'Path: A',}},
       body="Nyame Mail",
       hands={ name="Gazu Bracelets +1", augments={'Path: A',}},
-      legs="Nyame Flanchard",
+      legs="Volte Tights",
       feet="Nyame Sollerets",
       neck="Lissome necklace",
       waist="Windbuffet Belt +1",

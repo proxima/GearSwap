@@ -407,16 +407,13 @@ function init_gear_sets()
       hands="Nyame Gauntlets",
       legs="Nyame Flanchard",
       feet={ name="Lanun Bottes +3", augments={'Enhances "Wild Card" effect',}},
-      -- neck="Comm. Charm +2",
+      neck="Comm. Charm +2",
       left_ear="Friomisi Earring",
       right_ear="Chasseur's Earring +1",
       left_ring="Dingir Ring",
       right_ring="Epaminondas's Ring",
-      -- back=Cape.LEADEN,
-      back="Gunslinger's Cape",
-      -- waist="Skrymir Cord +1",
-      neck="Fotia Gorget",
-      waist="Fotia belt",      
+      back=Cape.LEADEN,
+      waist="Skrymir Cord +1",
     }
 
     sets.precast.WS['Hot Shot'] = {ammo=gear.WSbullet,
@@ -440,11 +437,20 @@ function init_gear_sets()
       right_ring="Regal Ring",
     })
 
-    sets.precast.WS['Leaden Salute'] = set_combine(sets.precast.WS['Wildfire'], {
+    sets.precast.WS['Leaden Salute'] = {ammo=gear.MAbullet, -- 25
       head="Pixie Hairpin +1",
+      body={ name="Lanun Frac +3", augments={'Enhances "Loaded Deck" effect',}},
+      hands="Nyame Gauntlets",
+      legs="Nyame Flanchard",
+      feet={ name="Lanun Bottes +3", augments={'Enhances "Wild Card" effect',}},
+      neck="Comm. Charm +2",
       left_ear="Moonshade Earring",
-      right_ring="Archon Ring"
-    })
+      right_ear="Friomisi Earring",
+      left_ring="Dingir Ring",
+      right_ring="Archon Ring",
+      back=Cape.LEADEN,
+      waist="Skrymir Cord +1",
+    }
 
     sets.precast.WS['Leaden Salute'].Acc = set_combine(sets.precast.WS['Leaden Salute'], {
       head="Nyame Helm",
@@ -494,8 +500,9 @@ function init_gear_sets()
     sets.precast.WS['Requiescat'] = set_combine(sets.precast.WS['Swift Blade'], {})
     sets.precast.WS['Requiescat'].Acc = set_combine(sets.precast.WS['Requiescat'], {})
 
-    sets.precast.WS['Aeolian Edge'] = set_combine(sets.precast.WS['Wildfire'], {ammo="Hauksbok Bullet",
-      left_ear="Moonshade Earring",
+    sets.precast.WS['Aeolian Edge'] = set_combine(sets.precast.WS['Leaden Salute'], {ammo="Hauksbok Bullet",
+      head="Nyame Helm",
+      right_ring="Epaminondas's Ring",
       back=Cape.AEOLIAN,
       waist="Orpheus's Sash",
     })
@@ -575,15 +582,12 @@ function init_gear_sets()
       head="Ikenga's hat",
       neck="Iskur Gorget",
       left_ear="Crepuscular Earring",
-      -- right_ear="Telos Earring",
-      right_ear="Chasseur's earring +1",
-      -- body="Ikenga's Vest",
-      body="Laksamana's frac +3",
+      right_ear="Telos Earring",
+      body="Ikenga's Vest",
       hands="Ikenga's Gloves",
       ring1="Dingir Ring",
       ring2="Crepuscular Ring",
-      back="Gunslinger's Cape",
-      -- back=Cape.RTP,
+      back=Cape.RTP,
       waist="Yemaya Belt",
       legs="Ikenga's Trousers",
       feet="Ikenga's Clogs",
@@ -599,6 +603,7 @@ function init_gear_sets()
       neck="Comm. Charm +2",
       body="Laksa. Frac +3",
       legs="Chasseur's culottes +3",
+      right_ear="Chasseur's earring +1",
       left_ring="Regal Ring",
       waist="K. Kachina Belt +1",
     })
@@ -1010,7 +1015,7 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
             end
         end
     elseif spell.action_type == 'Ranged Attack' then
-        if buffactive['Triple Shot'] then
+        if buffactive['Triple Shot'] and not (state.RangedMode.value == 'Acc' or state.RangedMode.value == 'HighAcc') then
             equip(sets.TripleShot)
             if buffactive['Aftermath: Lv.3'] and player.equipment.ranged == "Armageddon" then
                 equip(sets.TripleShotCritical)
@@ -1476,6 +1481,7 @@ function check_moving()
 end
 
 function check_gear()
+    --[[ 
     if no_swap_gear:contains(player.equipment.left_ring) then
         disable("ring1")
     else
@@ -1491,6 +1497,7 @@ function check_gear()
     else
         enable("waist")
     end
+    ]]--
 end
 
 function check_weaponset()

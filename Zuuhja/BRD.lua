@@ -653,17 +653,17 @@ function init_gear_sets()
 
     sets.engaged = {
       range=Linos.TP,
-      head="Bunzi's Hat",           -- 7, 6
-      body="Ashera Harness",        -- 9, 4
-      hands="Bunzi's Gloves",       -- 8, 3
-      legs="Volte Tights",          --    9
-      feet="Nyame Sollerets",       -- 7, 3
+      head="Bunzi's Hat",        
+      body="Ashera Harness",     
+      hands="Bunzi's Gloves",    
+      legs="Volte Tights",       
+      feet="Volte Spats",        
       neck="Bard's Charm +2",
       ear1="Brutal Earring",
       ear2="Dignitary's Earring",
       left_ring=MR.One,
       right_ring=MR.Two,
-      back=Cape.TP,                 --   10
+      back=Cape.TP,              
       waist="Sailfi Belt +1"
     }
 
@@ -682,7 +682,7 @@ function init_gear_sets()
       body="Ashera Harness",        -- 9, 4
       hands="Bunzi's Gloves",       -- 8, 3
       legs="Volte Tights",          --    9
-      feet="Nyame Sollerets",       -- 7, 3
+      feet="Volte Spats",
       neck="Bard's Charm +2",
       ear1="Eabani Earring",
       ear2="Telos Earring",

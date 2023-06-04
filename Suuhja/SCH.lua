@@ -217,7 +217,7 @@ function get_sets()
       body="Arbatel Gown +3",
       hands="Nyame Gauntlets",
       legs="Agwu's slops",
-      left_ring={name="Stikini Ring +1",bag="wardrobe 2"},
+      left_ring="Gurebu's Ring",
       right_ring={name="Stikini Ring +1",bag="wardrobe 3"},
       feet="Nyame Sollerets",
       waist="Carrier's Sash",
@@ -243,7 +243,7 @@ function get_sets()
       waist="Carrier's Sash",
       left_ear="Eabani Earring",
       right_ear={ name="Odnowa Earring +1", augments={'Path: A',}},
-      left_ring={name="Stikini Ring +1",bag="wardrobe 2"},
+      left_ring="Gurebu's Ring",
       right_ring="Gelatinous Ring +1",
       back=Lugh.DT
     })
@@ -252,16 +252,16 @@ function get_sets()
       main="Daybreak",
       sub="Ammurapi Shield",
       ammo="Staunch tathlum +1",  --  3 DT
-      head="Pinga crown +1",
+      head="Nyame Helm",
       ear1="Lugalbanda earring",
       ear2="Odnowa earring +1",   --  3 DT, 2 MDT
       neck="Warder's charm +1",
       body="Arbatel Gown +3",     -- 1? DT  
-      hands="Pinga mittens +1",
+      hands="Nyame Gauntlets",
       legs="Agwu's slops",        --  9 DT
-      ring1="Defending ring",     -- 10 DT
-      ring2="Gelatinous ring +1", --  7 PDT, -1MDT
-      feet="Pinga pumps +1",
+      left_ring="Gurebu's Ring",
+      right_ring="Gelatinous ring +1", --  7 PDT, -1MDT
+      feet="Nyame Sollerets",
       waist="Carrier's Sash",
       back=Lugh.DT                -- 10 PDT
     })
@@ -795,13 +795,23 @@ function get_sets()
      sub="Ammurapi Shield"
    })
    
-   sets.midcast.Impact = set_combine(sets.midcast.IntEnfeebling, {
-     main="Hvergelmir",
-     sub="Khonsu",
-     head=empty, 
-     body="Crepuscular Cloak",
-     hands="Academic's bracers +3",
-   })
+   sets.midcast.Impact = {
+    main={ name="Bunzi's Rod", augments={'Path: A',}},
+    sub="Ammurapi Shield",
+    ammo="Pemphredo Tathlum",
+    head=empty,
+    body="Crepuscular Cloak",
+    hands={ name="Agwu's Gages", augments={'Path: A',}},
+    legs={ name="Nyame Flanchard", augments={'Path: C',}},
+    feet="Arbatel Loafers +3",
+    neck={ name="Argute Stole +2", augments={'Path: A',}},
+    waist={ name="Acuity Belt +1", augments={'Path: A',}},
+    left_ear="Regal Earring",
+    right_ear="Malignance Earring",
+    left_ring={ name="Metamor. Ring +1", augments={'Path: A',}},
+    right_ring="Freke Ring",
+    back=Lugh.INT_MAB
+   }
    
    sets.midcast.SC_Open = {
      main="Malignance Pole", 

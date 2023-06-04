@@ -226,7 +226,7 @@ function get_sets()
       head={ name="Nyame Helm", augments={'Path: B',}},
       body="Nyame Mail",
       hands={ name="Gazu Bracelets +1", augments={'Path: A',}},
-      legs="Nyame Flanchard",
+      legs="Volte Tights",
       feet={ name="Nyame Sollerets", augments={'Path: B',}},
       neck="Lissome Necklace",
       waist="Grunfeld Rope",
@@ -260,7 +260,7 @@ function get_sets()
       back=Taranus.INT_WSD  
     }
     
-    sets.me["Retribution"] = sets.me["Heavy Swing"]
+    sets.me["Retribution"] = set_combine(sets.me["Heavy Swing"], {})
 
     sets.me["Shattersoul"] = {
       ammo="Ghastly Tathlum +1",
@@ -294,8 +294,8 @@ function get_sets()
       back=Taranus.INT_WSD
     }
     
-    sets.me["Full Swing"] = sets.me["Heavy Swing"]
-    sets.me["Spirit Taker"] = sets.me["Heavy Swing"]
+    sets.me["Full Swing"] = set_combine(sets.me["Heavy Swing"], {})
+    sets.me["Spirit Taker"] = set_combine(sets.me["Heavy Swing"], {})
 
     sets.me["Earth Crusher"] = {
       ammo="Ghastly Tathlum +1",
@@ -313,7 +313,7 @@ function get_sets()
       back=Taranus.INT_WSD
     }
 
-    sets.me["Rock Crusher"] = sets.me["Earth Crusher"]
+    sets.me["Rock Crusher"] = set_combine(sets.me["Earth Crusher"], {})
 
     sets.me["Aeolian Edge"] = set_combine(sets.me["Earth Crusher"], {
       neck="Sorcerer's Stole +2",
@@ -350,8 +350,8 @@ function get_sets()
       back=Taranus.MND_WSD
     }
 
-    sets.me["Flash Nova"] = sets.me["Seraph Strike"]
-    sets.me["Starburst"] = sets.me["Flash Nova"]
+    sets.me["Flash Nova"] = set_combine(sets.me["Seraph Strike"], {})
+    sets.me["Starburst"] = set_combine(sets.me["Flash Nova"], {})
     
     sets.me["Myrkr"] = {
       ammo="Ghastly Tathlum +1",
@@ -677,7 +677,7 @@ function get_sets()
      back="Aurist's Cape +1",
    }
    
-   sets.midcast["Stun"] = sets.midcast.IntEnfeebling
+   sets.midcast["Stun"] = set_combine(sets.midcast.IntEnfeebling, {})
 
    sets.midcast.ElementalEnfeeble = set_combine(sets.midcast.IntEnfeebling, {
      head="Wicce Petasos +2",
@@ -758,7 +758,7 @@ function get_sets()
       feet="Agwu's Pigaches"
     })
 
-    sets.midcast.Aspir = sets.midcast["Drain"]
+    sets.midcast.Aspir = set_combine(sets.midcast["Drain"], {})
     
     sets.midcast.Cursna = {
       head={ name="Vanya Hood", augments={'Healing magic skill +20','"Cure" spellcasting time -7%','Magic dmg. taken -3',}},
@@ -813,8 +813,8 @@ function get_sets()
       back=Taranus.MP_FC
     }
 
-    sets.precast.Death = sets.midcast.Death
-    sets.me.idle.death = sets.midcast.Death
+    sets.precast.Death = set_combine(sets.midcast.Death, {})
+    sets.me.idle.death = set_combine(sets.midcast.Death, {})
 
     ------------
     -- Regen

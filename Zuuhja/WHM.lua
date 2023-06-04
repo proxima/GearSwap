@@ -225,7 +225,6 @@ function init_gear_sets()
     -- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
     sets.idle = {
       main="Daybreak",
-      -- main="Asclepius",
       sub="Genmei Shield",
       ammo="Homiliary",
       head="Bunzi's Hat",
@@ -239,7 +238,7 @@ function init_gear_sets()
       left_ear={ name="Odnowa Earring +1", augments={'Path: A',}},
       right_ear="Tuisto Earring",
       left_ring="Defending Ring",
-      right_ring="Gelatinous Ring +1", -- 7 dt
+      right_ring="Gurebu's Ring",
     }
 
     sets.idle.DT = set_combine(sets.idle, {
@@ -253,8 +252,8 @@ function init_gear_sets()
       legs="Nyame Flanchard",
       feet="Nyame Sollerets",
       right_ear="Tuisto Earring",
-      left_ring={name="Stikini Ring +1",bag="wardrobe"},
-      right_ring="Gelatinous Ring +1",
+      left_ring="Gelatinous Ring +1",
+      right_ring="Gurebu's Ring",
       waist="Carrier's Sash",
       back={ name="Alaunus's Cape", augments={'VIT+20','Eva.+20 /Mag. Eva.+20','VIT+10','Enmity-10','DEF+50',}},
     })
@@ -273,8 +272,8 @@ function init_gear_sets()
       waist="Carrier's Sash",
       left_ear="Sanare Earring",
       right_ear="Etiolation Earring",
-      left_ring="Inyanga Ring",
-      right_ring="Shadow Ring",
+      left_ring="Shadow Ring",
+      right_ring="Gurebu's Ring",
   })
 
     sets.idle.Town = set_combine(sets.idle.MEva, {
@@ -614,8 +613,8 @@ function init_gear_sets()
       head={ name="Blistering Sallet +1", augments={'Path: A',}},
       body={ name="Nyame Mail", augments={'Path: B',}},
       hands={ name="Gazu Bracelets +1", augments={'Path: A',}},
-      legs={ name="Nyame Flanchard", augments={'Path: B',}},
-      feet={ name="Nyame Sollerets", augments={'Path: B',}},
+      legs="Volte Tights",
+      feet="Volte Spats",
       neck={ name="Loricate Torque +1", augments={'Path: A',}},
       waist="Windbuffet Belt +1",
       left_ear="Telos Earring",
