@@ -428,7 +428,7 @@ function init_gear_sets()
       back={ name="Senuna's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%','Phys. dmg. taken-10%'}},
     })
     
-    sets.precast.WS['Dancing Edge'] = sets.precast.WS['Rudra\'s Storm']
+    sets.precast.WS['Dancing Edge'] = set_combine(sets.precast.WS['Rudra\'s Storm'], {})
 
     sets.precast.WS['Shark Bite'] = set_combine(sets.precast.WS['Rudra\'s Storm'], {
       ammo="Cath Palug Stone",
@@ -477,12 +477,12 @@ function init_gear_sets()
     ---------------------------------------- Midcast Sets ------------------------------------------
     ------------------------------------------------------------------------------------------------
 
-    sets.midcast.FastRecast = sets.precast.FC
+    sets.midcast.FastRecast = set_combine(sets.precast.FC, {})
 
     sets.midcast.SpellInterrupt = {
     }
 
-    sets.midcast.Utsusemi = sets.midcast.SpellInterrupt
+    sets.midcast.Utsusemi = set_combine(sets.midcast.SpellInterrupt, {})
 
     sets.midcast['Elemental Magic'] = set_combine(sets.engaged.Hybrid, {
       head={ name="Herculean Helm", augments={'"Store TP"+1','Magic Damage +1','"Treasure Hunter"+2','Accuracy+7 Attack+7',}},
@@ -537,7 +537,7 @@ function init_gear_sets()
       back={ name="Senuna's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}},  
     })
 
-    sets.idle.Weak = sets.idle.DT
+    sets.idle.Weak = set_combine(sets.idle.DT, {})
 
     sets.midcast.Phalanx = {
       head={ name="Taeon Chapeau", augments={'Phalanx +3',}},
@@ -551,8 +551,8 @@ function init_gear_sets()
     ---------------------------------------- Defense Sets ------------------------------------------
     ------------------------------------------------------------------------------------------------
 
-    sets.defense.PDT = sets.idle.DT
-    sets.defense.MDT = sets.idle.DT
+    sets.defense.PDT = set_combine(sets.idle.DT, {})
+    sets.defense.MDT = set_combine(sets.idle.DT, {})
 
     sets.Kiting = {feet="Tandava crackows"}
 

@@ -104,9 +104,9 @@ function init_gear_sets()
     sets.buff['Trick Attack'] = {}
 
     -- Actions we want to use to tag TH.
-    sets.precast.Step = sets.TreasureHunter
-    sets.precast.Flourish1 = sets.TreasureHunter
-    sets.precast.JA.Provoke = sets.TreasureHunter
+    sets.precast.Step = set_combine(sets.TreasureHunter, {})
+    sets.precast.Flourish1 = set_combine(sets.TreasureHunter, {})
+    sets.precast.JA.Provoke = set_combine(sets.TreasureHunter, {})
 
     --------------------------------------
     -- Precast sets
@@ -123,8 +123,8 @@ function init_gear_sets()
     sets.precast.JA['Perfect Dodge'] = {hands="Plunderer's Armlets +1"}
     sets.precast.JA['Feint'] = {legs="Plunderer's Culottes +3"}
 
-    sets.precast.JA['Sneak Attack'] = sets.buff['Sneak Attack']
-    sets.precast.JA['Trick Attack'] = sets.buff['Trick Attack']
+    sets.precast.JA['Sneak Attack'] = set_combine(sets.buff['Sneak Attack'], {})
+    sets.precast.JA['Trick Attack'] = set_combine(sets.buff['Trick Attack'], {})
 
 
     -- Waltz set (chr and vit)
@@ -301,10 +301,10 @@ function init_gear_sets()
       back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}},
     }
 
-    sets.precast.WS['Sanguine Blade'] = sets.precast.WS['Aeolian Edge']
+    sets.precast.WS['Sanguine Blade'] = set_combine(sets.precast.WS['Aeolian Edge'], {})
     
-    sets.precast.WS['Cyclone'] = sets.precast.WS['Aeolian Edge']
-    sets.precast.WS['Gust Slash'] = sets.precast.WS['Aeolian Edge']    
+    sets.precast.WS['Cyclone'] = set_combine(sets.precast.WS['Aeolian Edge'], {})
+    sets.precast.WS['Gust Slash'] = set_combine(sets.precast.WS['Aeolian Edge'], {})
 
     sets.precast.WS['Aeolian Edge'].TH = set_combine(sets.precast.WS['Aeolian Edge'], sets.TreasureHunter)
 

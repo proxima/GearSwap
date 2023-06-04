@@ -269,7 +269,7 @@ function init_gear_sets()
     Relic_Pitre.Feet_PMagic = "Pitre Babouches +3" --Role Reversal
 
     Empy_Karagoz = {}
-    Empy_Karagoz.Head_PTPBonus = "Karagoz Capello +1"
+    Empy_Karagoz.Head_PTPBonus = "Kara. Cappello +1"
     Empy_Karagoz.Body_Overload = "Karagoz Farsetto"
     Empy_Karagoz.Hands = "Karagoz Guanti +1"
     Empy_Karagoz.Legs_Combat = "Karagoz Pantaloni +1"
@@ -408,7 +408,7 @@ function init_gear_sets()
 
     sets.precast.JA["Activate"] = {back = "Visucius's Mantle"}
 
-    sets.precast.JA["Deus Ex Automata"] = sets.precast.JA["Activate"]
+    sets.precast.JA["Deus Ex Automata"] = set_combine(sets.precast.JA["Activate"], {})
 
     sets.precast.JA["Provoke"] = {}
 
@@ -612,28 +612,28 @@ function init_gear_sets()
         Offense Mode = MasterPet
         Hybrid Mode = DW
     ]]
-    sets.engaged.MasterPet.DW = sets.engaged.Master.DW
+    sets.engaged.MasterPet.DW = set_combine(sets.engaged.Master.DW, {})
     
     -------------------------------------TP
     --[[
         Offense Mode = MasterPet
         Hybrid Mode = TP
     ]]
-    sets.engaged.MasterPet.TP = sets.engaged.MasterPet
+    sets.engaged.MasterPet.TP = set_combine(sets.engaged.MasterPet, {})
     
     -------------------------------------DT
     --[[
         Offense Mode = MasterPet
         Hybrid Mode = DT
     ]]
-    sets.engaged.MasterPet.DT = sets.engaged.Master.DT
+    sets.engaged.MasterPet.DT = set_combine(sets.engaged.Master.DT, {})
     
     -------------------------------------Regen
     --[[
         Offense Mode = MasterPet
         Hybrid Mode = Regen
     ]]
-    sets.engaged.MasterPet.Regen = sets.engaged.Master
+    sets.engaged.MasterPet.Regen = set_combine(sets.engaged.Master, {})
 
     ----------------------------------------------------------------
     --  _____     _      ____        _          _____      _
@@ -650,8 +650,8 @@ function init_gear_sets()
     sets.midcast.Pet = {
     }
 
-    sets.midcast.Pet.Cure = sets.midcast.Pet
-    sets.midcast.Pet["Healing Magic"] = sets.midcast.Pet
+    sets.midcast.Pet.Cure = set_combine(sets.midcast.Pet, {})
+    sets.midcast.Pet["Healing Magic"] = set_combine(sets.midcast.Pet, {})
     sets.midcast.Pet["Elemental Magic"] = {
       head={ name="Herculean Helm", augments={'Pet: Mag. Acc.+29','Pet: INT+1','Pet: Attack+8 Pet: Rng.Atk.+8','Pet: "Mag.Atk.Bns."+15',}},
       body="Udug Jacket",
@@ -666,10 +666,10 @@ function init_gear_sets()
       right_ring="Tali'ah Ring",
       back=Visucius.PetMagic
     }
-    sets.midcast.Pet["Enfeebling Magic"] = sets.midcast.Pet
-    sets.midcast.Pet["Dark Magic"] = sets.midcast.Pet
-    sets.midcast.Pet["Divine Magic"] = sets.midcast.Pet
-    sets.midcast.Pet["Enhancing Magic"] = sets.midcast.Pet
+    sets.midcast.Pet["Enfeebling Magic"] = set_combine(sets.midcast.Pet, {})
+    sets.midcast.Pet["Dark Magic"] = set_combine(sets.midcast.Pet, {})
+    sets.midcast.Pet["Divine Magic"] = set_combine(sets.midcast.Pet, {})
+    sets.midcast.Pet["Enhancing Magic"] = set_combine(sets.midcast.Pet, {})
 
     -------------------------------------Idle
     --[[
@@ -692,7 +692,7 @@ function init_gear_sets()
 
         Idle Mode = MasterDT
     ]]
-    sets.idle.Pet.MasterDT = sets.idle.MasterDT
+    sets.idle.Pet.MasterDT = set_combine(sets.idle.MasterDT, {})
 
     -------------------------------------Enmity
     sets.pet = {} -- Not Used
@@ -955,9 +955,9 @@ function init_gear_sets()
        -- Add your set here
     }
 
-    sets.defense.MasterDT = sets.idle.MasterDT
+    sets.defense.MasterDT = set_combine(sets.idle.MasterDT, {})
 
-    sets.defense.PetDT = sets.pet.EmergencyDT
+    sets.defense.PetDT = set_combine(sets.pet.EmergencyDT, {})
 
     sets.defense.PetMDT = set_combine(sets.pet.EmergencyDT, {})
 end

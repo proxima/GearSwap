@@ -329,7 +329,7 @@ function init_gear_sets()
       feet="Pursuer's Gaiters",
     })
 
-    sets.precast.RA.Embrava = sets.precast.RA.Flurry2
+    sets.precast.RA.Embrava = set_combine(sets.precast.RA.Flurry2, {})
 
     ------------------------------------------------------------------------------------------------
     ------------------------------------- Weapon Skill Sets ----------------------------------------
@@ -472,7 +472,7 @@ function init_gear_sets()
       back=Cape.SB
     }
 
-    sets.precast.WS['Viper Bite'] = sets.precast.WS.Evisceration
+    sets.precast.WS['Viper Bite'] = set_combine(sets.precast.WS.Evisceration, {})
 
     sets.precast.WS['Evisceration'].Acc = set_combine(sets.precast.WS['Evisceration'], {})
 
@@ -511,9 +511,9 @@ function init_gear_sets()
     ---------------------------------------- Midcast Sets ------------------------------------------
     ------------------------------------------------------------------------------------------------
 
-    sets.midcast.FastRecast = sets.precast.FC
+    sets.midcast.FastRecast = set_combine(sets.precast.FC, {})
     sets.midcast.SpellInterrupt = {}
-    sets.midcast.Utsusemi = sets.midcast.SpellInterrupt
+    sets.midcast.Utsusemi = set_combine(sets.midcast.SpellInterrupt, {})
     sets.midcast.Cure = {}
 
     sets.midcast.CorsairShot = {ammo=gear.QDBullet,
@@ -574,7 +574,7 @@ function init_gear_sets()
       waist="K. Kachina Belt +1",
     }
 
-    sets.midcast.CorsairShot['Dark Shot'] = sets.midcast.CorsairShot['Light Shot']
+    sets.midcast.CorsairShot['Dark Shot'] = set_combine(sets.midcast.CorsairShot['Light Shot'], {})
     sets.midcast.CorsairShot.Enhance = {feet="Chass. Bottes +3"}
 
     -- Ranged gear
@@ -690,7 +690,7 @@ function init_gear_sets()
     ---------------------------------------- Defense Sets ------------------------------------------
     ------------------------------------------------------------------------------------------------
 
-    sets.defense.PDT = sets.idle.DT
+    sets.defense.PDT = set_combine(sets.idle.DT, {})
 
     sets.defense.MDT = {
       head="Malignance Chapeau",
@@ -889,19 +889,19 @@ function init_gear_sets()
     sets.Armageddon_M.Acc = {main=Rostam.B, sub=Rostam.A, ranged="Armageddon"}
 
     sets.Armageddon_R = {main=Rostam.A, sub=Rostam.B, ranged="Armageddon"}
-    sets.Armageddon_R.Acc = sets.Armageddon_R
+    sets.Armageddon_R.Acc = {main=Rostam.A, sub=Rostam.B, ranged="Armageddon"}
 
     sets.Fomalhaut_M = {main=Rostam.B, sub=Rostam.A, ranged="Fomalhaut"}
-    sets.Fomalhaut_M.Acc = sets.Fomalhaut_M
+    sets.Fomalhaut_M.Acc = {main=Rostam.B, sub=Rostam.A, ranged="Fomalhaut"}
     
     sets.Fomalhaut_R = {main=Rostam.A, sub=Rostam.B, ranged="Fomalhaut"}
-    sets.Fomalhaut_R.Acc = sets.Fomalhaut_R
-
+    sets.Fomalhaut_R.Acc = {main=Rostam.A, sub=Rostam.B, ranged="Fomalhaut"}
+    
     sets.Anarchy = {main="Naegling", sub="Gleti's Knife", ranged="Anarchy +2"}
     sets.Anarchy.Acc = {main="Naegling", sub=Rostam.A, ranged="Anarchy +2"}
 
     sets.Rolls = {main=Rostam.C, sub=Rostam.B, ranged="Compensator"}
-    sets.Rolls.Acc = sets.Rolls
+    sets.Rolls.Acc = {main=Rostam.C, sub=Rostam.B, ranged="Compensator"}
 
     sets.Aeolian = {main=Rostam.B, sub="Tauret", ranged="Anarchy +2"}
     sets.Aeolian.Acc = {main=Rostam.B, sub=Rostam.A, ranged="Anarchy +2"}

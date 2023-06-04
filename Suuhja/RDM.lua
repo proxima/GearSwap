@@ -820,7 +820,7 @@ function get_sets()
       back="Oretania's Cape +1",
     }
 
-    sets.midcast["Aspir"] = sets.midcast["Drain"]
+    sets.midcast["Aspir"] = set_combine(sets.midcast["Drain"], {})
 
     sets.midcast.cure = {} -- Leave This Empty
 

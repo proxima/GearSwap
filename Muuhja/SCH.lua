@@ -906,8 +906,8 @@ function get_sets()
       back=Lugh.DT,                      --        10 10
       legs="Pinga Pants +1",             -- 13  8        13
       feet="Pinga Pumps +1",             --  5  5         5
-      -- merits                                 5
       -- totals:                            50 45* 20 52 35
+      -- merits                                 5
     })                                   --    *Much more w/ grimoire
     
     sets.midcast.cure.weather = set_combine(sets.midcast.cure.normal, {

@@ -753,6 +753,7 @@ function init_gear_sets()
     ammo="Amar Cluster",
     neck={ name="Bathy Choker +1", augments={'Path: A',}},
     body="Nyame Mail",
+    waist="Svelt. Gouriz +1",
     left_ring="Defending Ring",
     right_ring="Gelatinous Ring +1", 
   })

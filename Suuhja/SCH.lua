@@ -314,7 +314,7 @@ function get_sets()
       back=Lugh.STR_WSD  
     }
     
-    sets.me["Retribution"] = sets.me["Heavy Swing"]
+    sets.me["Retribution"] = set_combine(sets.me["Heavy Swing"], {})
 
     sets.me["Shattersoul"] = {
       ammo="Ghastly Tathlum +1",
@@ -348,10 +348,10 @@ function get_sets()
       back=Lugh.INT_WSD
     }
     
-    sets.me["True Strike"] = sets.me["Shell Crusher"]
+    sets.me["True Strike"] = set_combine(sets.me["Shell Crusher"], {})
     
-    sets.me["Full Swing"] = sets.me["Heavy Swing"]
-    sets.me["Spirit Taker"] = sets.me["Heavy Swing"]
+    sets.me["Full Swing"] = set_combine(sets.me["Heavy Swing"], {})
+    sets.me["Spirit Taker"] = set_combine(sets.me["Heavy Swing"], {})
 
     sets.me["Earth Crusher"] = {
       ammo="Sroda Tathlum",
@@ -369,7 +369,7 @@ function get_sets()
       back=Lugh.INT_WSD
     }
 
-    sets.me["Rock Crusher"] = sets.me["Earth Crusher"]
+    sets.me["Rock Crusher"] = set_combine(sets.me["Earth Crusher"], {})
 
     sets.me["Aeolian Edge"] = set_combine(sets.me["Earth Crusher"], {
       neck="Fotia Gorget",
@@ -417,9 +417,9 @@ function get_sets()
       back=Lugh.MND_WSD
     }
 
-    sets.me["Shining Strike"] = sets.me["Seraph Strike"]
-    sets.me["Flash Nova"] = sets.me["Seraph Strike"]
-    sets.me["Starburst"] = sets.me["Flash Nova"]
+    sets.me["Shining Strike"] = set_combine(sets.me["Seraph Strike"], {})
+    sets.me["Flash Nova"] = set_combine(sets.me["Seraph Strike"], {})
+    sets.me["Starburst"] = set_combine(sets.me["Flash Nova"], {})
     
     sets.me["Myrkr"] = {
       ammo="Ghastly Tathlum +1",
@@ -831,21 +831,21 @@ function get_sets()
      feet="Acad. Loafers +3",                                                                            --         3 haste
    }                                                                                                     -- 55 fc, 26 haste, 36 sb
    
-   sets.midcast["Aero"] = sets.midcast.SC_Open
-   sets.midcast["Blizzard"] = sets.midcast.SC_Open
-   sets.midcast["Fire"] = sets.midcast.SC_Open
-   sets.midcast["Stone"] = sets.midcast.SC_Open
-   sets.midcast["Thunder"] = sets.midcast.SC_Open
-   sets.midcast["Water"] = sets.midcast.SC_Open
+   sets.midcast["Aero"] = set_combine(sets.midcast.SC_Open, {})
+   sets.midcast["Blizzard"] = set_combine(sets.midcast.SC_Open, {})
+   sets.midcast["Fire"] = set_combine(sets.midcast.SC_Open, {})
+   sets.midcast["Stone"] = set_combine(sets.midcast.SC_Open, {})
+   sets.midcast["Thunder"] = set_combine(sets.midcast.SC_Open, {})
+   sets.midcast["Water"] = set_combine(sets.midcast.SC_Open, {})
 
-   sets.midcast["Hydrohelix"] = sets.midcast.SC_Open
-   sets.midcast["Ionohelix"] = sets.midcast.SC_Open
-   sets.midcast["Noctohelix"] = sets.midcast.SC_Open
-   sets.midcast["Luminohelix"] = sets.midcast.SC_Open
-   sets.midcast["Anemohelix"] = sets.midcast.SC_Open
-   sets.midcast["Geohelix"] = sets.midcast.SC_Open
-   sets.midcast["Pyrohelix"] = sets.midcast.SC_Open
-   sets.midcast["Cryohelix"] = sets.midcast.SC_Open
+   sets.midcast["Hydrohelix"] = set_combine(sets.midcast.SC_Open, {})
+   sets.midcast["Ionohelix"] = set_combine(sets.midcast.SC_Open, {})
+   sets.midcast["Noctohelix"] = set_combine(sets.midcast.SC_Open, {})
+   sets.midcast["Luminohelix"] = set_combine(sets.midcast.SC_Open, {})
+   sets.midcast["Anemohelix"] = set_combine(sets.midcast.SC_Open, {})
+   sets.midcast["Geohelix"] = set_combine(sets.midcast.SC_Open, {})
+   sets.midcast["Pyrohelix"] = set_combine(sets.midcast.SC_Open, {})
+   sets.midcast["Cryohelix"] = set_combine(sets.midcast.SC_Open, {})
    
    sets.midcast.MndEnfeebling = {
      main="Tupsimati",
@@ -915,7 +915,7 @@ function get_sets()
       feet="Agwu's Pigaches"
     })
 
-    sets.midcast["Aspir"] = sets.midcast["Drain"]
+    sets.midcast["Aspir"] = set_combine(sets.midcast["Drain"], {})
     
     sets.midcast["Cursna"] = {
       head={ name="Vanya Hood", augments={'Healing magic skill +20','"Cure" spellcasting time -7%','Magic dmg. taken -3',}},

@@ -313,8 +313,8 @@ function init_gear_sets()
       legs="Ebers pantaloons +3",     -- 13, 5
     })
 
-    sets.precast.FC.Curaga = sets.precast.FC.Cure
-    sets.precast.FC.CureSolace = sets.precast.FC.Cure
+    sets.precast.FC.Curaga = set_combine(sets.precast.FC.Cure, {})
+    sets.precast.FC.CureSolace = set_combine(sets.precast.FC.Cure, {})
     sets.precast.FC.Impact = set_combine(sets.precast.FC, {head=empty, body="Crepuscular Cloak"})
     sets.precast.FC.Dispelga = set_combine(sets.precast.FC, {main="Daybreak", sub="Ammurapi Shield"})
 
@@ -390,7 +390,7 @@ function init_gear_sets()
 
     -- Midcast Sets
 
-    sets.midcast.FC = sets.precast.FC
+    sets.midcast.FC = set_combine(sets.precast.FC, {})
 
     sets.midcast.ConserveMP = {
     }
@@ -427,7 +427,7 @@ function init_gear_sets()
       waist="Hachirin-no-Obi",
     })
 
-    sets.midcast.CuragaNormal = sets.midcast.CureSolace
+    sets.midcast.CuragaNormal = set_combine(sets.midcast.CureSolace, {})
 
     sets.midcast.CuragaWeather = set_combine(sets.midcast.CuragaNormal, {
       back="Twilight Cape",
@@ -481,9 +481,9 @@ function init_gear_sets()
       back="Mending cape",
     }
 
-    sets.midcast.EnhancingDuration = sets.midcast['Enhancing Magic']
+    sets.midcast.EnhancingDuration = set_combine(sets.midcast['Enhancing Magic'], {})
 
-    sets.midcast['Haste'] = sets.midcast.EnhancingDuration
+    sets.midcast['Haste'] = set_combine(sets.midcast.EnhancingDuration, {})
 
     sets.midcast.Regen = set_combine(sets.midcast.EnhancingDuration, {
       main="Bolelabunga",
@@ -538,14 +538,14 @@ function init_gear_sets()
       back={ name="Alaunus's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','MND+10','"Fast Cast"+10','Phys. dmg. taken-10%',}},
     })
     
-    sets.midcast.Baramnesra = sets.midcast.BarStatus
-    sets.midcast.Barvira = sets.midcast.BarStatus
-    sets.midcast.Barparalyzra = sets.midcast.BarStatus
-    sets.midcast.Barsilencera = sets.midcast.BarStatus
-    sets.midcast.Barpetra = sets.midcast.BarStatus
-    sets.midcast.Barpoisonra = sets.midcast.BarStatus
-    sets.midcast.Barblindra = sets.midcast.BarStatus
-    sets.midcast.Barsleepra = sets.midcast.BarStatus
+    sets.midcast.Baramnesra = set_combine(sets.midcast.BarStatus, {})
+    sets.midcast.Barvira = set_combine(sets.midcast.BarStatus, {})
+    sets.midcast.Barparalyzra = set_combine(sets.midcast.BarStatus, {})
+    sets.midcast.Barsilencera = set_combine(sets.midcast.BarStatus, {})
+    sets.midcast.Barpetra = set_combine(sets.midcast.BarStatus, {})
+    sets.midcast.Barpoisonra = set_combine(sets.midcast.BarStatus, {})
+    sets.midcast.Barblindra = set_combine(sets.midcast.BarStatus, {})
+    sets.midcast.Barsleepra = set_combine(sets.midcast.BarStatus, {})
 
     sets.midcast.BoostStat = set_combine(sets.midcast['Enhancing Magic'], {
     })
@@ -554,9 +554,9 @@ function init_gear_sets()
       ring1="Sheltered Ring",
     })
 
-    sets.midcast.Protectra = sets.midcast.Protect
-    sets.midcast.Shell = sets.midcast.Protect
-    sets.midcast.Shellra = sets.midcast.Protect
+    sets.midcast.Protectra = set_combine(sets.midcast.Protect, {})
+    sets.midcast.Shell = set_combine(sets.midcast.Protect, {})
+    sets.midcast.Shellra = set_combine(sets.midcast.Protect, {})
 
     sets.midcast['Divine Magic'] = {
       main="Daybreak",
@@ -578,8 +578,8 @@ function init_gear_sets()
     
     sets.midcast['Elemental Magic'] = set_combine(sets.midcast['Divine Magic'], {main="Bunzi's rod"})
 
-    sets.midcast.Banish = sets.midcast['Divine Magic']
-    sets.midcast.Holy = sets.midcast.Banish
+    sets.midcast.Banish = set_combine(sets.midcast['Divine Magic'], {})
+    sets.midcast.Holy = set_combine(sets.midcast.Banish, {})
 
     sets.midcast['Dark Magic'] = {
       main="Daybreak",
@@ -647,7 +647,7 @@ function init_gear_sets()
     })
 
     -- Initializes trusts at iLvl 119
-    sets.midcast.Trust = sets.precast.FC
+    sets.midcast.Trust = set_combine(sets.precast.FC, {})
 
     -- Sets to return to when not performing an action.
 
@@ -659,8 +659,8 @@ function init_gear_sets()
 
     -- Defense sets
 
-    sets.defense.PDT = sets.idle.DT
-    sets.defense.MDT = sets.idle.MEva
+    sets.defense.PDT = set_combine(sets.idle.DT, {})
+    sets.defense.MDT = set_combine(sets.idle.MEva, {})
 
     sets.Kiting = {feet="Herald's Gaiters"}
     sets.latent_refresh = {waist="Fucho-no-obi"}
