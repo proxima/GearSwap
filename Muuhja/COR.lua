@@ -523,10 +523,11 @@ function init_gear_sets()
       neck="Iskur Gorget",
       left_ear="Crepuscular Earring",
       right_ear="Telos Earring",
-      left_ring={name="Chirich ring +1",bag="Wardrobe 2"},
+      left_ring="Crepuscular Ring",
       right_ring={name="Chirich ring +1",bag="Wardrobe 3"},
       back=Cape.RTP,
       waist="Tellen belt",
+
     --[[ head="Nyame Helm", --"Ikenga's Hat"
       body={ name="Lanun Frac +3", augments={'Enhances "Loaded Deck" effect',}},
       hands={ name="Carmine Fin. Ga. +1", augments={'Rng.Atk.+20','"Mag.Atk.Bns."+12','"Store TP"+6',}},
@@ -550,7 +551,7 @@ function init_gear_sets()
       neck="Iskur Gorget",
       left_ear="Crepuscular Earring",
       right_ear="Telos Earring",
-      left_ring={name="Chirich Ring +1",bag="wardrobe 2"},
+      left_ring="Crepuscular Ring",
       right_ring={name="Chirich Ring +1",bag="wardrobe 3"},
       back=Cape.TP,
       waist="Yemaya belt",

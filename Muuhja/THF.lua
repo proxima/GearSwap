@@ -327,6 +327,8 @@ function init_gear_sets()
       left_ring={ name="Metamor. Ring +1", augments={'Path: A',}},
       right_ring="Stikini Ring +1",
     }
+    
+    sets.midcast["Banishga"] =  set_combine(sets.midcast.Sleepga, {})
 
     --------------------------------------
     -- Idle/resting/defense sets

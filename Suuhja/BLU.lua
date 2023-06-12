@@ -257,7 +257,7 @@ function user_setup()
 
   send_command('bind @a sat youcommand Muuhja "Thunderspark"')
   send_command('bind @o sat youcommand Muuhja "Sleepga"')
-  send_command('bind @p sat youcommand Zuuhja "Sleepga"')
+  send_command('bind @p sat youcommand Zuuhja "Horde Lullaby"')
   send_command('bind @v sat youcommand Muuhja "Volt Strike"')
 
   Cape = {}

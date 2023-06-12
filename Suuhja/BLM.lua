@@ -636,8 +636,8 @@ function get_sets()
    -- used with toggle, default: F10
    -- Pieces to swap from free nuke to Magic Burst
    sets.midcast.MB.acc = set_combine(sets.midcast.MB.normal, {
-     body="Agwu's Robe",
-     legs="Agwu's Slops",
+     body="Wicce Coat +3",
+     legs="Wicce Chausses +3",
      right_ring="Freke Ring",
    })
       

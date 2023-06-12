@@ -489,19 +489,19 @@ function get_sets()
     ----------
       
     sets.precast.casting = {
-      ammo="Impatiens",
+      ammo="Impatiens",                                                              --        2 qm
       head={ name="Merlinic Hood", augments={'"Fast Cast"+7','"Mag.Atk.Bns."+14',}}, -- 15 fc
-      neck="Voltsurge Torque",      -- 4 fc
-      ear1="Etiolation earring",    -- 1 fc
-      ear2="Malignance earring",    -- 4 fc
-      body="Pinga tunic +1",        -- 15 fc
-      hands="Acad. Bracers +3",     -- 9 fc
-      left_ring="Lebeche ring",          -- 
-      right_ring="Weatherspoon ring +1", -- 6 fc
-      back=Lugh.MP_FC,
-      waist="Witful belt",          -- 3 fc
-      legs="Pinga pants +1",        -- 13 fc
-      feet={ name="Merlinic Crackows", augments={'Attack+22','"Fast Cast"+7',}}, -- 12 fc, 3 haste
+      neck="Voltsurge Torque",                                                       --  4 fc
+      ear1="Etiolation earring",                                                     --  1 fc
+      ear2="Malignance earring",                                                     --  4 fc
+      body="Pinga tunic +1",                                                         -- 15 fc
+      hands="Acad. Bracers +3",                                                      --  9 fc
+      left_ring="Lebeche ring",                                                      --        2 qm
+      right_ring="Weatherspoon ring +1",                                             --  6 fc, 4 qm
+      back=Lugh.MP_FC,                                                               -- 10 fc
+      waist="Witful belt",                                                           --  3 fc, 3 qm
+      legs="Pinga pants +1",                                                         -- 13 fc
+      feet={ name="Merlinic Crackows", augments={'Attack+22','"Fast Cast"+7',}},     -- 12 fc
     }
 
    sets.precast["Dispelga"] = set_combine(sets.precast.casting, {
