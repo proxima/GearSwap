@@ -640,6 +640,8 @@ function init_gear_sets()
     sets.TrueShot = {
       body="Nisroch Jerkin",
       legs="Osh. Trousers +1",
+      waist="Tellen belt",
+      feet="Ikenga's Clogs"        
     }
 
     ------------------------------------------------------------------------------------------------
