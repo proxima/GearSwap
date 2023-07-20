@@ -363,7 +363,7 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
  
   sets.precast.WS = {
-    ammo="Knobkierrie",
+    --[[ ammo="Knobkierrie",
     head={ name="Nyame Helm", augments={'Path: B',}},
     body={ name="Nyame Mail", augments={'Path: B',}},
     hands={ name="Nyame Gauntlets", augments={'Path: B',}},
@@ -375,7 +375,20 @@ function init_gear_sets()
     right_ear="Sherida Earring",
     left_ring="Epaminondas's Ring",
     right_ring="Niqmaddu Ring",
-    back=Cape.WSD
+    back=Cape.WSD ]]--
+    ammo="C. Palug Stone",
+    head=Empy.Head,
+    body=Empy.Body,
+    hands=Empy.Hands,
+    legs=Empy.Legs,
+    feet=Empy.Feet,
+    neck="Sanctity Necklace",
+    waist={ name="Kentarch Belt +1", augments={'Path: A',}},
+    left_ear="Mache Earring +1",
+    right_ear="Crep. Earring",
+    left_ring={name="Chirich Ring +1",bag="wardrobe 2"},
+    right_ring={name="Chirich Ring +1",bag="wardrobe 3"},
+    back=Cape.WSD    
   }
  
   sets.precast.WS.Acc = set_combine(sets.precast.WS, {
@@ -418,7 +431,7 @@ function init_gear_sets()
   sets.precast.WS['Dimidiation'].Uncapped = set_combine(sets.precast.WS['Dimidiation'], {
   })
  
-  sets.precast.WS['Dimidiation'].Safe = set_combine(sets.precast.WS['Dimidiation'], {
+  sets.precast.WS['Dimidiation'].Safe = set_combine(sets.precast.WS['Dimidiation'].Acc, {
   })
  
   sets.precast.WS['Herculean Slash'] = sets.precast.JA['Lunge']
@@ -624,7 +637,7 @@ function init_gear_sets()
   }
  
   sets.defense.MDT = {
-    ammo="Vanir Battery",
+	ammo="Vanir Battery",
     head={ name="Nyame Helm", augments={'Path: B',}},
     body="Runeist Coat +3",
     hands="Erilaz Gauntlets +3",
@@ -637,6 +650,20 @@ function init_gear_sets()
     left_ring="Shadow Ring",
     right_ring="Lunette Ring +1",
     back=Cape.Enmity
+	--[[
+    ammo="Staunch Tathlum +1",
+    head={ name="Nyame Helm", augments={'Path: B',}},
+    body=Empy.Body,
+	hands="Nyame Gauntlets",
+    legs=Empy.Legs,
+    feet=Empy.Feet,
+    neck="Warder's Charm +1",
+    left_ear="Sanare earring",
+    right_ear="Odnowa earring +1",
+    left_ring="Shadow ring",
+    right_ring="Moonlight Ring",
+    back=Cape.Enmity,
+    waist="Engraved Belt",]]--
   }
   
   sets.defense.Parry = {
@@ -678,17 +705,17 @@ function init_gear_sets()
   sets.Hybrid = {
     ammo="Staunch Tathlum +1",
     head={ name="Nyame Helm", augments={'Path: B',}},
+    body=Empy.Body,
+	hands="Nyame Gauntlets",
+    legs=Empy.Legs,
+    feet=Empy.Feet,
     neck="Warder's Charm +1",
     left_ear="Sanare earring",
     right_ear="Odnowa earring +1",
-    body=Empy.Body,
-    hands=Empy.Hands,
     left_ring="Shadow ring",
     right_ring="Moonlight Ring",
     back=Cape.Enmity,
     waist="Engraved Belt",
-    legs=Empy.Legs,
-    feet=Empy.Feet
   }
 
   sets.engaged.Aftermath = sets.Hybrid

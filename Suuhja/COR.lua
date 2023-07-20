@@ -157,8 +157,8 @@ function user_setup()
     send_command('bind @r gs c cycle WeaponSet')
     send_command('bind @w gs c toggle WeaponLock')
     
-    send_command('bind @o sat youcommand Muuhja "Horde Lullaby II"')
-    send_command('bind @p sat youcommand Muuhja "Horde Lullaby"')
+    send_command('bind @o sat youcommand Muuhja "Horde Lullaby"')
+    send_command('bind @p sat youcommand Zuuhja "Horde Lullaby II"')
     send_command('bind @z sat youcommand Zuuhja "Dispelga"; sat youcommand Muuhja "Magic Finale"')
 
     send_command('bind ^numpad4 send zuuhja /ma "Curaga III" Suuhja')
@@ -438,8 +438,8 @@ function init_gear_sets()
     })
 
     sets.precast.WS['Leaden Salute'] = {ammo=gear.MAbullet, -- 25
-      head="Pixie Hairpin +1",
-      body={ name="Lanun Frac +3", augments={'Enhances "Loaded Deck" effect',}},
+      head="Nyame Helm",
+	  body={ name="Lanun Frac +3", augments={'Enhances "Loaded Deck" effect',}},
       hands="Nyame Gauntlets",
       legs="Nyame Flanchard",
       feet={ name="Lanun Bottes +3", augments={'Enhances "Wild Card" effect',}},
@@ -453,8 +453,6 @@ function init_gear_sets()
     }
 
     sets.precast.WS['Leaden Salute'].Acc = set_combine(sets.precast.WS['Leaden Salute'], {
-      head="Nyame Helm",
-      feet="Nyame Sollerets",
     })
 
     sets.precast.WS['Evisceration'] = {
@@ -517,20 +515,7 @@ function init_gear_sets()
     sets.midcast.Cure = {}
 
     sets.midcast.CorsairShot = {ammo=gear.QDBullet,
-      head="Malignance Chapeau",
-      body="Malignance Tabard",
-      hands="Malignance Gloves",
-      legs="Chas. Culottes +3",
-      feet="Malignance Boots",
-      neck="Iskur Gorget",
-      left_ear="Crepuscular Earring",
-      right_ear="Telos Earring",
-      left_ring="Crepuscular Ring",
-      right_ring={name="Chirich ring +1",bag="Wardrobe 4"},
-      back=Cape.RTP,
-      waist="Tellen belt",
-
-    --[[ head="Ikenga's Hat",
+      head="Ikenga's Hat",
       body={ name="Lanun Frac +3", augments={'Enhances "Loaded Deck" effect',}},
       hands={ name="Carmine Fin. Ga. +1", augments={'Rng.Atk.+20','"Mag.Atk.Bns."+12','"Store TP"+6',}},
       legs="Nyame Flanchard",
@@ -541,7 +526,7 @@ function init_gear_sets()
       left_ring="Dingir Ring",
       right_ring="Metamorph Ring +1",
       back=Cape.LEADEN,
-      waist="Skrymir Cord +1", ]]--
+      waist="Skrymir Cord +1",
     }
 
     sets.midcast.CorsairShot.STP = {ammo=gear.RAccbullet,

@@ -32,9 +32,9 @@ function user_setup()
   send_command('bind @d sat youcommand Suuhja "Tenebral Crush"')
   send_command('bind @z send Suuhja input /ja "Burst Affinity" <me>')
   send_command('bind @o sat youcommand Suuhja "Anvil Lightning"')
-  send_command('bind @p sat youcommand Muuhja "Horde Lullaby"')
+  send_command('bind @p sat youcommand Muuhja "Sleepga"')
   send_command('bind @a sat youcommand Suuhja "Spectral Floe"')
-  send_command('bind @s sat youcommand Muuhja "Horde Lullaby II"')
+  send_command('bind @s sat youcommand Muuhja "Sleepga"')
   send_command('bind @v sat youcommand Muuhja "Wind Threnody II"; sat youcommand Suuhja "Silence"')
 
   send_command('bind @f12 gs c cycle CastingMode')
@@ -364,8 +364,7 @@ function init_gear_sets()
     sub={ name="Priwen", augments={'HP+50','Mag. Evasion+50','Damage Taken -3%',}},
     ammo="Staunch Tathlum +1",
     head={ name="Valorous Mask", augments={'Blood Pact Dmg.+6','Mag. Acc.+14','Phalanx +5',}},
-    -- body={ name="Valorous Mail", augments={'"Dbl.Atk."+1','Accuracy+1','Phalanx +4','Accuracy+5 Attack+5','Mag. Acc.+4 "Mag.Atk.Bns."+4',}},
-    body="Yorium cuirass",
+	body={ name="Valorous Mail", augments={'Pet: DEX+4','Attack+10','Phalanx +4',}},
     hands={ name="Souv. Handsch. +1", augments={'HP+65','Shield skill +15','Phys. dmg. taken -4',}},
     legs="Sakpata's Cuisses",
     feet={ name="Souveran Schuhs +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},

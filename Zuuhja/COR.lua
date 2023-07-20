@@ -492,7 +492,9 @@ function init_gear_sets()
       waist={ name="Sailfi Belt +1", augments={'Path: A',}},
       left_ear="Ishvara Earring",
       right_ear={ name="Moonshade Earring", augments={'"Mag.Atk.Bns."+4','TP Bonus +250',}},
-      left_ring="Epaminondas's Ring",
+      left_ring={name="Chirich ring +1",bag="Wardrobe 2"},
+      -- right_ring={name="Chirich ring +1",bag="Wardrobe 4"},
+      -- left_ring="Epaminondas's Ring",
       right_ring="Regal Ring",
       back=Cape.SB
     }

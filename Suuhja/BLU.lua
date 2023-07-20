@@ -256,8 +256,8 @@ function user_setup()
   send_command('bind ^numpad2 input /ws "Black Halo" <t>')
 
   send_command('bind @a sat youcommand Muuhja "Thunderspark"')
-  send_command('bind @o sat youcommand Muuhja "Sleepga"')
-  send_command('bind @p sat youcommand Zuuhja "Horde Lullaby"')
+  send_command('bind @o sat youcommand Zuuhja "Horde Lullaby"')
+  send_command('bind @p sat youcommand Muuhja "Sleepga"')
   send_command('bind @v sat youcommand Muuhja "Volt Strike"')
 
   Cape = {}
@@ -346,11 +346,12 @@ function init_gear_sets()
   sets.Enmity = {}
   sets.precast.JA['Provoke'] = set_combine(sets.Enmity, {})
 
-  sets.buff['Burst Affinity'] = {legs="Assim. Shalwar +3", feet="Hashi. Basmak +3"}
+  sets.buff['Burst Affinity'] = {feet="Hashi. Basmak +3"}
   sets.buff['Diffusion'] = {feet="Luhlaza Charuqs +1"}
   sets.buff['Efflux'] = {legs="Hashishin Tayt +3"}
 
   sets.precast.JA['Azure Lore'] = {hands="Luh. Bazubands +1"}
+  sets.precast.JA['Burst Affinity'] = {main="Zomorrodnegar", sub="Sakpata's Sword"}
   sets.precast.JA['Chain Affinity'] = {feet="Assim. Charuqs +1"}
   sets.precast.JA['Convergence'] = {head="Luh. Keffiyeh +1"}
   sets.precast.JA['Enchainment'] = {body="Luhlaza Jubbah +1"}
@@ -913,8 +914,7 @@ function init_gear_sets()
   ---------------------------------------- Special Sets ------------------------------------------
   ------------------------------------------------------------------------------------------------
 
-  sets.magic_burst = set_combine(sets.midcast['Blue Magic'].Magical, {
-  })
+  sets.magic_burst = {}
 
   sets.latent_refresh = {waist="Fucho-no-obi"}
 

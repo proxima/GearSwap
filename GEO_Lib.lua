@@ -826,7 +826,8 @@ end)
 windower.register_event('prerender', function()
     --Items we want to check every second
 
-    if os.time() > time_start then
+    --[[
+	if os.time() > time_start then
         time_start = os.time()
         
         if textHideBattle.value == false then
@@ -845,6 +846,7 @@ windower.register_event('prerender', function()
         end
     validateTextInformation()
     end
+    ]]--
 end)
 
 function selectSCElement()
