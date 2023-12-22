@@ -204,7 +204,7 @@ function user_setup()
   state.IdleMode:options('Normal', 'DT', 'Refresh', 'Learning')
 
   state.CP = M(false, 'Capacity Points')
-  state.WeaponSet = M{['description']='Weapon Set', 'Naegling', 'Maxentius', 'Nuking', 'WpnLearning'}
+  state.WeaponSet = M{['description']='Weapon Set', 'Tizona', 'Naegling', 'Maxentius', 'Nuking', 'WpnLearning'}
   state.WeaponLock = M(false, 'Weapon Lock')
   state.MagicBurst = M(false, 'Magic Burst')
 
@@ -585,7 +585,7 @@ function init_gear_sets()
 
   sets.midcast['Blue Magic'].MagicalChr = set_combine(sets.midcast['Blue Magic'].Magical, {
   })
-
+  
   sets.midcast['Blue Magic'].MagicAccuracy = {
     ammo="Pemphredo Tathlum",
     head="Assim. Keffiyeh +3",
@@ -931,10 +931,12 @@ function init_gear_sets()
     head={ name="Herculean Helm", augments={'"Store TP"+1','Magic Damage +1','"Treasure Hunter"+2','Accuracy+7 Attack+7',}},
     hands={ name="Herculean Gloves", augments={'"Conserve MP"+1','Accuracy+21','"Treasure Hunter"+2',}},    
   }
+  
   sets.midcast.Dia = set_combine(sets.TreasureHunter, {})
   sets.midcast.Diaga = set_combine(sets.TreasureHunter, {})
   sets.midcast.Bio = set_combine(sets.TreasureHunter, {})
 
+  sets.Tizona = {main="Tizona", sub="Machaera +2"}
   sets.Naegling = {main="Naegling", sub="Machaera +2"}
   sets.Maxentius = {main="Maxentius", sub="Machaera +2"}
   sets.Nuking = {main="Maxentius", sub="Bunzi's Rod"}

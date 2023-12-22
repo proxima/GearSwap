@@ -165,9 +165,9 @@ function get_sets()
       body="Nyame Mail",
       hands="Agwu's Gages",
       legs="Nyame Flanchard",
-      left_ring={name="Stikini Ring +1",bag="wardrobe 2"},
+      left_ring="Gurebu's Ring",
       right_ring={name="Stikini Ring +1",bag="wardrobe 3"},
-      feet="Wicce Sabots +2",
+      feet="Wicce Sabots +3",
       waist="Carrier's Sash",
       back=Taranus.MND_FC_MEVA
     }
@@ -184,7 +184,7 @@ function get_sets()
       body="Agwu's Robe",
       hands="Nyame Gauntlets",
       legs="Nyame Flanchard",
-      feet="Wicce Sabots +2",
+      feet="Wicce Sabots +3",
       neck="Loricate Torque +1",
       waist="Carrier's Sash",
       left_ear="Eabani Earring",
@@ -197,19 +197,19 @@ function get_sets()
     sets.me.idle.mdt = set_combine(sets.me.idle.dt, {
       main="Daybreak",
       sub="Ammurapi Shield",
-      ammo="Staunch tathlum +1",  --  3 DT
-      head="Nyame Helm",
+      ammo="Staunch tathlum +1",   --  3 DT
+      head="Nyame Helm",           --  7 DT
       ear1="Lugalbanda earring",
-      ear2="Odnowa earring +1",   --  3 DT, 2 MDT
+      ear2="Odnowa earring +1",    --  3 DT, 2 MDT
       neck="Warder's charm +1",
-      body="Agwu's Robe",
+      body="Wicce coat +3",
       hands="Nyame Gauntlets",
-      legs="Agwu's slops",        --  9 DT
-      ring1="Defending ring",     -- 10 DT
-      ring2="Gelatinous ring +1", --  7 PDT, -1MDT
-      feet="Wicce Sabots +2",     -- 12 DT
+      legs="Agwu's slops",         -- 10 DT
+      left_ring="Gurebu's Ring",
+      right_ring="Defending ring", -- 10 DT
+      feet="Wicce Sabots +3",      -- 11 DT
       waist="Carrier's Sash",
-      back=Taranus.MND_FC_MEVA    -- 10 PDT
+      back=Taranus.MND_FC_MEVA     -- 10 PDT
     })
 
     -- Your MP Recovered Whilst Resting Set
@@ -224,18 +224,18 @@ function get_sets()
     sets.me.melee = {
       ammo="Staunch Tathlum +1",
       head={ name="Nyame Helm", augments={'Path: B',}},
-      body="Nyame Mail",
+      body={ name="Nyame Mail", augments={'Path: C',}},
       hands={ name="Gazu Bracelets +1", augments={'Path: A',}},
-      legs="Volte Tights",
-      feet={ name="Nyame Sollerets", augments={'Path: B',}},
+      legs={ name="Agwu's Slops", augments={'Path: A',}},
+      feet="Wicce Sabots +3",
       neck="Lissome Necklace",
       waist="Grunfeld Rope",
-      left_ear="Crepuscular Earring",
+      left_ear="Crep. Earring",
       right_ear="Telos Earring",
       left_ring={name="Chirich Ring +1",bag="wardrobe 2"},
       right_ring={name="Chirich Ring +1",bag="wardrobe 4"},
       back=Taranus.DEX_DA
-    }  
+    }
 
     sets.me.melee_dw = set_combine(sets.me.melee, {
       left_ear="Eabani Earring",
@@ -414,7 +414,7 @@ function get_sets()
     -- Gear that needs to be worn to **actively** enhance a current player buff.
     sets.buff['Manafont']       = {}
     sets.buff['Elemental Seal'] = {}
-    sets.buff['Mana Wall']      = {feet="Wicce Sabots +2"}
+    sets.buff['Mana Wall']      = {feet="Wicce Sabots +3"}
     sets.buff['Enmity Douse']   = {}
     sets.buff['Manawell']       = {}
     sets.buff['Cascade']        = {}
@@ -483,7 +483,7 @@ function get_sets()
 
    sets.precast['Manafont']       = {body="Archmage's Coat +3"}
    sets.precast['Elemental Seal'] = {}
-   sets.precast['Mana Wall']      = {feet="Wicce Sabots +2"}
+   sets.precast['Mana Wall']      = {feet="Wicce Sabots +3"}
    sets.precast['Enmity Douse']   = {}
    sets.precast['Manawell']       = {}
    sets.precast['Cascade']        = {}
@@ -703,7 +703,7 @@ function get_sets()
      body="Cohort Cloak +1",
      hands="Regal Cuffs",
      legs={ name="Chironic Hose", augments={'Mag. Acc.+21 "Mag.Atk.Bns."+21','"Fast Cast"+5','MND+11','Mag. Acc.+13','"Mag.Atk.Bns."+6',}},
-     feet="Wicce Sabots +2",
+     feet="Wicce Sabots +3",
      neck={ name="Sorcerer's Stole +2", augments={'Path: A',}},
      waist="Luminary Sash",
      right_ear="Malignance Earring",

@@ -16,8 +16,8 @@ end
  
 function job_setup()
   get_combat_form() 
-end
  
+end
 function user_setup()
   state.IdleMode:options('Normal', 'Reraise')
   state.OffenseMode:options('Normal', 'PetDT')

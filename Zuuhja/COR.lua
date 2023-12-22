@@ -163,7 +163,7 @@ function user_setup()
     send_command('bind @w gs c toggle WeaponLock')
 
     send_command('bind @o sat youcommand Muuhja "Horde Lullaby"')
-    send_command('bind @p sat youcommand Muuhja "Carnage Elegy')
+    send_command('bind @p sat youcommand Muuhja "Horde Lullaby II')
     send_command('bind @n input /ra <t>')
 
     send_command('bind ^numlock input /ja "Triple Shot" <me>')

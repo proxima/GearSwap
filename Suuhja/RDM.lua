@@ -130,8 +130,8 @@ hud_font = 'Impact'
    windower.send_command('bind @b sat youcommand Muuhja "Magic Finale"')
    -- windower.send_command('bind @n sat youcommand Muuhja "Carnage Elegy"')
    windower.send_command('bind @m sat youcommand Muuhja "Pining Nocturne"')
-   windower.send_command('bind @o sat youcommand Muuhja "Horde Lullaby"')
-   windower.send_command('bind @p sat youcommand Zuuhja "Sleepga"')
+   windower.send_command('bind @o sat youcommand Muuhja "Horde Lullaby II"')
+   windower.send_command('bind @p sat youcommand Muuhja "Horde Lullaby"')
    
    windower.send_command('bind @c gs c toggle crocea";trial ws Sanguine Blade')
    windower.send_command('bind @n gs c toggle naegling;trial ws Savage Blade')

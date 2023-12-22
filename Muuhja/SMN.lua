@@ -24,6 +24,10 @@ function file_unload()
     send_command('unbind f11')
     send_command('unbind ^f9')
     send_command('unbind ^f10')
+	
+	send_command('unbind @o')
+	send_command('unbind @p')
+	
     enable("main","sub","range","ammo","head","neck","ear1","ear2","body","hands","ring1","ring2","back","waist","legs","feet")
 end
  
@@ -31,6 +35,9 @@ function get_sets()
     send_command('bind f9 gs c ToggleIdle')  -- F9 = Cycle through commonly used idle modes
     send_command('bind ^f9 gs c WeaponLock') -- F10 = Toggle Melee Mode
     send_command('bind ^f10 gs c TH')        -- Ctrl+F10 = Treasure Hunter toggle
+ 
+    send_command('bind @o sat youcommand Suuhja "Absorb-TP"')
+    send_command('bind @p sat youcommand Zuuhja "Absorb-TP"')
  
     MeteorStrike = 1
     HeavenlyStrike = 1
@@ -44,8 +51,8 @@ function get_sets()
     AccMode = false
     ImpactDebuff = false
     WeaponLock = false
-    TreasureHunter = false
-    THSpells = S{"Dia","Dia II","Diaga"} -- If you want Treasure Hunter gear to swap for a spell/ability, add it here.
+    TreasureHunter = true
+    THSpells = S{"Dia","Dia II","Diaga","Bio","Bio II"} -- If you want Treasure Hunter gear to swap for a spell/ability, add it here.
     LagMode = true                       -- Default LagMode. If you have a lot of lag issues, change to "true".
                                          -- Warning: LagMode can cause problems if you spam BPs during Conduit because it doesn't trust server packets to say whether the BP is readying or not.
     SacTorque = true                     -- If you have Sacrifice Torque, this will auto-equip it when slept in order to wake up.
@@ -53,17 +60,24 @@ function get_sets()
     AutoEcho = false                     -- Auto Echo Drop when using an ability while Silenced.
  
     -- Add idle modes here if you need more options for your sets
-    IdleModes = {'Refresh', 'Favor', 'DT'}
+    IdleModes = {'Refresh', 'Favor', 'DT', 'Lilith'}
 
     MerlHands = {}
     MerlHands.PHYS    = { name="Merlinic Dastanas", augments={'Pet: Attack+28 Pet: Rng.Atk.+28','Blood Pact Dmg.+9','Pet: STR+4','Pet: Mag. Acc.+7',}}
     MerlHands.MAG     = { name="Merlinic Dastanas", augments={'Pet: Mag. Acc.+25 Pet: "Mag.Atk.Bns."+25','Blood Pact Dmg.+9','Pet: DEX+3','Pet: Mag. Acc.+11',}}
     MerlHands.REFRESH = { name="Merlinic Dastanas", augments={'Weapon skill damage +1%','"Avatar perpetuation cost" -1','"Refresh"+2','Accuracy+9 Attack+9','Mag. Acc.+14 "Mag.Atk.Bns."+14',}}
-    -- MerlHands.TH      = { name="Merlinic Dastanas", augments={'Magic dmg. taken -2%','Pet: Phys. dmg. taken -2%','"Treasure Hunter"+2','Mag. Acc.+14 "Mag.Atk.Bns."+14',}}      
+    MerlHands.TH      = { name="Merlinic Dastanas", augments={'Magic dmg. taken -2%','Pet: Phys. dmg. taken -2%','"Treasure Hunter"+2','Mag. Acc.+14 "Mag.Atk.Bns."+14',}}      
     MerlHands.FC      = { name="Merlinic Dastanas", augments={'MND+5','Pet: DEX+3','"Fast Cast"+8','Mag. Acc.+6 "Mag.Atk.Bns."+6',}}
 
     MerlLegs = {}
     MerlLegs.REFRESH = { name="Merlinic Shalwar", augments={'Mag. Acc.+15','Attack+2','"Refresh"+2','Accuracy+10 Attack+10',}}
+	
+	Cape = {}
+	Cape.ADOULIN = "Conveyance Cape"
+	Cape.PHYS =    {name="Campestres's Cape", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Eva.+20 /Mag. Eva.+20','Pet: Accuracy+10 Pet: Rng. Acc.+10','Pet: "Regen"+10','Pet: Damage taken -5%',}}
+	Cape.MAG =     {name="Campestres's Cape", augments={'Pet: M.Acc.+20 Pet: M.Dmg.+20','Pet: Magic Damage+10','Damage taken-5%',}}
+	Cape.IDLE =    {name="Campestres's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','"Fast Cast"+10',}}
+	
     -- ===================================================================================================================
     --      Sets
     -- ===================================================================================================================
@@ -74,10 +88,10 @@ function get_sets()
       main="Nirvana",               -- 8 perp, can use jse
       sub="Khonsu",                 -- 
       ammo="Epitaph",
-      head="Beckoner's Horn +3",    -- 4 favor, 3 refresh
+      head="Beckoner's Horn +3",    -- 5 favor, 4 refresh
       neck="Caller's Pendant",      -- 1 perp sometimes
       ear1="Evans earring",         -- 2 perp
-      ear2="Beckoner's earring +1", -- 2 refresh
+      ear2="Beckoner's Earring +1", -- 2 refresh
       body="Apo. Dalmatica +1",     -- 4 refresh
       hands=MerlHands.REFRESH,      -- 2 refresh 1 perp
       ring1="Stikini Ring +1",      -- 1 refresh
@@ -85,16 +99,16 @@ function get_sets()
       legs=MerlLegs.REFRESH,        -- 2 refresh
       feet="Baayami Sabots +1",     -- 3 refresh
       waist="Lucidity Sash",        -- 2 perp
-      back={ name="Campestres's Cape", augments={'Pet: M.Acc.+20 Pet: M.Dmg.+20','Pet: Magic Damage+10','Damage taken-5%',}}, -- avatar level
+      back=Cape.MAG
     }
 
     sets.idle.Favor = set_combine(sets.idle.Refresh, {
       head="Beckoner's Horn +3",
       ear2="Lodurr Earring",
-      hands="Baayami Cuffs",
-      legs="Baayami Slops",
+      hands="Baayami Cuffs +1",
+      legs="Baayami Slops +1",
       feet="Baayami Sabots +1",
-      back="Conveyance cape",
+      back=Cape.ADOULIN
     })
 
     sets.idle.DT = set_combine(sets.idle.Refresh, {
@@ -105,10 +119,29 @@ function get_sets()
       feet="Bunzi's Sabots",
     })
 
+    sets.idle.Lilith = {
+      main="Nirvana",
+      sub="Elan Strap +1",
+      ammo={ name="Epitaph", augments={'Path: A',}},
+      head="Beckoner's Horn +3",
+      body={ name="Apo. Dalmatica +1", augments={'Summoning magic skill +20','Enmity-6','Pet: Damage taken -4%',}},
+      hands={ name="Nyame Gauntlets", augments={'Path: B',}},
+      legs={ name="Assid. Pants +1", augments={'Path: A',}},
+      feet="Bunzi's Sabots",
+      neck={ name="Smn. Collar +2", augments={'Path: A',}},
+      waist="Lucidity Sash",
+      left_ear="Enmerkar Earring",
+      right_ear="Beck. Earring +1",
+      left_ring="Stikini Ring +1",
+      right_ring="Stikini Ring +1",
+      back=Cape.PHYS
+	}
+
     -- Treasure Hunter set. Don't put anything in here except TH+ gear.
     -- It overwrites slots in other sets when TH toggle is on (Ctrl+F10).
     sets.TH = {
-      -- hands=MerlHands.TH,
+	  ammo="Per. Lucky Egg",
+      hands=MerlHands.TH,
       waist="Chaac Belt",
     }
  
@@ -126,13 +159,18 @@ function get_sets()
       right_ear="Etiolation Earring", -- 1
       left_ring="Defending Ring",
       right_ring="Kishar Ring", -- 4
-      back={ name="Campestres's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','"Fast Cast"+10',}}, -- 10
+      back=Cape.IDLE
     }
  
     sets.precast["Dispelga"] = set_combine(sets.precast.FC, {
       main="Daybreak",
       sub="Ammurapi Shield"
     })
+	
+	sets.precast["Impact"] = set_combine(sets.precast.FC, {
+	  head=empty,
+	  body="Crepuscular cloak"
+	})
  
     sets.midcast = {}
  
@@ -144,9 +182,9 @@ function get_sets()
       sub="Vox Grip",
       ammo="Sancus Sachet +1",
       head="Beckoner's Horn +3",
-      body="Baayami Robe",
-      hands="Baayami Cuffs",
-      legs="Baayami Slops",
+      body="Baayami Robe +1",
+      hands="Baayami Cuffs +1",
+      legs="Baayami Slops +1",
       feet="Baaya. Sabots +1",
       neck="Caller's Pendant",
       waist="Lucidity Sash",
@@ -154,7 +192,7 @@ function get_sets()
       right_ear="C. Palug Earring",
       left_ring="Stikini ring +1",
       right_ring="Evoker's Ring",
-      back={ name="Conveyance Cape", augments={'Summoning magic skill +5','Blood Pact Dmg.+1','Blood Pact ab. del. II -3',}},
+      back=Cape.ADOULIN
     }
  
     -- Elemental Siphon sets. Chatoyant Staff by weather, and Twilight Cape by both.
@@ -163,9 +201,9 @@ function get_sets()
       sub="Vox Grip",
       ammo="Sancus Sachet +1",
       head="Beckoner's Horn +3",
-      body="Baayami Robe",
-      hands="Baayami Cuffs",
-      legs="Baayami Slops",
+      body="Baayami Robe +1",
+      hands="Baayami Cuffs +1",
+      legs="Baayami Slops +1",
       feet="Beck. Pigaches +1",
       neck="Caller's Pendant",
       waist="Lucidity Sash",
@@ -173,7 +211,7 @@ function get_sets()
       right_ear="C. Palug Earring",
       left_ring="Stikini ring +1",
       right_ring="Evoker's Ring",
-      back={ name="Conveyance Cape", augments={'Summoning magic skill +5','Blood Pact Dmg.+1','Blood Pact ab. del. II -3',}},
+      back=Cape.ADOULIN
     }
   
     sets.midcast.SiphonWeather = set_combine(sets.midcast.Siphon, { main="Chatoyant Staff" })
@@ -181,7 +219,7 @@ function get_sets()
     -- Summoning Midcast, cap spell interruption if possible (Baayami Robe gives 100, need 2 more)
     -- PDT isn't a bad idea either, so don't overwrite a lot from the DT set it inherits from.
     sets.midcast.Summon = set_combine(sets.idle.DT, {
-      body="Baayami Robe"
+      body="Baayami Robe +1"
     })
  
     -- If you ever lock your weapon, keep that in mind when building cure potency set.
@@ -197,7 +235,7 @@ function get_sets()
       right_ear="Mendi. Earring",
       left_ring="Stikini Ring +1",
       right_ring="Stikini Ring +1",
-      back={ name="Campestres's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','"Fast Cast"+10',}},
+      back=Cape.IDLE
     }
  
     sets.midcast.Cursna = set_combine(sets.midcast.Cure, {
@@ -210,12 +248,31 @@ function get_sets()
     sets.midcast.EnmityRecast = set_combine(sets.precast.FC, {
     })
  
+
     -- Strong alternatives: Daybreak and Ammurapi Shield, Cath Crown, Gwati Earring
     sets.midcast.Enfeeble = {
     }
 
     sets.midcast.Enfeeble.INT = set_combine(sets.midcast.Enfeeble, {
     })
+	
+	sets.midcast.Absorb = {
+	  main="Nirvana",
+      sub="Khonsu",
+      ammo={ name="Epitaph", augments={'Path: A',}},
+      head="Beckoner's Horn +3",
+      body="Inyanga Jubbah +2",
+      hands={ name="Bunzi's Gloves", augments={'Path: A',}},
+      legs={ name="Assid. Pants +1", augments={'Path: A',}},
+      feet="Bunzi's Sabots",
+      neck="Erra Pendant",
+      waist={ name="Acuity Belt +1", augments={'Path: A',}},
+      left_ear="Digni. Earring",
+      right_ear="Malignance Earring",
+      left_ring="Stikini Ring +1",
+      right_ring="Stikini Ring +1",
+      back={ name="Campestres's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','"Fast Cast"+10',}},
+	}
  
     sets.midcast.Enhancing = {
     }
@@ -240,6 +297,11 @@ function get_sets()
       main="Daybreak",
       sub="Ammurapi Shield"
     })
+	
+	sets.midcast["Impact"] = set_combine(sets.midcast.Absorb, {
+	  head=empty,
+	  body="Crepuscular cloak"
+	})
  
     sets.midcast["Mana Cede"] = { hands="Beckoner's Bracers +2" }
     sets.midcast["Astral Flow"] = { head="Glyphic Horn" }
@@ -259,7 +321,7 @@ function get_sets()
       hands="Nyame Gauntlets",
       ring1="Freke Ring",
       ring2="Metamorph Ring +1",
-      back={ name="Campestres's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','"Fast Cast"+10',}},
+      back=Cape.IDLE,
       waist="Orpheus's Sash",
       legs="Nyame Flanchard",
       feet="Nyame Sollerets"
@@ -287,8 +349,6 @@ function get_sets()
  
     -- Main physical pact set (Volt Strike, Pred Claws, etc.)
     -- Prioritize BP Damage & Pet: Double Attack
-    -- Strong Alternatives:
-    -- Gridarvor, Apogee Crown, Apogee Pumps, Convoker's Doublet, Apogee Dalmatica, Shulmanu Collar (equal to ~R15 Collar), Gelos Earring, Regal Belt
     sets.pet_midcast.Physical_BP = {
       main="Nirvana",
       sub="Elan Strap +1",
@@ -304,12 +364,12 @@ function get_sets()
       right_ear="Sroda Earring",
       left_ring="Fickblix's Ring",
       right_ring="Cath Palug Ring",
-      back={ name="Campestres's Cape", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Pet: Accuracy+10 Pet: Rng. Acc.+10',}},
+      back=Cape.PHYS
     }
  
     -- Physical Pact AM3 set, less emphasis on Pet:DA
     sets.pet_midcast.Physical_BP_AM3 = set_combine(sets.pet_midcast.Physical_BP, {
-      right_ear="Beckoner's earring +1",
+      right_ear="Beck. Earring +1",
       body="Convoker's Doublet +3",
       right_ring="Varar Ring +1",
       feet={ name="Apogee Pumps +1", augments={'MP+80','Pet: Attack+35','Blood Pact Dmg.+8',}}
@@ -318,7 +378,7 @@ function get_sets()
     -- Physical pacts which benefit more from TP than Pet:DA (like Spinning Dive and other pacts you never use except that one time)
     sets.pet_midcast.Physical_BP_TP = set_combine(sets.pet_midcast.Physical_BP, {
       head={ name="Apogee Crown +1", augments={'MP+80','Pet: Attack+35','Blood Pact Dmg.+8',}},
-      right_ear="Beckoner's earring +1",
+      right_ear="Beck. Earring +1",
       body="Convoker's Doublet +3",
       right_ring="Varar Ring +1",
       waist="Regal Belt",
@@ -329,7 +389,7 @@ function get_sets()
     -- Used for all physical pacts when AccMode is true
     sets.pet_midcast.Physical_BP_Acc = set_combine(sets.pet_midcast.Physical_BP, {
       head={ name="Apogee Crown +1", augments={'MP+80','Pet: Attack+35','Blood Pact Dmg.+8',}},
-      right_ear="Beckoner's earring +1",
+      right_ear="Beck. Earring +1",
       right_ring="Varar Ring +1",
       body="Convoker's Doublet +3",
       hands="Convoker's Bracers +3",
@@ -340,7 +400,7 @@ function get_sets()
     -- Strong Alternatives:
     -- Espiritus, Apogee Crown, Adad Amulet (equal to ~R12 Collar)
     sets.pet_midcast.Magic_BP_Base = {
-      main="Grioavolr", -- or Espiritus
+      main="Grioavolr",
       sub="Elan Strap +1",
       ammo="Epitaph",
       head="C. Palug Crown",
@@ -351,10 +411,10 @@ function get_sets()
       neck={ name="Smn. Collar +2", augments={'Path: A',}},
       waist="Regal Belt",
       left_ear="Lugalbanda Earring",
-      right_ear="Beckoner's earring +1",
+      right_ear="Beck. Earring +1",
       left_ring="Fickblix's Ring",
       right_ring={name="Varar Ring +1", bag="wardrobe5"},
-      back={ name="Campestres's Cape", augments={'Pet: M.Acc.+20 Pet: M.Dmg.+20','Pet: Magic Damage+10','Damage taken-5%',}},
+      back=Cape.MAG
     }
     
     -- Some magic pacts benefit more from TP than others.
@@ -395,10 +455,10 @@ function get_sets()
       neck={ name="Smn. Collar +2", augments={'Path: A',}},
       waist="Regal Belt",
       left_ear="Lugalbanda Earring",
-      right_ear="Beckoner's earring +1",
+      right_ear="Beck. Earring +1",
       left_ring={name="Varar Ring +1", bag="wardrobe"},
       right_ring="Fickblix's Ring",
-      back={ name="Campestres's Cape", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Pet: Accuracy+10 Pet: Rng. Acc.+10',}},
+      back=Cape.PHYS
     }
  
     sets.pet_midcast.FlamingCrush_Acc = set_combine(sets.pet_midcast.FlamingCrush, {
@@ -415,10 +475,10 @@ function get_sets()
       ear1="Lugalbanda Earring",
       ear2="Enmerkar Earring",
       body="Convoker's Doublet +3",
-      hands="Convoker's Bracers +3", -- Augmented Lamassu Mitts +1
+      hands="Lamassu Mitts +1",
       ring1="Cath Palug Ring",
       ring2="Evoker's Ring",
-      back={ name="Campestres's Cape", augments={'Pet: M.Acc.+20 Pet: M.Dmg.+20','Pet: Magic Damage+10','Damage taken-5%',}},
+      back=Cape.MAG,
       waist="Regal Belt",
       legs="Convoker's Spats +2",
       feet="Bunzi's sabots"
@@ -427,16 +487,14 @@ function get_sets()
     sets.pet_midcast.Debuff_Rage = sets.pet_midcast.MagicAcc_BP
  
     -- Pure summoning magic set, mainly used for buffs like Hastega II.
-    -- Strong Alternatives:
-    -- Andoaa Earring, Summoning Earring, Lamassu Mitts +1, Caller's Pendant
     sets.pet_midcast.SummoningMagic = {
       main={ name="Espiritus", augments={'Summoning magic skill +15','Pet: Mag. Acc.+30','Pet: Damage taken -4%',}},
       sub="Vox Grip",
       ammo="Epitaph",
       head="Beckoner's Horn +3",
-      body="Baayami Robe",     -- + 1 if you're rich
-      hands="Baayami Cuffs",   -- + 1 if you're rich
-      legs="Baayami Slops",    -- + 1 if you're rich
+      body="Baayami Robe +1",  
+      hands="Baayami Cuffs +1",
+      legs="Baayami Slops +1", 
       feet="Baaya. Sabots +1",
       neck="Caller's Pendant",
       waist="Lucidity Sash",
@@ -444,22 +502,27 @@ function get_sets()
       right_ear="C. Palug Earring",
       left_ring="Stikini ring +1",
       right_ring="Evoker's Ring",
-      back={ name="Conveyance Cape", augments={'Summoning magic skill +5','Blood Pact Dmg.+1','Blood Pact ab. del. II -3',}},
+      back=Cape.IDLE
     }
  
-    sets.pet_midcast.Buff = sets.pet_midcast.SummoningMagic
+    sets.pet_midcast.Buff = set_combine(sets.pet_midcast.SummoningMagic, {})
     
     -- Wind's Blessing set. Pet:MND increases potency.
     sets.pet_midcast.Buff_MND = set_combine(sets.pet_midcast.Buff, {
       main="Nirvana",
       sub="Vox Grip",
       neck="Summoner's Collar +2",
+	  hands="Lamassu Mitts +1",
+	  legs="Assiduity pants +1",
+	  feet="Bunzi's Sabots",
     })
  
     -- Don't drop Avatar level in this set if you can help it.
     -- You can use Avatar:HP+ gear to increase the HP recovered, but most of it will decrease your own max HP.
     sets.pet_midcast.Buff_Healing = set_combine(sets.pet_midcast.Buff, {
       main="Nirvana",
+      right_ear="Beck. Earring +1",
+	  feet="Bunzi's Sabots"
     })
  
     -- This set is used for certain blood pacts when ImpactDebuff mode is turned ON. (/console gs c ImpactDebuff)
@@ -555,6 +618,8 @@ function midcast(spell)
         equip(sets.midcast.Cure)
     elseif string.find(spell.name,"Protect") or string.find(spell.name,"Shell") then
         equip(sets.midcast.Enhancing,{ring2="Sheltered Ring"})
+    elseif spell.skill=="Dark Magic" then
+        equip(sets.midcast.Absorb)
     elseif spell.skill=="Enfeebling Magic" then
         equip(sets.midcast.Enfeeble)
     elseif spell.skill=="Enhancing Magic" then

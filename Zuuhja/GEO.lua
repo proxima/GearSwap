@@ -241,22 +241,23 @@ function get_sets()
    -- No Luopan out
    -- they end in [idleMode] so it will derive from either the normal or the dt set depending in which mode you are then add the pieces filled in below.
    sets.me.melee = {
-    ammo="Staunch Tathlum +1",
-    head={ name="Blistering Sallet +1", augments={'Path: A',}},
-    body={ name="Nyame Mail", augments={'Path: B',}},
-    hands={ name="Gazu Bracelets +1", augments={'Path: A',}},
-    legs={ name="Nyame Flanchard", augments={'Path: B',}},
-    feet={ name="Nyame Sollerets", augments={'Path: B',}},
-    neck="Sanctity Necklace",
-    waist="Windbuffet Belt +1",
-    left_ear="Crep. Earring",
-    right_ear="Telos Earring",
-    left_ring="Petrov Ring",
-    right_ring="Rajas Ring",
-    -- Cape
+     ammo="Staunch Tathlum +1",
+     head="Nyame Helm",
+     body={ name="Nyame Mail", augments={'Path: B',}},
+     -- hands={ name="Gazu Bracelets +1", augments={'Path: A',}},
+     hands="Geo. Mitaines +3", 
+     legs={ name="Nyame Flanchard", augments={'Path: B',}},
+     feet={ name="Nyame Sollerets", augments={'Path: B',}},
+     neck="Sanctity Necklace",
+     waist="Windbuffet Belt +1",
+     left_ear="Crep. Earring",
+     right_ear="Telos Earring",
+     left_ring="Petrov Ring",
+     right_ring="Rajas Ring",
+     back={ name="Nantosuelta's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}},
    }
 
-   sets.pan.melee = sets.me.melee
+   sets.pan.melee = set_combine(sets.me.melee, {})
     
    -- Weapon Skill sets
    sets.me["Flash Nova"] = {
@@ -296,6 +297,21 @@ function get_sets()
      left_ring="Freke Ring",
      right_ring="Archon Ring",
      back={ name="Nantosuelta's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Phys. dmg. taken-10%',}},
+   }
+   
+   sets.me["Hexa Strike"] = {
+    head={ name="Nyame Helm", augments={'Path: B',}},
+    body={ name="Nyame Mail", augments={'Path: B',}},
+    hands={ name="Nyame Gauntlets", augments={'Path: B',}},
+    legs={ name="Nyame Flanchard", augments={'Path: B',}},
+    feet={ name="Nyame Sollerets", augments={'Path: B',}},
+    neck="Rep. Plat. Medal",
+    waist="Grunfeld Rope",
+    left_ear="Regal Earring",
+    right_ear="Ishvara Earring",
+    left_ring="Shukuyu Ring",
+    right_ring="Epaminondas's Ring",     
+    back={ name="Nantosuelta's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}},
    }
      
    ---------------
@@ -499,6 +515,8 @@ function get_sets()
    })
    
    sets.midcast.Absorb = set_combine(sets.midcast.IntEnfeebling, {
+     legs={ name="Merlinic Shalwar", augments={'INT+10','VIT+1','"Treasure Hunter"+2',}},
+     feet={ name="Merlinic Crackows", augments={'Mag. Acc.+17','Weapon skill damage +1%','"Treasure Hunter"+2','Accuracy+8 Attack+8',}},
      left_ring={name="Stikini Ring +1",bag="wardrobe"},
      right_ring={name="Stikini Ring +1",bag="wardrobe5"}
    })

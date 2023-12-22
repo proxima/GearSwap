@@ -54,8 +54,9 @@ function user_setup()
     send_command('bind ^` input /ja "Flee" <me>')
     send_command('bind ^= gs c cycle treasuremode')
     send_command('bind !- gs c cycle targetmode')
-    send_command('bind @o sat youcommand Muuhja "Horde Lullaby"')
-    send_command('bind @p sat youcommand Zuuhja "Sleepga"')
+    send_command('bind @o sat youcommand Zuuhja "Horde Lullaby II"')
+    send_command('bind @p sat youcommand Zuuhja "Horde Lullaby"')
+
     
 
     select_default_macro_book()
@@ -412,7 +413,7 @@ function init_gear_sets()
     sets.engaged.PDT = {
       ammo="Yamarang",
       head="Malignance Chapeau",
-      body="Malignance Tabard",
+      body="Gleti's Cuirass",
       hands="Malignance Gloves",
       legs="Malignance Tights",
       feet="Malignance Boots",
