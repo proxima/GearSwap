@@ -502,7 +502,7 @@ function get_sets()
       right_ear="C. Palug Earring",
       left_ring="Stikini ring +1",
       right_ring="Evoker's Ring",
-      back=Cape.IDLE
+      back=Cape.ADOULIN
     }
  
     sets.pet_midcast.Buff = set_combine(sets.pet_midcast.SummoningMagic, {})

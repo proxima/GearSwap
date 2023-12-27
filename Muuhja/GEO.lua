@@ -212,7 +212,7 @@ function get_sets()
      left_ear="Odnowa earring +1", -- 3 dt, 2 mdt
      right_ear="Etiolation Earring", -- 3 mdt
      body={ name="Telchine Chas.", augments={'Pet: "Regen"+3','Pet: Damage taken -4%',}},
-     hands="Geo. Mitaines +1",
+     hands="Geo. Mitaines +3",
      legs={ name="Telchine Braconi", augments={'Pet: "Regen"+3','Pet: Damage taken -4%',}},
      feet="Bagua Sandals +3",
      neck="Bagua Charm +2",
@@ -326,7 +326,7 @@ function get_sets()
      right_ring="Defending ring",
      back="Lifestream Cape",                                                                               --  7
      waist="Embla sash",                                                                                   --  5
-     legs="Geo. Pants +1",                                                                                 -- 11
+     legs="Geo. Pants +3",                                                                                 -- 11
      feet={ name="Merlinic Crackows", augments={'"Fast Cast"+7','MND+10','"Mag.Atk.Bns."+4',}},            -- 12
    }
 
@@ -353,7 +353,7 @@ function get_sets()
    
    -- Fill up with your JSE! 
    sets.precast["Life Cycle"] = {
-      body = "Geomancy Tunic +1",
+      body = "Geomancy Tunic +3",
    }
    
    sets.precast["Bolster"] = {
@@ -365,7 +365,7 @@ function get_sets()
    }  
    
    sets.precast["Cardinal Chant"] = {
-      head = "Geomancy Galero +1",
+      head = "Geomancy Galero +3",
    }  
    
    sets.precast["Full Circle"] = {
@@ -483,16 +483,11 @@ function get_sets()
      main="Bunzi's Rod",
      sub="Ammurapi Shield",
      range={ name="Dunna", augments={'MP+20','Mag. Acc.+10','"Fast Cast"+3',}},
-	 head="Azimuth Hood +2",
-	 body="Azimuth Coat +2",
-	 hands="Azimuth Gloves +2",
-	 legs="Azimuth Tights +3",
-	 feet="Azimuth Gaiters +2",
-     -- head="Geo. Galero +1",
-     -- body="Geomancy Tunic +1",
-     -- legs="Geomancy Pants +1",
-     -- hands="Geo. Mitaines +1",
-     -- feet="Geo. Sandals +1",
+     head="Geo. Galero +3",
+     body="Geomancy Tunic +3",
+     legs="Geomancy Pants +3",
+     hands="Geo. Mitaines +3",
+     feet="Geo. Sandals +3",
      neck={ name="Bagua Charm +2", augments={'Path: A',}},
      waist="Acuity Belt +1",
      left_ear="Regal Earring",
@@ -517,11 +512,11 @@ function get_sets()
      main="Daybreak",
      sub="Ammurapi Shield",
      range={ name="Dunna", augments={'MP+20','Mag. Acc.+10','"Fast Cast"+3',}},
-     head="Geo. Galero +1",
-     body="Geomancy Tunic +1",
-     legs="Geomancy Pants +1",
-     hands="Geo. Mitaines +1",
-     feet="Geo. Sandals +1",
+     head="Geo. Galero +3",
+     body="Geomancy Tunic +3",
+     legs="Geomancy Pants +3",
+     hands="Geo. Mitaines +3",
+     feet="Geo. Sandals +3",
      neck={ name="Bagua Charm +2", augments={'Path: A',}},
      waist="Luminary Sash",
      left_ear="Regal Earring",

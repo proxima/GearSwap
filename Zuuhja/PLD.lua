@@ -425,7 +425,7 @@ function init_gear_sets()
 
   sets.idle.Meva = {
     main="Burtgang",
-    sub="Duban",
+    sub="Aegis",
     ammo="Staunch Tathlum +1",        --  3
     head="Chevalier's armet +3",      -- 11
     body="Sakpata's Breastplate",     -- 10
