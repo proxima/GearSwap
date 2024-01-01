@@ -680,21 +680,17 @@ function midcast(spell)
     if sets.midcast[spell.name] then
         equip(sets.midcast[spell.name])
     end
-        
+
     -- Obi up for matching weather / day
-    if spell.element == world.weather_element and not spellMap:endswith('Helix') then
+    if nukes.helix[spell.element] ~= spell.name then
+      if spell.element == world.weather_element or spell.element == world.day_element then
         equip(sets.midcast.Obi)
-    end
-    
-    if spell.element == world.day_element and not spellMap:endswith('Helix') then
-        equip(sets.midcast.Obi)
-    end
-    
-    if zerodmg.value == true and spell.type == 'BlackMagic' and spell.skill == 'Elemental Magic' then
-      if nukes.t1[spell.element] == spell.name or nukes.scHelix[spell.element] == spell.name then
-        equip(sets.midcast.SC_Open)
       end
-    end    
+    end
+    
+    if zerodmg.value == true and (nukes.t1[spell.element] == spell.name or nukes.scHelix[spell.element] == spell.name) then
+        equip(sets.midcast.SC_Open)
+    end
 end
  
 function aftercast(spell) 
