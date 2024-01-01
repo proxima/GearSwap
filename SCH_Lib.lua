@@ -23,7 +23,7 @@
         gs c toggle regenmode           Toggles between Hybrid, Duration and Potency mode for regen set  
         gs c toggle nukemode            Toggles between Normal and Accuracy mode for midcast Nuking sets (MB included)  
         gs c toggle matchsc             Toggles auto swapping element to match the last SC that just happened.
-        gs c toggle closehelix          Toggles whether to close immanence macro skillchains with a helix
+        gs c toggle zerodmg             Toggles whether Tier 1 spells are cast in SC_Open set
 
         Casting functions:
         these are to set fewer macros (1 cycle, 5 cast) to save macro space when playing lazily with controler
@@ -168,7 +168,7 @@ useLightMode = M(false)
 hud_bottom = false
 useLightMode = M(false)
 matchsc = M(false)
-closeHelix = M(true)
+zerodmg = M(true)
 
 const_on = "\\cs(32, 255, 32)ON\\cr"
 const_off = "\\cs(255, 32, 32)OFF\\cr"
@@ -198,7 +198,7 @@ hub_options_std = [[ \cs(255, 115, 0)Options: \cr
 hub_job_std = [[ \cs(255, 115, 0)${player_job}: \cr             
 \cs(255, 64, 64)${key_bind_element_cycle} \cs(200, 200, 200)Element:\cr ${element_color|\\cs(0, 204, 204)}${toggle_element_cycle|Ice} \cr           
 \cs(255, 64, 64)${key_bind_sc_level} \cs(200, 200, 200)Skillchain:\cr ${sc_element_color|\\cs(0, 204, 204)}${toggle_sc_level|Induration} 
-\cs(255, 64, 64)${key_bind_close_helix} \cs(200, 200, 200)Close w/ Helix:\cr ${player_close_helix}
+\cs(255, 64, 64)${key_bind_zerodmg} \cs(200, 200, 200)Zero dmg tier1:\cr ${player_zerodmg}
 ]]
 
 hub_battle_std = [[ \cs(255, 115, 0)Battle: \cr             
@@ -209,7 +209,7 @@ hub_battle_std = [[ \cs(255, 115, 0)Battle: \cr
 -- LITE Mode
 hub_mode_lte = [[ \cs(255, 115, 0) == Modes: \cr              \cs(255, 64, 64)${key_bind_idle} \cs(200, 200, 200)Idle:\cr \cs(125,125,255)${player_current_idle|Refresh              \cs(255, 64, 64)${key_bind_casting} \cs(200, 200, 200)Casting:\cr \cs(125,125,255)${player_current_casting|Normal} ]]
 hub_options_lte = [[ \cs(255, 115, 0)== Options: \cr              \cs(255, 64, 64)${key_bind_mburst} \cs(200, 200, 200)Magic Burst:\cr \cs(125,125,255)${player_current_mb|OFF}\cs(255, 64, 64)${key_bind_matchsc}\cs(200, 200, 200)Match SC Element:\cr ${player_match_sc}            \cs(255, 64, 64)${key_bind_lock_weapon} \cs(200, 200, 200)Lock Weapon:\cr ${toggle_lock_weapon}            \cs(255, 64, 64)${key_bind_movespeed_lock}\cs(200, 200, 200)Herald Gaiters Lock:\cr ${toggle_movespeed_lock} ]]
-hub_job_lte = [[ \cs(255, 115, 0) == ${player_job}: \cr             \cs(255, 64, 64)${key_bind_element_cycle} \cs(200, 200, 200)Element:\cr ${element_color|\\cs(0, 204, 204)}${toggle_element_cycle|Ice} \cr           \cs(255, 64, 64)${key_bind_sc_level} \cs(200, 200, 200)Skillchain:\cr ${element_color|\\cs(0, 204, 204)}${toggle_sc_level|Induration}\cs(255, 64, 64)${key_bind_close_helix} \cs(200, 200, 200)Close w/ Helix:\cr \cs(125,125,255)${player_close_helix|OFF} ]]
+hub_job_lte = [[ \cs(255, 115, 0) == ${player_job}: \cr             \cs(255, 64, 64)${key_bind_element_cycle} \cs(200, 200, 200)Element:\cr ${element_color|\\cs(0, 204, 204)}${toggle_element_cycle|Ice} \cr           \cs(255, 64, 64)${key_bind_sc_level} \cs(200, 200, 200)Skillchain:\cr ${element_color|\\cs(0, 204, 204)}${toggle_sc_level|Induration}\cs(255, 64, 64)${key_bind_zerodmg} \cs(200, 200, 200)Zero dmg tier1:\cr \cs(125,125,255)${player_zerodmg|OFF} ]]
 hub_battle_lte = [[ \cs(255, 115, 0) == Battle: \cr             \cs(200, 200, 200)Last SC:\cr ${last_sc_element_color}${last_sc|No SC yet} \cr             \cs(200, 200, 200)Burst Window:\cr ${last_sc_element_color}${burst_window|0} \cr ]]
 
 
@@ -229,7 +229,7 @@ keybinds_off['key_bind_casting'] = '       '
 keybinds_off['key_bind_mburst'] = '       '
 
 keybinds_off['key_bind_element_cycle'] = '       '
-keybinds_off['key_bind_close_helix'] = '       '
+keybinds_off['key_bind_zerodmg'] = '       '
 keybinds_off['key_bind_sc_level'] = '       '
 keybinds_off['key_bind_lock_weapon'] = '       '
 keybinds_off['key_bind_movespeed_lock'] = '        '
@@ -255,12 +255,12 @@ function validateTextInformation()
     else
         main_text_hub.player_current_mb = const_off
     end
-
-    if closeHelix.value then
-        main_text_hub.player_close_helix = const_on
+	
+    if zerodmg.value then
+        main_text_hub.player_zerodmg = const_on
     else
-        main_text_hub.player_close_helix = const_off
-    end
+        main_text_hub.player_zerodmg = const_off
+    end	
 
     if matchsc.value then
         main_text_hub.player_match_sc = const_on
@@ -467,26 +467,6 @@ nukes.storm = {['Earth']="Sandstorm II", ['Water']="Rainstorm II",  ['Wind']="Wi
 
 elements =  M('Ice', 'Wind', 'Dark', 'Light', 'Earth', 'Lightning', 'Water', 'Fire')
 
-function skillchainCloser(element, closeWithHelix)
-  if element == "Light" then
-    if closeWithHelix == false then
-      windower.add_to_chat(211, 'Warning: Closing with Helix anyways, no other way to make Light. /heal to cancel.')
-    end
-
-    return "Luminohelix"
-  elseif element == "Dark" then
-    if closeWithHelix == false then
-      windower.add_to_chat(211, 'Warning: Closing with Helix anyways, no other way to make Dark. /heal to cancel.')
-    end
-
-    return "Noctohelix"
-  elseif closeWithHelix then
-    return nukes.scHelix[element]
-  else
-    return nukes.t1[element]
-  end
-end
-
 tier1sc =   {}
 tier1sc['Ice'] = 'Induration'
 tier1sc['Wind'] ='Detonation'
@@ -600,12 +580,10 @@ function precast(spell)
     end         
     -- Moving on to other types of magic
     if spell.type == 'WhiteMagic' or spell.type == 'BlackMagic' then
-     
         -- Stoneskin Precast
         if spell.name == 'Stoneskin' then
             windower.ffxi.cancel_buff(37) --[[Cancels stoneskin, not delayed incase you get a Quick Cast]]
             equip(sets.precast.stoneskin)
-             
         -- Cure Precast
         elseif spell.name:match('Cure') or spell.name:match('Cura') then
             equip(sets.precast.cure)         
@@ -617,7 +595,7 @@ function precast(spell)
             end
         else
             -- For everything else we go with max fastcast
-            equip(sets.precast.casting)                   
+            equip(sets.precast.casting)
         end
     end
     -- Job Abilities
@@ -694,22 +672,6 @@ function midcast(spell)
         equip(sets.midcast.stoneskin)
     end
 
-    if spellMap == 'DarkHelix' then
-        equip(sets.midcast.DarkHelix)
-    end
-
-    if spellMap == 'LightHelix' then
-        equip(sets.midcast.LightHelix)
-    end
-
-    if spellMap == 'WindHelix' then
-        equip(sets.midcast.WindHelix)
-    end    
-
-    if spellMap == 'Helix' then
-        equip(sets.midcast.Helix)
-    end
-
     -- Put the JSE in place.
     if spell.action_type == 'Magic' then
         apply_grimoire_bonuses(spell, action, spellMap)
@@ -718,14 +680,20 @@ function midcast(spell)
     if sets.midcast[spell.name] then
         equip(sets.midcast[spell.name])
     end
-    
+        
     -- Obi up for matching weather / day
-    if spell.element == world.weather_element and spellMap ~= 'Helix' then
+    if spell.element == world.weather_element and not spellMap:endswith('Helix') then
         equip(sets.midcast.Obi)
     end
     
-    if spell.element == world.day_element and spellMap ~= 'Helix' then
+    if spell.element == world.day_element and not spellMap:endswith('Helix') then
         equip(sets.midcast.Obi)
+    end
+    
+    if zerodmg.value == true and spell.type == 'BlackMagic' and spell.skill == 'Elemental Magic' then
+      if nukes.t1[spell.element] == spell.name or nukes.scHelix[spell.element] == spell.name then
+        equip(sets.midcast.SC_Open)
+      end
     end    
 end
  
@@ -799,9 +767,9 @@ function self_command(command)
                 -- You need to toggle prioritisation yourself
                 mBurst:toggle()
                 updateMB(mBurst.value)
-            elseif commandArgs[2] == 'closehelix' then
-                closeHelix:toggle()
-                updateCloseHelix(closeHelix.value)
+            elseif commandArgs[2] == 'zerodmg' then
+                zerodmg:toggle()
+                updateZerodmg(zerodmg.value)
             elseif commandArgs[2] == 'runspeed' then
                 runspeed:toggle()
                 updateRunspeedGear(runspeed.value) 
@@ -890,48 +858,55 @@ function self_command(command)
             end
         elseif commandArgs[1]:lower() == 'sc' then
             if not commandArgs[2] then
-                windower.add_to_chat(123,'No element type given.')
+                windower.add_to_chat(123, 'No element type given.')
                 return
             end
             
             local arg = commandArgs[2]:lower()
             
             if arg == 'tier' then
-                scTier2:toggle()
-                updateSC(elements.current, scTier2.value )   
+                if commandArgs[3] then
+                    local arg = commandArgs[3]:lower()
+                    if arg == '2' then			
+                        updateSC(elements.current, true)
+                    else
+                        updateSC(elements.current, false)
+                    end
+                else
+                    scTier2:toggle()
+                    updateSC(elements.current, scTier2.value)
+                end
+				
+				return
             end
 
             if arg == 'castsc' then
-                local closeSpell = function(element)
-                  return skillchainCloser(element, closeHelix.value)
-                end
-                
                 if wantedSc == 'Scission' then
-                     send_command('input /p Opening SC: Scission  MB: Stone; wait .1; input /ja "Immanence" <me>; wait 1.5; input /ma "Fire" <t>; wait 4.0; input /ja "Immanence" <me>; wait 1.5; input /p Closing SC: Scission  MB: Stone; input /ma "'..closeSpell("Earth")..'" <t>')
+                     send_command('input /p Opening SC: Scission  MB: Stone; wait .1; input /ja "Immanence" <me>; wait 1.5; input /ma "Fire" <t>; wait 4.0; input /ja "Immanence" <me>; wait 1.5; input /p Closing SC: Scission  MB: Stone; input /ma "'..nukes.scHelix["Earth"]..'" <t>')
                 elseif wantedSc == 'Reverberation' then
-                    send_command('input /p Opening SC: Reverberation  MB: Water; wait .1; input /ja "Immanence" <me>; wait 1.5; input /ma "Stone" <t>; wait 4.0; input /ja "Immanence" <me>; wait 1.5; input /p Closing SC: Reverberation  MB: Water; input /ma "'..closeSpell("Water")..'" <t>')
+                    send_command('input /p Opening SC: Reverberation  MB: Water; wait .1; input /ja "Immanence" <me>; wait 1.5; input /ma "Stone" <t>; wait 4.0; input /ja "Immanence" <me>; wait 1.5; input /p Closing SC: Reverberation  MB: Water; input /ma "'..nukes.scHelix["Water"]..'" <t>')
                 elseif wantedSc == 'Detonation' then
-                    send_command('input /p Opening SC: Detonation  MB: Wind; wait .1; input /ja "Immanence" <me>; wait 1.5; input /ma "Thunder" <t>; wait 4.0; input /ja "Immanence" <me>; wait 1.5; input /p Closing SC: Detonation  MB: Wind; input /ma "'..closeSpell("Wind")..'" <t>')
+                    send_command('input /p Opening SC: Detonation  MB: Wind; wait .1; input /ja "Immanence" <me>; wait 1.5; input /ma "Thunder" <t>; wait 4.0; input /ja "Immanence" <me>; wait 1.5; input /p Closing SC: Detonation  MB: Wind; input /ma "'..nukes.scHelix["Wind"]..'" <t>')
                 elseif wantedSc == 'Liquefaction' then
-                    send_command('input /p Opening SC: Liquefaction  MB: Fire; wait .1; input /ja "Immanence" <me>; wait 1.5; input /ma "Thunder" <t>; wait 4.0; input /ja "Immanence" <me>; wait 1.5; input /p Closing SC: Liquefaction  MB: Fire; input /ma "'..closeSpell("Fire")..'" <t>')
+                    send_command('input /p Opening SC: Liquefaction  MB: Fire; wait .1; input /ja "Immanence" <me>; wait 1.5; input /ma "Thunder" <t>; wait 4.0; input /ja "Immanence" <me>; wait 1.5; input /p Closing SC: Liquefaction  MB: Fire; input /ma "'..nukes.scHelix["Fire"]..'" <t>')
                 elseif wantedSc == 'Induration' then
-                    send_command('input /p Opening SC: Induration  MB: Ice; wait .1; input /ja "Immanence" <me>; wait 1.5; input /ma "Water" <t>; wait 4.0; input /ja "Immanence" <me>; wait 1.5; input /p Closing SC: Induration  MB: Ice; input /ma "'..closeSpell("Ice")..'" <t>')
+                    send_command('input /p Opening SC: Induration  MB: Ice; wait .1; input /ja "Immanence" <me>; wait 1.5; input /ma "Water" <t>; wait 4.0; input /ja "Immanence" <me>; wait 1.5; input /p Closing SC: Induration  MB: Ice; input /ma "'..nukes.scHelix["Ice"]..'" <t>')
                 elseif wantedSc == 'Impaction' then
-                    send_command('input /p Opening SC: Impaction  MB: Lightning; wait .1; input /ja "Immanence" <me>; wait 1.5; input /ma "Blizzard" <t>; wait 4.0; input /ja "Immanence" <me>; wait 1.5; input /p Closing SC: Impaction  MB: Lightning; input /ma "'..closeSpell("Lightning")..'" <t>')
+                    send_command('input /p Opening SC: Impaction  MB: Lightning; wait .1; input /ja "Immanence" <me>; wait 1.5; input /ma "Blizzard" <t>; wait 4.0; input /ja "Immanence" <me>; wait 1.5; input /p Closing SC: Impaction  MB: Lightning; input /ma "'..nukes.scHelix["Lightning"]..'" <t>')
                 elseif wantedSc == 'Compression' then
-                    send_command('input /p Opening SC: Compression  MB: Dark; wait .1; input /ja "Immanence" <me>; wait 1.5; input /ma "Blizzard" <t>; wait 4.0; input /ja "Immanence" <me>; wait 1.5; input /p Closing SC: Compression  MB: Dark; input /ma "'..closeSpell("Dark")..'" <t>')
+                    send_command('input /p Opening SC: Compression  MB: Dark; wait .1; input /ja "Immanence" <me>; wait 1.5; input /ma "Blizzard" <t>; wait 4.0; input /ja "Immanence" <me>; wait 1.5; input /p Closing SC: Compression  MB: Dark; input /ma "'..nukes.scHelix["Dark"]..'" <t>')
                 elseif wantedSc == 'Distortion' then
-                    send_command('input /p Opening SC: Distortion  MB: Water / Ice; wait .1; input /ja "Immanence" <me>; wait 1.5; input /ma "Luminohelix" <t>; wait 4.5; input /ja "Immanence" <me>; wait 1.5; input /p Closing SC: Distortion  MB: Water / Ice; input /ma "'..closeSpell("Earth")..'" <t>')
+                    send_command('input /p Opening SC: Distortion  MB: Water / Ice; wait .1; input /ja "Immanence" <me>; wait 1.5; input /ma "Luminohelix" <t>; wait 4.5; input /ja "Immanence" <me>; wait 1.5; input /p Closing SC: Distortion  MB: Water / Ice; input /ma "'..nukes.scHelix["Earth"]..'" <t>')
                 elseif wantedSc == 'Fragmentation' then
-                    send_command('input /p Opening SC: Fragmentation  MB: Lightning / Wind; wait .1; input /ja "Immanence" <me>; wait 1.5; input /ma "Blizzard" <t>; wait 4.0; input /ja "Immanence" <me>; wait 1.5; input /p Closing SC: Fragmentation  MB: Wind / Lightning; input /ma "'..closeSpell("Water")..'" <t>')
+                    send_command('input /p Opening SC: Fragmentation  MB: Lightning / Wind; wait .1; input /ja "Immanence" <me>; wait 1.5; input /ma "Blizzard" <t>; wait 4.0; input /ja "Immanence" <me>; wait 1.5; input /p Closing SC: Fragmentation  MB: Wind / Lightning; input /ma "'..nukes.scHelix["Water"]..'" <t>')
                 elseif wantedSc == 'LiqueFusion' then
                     send_command('input /p Opening SC: Liquefaction  MB: Fire; wait .1; input /ja "Immanence" <me>; wait 1.5; input /ma "Stone" <t>; wait 4.0; input /ja "Immanence" <me>; wait 1.5; input /p Continuing SC: Liquefaction  MB: Fire; input /ma "Pyrohelix" <t>; wait 8.5; input /ja "Immanence" <me>; wait 1.5; input /p Closing SC: Fusion  MB: Light / Fire; input /ma "Ionohelix" <t>')
                 elseif wantedSc == 'Fusion' then
-                    send_command('input /p Opening SC: Fusion  MB: Light / Fire; wait .1; input /ja "Immanence" <me>; wait 1.5; input /ma "Fire" <t>; wait 4.0; input /ja "Immanence" <me>; wait 1.5; input /p Closing SC: Fusion  MB: Light / Fire; input /ma "'..closeSpell("Lightning")..'" <t>')
+                    send_command('input /p Opening SC: Fusion  MB: Light / Fire; wait .1; input /ja "Immanence" <me>; wait 1.5; input /ma "Fire" <t>; wait 4.0; input /ja "Immanence" <me>; wait 1.5; input /p Closing SC: Fusion  MB: Light / Fire; input /ma "'..nukes.scHelix["Lightning"]..'" <t>')
                 elseif wantedSc == 'Gravitation' then
-                    send_command('input /p Opening SC: Gravitation  MB: Dark / Stone; wait .1; input /ja "Immanence" <me>; wait 1.5; input /ma "Aero" <t>; wait 4.0; input /ja "Immanence" <me>; wait 1.5; input /p Closing SC: Gravitation  MB: Dark / Stone; input /ma "'..closeSpell("Dark")..'" <t>')
+                    send_command('input /p Opening SC: Gravitation  MB: Dark / Stone; wait .1; input /ja "Immanence" <me>; wait 1.5; input /ma "Aero" <t>; wait 4.0; input /ja "Immanence" <me>; wait 1.5; input /p Closing SC: Gravitation  MB: Dark / Stone; input /ma "'..nukes.scHelix["Dark"]..'" <t>')
                 elseif wantedSc == 'Transfixion' then
-                    send_command('input /p Opening SC: Transfixion  MB: Light; wait .1; input /ja "Immanence" <me>; wait 1.5; input /ma "Noctohelix" <t>; wait 4.0; input /ja "Immanence" <me>; wait 1.5; input /p Closing SC: Transfixion  MB: Light; input /ma "'..closeSpell("Light")..'" <t>')
+                    send_command('input /p Opening SC: Transfixion  MB: Light; wait .1; input /ja "Immanence" <me>; wait 1.5; input /ma "Noctohelix" <t>; wait 4.0; input /ja "Immanence" <me>; wait 1.5; input /p Closing SC: Transfixion  MB: Light; input /ma "'..nukes.scHelix["Light"]..'" <t>')
                 end
             end
         end
@@ -944,6 +919,7 @@ function updateSC( element , scTier )
     else
         wantedSc = tier1sc[element]
     end
+
     scColor = Colors[element]
     if use_UI == true then                    
         validateTextInformation()
@@ -969,18 +945,18 @@ function updateMB( mBurst )
     mBurstOldValue = mBurst
 end
 
-function updateCloseHelix( closeHelix )   
-    if closeHelix then
+function updateZerodmg( zerodmg )   
+    if zerodmg then
         if use_UI == true then
             validateTextInformation()
         else
-            windower.add_to_chat(8,"----- Close with helix ON -----")
+            windower.add_to_chat(8,"----- Zero dmg tier 1's ON -----")
         end
     else
         if use_UI == true then
             validateTextInformation()
         else
-            windower.add_to_chat(8,"----- Closing with helix OFF -----")
+            windower.add_to_chat(8,"----- Zero dmg tier 1's OFF -----")
         end
     end
 end

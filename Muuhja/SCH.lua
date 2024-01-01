@@ -23,7 +23,7 @@
         gs c toggle regenmode           Toggles between Hybrid, Duration and Potency mode for regen set  
         gs c toggle nukemode            Toggles between Normal and Accuracy mode for midcast Nuking sets (MB included)  
         gs c toggle matchsc             Toggles auto swapping element to match the last SC that just happenned.
-        gs c toggle closehelix          Toggles whether to close immanence macro skillchains with a helix
+        gs c toggle zerodmg             Toggles whether Tier 1 spells are cast in SC_Open set
                 
         Casting functions:
         these are to set fewer macros (1 cycle, 5 cast) to save macro space when playing lazily with controler
@@ -108,9 +108,8 @@ windower.send_command('bind f10 gs c toggle mb')            -- F10 toggles Magic
 windower.send_command('bind !f10 gs c toggle nukemode')		-- Alt-F10 to change Nuking Mode
 windower.send_command('bind ^F10 gs c toggle matchsc')      -- CTRL-F10 to change Match SC Mode      	
 windower.send_command('bind !end gs c hud lite')            -- Alt-End to toggle light hud version   
-windower.send_command('bind ^h gs c toggle closehelix')     -- Ctrl+H to toggle whether you close skillchains with a helix
+windower.send_command('bind ^h gs c toggle zerodmg')        -- Ctrl+H to toggle whether tier 1's are cast in SC_Open set
 
-    
 --[[
     This gets passed in when the Keybinds is turned on.
     Each one matches to a given variable within the text object
@@ -121,7 +120,7 @@ keybinds_on['key_bind_idle'] = '(F9)'
 keybinds_on['key_bind_regen'] = '(END)'
 keybinds_on['key_bind_casting'] = '(ALT-F10)'
 keybinds_on['key_bind_mburst'] = '(F10)'
-keybinds_on['key_bind_closehelix'] = '(CTRL-H)'
+keybinds_on['key_bind_zerodmg'] = '(CTRL-H)'
 keybinds_on['key_bind_element_cycle'] = '(INSERT)'
 keybinds_on['key_bind_sc_level'] = '(HOME)'
 keybinds_on['key_bind_lock_weapon'] = '(F12)'
@@ -785,23 +784,7 @@ function get_sets()
      legs="Psycloth Lappas",                                                                             --  7 fc,  5 haste
      feet="Acad. Loafers +3",                                                                            --         3 haste
    }                                                                                                     -- 55 fc, 26 haste, 36 sb
-   
-   sets.midcast["Aero"] = sets.midcast.SC_Open
-   sets.midcast["Blizzard"] = sets.midcast.SC_Open
-   sets.midcast["Fire"] = sets.midcast.SC_Open
-   sets.midcast["Stone"] = sets.midcast.SC_Open
-   sets.midcast["Thunder"] = sets.midcast.SC_Open
-   sets.midcast["Water"] = sets.midcast.SC_Open
-
-   sets.midcast["Hydrohelix"] = sets.midcast.SC_Open
-   sets.midcast["Ionohelix"] = sets.midcast.SC_Open
-   sets.midcast["Noctohelix"] = sets.midcast.SC_Open
-   -- sets.midcast["Luminohelix"] = sets.midcast.SC_Open
-   sets.midcast["Anemohelix"] = sets.midcast.SC_Open
-   sets.midcast["Geohelix"] = sets.midcast.SC_Open
-   sets.midcast["Pyrohelix"] = sets.midcast.SC_Open
-   sets.midcast["Cryohelix"] = sets.midcast.SC_Open
-   
+      
    sets.midcast.MndEnfeebling = {
      main="Mpaca's staff", -- Tupsi
      sub="Khonsu",
