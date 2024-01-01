@@ -521,6 +521,22 @@ function init_gear_sets()
     ---------------------------------------- Midcast Sets ------------------------------------------
     ------------------------------------------------------------------------------------------------
 
+    sets.midcast["Absorb-TP"] = {
+      ammo="Devastating bullet",
+      head="Chass. Tricorne +3",
+      body="Chasseur's Frac +3",
+      hands="Chasseur's Gants +3",
+      legs="Chas. Culottes +3",
+      feet="Chass. Bottes +3",
+      neck={ name="Comm. Charm +2", augments={'Path: A',}},
+      waist="K. Kachina Belt +1",
+      left_ear="Chasseur's Earring +1",
+      right_ear="Crep. Earring",
+      left_ring={name="Stikini Ring +1",bag="wardrobe 2"},
+      right_ring={name="Stikini Ring +1",bag="wardrobe 4"},
+      back=Cape.AEOLIAN
+    }
+
     sets.midcast.FastRecast = sets.precast.FC
     sets.midcast.SpellInterrupt = {}
     sets.midcast.Utsusemi = sets.midcast.SpellInterrupt

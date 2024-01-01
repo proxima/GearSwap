@@ -286,7 +286,7 @@ function init_gear_sets()
     sets.precast.CorsairRoll.LowerDelay = {}
     sets.precast.CorsairRoll["Caster's Roll"] = set_combine(sets.precast.CorsairRoll, {legs="Chas. Culottes +3"})
     sets.precast.CorsairRoll["Courser's Roll"] = set_combine(sets.precast.CorsairRoll, {feet="Chass. Bottes +3"})
-    sets.precast.CorsairRoll["Blitzer's Roll"] = set_combine(sets.precast.CorsairRoll, {head="Chass. Tricorne +2"})
+    sets.precast.CorsairRoll["Blitzer's Roll"] = set_combine(sets.precast.CorsairRoll, {head="Chass. Tricorne +3"})
     sets.precast.CorsairRoll["Tactician's Roll"] = set_combine(sets.precast.CorsairRoll, {body="Chasseur's Frac +3"})
     sets.precast.CorsairRoll["Allies' Roll"] = set_combine(sets.precast.CorsairRoll, {hands="Chasseur's Gants +3"})
 
@@ -325,7 +325,7 @@ function init_gear_sets()
     sets.precast.RA.HighAcc = set_combine(sets.precast.RA.Acc, {})
 
     sets.precast.RA.Flurry1 = set_combine(sets.precast.RA, {
-      head="Chasseur's Tricorne +2",
+      head="Chasseur's Tricorne +3",
       hands={ name="Carmine Fin. Ga. +1", augments={'Rng.Atk.+20','"Mag.Atk.Bns."+12','"Store TP"+6',}},
     })
 
@@ -424,7 +424,7 @@ function init_gear_sets()
     sets.precast.WS['Hot Shot'] = {ammo=gear.WSbullet,
       head={ name="Nyame Helm", augments={'Path: B',}},
       body={ name="Nyame Mail", augments={'Path: B',}},
-      hands="Chasseur's Gants +2",
+      hands="Chasseur's Gants +3",
       legs={ name="Nyame Flanchard", augments={'Path: B',}},
       feet={ name="Lanun Bottes +3", augments={'Enhances "Wild Card" effect',}},
       neck="Fotia Gorget",
@@ -509,6 +509,22 @@ function init_gear_sets()
     ---------------------------------------- Midcast Sets ------------------------------------------
     ------------------------------------------------------------------------------------------------
 
+    sets.midcast["Absorb-TP"] = {
+      ammo="Devastating bullet",
+      head="Chass. Tricorne +3",
+      body="Chasseur's Frac +3",
+      hands="Chasseur's Gants +3",
+      legs="Chas. Culottes +3",
+      feet="Chass. Bottes +3",
+      neck={ name="Comm. Charm +2", augments={'Path: A',}},
+      waist="K. Kachina Belt +1",
+      left_ear="Chasseur's Earring +1",
+      right_ear="Crep. Earring",
+      left_ring={name="Stikini Ring +1",bag="wardrobe 2"},
+      right_ring={name="Stikini Ring +1",bag="wardrobe 4"},
+      back=Cape.AEOLIAN
+    }
+
     sets.midcast.FastRecast = sets.precast.FC
     sets.midcast.SpellInterrupt = {}
     sets.midcast.Utsusemi = sets.midcast.SpellInterrupt
@@ -553,14 +569,14 @@ function init_gear_sets()
       right_ear="Telos Earring",
       left_ring="Crepuscular Ring",
       right_ring={name="Chirich Ring +1",bag="wardrobe 3"},
-      back=Cape.TP,
+      back=Cape.RTP,
       waist="Yemaya belt",
     }
 
     sets.midcast.CorsairShot['Light Shot'] = {ammo=gear.RAccbullet,
-      head="Chasseur's Tricorne +2",
+      head="Chasseur's Tricorne +3",
       body="Chasseur's Frac +3",
-      hands="Chasseur's Gants +2",
+      hands="Chasseur's Gants +3",
       legs="Chasseur's Culottes +3",
       feet="Chasseur's Bottes +3",
       neck="Comm. Charm +2",
