@@ -517,7 +517,10 @@ function midcast(spell)
         else
             equip(sets.midcast.nuking[nukeModes.current])
         end
-    -- casting is basically enfeeble set.
+        
+        if pet.isvalid and dematerialize_timestamp and os.clock() - dematerialize_timestamp < (60 + 20) then
+          equip({main="Bunzi's Rod"})
+        end
     elseif spell.name:match('Geo') then
         equip(sets.midcast.geo)
     elseif spell.name:match('Indi') then
@@ -553,8 +556,12 @@ function midcast(spell)
 end
  
 function aftercast(spell)
-     -- Then initiate idle function to check which set should be equipped
-    idle(pet)
+   -- Then initiate idle function to check which set should be equipped
+   idle(pet)
+
+  if spell.english == "Dematerialize" and not spell.interrupted then
+    dematerialize_timestamp = os.clock()
+  end
 end
 
 function idle(pet)
@@ -595,6 +602,10 @@ end
 function pet_change(pet, gain)
     -- When we cast a luopan
     idle(pet)
+    
+   if not gain then
+       dematerialize_timestamp = nil
+    end
 end
 
 function updateMB( mBurst )   
