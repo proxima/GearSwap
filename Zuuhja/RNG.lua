@@ -95,6 +95,7 @@ function user_setup()
         ['Armageddon'] = "Chrono Bullet",
         ['Gastraphetes'] = "Quelling Bolt",
         ['Fomalhaut'] = "Chrono Bullet",
+        ['Astrild'] = "Chrono Arrow"
     }
 
     AccAmmo = {    
@@ -105,6 +106,7 @@ function user_setup()
         ['Armageddon'] = "Eradicating Bullet",
         ['Gastraphetes'] = "Quelling Bolt",
         ['Fomalhaut'] = "Devastating Bullet",
+        ['Astrild'] = "Chrono Arrow"
     }
 
     WSAmmo = {     
@@ -115,6 +117,7 @@ function user_setup()
         ['Armageddon'] = "Chrono Bullet",
         ['Gastraphetes'] = "Quelling Bolt",
         ['Fomalhaut'] = "Chrono Bullet",
+        ['Astrild'] = "Chrono Arrow"
     }
 
     MagicAmmo = {
@@ -125,6 +128,7 @@ function user_setup()
         ['Armageddon'] = "Devastating Bullet",
         ['Gastraphetes'] = "Quelling Bolt",
         ['Fomalhaut'] = "Devastating Bullet",
+        ['Astrild'] = "Chrono Arrow"
     }
 
     Cape = {}
@@ -531,7 +535,7 @@ function init_gear_sets()
       body="Nisroch Jerkin",
       waist="Tellen belt",
       legs="Amini Bragues +3",
-      -- feet="Ikenga's Clogs"
+      feet="Ikenga's Clogs"
     }
 
     ------------------------------------------------------------------------------------------------
@@ -584,6 +588,18 @@ function init_gear_sets()
     -- EG: sets.engaged.Dagger.Accuracy.Evasion
 
     sets.engaged = {
+        head="Malignance Chapeau",
+        body="Malignance Tabard",
+        hands="Malignance Gloves",
+        legs="Malignance Tights",
+        feet="Malignance Boots",
+        neck="Iskur Gorget",
+        waist="Windbuffet Belt +1",
+        ear1="Telos Earring",
+        ear2="Crepuscular Earring",
+        left_ring="Epona's Ring",
+        right_ring="Defending Ring",
+        back=Cape.DW    
     }
 
     sets.engaged.LowAcc = set_combine(sets.engaged, {
@@ -1152,7 +1168,6 @@ function special_ammo_check()
     end
 end
 
-
 -- Check for proper ammo when shooting or weaponskilling
 function check_ammo(spell, action, spellMap, eventArgs)
     if spell.action_type == 'Ranged Attack' then
@@ -1194,6 +1209,9 @@ function check_ammo(spell, action, spellMap, eventArgs)
             end
         end
     end
+    
+    special_ammo_check()
+    
     if player.equipment.ammo ~= 'empty' and player.inventory[player.equipment.ammo].count < 15 then
         add_to_chat(39,"*** Ammo '"..player.inventory[player.equipment.ammo].shortname.."' running low! *** ("..player.inventory[player.equipment.ammo].count..")")
     end

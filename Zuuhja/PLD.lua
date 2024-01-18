@@ -34,7 +34,7 @@ function user_setup()
   send_command('bind @o sat youcommand Suuhja "Anvil Lightning"')
   send_command('bind @p sat youcommand Muuhja "Sleepga"')
   send_command('bind @a sat youcommand Suuhja "Spectral Floe"')
-  send_command('bind @s sat youcommand Muuhja "Sleepga"')
+  send_command('bind @s sat youcommand Muuhja "Horde Lullaby"')
   send_command('bind @v sat youcommand Muuhja "Wind Threnody II"; sat youcommand Suuhja "Silence"')
 
   send_command('bind @f12 gs c cycle CastingMode')

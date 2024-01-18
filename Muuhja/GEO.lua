@@ -504,7 +504,10 @@ function get_sets()
 
    sets.midcast.Dispelga = set_combine(sets.midcast.IntEnfeebling, {
      main="Daybreak",
-     sub="Ammurapi Shield"
+     sub="Ammurapi Shield",
+     ammo="Perfect lucky egg",
+     hands={name="Merlinic Dastanas", augments={'Magic dmg. taken -2%','Pet: Phys. dmg. taken -2%','"Treasure Hunter"+2','Mag. Acc.+14 "Mag.Atk.Bns."+14',}},
+     waist="Chaac belt",
    })
    
    -- could use MND cape

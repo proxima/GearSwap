@@ -323,6 +323,7 @@ function init_gear_sets()
   sets.precast.JA['Swordplay'] = set_combine(sets.Enmity, {hands=Relic.Hands})
  
   sets.precast.JA['Vivacious Pulse'] = {
+    head=Empy.Head,
     left_ring={name="Stikini Ring +1", bag="wardrobe"},
     right_ring={name="Stikini Ring +1", bag="wardrobe5"},
     legs=AF.Legs

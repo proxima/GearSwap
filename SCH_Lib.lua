@@ -840,7 +840,7 @@ function self_command(command)
                 local newType = commandArgs[2]
                 elements:set(newType)
                 updateSC(elements.current, scTier2.value)  
-                if use_UI == true then                    
+                if use_UI == true then
                     validateTextInformation()
                 else
                     windower.add_to_chat(211,'Nuke now set to element type: '..tostring(elements.current))
