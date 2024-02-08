@@ -161,9 +161,8 @@ function get_sets()
      body="Azimuth Coat +2",
      hands="Bagua Mitaines +3",
      llegs={ name="Merlinic Shalwar", augments={'Mag. Acc.+15','Attack+2','"Refresh"+2','Accuracy+10 Attack+10',}},
-     feet="Geo. Sandals +1",
-     neck="Bagua Charm +2",
-	 -- neck="Loricate Torque +1",
+     feet="Geo. Sandals +3",
+     neck="Loricate Torque +1",
      waist="Slipor Sash",
      left_ear={ name="Odnowa Earring +1", augments={'Path: A',}},
      right_ear="Etiolation Earring",
@@ -173,7 +172,7 @@ function get_sets()
    }
 
    -- This or herald gaiters or +1 +2 +3... 
-   sets.me.movespeed = {feet="Geo. Sandals +1"}
+   sets.me.movespeed = {feet="Geo. Sandals +3"}
 
    -- Your idle MasterDT set (Notice the sets.me, means no Luopan is out)
    sets.me.idle.dt = set_combine(sets.me.idle.normal, {
@@ -326,7 +325,7 @@ function get_sets()
      right_ring="Defending ring",
      back="Lifestream Cape",                                                                               --  7
      waist="Embla sash",                                                                                   --  5
-     legs="Geo. Pants +3",                                                                                 -- 11
+     legs="Geomancy Pants +3",                                                                                 -- 11
      feet={ name="Merlinic Crackows", augments={'"Fast Cast"+7','MND+10','"Mag.Atk.Bns."+4',}},            -- 12
    }
 
@@ -387,6 +386,11 @@ function get_sets()
    sets.precast["Dispelga"] = set_combine(sets.precast.casting, {
      main="Daybreak",
      sub="Ammurapi Shield"
+   })
+   
+   sets.precast["Impact"] = set_combine(sets.precast.casting, {
+     head=empty, 
+     body="Crepuscular Cloak"
    })
    
    ----------
@@ -508,6 +512,11 @@ function get_sets()
      ammo="Perfect lucky egg",
      hands={name="Merlinic Dastanas", augments={'Magic dmg. taken -2%','Pet: Phys. dmg. taken -2%','"Treasure Hunter"+2','Mag. Acc.+14 "Mag.Atk.Bns."+14',}},
      waist="Chaac belt",
+   })
+   
+   sets.midcast["Impact"] = set_combine(sets.midcast.IntEnfeebling, {
+     head=empty, 
+     body="Crepuscular Cloak"
    })
    
    -- could use MND cape

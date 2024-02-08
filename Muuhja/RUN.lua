@@ -323,7 +323,7 @@ function init_gear_sets()
   sets.precast.JA['Swordplay'] = set_combine(sets.Enmity, {hands=Relic.Hands})
  
   sets.precast.JA['Vivacious Pulse'] = {
-    head=Empy.Head,
+    head=Empy.HEAD,
     left_ring={name="Stikini Ring +1", bag="wardrobe"},
     right_ring={name="Stikini Ring +1", bag="wardrobe5"},
     legs=AF.Legs
@@ -364,7 +364,7 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
  
   sets.precast.WS = {
-    --[[ ammo="Knobkierrie",
+    ammo="Knobkierrie",
     head={ name="Nyame Helm", augments={'Path: B',}},
     body={ name="Nyame Mail", augments={'Path: B',}},
     hands={ name="Nyame Gauntlets", augments={'Path: B',}},
@@ -376,20 +376,7 @@ function init_gear_sets()
     right_ear="Sherida Earring",
     left_ring="Epaminondas's Ring",
     right_ring="Niqmaddu Ring",
-    back=Cape.WSD ]]--
-    ammo="C. Palug Stone",
-    head=Empy.Head,
-    body=Empy.Body,
-    hands=Empy.Hands,
-    legs=Empy.Legs,
-    feet=Empy.Feet,
-    neck="Sanctity Necklace",
-    waist={ name="Kentarch Belt +1", augments={'Path: A',}},
-    left_ear="Mache Earring +1",
-    right_ear="Crep. Earring",
-    left_ring={name="Chirich Ring +1",bag="wardrobe 2"},
-    right_ring={name="Chirich Ring +1",bag="wardrobe 3"},
-    back=Cape.WSD    
+    back=Cape.WSD
   }
  
   sets.precast.WS.Acc = set_combine(sets.precast.WS, {
@@ -401,8 +388,8 @@ function init_gear_sets()
     feet=Empy.Feet,
     neck="Sanctity Necklace",
     waist={ name="Kentarch Belt +1", augments={'Path: A',}},
-    left_ear="Mache Earring +1",
-    right_ear="Crep. Earring",
+    left_ear="Crep. Earring",
+    right_ear="Erilaz earring +2",
     left_ring={name="Chirich Ring +1",bag="wardrobe 2"},
     right_ring={name="Chirich Ring +1",bag="wardrobe 3"},
     back=Cape.WSD
@@ -541,7 +528,8 @@ function init_gear_sets()
  
   sets.midcast.Regen = set_combine(sets.midcast['Enhancing Magic'], {head=AF.Head, 
     waist="Sroda Belt",
-    neck="Sacro Gorget"
+    neck="Sacro Gorget",
+    right_ear="Erilaz earring +2",
   })
 
   sets.midcast.Refresh = set_combine(sets.midcast['Enhancing Magic'], {head=Empy.Head, waist="Gishdubar Sash"})
@@ -638,33 +626,19 @@ function init_gear_sets()
   }
  
   sets.defense.MDT = {
-	ammo="Vanir Battery",
-    head={ name="Nyame Helm", augments={'Path: B',}},
+    ammo="Vanir Battery",
+    head={ name="Nyame Helm", augments={'Path: B',}}, --  7
     body="Runeist Coat +3",
-    hands="Erilaz Gauntlets +3",
-    legs="Eri. Leg Guards +3",
-    feet="Erilaz Greaves +3",
-    neck="Futhark Torque +2",
+    hands="Erilaz Gauntlets +3",                      -- 11
+    legs="Eri. Leg Guards +3",                        -- 13
+    feet="Erilaz Greaves +3",                         -- 11
+    neck="Warder's Charm +1",
     waist="Engraved Belt",
     left_ear="Sanare Earring",
-    right_ear="Odnowa earring +1",
+    right_ear="Erilaz earring +2",                    --  6
     left_ring="Shadow Ring",
-    right_ring="Lunette Ring +1",
+    right_ring="Lunette Ring +1",                     --  3*
     back=Cape.Enmity
-	--[[
-    ammo="Staunch Tathlum +1",
-    head={ name="Nyame Helm", augments={'Path: B',}},
-    body=Empy.Body,
-	hands="Nyame Gauntlets",
-    legs=Empy.Legs,
-    feet=Empy.Feet,
-    neck="Warder's Charm +1",
-    left_ear="Sanare earring",
-    right_ear="Odnowa earring +1",
-    left_ring="Shadow ring",
-    right_ring="Moonlight Ring",
-    back=Cape.Enmity,
-    waist="Engraved Belt",]]--
   }
   
   sets.defense.Parry = {
@@ -712,7 +686,7 @@ function init_gear_sets()
     feet=Empy.Feet,
     neck="Warder's Charm +1",
     left_ear="Sanare earring",
-    right_ear="Odnowa earring +1",
+    right_ear="Erilaz earring +2",
     left_ring="Shadow ring",
     right_ring="Moonlight Ring",
     back=Cape.Enmity,

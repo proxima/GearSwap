@@ -131,8 +131,8 @@ function init_gear_sets()
       waist="Sailfi Belt +1",
       left_ear="Sroda Earring",
       right_ear="Sherida Earring",
-      left_ring="Gere Ring",
-      right_ring="Sroda Ring",
+      right_ring="Gere Ring",
+      left_ring="Sroda Ring",
       back=Cape.STR_DA
     }
 

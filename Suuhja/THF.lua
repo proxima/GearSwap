@@ -429,7 +429,7 @@ function init_gear_sets()
     sets.engaged.PDT = {
       ammo="Yamarang",
       head="Malignance Chapeau",
-      body="Malignance Tabard",
+      body="Gleti's Cuirass",
       hands="Malignance Gloves",
       legs="Malignance Tights",
       feet="Malignance Boots",

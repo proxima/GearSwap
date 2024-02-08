@@ -277,7 +277,7 @@ function init_gear_sets()
   })
 
     sets.idle.Town = set_combine(sets.idle.MEva, {
-      right_ring="Shneddick Ring +1"
+      left_ring="Shneddick Ring +1"
     })
 
     -- Precast Sets
@@ -314,7 +314,7 @@ function init_gear_sets()
 
     sets.precast.FC.Curaga = sets.precast.FC.Cure
     sets.precast.FC.CureSolace = sets.precast.FC.Cure
-    sets.precast.FC.Impact = set_combine(sets.precast.FC, {head=empty, body="Twilight Cloak"})
+    sets.precast.FC.Impact = set_combine(sets.precast.FC, {head=empty, body="Crepuscular Cloak"})
     sets.precast.FC.Dispelga = set_combine(sets.precast.FC, {main="Daybreak", sub="Ammurapi Shield"})
 
     -- Precast sets to enhance JAs
@@ -574,7 +574,7 @@ function init_gear_sets()
       main="Daybreak",
       sub="Ammurapi Shield",
       head=empty,
-      body="Twilight Cloak",
+      body="Crepuscular Cloak",
       legs="Th. Pant. +3",
       feet="Theo. Duckbills +3",
       ring1="Freke Ring",

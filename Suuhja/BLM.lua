@@ -499,85 +499,6 @@ function get_sets()
     sets.midcast.MPReturn        = { body="Spaekona's Coat +3" }
     sets.midcast.JaSpellDuration = { legs="Wicce Chausses +3"  }
 
-    -----------------------------------------------------------------------------------------------
-    -- Helix sets automatically derives from casting sets. SO DONT PUT ANYTHING IN THEM other than:
-    -- Pixie in DarkHelix
-    -- Belt that isn't Obi.
-    -- Make sure you have a non weather obi in this set. Helix get bonus naturally no need Obi.	
-    -----------------------------------------------------------------------------------------------
-
-    sets.midcast.Helix = {
-      main="Bunzi's Rod",
-      sub="Culminus",
-      ammo="Ghastly Tathlum +1",
-      head="Agwu's Cap",
-      body="Agwu's Robe",
-      hands="Agwu's Gages",
-      legs="Agwu's Slops",
-      feet="Agwu's Pigaches",
-      neck={ name="Sorcerer's Stole +2", augments={'Path: A',}},
-      waist="Skrymir Cord +1",
-      left_ear="Crematio Earring",
-      right_ear="Malignance Earring",
-      left_ring="Mallquis Ring",
-      right_ring="Freke Ring",
-      back=Taranus.ADOULIN     
-    }
-    
-    sets.midcast.WindHelix = {
-      main="Marin staff +1",
-      sub="Enki Strap",
-      ammo="Ghastly Tathlum +1",
-      head="Agwu's Cap",
-      body="Agwu's Robe",
-      hands="Agwu's Gages",
-      legs="Agwu's Slops",
-      feet="Agwu's Pigaches",
-      neck={ name="Sorcerer's Stole +2", augments={'Path: A',}},
-      waist="Skrymir Cord +1",
-      left_ear="Crematio Earring",
-      right_ear="Malignance Earring",
-      left_ring="Mallquis Ring",
-      right_ring="Freke Ring",
-      back=Taranus.ADOULIN
-    }
-    
-    sets.midcast.LightHelix = {
-      main="Daybreak",
-      sub="Culminus",
-      ammo="Ghastly Tathlum +1",
-      head="Agwu's Cap",
-      body="Agwu's Robe",
-      hands="Agwu's Gages",
-      legs="Agwu's Slops",
-      feet="Agwu's Pigaches",
-      neck={ name="Sorcerer's Stole +2", augments={'Path: A',}},
-      waist="Skrymir Cord +1",
-      left_ear="Crematio Earring",
-      right_ear="Malignance Earring",
-      left_ring="Mallquis Ring",
-      right_ring="Weatherspoon ring +1",
-      back=Taranus.INT_MAB -- Damage > Duration
-    }
-
-    sets.midcast.DarkHelix = {
-      main={ name="Bunzi's Rod", augments={'Path: A',}},
-      sub="Ammurapi Shield",
-      ammo="Ghastly Tathlum +1",
-      head="Pixie hairpin +1",
-      body="Agwu's Robe",
-      hands="Agwu's Gages",
-      legs="Agwu's Slops",
-      feet="Agwu's Pigaches",
-      neck={ name="Sorcerer's Stole +2", augments={'Path: A',}},
-      waist="Skrymir Cord +1",
-      left_ear="Crematio Earring",
-      right_ear="Malignance Earring",
-      left_ring="Archon ring",
-      right_ring="Freke Ring",
-      back=Taranus.ADOULIN 
-    }
-
     -- Whatever you want to equip mid-cast as a catch all for all spells, and we'll overwrite later for individual spells
    sets.midcast.casting = {
      head={ name="Merlinic Hood", augments={'"Fast Cast"+7','"Mag.Atk.Bns."+14',}}, -- 15 fc, 6 haste
@@ -702,7 +623,7 @@ function get_sets()
      head=empty,
      body="Cohort Cloak +1",
      hands="Regal Cuffs",
-     legs={ name="Chironic Hose", augments={'Mag. Acc.+21 "Mag.Atk.Bns."+21','"Fast Cast"+5','MND+11','Mag. Acc.+13','"Mag.Atk.Bns."+6',}},
+     legs="Spaekona's Tonban +2",
      feet="Wicce Sabots +3",
      neck={ name="Sorcerer's Stole +2", augments={'Path: A',}},
      waist="Luminary Sash",

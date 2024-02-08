@@ -403,7 +403,7 @@ function init_gear_sets()
       body = Empy_Karagoz.Body_Overload,
       hands = Artifact_Foire.Hands_Mane_Overload,
       back = "Visucius's Mantle",
-      ear1 = "Burana Earring"
+      left_ear = "Burana Earring"
     }
 
     sets.precast.JA["Activate"] = {back = "Visucius's Mantle"}
@@ -432,8 +432,8 @@ function init_gear_sets()
       waist="Moonbow Belt +1",
       left_ear={ name="Schere Earring", augments={'Path: A',}},
       right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
-      left_ring="Gere Ring",
-      right_ring="Niqmaddu Ring",
+      left_ring="Niqmaddu Ring",
+      right_ring="Gere Ring",
       back=Visucius.MasterDA
     }
 
@@ -460,8 +460,8 @@ function init_gear_sets()
       right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
       body="Mpaca's Doublet",
       hands="Nyame Gauntlets",
-      left_ring="Gere Ring",
-      right_ring="Niqmaddu Ring",
+      left_ring="Niqmaddu Ring",
+      right_ring="Gere Ring",
       back=Visucius.MasterDA,
       waist="Moonbow Belt +1",
       legs="Mpaca's Hose",
@@ -720,8 +720,8 @@ function init_gear_sets()
       feet={ name="Rao sune-ate +1", augments={'Pet: HP+125','Pet: Accuracy+20','Pet: Damage taken -4%',}},     --  4
       neck="Shulmanu Collar",
       waist="Isa Belt",                                                                                         --  3
-      left_ear="Enmerkar earring",                                                                              --  3
-      right_ear="Handler's Earring +1",                                                                         --  4
+      right_ear="Enmerkar earring",                                                                              --  3
+      left_ear="Handler's Earring +1",                                                                         --  4
       left_ring="C. Palug Ring",
       right_ring="Overbearing Ring",
       back=Visucius.PetDT                                                                                       --  5
@@ -748,8 +748,8 @@ function init_gear_sets()
         feet="Mpaca's Boots",
         neck="Shulmanu Collar",
         waist="Klouskap sash +1",
-        left_ear="Enmerkar earring",
-        right_ear="Rimeice Earring",
+        right_ear="Enmerkar earring",
+        left_ear="Rimeice Earring",
         left_ring="Varar Ring +1",
         right_ring="C. Palug Ring",
         back=Visucius.PetDT
@@ -768,8 +768,8 @@ function init_gear_sets()
         feet="Mpaca's Boots",
         neck="Shulmanu Collar",
         waist="Klouskap sash +1",
-        left_ear="Enmerkar Earring",
-        right_ear="Rimeice Earring",
+        right_ear="Enmerkar earring",
+        left_ear="Rimeice Earring",
         left_ring="Varar Ring +1",
         right_ring="C. Palug Ring",
         back=Visucius.PetDT
@@ -787,8 +787,8 @@ function init_gear_sets()
       feet={ name="Taeon Boots", augments={'Pet: Accuracy+21 Pet: Rng. Acc.+21','Pet: "Dbl. Atk."+5','Pet: Damage taken -4%',}},
       neck="Shulmanu Collar",
       waist="Klouskap Sash +1",
-      left_ear="Enmerkar Earring",
-      right_ear="Domesticator's Earring",
+      right_ear="Enmerkar Earring",
+      left_ear="Domesticator's Earring",
       left_ring="Varar Ring +1",
       right_ring="C. Palug Ring",
       back=Visucius.PetDT
@@ -806,8 +806,8 @@ function init_gear_sets()
       feet={ name="Rao sune-ate +1", augments={'Pet: HP+125','Pet: Accuracy+20','Pet: Damage taken -4%',}},     --  4
       neck="Shulmanu Collar",
       waist="Isa Belt",                                                                                         --  3
-      left_ear="Enmerkar earring",                                                                              --  3
-      right_ear="Handler's Earring +1",                                                                         --  4
+      right_ear="Enmerkar earring",                                                                              --  3
+      left_ear="Handler's Earring +1",                                                                         --  4
       left_ring="Varar Ring +1",
       right_ring="C. Palug Ring",
       back=Visucius.PetDT                                                                                       --  10 MDT
@@ -860,8 +860,8 @@ function init_gear_sets()
       feet="Mpaca's Boots",
       neck="Shulmanu Collar",
       waist="Incarnation Sash",
-      left_ear="Enmerkar earring",
-      right_ear="Burana earring",
+      right_ear="Enmerkar earring",
+      left_ear="Burana earring",
       left_ring="Varar Ring +1",
       right_ring="C. Palug Ring",
       back=Visucius.PetDT

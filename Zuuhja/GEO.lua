@@ -403,6 +403,11 @@ function get_sets()
      sub="Ammurapi Shield"
    })
    
+   sets.precast["Impact"] = set_combine(sets.precast.casting, {
+     head=empty, 
+     body="Crepuscular Cloak"
+   })
+   
    ----------
    -- Midcast
    ----------
@@ -523,6 +528,11 @@ function get_sets()
    sets.midcast.Dispelga = set_combine(sets.midcast.IntEnfeebling, {
      main="Daybreak",
      sub="Ammurapi Shield"
+   })
+   
+   sets.midcast["Impact"] = set_combine(sets.midcast.IntEnfeebling, {
+     head=empty, 
+     body="Crepuscular Cloak"
    })
    
    -- could use MND cape
