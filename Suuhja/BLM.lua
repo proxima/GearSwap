@@ -717,22 +717,22 @@ function get_sets()
     })
 
     sets.midcast['Death'] = {
-      main="Hvergelmir",
-      sub="Khonsu",
       ammo={ name="Ghastly Tathlum +1", augments={'Path: A',}},
       head="Pixie Hairpin +1",
-      body={ name="Amalric Doublet +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
+      body="Wicce Coat +3",
       hands={ name="Agwu's Gages", augments={'Path: A',}},
-      legs={ name="Amalric Slops +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
-      feet={ name="Amalric Nails +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
-      neck="Sanctity Necklace",
-      waist="Hachirin-no-Obi",
-      left_ear="Barkaro. Earring",
-      right_ear="Regal Earring",
-      left_ring="Mephitas's Ring",
+      legs="Wicce Chausses +3",
+      feet={ name="Agwu's Pigaches", augments={'Path: A',}},
+      neck={ name="Src. Stole +2", augments={'Path: A',}},
+      waist="Eschan stone",
+      left_ear="Malignance Earring",
+      right_ear="Barkaro. Earring",
+      left_ring={ name="Metamor. Ring +1", augments={'Path: A',}},
       right_ring="Archon Ring",
       back=Taranus.MP_FC
     }
+    
+    sets.midcast['Comet'] = set_combine(sets.midcast['Death'], {})
 
     sets.precast.Death = set_combine(sets.midcast.Death, {})
     sets.me.idle.death = set_combine(sets.midcast.Death, {})

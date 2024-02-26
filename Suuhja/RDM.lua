@@ -649,7 +649,7 @@ function get_sets()
     sets.midcast.Enfeebling.skillpot = set_combine(sets.midcast.Enfeebling.macc, {
       body=EMPY.Body,
     })
- 
+
     -- Type E-potency from: Enfeeb skill, Mnd, & "Enfeeb Potency" gear
     sets.midcast.Enfeebling.skillmndpot = {
       main={ name="Crocea Mors", augments={'Path: C',}},
@@ -746,15 +746,6 @@ function get_sets()
       hands="Viti. Gloves +3",
       legs="Atrophy Tights +3",
     }) 
-
-    -- This is used when casting under Composure but enhancing someone else other than yourself. 
-    sets.midcast.enhancing.composure = set_combine(sets.midcast.enhancing.duration, {
-      head=EMPY.Head,
-      body=EMPY.Body,
-      hands="Atrophy Gloves +3",
-      legs=EMPY.Legs,
-      feet=EMPY.Feet,
-    })
 
     -- Phalanx
     sets.midcast.phalanx =  set_combine(sets.midcast.enhancing.duration, {

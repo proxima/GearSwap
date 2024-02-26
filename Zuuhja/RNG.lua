@@ -85,7 +85,7 @@ function user_setup()
     state.WeaponskillMode:options('Normal', 'Acc', 'Enmity')
     state.IdleMode:options('Normal', 'DT')
 
-    state.WeaponSet = M{['description']='Weapon Set', 'Annihilator', 'Armageddon_M', 'Armageddon_R', 'Fomalhaut_M', 'Fomalhaut_R', 'Gastraphetes_M', 'Naegling'}
+    state.WeaponSet = M{['description']='Weapon Set', 'Annihilator', 'Armageddon_M', 'Armageddon_R', 'Fomalhaut_M', 'Fomalhaut_R', 'Gastraphetes_M', 'Gandiva', 'Naegling'}
 
     DefaultAmmo = {
         ['Yoichinoyumi'] = "Chrono Arrow",
@@ -95,7 +95,7 @@ function user_setup()
         ['Armageddon'] = "Chrono Bullet",
         ['Gastraphetes'] = "Quelling Bolt",
         ['Fomalhaut'] = "Chrono Bullet",
-        ['Astrild'] = "Chrono Arrow"
+        ['Gandiva'] = "Chrono Arrow"
     }
 
     AccAmmo = {    
@@ -106,7 +106,7 @@ function user_setup()
         ['Armageddon'] = "Eradicating Bullet",
         ['Gastraphetes'] = "Quelling Bolt",
         ['Fomalhaut'] = "Devastating Bullet",
-        ['Astrild'] = "Chrono Arrow"
+        ['Gandiva'] = "Chrono Arrow"
     }
 
     WSAmmo = {     
@@ -117,7 +117,7 @@ function user_setup()
         ['Armageddon'] = "Chrono Bullet",
         ['Gastraphetes'] = "Quelling Bolt",
         ['Fomalhaut'] = "Chrono Bullet",
-        ['Astrild'] = "Chrono Arrow"
+        ['Gandiva'] = "Chrono Arrow"
     }
 
     MagicAmmo = {
@@ -128,7 +128,7 @@ function user_setup()
         ['Armageddon'] = "Devastating Bullet",
         ['Gastraphetes'] = "Quelling Bolt",
         ['Fomalhaut'] = "Devastating Bullet",
-        ['Astrild'] = "Chrono Arrow"
+        ['Gandiva'] = "Chrono Arrow"
     }
 
     Cape = {}
@@ -361,6 +361,16 @@ function init_gear_sets()
     })
 
     sets.precast.WS['Jishnu\'s Radiance'] = set_combine(sets.precast.WS, {
+      head="Blistering sallet +1",
+      neck="Scout's gorget +2",
+      left_ear="Odr earring",
+      right_ear="Amini earring +1",
+      body="Amini caban +3",
+      hands="Malignance gloves",
+      left_ring="Begrudging ring",
+      right_ring="Regal ring",
+      waist="Fotia belt",
+      legs="Ikenga's trousers",
     })
 
     sets.precast.WS['Jishnu\'s Radiance'].Acc = set_combine(sets.precast.WS['Jishnu\'s Radiance'], {
@@ -373,7 +383,7 @@ function init_gear_sets()
       neck={ name="Scout's Gorget +2", augments={'Path: A',}},
       waist="Fotia Belt",
       left_ear={ name="Moonshade Earring", augments={'"Mag.Atk.Bns."+4','TP Bonus +250',}},
-      right_ear="Ishvara Earring",
+      right_ear="Amini earring +1",
       left_ring="Regal Ring",
       right_ring="Dingir Ring",
       back=Cape.RATK
@@ -493,7 +503,7 @@ function init_gear_sets()
       head="Meghanada Visor +2",
       neck={ name="Scout's Gorget +2", augments={'Path: A',}},
       ear1="Odr Earring",
-      ear2="Telos Earring",
+      ear2="Amini earring +1",
       body="Nisroch jerkin",
       hands="Mummu Wrists +2",
       ring1="Begrudging Ring",
@@ -520,7 +530,7 @@ function init_gear_sets()
       head="Meghanada Visor +2",
       neck={ name="Scout's Gorget +2", augments={'Path: A',}},
       ear1="Odr Earring",
-      ear2="Telos Earring",
+      ear2="Amini earring +1",
       body="Arcadian Jerkin +3",
       hands="Oshosi Gloves +1",
       ring1="Begrudging Ring",
@@ -800,6 +810,7 @@ function init_gear_sets()
     sets.Armageddon_R   = {main="Perun +1",   sub="Kustawi +1",    ranged="Armageddon"}
     sets.Gastraphetes_M = {main=Malev.ONE,    sub=Malev.TWO,       ranged="Gastraphetes"}
     sets.Naegling       = {main="Naegling",   sub="Gleti's Knife", ranged="Sparrowhawk +2"}
+    sets.Gandiva_R      = {main="Perun +1",   sub="Kustawi +1",    ranged="Gandiva"}
 
     sets.DefaultShield = {sub="Nusku Shield"}
 

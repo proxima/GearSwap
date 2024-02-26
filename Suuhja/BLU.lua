@@ -256,8 +256,8 @@ function user_setup()
   send_command('bind ^numpad2 input /ws "Black Halo" <t>')
 
   send_command('bind @a sat youcommand Muuhja "Thunderspark"')
-  send_command('bind @o sat youcommand Zuuhja "Horde Lullaby"')
-  send_command('bind @p sat youcommand Muuhja "Sleepga"')
+  send_command('bind @o sat youcommand Muuhja "Horde Lullaby"')
+  send_command('bind @p sat youcommand Zuuhja "Sleepga"')
   send_command('bind @v sat youcommand Muuhja "Volt Strike"')
 
   Cape = {}
