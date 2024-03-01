@@ -175,7 +175,7 @@ function get_sets()
     Lugh.DEX_DA      = { name="Lugh's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}}
     Lugh.MND_WSD     = { name="Lugh's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','MND+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}
     Lugh.MP_FC       = { name="Lugh's Cape", augments={'MP+60','MP+20','"Fast Cast"+10','Phys. dmg. taken-10%',}}
-    Lugh.ADOULIN     = { name="Bookworm's Cape", augments={'INT+1','MND+1','Helix eff. dur. +18','"Regen" potency+9',}}
+    Lugh.ADOULIN     = { name="Bookworm's Cape", augments={'INT+5','MND+3','Helix eff. dur. +20',}}
 
     sets.me = {}       -- leave this empty
     sets.buff = {}     -- leave this empty
@@ -925,6 +925,6 @@ function get_sets()
     })
     
     sets.midcast.regen.potency = set_combine(sets.midcast.regen.hybrid, {
-      back=Lugh.ADOULIN
+      -- back=Lugh.ADOULIN
     })
 end

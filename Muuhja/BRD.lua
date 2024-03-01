@@ -429,6 +429,7 @@ function init_gear_sets()
     sets.midcast['Magic Finale'] = {legs="Fili Rhingrave +1"}
     sets.midcast["Sentinel's Scherzo"] = {feet="Fili Cothurnes +1"}
     sets.midcast["Chocobo Mazurka"] = {range="Marsyas"}
+    sets.midcast["Aria of Passion"] = {range="Loughnashade"}
 
     -- For song buffs (duration and AF3 set bonus)
     sets.midcast.SongEnhancing = {
@@ -802,6 +803,8 @@ function job_precast(spell, action, spellMap, eventArgs)
     if spell.type == 'BardSong' then
         if spell.name == 'Honor March' then
             equip({range="Marsyas"})
+        elseif spell.name == 'Aria of Passion' then
+            equip({range="Loughnashade"})
         end
 
         if string.find(spell.name,'Lullaby') then
@@ -846,6 +849,8 @@ function job_midcast(spell, action, spellMap, eventArgs)
 
         if spell.name == 'Honor March' then
             equip({range="Marsyas"})
+        elseif spell.name == 'Aria of Passion' then
+            equip({range="Loughnashade"})
         end
 
         if string.find(spell.name,'Lullaby') then
@@ -1097,8 +1102,9 @@ function get_lullaby_duration(spell)
 
     local mult = 1
 
-    if player.equipment.range == "Daurdabla" then mult = mult + 0.3 end -- change to 0.25 with 90 Daur
-    if player.equipment.range == "Gjallarhorn" then mult = mult + 0.4 end -- change to 0.3 with 95 Gjall
+    if player.equipment.range == "Daurdabla" then mult = mult + 0.3 end
+    if player.equipment.range == "Gjallarhorn" then mult = mult + 0.4 end
+    if player.equipment.range == "Loughnashade" then mult = mult + 0.4 end
     if player.equipment.range == "Marsyas" then mult = mult + 0.5 end
 
     if player.equipment.main == "Carnwenhan" then mult = mult + 0.5 end -- 0.1 for 75, 0.4 for 95, 0.5 for 99/119
