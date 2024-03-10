@@ -745,7 +745,7 @@ function get_sets()
       head="Befouled crown",
       hands="Viti. Gloves +3",
       legs="Atrophy Tights +3",
-    }) 
+    })
 
     -- Phalanx
     sets.midcast.phalanx =  set_combine(sets.midcast.enhancing.duration, {

@@ -628,7 +628,7 @@ function init_gear_sets()
   sets.defense.MDT = {
     ammo="Vanir Battery",
     head={ name="Nyame Helm", augments={'Path: B',}}, --  7
-    body="Runeist Coat +3",
+    body="Adamantite Armor",                          -- 20
     hands="Erilaz Gauntlets +3",                      -- 11
     legs="Eri. Leg Guards +3",                        -- 13
     feet="Erilaz Greaves +3",                         -- 11
@@ -680,8 +680,8 @@ function init_gear_sets()
   sets.Hybrid = {
     ammo="Staunch Tathlum +1",
     head={ name="Nyame Helm", augments={'Path: B',}},
-    body=Empy.Body,
-	hands="Nyame Gauntlets",
+    body="Adamantite Armor",
+    hands="Nyame Gauntlets",
     legs=Empy.Legs,
     feet=Empy.Feet,
     neck="Warder's Charm +1",

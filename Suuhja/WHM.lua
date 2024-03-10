@@ -284,6 +284,7 @@ function init_gear_sets()
     sets.idle.Town = set_combine(sets.idle.MEva, {
       main="Gambanteinn",
       hands="Ebers Mitts +3",
+      right_ear="Ebers earring +2"
     })
 
     -- Precast Sets
