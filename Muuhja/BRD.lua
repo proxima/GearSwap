@@ -130,7 +130,7 @@ function user_setup()
         'Spirited Etude', 'Logical Etude', 'Enchanting Etude', 'Bewitching Etude'
     }
 
-    state.WeaponSet = M{['description']='Weapon Set', 'Carnwenhan', 'Twashtar', 'Prime', 'NaeglingDW', 'NaeglingSW', 'Aeneas', 'Tauret', 'Aeolian', 'NibiruShield', 'NibiruDW', 'Staff', 'Free'}
+    state.WeaponSet = M{['description']='Weapon Set', 'Carnwenhan', 'Twashtar', 'Prime', 'NaeglingDW', 'NaeglingSW', 'Aeneas', 'Tauret', 'Mandau', 'Aeolian', 'NibiruShield', 'NibiruDW', 'Staff', 'Free'}
     state.WeaponLock = M(false, 'Weapon Lock')
     state.CP = M(false, "Capacity Points Mode")
 
@@ -337,6 +337,8 @@ function init_gear_sets()
       right_ring="Epaminondas's Ring",
       back=Cape.RUDRA
     })
+
+    sets.precast.WS['Mercy Stroke'] = set_combine(sets.precast.WS['Rudra\'s Storm'], {})
 
     sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS, {
       range=Linos.WSD,
@@ -921,6 +923,8 @@ function job_state_change(stateField, newValue, oldValue)
             send_command("trial ws aeolian edge;trial tp 1000")
         elseif state.WeaponSet.value == "Staff" then
             send_command("trial ws cataclysm;trial tp 1750")
+        elseif state.WeaponSet.value == "Mandau" then
+            send_command("trial ws mercy stroke;trial tp 1000")
         end
     end
 
@@ -991,6 +995,8 @@ function customize_melee_set(meleeSet)
         equip({main="Aeneas",sub="Daybreak"})
     elseif state.WeaponSet.value == "Staff" then
         equip({main="Mpaca's Staff",sub="Enki Strap"})
+    elseif state.WeaponSet.value == "Mandau" then
+        equip({main="Mandau",sub="Gleti's Knife"})
     end
     if buffactive['Aftermath: Lv.3'] and player.equipment.main == "Carnwenhan" then
         meleeSet = set_combine(meleeSet, sets.engaged.Aftermath)

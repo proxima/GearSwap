@@ -427,6 +427,22 @@ function init_gear_sets()
       right_ring="Ilabrat Ring",
       back={ name="Senuna's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%','Phys. dmg. taken-10%'}},
     })
+
+    sets.precast.WS['Ruthless Stroke'] = set_combine(sets.precast.WS, {
+      ammo="Coiste Bodhar",
+      head="Maculele Tiara +3",
+      body="Maculele Casaque +3",
+      hands="Maxixi Bangles +3",
+      legs={ name="Horos Tights +3", augments={'Enhances "Saber Dance" effect',}},
+      feet={ name="Nyame Sollerets", augments={'Path: B',}},
+      neck={ name="Etoile Gorget +2", augments={'Path: A',}},
+      waist="Kentarch Belt +1",
+      left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
+      right_ear="Sherida Earring",
+      left_ring="Regal Ring",
+      right_ring="Ilabrat Ring",
+      back={ name="Senuna's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}},
+    })
     
     sets.precast.WS['Dancing Edge'] = set_combine(sets.precast.WS['Rudra\'s Storm'], {})
 
@@ -520,8 +536,6 @@ function init_gear_sets()
     })
 
     sets.idle.Town = set_combine(sets.idle, {
-      main={ name="Terpsichore", augments={'Path: A',}},
-      sub="Twashtar",
       ammo="Coiste Bodhar",
       head="Maculele Tiara +3",
       body="Gleti's Cuirass",
@@ -843,7 +857,13 @@ function init_gear_sets()
 
     sets.buff['Saber Dance'] = {}
     sets.buff['Fan Dance'] = {}
-    sets.buff['Climactic Flourish'] = {head="Maculele Tiara +3"}
+
+    sets.buff['Climactic Flourish'] = {
+      ammo="Crepuscular Pebble",
+      head="Maculele Tiara +3",
+      right_ear="Maculele earring +1"
+    }
+
     sets.buff['Closed Position'] = {feet="Horos T. Shoes +3"}
 
     sets.buff.Doom = {

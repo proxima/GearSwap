@@ -80,8 +80,8 @@ nukeModes = M('normal', 'acc')
 -- Defaults are the first in each list
 
 
-mainWeapon = M('Crocea Mors', 'Daybreak', 'Naegling', 'Kaja Rod', 'Tauret', 'Wind Knife')
-subWeapon = M('Ammurapi Shield', "Bunzi's Rod", 'Daybreak', 'Machaera +2', 'Malevolence', 'Sacro Bulwark', 'Firetongue')
+mainWeapon = M('Crocea Mors', 'Daybreak', 'Naegling', 'Maxentius', 'Tauret', 'Mandau', 'Wind Knife')
+subWeapon = M('Ammurapi Shield', "Bunzi's Rod", 'Daybreak', 'Machaera +2', 'Gleti\'s Knife', 'Malevolence', 'Sacro Bulwark', 'Firetongue')
 
 ------------------------------------------------------------------------------------------------------
 
@@ -378,6 +378,8 @@ function get_sets()
       right_ring="Epaminondas's Ring",
       back=RDMCape.BlackHalo
     }
+    
+    sets.me["Mercy Stroke"] = set_combine(sets.me["Black Halo"], {})
     
     sets.me["Requiescat"] = {
     }
