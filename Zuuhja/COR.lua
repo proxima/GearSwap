@@ -132,7 +132,7 @@ function user_setup()
     state.WeaponskillMode:options('Normal', 'Acc')
     state.IdleMode:options('Normal', 'DT', 'Refresh')
 
-    state.WeaponSet = M{['description']='Weapon Set', 'Rolls', 'Anarchy', 'DeathPenalty_M', 'DeathPenalty_R', 'Armageddon_M', 'Armageddon_R', 'Fomalhaut_M', 'Fomalhaut_R', 'Aeolian'}
+    state.WeaponSet = M{['description']='Weapon Set', 'Rolls', 'Anarchy', 'DeathPenalty_M', 'DeathPenalty_R', 'Armageddon_M', 'Armageddon_R', 'Fomalhaut_M', 'Fomalhaut_R', 'Prime', 'Aeolian'}
     state.WeaponLock = M(false, 'Weapon Lock')
 
     gear.RAbullet = "Chrono Bullet"
@@ -375,6 +375,25 @@ function init_gear_sets()
       right_ring="Hajduk Ring +1",
       waist="K. Kachina Belt +1",
       feet="Nyame Sollerets"
+    })
+
+    sets.precast.WS['Terminus'] = {ammo=gear.WSbullet,
+      head="Nyame Helm",
+      body="Ikenga's Vest",
+      hands="Chasseur's Gants +3",
+      legs="Nyame Flanchard",
+      feet="Lanun Bottes +3",
+      neck="Iskur Gorget",
+      waist="Fotia Belt",
+      left_ear="Moonshade Earring",
+      right_ear="Ishvara Earring",
+      left_ring="Regal Ring",
+      right_ring="Epaminondas's Ring",
+      back=Cape.RATK
+    }
+    
+    sets.precast.WS['Terminus'] = set_combine(sets.precast.WS['Terminus'], {ammo=gear.RAccbullet,
+      waist="Tellen Belt"
     })
 
     sets.precast.WS['Detonator'] = {ammo=gear.WSbullet,
@@ -913,6 +932,8 @@ function init_gear_sets()
     sets.Aeolian = {main=Rostam.B, sub="Tauret", ranged="Anarchy +2"}
     sets.Aeolian.Acc = {main=Rostam.B, sub=Rostam.A, ranged="Anarchy +2"}
 
+    sets.Prime = {main=Rostam.B, sub="Crepuscular Knife", ranged="Earp"}
+
     sets.DefaultShield = {sub="Nusku Shield"}
 end
 
@@ -1107,6 +1128,8 @@ function job_state_change(stateField, newValue, oldValue)
             send_command("trial ws savage blade;trial tp 1000")
         elseif state.WeaponSet.value == "Aeolian" then
             send_command("trial ws aeolian edge;trial tp 1000")
+        elseif state.WeaponSet.value == "Prime" then
+            send_command("trial ws terminus;trial tp 1000")
         end
     end
 

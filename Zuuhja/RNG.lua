@@ -85,12 +85,13 @@ function user_setup()
     state.WeaponskillMode:options('Normal', 'Acc', 'Enmity')
     state.IdleMode:options('Normal', 'DT')
 
-    state.WeaponSet = M{['description']='Weapon Set', 'Annihilator', 'Armageddon_M', 'Armageddon_R', 'Fomalhaut_M', 'Fomalhaut_R', 'Gastraphetes_M', 'Gandiva', 'Naegling'}
+    state.WeaponSet = M{['description']='Weapon Set', 'Annihilator', 'Armageddon_M', 'Armageddon_R', 'Fomalhaut_M', 'Fomalhaut_R', 'Gastraphetes_M', 'Gandiva', 'Naegling', 'Prime'}
 
     DefaultAmmo = {
         ['Yoichinoyumi'] = "Chrono Arrow",
         ['Gandiva'] = "Chrono Arrow",
         ['Fail-Not'] = "Chrono Arrow",
+        ['Earp'] = "Chrono Bullet",
         ['Annihilator'] = "Chrono Bullet",
         ['Armageddon'] = "Chrono Bullet",
         ['Gastraphetes'] = "Quelling Bolt",
@@ -102,6 +103,7 @@ function user_setup()
         ['Yoichinoyumi'] = "Yoichi's Arrow",
         ['Gandiva'] = "Yoichi's Arrow",
         ['Fail-Not'] = "Yoichi's Arrow",
+        ['Earp'] = "Eradicating Bullet",
         ['Annihilator'] = "Eradicating Bullet",
         ['Armageddon'] = "Eradicating Bullet",
         ['Gastraphetes'] = "Quelling Bolt",
@@ -113,6 +115,7 @@ function user_setup()
         ['Yoichinoyumi'] = "Chrono Arrow",
         ['Gandiva'] = "Chrono Arrow",
         ['Fail-Not'] = "Chrono Arrow",
+        ['Earp'] = "Chrono Bullet",
         ['Annihilator'] = "Chrono Bullet",
         ['Armageddon'] = "Chrono Bullet",
         ['Gastraphetes'] = "Quelling Bolt",
@@ -124,6 +127,7 @@ function user_setup()
         ['Yoichinoyumi'] = "Chrono Arrow",
         ['Gandiva'] = "Chrono Arrow",
         ['Fail-Not'] = "Chrono Arrow",
+        ['Earp'] = "Devastating Bullet",
         ['Annihilator'] = "Devastating Bullet",
         ['Armageddon'] = "Devastating Bullet",
         ['Gastraphetes'] = "Quelling Bolt",
@@ -409,11 +413,30 @@ function init_gear_sets()
       right_ring="Epaminondas's Ring",
       back=Cape.RATK
     }
-
+    
     sets.precast.WS["Coronach"].Acc = set_combine(sets.precast.WS['Coronach'], {
     })
 
     sets.precast.WS["Coronach"].Enmity = set_combine(sets.precast.WS['Coronach'], {
+    })
+    
+    sets.precast.WS["Terminus"] = {
+      head="Orion Beret +3",
+      body="Ikenga's Vest",
+      hands="Nyame Gauntlets",
+      legs="Nyame Flanchard",
+      feet="Amini Bottillons +3",
+      neck={ name="Scout's Gorget +2", augments={'Path: A',}},
+      waist="Fotia Belt",
+      right_ear="Amini earring +1",
+      left_ear="Moonshade Earring",
+      left_ring="Regal Ring",
+      right_ring="Epaminondas's Ring",
+      back=Cape.RATK
+    }
+    
+    sets.precast.WS["Terminus"].Acc = set_combine(sets.precast.WS['Terminus'], {
+      waist="Tellen belt",
     })
 
     sets.precast.WS["Trueflight"] = {
@@ -803,14 +826,15 @@ function init_gear_sets()
     sets.FullTP = {ear1="Crematio Earring"}
     sets.Obi = {waist="Hachirin-no-Obi"}
 
-    sets.Fomalhaut_M    = {main="Perun +1",   sub="Gleti's Knife", ranged="Fomalhaut"}
-    sets.Fomalhaut_R    = {main="Perun +1",   sub="Kustawi +1",    ranged="Fomalhaut"}
-    sets.Annihilator    = {main="Perun +1",   sub="Kustawi +1",    ranged="Annihilator"}
-    sets.Armageddon_M   = {main=Malev.ONE,    sub=Malev.TWO,       ranged="Armageddon"}
-    sets.Armageddon_R   = {main="Perun +1",   sub="Kustawi +1",    ranged="Armageddon"}
-    sets.Gastraphetes_M = {main=Malev.ONE,    sub=Malev.TWO,       ranged="Gastraphetes"}
-    sets.Naegling       = {main="Naegling",   sub="Gleti's Knife", ranged="Sparrowhawk +2"}
-    sets.Gandiva_R      = {main="Perun +1",   sub="Kustawi +1",    ranged="Gandiva"}
+    sets.Fomalhaut_M    = {main="Perun +1",          sub="Gleti's Knife", ranged="Fomalhaut"}
+    sets.Fomalhaut_R    = {main="Perun +1",          sub="Kustawi +1",    ranged="Fomalhaut"}
+    sets.Annihilator    = {main="Perun +1",          sub="Kustawi +1",    ranged="Annihilator"}
+    sets.Armageddon_M   = {main=Malev.ONE,           sub=Malev.TWO,       ranged="Armageddon"}
+    sets.Armageddon_R   = {main="Perun +1",          sub="Kustawi +1",    ranged="Armageddon"}
+    sets.Gastraphetes_M = {main=Malev.ONE,           sub=Malev.TWO,       ranged="Gastraphetes"}
+    sets.Naegling       = {main="Naegling",          sub="Gleti's Knife", ranged="Sparrowhawk +2"}
+    sets.Gandiva_R      = {main="Perun +1",          sub="Kustawi +1",    ranged="Gandiva"}
+    sets.Prime          = {main="Crepuscular Knife", sub="Gleti's Knife", ranged="Earp"}
 
     sets.DefaultShield = {sub="Nusku Shield"}
 

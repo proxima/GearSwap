@@ -364,7 +364,7 @@ function init_gear_sets()
     sub={ name="Priwen", augments={'HP+50','Mag. Evasion+50','Damage Taken -3%',}},
     ammo="Staunch Tathlum +1",
     head={ name="Valorous Mask", augments={'Blood Pact Dmg.+6','Mag. Acc.+14','Phalanx +5',}},
-	body={ name="Valorous Mail", augments={'Pet: DEX+4','Attack+10','Phalanx +4',}},
+	body={ name="Valorous Mail", augments={'CHR+9','Pet: Phys. dmg. taken -3%','Phalanx +4','Accuracy+10 Attack+10','Mag. Acc.+7 "Mag.Atk.Bns."+7',}},
     hands={ name="Souv. Handsch. +1", augments={'HP+65','Shield skill +15','Phys. dmg. taken -4',}},
     legs="Sakpata's Cuisses",
     feet={ name="Souveran Schuhs +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},

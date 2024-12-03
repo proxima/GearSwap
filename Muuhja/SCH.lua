@@ -569,7 +569,7 @@ function get_sets()
       neck={ name="Argute Stole +2", augments={'Path: A',}},
       waist="Skrymir Cord +1",
       left_ear="Regal Earring",
-      right_ear="Malignance Earring",
+      right_ear="Arbatel earring +1",
       left_ring="Freke Ring",
       right_ring={ name="Metamor. Ring +1", augments={'Path: A',}},
       back=Lugh.ADOULIN     
@@ -586,8 +586,8 @@ function get_sets()
       feet="Arbatel Loafers +3",
       neck={ name="Argute Stole +2", augments={'Path: A',}},
       waist="Skrymir Cord +1",
-      left_ear="Regal Earring",
-      right_ear="Malignance Earring",
+      left_ear="Malignance Earring",
+      right_ear="Arbatel earring +1",
       left_ring="Freke Ring",
       right_ring={ name="Metamor. Ring +1", augments={'Path: A',}},
       back=Lugh.ADOULIN
@@ -604,8 +604,8 @@ function get_sets()
       feet="Arbatel Loafers +3",
       neck={ name="Argute Stole +2", augments={'Path: A',}},
       waist="Skrymir Cord +1",
-      left_ear="Regal Earring",
-      right_ear="Malignance Earring",
+      left_ear="Malignance Earring",
+      right_ear="Arbatel earring +1",
       left_ring="Freke Ring",
       right_ring={ name="Metamor. Ring +1", augments={'Path: A',}},
       back=Lugh.INT_MAB -- Damage > Duration
@@ -622,8 +622,8 @@ function get_sets()
       feet="Arbatel Loafers +3",
       neck={ name="Argute Stole +2", augments={'Path: A',}},
       waist="Skrymir Cord +1",
-      left_ear="Regal Earring",
-      right_ear="Malignance Earring",
+      left_ear="Malignance Earring",
+      right_ear="Arbatel earring +1",
       left_ring="Archon Ring",
       right_ring={ name="Metamor. Ring +1", augments={'Path: A',}},
       back=Lugh.ADOULIN 

@@ -173,7 +173,7 @@ function user_setup()
     send_command('bind @b sat youcommand Muuhja "Magic Finale"')
     send_command('bind @n sat youcommand Muuhja "Carnage Elegy"')
     -- send_command('bind @m sat youcommand Muuhja "Pining Nocturne"')
-    -- send_command('bind @o sat youcommand Muuhja "Horde Lullaby"')
+    send_command('bind @o sat youcommand Muuhja "Horde Lullaby"')
     -- send_command('bind @p sat youcommand Zuuhja "Fire"')
     
     send_command('bind numpad0 gs c step t')
@@ -538,9 +538,9 @@ function init_gear_sets()
     sets.idle.Town = set_combine(sets.idle, {
       ammo="Coiste Bodhar",
       head="Maculele Tiara +3",
-      body="Gleti's Cuirass",
+      body="Nyame Mail",
       hands="Maculele Bangles +3",
-      legs="Gleti's Breeches",
+      legs="Nyame Flanchard",
       feet="Maculele Toe shoes +3",
       neck={ name="Etoile Gorget +2", augments={'Path: A',}},
       waist="Reiki Yotai",

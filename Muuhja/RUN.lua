@@ -187,7 +187,7 @@ function user_setup()
   TaeonPhalanx = {}
   TaeonPhalanx.Body =  {name="Herculean Vest", augments={'Crit.hit rate+4','MND+1','Phalanx +5','Accuracy+16 Attack+16','Mag. Acc.+18 "Mag.Atk.Bns."+18',}}
   TaeonPhalanx.Hands = {name="Herculean Gloves", augments={'DEX+2','MND+1','Phalanx +5','Accuracy+20 Attack+20',}}
-  TaeonPhalanx.Legs =  {name="Taeon Tights", augments={'Mag. Evasion+20','Phalanx +3',}}
+  TaeonPhalanx.Legs =  {name="Herculean Trousers", augments={'MND+8','"Blood Pact" ability delay -5','Phalanx +4','Accuracy+3 Attack+3','Mag. Acc.+8 "Mag.Atk.Bns."+8',}}
   TaeonPhalanx.Feet =  {name="Taeon Boots", augments={'Mag. Evasion+20','Spell interruption rate down -10%','Phalanx +3',}}
   
   MR = {}

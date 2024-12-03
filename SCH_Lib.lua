@@ -896,7 +896,7 @@ function self_command(command)
                 elseif wantedSc == 'Fragmentation' then
                     send_command('input /p Opening SC: Fragmentation  MB: Lightning / Wind; wait .1; input /ja "Immanence" <me>; wait 1.5; input /ma "Blizzard" <t>; wait 4.0; input /ja "Immanence" <me>; wait 1.5; input /p Closing SC: Fragmentation  MB: Wind / Lightning; input /ma "'..nukes.scHelix["Water"]..'" <t>')
                 elseif wantedSc == 'LiqueFusion' then
-                    send_command('input /p Opening SC: Liquefaction  MB: Fire; wait .1; input /ja "Immanence" <me>; wait 1.5; input /ma "Stone" <t>; wait 4.0; input /ja "Immanence" <me>; wait 1.5; input /p Continuing SC: Liquefaction  MB: Fire; input /ma "Pyrohelix" <t>; wait 8.5; input /ja "Immanence" <me>; wait 1.5; input /p Closing SC: Fusion  MB: Light / Fire; input /ma "Ionohelix" <t>')
+                    send_command('input /p Opening SC: Liquefaction  MB: Fire; wait .1; input /ja "Immanence" <me>; wait 1.5; input /ma "Stone" <t>; wait 4.0; input /ja "Immanence" <me>; wait 1.5; input /p Continuing SC: Liquefaction  MB: Fire; input /ma "Pyrohelix II" <t>; wait 8.5; input /ja "Immanence" <me>; wait 1.5; input /p Closing SC: Fusion  MB: Light / Fire; input /ma "Ionohelix" <t>')
                 elseif wantedSc == 'Fusion' then
                     send_command('input /p Opening SC: Fusion  MB: Light / Fire; wait .1; input /ja "Immanence" <me>; wait 1.5; input /ma "Fire" <t>; wait 4.0; input /ja "Immanence" <me>; wait 1.5; input /p Closing SC: Fusion  MB: Light / Fire; input /ma "'..nukes.scHelix["Lightning"]..'" <t>')
                 elseif wantedSc == 'Gravitation' then
